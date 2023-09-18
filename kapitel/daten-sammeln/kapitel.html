@@ -81,6 +81,22 @@ div.csl-indent {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -289,6 +305,19 @@ div.csl-indent {
   <li><a href="#datenüberprüfung-für-ordinalskalierte-wertebereiche" id="toc-datenüberprüfung-für-ordinalskalierte-wertebereiche" class="nav-link" data-scroll-target="#datenüberprüfung-für-ordinalskalierte-wertebereiche"><span class="header-section-number">3.1.5</span> Datenüberprüfung für ordinalskalierte Wertebereiche</a></li>
   <li><a href="#datenüberprüfung-für-nominalskalierte-wertebereiche" id="toc-datenüberprüfung-für-nominalskalierte-wertebereiche" class="nav-link" data-scroll-target="#datenüberprüfung-für-nominalskalierte-wertebereiche"><span class="header-section-number">3.1.6</span> Datenüberprüfung für nominalskalierte Wertebereiche</a></li>
   </ul></li>
+  <li><a href="#sec-datacollection-forms" id="toc-sec-datacollection-forms" class="nav-link" data-scroll-target="#sec-datacollection-forms"><span class="header-section-number">3.2</span> Daten mit Formularen sammeln</a>
+  <ul class="collapse">
+  <li><a href="#einfachauswahl-auswahl" id="toc-einfachauswahl-auswahl" class="nav-link" data-scroll-target="#einfachauswahl-auswahl"><span class="header-section-number">3.2.1</span> Einfachauswahl (<em>Auswahl</em>)</a></li>
+  <li><a href="#mehrfachauswahl-auswahl" id="toc-mehrfachauswahl-auswahl" class="nav-link" data-scroll-target="#mehrfachauswahl-auswahl"><span class="header-section-number">3.2.2</span> Mehrfachauswahl (<em>Auswahl</em>)</a></li>
+  <li><a href="#offene-texteingabe-text" id="toc-offene-texteingabe-text" class="nav-link" data-scroll-target="#offene-texteingabe-text"><span class="header-section-number">3.2.3</span> Offene Texteingabe (<em>Text</em>)</a></li>
+  <li><a href="#datei-hochlanden" id="toc-datei-hochlanden" class="nav-link" data-scroll-target="#datei-hochlanden"><span class="header-section-number">3.2.4</span> Datei hochlanden</a></li>
+  <li><a href="#datumseingabe-datum" id="toc-datumseingabe-datum" class="nav-link" data-scroll-target="#datumseingabe-datum"><span class="header-section-number">3.2.5</span> Datumseingabe (<em>Datum</em>)</a></li>
+  <li><a href="#rangfolge" id="toc-rangfolge" class="nav-link" data-scroll-target="#rangfolge"><span class="header-section-number">3.2.6</span> Rangfolge</a></li>
+  <li><a href="#likert-skala-likert" id="toc-likert-skala-likert" class="nav-link" data-scroll-target="#likert-skala-likert"><span class="header-section-number">3.2.7</span> Likert-Skala (<em>Likert</em>)</a></li>
+  <li><a href="#bewertung" id="toc-bewertung" class="nav-link" data-scroll-target="#bewertung"><span class="header-section-number">3.2.8</span> Bewertung</a></li>
+  <li><a href="#net-promoter-score" id="toc-net-promoter-score" class="nav-link" data-scroll-target="#net-promoter-score"><span class="header-section-number">3.2.9</span> Net Promoter Score</a></li>
+  <li><a href="#darstellung-der-ergebniss-in-excel" id="toc-darstellung-der-ergebniss-in-excel" class="nav-link" data-scroll-target="#darstellung-der-ergebniss-in-excel"><span class="header-section-number">3.2.10</span> Darstellung der Ergebniss in Excel</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -486,6 +515,109 @@ Tipp
 </div>
 </div>
 <p>Bei der Dateneingabe wird anschliessend ein Auswahlliste mit den zulässigen Werten, so dass die Werte nicht mehr direkt eingetippt werden müssen. Diese Auswahlliste kann unterbunden werden, wenn die Option <code>Zellendropdown</code> deaktiviert wird.</p>
+</section>
+</section>
+<section id="sec-datacollection-forms" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-datacollection-forms"><span class="header-section-number">3.2</span> Daten mit Formularen sammeln</h2>
+<p>Die direkte Eingabe von Daten ist nur für kleine Datensätze mit wenigen Merkmalen geeignet. Bei grösseren Datensätzen ist die direkte Eingabe oft zu aufwändig und fehleranfällig. Für die strukturierte Dateneingabe von grösseren Datensätzen werden Formulare verwendet.</p>
+<p>Im Gegensatz zur direkten Dateneingabe in Tabellen, werden die Daten in Formularen in <em>Fragen</em> mit vorgegebenen Antworttypen gesammelt. Der Antworttyp bestimmt, welche Werte für die Frage zulässig sind.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In vielen Formularsystemen wird der <em>Antworttyp</em> als <strong>Fragetyp</strong> bezeichnet, obwohl die Frage immer in Text-Bildform präsentiert wird und der Typ durch die unterschiedlichen Antwortmöglichkeiten bestimmt wird.</p>
+</div>
+</div>
+<p>Durch das Festlegen des Antworttyps wird gleichzeigt der Wertebereich des gemessenen Merkmals definiert. Dadurch ergibt sich beim Erstellen eines Formulars das Datenschema automatisch.</p>
+<p>Excel hat kein eingenes Formularsystem. Stattdessen kann <a href="https://www.microsoft365.com/launch/forms">Microsoft Forms</a> verwendet werden. Microsoft Forms ist ein Online-Formulardienst, das in Microsoft365 integriert ist. Forms sammelt die Eingaben in ein Formular in einer Excel Arbeitsmappe. Diese Formulare können über einen Web-Link geteilt werden und im Web-Browser ausgefüllt werden. Dadurch kann das Datensammeln auf verschiedene Personen verteilt werden.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein Formular kann in Microsoft Forms ein <strong>Quiz</strong> oder ein <strong>Formular</strong> sein. Ein Quiz ist ein Formular, bei dem die Antworten mit eine Punktzahl bewertet werden und ein Feedback erhalten können. Ein Formular fokussiert sich auf die reine Dateneingabe.</p>
+</div>
+</div>
+<p>Microsoft Forms unterstützt die folgenden Antworttypen:</p>
+<ul>
+<li>Einfachauswahl</li>
+<li>Mehrfachauswahl</li>
+<li>Offene Texteingabe</li>
+<li>Dateumseingabe</li>
+<li>Likert-Skala</li>
+<li>Bewertung</li>
+<li>Net Promoter Score</li>
+<li>Rangfolge</li>
+<li>Datei-Upload</li>
+</ul>
+<p>Jede dieser Varianten hat die folgenden gemeinsamen Optionen:</p>
+<ul>
+<li>Eine einleitende Frage oder Anweisung.</li>
+<li>Ein optionaler Untertitel oder eine Beschreibung. (<em>Untertitel</em>)</li>
+<li>Die Möglichkeit eine mathematische Formel zur Validierung des Wertebereichs anzugeben (<em>Mathematik</em>).</li>
+<li>Das erzwingen einer Antwort (<em>Erforderlich</em>).</li>
+<li>Eine Verzweigung zu einer anderen Frage, wenn eine bestimmte Antwort gegeben wird (<em>Verzweigung</em>).</li>
+</ul>
+<p>Die Unterschiede ergeben sich in den Antwortmöglichkeiten.</p>
+<section id="einfachauswahl-auswahl" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="einfachauswahl-auswahl"><span class="header-section-number">3.2.1</span> Einfachauswahl (<em>Auswahl</em>)</h3>
+<p>Die Einfachauswahl ist ein Single-Choice-Antworttyp. Es sind nur die vorgegebenen Antwortmöglichkeiten möglich, von denen nur eine ausgewählt werden kann. Die Antwortmöglichkeiten können als Text oder als Bild angegeben werden. Die Antwortmöglichkeiten werden immer in einer Liste angezeigt. Dabei kann zwischen einem Auswahlmenu als <em>Dropdown</em>-Liste und frei anwählbaren Antwortmöglichkeiten (<em>Optionen</em>) gewählt werden. Die Reihenfolge der Antwortmöglichkeiten kann durch die Option <code>Optionen in zufälliger Reihenfolge</code> für jedes Formular zufällig angeordnet werden.</p>
+<p>Das Ergebnis der Einfachauswahl ist eine Zeichenkette der ausgewählten Option.</p>
+</section>
+<section id="mehrfachauswahl-auswahl" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="mehrfachauswahl-auswahl"><span class="header-section-number">3.2.2</span> Mehrfachauswahl (<em>Auswahl</em>)</h3>
+<p>Die Mehrfachauswahl erlaubt die Auswahl mehrerer Antwortmöglichkeiten, indem die Option <code>Mehrere Antworten</code> aktiviert wird. Dieser Antworttyp ist ansonsten identisch mit der Einfachauswahl.</p>
+<p>Das Ergebnis der Mehrfachauswahl ist eine Zeichenkette mit den ausgewählten Optionen. Wurden mehrere Antworten ausgewählt, dann werden die Optionen durch ein Semikolon getrennt.</p>
+</section>
+<section id="offene-texteingabe-text" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="offene-texteingabe-text"><span class="header-section-number">3.2.3</span> Offene Texteingabe (<em>Text</em>)</h3>
+<p>Die offene Texteingabe erlaubt einzeilige und mehrzeilige (<em>lange</em>) <em>offene Antworten</em> möglich sind. Damit können un- oder semistrukturierte Daten erfasst werden. Diese Antwortmöglichkeit lässt sich auf Zahlenwerte und Zahlenintervalle eingeschränken.</p>
+</section>
+<section id="datei-hochlanden" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="datei-hochlanden"><span class="header-section-number">3.2.4</span> Datei hochlanden</h3>
+<p>Die zweite Variante für <em>offene Antworten</em> ist das Hochladen von Dateien. Mit diesem Antworttyp lassen sich Bilder, Videos oder Tonaufnahmen leicht erfassen.</p>
+</section>
+<section id="datumseingabe-datum" class="level3" data-number="3.2.5">
+<h3 data-number="3.2.5" class="anchored" data-anchor-id="datumseingabe-datum"><span class="header-section-number">3.2.5</span> Datumseingabe (<em>Datum</em>)</h3>
+<p>Diese Eingabe ist eine Variante der <em>offenen Texteingabe</em> zur Eingabe eines Datums. Diese Eingabe wird durch die Option ergänzt, das Datum über eine Kalenderdarstellung auszuwählen.</p>
+<p>Das eingegebene Datum wird als Zahl gespeichert und als Datum dargestellt.</p>
+</section>
+<section id="rangfolge" class="level3" data-number="3.2.6">
+<h3 data-number="3.2.6" class="anchored" data-anchor-id="rangfolge"><span class="header-section-number">3.2.6</span> Rangfolge</h3>
+<p>Die Rangfolge erlaubt es, dass die angebotenen Antwortmöglichkeiten in eine Reihenfolge gebracht werden können. Bei diesem Antworttyp müssen die Werte sortiert werden und die Sortierung wird als Antwort gespeichert.</p>
+<p>Bei der Darstellung werden die Antwortmöglichkeiten in einer Liste angezeigt und für jedes Formular neu sortiert.</p>
+<p>Das Ergebnis der Rangfolge ist eine Zeichenkette mit der Reihung der Optionen. Die Optionen werden durch ein Semikolon getrennt. Im Ergebnis lässt sich die Rangfolge nicht von einer Mehrfachauswahl unterscheiden.</p>
+</section>
+<section id="likert-skala-likert" class="level3" data-number="3.2.7">
+<h3 data-number="3.2.7" class="anchored" data-anchor-id="likert-skala-likert"><span class="header-section-number">3.2.7</span> Likert-Skala (<em>Likert</em>)</h3>
+<p>Der Antworttyp <em>Likert</em> setzt eine Fragebatterie mit Likert-Skalen um. Darüber lässt sich ein <em>semantisches Differential</em> erheben.</p>
+<p>Die Anworten dieser Fragebatterie werden wie mehrere Einfachauswahlen als Zeichenketten gespeichert. Deshalb muss für diesen Antworttyp immer eine Kodierungstabelle für die richtige Reihenfolge der Werte dokumentiert werden.</p>
+</section>
+<section id="bewertung" class="level3" data-number="3.2.8">
+<h3 data-number="3.2.8" class="anchored" data-anchor-id="bewertung"><span class="header-section-number">3.2.8</span> Bewertung</h3>
+<p>Die Bewertung ist eine Variante des Antworttyps <em>Likert-Skala</em>. Mit der Bewertung wird über eine festgelegte Skala der gewünschte Wert abgefragt. Optional können für die beiden Extremwerte Beschriftungen angegeben werden.</p>
+<p>Das Ergebnis wird als Zahl gespeichert. Die Zahl entspricht dem Wert der ausgewählten Option beginnend bei 1.</p>
+</section>
+<section id="net-promoter-score" class="level3" data-number="3.2.9">
+<h3 data-number="3.2.9" class="anchored" data-anchor-id="net-promoter-score"><span class="header-section-number">3.2.9</span> Net Promoter Score</h3>
+<p>Der Typ Net Promoter Score ist eine spezielle elfstufige Liker-Skala, die zwischen zwei frei wählbaren Extremwerten festgelegt ist. Die Definition des Net Promoter Scores ist eine verzerrte Likert-Skala mit dem Mittelpunkt bei <code>7.5</code>.</p>
+<p>Der Net Promoter Score wird immer als Ganzzahl im Intervall <span class="math inline">0 \le s \le 10</span> zurückgegeben.</p>
+</section>
+<section id="darstellung-der-ergebniss-in-excel" class="level3" data-number="3.2.10">
+<h3 data-number="3.2.10" class="anchored" data-anchor-id="darstellung-der-ergebniss-in-excel"><span class="header-section-number">3.2.10</span> Darstellung der Ergebniss in Excel</h3>
+<p>Die Ergebnisse der Formulare werden in einer Excel-Arbeitsmappe gespeichert. Die Ergebnisse werden in einer Tabelle gespeichert. Die Antworten sind in der Spalte <code>ID</code> sequenziell durchnummeriert. Zusätzlich enthält die Tabelle zwei sog. <em>Zeitstempel</em> mit Datum und Uhrzeit des Beginns (<code>Startzeit</code>) und des Endes (<code>Fertigstellungszeit</code>) der Datenerfassung. Optional können die Namen und E-Mail-Adressen der ausfüllenden Person miterfasst werden.</p>
+<p>Nach diesen Basisinformationen folgen die einzelnen Antworten für die Formularelemente. Die Werte in der gleichen Zeile entsprechen dabei den Werten aus dem gleichen Formular. Die Spaltenüberschriften sind Standardmässig der Fragetext.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
