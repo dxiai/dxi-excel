@@ -255,15 +255,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#fundamentale-datentypen" id="toc-fundamentale-datentypen" class="nav-link active" data-scroll-target="#fundamentale-datentypen"><span class="header-section-number">4.1</span> Fundamentale Datentypen</a></li>
-  <li><a href="#dekoratoren" id="toc-dekoratoren" class="nav-link" data-scroll-target="#dekoratoren"><span class="header-section-number">4.2</span> Dekoratoren</a></li>
-  <li><a href="#bereiche-vektoren-und-matrizen" id="toc-bereiche-vektoren-und-matrizen" class="nav-link" data-scroll-target="#bereiche-vektoren-und-matrizen"><span class="header-section-number">4.3</span> Bereiche: Vektoren und Matrizen</a>
+  <li><a href="#fundamentale-datentypen" id="toc-fundamentale-datentypen" class="nav-link active" data-scroll-target="#fundamentale-datentypen"><span class="header-section-number">4.1</span> Fundamentale Datentypen</a>
   <ul class="collapse">
-  <li><a href="#dynamische-bereiche" id="toc-dynamische-bereiche" class="nav-link" data-scroll-target="#dynamische-bereiche"><span class="header-section-number">4.3.1</span> Dynamische Bereiche</a></li>
+  <li><a href="#zahlen" id="toc-zahlen" class="nav-link" data-scroll-target="#zahlen"><span class="header-section-number">4.1.1</span> Zahlen</a></li>
+  <li><a href="#zeichenketten" id="toc-zeichenketten" class="nav-link" data-scroll-target="#zeichenketten"><span class="header-section-number">4.1.2</span> Zeichenketten</a></li>
+  <li><a href="#wahrheitswerte" id="toc-wahrheitswerte" class="nav-link" data-scroll-target="#wahrheitswerte"><span class="header-section-number">4.1.3</span> Wahrheitswerte</a></li>
+  <li><a href="#fehlerwerte" id="toc-fehlerwerte" class="nav-link" data-scroll-target="#fehlerwerte"><span class="header-section-number">4.1.4</span> Fehlerwerte</a></li>
+  <li><a href="#formeln" id="toc-formeln" class="nav-link" data-scroll-target="#formeln"><span class="header-section-number">4.1.5</span> Formeln</a></li>
+  <li><a href="#leere-zellen" id="toc-leere-zellen" class="nav-link" data-scroll-target="#leere-zellen"><span class="header-section-number">4.1.6</span> Leere Zellen</a></li>
   </ul></li>
-  <li><a href="#tabellen" id="toc-tabellen" class="nav-link" data-scroll-target="#tabellen"><span class="header-section-number">4.4</span> Tabellen</a>
+  <li><a href="#dekoratoren" id="toc-dekoratoren" class="nav-link" data-scroll-target="#dekoratoren"><span class="header-section-number">4.2</span> Dekoratoren</a>
   <ul class="collapse">
-  <li><a href="#tabellenadressierung" id="toc-tabellenadressierung" class="nav-link" data-scroll-target="#tabellenadressierung"><span class="header-section-number">4.4.1</span> Tabellenadressierung</a></li>
+  <li><a href="#sec-text-dekorator" id="toc-sec-text-dekorator" class="nav-link" data-scroll-target="#sec-text-dekorator"><span class="header-section-number">4.2.1</span> Apostroph-Dekoraktor</a></li>
+  <li><a href="#sec-formel-dekorator" id="toc-sec-formel-dekorator" class="nav-link" data-scroll-target="#sec-formel-dekorator"><span class="header-section-number">4.2.2</span> Gleich-Dekorator</a></li>
+  </ul></li>
+  <li><a href="#komplexe-datenstrukturen" id="toc-komplexe-datenstrukturen" class="nav-link" data-scroll-target="#komplexe-datenstrukturen"><span class="header-section-number">4.3</span> Komplexe Datenstrukturen</a>
+  <ul class="collapse">
+  <li><a href="#bereiche-vektoren-und-matrizen" id="toc-bereiche-vektoren-und-matrizen" class="nav-link" data-scroll-target="#bereiche-vektoren-und-matrizen"><span class="header-section-number">4.3.1</span> Bereiche: Vektoren und Matrizen</a></li>
+  </ul></li>
+  <li><a href="#tabellen" id="toc-tabellen" class="nav-link" data-scroll-target="#tabellen"><span class="header-section-number">4.4</span> Tabellen</a></li>
+  <li><a href="#adressierung-von-datenstrukturen" id="toc-adressierung-von-datenstrukturen" class="nav-link" data-scroll-target="#adressierung-von-datenstrukturen"><span class="header-section-number">4.5</span> Adressierung von Datenstrukturen</a>
+  <ul class="collapse">
+  <li><a href="#arbeitsblattadressierung" id="toc-arbeitsblattadressierung" class="nav-link" data-scroll-target="#arbeitsblattadressierung"><span class="header-section-number">4.5.1</span> Arbeitsblattadressierung</a></li>
+  <li><a href="#tabellenadressierung" id="toc-tabellenadressierung" class="nav-link" data-scroll-target="#tabellenadressierung"><span class="header-section-number">4.5.2</span> Tabellenadressierung</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -290,26 +304,109 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="fundamentale-datentypen" class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="fundamentale-datentypen"><span class="header-section-number">4.1</span> Fundamentale Datentypen</h2>
+<p>Excel kennt sechs fundamentale Datentypen.</p>
 <ul>
-<li>leere Zelle</li>
-<li>Wahrheitswerte</li>
 <li>Zahlen</li>
 <li>Zeichenketten</li>
+<li>Wahrheitswerte</li>
 <li>Fehlerwerte</li>
 <li>Formeln</li>
+<li>leere Zelle</li>
 </ul>
+<section id="zahlen" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="zahlen"><span class="header-section-number">4.1.1</span> Zahlen</h3>
+<p>Zahlen werden in Excel immer als Gleitkommazahlen behandelt. Excel kennt von keine ganzen Zahlen. Wenn eine Zahl in eine ganze Zahl umgewandelt wird (z.B. durch die Funktion <code>GANZZAHL</code>), wird lediglich der Nachkommaanteil der Zahl auf <code>0</code> gesetzt.</p>
+<p>Manche Excel Funktionen arbeiten nur mit ganzen Zahlen. In diesen Fällen wird der Nachkommaanteil der Zahl automatisch abgeschnitten.</p>
+<p>Durch die Verwendung von Gleitkommazahlen können in Excel Zahlen mit einer Genauigkeit von 15 signifikanten Stellen dargestellt werden. Werden zwei Zahlen addiert, und das Ergebnis mehr als 15 signifikante Stellen hätte, werden die alle Stellen ab der 15. signifikanten Stelle abgeschnitten. Excel versucht diese Fehler möglichst zu vermeiden.</p>
+<p>Der Datentyp <em>Zahlen</em> wird in Excel mit der Funktion <code>ISTZAHL()</code> geprüft. Die Funktion <code>ISTZAHL()</code> liefert <code>WAHR</code>, wenn der Wert ein Zahl ist, und sonst <code>FALSCH</code>.</p>
+</section>
+<section id="zeichenketten" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="zeichenketten"><span class="header-section-number">4.1.2</span> Zeichenketten</h3>
+<p>Zeichenketten heissen in Excel <strong>Text</strong>. Zeichenketten werden von Excel automatisch gewählt, wenn kein anderer Datentyp für eine Eingabe erkannt wurde. Um die automatische Erkennung zu verhindern, muss der Apostroph-Dekorator (s. <a href="#sec-text-dekorator">Abschnitt&nbsp;<span>4.2.1</span></a>) verwendet werden.</p>
+<p>Im <em>Formelmodus</em> müssen Zeichenketten in doppelte Anführungszeichen eingeschlossen werden. Im Wertemodus müssen Zeichenketten meist nicht besonders markiert werden.</p>
+<p>Der Datentyp <em>Zeichenkette</em> wird in Excel mit der Funktion <code>ISTTEXT()</code> geprüft. Die Funktion <code>ISTTEXT()</code> liefert <code>WAHR</code>, wenn der Wert eine Zeichenkette ist, und sonst <code>FALSCH</code>.</p>
+<p>Besondere Zeichenketten sind Adressen bzw. im Excel Jargon <strong>Bezüge</strong>. Die Funktion <code>ISTBEZUG()</code> prüft, ob eine Zeichenkette eine gültige Excel Adresse ist. Die Funktion <code>ISTBEZUG()</code> liefert <code>WAHR</code>, wenn die Zeichenkette eine Adresse ist, und sonst <code>FALSCH</code>.</p>
+</section>
+<section id="wahrheitswerte" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="wahrheitswerte"><span class="header-section-number">4.1.3</span> Wahrheitswerte</h3>
+<p>Wahrheitswerte heissen in Excel <code>WAHR</code> und <code>FALSCH</code>. Wahrheitswerte heissen im Excel Jargon <strong>logische Werte</strong>. Während der Werteeingabe werden Wahrheitswerte unabhängig von der Gross- und Kleinschreibung automatisch erkannt.</p>
+<p>Im Formelmodus dürfen Wahrheitswerte <em>nicht</em> in Anführungszeichen eingeschlossen werden, weil sonst die Symbole als Zeichenkette behandelt werden.</p>
+<p>Der Datentyp <em>Wahrheitswerte</em> wird in Excel mit der Funktion <code>ISTLOG()</code> geprüft. Die Funktion <code>ISTZLOG()</code> liefert <code>WAHR</code>, wenn der Wert ein Wahrheitswert ist, und sonst <code>FALSCH</code>.</p>
+</section>
+<section id="fehlerwerte" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="fehlerwerte"><span class="header-section-number">4.1.4</span> Fehlerwerte</h3>
+<p>Fehlerwerte ist in Excel ein besonderer Datentyp, um Fehler zu signalisieren. Fehler beginnen immer mit einem Gatter (<code>#</code>), das von einem sog. <em>Fehlerbezeichner</em> gefolgt wird. In der Regel werden Fehlerwerte automatisch erzeugt, es ist aber möglich, Fehlerwerte auch manuell einzugeben. Bei der manuellen Eingabe von Fehlerwerten werden nur die gültigen Fehlerbezeichner akzeptiert. Andere Symbolfolgen werden als Zeichenketten interpretiert.</p>
+<p>Excels gültige Fehlerwerte sind <code>#NV</code>, <code>#NULL!</code>, <code>#WERT!</code>, <code>#BEZUG!</code>, <code>#DIV/0!</code>, <code>#ZAHL!</code>, <code>#NAME?</code>, <code>#KALK!</code>, <code>#ÜBERLAUF!</code>, <code>#DATEN_ABRUFEN!</code> und <code>#ZAHL!</code>.</p>
+<p>Der Wert <code>#NV</code> wird in Excel verwendet, um einen ungültigen Wert zu verweisen. Dieser Wert ist nicht gleichbedeutend mit fehlenden Werten.</p>
+<p>Der Datentyp <em>Fehlerwert</em> wird in Excel mit der Funktion <code>ISTFEHLER()</code> geprüft. Die Funktion <code>ISTFEHLER()</code> liefert <code>WAHR</code>, wenn der Wert ein Fehlerwert ist, und sonst <code>FALSCH</code>. Um einen bestimmten Fehlerwert zu prüfen, kann die Funktion <code>FEHLER.TYP()</code> mit dem entsprechenden Fehlerbezeichner als Argument verwendet werden. Diese Funktion gibt einen eindeutigen Zahlenwert für den Fehler zurück. Ist der Wert kein Fehlerwert, dann wird der Fehler <code>#NV</code> zurückgegeben.</p>
+</section>
+<section id="formeln" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="formeln"><span class="header-section-number">4.1.5</span> Formeln</h3>
+<p>Formeln sind ein eigener Datentyp, die mit dem Gleich-Dekorator (<code>=</code>) beginnen. Eine Formel besteht immer aus einem Wert, einem Funktionsaufruf oder einer Kombination von Werten und Funktionsaufrufen, die durch Operatoren verknüpft wurden.</p>
+<p>Der Datentyp <em>Formel</em> wird in Excel mit der Funktion <code>ISTFORMEL()</code> geprüft. Die Funktion <code>ISTFORMEL()</code> liefert <code>WAHR</code>, wenn der Wert eine Formel ist, und sonst <code>FALSCH</code>.</p>
+<p>Formeln sind in Excel ein besonderer Datentyp, denn eine Zelle mit einer Formel hat immer zwei Datentypen. Der erste Datentyp ist der Datentyp <em>Formel</em>, der zweite Datentyp ist der Datentyp des Formelergebnisses.</p>
+</section>
+<section id="leere-zellen" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="leere-zellen"><span class="header-section-number">4.1.6</span> Leere Zellen</h3>
+<p>Lehre Zellen sind Zellen, die keinen Wert enthalten. Leere Zellen zeigen fehlende Werte in Excel an.</p>
+<p>Die Leere Zelle ist für Excel ein eingener Datentyp und wird mit der Funktion <code>ISTLEER()</code> geprüft. Die Funktion <code>ISTLEER()</code> liefert <code>WAHR</code>, wenn der Wert eine leere Zelle ist, und sonst <code>FALSCH</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine leere Zelle und eine leere Zeichenkette lassen sich mit dem Auge nicht unterscheiden. Die Funktion <code>ISTLEER()</code> liefert für eine leere Zeichenkette <code>FALSCH</code> zurück, weil die Zelle einen Wert enthält.</p>
+</div>
+</div>
+<p>Leere Zellen als Ergebnis einer Formel werden von Excel in die Zahl <code>0</code> umgewandelt. Im Kapitel <a href="../variablen/kapitel.html#sec-funktionen">Abschnitt&nbsp;<span>6.2</span></a> wird gezeigt, wie sich leere Zellen von Zellen mit dem Wert <code>0</code> unterscheiden lassen. Im <a href="../variablen/kapitel.html#sec-funktionsketten-leerezelle">Abschnitt&nbsp;<span>6.4.1</span></a> wird auf leere Zellen als Funktionsergebnisse ausführlich eingegangen.</p>
+</section>
 </section>
 <section id="dekoratoren" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="dekoratoren"><span class="header-section-number">4.2</span> Dekoratoren</h2>
-<p>Problem&nbsp;Automatische Typumwandlung</p>
-<p>Excel kennt</p>
+<div id="def-dekorator" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.1 </strong></span>Ein <strong>Dekorator</strong> ist Sprachelement einer Programmiersprache, mit dem die normale Interpretation von Symbolen verändert werden kann.</p>
+</div>
+<p>Excel hat zwei Dekoratoren, als erstes Symbol einer Zelle stehen müssen. D.h. es dürfen auch keine Leerzeichen vor einem Dekorator stehen. Die beiden Dekoratoren sind:</p>
 <ul>
-<li>Der Tick-Dekorator (<code>'</code>)</li>
-<li>Der Gleich Dekorator (<code>=</code>)</li>
+<li>Der Apostroph-Dekorator (<code>'</code>)</li>
+<li>Der Gleich-Dekorator (<code>=</code>)</li>
 </ul>
+<section id="sec-text-dekorator" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="sec-text-dekorator"><span class="header-section-number">4.2.1</span> Apostroph-Dekoraktor</h3>
+<p>Der Apostroph-Dekorator (<code>'</code>) erzwingt, dass die nachfolgenden Symbole als Zeichenkette interpretiert werden müssen.</p>
+<p>Mithilfe des Apostroph-Dekorators wird die automatische Typerkennung für die laufende Eingabe deaktiviert. Auf diese Weise lassen sich Zeichenketten eingeben, die nur aus Ziffern bestehen oder Zeichenketten, die Datentumswerten ähneln.</p>
+<p>Der Apostroph-Dekorator muss zwingend verwendet werden, wenn auf eine Zeichenkette eine der folgenden Bedingungen zutrifft.</p>
+<ul>
+<li>Die Zeichenkette beginnt mit einem Gleichheitszeichen (<code>=</code>), einem Pluszeichen (<code>+</code>), einem Minuszeichen (<code>-</code>) oder einem Prozentzeichen (<code>%</code>).</li>
+<li>Die Zeichenkette besteht nur aus Ziffern, dem Dezimaltrenner (<code>.</code>) oder dem Tausendertrenner (<code>‘</code>) enthält</li>
+<li>Die Zeichenkette ähnelt der wissenschaftliche Notation für Zahlen mit und ohne Vorzeichen für den Exponenten. Z.B. <code>5.E3</code>.</li>
+<li>Die Zeichenkette ähnelt einm Datum.</li>
+<li>Die Zeichenkette entspricht einen Fehlerwert, unabhängig von der Schreibweise. Z.B. <code>#nv</code>.</li>
+<li>Die Zeichenkette entspricht einem Wahrheitswert (<code>WAHR</code> oder <code>FALSCH</code>) unabhängig von der Schreibweise.</li>
+</ul>
+<p>Das Apostroph kann entfallen, wenn die aktive Zelle vorher bereits als Datentyp <code>Text</code> formatiert wurde. In diesem Fall verlieren alle Symbole ihre spezielle Bedeutung. In solche Zellen können keine Formeln eingegeben werden.</p>
 </section>
-<section id="bereiche-vektoren-und-matrizen" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="bereiche-vektoren-und-matrizen"><span class="header-section-number">4.3</span> Bereiche: Vektoren und Matrizen</h2>
+<section id="sec-formel-dekorator" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="sec-formel-dekorator"><span class="header-section-number">4.2.2</span> Gleich-Dekorator</h3>
+<p>Der Gleich-Dekorator (<code>=</code>) zeigt an, dass die nachfolgenden Symbole als Formel interpretiert werden müssen.</p>
+<p>Bei der Eingabe des Gleich-Dekorators wechselt Excel für die laufende Eingabe in den Formelmodus. Mit beeenden der Eingabe mit der Eingabetaste wird der Formelmodus wieder verlassen und das Ergebnis der eingegebenen Formel wird in der Zelle angezeigt.</p>
+</section>
+</section>
+<section id="komplexe-datenstrukturen" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="komplexe-datenstrukturen"><span class="header-section-number">4.3</span> Komplexe Datenstrukturen</h2>
+<p>Excel kennt zwei komplexe Datenstrukturen:</p>
+<ul>
+<li>Bereiche</li>
+<li>Tabellen</li>
+</ul>
+<p>Excels komplexe Datenstrukturen müssen einen fundamentalen Datentyp haben und können keine komplexen Datenstrukturen schachteln.</p>
+<section id="bereiche-vektoren-und-matrizen" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="bereiche-vektoren-und-matrizen"><span class="header-section-number">4.3.1</span> Bereiche: Vektoren und Matrizen</h3>
 <p>Excels Grundstruktur ist das Rechteck, dass durch die markierten Zellen entsteht. Dieses Rechteck heisst im Excel Jargon ein <strong>Bereich</strong>.</p>
 <p>Obwohl Excel Vektorähnliche Bereiche kennt, ist es sinnvolle sich Excels Bereiche immer als Matrizen vorzustellen.</p>
 <ul>
@@ -317,9 +414,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Ein Bereich mit nur einer Zeile oder einer Spalte ist eine 1xn- oder 1-dimensionale Matrix.</li>
 <li>Ein Bereich mit mehreren Zeilen und Spalten ist eine nxm- oder 2-dimensionale Matrix.</li>
 </ul>
-<p>Excels Bereiche haben <em>immer</em> einen fundamentalen Datentyp.</p>
-<section id="dynamische-bereiche" class="level3" data-number="4.3.1">
-<h3 data-number="4.3.1" class="anchored" data-anchor-id="dynamische-bereiche"><span class="header-section-number">4.3.1</span> Dynamische Bereiche</h3>
+<p>Funktionen können Bereiche als Ergebnis haben. In diesem Fall werden die restlichen Werte zeilen und spaltenweise unterhalb bzw. rechts von der entsprechenden Formel ausgegeben</p>
 </section>
 </section>
 <section id="tabellen" class="level2" data-number="4.4">
@@ -327,13 +422,28 @@ ul.task-list li input[type="checkbox"] {
 <p>Tabellen sind benannte Bereiche, die Vektoren enthalten. Tabellen bestehen aus Spalten, in denen die Werte als Vektoren stehen. Excel Tabellen haben immer Überschriften.</p>
 <p>Excel kennt zwei Arten von Tabellen: Wertetabellen und Pivot-Tabellen.</p>
 <div id="def-wertetabelle" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4.1 </strong></span><strong>Wertetabellen</strong> sind Listen, die Listen mit gleicher Länge schachteln.</p>
+<p><span class="theorem-title"><strong>Definition 4.2 </strong></span><strong>Wertetabellen</strong> sind Listen, die Listen mit gleicher Länge schachteln.</p>
 </div>
 <p>Wertetabellen entsprechen ungefähr einem <em>Datenrahmen</em> (engl. <em>data-frame</em>) in anderen Programmiersprachen. Der Unterschied zu einem Datenrahmen ist, dass Excels Wertetabellen <em>keine Vektoren</em> erzwingen. Deshalb können in der gleichen Spalte einer Wertetabelle verschiedene Datentypen gemischt werden.</p>
 <p>Pivot-Tabellen sind Strukturen zur einfachen Datenanalyse. Pivot-Tabellen entsprechen einer tabellarischen Darstellung der Daten. Ihre Funktion ist auf wenige analytische Funktionen beschränkt und die dargestellten Werte lassen sich</p>
-<section id="tabellenadressierung" class="level3" data-number="4.4.1">
-<h3 data-number="4.4.1" class="anchored" data-anchor-id="tabellenadressierung"><span class="header-section-number">4.4.1</span> Tabellenadressierung</h3>
-<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em>.</p>
+</section>
+<section id="adressierung-von-datenstrukturen" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="adressierung-von-datenstrukturen"><span class="header-section-number">4.5</span> Adressierung von Datenstrukturen</h2>
+<div id="def-bezug" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.3 </strong></span>Ein <strong>Bezug</strong> ist</p>
+</div>
+<section id="arbeitsblattadressierung" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="arbeitsblattadressierung"><span class="header-section-number">4.5.1</span> Arbeitsblattadressierung</h3>
+<section id="relative-adressen" class="level4" data-number="4.5.1.1">
+<h4 data-number="4.5.1.1" class="anchored" data-anchor-id="relative-adressen"><span class="header-section-number">4.5.1.1</span> Relative Adressen</h4>
+</section>
+<section id="absolute-adressen" class="level4" data-number="4.5.1.2">
+<h4 data-number="4.5.1.2" class="anchored" data-anchor-id="absolute-adressen"><span class="header-section-number">4.5.1.2</span> Absolute Adressen</h4>
+</section>
+</section>
+<section id="tabellenadressierung" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="tabellenadressierung"><span class="header-section-number">4.5.2</span> Tabellenadressierung</h3>
+<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em> bzw. ein <em>dynamischer Bereich</em> (s. <span class="quarto-unresolved-ref">?sec-dynamisches-feld</span>).</p>
 
 
 </section>
