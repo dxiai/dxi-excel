@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Einführung in die Datenwissenschaft mit Excel - 16&nbsp; Pivot-Tabellen</title>
+<title>Einführung in die Datenwissenschaft mit Excel - 3&nbsp; Bedienoberfläche</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../references.html" rel="next">
-<link href="../../kapitel/daten-visualisieren/kapitel.html" rel="prev">
+<link href="../../kapitel/daten-sammeln/kapitel.html" rel="next">
+<link href="../../kapitel/einleitung/excel-versionen.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-beschreiben/kapitel.html">Deskriptive Datenanalyse</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-visualisieren/pivot-tabellen.html"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Pivot-Tabellen</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/einleitung/kapitel.html">Ausgangslage und Vorbereitung</a></li><li class="breadcrumb-item"><a href="../../kapitel/einleitung/02_oberflaeche.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bedienoberfläche</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -131,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../kapitel/einleitung/02_oberflaeche.html" class="sidebar-item-text sidebar-link">
+  <a href="../../kapitel/einleitung/02_oberflaeche.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bedienoberfläche</span></span></a>
   </div>
 </li>
@@ -242,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../kapitel/daten-visualisieren/pivot-tabellen.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../kapitel/daten-visualisieren/pivot-tabellen.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Pivot-Tabellen</span></span></a>
   </div>
 </li>
@@ -260,14 +260,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#arbeitsblätter" id="toc-arbeitsblätter" class="nav-link active" data-scroll-target="#arbeitsblätter"><span class="header-section-number">3.1</span> Arbeitsblätter</a></li>
+  <li><a href="#arbeitsblattreiter" id="toc-arbeitsblattreiter" class="nav-link" data-scroll-target="#arbeitsblattreiter"><span class="header-section-number">3.2</span> Arbeitsblattreiter</a></li>
+  <li><a href="#menubalken" id="toc-menubalken" class="nav-link" data-scroll-target="#menubalken"><span class="header-section-number">3.3</span> Menubalken</a></li>
+  <li><a href="#funktionsleiste" id="toc-funktionsleiste" class="nav-link" data-scroll-target="#funktionsleiste"><span class="header-section-number">3.4</span> Funktionsleiste</a></li>
+  <li><a href="#statusleiste" id="toc-statusleiste" class="nav-link" data-scroll-target="#statusleiste"><span class="header-section-number">3.5</span> Statusleiste</a>
+  <ul class="collapse">
+  <li><a href="#zoom-der-tabellenanzeige" id="toc-zoom-der-tabellenanzeige" class="nav-link" data-scroll-target="#zoom-der-tabellenanzeige"><span class="header-section-number">3.5.1</span> Zoom der Tabellenanzeige</a></li>
+  <li><a href="#status-und-fehlermeldungen" id="toc-status-und-fehlermeldungen" class="nav-link" data-scroll-target="#status-und-fehlermeldungen"><span class="header-section-number">3.5.2</span> Status und Fehlermeldungen</a></li>
+  <li><a href="#schnellauswertung-eines-zellenbereichs" id="toc-schnellauswertung-eines-zellenbereichs" class="nav-link" data-scroll-target="#schnellauswertung-eines-zellenbereichs"><span class="header-section-number">3.5.3</span> Schnellauswertung eines Zellenbereichs</a></li>
+  <li><a href="#anpassen-der-statusleiste" id="toc-anpassen-der-statusleiste" class="nav-link" data-scroll-target="#anpassen-der-statusleiste"><span class="header-section-number">3.5.4</span> Anpassen der Statusleiste</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Pivot-Tabellen</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bedienoberfläche</span></h1>
 </div>
 
 
@@ -282,23 +298,130 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<section id="arbeitsblätter" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="arbeitsblätter"><span class="header-section-number">3.1</span> Arbeitsblätter</h2>
+<p>Der Tabellenbereich ist das zentrale Element von Excels Arbeitsoberfläche. Dabei handelt es sich um den Datenbereich, der sich deutlich durch das beschriftete Gitterraster im Zentrum des Excel-Fensters abhebt und den Grossteil der Arbeitsoberfläche einnimmt. Über dieses Raster wird primär mit Daten und Funktionen interagiert. Der Tabellenbereich zeigt einen Ausschnitt des aktuellen Arbeitsblatts.</p>
+<div id="fig-arbeitsfenster" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/excel_arbeitsfenster.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;3.1: Das Excel Arbeitsfenster</figcaption>
+</figure>
+</div>
+<div id="def-arbeitsblatt" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3.1 </strong></span>Ein Excel Arbeitsblatt ist ein Gitterraster, das aus Zellen besteht. Jede Zelle kann einen Wert enthalten.</p>
+</div>
+<div id="def-zelle" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3.2 </strong></span>Eine <strong>Zelle</strong> ist ein Feld im Raster eines Arbeitsblatt.</p>
+</div>
+<p>Excel zeigt durch eine Hervorhebung an, welche Zelle aktuell markiert ist. Diese <strong>Markierung</strong> kann mit der Maus oder mit den Pfeiltasten bewegt werden. Wenn nur eine Zelle markiert ist, dann entspricht die Markierung der <strong>aktiven Zelle</strong>. Eine Markierung kann auch mehrere Zellen umfassen. In diesem Fall wird die <em>aktive Zelle</em> durch eine helle Hervorhebung gekennzeichnet, während der Rest der Markierung ausgegraut ist. Alle Eingaben mit der Tastatur bezeihen sich immer auf die aktive Zelle.</p>
+<p>Oben und Links vom Tabellenbereich findet sich die Beschriftung für die Spalten und Zeilen. Spalten werden mit Buchstaben benannt, Zeilen werden mit Zahlen benannt. Daraus ergibt sich ein Koordinatensystem, mit dem jede Zelle eindeutig adressiert wird.</p>
+<div id="def-koordinaten" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3.3 </strong></span>Die Koordinaten einer Zelle bezeichnen wir als <strong>Adresse</strong>.</p>
+</div>
+<p>Im <a href="../datentypen/kapitel.html#sec-adressierung-ds">Abschnitt&nbsp;<span>5.4</span></a> werden die verschiendenen Arten der Adressierung von Zellen und Zellbereichen detailliert beschrieben.</p>
+</section>
+<section id="arbeitsblattreiter" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="arbeitsblattreiter"><span class="header-section-number">3.2</span> Arbeitsblattreiter</h2>
+<p>Direkt unter dem Tabellenbereich zeigt Excel <em>Register</em> mit den Namen der Arbeitsblätter. Diese Register zeigen alle Arbeitsblätter einer Excel-Arbeitsmappe. Wenn eine neue, leere Arbeitsmappe erstellt wird, dann enthält diese nur ein Arbeitsblatt mit dem Namen <code>Tabelle 1</code>. Mit dem <code>Plus</code>-Symbol neben dem <strong>Arbeitsblattregistern</strong> können zusätzliche Arbeitsblätter in der Arbeitsmappe erzeugt werden.</p>
+</section>
+<section id="menubalken" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="menubalken"><span class="header-section-number">3.3</span> Menubalken</h2>
+<div id="fig-menubalken" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/excel_menubalken.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;3.2: Menubalken</figcaption>
+</figure>
+</div>
+<p>Am oberen Fensterrand von Excel befindet sich der <strong>Menubalken</strong>, der im Excel Jargon “Ribbon” heisst. Der Menubalken ist in verschiedene Kategorien unterteilt und sortiert so die verschiedenen interaktiven <strong>Kommandos</strong> von Excel.</p>
+<div id="def-kommando" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 3.4 </strong></span>Ein <strong>Kommando</strong> ist eine <em>interaktive Anweisung</em> an Excel, eine bestimmte Aktion auszuführen.</p>
+</div>
+<p>Kommandos werden immer interaktiv ausgelöst und lassen sich meist nicht durch Excel-Funktionen ersetzen.</p>
+<p>Für die tägliche Arbeit sind die folgenden Kategorien des Menubalkens am wichtigsten:</p>
+<ul>
+<li>Start</li>
+<li>Einfügen</li>
+<li>Formeln</li>
+<li>Daten</li>
+<li>Tabelle</li>
+</ul>
+</section>
+<section id="funktionsleiste" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="funktionsleiste"><span class="header-section-number">3.4</span> Funktionsleiste</h2>
+<p>Die Funktionsleiste unterstützt die Arbeit mit der <em>aktiven Zelle</em>. Die Funktionsleiste wird verwendet, wenn mit speziellen Werten oder mit Komplexen Formeln gearbetiet wird.</p>
+<div id="fig-funktionsleiste" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/excel_funktionsleiste.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;3.3: Die Excel Funktionsleiste</figcaption>
+</figure>
+</div>
+<p>Die Funktionsleiste hat 6 Bedienfelder.</p>
+<p>Ganz links ist das <strong>Adressfeld</strong>. Das <em>Adressfeld</em> zeigt uns immer die Adresse der <em>aktiven Zelle</em> an. Wenn wir dieses Feld anklicken, dann können wir eine andere Adresse eintragen. In diesem Fall springt die Markierung für die aktive Zelle an die entsprechende Adresse.</p>
+<p>Daneben befinden sich zwei unscheinbare Dreiecke. Dieses Bedienfeld verbirgt eine Liste der <em>benannten Bereiche</em> in der aktuellen Arbeitsmappe. Bei einer leeren Arbeitsmappe ist diese Liste leer.</p>
+<p>Die nächsten vier Bedienfelder gehören zusammen.</p>
+<p>Ganz rechts wird der Inhalt der aktuellen Zelle angezeigt. Bei einer leeren Tabelle ist dieser Bereich selbstverständlich leer. Wenn dieser Bereich mit der Maus ausgewählt wird, dann erscheint ein senkrechter, blinkender Strick, der signalisiert, dass Werte oder Formeln eingegeben werden können. Wenn nun etwas eingegeben wird, dann erscheint diese Eingabe auch in der aktiven Zelle.</p>
+<p>Ist die Eingabe abgeschlossen, dann kann diese mit dem grünen Haken oder mit der Eingabetaste bestätigt werden.</p>
+<p>Ist bei der Eingabe ein Fehler passiert, dann lässt sich die Eingabe mit einem Mausklick auf das rote X oder mit der <code>ESC</code>-Taste abbrechen. Die Eingabe wird dann auf den ursprünglichen Zustand zurückgesetzt.</p>
+<p>Wird die aktive Zelle nicht bearbeitet, dann sind der Hacken und das X ausgegraut und können nicht verwendet werden.</p>
+<p>Direkt neben dem Eingabefeld mit dem Inhalt der aktiven Zelle ist das Bedienfeld für den <em>Formelgenerator</em>. Der Formelgenerator ist ein Hilfsdialog, der die Suche nach geeigneten Formeln unterstützt. Der Formelgenerator unterscheidet sich von Menubalken <em>Formeln</em> durch eine kurze Erklärung über die Arbeitsweise einer ausgewählten Funktion.</p>
+</section>
+<section id="statusleiste" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="statusleiste"><span class="header-section-number">3.5</span> Statusleiste</h2>
+<p>Am unteren Rand von Excels Anwendungsfenster findet sich die Statusleiste. Die Statusleiste hat drei zentrale Funktionen:</p>
+<ul>
+<li>Zoom der Tabellenanzeige,</li>
+<li>Status von Excel und Fehlermeldungen und</li>
+<li>Schnellauswertung eines Zellbereichs.</li>
+</ul>
+<section id="zoom-der-tabellenanzeige" class="level3" data-number="3.5.1">
+<h3 data-number="3.5.1" class="anchored" data-anchor-id="zoom-der-tabellenanzeige"><span class="header-section-number">3.5.1</span> Zoom der Tabellenanzeige</h3>
+<p>Der aktuelle Zoom der Arbeitsmappe und die Zoom-Einstellung finden sich ganz rechts in der Statusleiste. Dabei wird der aktuelle Zoom als ein Prozentwert dargestellt. Über den “Schieberegler” links daneben lässt sich der Zoom anpassen.</p>
+<p>Wenn der Zoom-Wert angeklickt wird, dann erscheint ein kleiner Dialog, über denden Zoom-Wert als Prozentzahl direkt eingegeben kann. Das ist praktisch, wenn für eine Präsentation oder zum Arbeiten ein bestimmter Zoom-Wert bevorzugt wird.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Work in Progress
+Achtung
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>Die Zoom-Einstellung muss für jeddes Arbeitsblatt separat eingestellt werden und wird beim nächsten Speichern der Arbeitsmappe mitgesichert.</p>
 </div>
 </div>
-<p>Pivot-Tabellen sind eine spezielle Form von Tabellen, die zur Datenanalyse verwendet werden. Pivot-Tabellen sind eine tabellarische Darstellung der Daten. Weil die Daten für Folgeberechnungen nicht zuverlässig zugegriffen werden können, sollten Pivot-Tabellen als Darstellungsform und nicht als Datenstruktur behandelt werden.</p>
-<p>Anders als Wertetabellen (s. <a href="../datentypen/kapitel.html#def-wertetabelle">Definition&nbsp;<span>5.2</span></a>) sind Pivot-Tabellen keine benannte Struktur und die dargestellten Werte können nicht über die Tabellenadressierung abgefragt werden. Es gibt zwar eine Reihe von Funktionen, die auf Pivot-Tabellen angewendet werden können, aber diese Funktionen lassen sich nicht konsistent mit anderen Funktionen der Datenanalyse verkettet werden.</p>
+</section>
+<section id="status-und-fehlermeldungen" class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2" class="anchored" data-anchor-id="status-und-fehlermeldungen"><span class="header-section-number">3.5.2</span> Status und Fehlermeldungen</h3>
+<p>Auf der linken Seite der Statusleiste ist der Status Bereich. Normalerweise wird an dieser Stelle den Wert <code>Bereit</code> angezeigt. Wenn eine Zelle bearbeitet wird, dann erscheint der Status <code>Eingeben</code> oder <code>Zeigen</code>.</p>
+<p>Wenn einen Fehler bei der Eingabe einer Formel auftritt, dann wird neben dem Status eine <strong>Fehlermeldung</strong> eingeblendet. Diese unscheinbare Fehlermeldung wird immer dann wichtig, wenn eine Formel oder ein Algorithmus nicht zu rechnen scheint. In solchen Fällen hilft ein Blick auf den linken Rand der Statusleiste bei der Fehlersuche. Bei Fehlern zeit die Statusleiste einen Hinweis auf den Fehler sowie die Adresse der Zelle, an der Excel den Fehler vermutet.</p>
+<p>Tritt ein Fehler auf, dann bricht Excel die Berechnung der gesamten Arbeitsmappe <em>sofort</em> ab und ignoriert alle Formeln, die nach der fehlerhaften Zelle berechnet werden müssten, selbst wenn die Formeln unabhängig voneinander wären. Damit Excel wieder arbeitet, müssen zuerst alle Fehler behoben werden.</p>
+</section>
+<section id="schnellauswertung-eines-zellenbereichs" class="level3" data-number="3.5.3">
+<h3 data-number="3.5.3" class="anchored" data-anchor-id="schnellauswertung-eines-zellenbereichs"><span class="header-section-number">3.5.3</span> Schnellauswertung eines Zellenbereichs</h3>
+<p>Im mittleren Bereich der Statusleiste ist normalerweise leer. Hier versteckt sich eine sehr nützliche Funktion zur schnellen Zusammenfassung der Werte in einem Bereich: Werden mehrere Zellen markiert, dann zeigt Excel den Mittelwert, die Summe und die Anzahl der ausgewählten Zellen an.</p>
+</section>
+<section id="anpassen-der-statusleiste" class="level3" data-number="3.5.4">
+<h3 data-number="3.5.4" class="anchored" data-anchor-id="anpassen-der-statusleiste"><span class="header-section-number">3.5.4</span> Anpassen der Statusleiste</h3>
+<p>Wenn Sie mit der rechten Maustaste (Win) bzw. mit Control-Klick (Mac) auf die Statusleiste klicken, dann erhalten Sie eine Auswahlliste der Funktionen, die in der Statusleiste angezeigt werden sollen.</p>
+<p>So lassen sich zusätzliche Funktionen in der Statusleiste aktivieren oder störende Elemente deaktivieren.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Diese Einstellungen beziehen sich ausschliesslich auf die Excel-Installation und werden nicht zusammen mit der Arbeitsmappe gespeichert!</p>
+</div>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -536,13 +659,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../kapitel/daten-visualisieren/kapitel.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span>
+      <a href="../../kapitel/einleitung/excel-versionen.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Excel Versionen</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../references.html" class="pagination-link">
-        <span class="nav-page-text">Referenzen</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../kapitel/daten-sammeln/kapitel.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -550,4 +673,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></div></div></footer></body></html>
+</body></html>
