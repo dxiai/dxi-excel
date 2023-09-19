@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -272,12 +291,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#komplexe-datenstrukturen" id="toc-komplexe-datenstrukturen" class="nav-link" data-scroll-target="#komplexe-datenstrukturen"><span class="header-section-number">4.3</span> Komplexe Datenstrukturen</a>
   <ul class="collapse">
   <li><a href="#bereiche-vektoren-und-matrizen" id="toc-bereiche-vektoren-und-matrizen" class="nav-link" data-scroll-target="#bereiche-vektoren-und-matrizen"><span class="header-section-number">4.3.1</span> Bereiche: Vektoren und Matrizen</a></li>
+  <li><a href="#tabellen" id="toc-tabellen" class="nav-link" data-scroll-target="#tabellen"><span class="header-section-number">4.3.2</span> Tabellen</a></li>
   </ul></li>
-  <li><a href="#tabellen" id="toc-tabellen" class="nav-link" data-scroll-target="#tabellen"><span class="header-section-number">4.4</span> Tabellen</a></li>
-  <li><a href="#adressierung-von-datenstrukturen" id="toc-adressierung-von-datenstrukturen" class="nav-link" data-scroll-target="#adressierung-von-datenstrukturen"><span class="header-section-number">4.5</span> Adressierung von Datenstrukturen</a>
+  <li><a href="#adressierung-von-datenstrukturen" id="toc-adressierung-von-datenstrukturen" class="nav-link" data-scroll-target="#adressierung-von-datenstrukturen"><span class="header-section-number">4.4</span> Adressierung von Datenstrukturen</a>
   <ul class="collapse">
-  <li><a href="#arbeitsblattadressierung" id="toc-arbeitsblattadressierung" class="nav-link" data-scroll-target="#arbeitsblattadressierung"><span class="header-section-number">4.5.1</span> Arbeitsblattadressierung</a></li>
-  <li><a href="#tabellenadressierung" id="toc-tabellenadressierung" class="nav-link" data-scroll-target="#tabellenadressierung"><span class="header-section-number">4.5.2</span> Tabellenadressierung</a></li>
+  <li><a href="#arbeitsblattadressen" id="toc-arbeitsblattadressen" class="nav-link" data-scroll-target="#arbeitsblattadressen"><span class="header-section-number">4.4.1</span> Arbeitsblattadressen</a></li>
+  <li><a href="#tabellenadressen" id="toc-tabellenadressen" class="nav-link" data-scroll-target="#tabellenadressen"><span class="header-section-number">4.4.2</span> Tabellenadressen</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -408,44 +427,225 @@ Warnung
 <section id="bereiche-vektoren-und-matrizen" class="level3" data-number="4.3.1">
 <h3 data-number="4.3.1" class="anchored" data-anchor-id="bereiche-vektoren-und-matrizen"><span class="header-section-number">4.3.1</span> Bereiche: Vektoren und Matrizen</h3>
 <p>Excels Grundstruktur ist das Rechteck, dass durch die markierten Zellen entsteht. Dieses Rechteck heisst im Excel Jargon ein <strong>Bereich</strong>.</p>
-<p>Obwohl Excel Vektorähnliche Bereiche kennt, ist es sinnvolle sich Excels Bereiche immer als Matrizen vorzustellen.</p>
+<p>Obwohl Excel vektorähnliche Bereiche kennt, ist es sinnvolle sich Excels Bereiche immer als Matrizen vorzustellen.</p>
 <ul>
 <li>Ein Bereich mit nur einer Zelle ist eine 1x1- oder 0-dimensionale Matrix.</li>
-<li>Ein Bereich mit nur einer Zeile oder einer Spalte ist eine 1xn- oder 1-dimensionale Matrix.</li>
+<li>Ein Bereich mit nur einer Zeile oder einer Spalte ist für Excel eine 1xn- oder 1-dimensionale Matrix. Diese speziellen Matrizen werden in der Regel als <em>Vektoren</em> bezeichnet.</li>
 <li>Ein Bereich mit mehreren Zeilen und Spalten ist eine nxm- oder 2-dimensionale Matrix.</li>
 </ul>
-<p>Funktionen können Bereiche als Ergebnis haben. In diesem Fall werden die restlichen Werte zeilen und spaltenweise unterhalb bzw. rechts von der entsprechenden Formel ausgegeben</p>
+<p>Funktionen können Bereiche als Ergebnis haben. In diesem Fall werden die restlichen Werte zeilen und spaltenweise unterhalb bzw. rechts von der entsprechenden Formel ausgegeben.</p>
 </section>
-</section>
-<section id="tabellen" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="tabellen"><span class="header-section-number">4.4</span> Tabellen</h2>
+<section id="tabellen" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="tabellen"><span class="header-section-number">4.3.2</span> Tabellen</h3>
 <p>Tabellen sind benannte Bereiche, die Vektoren enthalten. Tabellen bestehen aus Spalten, in denen die Werte als Vektoren stehen. Excel Tabellen haben immer Überschriften.</p>
-<p>Excel kennt zwei Arten von Tabellen: Wertetabellen und Pivot-Tabellen.</p>
+<p>Excel kennt zwei Arten von Tabellen:</p>
+<ul>
+<li>Wertetabellen</li>
+<li>Pivot-Tabellen.</li>
+</ul>
 <div id="def-wertetabelle" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 4.2 </strong></span><strong>Wertetabellen</strong> sind Listen, die Listen mit gleicher Länge schachteln.</p>
 </div>
-<p>Wertetabellen entsprechen ungefähr einem <em>Datenrahmen</em> (engl. <em>data-frame</em>) in anderen Programmiersprachen. Der Unterschied zu einem Datenrahmen ist, dass Excels Wertetabellen <em>keine Vektoren</em> erzwingen. Deshalb können in der gleichen Spalte einer Wertetabelle verschiedene Datentypen gemischt werden.</p>
-<p>Pivot-Tabellen sind Strukturen zur einfachen Datenanalyse. Pivot-Tabellen entsprechen einer tabellarischen Darstellung der Daten. Ihre Funktion ist auf wenige analytische Funktionen beschränkt und die dargestellten Werte lassen sich</p>
-</section>
-<section id="adressierung-von-datenstrukturen" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="adressierung-von-datenstrukturen"><span class="header-section-number">4.5</span> Adressierung von Datenstrukturen</h2>
-<div id="def-bezug" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 4.3 </strong></span>Ein <strong>Bezug</strong> ist</p>
+<p><strong>Wertetabellen</strong> entsprechen ungefähr einem <em>Datenrahmen</em> (engl. <em>data-frame</em>) in anderen Programmiersprachen. Der Unterschied zu einem Datenrahmen ist, dass Excels Wertetabellen <em>keine Vektoren</em> erzwingen. Deshalb können in der gleichen Spalte einer Wertetabelle verschiedene Datentypen gemischt werden.</p>
+<div id="def-pivottabelle" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.3 </strong></span><strong>Pivot-Tabellen</strong> sind ein Werkzeug zum <em>interaktiven Zusammenfassen</em> von Daten.</p>
 </div>
-<section id="arbeitsblattadressierung" class="level3" data-number="4.5.1">
-<h3 data-number="4.5.1" class="anchored" data-anchor-id="arbeitsblattadressierung"><span class="header-section-number">4.5.1</span> Arbeitsblattadressierung</h3>
-<section id="relative-adressen" class="level4" data-number="4.5.1.1">
-<h4 data-number="4.5.1.1" class="anchored" data-anchor-id="relative-adressen"><span class="header-section-number">4.5.1.1</span> Relative Adressen</h4>
-</section>
-<section id="absolute-adressen" class="level4" data-number="4.5.1.2">
-<h4 data-number="4.5.1.2" class="anchored" data-anchor-id="absolute-adressen"><span class="header-section-number">4.5.1.2</span> Absolute Adressen</h4>
+<p><strong>Pivot-Tabellen</strong> erleichtern einfache Datenanalysen. Pivot-Tabellen entsprechen einer tabellarischen Darstellung der Daten. Ihre Funktion ist auf wenige analytische Funktionen beschränkt und die dargestellten Werte lassen sich nur umständlich weiterverarbeiten.</p>
+<p><em>Pivot-Tabellen</em> sind Arbeitsmappenelemente aber <strong><em>keine Datenstrukturen</em></strong>. Deshalb werden Pivot-Tabellen in diesem Buch ähnlich einer Visualisierung als <em>Darstellungsform</em> behandelt.</p>
 </section>
 </section>
-<section id="tabellenadressierung" class="level3" data-number="4.5.2">
-<h3 data-number="4.5.2" class="anchored" data-anchor-id="tabellenadressierung"><span class="header-section-number">4.5.2</span> Tabellenadressierung</h3>
-<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em> bzw. ein <em>dynamischer Bereich</em> (s. <span class="quarto-unresolved-ref">?sec-dynamisches-feld</span>).</p>
+<section id="adressierung-von-datenstrukturen" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="adressierung-von-datenstrukturen"><span class="header-section-number">4.4</span> Adressierung von Datenstrukturen</h2>
+<div id="def-bezug" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.4 </strong></span>Ein <strong>Bezug</strong> ist die Adresse eines Bereichs.</p>
+</div>
+<p>In Excel gibt es zwei Arten von Bezügen:</p>
+<ul>
+<li>Arbeitsblattadressen</li>
+<li>Tabellenadressen</li>
+</ul>
+<section id="arbeitsblattadressen" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="arbeitsblattadressen"><span class="header-section-number">4.4.1</span> Arbeitsblattadressen</h3>
+<div id="def-arbeitsblattadresse" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.5 </strong></span>Eine <strong>Arbeitsblattadresse</strong> enthält die Koordinaten eines Bereichs auf einem Arbeitsblatt.</p>
+</div>
+<p>Arbeitsblattadressen besteht aus drei Teilen:</p>
+<ul>
+<li>Arbeitsblattname</li>
+<li>Bereichsbeginn</li>
+<li>Bereichsende</li>
+</ul>
+<p>Der Bereichsbeginn verweist immer auf die linke obere Zelle des Bereichs. Der Bereichsende verweist immer auf die rechte untere Zelle des Bereichs. Eine Zelle wird immer durch den Spaltenindex (Buchstabe) und den Zeilenindex (Zahl) identifiziert. Werden die Koordinaten des Bereichsbeginns und des Bereichsendes bei der Eingabe vertauscht, dann wird der Bereich automatisch korrigiert.</p>
+<div id="exm-bereichsadresse" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 4.1 (Arbeitsblattadresse) </strong></span>&nbsp;</p>
+<pre><code>Tabelle1!A1:C3</code></pre>
+</div>
+<p><a href="#exm-bereichsadresse">Beispiel&nbsp;<span>4.1</span></a> verweist auf den Bereich mit drei Spalten und drei Zeilen auf dem Arbeitsblatt <code>Tabelle1</code> beginnend mit der Zelle <code>A1</code> und endend mit der Zelle <code>C3</code>.</p>
+<p>Oft werden Arbeitsblattadressen nicht vollständig sondern gekürzt angegeben. Es gibt zwei Möglichkeiten, um Arbeitsblattadressen zu kürzen:</p>
+<ul>
+<li>Werden Bereiche auf dem gleichen Arbeitsblatt adressiert, dann kann der Tabellenname weggelassen werden.</li>
+<li>Wird ein Bereich mit nur einer Zelle adressiert, dann wird das Bereichsende weggelassen.</li>
+</ul>
+<p>Weil Arbeitsblattadressen von vielen interaktiven Excelkommandos verwendet werden, gibt es zwei Arten von Arbeitsblattadressen:</p>
+<ul>
+<li>Relative Adressen</li>
+<li>Absolute Adressen</li>
+</ul>
+<p>Die Art der Adresse legt fest, wie ein interaktives Kommando mit einer Adresse umgehen soll. Die populärste interaktive Funktion ist das <em>Autoauffüllen</em>. Dabei wird eine Zelle mit einer Formel interaktiv auf einen Bereich von Zellen übertragen.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Autoauffüllen ist eine einfache und beliebte Methode, um Formeln in Excel auf verschiedene Werte wiederholt anzuwenden. Bis 2019 war das Autoauffüllen die einzige Möglichkeit für die Datentransformation.</p>
+<p>Die relative und absolute Adressierung ist eine wichtige Voraussetzung für das Autoauffüllen. Leider ist das Autoauffüllen auch die Ursache für viele Fehler beim Umgang mit Excel.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Excel365 kann das Autoauffüllen durch vektorisierte Funktionen fast vollständig ersetzt werden. Dadurch lassen sich viele Excel-typische Fehler vermeiden. Dadurch ist die Unterscheidung zwischen der relativen und absoluten Adressierung nicht mehr so wichtig.</p>
+</div>
+</div>
+<section id="relative-adressen" class="level4" data-number="4.4.1.1">
+<h4 data-number="4.4.1.1" class="anchored" data-anchor-id="relative-adressen"><span class="header-section-number">4.4.1.1</span> Relative Adressen</h4>
+<div id="def-relative-adresse" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.6 </strong></span>Eine <strong>relative Adresse</strong> ist eine Adresse eines Bereichs, die <em>veränderlich</em> ist.</p>
+</div>
+<p>Relative Adressen werden in Excel von interaktiven Funktionen, wie dem <em>Autoauffüllen</em> verwendet, um die Adressen automatisch anzupassen. Eine relative Adresse wird relativ zur aktuellen Zelle angepasst.</p>
+<p>Ein Beispiel für eine relative Adresse ist <code>A1</code>. Diese Adresse bezeichnet die Zelle, die sich in der ersten Zeile und der ersten Spalte auf dem aktuellen Arbeitsblatt befindet. Wird die adressierte Zelle interaktiv nach unten aufgefüllt, dann wird die Adresse automatisch zu <code>A2</code>, <code>A3</code>, usw. angepasst. Wird die adressierte Zelle nach rechts aufgefüllt, dann wird die Adresse automatisch zu <code>B1</code>, <code>C1</code>, usw. angepasst.</p>
+</section>
+<section id="absolute-adressen" class="level4" data-number="4.4.1.2">
+<h4 data-number="4.4.1.2" class="anchored" data-anchor-id="absolute-adressen"><span class="header-section-number">4.4.1.2</span> Absolute Adressen</h4>
+<div id="def-absolute-adresse" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 4.7 </strong></span>Eine <strong>absolute Adresse</strong> ist eine Adresse eines Bereichs, die ganz oder teilweise <em>unveränderlich</em> ist.</p>
+</div>
+<p>Der unveränderliche Teil einer Arbeitsblattadresse wird mit einem Dollarzeichen (<code>$</code>) markiert. Dieser Teil der Adresse wird bei der Anpassung der Adresse nicht verändert. So lassen sich Adressen angeben, die durch interaktive Kommandos nicht verändert werden.</p>
+<p>Ein Beispiel für eine absolute Adresse ist <code>$A$1</code>. Diese Adresse bezeichnet die Zelle, die sich in der ersten Zeile und der ersten Spalte auf dem aktuellen Arbeitsblatt befindet. Wird die adressierte Zelle interaktiv horizontal oder vertikal aufgefüllt, dann wird die Adresse nicht angepasst.</p>
+<p>Auf diese Weise lassen sich konstante Werte in Formeln einbauen.</p>
+</section>
+</section>
+<section id="tabellenadressen" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="tabellenadressen"><span class="header-section-number">4.4.2</span> Tabellenadressen</h3>
+<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden <span class="citation" data-cites="microsoft_support_using_2013">(<a href="../../references.html#ref-microsoft_support_using_2013" role="doc-biblioref">Microsoft Support, 2013</a>)</span>. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em> bzw. ein <em>dynamischer Bereich</em> (s. <a href="../variablen/kapitel.html#sec-dynamisches-feld">Abschnitt&nbsp;<span>6.1.1</span></a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jede Tabellenadresse kann auch als Arbeitsblattadresse dargestellt werden. Umgekehrt ist dies nicht möglich.</p>
+</div>
+</div>
+<p>Eine Tabellenadresse besteht aus zwei Teilen:</p>
+<ul>
+<li>Dem Tabellennamen</li>
+<li>Dem Spaltennamen</li>
+</ul>
+<div id="exm-tabellenadresse" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 4.2 (Tabellenadresse) </strong></span>&nbsp;</p>
+<pre><code>Tabelle1[Spalte1]</code></pre>
+</div>
+<p>Das <a href="#exm-tabellenadresse">Beispiel&nbsp;<span>4.2</span></a> verweist auf die Spalte <code>Spalte1</code> der Tabelle <code>Tabelle1</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Namen von Tabellen sind <em>unabhängig</em> den Arbeitsblattnamen. In der gleichen Arbeitsmappe darf jeweils nur eine Tabelle und nur ein Arbeitsblatt mit dem gleichen Namen existieren. Es ist aber möglich, dass eine Tabelle und ein Arbeitsblatt den gleichen Namen haben. Das kann zu Verwirrungen führen, denn die Adresse <code>Tabelle1[Spalte1]</code> und die Adresse <code>Tabelle1!A:A</code> verweisen nicht zwingend auf die gleiche Spalte, denn eine Tabelle muss nicht auf einem Arbeitsblatt mit dem gleichen Namen stehen!</p>
+</div>
+</div>
+<p>Tabellenadressen können auch gekürzt werden:</p>
+<ul>
+<li>Werden Spalten in der gleichen Tabelle angesprochen, dann kann der Tabellenname weggelassen werden.</li>
+<li>Soll die gesamte Tabelle angesprochen werden, dann kann der Spaltenname weggelassen werden.</li>
+</ul>
+<section id="tabellenbereiche" class="level4" data-number="4.4.2.1">
+<h4 data-number="4.4.2.1" class="anchored" data-anchor-id="tabellenbereiche"><span class="header-section-number">4.4.2.1</span> Tabellenbereiche</h4>
+<p>Um mehrere Spalten einer Tabelle anzusprechen kann der Bereichsoperator (<code>:</code>) wie bei der Arbeitsblattadressierung verwendet werden. Zusätzlich müssen die Spalten in ein weiteres Paar eckiger Klammern eingeschlossen werden.</p>
+<div id="exm-tabellenbereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 4.3 (Tabellenbereich) </strong></span>&nbsp;</p>
+<pre><code>Tabelle1[[Spalte1]:[Spalte3]]</code></pre>
+</div>
+<p><a href="#exm-tabellenbereich">Beispiel&nbsp;<span>4.3</span></a> verweist auf alle Spalten zwischen <code>Spalte1</code> und <code>Spalte3</code> der Tabelle <code>Tabelle1</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Werden zu einem späteren Zeitpunkt neue Spalten zwischen den adressierten Spalten hinzugefügt, dann werden die neuen Spalten automatisch in die Adressierung einbezogen.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es ist nicht möglich mehrere Spalten einer Tabellen <em>gleichzeitig</em> gezielt zu adressieren, wenn diese nicht unmittelbar nebeneinander stehen. Diese Adressierung ist unmöglich, weil Excel nur rechteckige Bereiche adressieren kann und solche Spalten keinen <em>rechteckigen Bereich</em> bilden.</p>
+<p>Die Adressierung aus <a href="#exm-tabellenbereich">Beispiel&nbsp;<span>4.3</span></a> kann nicht angepasst werden, so dass nur <code>Spalte1</code> und <code>Spalte3</code> adressiert werden, ausser die Spalten <code>Spalte1</code> und <code>Spalte3</code> stehen direkt nebeneinander.</p>
+</div>
+</div>
+</section>
+<section id="überschriften-adressieren" class="level4" data-number="4.4.2.2">
+<h4 data-number="4.4.2.2" class="anchored" data-anchor-id="überschriften-adressieren"><span class="header-section-number">4.4.2.2</span> Überschriften adressieren</h4>
+<p>Eine Excel Tabelle hat immer Spaltenüberschriften. Diese Überschriften können ebenfalls über die Tabellenadressierung adressiert werden. Dazu wird als Spaltenname der Wert <code>#Kopfzeilen</code> verwendet.</p>
+<div id="exm-kopfzeilen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 4.4 (Kopfzeilen einer Tabelle adressieren) </strong></span>&nbsp;</p>
+<pre><code>Tabelle1[#Kopfzeilen]</code></pre>
+</div>
+<p>Um gezielt Kofzeilen zu adressieren, kann die Adressierung aus <a href="#exm-kopfzeilen">Beispiel&nbsp;<span>4.4</span></a> mit der Adressierung aus <a href="#exm-tabellenbereich">Beispiel&nbsp;<span>4.3</span></a> kombiniert werden (<a href="#exm-kopfzeilen-bereich">Beispiel&nbsp;<span>4.5</span></a>).</p>
+<div id="exm-kopfzeilen-bereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 4.5 (Kopfzeilen einer Tabelle adressieren) </strong></span>&nbsp;</p>
+<pre><code>Tabelle1[[#Kopfzeilen];[Spalte1]:[Spalte3]]</code></pre>
+</div>
+</section>
+<section id="absolute-adressierung-in-tabellen" class="level4" data-number="4.4.2.3">
+<h4 data-number="4.4.2.3" class="anchored" data-anchor-id="absolute-adressierung-in-tabellen"><span class="header-section-number">4.4.2.3</span> Absolute Adressierung in Tabellen</h4>
+<p>Ein Tabellenbereich ist immer absolut adressiert. Wird aber nur eine einzelne Spalte einer Tabelle adressiert, dann wird die Adresse relativ addressiert. Damit beim Autoauffüllen diese Adresse nicht verändert wird, muss die Adresse als Bereich angegeben werden.</p>
+<div id="exm-absoluter-tabellenbereich-eine-spalte" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 4.6 (Absolute Tabellenadressierung von einer Spalte) </strong></span>&nbsp;</p>
+<pre><code>Tabelle1[[Spalte1]:[Spalte1]]</code></pre>
+</div>
+<p>Wird eine Formel mit dieser Adresse interaktiv aufgefüllt, dann wird die Adresse nicht verändert.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-microsoft_support_using_2013" class="csl-entry" role="listitem">
+Microsoft Support. (2013). <em>Using structured references with Excel tables</em>. <a href="https://support.microsoft.com/en-gb/office/using-structured-references-with-excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e">https://support.microsoft.com/en-gb/office/using-structured-references-with-excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e</a>
+</div>
+</div>
+</section>
 </section>
 </section>
 
