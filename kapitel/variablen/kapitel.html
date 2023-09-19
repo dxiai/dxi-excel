@@ -317,12 +317,86 @@ Work in Progress
 </div>
 <section id="variablen" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="variablen"><span class="header-section-number">7.1</span> Variablen</h2>
-<p>Keine Unterscheidung zwischen Konstanten und Variablen.</p>
+<p>Excel kennt keine strikte Unterscheidung zwischen Konstanten und Variablen. Grundsätzlich sind alle Werte in Excel Konstanten, weil direkt eingegebene oder durch eine Formel erzeugte Werte nicht durch andere Formel verändert werden können.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Excel lassen sich Zellen und Bereiche <em>sperren</em>. Damit lassen sich die Werte wie Konstanten behandeln. Diese Sperre ist Teil der <em>Formatierung</em> einer Zelle und muss für das gesamte Arbeitsblatt festgelegt werden. Die Sperre kann nicht für einzelne Zellen oder Bereiche festgelegt werden.</p>
+<p>Die Sperre eines Arbeitsblatts wird im Menuband <code>Überprüfen</code> mit dem Kommando <code>Blatt schützen</code> aktiviert. Richten Sie bei diesem Kommando <strong>kein</strong> Passwort ein.</p>
+</div>
+</div>
+<p>Ist ein Arbeitsblatt gesperrt, sind die Werte auf diesem Arbeitsblatt unveränderlich und verhalten sich wie Konstanten. Ist ein Arbeitsblatt nicht gesperrt, dann verhalten sich die Werte wie Variablen.</p>
 <section id="sec-dynamisches-feld" class="level3" data-number="7.1.1">
 <h3 data-number="7.1.1" class="anchored" data-anchor-id="sec-dynamisches-feld"><span class="header-section-number">7.1.1</span> Dynamische Bereiche</h3>
+<p>Formeln können mehr als einen Wert verarbeiten und mehr als einen Ergebnis liefern. Solche Formeln müssen nur in die linke obere Ecke eines Bereichs eingetragen werden. Excel erkennt automatisch, dass die Formel auf einen Bereich angewendet werden soll und erzeugt die entsprechende Formel für alle Zellen des Bereichs. Das Ergebnis einer solchen Formel ist ein <em>dynamischer Bereich</em>.</p>
+<div id="def-vektorisieren" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 7.1 </strong></span><strong>Vektorisieren</strong> heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.</p>
+</div>
+<div id="exm-vektorisieren" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 7.1 (Vektorisieren eines statischen Bereichs) </strong></span>&nbsp;</p>
+<pre><code>=A1:A10</code></pre>
+</div>
+<p>Im Gegensatz zu einem normalen Bereich, ist bei einem dynamischen Bereich nur die linke obere Zelle bekannt. Um trotzdem alle Zellen eines solchen Bereichs zu adressieren, wird die Gatter- (<code>#</code>) Notation verwendet.</p>
+<p>Das <a href="#exm-vektorisieren">Beispiel&nbsp;<span>7.1</span></a> erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle <code>B1</code> eingetragen. Anschliessend können die Werte im Bereich <code>B1:B10</code> über die Gatter-Notation addressiert werden: <code>B1#</code>.</p>
+<p>Der Vorteil des Vektorisierens ist, dass der Bereich durch das Einfügen neuer Zeilen vergrössert werden kann, ohne dass die nachfolgenden vektorisierten Formeln angepasst werden müssen.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Weil Tabellen automatisch vektorisiert werden, ist es einfacher Werte in einer Tabelle zu erfassen bzw. zu importieren (s. <a href="../daten-importieren/kapitel.html"><span>Kapitel&nbsp;6</span></a>) und anschliessend über die Tabellenadressierung auf die Werte zu verweisen.</p>
+</div>
+</div>
 </section>
 <section id="benannte-bereiche" class="level3" data-number="7.1.2">
 <h3 data-number="7.1.2" class="anchored" data-anchor-id="benannte-bereiche"><span class="header-section-number">7.1.2</span> Benannte Bereiche</h3>
+<p>Im Funktionsbalken wird ganz links die Adresse der aktuellen Zelle angezeigt. Wenn in dieses Feld geklickt wird, dann kann der Adresse ein Name zugewiesen werden. Auf diese Weise kann eine Zelle oder ein Bereich benannt werden. Der Name eines Bereichs darf nur einmal in einer Arbeitsmappe existieren. Dafür kann in jeder Zelle der Arbeitsmappe dieser Namen als Adresse verwendet werden. Dazu ist es nicht notwendig, den die genaue Arbeitsblatt- und Zellenadresse zu kennen.</p>
+<p>Verweist ein benannter Bereich mit einer Zelle auf den Anfang eines dynamischen Bereichs, dann kann der gesamte dynamische Bereich mit der Gatter-Notation referenziert werden.</p>
+<p>Auf diese Weise lassen sich oft adressierte Zelleen oder Bereiche benennen. Dadurch kann die Adresse für Verwendung in Formeln abstrahiert werden.</p>
+<p>Die Verwendung von benannten Bereichen wird weiter vereinfacht, dass bei der Eingabe von Formeln die Namen der benannten Bereiche als Vorschlag angezeigt werden.</p>
+<div id="exm-dynamischer-benannter-bereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 7.2 (Adressierung eines dynamischen benannten Bereichs) </strong></span>&nbsp;</p>
+<pre><code>=umsatz#</code></pre>
+</div>
+<p>Benannte Zellen helfen, auf wichtige Zellen in einer Arbeitsmappe zuzugreifen.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein benannter Bereich entspricht einer Variablen in anderen Programmiersprachen.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine benannte Zelle oder ein benannter Bereich sind immer absolut referenziert.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -333,7 +407,20 @@ Hinweis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Eine Tabelle ist ein spezieller benannter Bereich.</p>
+<p>Wenn einem benannten Bereich Zellen hinzugefügt werden, dann wird der benannte Bereich um diese Zellen erweitert.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine Tabelle ist ein spezieller benannter Bereich, der als Ganzes oder in Teilen referenziert werden kann (s. <a href="../datentypen/kapitel.html#sec-tabellenadressen">Abschnitt&nbsp;<span>5.4.2</span></a>).</p>
 </div>
 </div>
 </section>
@@ -343,7 +430,7 @@ Hinweis
 </section>
 <section id="operatoren" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="operatoren"><span class="header-section-number">7.3</span> Operatoren</h2>
-<p>Excel hat eine Anzahl vordefinierter Operatoren. Diese Operatoren haben keine direkte Entsprechung als Funktion.</p>
+<p>Excel hat eine Anzahl vordefinierter Operatoren. Nicht alle Excel Operatoren haben keine direkte Entsprechung als Funktion.</p>
 <section id="substitution-über-funktionspfade" class="level3" data-number="7.3.1">
 <h3 data-number="7.3.1" class="anchored" data-anchor-id="substitution-über-funktionspfade"><span class="header-section-number">7.3.1</span> Substitution über Funktionspfade</h3>
 </section>
