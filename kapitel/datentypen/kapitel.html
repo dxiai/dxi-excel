@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -529,7 +548,7 @@ Praxis
 </section>
 <section id="tabellenadressen" class="level3" data-number="5.4.2">
 <h3 data-number="5.4.2" class="anchored" data-anchor-id="tabellenadressen"><span class="header-section-number">5.4.2</span> Tabellenadressen</h3>
-<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden <span class="citation" data-cites="microsoft_support_using_2013">(<a href="../../references.html#ref-microsoft_support_using_2013" role="doc-biblioref"><strong>microsoft_support_using_2013?</strong></a>)</span>. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em> bzw. ein <em>dynamischer Bereich</em> (s. <a href="../variablen/kapitel.html#sec-dynamisches-feld">Abschnitt&nbsp;<span>7.1.1</span></a>).</p>
+<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden <span class="citation" data-cites="microsoft_support_using_2023">(<a href="../../references.html#ref-microsoft_support_using_2023" role="doc-biblioref">Microsoft Support, 2023</a>)</span>. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em> bzw. ein <em>dynamischer Bereich</em> (s. <a href="../variablen/kapitel.html#sec-dynamisches-feld">Abschnitt&nbsp;<span>7.1.1</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -630,6 +649,11 @@ Wichtig
 <p>Wird eine Formel mit dieser Adresse interaktiv aufgefüllt, dann wird die Adresse nicht verändert.</p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-microsoft_support_using_2023" class="csl-entry" role="listitem">
+Microsoft Support. (2023). <em>Using structured references with Excel tables</em>. <a href="https://support.microsoft.com/en-gb/office/using-structured-references-with-excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e">https://support.microsoft.com/en-gb/office/using-structured-references-with-excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e</a>
+</div>
+</div>
 </section>
 </section>
 </section>
