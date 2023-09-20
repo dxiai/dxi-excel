@@ -266,7 +266,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#eine-datenverbindung-herstellen" id="toc-eine-datenverbindung-herstellen" class="nav-link active" data-scroll-target="#eine-datenverbindung-herstellen"><span class="header-section-number">7.1</span> Eine Datenverbindung herstellen</a></li>
+  <li><a href="#daten-aktualisieren" id="toc-daten-aktualisieren" class="nav-link" data-scroll-target="#daten-aktualisieren"><span class="header-section-number">7.2</span> Daten aktualisieren</a></li>
+  <li><a href="#datenverbindung-anpassen" id="toc-datenverbindung-anpassen" class="nav-link" data-scroll-target="#datenverbindung-anpassen"><span class="header-section-number">7.3</span> Datenverbindung anpassen</a></li>
+  <li><a href="#sec-daten-import-transformieren" id="toc-sec-daten-import-transformieren" class="nav-link" data-scroll-target="#sec-daten-import-transformieren"><span class="header-section-number">7.4</span> Daten beim Import transformieren</a>
+  <ul class="collapse">
+  <li><a href="#datenschema-anpassen" id="toc-datenschema-anpassen" class="nav-link" data-scroll-target="#datenschema-anpassen"><span class="header-section-number">7.4.1</span> Datenschema anpassen</a></li>
+  <li><a href="#daten-bereinigen" id="toc-daten-bereinigen" class="nav-link" data-scroll-target="#daten-bereinigen"><span class="header-section-number">7.4.2</span> Daten bereinigen</a></li>
+  <li><a href="#datenquellen-kombinieren" id="toc-datenquellen-kombinieren" class="nav-link" data-scroll-target="#datenquellen-kombinieren"><span class="header-section-number">7.4.3</span> Datenquellen kombinieren</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -301,8 +315,187 @@ Work in Progress
 
 </div>
 </div>
+<p>Viele Excel Arbeitsmappen kombinieren Berechnungen und Daten. Excel kann allerdings auch Daten aus anderen Quellen importieren. Quellen können andere Dateien, Datenbanken oder Web-APIs sein und in verschiedenen Formaten vorliegen. Dafür stellt Excel Parser für verschiedene Dateiformate bereit, damit die Daten importiert werden können.</p>
+<p>Daten werden korrekt mit dem Kommando <strong>Daten abrufen (Power Query)</strong> importiert. Das Kommando ist in der Gruppe <strong>Daten</strong> im Abschnitt <strong>Daten abrufen und transformieren</strong> zu finden. Das Kommando <em>Daten abrufen</em> startet die sog. <strong>Power Query</strong> Umgebung. In dieser Umgebung können Daten aus verschiedenen Quellen importiert und vor der Bereitstellung korrigiert werden.</p>
+<div id="fig-menubalken-power-query-kommando-daten-abrufen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/daten_import_ribbon.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.1: Menubalken Power Query - Kommando Daten abrufen</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Power Query
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Power Query</strong> ist eine Umgebung für den Datenimport, die von verschiedenen Microsoft Produkten verwendet wird. Die Umgebung ist in Excel, Power BI, Power Apps und Power Automate verfügbar. Power Query stellt eine einheitliche Schnittstelle für den Datenimport bereit und basiert auf einer <em>Import-Beschreibungssprache</em>. Mit diese Sprache lassen sich Daten für die Arbeit vorbereiten, so dass viele Datenbereinigungsschritte in Excel Arbeitsmappen entfallen können.</p>
+<div id="fig-power-query-editor-fenster" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_spaltentyp.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.2: Power Query Editor Fenster</figcaption>
+</figure>
+</div>
+<p>Zu den zentralen Funktionen von Power Query gehören:</p>
+<ul>
+<li>Quellenmanagement</li>
+<li>Überschriftenerkennung</li>
+<li>Schemaerkennung und -transformation</li>
+<li>Entfernen von Duplikaten und ungültigen Werten</li>
+<li>Vektorisierung von Daten</li>
+<li>Kombinieren von Daten aus verschiedenen Quellen</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Viele tabellarische Dateiformate lassen sich direkt mit Excel öffnen. Das sollte nur mit Excel Arbeitsmappen erfolgen. Bei anderen Dateiformaten kann das direkte öffnen zu Datenverlusten oder Datenfehlern führen. Diese lassen sich in Excel nur umständlich korrigieren.</p>
+<p>Ausserdem lassen sich direkt geöffnete Dateien nicht mehr erweitern, was die Datenerhebung erschwert.</p>
+</div>
+</div>
+<p>Das Kernprinzip von <em>Power Query</em> ist das Verbinden einer Datenquelle mit einer Arbeitsmappen. Die Datenquelle wird dabei nicht in die Arbeitsmappe übernommen, sondern nur eine Verbindung zu der Datenquelle hergestellt. Dadurch kann eine Datenquelle in mehreren Arbeitsmappen verwendet werden und sich ändern, ohne dass die Arbeitsmappe angepasst werden muss.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Ergebnis eines Imports ist immer eine <em>Tabelle</em>.</p>
+</div>
+</div>
+<section id="eine-datenverbindung-herstellen" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="eine-datenverbindung-herstellen"><span class="header-section-number">7.1</span> Eine Datenverbindung herstellen</h2>
+<ol type="1">
+<li>Daten abrufen</li>
+<li>Datenquelle auswählen</li>
+<li>Daten überprüfen</li>
+<li>Daten gegebenenfalls transformieren</li>
+<li>Daten importieren</li>
+</ol>
+<p>Nach einem Datenimport liegen die Daten in der Arbeitsmappe vor. Diese Daten sind eine Kopie der Daten in der Datenquelle. Die kopierten Werte sind als Tabelle in der Arbeitsmappe gespeichert. Dadurch kann die Arbeitsmappe unabhängig von der Datenquelle verwendet und geteilt werden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excel betrachtet jeden Datenimport als Sicherheitsproblem. Daher werden Datenverbindungen beim Öffnen einer Arbeitsmappe standardmässig deaktiviert. Beim Öffnen einer Arbeitsmappe mit einer Datenverbindung wird eine Warnung angezeigt. Um mit den importierten Daten arbeiten zu können, muss die Datenverbindung <em>aktiviert</em> werden.</p>
+<p>Wird die Datenverbindung nicht aktiviert, werden Funktionen die auf die Daten zugreifen nicht ausgeführt, sondern nur die Ergebnisse der letzten Ausführung angezeigt.</p>
+</div>
+</div>
+</section>
+<section id="daten-aktualisieren" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="daten-aktualisieren"><span class="header-section-number">7.2</span> Daten aktualisieren</h2>
+<p>Die Daten können sich aber ändern, z.B. weil ein Formular ausgefüllt wurde oder eine Datenbank aktualisiert wurde. Dadurch ändern sich die Daten in der Datenquelle. In solchen Fällen ist die Kopie in der Arbeitsmappe nicht mehr aktuell. Um die Daten zu aktualisieren, muss die Datenverbindung aktualisiert werden.</p>
+<p>Dazu wird das Kommando <strong>Alle aktualisieren</strong> verwendet. Das Kommando ist im Menu <strong>Daten</strong> im Abschnitt <strong>Verbindungen</strong> zu finden. Das Kommando aktualisiert alle Datenverbindungen in der Arbeitsmappe entsprechend der Importspezifikation.</p>
+<div id="fig-menubalken-daten-kommando-alle-aktualisieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/daten_update_ribbon.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.3: Menubalken Daten - Kommando Alle aktualisieren</figcaption>
+</figure>
+</div>
+<p>Es werden nur die importierten Daten aktualisiert. Wurde die Tabelle durch Formeln erweitert, werden diese Formeln <em>nicht</em> gelöscht, sondern auf die neuen Daten erweitert.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die importierte Struktur darf <strong>nicht verändert</strong> werden. Das bedeutet, dass innerhalb der Struktur keine Spalten hinzugefügt oder gelöscht werden dürfen. Neue Spalten für Formeln müssen rechts von der importierten Datenstruktur der Tabelle hinzugefügt werden.</p>
+</div>
+</div>
+</section>
+<section id="datenverbindung-anpassen" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="datenverbindung-anpassen"><span class="header-section-number">7.3</span> Datenverbindung anpassen</h2>
+<p>Gelegentlich ändert sich der Ort einer Datenquelle. Sehr häufig passiert das, wenn eine Datei in einen anderen Ordner verschoben wird. In solchen Fällen muss die Datenverbindung angepasst werden. Dazu muss in Power Query die Datenquelle angepasst werden.</p>
+<p>VORGEHENSWEISE</p>
+<ol type="1">
+<li>Powerquery öffnen</li>
+<li>Schritt “Quelle” ausählen</li>
+<li>Pfad zur Datenquelle anpassen</li>
+<li>Schema überprüfen</li>
+<li>Daten aktualisieren</li>
+</ol>
+<div id="fig-power-query-editor-datenquelle-anpassen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_quelle_anpassen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.4: Power Query: Quelle Anpassen (Ausschnitt)</figcaption>
+</figure>
+</div>
+<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen">Abbildung&nbsp;<span>7.5</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
+<div id="fig-menubalken-daten-abfragen-verbindungen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/daten_update_ribbon_abfragen_liste.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.5: Menubalken Daten - Abfragen &amp; Verbindungen</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+MacOS vs.&nbsp;Windows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Grundsätzlich lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel öffent über diesen Weg den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten">Abbildung&nbsp;<span>7.6</span></a>).</p>
+<div id="fig-power-query-unter-macos-starten" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_macos_starten.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.6: Power Query unter MacOS starten</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-daten-import-transformieren" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="sec-daten-import-transformieren"><span class="header-section-number">7.4</span> Daten beim Import transformieren</h2>
+<section id="datenschema-anpassen" class="level3" data-number="7.4.1">
+<h3 data-number="7.4.1" class="anchored" data-anchor-id="datenschema-anpassen"><span class="header-section-number">7.4.1</span> Datenschema anpassen</h3>
+<section id="schritt-höherstufen" class="level4" data-number="7.4.1.1">
+<h4 data-number="7.4.1.1" class="anchored" data-anchor-id="schritt-höherstufen"><span class="header-section-number">7.4.1.1</span> Schritt Höherstufen</h4>
+</section>
+<section id="schritt-geänderter-spaltentyp" class="level4" data-number="7.4.1.2">
+<h4 data-number="7.4.1.2" class="anchored" data-anchor-id="schritt-geänderter-spaltentyp"><span class="header-section-number">7.4.1.2</span> Schritt Geänderter Spaltentyp</h4>
+</section>
+<section id="schritt-spalten-entfernen" class="level4" data-number="7.4.1.3">
+<h4 data-number="7.4.1.3" class="anchored" data-anchor-id="schritt-spalten-entfernen"><span class="header-section-number">7.4.1.3</span> Schritt Spalten entfernen</h4>
+</section>
+</section>
+<section id="daten-bereinigen" class="level3" data-number="7.4.2">
+<h3 data-number="7.4.2" class="anchored" data-anchor-id="daten-bereinigen"><span class="header-section-number">7.4.2</span> Daten bereinigen</h3>
+</section>
+<section id="datenquellen-kombinieren" class="level3" data-number="7.4.3">
+<h3 data-number="7.4.3" class="anchored" data-anchor-id="datenquellen-kombinieren"><span class="header-section-number">7.4.3</span> Datenquellen kombinieren</h3>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -554,4 +747,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></div></div></footer></body></html>
+</body></html>
