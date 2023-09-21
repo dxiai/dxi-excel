@@ -796,8 +796,9 @@ Merke
 </div>
 </div>
 <p>Nicht erreichbare Entscheidungen lassen sich durch das Formale prüfen der logischen Ausdrücke leicht erkennen. Dazu werden logischen Ausdrücke und die zugehörigen Wertebereiche für den Wahr- und Falsch-Fall untereinander aufgeschrieben. Ein logischer Ausdruck kann einen Wertebereich nur dann abdecken, wenn dieser eine Teilmenge des Wertebereichs der aktuellen logischen Verzweigung ist.</p>
+<div id="tbl-wenns-nicht-erreichbar" class="anchored">
 <table class="table">
-<caption>Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.3</span></a></caption>
+<caption>Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.3</span></a></caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Rang</th>
@@ -833,8 +834,9 @@ Merke
 </tr>
 </tbody>
 </table>
+</div>
 <p>Weil die Funktion <code>WENNS()</code> verwendet wird, ist der Wertebereich für einen logischen Ausdruck durch die Falsch-Fälle der logischen Ausdrücke mit niedrigerem Rang abgedeckt.</p>
-<p>Für Rang 3 muss wegen dieser Tabelle der logischen Ausdruck in <a href="#eq-nichterreichbar">Formel&nbsp;<span>10.1</span></a> gelten. Dieser Ausdruck kann jedock nie Wahr ergeben, weil der geiche Wert in Variable <span class="math inline">A1</span> nicht kleiner oder gleich 3 und gleichzeitig grösser als 4 sein kann.</p>
+<p>Für Rang 3 muss wegen dieser Tabelle der logischen Ausdruck in <a href="#eq-nichterreichbar">Formel&nbsp;<span>10.1</span></a> gelten. Dieser Ausdruck kann jedoch nie Wahr ergeben, weil der geiche Wert in Variable <span class="math inline">A1</span> nicht kleiner oder gleich 3 und gleichzeitig grösser als 4 sein kann.</p>
 <p><span id="eq-nichterreichbar"><span class="math display">
 \begin{aligned}
 &amp; (A1 &lt;= 5) \land &amp; (A1 &lt;= 3) \land &amp; (A1 &gt; 4) \\
@@ -1041,7 +1043,7 @@ Hinweis
 <p>Um mit komplexen logischen Ausdrücken in Filtern zu verwenden, müssen wir die logischen Operatoren durch ihre <em>arithmetische Schreibweise</em> ersetzen.</p>
 <div id="tbl-filter-complex" class="anchored">
 <table class="table">
-<caption>Tabelle&nbsp;10.1: Beispiel eines komplexen logischen Ausdrucks mit <code>FILTER()</code></caption>
+<caption>Tabelle&nbsp;10.2: Beispiel eines komplexen logischen Ausdrucks mit <code>FILTER()</code></caption>
 <colgroup>
 <col style="width: 17%">
 <col style="width: 13%">
