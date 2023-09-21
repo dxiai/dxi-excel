@@ -938,12 +938,12 @@ Hinweis
 <h3 data-number="10.5.8" class="anchored" data-anchor-id="excels-wenns"><span class="header-section-number">10.5.8</span> Excels WENNS</h3>
 <p>Die <code>WENNS()</code>-Funktion erlaubt es uns, verschiedene Entscheidungen zusammenzufassen. Dabei gibt es immer Paare von logischen Ausdrücken und Ergebniswerten. Die <code>WENNS()</code>-Funktion prüft nacheinander die logischen Ausdrücke und liefert als Ergebnis den Wert, der zum ersten logischen Ausdruck gehört, der WAHR ergibt.</p>
 <div id="exm-wenns-linear" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.1 (Linearer Entscheidungsbaum**) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 10.1 (Linearer Entscheidungsbaum) </strong></span>&nbsp;</p>
 <pre><code>=WENNS( A1 &gt; 5; "Sehr gut"; A1 &gt; 4; "Gut"; A1 &gt; 3; "Genügend"; A1 &lt;= 3; "Ungenügend")</code></pre>
 </div>
 <p>Beachten Sie, dass im <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.2</span></a> der zweite logische Ausdruck auch für die Werte des ersten logischen Ausdrucks WAHR ergeben würde. Weil aber diese Fälle bereits durch den ersten logischen Ausdruck abgefangen werden, kommen diese gar nicht mehr zum zweiten logischen Ausdruck. Entsprechend müssen Sie aufpassen, dass die logischen Ausdrücke sich nicht überschneiden.</p>
 <div id="exm-wenns-nicht-erreichbar" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.2 (Nicht erreichbare Entscheidungen**) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 10.2 (Nicht erreichbare Entscheidungen) </strong></span>&nbsp;</p>
 <pre><code>=WENNS( A1 &gt; 5; "Sehr gut"; A1 &gt; 3; "Genügend"; A1 &gt; 4; "Gut"; A1 &lt;= 3; "Ungenügend")</code></pre>
 </div>
 <p>In <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.2</span></a> kann nie das Ergebnis “Gut” angezeigt werden, weil der zweite logische Ausdruck (A1 &gt; 3) alle Werte “maskiert”, die durch den dritten logischen Ausdruck (A1 &gt; 4) als “Gut” markiert werden müssten. “Ungenügend” würde trotzdem angezeigt werden, wenn der Wert in A1 entweder 1, 2 oder 3 ist.</p>
@@ -963,7 +963,7 @@ Merke
 </div>
 <p>Es ist guter Stil, das letzte Parameterpaar immer für den gültigen logischen Ausdruck <code>WAHR</code> zu reservieren. Damit stellen Sie sicher, dass für jeden möglichen Eingabewert ein gültiges Ergebnis zurückgegeben wird. Dieser Schritt ist notwendig, weil <code>WENNS()</code> keine Alternativausgabe hat.</p>
 <div id="exm-wenns-wahr" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.3 (Abschliessender Standardwert mit <code>WAHR</code>**) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 10.3 (Abschliessender Standardwert mit <code>WAHR</code>) </strong></span>&nbsp;</p>
 <pre><code>=WENNS( A1 &gt; 5; "Sehr gut"; A1 &gt; 4; "Gut"; A1 &gt; 3; "Genügend"; UND(A1 &lt;= 3; A1 &gt; 0); "Ungenügend"; WAHR; "Nicht angetreten")</code></pre>
 </div>
 </section>
