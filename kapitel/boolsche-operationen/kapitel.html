@@ -340,7 +340,7 @@ ul.task-list li input[type="checkbox"] {
   <div class="abstract">
     <div class="abstract-title">Zusammenfassung</div>
     <p>Dieses Kapitel befasst sich mit der Anwendung der Aussagenlogik in Excel. Es werden die logischen Operatoren NICHT, UND, ODER und XODER behandelt. Auf dieser Grundlage werden die wichtigsten Vergleichsoperation zum Formulieren logischer Ausdrücke vorgestellt. Das Kapitel schliesst mit der Anwendung von Fallunterscheidungen.</p>
-    <p>Es werden die folgenden Funktionen behandelt: <code>NICHT()</code>, <code>UND()</code>, <code>ODER()</code>, <code>XODER()</code>, <code>WENN()</code>, <code>WENNS()</code>, <code>ERSTERWERT()</code>, <code>WENNFEHLER()</code>, <code>FEHLER.TYP()</code>, <code>ISTFEHLER()</code>, <code>XVERWEIS()</code>, <code>IDENTISCH()</code>, <code>FILTER()</code>, <code>SORTIEREN()</code>, <code>SORTIERENNACH()</code> und <code>SPALTENWAHL()</code></p>
+    <p>Es werden die folgenden Funktionen behandelt: <code>NICHT()</code>, <code>UND()</code>, <code>ODER()</code>, <code>XODER()</code>, <code>WENN()</code>, <code>WENNS()</code>, <code>ERSTERWERT()</code>, <code>WENNFEHLER()</code>, <code>FEHLER.TYP()</code>, <code>ISTFEHLER()</code>, <code>XVERWEIS()</code>, <code>XVERGLEICH()</code>, <code>IDENTISCH()</code>, <code>FILTER()</code>, <code>SORTIEREN()</code>, <code>SORTIERENNACH()</code> und <code>SPALTENWAHL()</code></p>
   </div>
 </div>
 
@@ -557,7 +557,10 @@ Merke
 <h3 data-number="10.3.2" class="anchored" data-anchor-id="zeichenketten-vergleichen"><span class="header-section-number">10.3.2</span> Zeichenketten vergleichen</h3>
 <p>Die Vergleichsoperatoren zeigen die Unterschiede zweier Zeichenketten bezüglich der alphabetischen Sortierung an. Die “kleinste” Zeichenkette ist die leere Zeichenkette. Gross- und Kleinschreibung wird bei Zeichenkettenvergleichen nicht unterschieden.</p>
 <p>Weil Excel für Vergleiche die nicht-druckbaren Zeichen mit Ausnahme des Leerzeichens und des Tabulators ignoriert, gibt der Vergleichsoperator <code>=</code> <code>WAHR</code> auch für Zeichenketten zurück, die unterschiedliche nicht-druckbare Zeichen enthalten. Das gleiche Problem entsteht beim Vergleich von unterschiedlicher Gross- und Kleinschreibung. Um auch diese Unterschiede zu erkennen, müssen wir die Funktion <code>IDENTISCH()</code> verwenden. Diese Funktion vergleicht die Zeichenketten Zeichen für Zeichen und liefert nur dann <code>WAHR</code> zurück, wenn die Zeichenketten exakt gleich sind.</p>
-<p>BEISPIEL</p>
+<div id="exm-identisch" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 10.1 </strong></span>##&nbsp;Anwendung der <code>IDENTISCH()</code> Funktion als Vergleichsoperator.</p>
+<pre><code>= WENN(IDENTISCH("A"; "a"); "Gleich"; "Ungleich")</code></pre>
+</div>
 </section>
 </section>
 <section id="sec-vector-logic" class="level2" data-number="10.4">
@@ -566,7 +569,7 @@ Merke
 <p>Um logische Verknüfungen für Datenstrukturen zu realisieren, müssen die logischen Operatoren mit der Boole’schen Arithmetik umgesetzt werden. Dazu werden die logischen Operatoren durch die entsprechenden arithmetischen Operatoren ersetzt.</p>
 <blockquote class="blockquote">
 <div id="exm-vector-logic" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.1 </strong></span>Für die folgenden Werte soll der folgende logische Ausdruck geprüft werden.</p>
+<p><span class="theorem-title"><strong>Beispiel 10.2 </strong></span>Für die folgenden Werte soll der folgende logische Ausdruck geprüft werden.</p>
 <p><span class="math display">
 a \land b \lor (c &lt; 10) \land d
 </span></p>
@@ -616,7 +619,7 @@ a \land b \lor (c &lt; 10) \land d
 <p>Die Ausnahme von dieser Regel ist Verwendung der logischen Funktionen als Tabellenfunktion. In diesem Fall können die Werte zeilenweise auch von den logischen Funktionen verarbeitet werden.</p>
 <blockquote class="blockquote">
 <div id="exm-table-logic" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.2 </strong></span>Werden die Werte aus <a href="#exm-vector-logic">Beispiel&nbsp;<span>10.1</span></a> als Tabelle konvertiert und mit <code>BeispielTabelle</code> benannt, dann können die logischen Funktionen in einer <em>gleich langen Tabelle</em> mit der <em>gleichen Startzeile</em> auch als Tabellenfunktionen verwendet werden. In diesem Fall werden die Werte zeilenweise verarbeitet.</p>
+<p><span class="theorem-title"><strong>Beispiel 10.3 </strong></span>Werden die Werte aus <a href="#exm-vector-logic">Beispiel&nbsp;<span>10.2</span></a> als Tabelle konvertiert und mit <code>BeispielTabelle</code> benannt, dann können die logischen Funktionen in einer <em>gleich langen Tabelle</em> mit der <em>gleichen Startzeile</em> auch als Tabellenfunktionen verwendet werden. In diesem Fall werden die Werte zeilenweise verarbeitet.</p>
 <pre><code>=ODER(
       UND(BeispielTabelle[@a];BeispielTabelle[@b]);
       UND(BeispielTabelle[@c] &lt; 10; BeispielTabelle[@d])
@@ -676,30 +679,53 @@ a \land b \lor (c &lt; 10) \land d
 <section id="wenns" class="level3" data-number="10.5.2">
 <h3 data-number="10.5.2" class="anchored" data-anchor-id="wenns"><span class="header-section-number">10.5.2</span> WENNS</h3>
 <p>Die Funktion <code>WENN()</code> ist eine <em>einfache</em> Fallunterscheidung. In vielen Excel-Arbeitsmappen existieren geschachtelte Aufrufe von <code>WENN()</code>-Funktionen. Diese Aufrufe machen die Formeln nicht nur schwer lesbar, sondern auch fehleranfällig und ineffizient. Deshalb sollten geschachtelte Fallunterscheidungen unbedingt vermieden werden. Mit der Funktion <code>WENNS()</code> lassen sich geschachtelte Fallunterscheidungen vermeiden, indem alle Fallunterscheidungen in einem einzigen Funktionsaufruf zusammengefasst werden.</p>
-<blockquote class="blockquote">
-<p><strong>Merke:</strong> geschachtelte Fallunterscheidungen mit <code>WENN()</code> unbedingt vermeiden!</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Geschachtelte Fallunterscheidungen mit <code>WENN()</code> unbedingt vermeiden!</p>
+</div>
+</div>
 <p>Die Funktion <code>WENNS()</code> erwartet Parameterpaare, bestehend aus einem logischen Ausdruck und dem Ergebnis, falls dieser logische Ausdruck <code>WAHR</code> ergibt. Die Funktion kann bis zu 127 Parameterpaare verarbeiten, so dass sich auch sehr komplexe Fallunterscheidungen mit dieser Funktion abbilden lassen.</p>
-<p>(<em>Beispiel 1</em>) Das folgende Beispiel zeigt die Verwendung der Funktion <code>WENNS()</code> für die geschachtelte Fallunterscheidung aus dem Abschnitt <code>WENN</code>.</p>
+<div id="exm-wenns-vereinfachen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 10.4 </strong></span>Das folgende Beispiel zeigt die Verwendung der Funktion <code>WENNS()</code> für die geschachtelte Fallunterscheidung aus dem Abschnitt <code>WENN</code>.</p>
 <pre><code>= WENNS(A2:A3 = 1; "Eins"; 
         A2:A3 = 3; "Drei"; 
         A2:A3 = 4; "Vier"; 
         A2:A3 = 8; "Acht")</code></pre>
 <p>Das Beispiel bildet aber noch nicht die vollständige Fallunterscheidung ab. Es fehlt noch der Fall, dass keiner der logischen Ausdrücke <code>WAHR</code> ergibt. Leider kann <code>WENNS()</code> ausschliesslich logische Ausdrücke mit ihren Ergebnissen verbinden.</p>
-<blockquote class="blockquote">
-<p><strong>Merke:</strong> <code>WENNS()</code> kann nur logische Ausdrücke mit ihren <code>WAHR</code>-Ergebnissen verbinden.</p>
-</blockquote>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>WENNS()</code> kann nur logische Ausdrücke mit ihren <code>WAHR</code>-Ergebnissen verbinden.</p>
+</div>
+</div>
 <p>Anders als bei <code>WENN()</code> gibt es keine direkte Möglichkeit, ein Ergebnis festzulegen, falls alle logische Ausdrücke <code>FALSCH</code> ergeben. Um ein solches Verhalten zu erzeugen, wird ausgenutzt, dass die Funktion <code>WENNS()</code> immer einen wahren logischen Ausdruck mit einem Ergebnis verknüpft. Weil die logischen Ausdrücke in der Reihenfolge ausgewertet werden, wie sie in der Funktion angegeben sind, muss der letzte logische Ausdruck alle Fälle abdecken, die von keinem anderen der vorangegangen logischen Ausdrücke akzeptiert wurden. Der einfachste logische Ausdruck, der immer wahr ist, ist der Wahrheitswert <code>WAHR</code>. Deshalb wird dieser Wert als letzter logischer Ausdruck für <code>WENNS()</code> verwendet.</p>
-<p>Mit diesem Wissen lässt sich das erste Beispiel mit <code>WENNS()</code> vervollständigen:</p>
+<p>Mit diesem Wissen lässt sich das Beispiel mit <code>WENNS()</code> vervollständigen:</p>
 <pre><code>= WENNS(A2:A3 = 1; "Eins"; 
         A2:A3 = 3; "Drei"; 
         A2:A3 = 4; "Vier"; 
         A2:A3 = 8; "Acht"; 
         WAHR; "Ungültig")</code></pre>
 <p>Diese Formel prüft die Werte in <code>A2:A3</code> auf Gleichheit mit den Werten <code>1</code>, <code>3</code>, <code>4</code> und <code>8</code>. Für diese Zahlen wird die zugehörige Zahlwert als Zeichenkette ausgegeben. Falls keiner dieser Werte gefunden wird, wird der Wert <code>Ungültig</code> zurückgegeben.</p>
+</div>
 <p>Die Fallunterscheidung mit <code>WENNS()</code> endet beim ersten logischen Ausdruck, der <code>WAHR</code> ergibt. Die Funktion prüft der Reihe nach alle angegebenen logischen Ausdrücke. Sobald einer dieser Ausdrücke <code>WAHR</code> ist, wird der zugehörige Ergebniswert ausgegeben und die Funktion wird beendet. Diese Eigenschaft begründet, dass die logischen Ausdrück nur die Fälle prüfen müssen, die von den vorangegangenen logischen Ausdrücken nicht abgedeckt wurden.</p>
-<p>(*Beispiel 2) Das folgende komplexe Beispiel zeigt, wie die Fallunterscheidung mit <code>WENNS()</code> vereinfacht werden kann.</p>
-<pre><code>WENN(J2&gt;=O2;
+<div id="exm-vereinfachte-fallunterscheidung" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 10.5 (Fallunterscheidung mit <code>WENNS()</code> vereinfachen) </strong></span>Gegeben ist die Formel mit geschachtelten Entscheidungen.</p>
+<pre><code>= WENN(J2&gt;=O2;
     (WENN(J2&gt;L2;
           0;
           WENN(J2&lt;=L2;
@@ -749,25 +775,26 @@ a \land b \lor (c &lt; 10) \land d
         J2&gt;N2; K2+(M2-K2)/(N2-L2)*(J2-L2); 
         WAHR;  M2+(O2-M2)/(O2-N2)*(J2-N2)
   )</code></pre>
-<p>Diese Formel hat jedoch den Makel, dass der letzte Fall <code>WAHR</code> keine Konstante abbildet. Besser wäre es, wenn der zweite und der letzte Fall vertauscht wären, so dass der Wert <code>0</code> der letzte Wert ist. Dazu müssen die logischen Ausdrücke umorganisiert werden. Bei der Umorganisation ist die Reihenfolge der logischen Ausdrücke zu beachten: Die letzten beiden Fälle sind nicht umabhängig vom logischen Ausdruck <code>J2&gt;L2</code>. Beim Umorganisieren darf diese Abhängigkeit nicht verloren gehen.</p>
+<p>Diese Formel hat noch den Makel, dass der letzte Fall <code>WAHR</code> keine Konstante abbildet. Besser wäre es, wenn der zweite und der letzte Fall vertauscht wären, so dass der Wert <code>0</code> der letzte Wert ist. Dazu müssen die logischen Ausdrücke umorganisiert werden. Bei der Umorganisation ist die Reihenfolge der logischen Ausdrücke zu beachten: Die letzten beiden Fälle sind nicht umabhängig vom logischen Ausdruck <code>J2&gt;L2</code>. Beim Umorganisieren darf diese Abhängigkeit nicht verloren gehen.</p>
 <pre><code>= WENNS(J2&lt;O2; 100; 
         (J2&lt;=L2)*(J2&gt;N2); K2+(M2-K2)/(N2-L2)*(J2-L2); 
         J2&lt;=L2; M2+(O2-M2)/(O2-N2)*(J2-N2)
         WAHR; 0
   )</code></pre>
 <p>Diese Formel ist deutlich einfacher und weniger Fehleranfällig als die ursprüngliche Formel mit geschachtelten <code>WENN()</code>-Funktionen. Es lassen sich auch weitere Fälle hinzufügen, ohne dass die Formel komplexer wird. Dabei ist zu beachten, dass diese Fälle <em>vor</em> dem Fall <code>WAHR</code> angegeben werden müssen.</p>
+</div>
 </section>
 <section id="nicht-erreichbare-entscheidungen" class="level3" data-number="10.5.3">
 <h3 data-number="10.5.3" class="anchored" data-anchor-id="nicht-erreichbare-entscheidungen"><span class="header-section-number">10.5.3</span> Nicht erreichbare Entscheidungen</h3>
 <p>Ein besonderes Problem sind Entscheidungen, die zwar definiert aber nie erreicht werden können. Solche Entscheidungen sind immer <em>redundant</em>. Eine nicht erreichbare Entscheidung kann nur dann auftreten, wenn eine vorangegangene Entscheidung bereits den geprüften Fall abdeckt. Ergibt ein solcher logischer Ausdruck <code>Falsch</code>, dann wird eine spätere Entscheidung für den gleichen Fall im Falsch-Zweig des Entscheidungsbaums ebenfalls <code>Falsch</code> ergeben. Der Wahr-Zweig dieser Entscheidung kann damit nie erreicht werden.</p>
 <div id="exm-wenns-nicht-erreichbar" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.3 (Nicht erreichbare Entscheidung) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 10.6 (Nicht erreichbare Entscheidung) </strong></span>&nbsp;</p>
 <pre><code>=WENNS( A1 &gt; 5; "Sehr gut"; 
         A1 &gt; 3; "Genügend"; 
         A1 &gt; 4; "Gut"; 
         A1 &lt;= 3; "Ungenügend")</code></pre>
 </div>
-<p>In <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.3</span></a> kann nie das Ergebnis “Gut” erzeugt werden, weil der zweite logische Ausdruck (A1 &gt; 3) alle Werte “maskiert”, die durch den dritten logischen Ausdruck (A1 &gt; 4) als “Gut” markiert werden müssten. “Ungenügend” würde trotzdem angezeigt werden, wenn der Wert in A1 entweder 1, 2 oder 3 ist.</p>
+<p>In <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.6</span></a> kann nie das Ergebnis “Gut” erzeugt werden, weil der zweite logische Ausdruck (A1 &gt; 3) alle Werte “maskiert”, die durch den dritten logischen Ausdruck (A1 &gt; 4) als “Gut” markiert werden müssten. “Ungenügend” würde trotzdem angezeigt werden, wenn der Wert in A1 entweder 1, 2 oder 3 ist.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -781,7 +808,7 @@ Wichtig
 <p>Eine nicht erreichbare Entscheidung ist kein technischer Fehler, sondern ein logischer Fehler.</p>
 </div>
 </div>
-<p>Im <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.3</span></a> kann die Entscheidung <code>A1 &gt; 4</code> nicht erreicht werden, weil das vorherige und allgemeinere Kriterium <code>A1 &gt; 3</code> für die gleichen Werte zutrifft.</p>
+<p>Im <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.6</span></a> kann die Entscheidung <code>A1 &gt; 4</code> nicht erreicht werden, weil das vorherige und allgemeinere Kriterium <code>A1 &gt; 3</code> für die gleichen Werte zutrifft.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -798,7 +825,7 @@ Merke
 <p>Nicht erreichbare Entscheidungen lassen sich durch das Formale prüfen der logischen Ausdrücke leicht erkennen. Dazu werden logischen Ausdrücke und die zugehörigen Wertebereiche für den Wahr- und Falsch-Fall untereinander aufgeschrieben. Ein logischer Ausdruck kann einen Wertebereich nur dann abdecken, wenn dieser eine Teilmenge des Wertebereichs der aktuellen logischen Verzweigung ist.</p>
 <div id="tbl-wenns-nicht-erreichbar" class="anchored">
 <table class="table">
-<caption>Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.3</span></a></caption>
+<caption>Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar">Beispiel&nbsp;<span>10.6</span></a></caption>
 <thead>
 <tr class="header">
 <th style="text-align: center;">Rang</th>
@@ -923,7 +950,7 @@ Warnung
 </div>
 <blockquote class="blockquote">
 <div id="exm-excel-filter" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.4 (Filtern mit Excel) </strong></span>Gegeben sind die folgende Werte in den Spalten <code>A</code> und <code>B</code>. Die <code>Filter()</code>-Funktion steht an Adresse <code>D2</code>.</p>
+<p><span class="theorem-title"><strong>Beispiel 10.7 (Filtern mit Excel) </strong></span>Gegeben sind die folgende Werte in den Spalten <code>A</code> und <code>B</code>. Die <code>Filter()</code>-Funktion steht an Adresse <code>D2</code>.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -1181,8 +1208,10 @@ Hinweis
 <li>Auf einem neuen Arbeitsblatt geben wir in der ersten Zeile die Vektorennamen ab Adresse <code>A1</code> ein, die wir auswählen möchten. In diesem Beispiel wird angenommen, dass 3 Vektoren ausgewählt werden sollen.</li>
 <li>Wir wählen die einzelnen Vektoren mit der folgenden Formel an der Adresse A2 aus.</li>
 </ol>
-<p>::: {#exm-excel-selektion}</p>
+<div id="exm-excel-selektion" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 10.8 (Selektion von Vektoren in Excel) </strong></span>&nbsp;</p>
 <pre><code>=SPALTENWAHL(Stichprobendaten!$B$2#; XVERGLEICH(A1:C1; Stichprobendaten!$B$1#))</code></pre>
+</div>
 <p>Der Vorteil dieser Strategie ist, dass die Selektion individuelle, nicht-zusammenhängende Vektoren selektieren kann und nicht auf Tabellen beschränkt ist.</p>
 </section>
 <section id="sortieren" class="level2" data-number="10.8">
@@ -1192,8 +1221,7 @@ Hinweis
 <li><code>SORTIEREN()</code></li>
 <li><code>SORTIERENNACH()</code></li>
 </ul>
-<p>SORTIEREN NACH</p>
-<p>Für allgemeine Sortierungen nach mehreren Vektoren stellt Excel die Funktion <code>SORTIERENNACH()</code> zur Verfügung.</p>
+<p>Die Funktion <code>SORTIEREN()</code> sortiert einen Bereich zeilen- oder spaltenweise. Für allgemeine Sortierungen nach mehreren Vektoren stellt Excel die Funktion <code>SORTIEREN()</code> zur Verfügung.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1204,7 +1232,7 @@ Hinweis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Excels <code>SORTIEREN()</code>-Funktion</strong> kann einen Bereich zeilen- oder spaltenweise sortieren. Diese Funktion hat vier Parameter:</p>
+<p><strong>Excels <code>SORTIERENNACH()</code>-Funktion</strong> kann einen Bereich zeilen- oder spaltenweise sortieren. Diese Funktion hat vier Parameter:</p>
 <ul>
 <li><code>Matrix</code> - der zu sortierende Bereich, der <em>keine</em> Matrix sein muss.</li>
 <li><code>Sortierindex</code> - die Spalten- oder Zeilennummer, nach der sortiert werden soll. Standardmässig wird die erste Spalte bzw. die erste Zeile angenommen.</li>
@@ -1214,6 +1242,7 @@ Hinweis
 </div>
 </div>
 <p>Die Funktion ermöglicht es, mehrere Vektoren auf einmal nach <strong>mehreren</strong> gemeinsamen Kriterien zu sortieren. Dazu müssen zuerst die Sortierkriterien identifiziert werden.</p>
+<p>Die Funktion <code>SORTIERENNACH()</code> deckt den Spezialfall ab, wenn die Sortierung nach einem externen Kriterium erfolgen soll. Während <code>SORTIEREN()</code> erfordert, dass die Sortierindizes im zu sortierenden Bereich enthalten sind, können die Sortierindizes bei <code>SORTIERENNACH()</code> an einer beliebigen Stelle in der Arbeitsmappe liegen.</p>
 <section id="schritt-1-sortierkriterien-festlegen." class="level4" data-number="10.8.0.1">
 <h4 data-number="10.8.0.1" class="anchored" data-anchor-id="schritt-1-sortierkriterien-festlegen."><span class="header-section-number">10.8.0.1</span> Schritt 1: Sortierkriterien festlegen.</h4>
 <p>Die Sortierkriterien sind durch die Werte im Sortierindex festgelegt, nach denen sortiert werden soll. Der Sortierindex ist ein Vektor mit einem Wert für eine Zeile bzw. Spalte der Sortiermatrix. Entlang der Werte im Sortierindex wird die Sortiermatrix sortiert.</p>
@@ -1342,7 +1371,7 @@ Warnung
 <p>Bis Juli 2020 mussten die Funktionen <code>SUMMEWENN()</code> oder <code>SUMMEWENNS()</code> verwendet werden, um Daten nach Kriterien zu summieren. Diese Funktionen haben allerdings den Nachteil, dass keine echten logischen Ausdrücke verwendet werden können. Seit Juli 2020 steht die <code>FILTER()</code>-Funktion zur Verfügung. Dadurch können echte logische Ausdrücke als Filterkriterien eingesetzt werden. Gleichzeitig hat sich die Bedeutung der Funktionen <code>SUMMEWENN()</code> und <code>SUMMEWENNS()</code>geändert (s. <a href="../kodieren-gruppieren/kapitel.html"><span>Kapitel&nbsp;13</span></a>).</p>
 <p>Die folgende Formel sollten wir jetzt mit der Filter-Technik umschreiben.</p>
 <div id="exm-summenwenn-filter" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.5 (Summenwenn durch Filter-Summe ersetzen) </strong></span>Alt wurde geschrieben:</p>
+<p><span class="theorem-title"><strong>Beispiel 10.9 (Summenwenn durch Filter-Summe ersetzen) </strong></span>Alt wurde geschrieben:</p>
 <pre><code>= SUMMEWENN(B2#; "&lt; 0")</code></pre>
 <p>Neu ist die gleiche Funktion etwas ausführlicher:</p>
 <pre><code>= SUMME( FILTER(B2#; B2# &lt; 0) )</code></pre>
