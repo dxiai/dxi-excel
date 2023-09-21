@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/vektor-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektor-Operationen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -271,14 +271,16 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#eine-datenverbindung-herstellen" id="toc-eine-datenverbindung-herstellen" class="nav-link active" data-scroll-target="#eine-datenverbindung-herstellen"><span class="header-section-number">7.1</span> Eine Datenverbindung herstellen</a></li>
-  <li><a href="#daten-aktualisieren" id="toc-daten-aktualisieren" class="nav-link" data-scroll-target="#daten-aktualisieren"><span class="header-section-number">7.2</span> Daten aktualisieren</a></li>
-  <li><a href="#datenverbindung-anpassen" id="toc-datenverbindung-anpassen" class="nav-link" data-scroll-target="#datenverbindung-anpassen"><span class="header-section-number">7.3</span> Datenverbindung anpassen</a></li>
-  <li><a href="#sec-daten-import-transformieren" id="toc-sec-daten-import-transformieren" class="nav-link" data-scroll-target="#sec-daten-import-transformieren"><span class="header-section-number">7.4</span> Daten beim Import transformieren</a>
+  <li><a href="#datenschema-anpassen" id="toc-datenschema-anpassen" class="nav-link" data-scroll-target="#datenschema-anpassen"><span class="header-section-number">7.2</span> Datenschema anpassen</a>
   <ul class="collapse">
-  <li><a href="#datenschema-anpassen" id="toc-datenschema-anpassen" class="nav-link" data-scroll-target="#datenschema-anpassen"><span class="header-section-number">7.4.1</span> Datenschema anpassen</a></li>
-  <li><a href="#daten-bereinigen" id="toc-daten-bereinigen" class="nav-link" data-scroll-target="#daten-bereinigen"><span class="header-section-number">7.4.2</span> Daten bereinigen</a></li>
-  <li><a href="#datenquellen-kombinieren" id="toc-datenquellen-kombinieren" class="nav-link" data-scroll-target="#datenquellen-kombinieren"><span class="header-section-number">7.4.3</span> Datenquellen kombinieren</a></li>
+  <li><a href="#datentyp-anpassen" id="toc-datentyp-anpassen" class="nav-link" data-scroll-target="#datentyp-anpassen"><span class="header-section-number">7.2.1</span> Datentyp anpassen</a></li>
+  <li><a href="#spalten-umbenennen" id="toc-spalten-umbenennen" class="nav-link" data-scroll-target="#spalten-umbenennen"><span class="header-section-number">7.2.2</span> Spalten umbenennen</a></li>
+  <li><a href="#spalten-verschieben" id="toc-spalten-verschieben" class="nav-link" data-scroll-target="#spalten-verschieben"><span class="header-section-number">7.2.3</span> Spalten verschieben</a></li>
+  <li><a href="#spalte-teilen" id="toc-spalte-teilen" class="nav-link" data-scroll-target="#spalte-teilen"><span class="header-section-number">7.2.4</span> Spalte teilen</a></li>
   </ul></li>
+  <li><a href="#spalten-auswählen-oder-entfernen" id="toc-spalten-auswählen-oder-entfernen" class="nav-link" data-scroll-target="#spalten-auswählen-oder-entfernen"><span class="header-section-number">7.3</span> Spalten auswählen oder entfernen</a></li>
+  <li><a href="#daten-aktualisieren" id="toc-daten-aktualisieren" class="nav-link" data-scroll-target="#daten-aktualisieren"><span class="header-section-number">7.4</span> Daten aktualisieren</a></li>
+  <li><a href="#datenverbindung-anpassen" id="toc-datenverbindung-anpassen" class="nav-link" data-scroll-target="#datenverbindung-anpassen"><span class="header-section-number">7.5</span> Datenverbindung anpassen</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
@@ -302,19 +304,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Work in Progress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 <p>Viele Excel Arbeitsmappen kombinieren Berechnungen und Daten. Excel kann allerdings auch Daten aus anderen Quellen importieren. Quellen können andere Dateien, Datenbanken oder Web-APIs sein und in verschiedenen Formaten vorliegen. Dafür stellt Excel Parser für verschiedene Dateiformate bereit, damit die Daten importiert werden können.</p>
 <p>Daten werden korrekt mit dem Kommando <strong>Daten abrufen (Power Query)</strong> importiert. Das Kommando ist in der Gruppe <strong>Daten</strong> im Abschnitt <strong>Daten abrufen und transformieren</strong> zu finden. Das Kommando <em>Daten abrufen</em> startet die sog. <strong>Power Query</strong> Umgebung. In dieser Umgebung können Daten aus verschiedenen Quellen importiert und vor der Bereitstellung korrigiert werden.</p>
 <div id="fig-menubalken-power-query-kommando-daten-abrufen" class="quarto-figure quarto-figure-center anchored">
@@ -381,14 +370,52 @@ Merke
 </div>
 <section id="eine-datenverbindung-herstellen" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="eine-datenverbindung-herstellen"><span class="header-section-number">7.1</span> Eine Datenverbindung herstellen</h2>
+<p>Eine Datenverbindung wird über das Kommando <code>Daten abrufen (Power Query)</code> ausgelöst. Das Kommando ist in der Gruppe <strong>Daten</strong> im Abschnitt <strong>Daten abrufen und transformieren</strong> zu finden. Das Kommando bereitet den Import durch Power Query vor, indem zuerst das Dateiformat und anschliessend die zugehörige Datenquellen ausgewählt wird. Nach diesen Schritten kann Excel die Daten <code>Laden</code> oder die <code>Daten transformieren</code> (s. <a href="#fig-power-query-laden-oder-transformieren">Abbildung&nbsp;<span>7.3</span></a>).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Daten sollten nur in Ausnahmefällen unkontrolliert gelanden werden. Die Daten sollten vor dem Importieren in Power Query überprüft und transformiert werden. Dadurch wird sichergestellt, dass die Daten korrekt importiert werden.</p>
+</div>
+</div>
+<div id="fig-power-query-laden-oder-transformieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/daten_import_navigator.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.3: Laden oder Transformieren-Auswahl beim Import einer Excel Arbeitsmappe</figcaption>
+</figure>
+</div>
+<p>Wird die Option <code>Daten transformieren</code> ausgewählt, öffnet sich der Power Query Editor. In diesem Editor können die Daten überprüft und transformiert werden. Das Transformieren der Daten umfasst vier Arten der Transformation:</p>
 <ol type="1">
-<li>Daten abrufen</li>
-<li>Datenquelle auswählen</li>
-<li>Daten überprüfen</li>
-<li>Daten gegebenenfalls transformieren</li>
-<li>Daten importieren</li>
+<li>Datentypanpassungen</li>
+<li>Spaltenauswahl</li>
+<li>Datentrennung</li>
+<li>Daten kombinieren</li>
 </ol>
-<p>Nach einem Datenimport liegen die Daten in der Arbeitsmappe vor. Diese Daten sind eine Kopie der Daten in der Datenquelle. Die kopierten Werte sind als Tabelle in der Arbeitsmappe gespeichert. Dadurch kann die Arbeitsmappe unabhängig von der Datenquelle verwendet und geteilt werden.</p>
+<p>Für jede Transformation wird ein Schritt in Power Query angelegt. Die Schritte werden in der Reihenfolge der Ausführung angezeigt. Die Reihenfolge der Schritte kann verändert werden, indem die Schritte mit der Maus verschoben werden. In der Mitte des Power Query Fensters wird eine Datenvorschau angezeigt, die die Auswirkungen der Transformationen zeigt.</p>
+<p>Standardmässig werden drei bzw. bei Excel Arbeitsmappen vier Schritte in Power Query automatisch konfiguriert:</p>
+<ol type="1">
+<li><code>Quelle</code>
+<ul>
+<li>Bei Excel Arbeitsmappen folgt dem Schritt <code>Quelle</code> der Schritt <code>Navigation</code> zur Auswahl des Arbeitsblattes.</li>
+</ul></li>
+<li><code>Höherstufen</code></li>
+<li><code>Geänderter Typ</code> (Windows) bzw. <code>geänderter Spaltentyp</code> (MacOS)</li>
+</ol>
+<p>Der Schritt <code>Geänderter Typ</code> enthält die Schemadefinition. Power Query versucht das Schema automatisch zu erkennen. Das funktioniert besonders bei Zahlenwerten nicht immer zuverlässig. Deshalb muss das Schema immer kontrolliert und gegebenefalls angepasst werden.</p>
+<div id="fig-power-query-editor-scheme" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_schema_anpassung.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.4: Schemaanpassung mit Power Query</figcaption>
+</figure>
+</div>
+<p>Nachdem das Schema kontrolliert wurde, können die Daten nach Excel importiert werden. Dazu wird das Kommando <code>Schließen &amp; laden</code> in Power Query Menukategorie <code>Start</code> ausgeführt.</p>
+<p>Nach einem Datenimport liegen die Daten in der Arbeitsmappe als <em>Tabelle</em> vor. Diese Daten sind eine Kopie der Daten in der Datenquelle. Dadurch kann die Arbeitsmappe unabhängig von der Datenquelle verwendet und geteilt werden.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -404,14 +431,262 @@ Achtung
 </div>
 </div>
 </section>
-<section id="daten-aktualisieren" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="daten-aktualisieren"><span class="header-section-number">7.2</span> Daten aktualisieren</h2>
+<section id="datenschema-anpassen" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="datenschema-anpassen"><span class="header-section-number">7.2</span> Datenschema anpassen</h2>
+<p>Die einfachste Möglichkeit zur Anpassung des Datenschemas ist die Verwendung der Menukategorie <code>Transformation</code>. Dieses Menu zeigt alle verfügbaren Transformationen an. Die Transformationen sind in sechs Kategorien gegliedert:</p>
+<div id="fig-power-query-ribbon-transformation" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_ribbon_transformation.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.5: Power Query Menu Transformation</figcaption>
+</figure>
+</div>
+<ol type="1">
+<li><code>Tabelle</code></li>
+<li><code>Beliebige Spalte</code></li>
+<li><code>Textspalte</code></li>
+<li><code>Zahlenspalte</code></li>
+<li><code>Datums- &amp; Uhrzeitspalte</code></li>
+<li><code>Strukturierte Spalte</code></li>
+</ol>
+<p>Für das Datenschema sind die folgenden Transformationen wichtig:</p>
+<ul>
+<li><code>Datentyp</code></li>
+<li><code>Umbenennen</code></li>
+<li><code>Verschieben</code></li>
+<li><code>Spalte teilen</code></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die meisten Transformationen gehören konzeptionell zu späteren Kapiteln.</p>
+<ul>
+<li><p><code>Gruppieren nach</code> und <code>Werte ersetzen</code> werden im <a href="../kodieren-gruppieren/kapitel.html"><span>Kapitel&nbsp;13</span></a> behandelt.</p></li>
+<li><p><code>Vertauschen</code> wird im <a href="../matrix-operationen/kapitel.html"><span>Kapitel&nbsp;12</span></a> behandelt.</p></li>
+<li><p><code>Zellen zählen</code>, <code>Ausfüllen</code> und alle Transformationen in den Kategorien <code>Zahlenspalten</code>, <code>Datums- &amp; Uhrzeitspalten</code> und <code>Strukturierte Spalten</code> werden im <a href="../vektor-operationen/kapitel.html"><span>Kapitel&nbsp;11</span></a> behandelt.</p></li>
+<li><p><code>Spalte pivotisieren</code> und <code>Spalte entpivotisieren</code> werden im <a href="../daten-formen/kapitel.html"><span>Kapitel&nbsp;14</span></a> behandelt.</p></li>
+<li><p><code>Format</code>, <code>Analysieren</code> und <code>Extrahieren</code> (Kategorie <code>Textspalte</code>) werden im <a href="../zeichenketten/kapitel.html"><span>Kapitel&nbsp;9</span></a> behandelt.</p></li>
+</ul>
+<p>In diesen Kapiteln werden die Transformationen von Power Query separat hervorgehoben.</p>
+</div>
+</div>
+<section id="datentyp-anpassen" class="level3" data-number="7.2.1">
+<h3 data-number="7.2.1" class="anchored" data-anchor-id="datentyp-anpassen"><span class="header-section-number">7.2.1</span> Datentyp anpassen</h3>
+<p>Die wichtigste Transformation ist die Anpassung des Datentyps. Der Datentyp bestimmt, wie die Daten interpretiert werden. Die Interpretation der Daten bestimmt, welche Operationen auf die Daten angewendet werden können.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Datentypen müssen im Schritt <code>Geänderter Typ</code> (Windows) bzw. <code>geänderter Spaltentyp</code> (MacOS) angepasst werden.</p>
+</div>
+</div>
+<p>Power Query zeigt neben den Spaltenüberschriften mit einem Symbol den Datentyp der Spalte an. <a href="#tbl-power-query-datentypen">Tabelle&nbsp;<span>7.1</span></a> zeigt die Symbole für die verschiedenen Datentypen. Zusätzlich wird der Datentyp im Menubalken neben dem Kommando <code>Datentyp</code> angezeigt. Die Datentypen sind in vier Kategorien unterteilt:</p>
+<ul>
+<li>Zahlen</li>
+<li>Datum und Uhrzeit</li>
+<li>Zeichenketten</li>
+<li>Wahrheitswerte</li>
+</ul>
+<p>Im Gegensatz zu Excel behandelt Power Query Datum und Uhrzeit als eigenen Datentyp. Power Query muss diese Unterscheidung machen, weil in den Datenquellen diese Werte als Zeichenketten kodiert vorliegen. Dabei handelt es sich um <em>strukturierte Daten</em>. Power Query hat für diese Daten spezielle <em>Parser</em>, die die Zeichenketten aus der Datenquelle in Zahlenwerte für Excel umwandeln.</p>
+<div id="tbl-power-query-datentypen" class="anchored">
+<table class="table">
+<caption>Tabelle&nbsp;7.1: Power Query Datentypen mit Symbolen</caption>
+<colgroup>
+<col style="width: 16%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 44%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Datentyp</th>
+<th style="text-align: center;">Symbol</th>
+<th style="text-align: center;">Kategorie</th>
+<th style="text-align: left;">Bemerkungen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Text</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_text.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zeichenketten</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TRUE/FALSE</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_bool.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Wahrheitswerte</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Dezimalzahl</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_dezimal.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zahlen</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Ganze Zahl</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_ganzzahl.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zahlen</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Prozentzahl</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_prozent.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zahlen</td>
+<td style="text-align: left;">Dezimalzahl mal <code>100</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Währung</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_waehrung.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zahlen</td>
+<td style="text-align: left;">Dezimalzahl mit Währungsformatierung</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Binärzahl</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_binary.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zahlen</td>
+<td style="text-align: left;">Ganzzahl</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Zahl mit Gebietsschema</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_gebietsschema.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Zahlen</td>
+<td style="text-align: left;"><strong><em>Nur MacOS</em></strong>; Das Gebietsschema legt den Tausender- und Dezimaltrenner fest</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datum/Uhrzeit</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_zeitstempel.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Datum und Uhrzeit</td>
+<td style="text-align: left;">Zeitstempel als formatierte Dezimalzahl</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Datum</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_datum.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Datum und Uhrzeit</td>
+<td style="text-align: left;">Ganzzahl mit Datumsformatierung</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Uhrzeit</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_uhrzeit.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Datum und Uhrzeit</td>
+<td style="text-align: left;">Dezimalzahl zwischen 0 und 1 mit Zeitformatierung</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Dauer</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_dauer.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Datum und Uhrzeit</td>
+<td style="text-align: left;">Dezimalzahl als Zeitdauer</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Datum/Uhrzeit/Zeitzone</td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_zeitstempel_mit_zone.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;">Datum und Uhrzeit</td>
+<td style="text-align: left;">Internationalisierter Zeitstempel als formatierte Dezimalzahl, die Zeitzone <strong>muss</strong> in den Werten kodiert sein, sonst wird +1 angeommen.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<span class="quarto-unresolved-ref">?fig-pq-spaltentyp-aendern</span>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog">Abbildung&nbsp;<span>7.7</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
+<div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_datentyp_aendern.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.6: Änderung des Datentyps einer Spalte</figcaption>
+</figure>
+</div>
+<div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_datentyp_aendern_dialog.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.7: Abfrage vor dem Ändern eines Datentyps</figcaption>
+</figure>
+</div>
+</section>
+<section id="spalten-umbenennen" class="level3" data-number="7.2.2">
+<h3 data-number="7.2.2" class="anchored" data-anchor-id="spalten-umbenennen"><span class="header-section-number">7.2.2</span> Spalten umbenennen</h3>
+<p>Falls einzelne Spaltenüberschriften einer Datenquelle unhantlich sind, lassen sich diese Spalten umbenennen. Dazu wird das Kommando <code>Umbenennen</code> verwendet. Das Kommando ist im Menuband <code>Transformieren</code> im Abschnitt <code>Beliebige Spalte</code> zu finden. Das Kommando öffnet einen Dialog, in dem der neue Name der Spalte eingegeben werden kann. Die Überschrift wird in einem eigenen Arbeitsschritt geändert.</p>
+<p>Spalten lassen sich auch durch einen Doppelklick auf den Spaltennamen umbenennen.</p>
+<p>Die Spaltenüberschriften müssen für die Datenstruktur <em>eindeutig</em> sein. Wird eine Spaltenüberschrift doppelt verwendet, dann gibt Power Query eine Fehlermeldung aus.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Kommando <code>Umbenennen</code> sollte nur verwendet werden, wenn nur einzelne Spalten umbenannt werden müssen. Falls mehrere Spalten umbenannt werden müssen, sollte dieser Schritt als Transformation in Excel durchgeführt werden.</p>
+</div>
+</div>
+</section>
+<section id="spalten-verschieben" class="level3" data-number="7.2.3">
+<h3 data-number="7.2.3" class="anchored" data-anchor-id="spalten-verschieben"><span class="header-section-number">7.2.3</span> Spalten verschieben</h3>
+<p>In Excel können nur zusammenhängende Bereiche einer Tabelle mit einer Adressierung gemeinsam angesprochen werden. Diese Reihenfolge ist immer dann hilfreich, wenn Matrix-Operationen mit diesen Daten ausgeführt werden sollen. Falls die Spalten einer Datenquelle in einer ungünstigen Reihenfolge vorliegen, lassen diese sich mit einem Kommando unter <code>Verschieben</code> richtig positionieren.</p>
+</section>
+<section id="spalte-teilen" class="level3" data-number="7.2.4">
+<h3 data-number="7.2.4" class="anchored" data-anchor-id="spalte-teilen"><span class="header-section-number">7.2.4</span> Spalte teilen</h3>
+<p>Manche Daten fassen mehrere Werte in der einer Spalte zusammen. Falls die Werte als strukturierte Daten vorliegen, kann diese Spalte mit dem Kommando <code>Spalte teilen</code> in mehrere Spalten aufgeteilt werden. Dabei werden drei Varianten unterschieden.</p>
+<ol type="1">
+<li>Die Separator-Trennung verwendet Trennzeichen zum Abgrenzen der Werte.</li>
+<li>Die Positions-Trennung trennt Festkodierungen mit festen Positionen in einzelne Spalten.</li>
+<li>Die Längen-Trennung trennt Festkodierungen, deren Werte immer die gleiche Anzahl von Symbolen haben.</li>
+</ol>
+<p>Die Separator-Trennung kann ein festes Trennzeichen oder ein Trennungsmuster verwenden. Die möglichen Trennungsmuster sind:</p>
+<ul>
+<li>Beim Wechsel zwischen kleinen und grossen Buchstaben.</li>
+<li>Beim Wechsel zwischen grossen und kleinen Buchstaben.</li>
+<li>Beim Wechsel zwischen Ziffern und Nicht-Ziffern.</li>
+<li>Beim Wechsel zwischen Nicht-Ziffern und Ziffern.</li>
+</ul>
+<p>Beim trennen von Spalten dürfen nicht semistrukturierte Daten getrennt werden, weil diese nicht für alle Werte die gleiche Struktur haben.</p>
+</section>
+</section>
+<section id="spalten-auswählen-oder-entfernen" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="spalten-auswählen-oder-entfernen"><span class="header-section-number">7.3</span> Spalten auswählen oder entfernen</h2>
+<p>Zwei besondere Transformationen sind <code>Spalten auswählen</code> und <code>Spalten entfernen</code>. Diese Transformationen werden im Menuband <code>Start</code> angeboten. Mit diesen Transformationen lassen sich unbenötigte Spalten aus den Daten entfernen. Dadurch werden die Daten in Excel übersichtlicher.</p>
+<p>Diese Funktion kommt bei Excel-Arbeitsmappen häufig zum Einsatz, wenn nach Ende der Daten zusätzliche leere Spalten folgen. Diese Spalten können mit <code>Spalten entfernen</code> entfernt werden.</p>
+<div id="fig-power-query-editor-spalten-auswaehlen-entfernen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_spalten_verwalten.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.8: Power Query Kommandos zum auswählen oder entfernen von Spalten (Menu <code>Start</code>)</figcaption>
+</figure>
+</div>
+<p>Beide Kommandos verändern die Datenstruktur, indem Spalten entfernt werden. Das Kommando <code>Spalten auswählen</code> lässt die ausgewählten Spalten in der Datenstruktur und entfernt alle anderen. Das Kommando <code>Spalten entfernen</code> entfernt nur die ausgewählten Spalten.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine spezielle Variante von <code>Spalten auswählen</code> ist Kommando <code>In Liste konvertieren</code> im Menuband <code>Transformieren</code>. Dieses Kommando entfernt alle bis auf die ausgewählte Spalte. Dieses Kommando ändert jedoch die Spaltenüberschrift und sollte deshalb nicht verwendet werden.</p>
+</div>
+</div>
+</section>
+<section id="daten-aktualisieren" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="daten-aktualisieren"><span class="header-section-number">7.4</span> Daten aktualisieren</h2>
 <p>Die Daten können sich aber ändern, z.B. weil ein Formular ausgefüllt wurde oder eine Datenbank aktualisiert wurde. Dadurch ändern sich die Daten in der Datenquelle. In solchen Fällen ist die Kopie in der Arbeitsmappe nicht mehr aktuell. Um die Daten zu aktualisieren, muss die Datenverbindung aktualisiert werden.</p>
 <p>Dazu wird das Kommando <strong>Alle aktualisieren</strong> verwendet. Das Kommando ist im Menu <strong>Daten</strong> im Abschnitt <strong>Verbindungen</strong> zu finden. Das Kommando aktualisiert alle Datenverbindungen in der Arbeitsmappe entsprechend der Importspezifikation.</p>
 <div id="fig-menubalken-daten-kommando-alle-aktualisieren" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/daten_update_ribbon.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.3: Menubalken Daten - Kommando Alle aktualisieren</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.9: Menubalken Daten - Kommando Alle aktualisieren</figcaption>
 </figure>
 </div>
 <p>Es werden nur die importierten Daten aktualisiert. Wurde die Tabelle durch Formeln erweitert, werden diese Formeln <em>nicht</em> gelöscht, sondern auf die neuen Daten erweitert.</p>
@@ -429,28 +704,27 @@ Wichtig
 </div>
 </div>
 </section>
-<section id="datenverbindung-anpassen" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="datenverbindung-anpassen"><span class="header-section-number">7.3</span> Datenverbindung anpassen</h2>
-<p>Gelegentlich ändert sich der Ort einer Datenquelle. Sehr häufig passiert das, wenn eine Datei in einen anderen Ordner verschoben wird. In solchen Fällen muss die Datenverbindung angepasst werden. Dazu muss in Power Query die Datenquelle angepasst werden.</p>
-<p>VORGEHENSWEISE</p>
+<section id="datenverbindung-anpassen" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="datenverbindung-anpassen"><span class="header-section-number">7.5</span> Datenverbindung anpassen</h2>
+<p>Gelegentlich ändert sich der Ort einer Datenquelle. Sehr häufig tritt diese Situation ein, wenn eine Datei in einen anderen Ordner verschoben wird. In solchen Fällen muss die Datenverbindung angepasst werden. Dazu muss in Power Query die Datenquelle angepasst werden.</p>
 <ol type="1">
 <li>Powerquery öffnen</li>
-<li>Schritt “Quelle” ausählen</li>
+<li>Einstellungen im Schritt “Quelle” auswählen (s. <a href="#fig-power-query-editor-datenquelle-anpassen">Abbildung&nbsp;<span>7.10</span></a>)</li>
 <li>Pfad zur Datenquelle anpassen</li>
-<li>Schema überprüfen</li>
-<li>Daten aktualisieren</li>
 </ol>
+<p>Nachdem die richtige Datei ausgewählt wurde, sollte immer das Schema kontrolliert werden, ob die Änderung keine Auswirkungen auf das Schema hat. Wird dieser Schritt übersprungen, kann es zu Fehlern beim Import kommen und im schlimmsten Fall werden die Formeln in der Arbeitsmappe durch eine Fehlerfortpflanzung zerstört.</p>
+<p>Abschliessend kann wieder das Kommando <strong>Schliessen &amp; Landen</strong> ausgeführt werden.</p>
 <div id="fig-power-query-editor-datenquelle-anpassen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_quelle_anpassen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.4: Power Query: Quelle Anpassen (Ausschnitt)</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.10: Power Query: Quelle Anpassen (Ausschnitt)</figcaption>
 </figure>
 </div>
-<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen">Abbildung&nbsp;<span>7.5</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
+<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen">Abbildung&nbsp;<span>7.11</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
 <div id="fig-menubalken-daten-abfragen-verbindungen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/daten_update_ribbon_abfragen_liste.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.5: Menubalken Daten - Abfragen &amp; Verbindungen</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.11: Menubalken Daten - Abfragen &amp; Verbindungen</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -463,38 +737,17 @@ MacOS vs.&nbsp;Windows
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Grundsätzlich lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel öffent über diesen Weg den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten">Abbildung&nbsp;<span>7.6</span></a>).</p>
+<p>Unter Windows lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel von dort immer den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten">Abbildung&nbsp;<span>7.12</span></a>).</p>
 <div id="fig-power-query-unter-macos-starten" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_macos_starten.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.6: Power Query unter MacOS starten</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.12: Power Query unter MacOS starten</figcaption>
 </figure>
 </div>
 </div>
 </div>
-</section>
-<section id="sec-daten-import-transformieren" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="sec-daten-import-transformieren"><span class="header-section-number">7.4</span> Daten beim Import transformieren</h2>
-<section id="datenschema-anpassen" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="datenschema-anpassen"><span class="header-section-number">7.4.1</span> Datenschema anpassen</h3>
-<section id="schritt-höherstufen" class="level4" data-number="7.4.1.1">
-<h4 data-number="7.4.1.1" class="anchored" data-anchor-id="schritt-höherstufen"><span class="header-section-number">7.4.1.1</span> Schritt Höherstufen</h4>
-</section>
-<section id="schritt-geänderter-spaltentyp" class="level4" data-number="7.4.1.2">
-<h4 data-number="7.4.1.2" class="anchored" data-anchor-id="schritt-geänderter-spaltentyp"><span class="header-section-number">7.4.1.2</span> Schritt Geänderter Spaltentyp</h4>
-</section>
-<section id="schritt-spalten-entfernen" class="level4" data-number="7.4.1.3">
-<h4 data-number="7.4.1.3" class="anchored" data-anchor-id="schritt-spalten-entfernen"><span class="header-section-number">7.4.1.3</span> Schritt Spalten entfernen</h4>
-</section>
-</section>
-<section id="daten-bereinigen" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="daten-bereinigen"><span class="header-section-number">7.4.2</span> Daten bereinigen</h3>
-</section>
-<section id="datenquellen-kombinieren" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="datenquellen-kombinieren"><span class="header-section-number">7.4.3</span> Datenquellen kombinieren</h3>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
