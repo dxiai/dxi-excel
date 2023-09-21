@@ -632,24 +632,81 @@ Wichtig
 </div>
 </div>
 </section>
-<section id="überschriften-adressieren" class="level4" data-number="6.4.2.2">
-<h4 data-number="6.4.2.2" class="anchored" data-anchor-id="überschriften-adressieren"><span class="header-section-number">6.4.2.2</span> Überschriften adressieren</h4>
+<section id="diese-zeile-operator" class="level4" data-number="6.4.2.2">
+<h4 data-number="6.4.2.2" class="anchored" data-anchor-id="diese-zeile-operator"><span class="header-section-number">6.4.2.2</span> <code>Diese Zeile</code>-Operator</h4>
+<p>Einzelne Zeilen einer Tabelle können mit dem <code>Diese Zeile</code>-Operator adressiert werden. Der <code>Diese Zeile</code>-Operator wird mit dem Wert <code>[#Diese Zeile]</code> oder mit <code>@</code> angegeben. Dieser Operator reduziert die Tabelle auf eine einzelne Zeile und wählt anschliessend die gewünschte Spalte aus. <code>Diese Zeile</code> bedeutet für Excel die aktuelle Zeile des Arbeitsblatts.</p>
+<blockquote class="blockquote">
+<div id="exm-diese-zeile" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 6.4 (<code>Diese Zeile</code>-Operator für eine Tabellenzelle) </strong></span>&nbsp;</p>
+<pre><code>= Tabelle[@Spalte]</code></pre>
+<p>oder</p>
+<pre><code>= @Tabelle[Spalte]</code></pre>
+</div>
+</blockquote>
+<p>Der Operator ist speziell für die Verwendung in Formeln in Tabellenzellen gedacht. Obwohl der Operator in allen Formeln eingesetzt werden kann, sollte der Einsatz auf Formeln beschränkt werden, die sich in einer Tabelle befinden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der <code>Diese Zeile</code>-Operator kann nicht auf Tabellen angewendet werden, um eine ganze Zeile zu adressieren. Es darf immer nur eine einzelne Zelle adressiert werden. Die Adressierung <code>@Tabelle</code> ist also ungültig.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der <code>Diese Zeile</code>-Operator ist immer relativ zum Arbeitsblatt und nicht relativ zur aktuellen Tabelle. Es muss nur der Zeilenindex gleich sein, die Zielzelle kann sich auf einem anderen Arbeitsblatt befinden.</p>
+</div>
+</div>
+<p>Wird der <code>Diese Zeile</code>-Operator in Tabellen unterschiedlicher Länge verwendet, dann können zwei Fälle eintreten:</p>
+<ol type="1">
+<li>Ist die adressierte Tabelle kürzer als die adressierende Tablle, dann wird für die Zeilen, die keine Entsprechung in der adressierten Tabelle haben, der Fehler <code>#WERT!</code> zurückgegeben.</li>
+<li>Ist die adressierte Tabelle länger als die adressierende Tablle, dann werden alle überzähligen Zeilen <em>ignoriert</em>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der <code>Diese Zeile</code>-Operator kann nur auf eine einzelne Zelle in der gleichen Zeile auf einem Arbeitsblatts angewendet werden. Wegen dieser Einschränkung des <code>Diese Zeile</code>-Operators sollten alle Tabellen so gestaltet werden, dass sie in der ersten Zeile des Arbeitsblatts beginnen. Dadurch kann der <code>Diese Zeile</code>-Operator in allen Tabellen verwendet werden.</p>
+</div>
+</div>
+</section>
+<section id="überschriften-adressieren" class="level4" data-number="6.4.2.3">
+<h4 data-number="6.4.2.3" class="anchored" data-anchor-id="überschriften-adressieren"><span class="header-section-number">6.4.2.3</span> Überschriften adressieren</h4>
 <p>Eine Excel Tabelle hat immer Spaltenüberschriften. Diese Überschriften können ebenfalls über die Tabellenadressierung adressiert werden. Dazu wird als Spaltenname der Wert <code>#Kopfzeilen</code> verwendet.</p>
 <div id="exm-kopfzeilen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 6.4 (Kopfzeilen einer Tabelle adressieren) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 6.5 (Kopfzeilen einer Tabelle adressieren) </strong></span>&nbsp;</p>
 <pre><code>Tabelle1[#Kopfzeilen]</code></pre>
 </div>
-<p>Um gezielt Kofzeilen zu adressieren, kann die Adressierung aus <a href="#exm-kopfzeilen">Beispiel&nbsp;<span>6.4</span></a> mit der Adressierung aus <a href="#exm-tabellenbereich">Beispiel&nbsp;<span>6.3</span></a> kombiniert werden (<a href="#exm-kopfzeilen-bereich">Beispiel&nbsp;<span>6.5</span></a>).</p>
+<p>Um gezielt Kofzeilen zu adressieren, kann die Adressierung aus <a href="#exm-kopfzeilen">Beispiel&nbsp;<span>6.5</span></a> mit der Adressierung aus <a href="#exm-tabellenbereich">Beispiel&nbsp;<span>6.3</span></a> kombiniert werden (<a href="#exm-kopfzeilen-bereich">Beispiel&nbsp;<span>6.6</span></a>).</p>
 <div id="exm-kopfzeilen-bereich" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 6.5 (Kopfzeilen einer Tabelle adressieren) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 6.6 (Kopfzeilen einer Tabelle adressieren) </strong></span>&nbsp;</p>
 <pre><code>Tabelle1[[#Kopfzeilen];[Spalte1]:[Spalte3]]</code></pre>
 </div>
 </section>
-<section id="absolute-adressierung-in-tabellen" class="level4" data-number="6.4.2.3">
-<h4 data-number="6.4.2.3" class="anchored" data-anchor-id="absolute-adressierung-in-tabellen"><span class="header-section-number">6.4.2.3</span> Absolute Adressierung in Tabellen</h4>
+<section id="absolute-adressierung-in-tabellen" class="level4" data-number="6.4.2.4">
+<h4 data-number="6.4.2.4" class="anchored" data-anchor-id="absolute-adressierung-in-tabellen"><span class="header-section-number">6.4.2.4</span> Absolute Adressierung in Tabellen</h4>
 <p>Ein Tabellenbereich ist immer absolut adressiert. Wird aber nur eine einzelne Spalte einer Tabelle adressiert, dann wird die Adresse relativ addressiert. Damit beim Autoauffüllen diese Adresse nicht verändert wird, muss die Adresse als Bereich angegeben werden.</p>
 <div id="exm-absoluter-tabellenbereich-eine-spalte" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 6.6 (Absolute Tabellenadressierung von einer Spalte) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 6.7 (Absolute Tabellenadressierung von einer Spalte) </strong></span>&nbsp;</p>
 <pre><code>Tabelle1[[Spalte1]:[Spalte1]]</code></pre>
 </div>
 <p>Wird eine Formel mit dieser Adresse interaktiv aufgefüllt, dann wird die Adresse nicht verändert.</p>
