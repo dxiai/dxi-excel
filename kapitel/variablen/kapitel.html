@@ -62,6 +62,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -276,15 +292,17 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#benannte-bereiche" id="toc-benannte-bereiche" class="nav-link" data-scroll-target="#benannte-bereiche"><span class="header-section-number">8.1.2</span> Benannte Bereiche</a></li>
   </ul></li>
   <li><a href="#sec-funktionen" id="toc-sec-funktionen" class="nav-link" data-scroll-target="#sec-funktionen"><span class="header-section-number">8.2</span> Funktionen</a></li>
-  <li><a href="#operatoren" id="toc-operatoren" class="nav-link" data-scroll-target="#operatoren"><span class="header-section-number">8.3</span> Operatoren</a>
+  <li><a href="#operatoren" id="toc-operatoren" class="nav-link" data-scroll-target="#operatoren"><span class="header-section-number">8.3</span> Operatoren</a></li>
+  <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution"><span class="header-section-number">8.4</span> Substitution</a>
   <ul class="collapse">
-  <li><a href="#substitution-über-funktionspfade" id="toc-substitution-über-funktionspfade" class="nav-link" data-scroll-target="#substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</a></li>
-  <li><a href="#substitution-mit-let" id="toc-substitution-mit-let" class="nav-link" data-scroll-target="#substitution-mit-let"><span class="header-section-number">8.3.2</span> Substitution mit <code>LET()</code></a></li>
+  <li><a href="#substitution-über-funktionspfade" id="toc-substitution-über-funktionspfade" class="nav-link" data-scroll-target="#substitution-über-funktionspfade"><span class="header-section-number">8.4.1</span> Substitution über Funktionspfade</a></li>
+  <li><a href="#substitution-mit-let" id="toc-substitution-mit-let" class="nav-link" data-scroll-target="#substitution-mit-let"><span class="header-section-number">8.4.2</span> Substitution mit <code>LET()</code></a></li>
   </ul></li>
-  <li><a href="#funktionsketten" id="toc-funktionsketten" class="nav-link" data-scroll-target="#funktionsketten"><span class="header-section-number">8.4</span> Funktionsketten</a>
+  <li><a href="#funktionsketten" id="toc-funktionsketten" class="nav-link" data-scroll-target="#funktionsketten"><span class="header-section-number">8.5</span> Funktionsketten</a>
   <ul class="collapse">
-  <li><a href="#sec-funktionsketten-leerezelle" id="toc-sec-funktionsketten-leerezelle" class="nav-link" data-scroll-target="#sec-funktionsketten-leerezelle"><span class="header-section-number">8.4.1</span> Leere Zellen in einer Funktionskette</a></li>
+  <li><a href="#sec-funktionsketten-leerezelle" id="toc-sec-funktionsketten-leerezelle" class="nav-link" data-scroll-target="#sec-funktionsketten-leerezelle"><span class="header-section-number">8.5.1</span> LET() und leere Zellen</a></li>
   </ul></li>
+  <li><a href="#sec-lambda-funktionen" id="toc-sec-lambda-funktionen" class="nav-link" data-scroll-target="#sec-lambda-funktionen"><span class="header-section-number">8.6</span> Funktionen selbst definieren</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
@@ -433,31 +451,140 @@ Hinweis
 </section>
 <section id="sec-funktionen" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-funktionen"><span class="header-section-number">8.2</span> Funktionen</h2>
+<p>Excel kann nur durch Funktionen programmiert werden.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Makros
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Neben den Funktionen und Kommandos existieren in Excel noch Makros. Mit Makros können neue Kommandos und Funktionen programmiert werden. Makros folgen aber nicht den Regeln von Formeln, weil sie in einer anderen Programmiersprache geschrieben werden.</p>
+<p>Makros unterliegen nicht den Einschränkungen von Excel-Funktionen. Diese Freiheit ist gleichzeitig ein Fluch, denn Makros sind ein Sicherheitsrisiko und Excel präsentiert entsprechende Warnungen, wenn Makros in einer Arbeitsmappe gefunden wurde.</p>
+<p>Aktuelle Bestrebungen von Microsoft zielen darauf ab, Makros langfristig durch Funktionen zu ersetzen. Ein Teil dieser Bestrebungen ist die Einführung von LAMBDA-Funktionen (s. <a href="#sec-lambda-funktionen">Abschnitt&nbsp;<span>8.6</span></a>).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excel hat keine Identitätsfunktion. Die Identitätsfunktion wird durch eine Formel simuliert, die nur eine Adresse enthält. Solche Formeln werden für das <em>Vektorisieren</em> (<a href="#def-vektorisieren">Definition&nbsp;<span>8.1</span></a>) von Bereichen eingesetzt.</p>
+</div>
+</div>
 </section>
 <section id="operatoren" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="operatoren"><span class="header-section-number">8.3</span> Operatoren</h2>
 <p>Excel hat eine Anzahl vordefinierter Operatoren. Nicht alle Excel Operatoren haben keine direkte Entsprechung als Funktion.</p>
-<section id="substitution-über-funktionspfade" class="level3" data-number="8.3.1">
-<h3 data-number="8.3.1" class="anchored" data-anchor-id="substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</h3>
 </section>
-<section id="substitution-mit-let" class="level3" data-number="8.3.2">
-<h3 data-number="8.3.2" class="anchored" data-anchor-id="substitution-mit-let"><span class="header-section-number">8.3.2</span> Substitution mit <code>LET()</code></h3>
+<section id="substitution" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="substitution"><span class="header-section-number">8.4</span> Substitution</h2>
+<section id="substitution-über-funktionspfade" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="substitution-über-funktionspfade"><span class="header-section-number">8.4.1</span> Substitution über Funktionspfade</h3>
+</section>
+<section id="substitution-mit-let" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="substitution-mit-let"><span class="header-section-number">8.4.2</span> Substitution mit <code>LET()</code></h3>
+<p>Excels <code>LET()</code>-Funktion erlaubt das Vereinfachen komplizierter Formeln durch <em>Variablen</em>. Diese <em>Variablen</em> existieren nur im Kontext der <code>LET()</code>-Funktion und können nicht ausserhalb dieser Funktion verwendet werden.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Eine Funktion wird in einer Operation mit den gleichen Parametern mehrfach aufgerufen.</p>
+</div>
+</div>
+<p>Eine Variable in der LET()-Funktion entspricht einer Substitution eines Teilausdrucks einer Formel.</p>
+<div id="exm-let-substitution" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 8.3 (<code>LET()</code>-Funktion zur Substitution) </strong></span>&nbsp;</p>
+<pre class="excel"><code>=LET(
+    Daten; 'Unbearbeitete Daten'!A:F;
+    DatenFeld; INDEX(
+        Daten;
+        sequenz(ZEILEN(Daten));
+        sequenz(1; SPALTEN(Daten))
+      ); 
+    WENN(ISTLEER(DatenFeld);#NV;DatenFeld)
+ )</code></pre>
+</div>
+<p>In <a href="#exm-let-substitution">Beispiel&nbsp;<span>8.3</span></a> wird der referenzierte Bereich und der Aufruf der <code>INDEX()</code> substituiert. Die Substitution wird durch die Variablen <code>Daten</code> und <code>DatenFeld</code> realisiert.</p>
+<div id="exm-ohne-let-substitution" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 8.4 (Formel ohne Substitution) </strong></span>&nbsp;</p>
+<pre><code>=WENN(ISTLEER(INDEX(
+        'Unbearbeitete Daten'!A:F;
+        sequenz(ZEILEN('Unbearbeitete Daten'!A:F));
+        sequenz(1; SPALTEN('Unbearbeitete Daten'!A:F))
+      ));
+      #NV;
+      INDEX(
+        'Unbearbeitete Daten'!A:F;
+        sequenz(ZEILEN('Unbearbeitete Daten'!A:F));
+        sequenz(1; SPALTEN('Unbearbeitete Daten'!A:F))
+      )
+ )</code></pre>
+</div>
+<p>Die beiden Beispiele veranschaulichen, wie mit der <code>LET()</code>-Funktion mehr als eine Substitution umgesetzt wird, um eine komplexe Formel in überschaubare Teilschritte zu zerlegen und so stark zu vereinfachen.</p>
 </section>
 </section>
-<section id="funktionsketten" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="funktionsketten"><span class="header-section-number">8.4</span> Funktionsketten</h2>
-<ul>
-<li>Funktionsketten mit LET</li>
-</ul>
-<section id="sec-funktionsketten-leerezelle" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="sec-funktionsketten-leerezelle"><span class="header-section-number">8.4.1</span> Leere Zellen in einer Funktionskette</h3>
+<section id="funktionsketten" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="funktionsketten"><span class="header-section-number">8.5</span> Funktionsketten</h2>
+<p>Normalerweise entsprechen Excel-Adressen diesem Konzept. Gerade bei Matrizen und bestimmten Transformationen ist das Zwischenspeichern von Werten auf einem Arbeitsblatt unhandlich, behindert die Übersichtlichkeit oder führt zu unerwarteten Ergebnissen. Mit der Funktion <code>LET()</code> können wir Hilfsvariablen anlegen und so Excel-Formeln stark vereinfachen.</p>
+<section id="sec-funktionsketten-leerezelle" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="sec-funktionsketten-leerezelle"><span class="header-section-number">8.5.1</span> LET() und leere Zellen</h3>
 <p>Normalerweise werden leere Zellen als Ergebnis einer Funktion durch <code>0</code> ersetzt. Dieses Konvertierung findet erst bei der Darstellung des Ergebnisses statt. Innerhalb einer Funktionskette werden leere Zellen als leere Zellen weitergereicht, solange keine Aggregation vorgenommen wird. Es ist deshalb möglich in einer Funktionskette eine Entscheidung mit <code>ISTLEER()</code> für den Fall einer leeren Zelle zu treffen.</p>
-<p>##&nbsp;Funktionen selbst definieren</p>
-<p>LAMBDA Funktion</p>
-<p>Strategie der Funktionsentwicklung - Funktion als Funktionspfad - Funktion als Funktionskette - Funktion als LAMBDA Funktion - Funktion als benanntes Element</p>
-
-
+<p>Eine Excel-Operation <strong>muss</strong> einen Wert als Ergebnis einer <strong>Formel</strong> haben. Wird ein nicht vorhandener Wert (d.h. leere Zelle) in einem Ergebnis einer Formel gefunden, dann wird dieser Wert automatisch in den Wert <code>0</code> konvertiert. Diese Umwandlung passiert jedoch erst <em>nachdem</em> die Operation abgeschlossen ist und Excel das Ergebnis auf dem Arbeitsblatt darstellt.</p>
+<p>Dieses Verhalten hat zur Folge, dass solange eine Operation nicht abgeschlossen ist, die nicht vorhandenen Werte in ihrer ursprünglichen Form erhalten bleiben. Es ist also möglich diese Werte mit <code>ISTLEER()</code> zu prüfen.</p>
+<p>Die ursprünglichen Daten können unvollständig sein und enthalten dann leere Zellen an den entsprechenden Zellen. Diese fehlenden Werte als <code>0</code> darzustellen, kann zu verzerrten Ergebnissen führen. Deshalb sollten solche Werte mit dem <em>Fehler</em> <code>#NV</code> (lies: <em>Nicht Vorhanden</em>) markiert werden. Dieser Fehlerwert wird nicht automatisch in den Wert <code>0</code> umgewandelt, so dass die fehlenden Werte korrekt berücksichtigt werden können.</p>
+<p>Diese Umwandlung nutzt aus, dass Excel leere Zellen als Ergebnis von <em>Funktionen</em> zulässt, aber nicht als Ergebnis von <em>Formeln</em>. Entsprechend kann das folgende Funktionsmuster verwendet werden.</p>
+<p>Die beiden Vektoren <code>G1#</code> und <code>H1#</code> sind Hilfsvektoren, die Sequenzen für die Zeilen- und Spaltenindizes der Datenstruktur <code>A:F</code> enthalten.</p>
+<p>Der <em>logische Ausdruck</em> prüft, ob ein Feld mit dem Index <code>G1#</code> und <code>H1#</code> im Stichprobenobjekt leer ist. Falls das Feld in den unbearbeiteten Daten leer ist, dann wird der Wert <code>#NV</code> als Ergebnis zurückgegeben. Sonst soll der Wert im Feld übergeben.</p>
+<p>In dieser Operation wird die Funktion <code>INDEX()</code> zwei Mal mit den gleichen Parametern aufgerufen. Das ist unpraktisch, weil die Operation an zwei Stellen angepasst müsste, wenn die Daten mehr oder weniger Spalten haben. Besser wäre es, wenn das Zwischenergebnis der <code>INDEX()</code>-Funktion aus der Operation herausgelöst wird und über eine Funktionsverkettung eingebunden wird. Das ist aber nicht möglich, weil Excel bei diesem Zwischenschritt die fehlenden Werte in <code>0</code> ändert, sodass anschliessend der logische Ausdruck immer <code>FALSCH</code> liefern würde.</p>
+<p>Mittels der <code>LET()</code> Funktion wird das Ergebnis dieses Zwischenschritts in einer temporären <em>Variablen</em> gespeichert. Gegenüber der normalen Funktionsverkettung durch Funktionspfade hat diese Strategie den Vorteil, dass für Excel die Operation nicht abgeschlossen ist und deshalb die fehlenden Werte <em>noch nicht</em> in den Wert <code>0</code> umgewandelt werden. Der logische Ausdruck in der <code>WENN()</code>-Funktion kann also <code>WAHR</code> ergeben, wenn in den Daten ein Wert fehlt. Ausserdem muss die Indizierung für eine Position nur einmal durchgeführt werden, was bei komplexen Formeln die Übersichtlichkeit erhöht und die Ausführung beschleunigt.</p>
+<p>Die ursprüngliche Formel lässt sich also dahingehend vereinfachen, dass der Aufruf der <code>INDEX()</code>-Funktion “ausgeklammert” und in der Hilfsvariablen <code>Feld</code> gespeichert wird.</p>
+<p>Daraus ergibt sich die Lösung als Funktionskette.</p>
+<pre><code>=LET(Feld; INDEX('Unbearbeitete Daten'!A:F;A2#;B1#); 
+     WENN(
+        ISTLEER(Feld);
+        #NV;
+        Feld
+     )
+ )</code></pre>
+<p>Diese Lösung entspricht ungefähr der Funktionskette <a href="#eq-funktionskette-let">Formel&nbsp;<span>8.1</span></a>.</p>
+<p><span id="eq-funktionskette-let"><span class="math display">
+Index() \triangleright Wenn()
+\tag{8.1}</span></span></p>
+<p>Damit wird der Aufruf der <code>WENN()</code>-Funktion vereinfacht, weil nur noch die Hilfsvariable <code>Feld</code> übergeben müssen. Diese Variable enthält die Daten für die Funktionsverkettung, so dass eine zusätzliche Arbeitsblattadresse nicht notwendig ist.</p>
 </section>
+</section>
+<section id="sec-lambda-funktionen" class="level2" data-number="8.6">
+<h2 data-number="8.6" class="anchored" data-anchor-id="sec-lambda-funktionen"><span class="header-section-number">8.6</span> Funktionen selbst definieren</h2>
+<p>LAMBDA Funktion</p>
+<ul>
+<li>Funktionen können Funktionsketten beinhalten.</li>
+<li>Funktionen können nur Bereiche als Ergebnis erzeugen.</li>
+<li>Funktionen können auch intern keine komplexeren Datenstrukturen erzeugen, als Excel normalerweise zulässt. Es sind maximal 2D Bereiche erlaubt. Komplexere Sturkturen müssen über Hilfsvariablen abgebildet werden.</li>
+</ul>
+<p>Strategie der Funktionsentwicklung</p>
+<ul>
+<li>Funktion als Funktionspfad</li>
+<li>Funktion als Funktionskette</li>
+<li>Funktion als LAMBDA Funktion</li>
+<li>Funktion als benanntes Element</li>
+</ul>
+
+
 </section>
 
 </main> <!-- /main -->

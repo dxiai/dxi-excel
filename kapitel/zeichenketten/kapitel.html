@@ -266,7 +266,17 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#zeichenketten-trennen" id="toc-zeichenketten-trennen" class="nav-link active" data-scroll-target="#zeichenketten-trennen"><span class="header-section-number">9.1</span> Zeichenketten trennen</a>
+  <ul class="collapse">
+  <li><a href="#festkodierte-werte-trennen" id="toc-festkodierte-werte-trennen" class="nav-link" data-scroll-target="#festkodierte-werte-trennen"><span class="header-section-number">9.1.1</span> Festkodierte Werte trennen</a></li>
+  <li><a href="#einzelne-symbole-extrahieren" id="toc-einzelne-symbole-extrahieren" class="nav-link" data-scroll-target="#einzelne-symbole-extrahieren"><span class="header-section-number">9.1.2</span> Einzelne Symbole extrahieren</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -301,8 +311,95 @@ Work in Progress
 
 </div>
 </div>
+<section id="zeichenketten-trennen" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="zeichenketten-trennen"><span class="header-section-number">9.1</span> Zeichenketten trennen</h2>
+<section id="festkodierte-werte-trennen" class="level3" data-number="9.1.1">
+<h3 data-number="9.1.1" class="anchored" data-anchor-id="festkodierte-werte-trennen"><span class="header-section-number">9.1.1</span> Festkodierte Werte trennen</h3>
+<p>Eine festkodierte Datenstruktur ist eine Zeichenkette, die Werte an festgelegten Positionen mit konstanten Längen enthält. Diese Daten lassen sich mit der Funktion <code>TEIL()</code> extrahieren.</p>
+<p>Die Funktion hat drei Argumente:</p>
+<ul>
+<li>Die Zeichenkette, aus der die Daten extrahiert werden sollen.</li>
+<li>Die Position, an der die Daten beginnen.</li>
+<li>Die Länge der Daten als Anzahl von Symbolen.</li>
+</ul>
+<div id="exm-iban-trennen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.1 (IBAN in Land, Prüfziffer, Bankkennung und Kontonummer trennen) </strong></span>Die IBAN ist eine festkodierte Datenstruktur. Die IBAN enthält die Länderkennung, die Prüfziffer, die Bankkennung und die Kontonummer. Die Länge der einzelnen Daten ist konstant und die Position der Felder ist festgelegt.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Feld</th>
+<th style="text-align: right;">Position</th>
+<th style="text-align: right;">Länge</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Land</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Prüfziffer</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Bankkennung</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Kontonummer</td>
+<td style="text-align: right;">10</td>
+<td style="text-align: right;">Länge der IBAN - 10</td>
+</tr>
+</tbody>
+</table>
+<p>Die (ungültige) IBAN <code>CH12BANK1002135135</code> kann mit der <code>TEIL()</code>-Funktion in die einzelnen Felder zerlegt werden. Dazu müssen zuerst die Positionen und Längen der Felder erstellt werden. Dazu werden die Positionen und Längen der Felder untereinander geschrieben.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2</td>
+<td>5</td>
+<td><code>= LÄNGE(IBAN_Nummer) - 10</code></td>
+</tr>
+</tbody>
+</table>
+<p>Diese Werte werden als Vektoren der Funktion <code>TEIL()</code> übergeben.</p>
+<pre><code>= TEIL(IBAN_Nummer; A1:D1; A2:D2)</code></pre>
+<p>Die Funktion <code>TEIL()</code> gibt die einzelnen Felder als Vektor zurück. Das Ergebnis ist <code>{"CH"; "12"; "BANK1"; "002135135"}</code>. Hier muss berücksichtigt werden, dass die einzelnen Felder weiterhin Zeichenketten sind.</p>
+</div>
+</section>
+<section id="einzelne-symbole-extrahieren" class="level3" data-number="9.1.2">
+<h3 data-number="9.1.2" class="anchored" data-anchor-id="einzelne-symbole-extrahieren"><span class="header-section-number">9.1.2</span> Einzelne Symbole extrahieren</h3>
+<p>Eine Zeichenkette kann als eine festkodierte Datenstruktur verstanden werden. Jedes Symbol in der Zeichenkette hat eine feste Position und eine feste Länge <code>1</code>. Diese Position ist identisch mit dem Index des Symbols in der Zeichenkette. Weil die Positionen der Symbole in einer Zeichenkette eine Sequenz ist, können alle Positionen mithilfe der Länge der Zeichenkette generiert werden.</p>
+<blockquote class="blockquote">
+<div id="exm-symbole-trennen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.2 (Symbole einer Zeichenkette in Adresse <code>A1</code> trennen) </strong></span>&nbsp;</p>
+<pre><code>=TEIL(A1;SEQUENZ(LÄNGE(A1));1)</code></pre>
+<p>oder als horizontaler Vektor</p>
+<pre><code>=TEIL(A1;SEQUENZ(1;LÄNGE(A1));1)</code></pre>
+</div>
+</blockquote>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -554,4 +651,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></div></div></footer></body></html>
+</body></html>
