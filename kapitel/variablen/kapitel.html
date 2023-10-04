@@ -383,6 +383,27 @@ Praxis
 <p>Weil Tabellen automatisch vektorisiert werden, ist es einfacher Werte in einer Tabelle zu erfassen bzw. als Tabelle zu importieren (s. <a href="../daten-importieren/kapitel.html"><span>Kapitel&nbsp;7</span></a>) und anschliessend über die Tabellenadressierung auf die Werte zu verweisen.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Tabellenadressierungen auf eine Spalte oder einen Spaltenberech sind immer Vektorisiert.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<div id="exm-tabellen-zu-vektoren" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 8.2 (Vektorisieren von Tabellenspalten) </strong></span>&nbsp;</p>
+<pre><code>= Tabelle1[Spalte1]</code></pre>
+<p>Diese Formel vektorisiert die Spalte mit dem Namen <code>Spalte1</code> aus der Tabelle <code>Tabelle1</code>. Angenommen, dass diese Formel in Zelle <code>A1</code> des aktuellen Arbeitsblattes steht, dann kann anschliessend auf den Vektor über die Gatter-Notation zugegriffen werden:</p>
+<pre><code>=A1#</code></pre>
+</div>
+</blockquote>
 </section>
 <section id="benannte-bereiche" class="level3" data-number="8.1.2">
 <h3 data-number="8.1.2" class="anchored" data-anchor-id="benannte-bereiche"><span class="header-section-number">8.1.2</span> Benannte Bereiche</h3>
@@ -391,7 +412,7 @@ Praxis
 <p>Auf diese Weise lassen sich oft adressierte Zelleen oder Bereiche benennen. Dadurch kann die Adresse für Verwendung in Formeln abstrahiert werden.</p>
 <p>Die Verwendung von benannten Bereichen wird weiter vereinfacht, dass bei der Eingabe von Formeln die Namen der benannten Bereiche als Vorschlag angezeigt werden.</p>
 <div id="exm-dynamischer-benannter-bereich" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.2 (Adressierung eines dynamischen benannten Bereichs) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.3 (Adressierung eines dynamischen benannten Bereichs) </strong></span>&nbsp;</p>
 <pre><code>=umsatz#</code></pre>
 </div>
 <p>Benannte Zellen helfen, auf wichtige Zellen in einer Arbeitsmappe zuzugreifen.</p>
@@ -508,7 +529,7 @@ Problem
 </div>
 <p>Eine Variable in der LET()-Funktion entspricht einer Substitution eines Teilausdrucks einer Formel.</p>
 <div id="exm-let-substitution" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.3 (<code>LET()</code>-Funktion zur Substitution) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.4 (<code>LET()</code>-Funktion zur Substitution) </strong></span>&nbsp;</p>
 <pre class="excel"><code>=LET(
     Daten; 'Unbearbeitete Daten'!A:F;
     DatenFeld; INDEX(
@@ -519,9 +540,9 @@ Problem
     WENN(ISTLEER(DatenFeld);#NV;DatenFeld)
  )</code></pre>
 </div>
-<p>In <a href="#exm-let-substitution">Beispiel&nbsp;<span>8.3</span></a> wird der referenzierte Bereich und der Aufruf der <code>INDEX()</code> substituiert. Die Substitution wird durch die Variablen <code>Daten</code> und <code>DatenFeld</code> realisiert.</p>
+<p>In <a href="#exm-let-substitution">Beispiel&nbsp;<span>8.4</span></a> wird der referenzierte Bereich und der Aufruf der <code>INDEX()</code> substituiert. Die Substitution wird durch die Variablen <code>Daten</code> und <code>DatenFeld</code> realisiert.</p>
 <div id="exm-ohne-let-substitution" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.4 (Formel ohne Substitution) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.5 (Formel ohne Substitution) </strong></span>&nbsp;</p>
 <pre><code>=WENN(ISTLEER(INDEX(
         'Unbearbeitete Daten'!A:F;
         sequenz(ZEILEN('Unbearbeitete Daten'!A:F));

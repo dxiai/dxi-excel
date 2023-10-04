@@ -270,10 +270,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#zeichenketten-trennen" id="toc-zeichenketten-trennen" class="nav-link active" data-scroll-target="#zeichenketten-trennen"><span class="header-section-number">9.1</span> Zeichenketten trennen</a>
+  <li><a href="#die-leere-zeichenkette" id="toc-die-leere-zeichenkette" class="nav-link active" data-scroll-target="#die-leere-zeichenkette"><span class="header-section-number">9.1</span> Die leere Zeichenkette</a></li>
+  <li><a href="#nicht-druckbare-zeichen" id="toc-nicht-druckbare-zeichen" class="nav-link" data-scroll-target="#nicht-druckbare-zeichen"><span class="header-section-number">9.2</span> Nicht-druckbare Zeichen</a></li>
+  <li><a href="#zeichenketten-trennen" id="toc-zeichenketten-trennen" class="nav-link" data-scroll-target="#zeichenketten-trennen"><span class="header-section-number">9.3</span> Zeichenketten trennen</a>
   <ul class="collapse">
-  <li><a href="#festkodierte-werte-trennen" id="toc-festkodierte-werte-trennen" class="nav-link" data-scroll-target="#festkodierte-werte-trennen"><span class="header-section-number">9.1.1</span> Festkodierte Werte trennen</a></li>
-  <li><a href="#einzelne-symbole-extrahieren" id="toc-einzelne-symbole-extrahieren" class="nav-link" data-scroll-target="#einzelne-symbole-extrahieren"><span class="header-section-number">9.1.2</span> Einzelne Symbole extrahieren</a></li>
+  <li><a href="#einzelne-symbole-extrahieren" id="toc-einzelne-symbole-extrahieren" class="nav-link" data-scroll-target="#einzelne-symbole-extrahieren"><span class="header-section-number">9.3.1</span> Einzelne Symbole extrahieren</a></li>
+  <li><a href="#zeichenketten-vor-und-nach-einem-trenner-erhalten" id="toc-zeichenketten-vor-und-nach-einem-trenner-erhalten" class="nav-link" data-scroll-target="#zeichenketten-vor-und-nach-einem-trenner-erhalten"><span class="header-section-number">9.3.2</span> Zeichenketten vor und nach einem Trenner erhalten</a></li>
+  <li><a href="#festkodierte-werte-trennen" id="toc-festkodierte-werte-trennen" class="nav-link" data-scroll-target="#festkodierte-werte-trennen"><span class="header-section-number">9.3.3</span> Festkodierte Werte trennen</a></li>
+  <li><a href="#zeichenketten-mit-einem-separator-trennen" id="toc-zeichenketten-mit-einem-separator-trennen" class="nav-link" data-scroll-target="#zeichenketten-mit-einem-separator-trennen"><span class="header-section-number">9.3.4</span> Zeichenketten mit einem Separator trennen</a></li>
+  </ul></li>
+  <li><a href="#suchen-und-ersetzen" id="toc-suchen-und-ersetzen" class="nav-link" data-scroll-target="#suchen-und-ersetzen"><span class="header-section-number">9.4</span> Suchen und Ersetzen</a>
+  <ul class="collapse">
+  <li><a href="#löschen-von-teilzeichenketten" id="toc-löschen-von-teilzeichenketten" class="nav-link" data-scroll-target="#löschen-von-teilzeichenketten"><span class="header-section-number">9.4.1</span> Löschen von Teilzeichenketten</a></li>
+  <li><a href="#zeichenketten-durch-ersetzungen-vereinheitlichen" id="toc-zeichenketten-durch-ersetzungen-vereinheitlichen" class="nav-link" data-scroll-target="#zeichenketten-durch-ersetzungen-vereinheitlichen"><span class="header-section-number">9.4.2</span> Zeichenketten durch Ersetzungen vereinheitlichen</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
@@ -298,23 +307,186 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>Bisher wurden Zeichenketten als Werte behandelt. In diesem Abschnitt geht es darum, wie Zeichenketten gesäubert, bearbeitet und aufgeteilt werden.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wenn Daten als Zeichenketten vorliegen, dann handelt es sich immer um <strong>diskrete Daten</strong>.</p>
+</div>
+</div>
+<div id="tbl-ftk-zeichenketten" class="anchored">
+<table class="table">
+<caption>Tabelle&nbsp;9.1: Die wichtigsten Zeichenkettenfunktionen von Excel</caption>
+<thead>
+<tr class="header">
+<th>Name</th>
+<th>Excel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Länge</td>
+<td><code>LÄNGE()</code></td>
+</tr>
+<tr class="even">
+<td>Teilketten verknüpfen</td>
+<td><code>TEXTKETTE()</code>/<code>TEXTVERKETTEN()</code></td>
+</tr>
+<tr class="odd">
+<td>Teilzeichenkette finden</td>
+<td><code>FINDEN()</code>/<code>SUCHEN()</code></td>
+</tr>
+<tr class="even">
+<td>In Grossbuchstaben umwandeln</td>
+<td><code>GROSS()</code></td>
+</tr>
+<tr class="odd">
+<td>In Kleinbuchstaben umwandeln</td>
+<td><code>KLEIN()</code></td>
+</tr>
+<tr class="even">
+<td>Nur ersten Buchstaben als Grossbuchstabe</td>
+<td><code>GROSS2()</code></td>
+</tr>
+<tr class="odd">
+<td>Leerzeichen bereinigen</td>
+<td><code>GLÄTTEN()</code></td>
+</tr>
+<tr class="even">
+<td>Nicht-druckbare Zeichen entfernen</td>
+<td><code>SÄUBERN()</code></td>
+</tr>
+<tr class="odd">
+<td>Teilkette extrahieren (linksseitig)</td>
+<td><code>LINKS()</code>, <code>TEXTVOR()</code></td>
+</tr>
+<tr class="even">
+<td>Teilkette extrahieren (rechtsseitig)</td>
+<td><code>RECHTS()</code>,<code>TEXTNACH()</code></td>
+</tr>
+<tr class="odd">
+<td>Teilketten extrahieren (alle)</td>
+<td><code>TEXTTEILEN()</code></td>
+</tr>
+<tr class="even">
+<td>Teilkette zwischen zwei Positionen extrahieren</td>
+<td><code>TEIL()</code></td>
+</tr>
+<tr class="odd">
+<td>Zeichenkette ersetzen</td>
+<td><code>WECHSELN()</code>, <code>ERSETZEN()</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="die-leere-zeichenkette" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="die-leere-zeichenkette"><span class="header-section-number">9.1</span> Die leere Zeichenkette</h2>
+<p>Ein besonderer Fall ist die <em>leere Zeichenkette</em>. Die leere Zeichenkette wird oft als Platzhalter genutzt. Die leere Zeichenkette ist das <em>neutrale Element</em> für die Verknüpfung von Zeichenketten mit <code>TEXTKETTE()</code> oder <code>TEXTVERKETTEN()</code>.</p>
+<p>In Excel lässt sich die leere Zeichenkette von der leeren Zelle nur unterscheiden, indem die Formel betrachtet wird oder die Zelle mit <code>ISTLEER()</code> (<code>FALSCH</code>) und <code>ISTTEXT()</code> (<code>WAHR</code>) überprüft wird.</p>
+<p>Die leere Zeichenkette wird in Excel nur als Funktionsparameter durch doppelte Anführungszeichen eingerahmt. Soll eine leere Zeichenkette als Wert in eine Zelle eingegeben werden, dann ist ein einfacher Apostroph (’) einzugeben.</p>
+<div id="exm-excel-leerezeichenkette" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.1 (Leere Zeichenkette in einer Excel-Formel) </strong></span>&nbsp;</p>
+<pre><code>=WENN(1 = 1; ""; "Fehler")</code></pre>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wenn in Excel eine leere Zeichenkette als Wert in eine Zelle eingetragen werden soll, dann wird ein einfaches Anführungszeichen als Wert eingegeben.</p>
+</div>
+</div>
+<div id="fig-leerezeichenkette-eingabe" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/leere_zeichenkettewert__excel.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;9.1: Leere Zeichenkette als Zellenwert in Excel</figcaption>
+</figure>
+</div>
+</section>
+<section id="nicht-druckbare-zeichen" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="nicht-druckbare-zeichen"><span class="header-section-number">9.2</span> Nicht-druckbare Zeichen</h2>
+<p>In Excel werden die nicht-druckbaren Zeichen für die Darstellung und für Vergleiche entfernt, jedoch werden die nicht-druckbaren Zeichen bei der Länge und beim Extrahieren berücksichtigt. In Excel kann mit der <code>IDENTISCH()</code>-Funktion geprüft werden, ob zwei Zeichenketten die gleiche Symbolfolge beinhalten. .</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Work in Progress
+MacOS vs.&nbsp;Windows
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>Excel unter Windows stellt nicht-druckbare Zeichen als Kästchen dar, Excel für MacOS zeigt diese Zeichen nicht an.</p>
 </div>
 </div>
-<section id="zeichenketten-trennen" class="level2" data-number="9.1">
-<h2 data-number="9.1" class="anchored" data-anchor-id="zeichenketten-trennen"><span class="header-section-number">9.1</span> Zeichenketten trennen</h2>
-<section id="festkodierte-werte-trennen" class="level3" data-number="9.1.1">
-<h3 data-number="9.1.1" class="anchored" data-anchor-id="festkodierte-werte-trennen"><span class="header-section-number">9.1.1</span> Festkodierte Werte trennen</h3>
+<p>Zu den nicht-druckbaren Zeichen gehören auch Leerzeichen, Tabulatoren und Zeilenumbrüche. Diese speziellen nicht-druckbaren Zeichen sind nur erkennbar, wenn sie von druckbaren Zeichen umgeben sind.</p>
+<p>Deutlich wird das an den folgenden Zeichenketten:</p>
+<ul>
+<li><code>Hallo</code></li>
+<li><code>Hal&lt;0x07&gt;lo</code>, wobei das Symbol <code>0x07</code> für einen Piepton steht</li>
+<li><code>Hal&lt;0x08&gt;lo</code>, wobei das Symbol <code>0x08</code> für einmal Rückwärtslöschen steht.</li>
+</ul>
+<p>Diese drei Zeichenketten haben in Excel die Längen 5, 6 und 6. Excel stellt alle drei Zeichenketten als “Hallo” dar. Ausserdem werden die Zeichenketten als gleich ausgewertet.</p>
+<p>Excel entfernt über die Funktion <code>SÄUBERN()</code> alle nicht-druckbare Zeichen aus einer Zeichenkette.</p>
+</section>
+<section id="zeichenketten-trennen" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="zeichenketten-trennen"><span class="header-section-number">9.3</span> Zeichenketten trennen</h2>
+<section id="einzelne-symbole-extrahieren" class="level3" data-number="9.3.1">
+<h3 data-number="9.3.1" class="anchored" data-anchor-id="einzelne-symbole-extrahieren"><span class="header-section-number">9.3.1</span> Einzelne Symbole extrahieren</h3>
+<p>In Excel lassen sich die einzelnen Symbole einer Zeichenkette mit der folgenden Formel extrahieren:</p>
+<pre><code>=TEIL("Daten und Information"; 
+      SEQUENZ(LÄNGE("Daten und Information"));
+      1)</code></pre>
+<p>Diese Formel hat drei Funktionsaufrufe.</p>
+<ol type="1">
+<li>Die Funktion <code>LÄNGE()</code> bestimmt die Anzahl der Symbole in der Zeichenkette.</li>
+<li>Mit der Funktion <code>SEQUENZ()</code> werdem alle Positionen der Symbole durchnummeriert.</li>
+<li>Mit <code>TEIL(Zeichenkette; Sequenz; 1)</code> wird ein Teil der Zeichenkette extrahiert, wobei für jede Position der Sequenz aus Schritt 2 eine Teilzeichenkette mit der Länge 1 erzeugt wird.</li>
+</ol>
+</section>
+<section id="zeichenketten-vor-und-nach-einem-trenner-erhalten" class="level3" data-number="9.3.2">
+<h3 data-number="9.3.2" class="anchored" data-anchor-id="zeichenketten-vor-und-nach-einem-trenner-erhalten"><span class="header-section-number">9.3.2</span> Zeichenketten vor und nach einem Trenner erhalten</h3>
+<p>Die Funktion <code>LINKS()</code> und <code>RECHTS()</code> geben eine Teilzeichenkette mit einer festen Anzahl von Zeichen zurück. Die Funktion <code>LINKS()</code> zählt die Anzahl der Zeichen vom Beginn der Zeichenkette und <code>RECHTS()</code> vom Ende her.</p>
+<div id="exm-fkt-links" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.2 (Zeichen links bis und mit der 5. Position zurückgegeben) </strong></span>&nbsp;</p>
+<pre><code>= LINKS("Daten und Information"; 5)</code></pre>
+</div>
+<p>Weil <code>RECHTS()</code> vom Ende her zählt, kann nicht die gleiche Position wie bei <code>LINKS()</code> verwendet werden. Dazu muss die Position von der Gesamtlänge der Zeichenkette abgezogen werden (s. <span class="quarto-unresolved-ref">?exm-fkt-rechts</span>).</p>
+<div id="exm-fkt-links" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.3 (Zeichen rechts von der 10. Position zurückgegeben) </strong></span>&nbsp;</p>
+<pre><code>= RECHTS(
+    "Daten und Information"; 
+    LÄNGE("Daten und Information")-10)</code></pre>
+</div>
+<p>Etwas eleganter arbeiten die beiden Funktionen <code>TEXTVOR()</code> und <code>TEXTNACH()</code>. Diese Funktionen suchen nach einer Teilzeichenkette und ergeben die Zeichen vor bzw. nach dieser Zeichenkette. Ein zusätzlicher Parameter ermöglicht die Suche solange zu wiederholen, bis die gesuchte Zeichenkette genau mit dieser Anzahl gefunden wurde.</p>
+<div id="exm-fkt-textvor" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.4 (<code>TEXTVOR()</code> vor dem ersten Treffer) </strong></span>&nbsp;</p>
+<pre><code>= TEXTVOR("Daten und Information"; " ")</code></pre>
+</div>
+<div id="exm-fkt-textvor" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.5 (<code>TEXTNACH()</code> ab dem zweiten Treffer) </strong></span>&nbsp;</p>
+<pre><code>= TEXTNACH("Daten und Information"; " "; 2)</code></pre>
+</div>
+<p>Um einen Wert zwischen zwei Treffern zu extrahieren, lassen sich die beiden Funktionen verketten. Diese Technik bietet sich immer dann an, wenn ein Wert zwischen zwei <em>unterschiedlichen</em> Markierungen extrahiert werden soll</p>
+<div id="exm-fkt-textvor-nach" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.6 (Text zwischen zwei unterschiedlichen Teilketten extrahieren) </strong></span>&nbsp;</p>
+<pre><code>= TEXTVOR(TEXTNACH("Daten und Information"; "ten "); " Info")</code></pre>
+</div>
+</section>
+<section id="festkodierte-werte-trennen" class="level3" data-number="9.3.3">
+<h3 data-number="9.3.3" class="anchored" data-anchor-id="festkodierte-werte-trennen"><span class="header-section-number">9.3.3</span> Festkodierte Werte trennen</h3>
 <p>Eine festkodierte Datenstruktur ist eine Zeichenkette, die Werte an festgelegten Positionen mit konstanten Längen enthält. Diese Daten lassen sich mit der Funktion <code>TEIL()</code> extrahieren.</p>
 <p>Die Funktion hat drei Argumente:</p>
 <ul>
@@ -322,8 +494,9 @@ Work in Progress
 <li>Die Position, an der die Daten beginnen.</li>
 <li>Die Länge der Daten als Anzahl von Symbolen.</li>
 </ul>
+<blockquote class="blockquote">
 <div id="exm-iban-trennen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 9.1 (IBAN in Land, Prüfziffer, Bankkennung und Kontonummer trennen) </strong></span>Die IBAN ist eine festkodierte Datenstruktur. Die IBAN enthält die Länderkennung, die Prüfziffer, die Bankkennung und die Kontonummer. Die Länge der einzelnen Daten ist konstant und die Position der Felder ist festgelegt.</p>
+<p><span class="theorem-title"><strong>Beispiel 9.7 (IBAN in Land, Prüfziffer, Bankkennung und Kontonummer trennen) </strong></span>Die IBAN ist eine festkodierte Datenstruktur. Die IBAN enthält die Länderkennung, die Prüfziffer, die Bankkennung und die Kontonummer. Die Länge der einzelnen Daten ist konstant und die Position der Felder ist festgelegt.</p>
 <table class="table">
 <thead>
 <tr class="header">
@@ -384,18 +557,86 @@ Work in Progress
 <pre><code>= TEIL(IBAN_Nummer; A1:D1; A2:D2)</code></pre>
 <p>Die Funktion <code>TEIL()</code> gibt die einzelnen Felder als Vektor zurück. Das Ergebnis ist <code>{"CH"; "12"; "BANK1"; "002135135"}</code>. Hier muss berücksichtigt werden, dass die einzelnen Felder weiterhin Zeichenketten sind.</p>
 </div>
-</section>
-<section id="einzelne-symbole-extrahieren" class="level3" data-number="9.1.2">
-<h3 data-number="9.1.2" class="anchored" data-anchor-id="einzelne-symbole-extrahieren"><span class="header-section-number">9.1.2</span> Einzelne Symbole extrahieren</h3>
-<p>Eine Zeichenkette kann als eine festkodierte Datenstruktur verstanden werden. Jedes Symbol in der Zeichenkette hat eine feste Position und eine feste Länge <code>1</code>. Diese Position ist identisch mit dem Index des Symbols in der Zeichenkette. Weil die Positionen der Symbole in einer Zeichenkette eine Sequenz ist, können alle Positionen mithilfe der Länge der Zeichenkette generiert werden.</p>
-<blockquote class="blockquote">
-<div id="exm-symbole-trennen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 9.2 (Symbole einer Zeichenkette in Adresse <code>A1</code> trennen) </strong></span>&nbsp;</p>
-<pre><code>=TEIL(A1;SEQUENZ(LÄNGE(A1));1)</code></pre>
-<p>oder als horizontaler Vektor</p>
-<pre><code>=TEIL(A1;SEQUENZ(1;LÄNGE(A1));1)</code></pre>
-</div>
 </blockquote>
+</section>
+<section id="zeichenketten-mit-einem-separator-trennen" class="level3" data-number="9.3.4">
+<h3 data-number="9.3.4" class="anchored" data-anchor-id="zeichenketten-mit-einem-separator-trennen"><span class="header-section-number">9.3.4</span> Zeichenketten mit einem Separator trennen</h3>
+<p>Sind Werte in einer Zeichenkette durch einen Separator getrennt, dann lassen sich die Werte mit der Funktion <code>TEXTTEILEN()</code>. Die Funktion kann eine Zeichenkette entlang von zwei Trennzeichen trennen. Dabei erzeugt die Funktion eine Matrix, wobei die Spalten durch den ersten Separator und die Zeilen durch den zweiten Separator bestimmt werden.</p>
+<div id="exm-fkt-textteilen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.8 (<code>TEXTTEILEN()</code> mit festem Trennzeichen) </strong></span>&nbsp;</p>
+<pre><code>= TEXTTEILEN("Daten und Information", " ")</code></pre>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Funktion <code>TEXTTEILEN()</code> kann nur auf einen Wert angewandt werden. Wird ein Zeichenkettenvektor der Funktion übergeben, wird aus jeder Zeichenkette immer nur der erste Wert getrennt und als Ergebnis ausgegeben. Excel verhindert so, dass durch das Teilen mehrerer Zeichenketten die Ergebnisse einen nicht eindeutig grossen rechteckigen Bereich mit Datentyp Zeichenkette erzeugen könnten.</p>
+</div>
+</div>
+<p>Dieses Problem wird durch einen Trick umgangen: Dazu wird ein zweiter Separator gewählt, der nicht in den Daten vorkommt und sich vom ursprünglichen Separator unterscheidet. Existiert bereits ein Zeilentrennzeichen in den Daten, wird dieses als zweiter Separator verwendet. Anschliessend werden alle Zeichenketten mit diesem zweiten Separator als Trennzeichen mit <code>TEXTVERKETTEN()</code> verkettet. Abschliessend wird die gesamte Zeichenkette mit dem ursprüngliche Separator als Spalten- und dem zweiten Separator als Zeilentrennzeichen getrennt. Dabei werden alle nicht vorhandenen Werte in einer Zeile durch <code>#NV</code> angezeigt.</p>
+<p><a href="#exm-zeichenkettenvektor-teilen">Beispiel&nbsp;<span>9.9</span></a> trennt einen Zeichenkettenvektor mit Werten, die durch ein Leerzeichen getrennt sind. Alle Werte sind Buchstaben oder Ziffern, aber keine Satzzeichen. Deshalb kann das Komma (<code>,</code>) als Zeilentrennzeichen verwendet werden. Damit der Fehlerwert <code>#NV</code> nachfolgende Operationen nicht behindert, wird dieser durch die leere Zeichenkette ersetzt.</p>
+<div id="exm-zeichenkettenvektor-teilen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.9 (Einen Zeichenkettenvektor entlang eines Trennzeichens teilen.) </strong></span>&nbsp;</p>
+<pre><code>=WENNFEHLER(
+    TEXTTEILEN(
+        TEXTVERKETTEN(",";; Zeichenketten); 
+        " "; 
+        ","); 
+    ""
+)</code></pre>
+</div>
+</section>
+</section>
+<section id="suchen-und-ersetzen" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="suchen-und-ersetzen"><span class="header-section-number">9.4</span> Suchen und Ersetzen</h2>
+<p>Eine wichtige Operation für Zeichenketten ist das Suchen-und-Ersetzen. Das Suchen-und-Ersetzen lässt sich als eine spezielle Technik zur Mustererkennung vorstellen. Dabei steht eine Anwendung im Vordergrund: Die Korrektur und Vereinheitlichung von Zeichenketten. Anstatt solche Daten umständlich über eine Benutzeroberfläche zu korrigieren, sollte das Bereinigen von Zeichenketten besser automatisch erfolgen. Excel stellt dazu die Funktion <code>WECHSELN()</code> zur Verfügung. Diese Funktion ersetzt entweder alle Vorkommnisse einer Teilzeichenkette oder nur ihr n-tes Auftreten.</p>
+<div id="exm-zeichenkette-ersetzen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.10 (Alle Vorkommnisse einer Zeichenkette ersetzen) </strong></span>&nbsp;</p>
+<pre><code>= WECHSELN(
+    "Daten oder Information oder Wahrscheinlichkeit"; 
+    "oder"; 
+    "und")</code></pre>
+</div>
+<div id="exm-zeichenkette-einmal-ersetzen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.11 (Erstes Auftreten einer Zeichenkette ersetzen) </strong></span>&nbsp;</p>
+<pre><code>= WECHSELN(
+    "Daten oder Information oder Statistik"; 
+    "oder"; 
+    "und"; 
+    1)</code></pre>
+</div>
+<section id="löschen-von-teilzeichenketten" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="löschen-von-teilzeichenketten"><span class="header-section-number">9.4.1</span> Löschen von Teilzeichenketten</h3>
+<p>Teilzeichenketten lassen sich löschen, indem die fragliche Zeichenkette durch die leere Zeichenkette ersetzt wird.</p>
+<div id="exm-zeichenkette-loeschen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 9.12 (Teilzeichenkette entfernen) </strong></span>&nbsp;</p>
+<pre><code>= WECHSELN("Daten und Information"; "und"; "")</code></pre>
+</div>
+</section>
+<section id="zeichenketten-durch-ersetzungen-vereinheitlichen" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="zeichenketten-durch-ersetzungen-vereinheitlichen"><span class="header-section-number">9.4.2</span> Zeichenketten durch Ersetzungen vereinheitlichen</h3>
+<p>Bevor das eigentliche Suchen-und-Ersetzen starten kann, sollten die betreffenden Zeichenketten bereinigt werden. Die einfachste Bereinigung ist das Entfernen von überschüssigen Leerzeichen. Dazu dient die Excel Funktion <code>GLÄTTEN()</code>. <code>GLÄTTEN()</code> entfernt alle Leerzeichen am Anfang und Ende einer Zeichenkette. Alle wiederholten Leerzeichen werden mit <code>GLÄTTEN()</code> zu einem einzelnen Leerzeichen zusammengefasst.</p>
+<p>Eine zweite häufig verwendete Bereinigung ist die Transformation auf Kleinbuchstaben oder Grossbuchstaben. Hierzu dienen die drei Funktionen <code>GROSS()</code>, <code>GROSS2()</code> und <code>KLEIN()</code>. Die Vereinheitlichung der Schreibweise ist ein wichtiges Werkzeug um Zeichenketten mit unterschiedlichen Schreibweisen zu vereinheitlichen. Beim Bereinigen sollte eine der verfügbaren Varianten gewählt und konsequent für die Vereinheitlichung verwendet werden. Damit wird sicher gestellt, dass alle Ersetzungen unabhängig von der Schreibweise erfolgen.</p>
+<p>Für das eigentliche Ersetzen wird ein Suchvektor und einen Ersetzenvektor erzeugt. Die beiden Vektoren enthalten Paare aus Suchmuster und Ersetzung. Diese Paare sind geordnet und werden nacheinander ausgeführt.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Satzzeichen sollte immer durch Leerzeichen und nicht durch eine leere Zeichenkette ersetzt werden. Die überzähligen Leerzeichen können anschliessend mit <code>GLÄTTEN()</code> entfernt werden. Dadurch ist gesichert, dass nicht versehentlich Elemente zusammengefügt werden. Nachdem alle Sonderzeichen entfernt wurden, sollte eine Zeichenkette noch einmal von überschüssigen Leerzeichen bereinigt werden.</p>
+</div>
+</div>
 
 
 </section>
