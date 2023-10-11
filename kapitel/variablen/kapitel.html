@@ -292,17 +292,18 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#benannte-bereiche" id="toc-benannte-bereiche" class="nav-link" data-scroll-target="#benannte-bereiche"><span class="header-section-number">8.1.2</span> Benannte Bereiche</a></li>
   </ul></li>
   <li><a href="#sec-funktionen" id="toc-sec-funktionen" class="nav-link" data-scroll-target="#sec-funktionen"><span class="header-section-number">8.2</span> Funktionen</a></li>
-  <li><a href="#operatoren" id="toc-operatoren" class="nav-link" data-scroll-target="#operatoren"><span class="header-section-number">8.3</span> Operatoren</a></li>
-  <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution"><span class="header-section-number">8.4</span> Substitution</a>
+  <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution"><span class="header-section-number">8.3</span> Substitution</a>
   <ul class="collapse">
-  <li><a href="#substitution-über-funktionspfade" id="toc-substitution-über-funktionspfade" class="nav-link" data-scroll-target="#substitution-über-funktionspfade"><span class="header-section-number">8.4.1</span> Substitution über Funktionspfade</a></li>
-  <li><a href="#substitution-mit-let" id="toc-substitution-mit-let" class="nav-link" data-scroll-target="#substitution-mit-let"><span class="header-section-number">8.4.2</span> Substitution mit <code>LET()</code></a></li>
+  <li><a href="#substitution-über-funktionspfade" id="toc-substitution-über-funktionspfade" class="nav-link" data-scroll-target="#substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</a></li>
+  <li><a href="#substitution-mit-let" id="toc-substitution-mit-let" class="nav-link" data-scroll-target="#substitution-mit-let"><span class="header-section-number">8.3.2</span> Substitution mit <code>LET()</code></a></li>
   </ul></li>
-  <li><a href="#funktionsketten" id="toc-funktionsketten" class="nav-link" data-scroll-target="#funktionsketten"><span class="header-section-number">8.5</span> Funktionsketten</a>
+  <li><a href="#funktionsketten" id="toc-funktionsketten" class="nav-link" data-scroll-target="#funktionsketten"><span class="header-section-number">8.4</span> Funktionsketten</a></li>
+  <li><a href="#sec-lambda-funktionen" id="toc-sec-lambda-funktionen" class="nav-link" data-scroll-target="#sec-lambda-funktionen"><span class="header-section-number">8.5</span> Funktionen selbst definieren</a>
   <ul class="collapse">
-  <li><a href="#sec-funktionsketten-leerezelle" id="toc-sec-funktionsketten-leerezelle" class="nav-link" data-scroll-target="#sec-funktionsketten-leerezelle"><span class="header-section-number">8.5.1</span> LET() und leere Zellen</a></li>
+  <li><a href="#map-reduce-und-lambda" id="toc-map-reduce-und-lambda" class="nav-link" data-scroll-target="#map-reduce-und-lambda"><span class="header-section-number">8.5.1</span> Map-Reduce und <code>LAMBDA()</code></a></li>
+  <li><a href="#index-schleifen-mit-matrixerstellen" id="toc-index-schleifen-mit-matrixerstellen" class="nav-link" data-scroll-target="#index-schleifen-mit-matrixerstellen"><span class="header-section-number">8.5.2</span> Index-Schleifen mit <code>MATRIXERSTELLEN()</code></a></li>
+  <li><a href="#neue-funktionen-festlegen" id="toc-neue-funktionen-festlegen" class="nav-link" data-scroll-target="#neue-funktionen-festlegen"><span class="header-section-number">8.5.3</span> Neue Funktionen festlegen</a></li>
   </ul></li>
-  <li><a href="#sec-lambda-funktionen" id="toc-sec-lambda-funktionen" class="nav-link" data-scroll-target="#sec-lambda-funktionen"><span class="header-section-number">8.6</span> Funktionen selbst definieren</a></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
@@ -472,7 +473,22 @@ Hinweis
 </section>
 <section id="sec-funktionen" class="level2" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="sec-funktionen"><span class="header-section-number">8.2</span> Funktionen</h2>
-<p>Excel kann nur durch Funktionen programmiert werden.</p>
+<p>Excel kann nur durch Funktionen und Operatoren <em>programmiert</em> werden.</p>
+<p>Excel hat wenige vordefinierte Operatoren, wobei die Operatoren keine direkte Entsprechung als Funktion haben. Die einzige Ausnahmen sind der Potenzoperator (<code>^</code>) und der Textverkettungsoperator (<code>&amp;</code>). Der Potenzoperator ist funktional gleich mit der <code>POTENZ()</code>-Funktion. Der Textverkettungsoperator entspricht der Funktion <code>TEXTKETTE()</code> mit zwei Argumenten.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die mit Excel möglichen Programme sind durch die Operatoren und die vordefinierten Funktionen beschränkt.</p>
+</div>
+</div>
+<p>Excel <strong>Kommandos</strong> können nur durch Interaktion mit den Excel Menus oder Dialogen ausgeführt werden. Diese Funktionalität steht für die Progammierung oft nicht zur Verfügung.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -483,9 +499,9 @@ Makros
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Neben den Funktionen und Kommandos existieren in Excel noch Makros. Mit Makros können neue Kommandos und Funktionen programmiert werden. Makros folgen aber nicht den Regeln von Formeln, weil sie in einer anderen Programmiersprache geschrieben werden.</p>
+<p>Neben den Funktionen und Kommandos existieren in Excel noch <em>Makros</em>. Mit Makros können neue Kommandos und Funktionen programmiert werden. Makros folgen aber nicht den Regeln von Formeln, weil sie in einer anderen Programmiersprache geschrieben werden.</p>
 <p>Makros unterliegen nicht den Einschränkungen von Excel-Funktionen. Diese Freiheit ist gleichzeitig ein Fluch, denn Makros sind ein Sicherheitsrisiko und Excel präsentiert entsprechende Warnungen, wenn Makros in einer Arbeitsmappe gefunden wurde.</p>
-<p>Aktuelle Bestrebungen von Microsoft zielen darauf ab, Makros langfristig durch Funktionen zu ersetzen. Ein Teil dieser Bestrebungen ist die Einführung von LAMBDA-Funktionen (s. <a href="#sec-lambda-funktionen">Abschnitt&nbsp;<span>8.6</span></a>).</p>
+<p>Aktuelle Bestrebungen von Microsoft zielen darauf ab, Makros langfristig durch Funktionen zu ersetzen. Ein Teil dieser Bestrebungen ist die Einführung von <code>LAMBDA()</code>-Funktionen (s. <a href="#sec-lambda-funktionen">Abschnitt&nbsp;<span>8.5</span></a>).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -502,32 +518,46 @@ Merke
 </div>
 </div>
 </section>
-<section id="operatoren" class="level2" data-number="8.3">
-<h2 data-number="8.3" class="anchored" data-anchor-id="operatoren"><span class="header-section-number">8.3</span> Operatoren</h2>
-<p>Excel hat eine Anzahl vordefinierter Operatoren. Nicht alle Excel Operatoren haben keine direkte Entsprechung als Funktion.</p>
-</section>
-<section id="substitution" class="level2" data-number="8.4">
-<h2 data-number="8.4" class="anchored" data-anchor-id="substitution"><span class="header-section-number">8.4</span> Substitution</h2>
-<section id="substitution-über-funktionspfade" class="level3" data-number="8.4.1">
-<h3 data-number="8.4.1" class="anchored" data-anchor-id="substitution-über-funktionspfade"><span class="header-section-number">8.4.1</span> Substitution über Funktionspfade</h3>
-</section>
-<section id="substitution-mit-let" class="level3" data-number="8.4.2">
-<h3 data-number="8.4.2" class="anchored" data-anchor-id="substitution-mit-let"><span class="header-section-number">8.4.2</span> Substitution mit <code>LET()</code></h3>
-<p>Excels <code>LET()</code>-Funktion erlaubt das Vereinfachen komplizierter Formeln durch <em>Variablen</em>. Diese <em>Variablen</em> existieren nur im Kontext der <code>LET()</code>-Funktion und können nicht ausserhalb dieser Funktion verwendet werden.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="substitution" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="substitution"><span class="header-section-number">8.3</span> Substitution</h2>
+<p>Excel kennt zwei Formen der Substitution.</p>
+<ol type="1">
+<li>Die Substitution über Funktionspfade</li>
+<li>Die Substitution mit der Funktion <code>LET()</code></li>
+</ol>
+<p>Beide Substitutionsformen sind fast gleichwertig. Funktionspfade eigenen sich besonders gut für die Entwicklung von und zur Fehlersuche in komplexen Formeln. <code>LET()</code> erlaubt es, mehrere Arbeitsschritte effizient in einer Formel zusammenzufassen.</p>
+<section id="substitution-über-funktionspfade" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</h3>
+<p>Eine komplexe Operation lassen sich in Excel durch Substitution über Funktionspfade vereinfachen.</p>
+<div id="def-funktionspfad" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 8.2 </strong></span>Ein <strong>Funktionspfad</strong> sind Formeln, die sich über ihre Adressen aufeinander beziehen.</p>
+</div>
+<p>Bei einem Funktionspfad werden die substituierten Funktionen als Formeln in separate Zellen geschrieben. Die Adresse der jeweiligen Formel wird als Substitution für die Funktion eingesetzt. Sind die Formeln in einem benannten Bereich, dann kann der Name des Bereichs zur Substitution verwendet werden.</p>
+<div id="fig-funktionspfad" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/funktionspfad.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;8.1: Funktionspfad</figcaption>
+</figure>
+</div>
+<p>Funktionspfade können mithilfe des Kommandos <code>Spur zum Vorgänger</code> im Menü <code>Formeln</code> sichtbar gemacht werden (<a href="#fig-funktionspfad">Abbildung&nbsp;<span>8.1</span></a>).</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Problem
+Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Eine Funktion wird in einer Operation mit den gleichen Parametern mehrfach aufgerufen.</p>
+<p>Um komplexe Formeln in bestehenden Arbeitsmappen zu verstehen, hilft das Zerlegen dieser Formeln in Funktionspfade. Dabei kann eine tabellarische Organisation helfen, wiederkehrende Operationen leichter zu erkennen.</p>
 </div>
 </div>
-<p>Eine Variable in der LET()-Funktion entspricht einer Substitution eines Teilausdrucks einer Formel.</p>
+</section>
+<section id="substitution-mit-let" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="substitution-mit-let"><span class="header-section-number">8.3.2</span> Substitution mit <code>LET()</code></h3>
+<p>Excels <code>LET()</code>-Funktion erlaubt das Vereinfachen komplizierter Formeln durch <em>Variablen</em>. Diese <em>Variablen</em> existieren nur im Kontext der <code>LET()</code>-Funktion und können nicht ausserhalb dieser Funktion verwendet werden.</p>
+<p>Eine Variable in der <code>LET()</code>-Funktion entspricht einer Substitution eines Teilausdrucks einer Formel.</p>
 <div id="exm-let-substitution" class="theorem example">
 <p><span class="theorem-title"><strong>Beispiel 8.4 (<code>LET()</code>-Funktion zur Substitution) </strong></span>&nbsp;</p>
 <pre class="excel"><code>=LET(
@@ -557,16 +587,35 @@ Problem
  )</code></pre>
 </div>
 <p>Die beiden Beispiele veranschaulichen, wie mit der <code>LET()</code>-Funktion mehr als eine Substitution umgesetzt wird, um eine komplexe Formel in überschaubare Teilschritte zu zerlegen und so stark zu vereinfachen.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wird eine Funktion in einer Formel mit den gleichen Parametern mehrfach aufgerufen, dann sollte diese Funktion <strong>immer</strong> mit <code>LET()</code> substituiert werden. Substituierte Berechnungen werden nur einmal für die Substitution durchgeführt und anschliessend wird nur das Ergebnis verwendet. Nicht substituierte Funktionen werden bei jedem Vorkommen neu ausgeführt.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="funktionsketten" class="level2" data-number="8.5">
-<h2 data-number="8.5" class="anchored" data-anchor-id="funktionsketten"><span class="header-section-number">8.5</span> Funktionsketten</h2>
-<p>Normalerweise entsprechen Excel-Adressen diesem Konzept. Gerade bei Matrizen und bestimmten Transformationen ist das Zwischenspeichern von Werten auf einem Arbeitsblatt unhandlich, behindert die Übersichtlichkeit oder führt zu unerwarteten Ergebnissen. Mit der Funktion <code>LET()</code> können wir Hilfsvariablen anlegen und so Excel-Formeln stark vereinfachen.</p>
-<section id="sec-funktionsketten-leerezelle" class="level3" data-number="8.5.1">
-<h3 data-number="8.5.1" class="anchored" data-anchor-id="sec-funktionsketten-leerezelle"><span class="header-section-number">8.5.1</span> LET() und leere Zellen</h3>
+<section id="funktionsketten" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="funktionsketten"><span class="header-section-number">8.4</span> Funktionsketten</h2>
+<p>Funktionsketten werden in Excel über Substitutionen erzeugt. Gerade bei Matrizen und anderer Transformationen von Datenstrukturen ist die Verwendung von Funktionspfaden aus zwei Gründen unhandlich:</p>
+<ol type="1">
+<li>Wenn die Ergebnisse mehrerer Arbeistsschritte auf einem Arbeitsblatt dargestellt werden, wird die Übersichtlichkeit behindert.</li>
+<li>Weil Funktionspfade separate Formeln verwenden werden die Ergebnisse für jede Formel serialisiert, was nicht immer zu den erwarteten Ergebnissen führt.</li>
+</ol>
+<p>Weil Excel keine Operatoren für die Funktionsverkettung bereitstellt, werden Funktionsketten <strong>immer</strong> mithilfe der Funktion <code>LET()</code> erzeugt.</p>
+<!-- 
+### LET() und leere Zellen {#sec-funktionsketten-leerezelle}
+-->
 <p>Normalerweise werden leere Zellen als Ergebnis einer Funktion durch <code>0</code> ersetzt. Dieses Konvertierung findet erst bei der Darstellung des Ergebnisses statt. Innerhalb einer Funktionskette werden leere Zellen als leere Zellen weitergereicht, solange keine Aggregation vorgenommen wird. Es ist deshalb möglich in einer Funktionskette eine Entscheidung mit <code>ISTLEER()</code> für den Fall einer leeren Zelle zu treffen.</p>
 <p>Eine Excel-Operation <strong>muss</strong> einen Wert als Ergebnis einer <strong>Formel</strong> haben. Wird ein nicht vorhandener Wert (d.h. leere Zelle) in einem Ergebnis einer Formel gefunden, dann wird dieser Wert automatisch in den Wert <code>0</code> konvertiert. Diese Umwandlung passiert jedoch erst <em>nachdem</em> die Operation abgeschlossen ist und Excel das Ergebnis auf dem Arbeitsblatt darstellt.</p>
-<p>Dieses Verhalten hat zur Folge, dass solange eine Operation nicht abgeschlossen ist, die nicht vorhandenen Werte in ihrer ursprünglichen Form erhalten bleiben. Es ist also möglich diese Werte mit <code>ISTLEER()</code> zu prüfen.</p>
+<p>Dieses Verhalten hat zur Folge, dass solange eine Operation nicht abgeschlossen ist, die nicht vorhandenen Werte in ihrer ursprünglichen Form erhalten bleiben. Es ist also möglich undefinierte Werte mit <code>ISTLEER()</code> zu prüfen.</p>
 <p>Die ursprünglichen Daten können unvollständig sein und enthalten dann leere Zellen an den entsprechenden Zellen. Diese fehlenden Werte als <code>0</code> darzustellen, kann zu verzerrten Ergebnissen führen. Deshalb sollten solche Werte mit dem <em>Fehler</em> <code>#NV</code> (lies: <em>Nicht Vorhanden</em>) markiert werden. Dieser Fehlerwert wird nicht automatisch in den Wert <code>0</code> umgewandelt, so dass die fehlenden Werte korrekt berücksichtigt werden können.</p>
 <p>Diese Umwandlung nutzt aus, dass Excel leere Zellen als Ergebnis von <em>Funktionen</em> zulässt, aber nicht als Ergebnis von <em>Formeln</em>. Entsprechend kann das folgende Funktionsmuster verwendet werden.</p>
 <p>Die beiden Vektoren <code>G1#</code> und <code>H1#</code> sind Hilfsvektoren, die Sequenzen für die Zeilen- und Spaltenindizes der Datenstruktur <code>A:F</code> enthalten.</p>
@@ -588,24 +637,125 @@ Index() \triangleright Wenn()
 \tag{8.1}</span></span></p>
 <p>Damit wird der Aufruf der <code>WENN()</code>-Funktion vereinfacht, weil nur noch die Hilfsvariable <code>Feld</code> übergeben müssen. Diese Variable enthält die Daten für die Funktionsverkettung, so dass eine zusätzliche Arbeitsblattadresse nicht notwendig ist.</p>
 </section>
+<section id="sec-lambda-funktionen" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="sec-lambda-funktionen"><span class="header-section-number">8.5</span> Funktionen selbst definieren</h2>
+<p>In Excel können eigene Funktionen mit der Funktion <code>LAMBDA()</code> erzeugt werden. Die <code>LAMBDA()</code>-Funktion erzeugt die Funktion aus ihren Parametern. Dabei ist der letzte Parameter immer der Funktionskörper. Die restlichen Parameter sind die Parameter der Funktion. Es können max 253 Parameter angegeben werden, wobei keine optionalen oder vorbelegten Parameter möglich sind. <a href="#exm-lambda-basic">Beispiel&nbsp;<span>8.6</span></a> zeigt eine einfache Funktionsdefinition mit zwei Parametern.</p>
+<div id="exm-lambda-basic" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 8.6 (Funktionsdefinition mit zwei Parametern ohne Ausführung) </strong></span>&nbsp;</p>
+<pre class="excel"><code>= LAMBDA(a; b; a + b)</code></pre>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mit Excels <code>LAMBDA()</code>-Funktion können nur Funktionen durch Verkettung anderer Funktionen erzeugt werden.</p>
+</div>
+</div>
+<p>Für Excel sind Funktionen kein darstellbarer Datentyp. Wird also eine Funktion mit <code>LAMBDA()</code> definiert, ohne dass sie unmittelbar ausgeführt wird, zeigt Excel den Fehler <code>#KALK!</code> an. Dieser Fehler kann dadurch vermieden werden, indem die Funktion unmittelbar ausgeführt wird (s. <a href="#exm-lambda-basic-run">Beispiel&nbsp;<span>8.7</span></a>).</p>
+<div id="exm-lambda-basic-run" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 8.7 (Funktionsdefinition mit zwei Parametern mit sofortiger Ausführung) </strong></span>&nbsp;</p>
+<pre class="excel"><code>= LAMBDA(a; b; a + b)(1;2)</code></pre>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der Funktionskörper muss nicht alle Parameter verwenden. Wird eine Funktion aufgerufen, dann <strong>müssen</strong> alle Parameter angegeben werden, selbst wenn diese im Funktionskörper nicht verwendet werden.</p>
+</div>
+</div>
+<section id="map-reduce-und-lambda" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="map-reduce-und-lambda"><span class="header-section-number">8.5.1</span> Map-Reduce und <code>LAMBDA()</code></h3>
+<p>Weil eine mit <code>LAMBDA()</code> erzeugte Funktion als Formel direkt ausgeführt werden muss, ergibt sich kein Vorteil gegenüber normalen Excel-Formeln. Die Funktion wird jedoch zum Erstellen von Callbacks benötigt. Die Hauptanwendung sind Operationen, die mit jedem Wert eines Bereichs durchgeführt werden sollen. Weil Excel normalerweise keine Schleifen zulässt, müssen solche Operationen über die Logikfunktionen <code>MAP()</code>, <code>NACHZEILE()</code>, <code>NACHSPALTE()</code>, <code>REDUCE()</code> und <code>SCAN()</code> erzeugt werden.</p>
+<p>Alle Map-Funktionen erwarten als ersten Parameter einen Bereich mit Werten und als letzten Parameter eine Funktionsdefinition mit <code>LAMBDA()</code>.</p>
+<ul>
+<li><p><code>MAP()</code> erzeugt eine Schleife, welche den Callback für jedes Element genau einmal aufruft. Es ist möglich, mehrere Bereiche anzugeben. Die Parameteranzahl der Callback muss der Anzahl der angegebenen Bereiche entsprechen.</p></li>
+<li><p><code>NACHSPALTE()</code> erzeugt eine Schleife, die eine Funktion für jede Spalte eines Bereichs aufruft. Der Callback darf nur einen Parameter haben. Der Parameter enthält eine Liste mit allen Werten der aktuellen Zeile.</p></li>
+<li><p><code>NACHZEILE()</code> erzeugt eine Schleife, die eine Funktion für jede Zeile eines Bereichs aufruft. Der Callback darf nur einen Parameter haben.</p></li>
+</ul>
+<p><code>MAP()</code>, <code>NACHSPALTE()</code> und <code>NACHZEILE()</code> behandeln die einzelnen Durchläufe der Schleife als <em>unabhängig</em>. Im Gegensatz dazu sind die Durchläufe einer <code>REDUCE()</code> oder <code>SCAN()</code>-Schleife immer vom voherigen Durchlauf <em>abhängig</em>. <code>REDUCE()</code> und <code>SCAN()</code> erfordern als ersten Parameter einen Initialwert, der als Argument für den ersten Aufruf des Callbacks verwendet wird.</p>
+<ul>
+<li><p><code>REDUCE()</code> erzeugt eine Schleife, die für jedes Element eines Bereichs den Callback ausführt. Diese Funktion erhält als ersten Parameter, das Callback-Ergebnis des vorherigen Durchlaufs und als zweiten Parameter. Das Ergebnis von <code>REDUCE()</code> ist das Ergebnis des letzten Aufrufs der Schleifenfunktion.</p></li>
+<li><p><code>SCAN()</code> ist eine Variante von <code>REDUCE()</code>. Während <code>REDUCE()</code> nur das letzte Ergebnis der Callbacks ausgibt, erzeugt <code>SCAN()</code> einen Vektor mit allen Ergebnissen der Callback-Aufrufe.</p></li>
+</ul>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Map-Reduce-Funktionen dürfen nur einzelne Werte erzeugen. Datenstrukturen sind auch dann nicht erlaubt, wenn sie alle die gleiche Länge haben und sich in einen rechteckigen Bereich zusammenfügen liessen. Diese Beschränkung gilt auch, wenn die Funktionsergebnisse als Zwischenschritt an eine Kombinationsfunktion für Vektoren (z.B. <code>VSTAPELN()</code>) verknüpft werden. Erzeugt ein Callback eine Datenstruktur, dann erzeugt die jeweilige Funktion den Fehlerwert <code>#KALK!</code>.</p>
+<p>Einzig die Funktion <code>REDUCE()</code> darf Datenstrukturen erzeugen; weil diese Funktion nur ein Ergebnis haben kann.</p>
+<p>Diese Einschränkung bedeutet, dass die Funktionen <code>NACHSPALTE()</code> und <code>NACHZEILE()</code> die Identitätsfunktion <strong>nicht</strong> als Callback akzeptieren.</p>
+</div>
+</div>
 </section>
-<section id="sec-lambda-funktionen" class="level2" data-number="8.6">
-<h2 data-number="8.6" class="anchored" data-anchor-id="sec-lambda-funktionen"><span class="header-section-number">8.6</span> Funktionen selbst definieren</h2>
-<p>LAMBDA Funktion</p>
-<ul>
-<li>Funktionen können Funktionsketten beinhalten.</li>
-<li>Funktionen können nur Bereiche als Ergebnis erzeugen.</li>
-<li>Funktionen können auch intern keine komplexeren Datenstrukturen erzeugen, als Excel normalerweise zulässt. Es sind maximal 2D Bereiche erlaubt. Komplexere Sturkturen müssen über Hilfsvariablen abgebildet werden.</li>
-</ul>
-<p>Strategie der Funktionsentwicklung</p>
-<ul>
-<li>Funktion als Funktionspfad</li>
-<li>Funktion als Funktionskette</li>
-<li>Funktion als LAMBDA Funktion</li>
-<li>Funktion als benanntes Element</li>
-</ul>
+<section id="index-schleifen-mit-matrixerstellen" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="index-schleifen-mit-matrixerstellen"><span class="header-section-number">8.5.2</span> Index-Schleifen mit <code>MATRIXERSTELLEN()</code></h3>
+<p>Während die Funktionen der Map-Reduce-Familie Werte voraussetzen, ist dies nicht immer möglich. Die Funktion <code>MATRIXERSTELLEN()</code> erzeugt eine Schleife über zwei Iteratoren, für die Dimensionen der gewünschten Matrix. Der Callback für die Funktion erfordert deshalb 2 Parameter für die beiden Indizes.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Funktion <code>MATRIXERSTELLEN()</code> kann meistens durch das <strong><em>äussere Produkt</em></strong> (<a href="../matrix-operationen/kapitel.html"><span>Kapitel&nbsp;12</span></a>) ersetzt werden.</p>
+</div>
+</div>
+<p>Der Callback für <code>MATRIXERSTELLEN()</code> darf nur zwei Parameter haben, denen die aktuellen Index-Werte zugewiesen werden. Daraus ergibt sich, dass im Funktionskörper nur diese beiden Parameter bereitgestellt werden. Komplexere Anwendungen lassen sich mit <em>Closures</em> erzeugen. Dazu wird eine Funktion mit LAMBDA() erzeugt, die zusätzliche Werte oder Datenstrukturen als Parameter unterstützt. Diese Funktion erzeugt anschliessend den Callback für <code>MATRIXERZEUGEN()</code>. Der Callback ist also ein Closure der erzeugenden Funktion. Dadurch kann der Callback die Werte und Datenstrukturen der erzeugenden Funktion beim Aufruf durch die Funktion <code>MATRIXERZEUGEN()</code> ebenfalls verwenden (s. <a href="#exm-matrixerstellen-mit-closure">Beispiel&nbsp;<span>8.8</span></a>).</p>
+<div id="exm-matrixerstellen-mit-closure" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 8.8 (Matrix mit Closure erstellen) </strong></span>Im Bereich <code>A1:A4</code> stehen beliebige Zeichenketten.</p>
+<pre><code>=MATRIXERSTELLEN(5;3;
+    LAMBDA(namen;
+           LAMBDA(a;b; 
+                  ZEILENWAHL(namen; 
+                             REST(a+b; 
+                                  ZEILEN(namen))+1)
+           )
+    )(A1:A4)
+ )</code></pre>
+</div>
+</section>
+<section id="neue-funktionen-festlegen" class="level3" data-number="8.5.3">
+<h3 data-number="8.5.3" class="anchored" data-anchor-id="neue-funktionen-festlegen"><span class="header-section-number">8.5.3</span> Neue Funktionen festlegen</h3>
+<p>Neben Schleifen können mit <code>LAMBDA()</code> neue Funktionen erzeugt werden. Dazu muss in einem Arbeitsblatt ein Name mit der Funktionsdefinition erzeugt werden. Namen werden über das Menüband <code>Formeln</code> mit dem Kommando <code>Namen definieren</code> erzeugt. Dieses Kommando öffnet einen Dialog, über welchen ein Name definiert werden kann(<a href="#fig-lambda-funcdef">Abbildung&nbsp;<span>8.2</span></a>). In diesem Dialog müssen die beiden Felder <code>Name</code> und <code>Bezieht sich auf</code> ausgefüllt werden.</p>
+<p>Der <code>Name</code> ist der Bezeichner der neuen Funktion. Hier dürfen keine Namen vorhandener Funktionen oder benannter Bereiche verwendet werden. Das Feld <code>Bezieht sich auf</code> muss eine LAMBDA-Formel mit der Funktionsdefinition beinhalten. Als <code>Bereich</code> sollte immer <code>Arbeitsmappe</code> ausgewählt sein, weil sonst die Funktion auf ein einziges Arbeitsblatt beschränkt wäre. Zur Dokumentation sollte im Feld <code>Kommentar</code> zusätzlich eine Kurzbeschreibung der Funktion angegeben werden. Leider zeigt Excel diesen Kommentar nicht als Kurzhilfe für den Funktionsnamen an.</p>
+<div id="fig-lambda-funcdef" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/funktion_definieren.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;8.2: Funktionsdefinition mit <code>LAMBDA()</code></figcaption>
+</figure>
+</div>
+<p>Nachdem eine Funktion einem Namen zugewiesen wurde, kann dieser Name wie jede andere Funktion in Formeln verwendet werden (<a href="#fig-call-own-function">Abbildung&nbsp;<span>8.3</span></a>).</p>
+<div id="fig-call-own-function" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/funktion_anwenden.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;8.3: Eigene Funktion anwenden</figcaption>
+</figure>
+</div>
+<p>Als Funktionskörper können beliebige Excel Operationen vorkommen. Es bietet sich jedoch an, für komplexere Funktionen den Funktionskörper mit <code>LET()</code> einzuleiten. Dadurch lassen sich einzelne Arbeitsschritte leichter isolieren und verketten.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
