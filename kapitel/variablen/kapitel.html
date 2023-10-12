@@ -291,7 +291,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-dynamisches-feld" id="toc-sec-dynamisches-feld" class="nav-link" data-scroll-target="#sec-dynamisches-feld"><span class="header-section-number">8.1.1</span> Dynamische Bereiche</a></li>
   <li><a href="#benannte-bereiche" id="toc-benannte-bereiche" class="nav-link" data-scroll-target="#benannte-bereiche"><span class="header-section-number">8.1.2</span> Benannte Bereiche</a></li>
   </ul></li>
-  <li><a href="#sec-funktionen" id="toc-sec-funktionen" class="nav-link" data-scroll-target="#sec-funktionen"><span class="header-section-number">8.2</span> Funktionen</a></li>
+  <li><a href="#sec-funktionen" id="toc-sec-funktionen" class="nav-link" data-scroll-target="#sec-funktionen"><span class="header-section-number">8.2</span> Funktionen</a>
+  <ul class="collapse">
+  <li><a href="#generatoren-in-excel" id="toc-generatoren-in-excel" class="nav-link" data-scroll-target="#generatoren-in-excel"><span class="header-section-number">8.2.1</span> Generatoren in Excel</a></li>
+  </ul></li>
   <li><a href="#substitution" id="toc-substitution" class="nav-link" data-scroll-target="#substitution"><span class="header-section-number">8.3</span> Substitution</a>
   <ul class="collapse">
   <li><a href="#substitution-über-funktionspfade" id="toc-substitution-über-funktionspfade" class="nav-link" data-scroll-target="#substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</a></li>
@@ -504,6 +507,30 @@ Merke
 <p>Excel hat keine Identitätsfunktion. Die Identitätsfunktion wird durch eine Formel simuliert, die nur eine Adresse enthält. Solche Formeln werden für das <em>Vektorisieren</em> (<a href="#def-vektorisieren">Definition&nbsp;<span>8.1</span></a>) von Bereichen eingesetzt.</p>
 </div>
 </div>
+<section id="generatoren-in-excel" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="generatoren-in-excel"><span class="header-section-number">8.2.1</span> Generatoren in Excel</h3>
+<p>Excel hat zwei Generatorfunktionen:</p>
+<ul>
+<li>Die <code>SEQUENZ()</code>-Funktion</li>
+<li>Die <code>ZUFALLSMATRIX()</code>-Funktion</li>
+</ul>
+<p>Beide Generatoren erfordern die Anzahl der Zeilen und Spalten, für die Werte generiert werden sollen. Soll nur ein Spaltenvektor erzeugt werden, muss nur die Anzahl der Zeilen angegeben werden.</p>
+<p>Die <code>SEQUENZ()</code>-Funktion erzeugt eine Sequenz von Werten ausgehend vom ersten Wert (<code>Anfang</code>). Die Schrittweite legt die Abstände zwischen den einzelnen Werten fest. Standardmässig ist die Schrittweite mit <code>1</code> festgelegt.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wird die Schrittweite mit <code>0</code> festgelegt, dann wird der Anfangswert für die angegebene Anzahl von Spalten und Zeilen wiederholt.</p>
+</div>
+</div>
+<p>Die Funktion <code>ZUFALLSMATRIX()</code> erzeugt Zufallswerte in einem vorgegebenen Intervall. Diese Funktion kann reelle Zahlen oder ganze Zahlen generieren. Der Wertebereich der generierten Zahlen kann durch einen Minimal- und einem Maximalwert eingeschränkt werden. Wird kein Minimal- und Maximalwert angegeben, dann werden Werte im Intervall <span class="math inline">0 &lt; z &lt; 1</span> generiert. Werden Ganzzahlen für dieses Intervall angefordert, dann werden die Werte <code>0</code> und <code>1</code> erzeugt.</p>
+</section>
 </section>
 <section id="substitution" class="level2" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="substitution"><span class="header-section-number">8.3</span> Substitution</h2>
