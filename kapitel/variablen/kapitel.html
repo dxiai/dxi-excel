@@ -300,7 +300,10 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#substitution-über-funktionspfade" id="toc-substitution-über-funktionspfade" class="nav-link" data-scroll-target="#substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</a></li>
   <li><a href="#substitution-mit-let" id="toc-substitution-mit-let" class="nav-link" data-scroll-target="#substitution-mit-let"><span class="header-section-number">8.3.2</span> Substitution mit <code>LET()</code></a></li>
   </ul></li>
-  <li><a href="#funktionsketten" id="toc-funktionsketten" class="nav-link" data-scroll-target="#funktionsketten"><span class="header-section-number">8.4</span> Funktionsketten</a></li>
+  <li><a href="#funktionsketten" id="toc-funktionsketten" class="nav-link" data-scroll-target="#funktionsketten"><span class="header-section-number">8.4</span> Funktionsketten</a>
+  <ul class="collapse">
+  <li><a href="#sec-funktionsketten-leerezelle" id="toc-sec-funktionsketten-leerezelle" class="nav-link" data-scroll-target="#sec-funktionsketten-leerezelle"><span class="header-section-number">8.4.1</span> LET() und leere Zellen</a></li>
+  </ul></li>
   <li><a href="#sec-lambda-funktionen" id="toc-sec-lambda-funktionen" class="nav-link" data-scroll-target="#sec-lambda-funktionen"><span class="header-section-number">8.5</span> Funktionen selbst definieren</a>
   <ul class="collapse">
   <li><a href="#map-reduce-und-lambda" id="toc-map-reduce-und-lambda" class="nav-link" data-scroll-target="#map-reduce-und-lambda"><span class="header-section-number">8.5.1</span> Map-Reduce und <code>LAMBDA()</code></a></li>
@@ -624,9 +627,8 @@ Praxis
 <li>Weil Funktionspfade separate Formeln verwenden werden die Ergebnisse für jede Formel serialisiert, was nicht immer zu den erwarteten Ergebnissen führt.</li>
 </ol>
 <p>Weil Excel keine Operatoren für die Funktionsverkettung bereitstellt, werden Funktionsketten <strong>immer</strong> mithilfe der Funktion <code>LET()</code> erzeugt.</p>
-<!-- 
-### LET() und leere Zellen {#sec-funktionsketten-leerezelle}
--->
+<section id="sec-funktionsketten-leerezelle" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="sec-funktionsketten-leerezelle"><span class="header-section-number">8.4.1</span> LET() und leere Zellen</h3>
 <p>Normalerweise werden leere Zellen als Ergebnis einer Funktion durch <code>0</code> ersetzt. Dieses Konvertierung findet erst bei der Darstellung des Ergebnisses statt. Innerhalb einer Funktionskette werden leere Zellen als leere Zellen weitergereicht, solange keine Aggregation vorgenommen wird. Es ist deshalb möglich in einer Funktionskette eine Entscheidung mit <code>ISTLEER()</code> für den Fall einer leeren Zelle zu treffen.</p>
 <p>Eine Excel-Operation <strong>muss</strong> einen Wert als Ergebnis einer <strong>Formel</strong> haben. Wird ein nicht vorhandener Wert (d.h. leere Zelle) in einem Ergebnis einer Formel gefunden, dann wird dieser Wert automatisch in den Wert <code>0</code> konvertiert. Diese Umwandlung passiert jedoch erst <em>nachdem</em> die Operation abgeschlossen ist und Excel das Ergebnis auf dem Arbeitsblatt darstellt.</p>
 <p>Dieses Verhalten hat zur Folge, dass solange eine Operation nicht abgeschlossen ist, die nicht vorhandenen Werte in ihrer ursprünglichen Form erhalten bleiben. Es ist also möglich undefinierte Werte mit <code>ISTLEER()</code> zu prüfen.</p>
@@ -650,6 +652,7 @@ Praxis
 Index() \triangleright Wenn()
 \tag{8.1}</span></span></p>
 <p>Damit wird der Aufruf der <code>WENN()</code>-Funktion vereinfacht, weil nur noch die Hilfsvariable <code>Feld</code> übergeben müssen. Diese Variable enthält die Daten für die Funktionsverkettung, so dass eine zusätzliche Arbeitsblattadresse nicht notwendig ist.</p>
+</section>
 </section>
 <section id="sec-lambda-funktionen" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="sec-lambda-funktionen"><span class="header-section-number">8.5</span> Funktionen selbst definieren</h2>
