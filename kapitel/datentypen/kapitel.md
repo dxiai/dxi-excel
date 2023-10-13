@@ -18,7 +18,7 @@ Excel kennt sechs fundamentale Datentypen.
 
 ### Zahlen
 
-Zahlen werden in Excel immer als Gleitkommazahlen behandelt. Excel kennt von keine ganzen Zahlen. Wenn eine Zahl in eine ganze Zahl umgewandelt wird (z.B. durch die Funktion `GANZZAHL`), wird lediglich der Nachkommaanteil der Zahl auf `0` gesetzt.
+Zahlen werden in Excel immer als Gleitkommazahlen behandelt. Excel kennt keine ganzen Zahlen. Wenn eine Zahl in eine ganze Zahl umgewandelt wird (z.B. durch die Funktion `GANZZAHL`), wird lediglich der Nachkommaanteil der Zahl auf `0` gesetzt.
 
 Manche Excel Funktionen arbeiten nur mit ganzen Zahlen. In diesen Fällen wird der Nachkommaanteil der Zahl automatisch abgeschnitten.
 
