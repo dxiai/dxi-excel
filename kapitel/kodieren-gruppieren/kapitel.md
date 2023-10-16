@@ -5,10 +5,6 @@ execute:
 
 # Indizieren und Gruppieren {#sec-chapter-kodieren-gruppieren}
 
-::: {.callout-warning}
-## Work in Progress
-:::
-
 ## Indizieren
 
 Es werden drei Arten von Indizes unterschieden: 
