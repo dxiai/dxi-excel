@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Einführung in die Datenwissenschaft mit Excel - 13&nbsp; Kodieren und Gruppieren</title>
+<title>Einführung in die Datenwissenschaft mit Excel - 13&nbsp; Indizieren und Gruppieren</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/kodieren-gruppieren/kapitel.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Kodieren und Gruppieren</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/kodieren-gruppieren/kapitel.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -214,7 +214,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/kodieren-gruppieren/kapitel.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Kodieren und Gruppieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -274,6 +274,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#hashing-eines-primärindex" id="toc-hashing-eines-primärindex" class="nav-link" data-scroll-target="#hashing-eines-primärindex"><span class="header-section-number">13.1.1</span> Hashing eines Primärindex</a></li>
   <li><a href="#hashing-eines-sekundärindex" id="toc-hashing-eines-sekundärindex" class="nav-link" data-scroll-target="#hashing-eines-sekundärindex"><span class="header-section-number">13.1.2</span> Hashing eines Sekundärindex</a></li>
+  <li><a href="#indizieren-mit-einer-referenztabelle" id="toc-indizieren-mit-einer-referenztabelle" class="nav-link" data-scroll-target="#indizieren-mit-einer-referenztabelle"><span class="header-section-number">13.1.3</span> Indizieren mit einer Referenztabelle</a></li>
   </ul></li>
   <li><a href="#gruppieren" id="toc-gruppieren" class="nav-link" data-scroll-target="#gruppieren"><span class="header-section-number">13.2</span> Gruppieren</a>
   <ul class="collapse">
@@ -287,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-chapter-kodieren-gruppieren" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Kodieren und Gruppieren</span></span></h1>
+<h1 class="title"><span id="sec-chapter-kodieren-gruppieren" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></h1>
 </div>
 
 
@@ -302,19 +303,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Work in Progress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 <section id="indizieren" class="level2" data-number="13.1">
 <h2 data-number="13.1" class="anchored" data-anchor-id="indizieren"><span class="header-section-number">13.1</span> Indizieren</h2>
 <p>Es werden drei Arten von Indizes unterschieden:</p>
@@ -366,6 +354,64 @@ Praxis
 <pre class="excel"><code>= GANZZAHL(A1# / 5)</code></pre>
 <p>Die Wochentage werden mit dem Modulo-Operator bestimmt.</p>
 <pre class="excel"><code>=  REST(A1#; 5)</code></pre>
+</div>
+</blockquote>
+</section>
+<section id="indizieren-mit-einer-referenztabelle" class="level3" data-number="13.1.3">
+<h3 data-number="13.1.3" class="anchored" data-anchor-id="indizieren-mit-einer-referenztabelle"><span class="header-section-number">13.1.3</span> Indizieren mit einer Referenztabelle</h3>
+<p>Oft müssen Werte in andere Werte übersetzt werden, wobei die Kodierung keiner mathematischen Logik folgt. In diesem Fall werden sog. Referenz- oder Kodierungstabellen für das Indizieren verwendet. Sehr oft werden diese Tabellen unabhängig von der Datenerhebung erstellt.</p>
+<p>Eine Referenztabelle hat mindestens zwei Spalten, wobei per Konvention die erste Spalte die möglichen Werte vor dem Indizieren. Diese Werte können in den Daten auftreten. Alle folgenden Spalten enthalten Kodierungen des ursprünglichen Werts.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Enthält eine Referenztabelle mehr als eine Kodierung, dann müssen die Werte spaltenweise kodiert werden.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<div id="exm-code-likert" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.2 (Likert-Skala kodieren) </strong></span>Eine Liker-Skala ist ein Messinstrument zur Meinungs- oder Empfindungserhebung. Eine Likert Skala wird in der Regel zwischen zwei Extremfeststellungen erfasst, die später als Zahlen kodiert ausgewertet werden.</p>
+<p>Solche Skalen erfordern eine Referenztabelle, weil die Ordnung der Werte sich nicht aus der alphabetischen Reihenfolge der Zeichenketten ergibt. Für die Auswertung müssen die Zeichenketten in Zahlen kodiert werden. Es ist üblich die Kodierung von Likert-Skalen in Referenztabellen zu dokumentieren. Die folgende Tabelle zeigt eine eine fünfstufige Liker-Skala mit den entsprechenden Zahlenwerten für die Auswertung.</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Wert</th>
+<th style="text-align: right;">Zahl</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Trifft gar nicht zu</td>
+<td style="text-align: right;">-2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Trifft eher nicht zu</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Unentschieden</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">&nbsp;Trifft eher zu</td>
+<td style="text-align: right;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">&nbsp;Trifft voll und ganz zu</td>
+<td style="text-align: right;">2</td>
+</tr>
+</tbody>
+</table>
+<p>Die Kodierung erfolgt mit der Funktion <code>XVERWEIS()</code>.</p>
+<pre class="excel"><code>= XVERWEIS(Tabelle1[Aussage_Likert]; 
+           KodierungLikert[Wert]; 
+           KodierungLikert[Zahl])</code></pre>
 </div>
 </blockquote>
 </section>
@@ -430,11 +476,11 @@ Achtung
 <li>Ermitteln der Gruppierungen</li>
 <li>Ausführen der Gruppierungsfunktion für alle Gruppierungen</li>
 </ol>
-<p><a href="#exm-gruppieren-zaehlen">Beispiel&nbsp;<span>13.2</span></a> zeigt diese drei Schritte. Gegeben sind Werte zwischen 1 und 25, die in drei Bereiche organisiert werden sollen. Es soll die Anzahl der Werte in den einzelnen Bereichen ermittelt werden. Die Werte liegen in einer Tabellenstruktur vor.</p>
+<p><a href="#exm-gruppieren-zaehlen">Beispiel&nbsp;<span>13.3</span></a> zeigt diese drei Schritte. Gegeben sind Werte zwischen 1 und 25, die in drei Bereiche organisiert werden sollen. Es soll die Anzahl der Werte in den einzelnen Bereichen ermittelt werden. Die Werte liegen in einer Tabellenstruktur vor.</p>
 <p>Der Gruppierungsindex ist ein Merkmal und sollte gemeinsam mit den Daten gespeichert und versioniert werden. Dieser Sekundärindex strukturiert die Daten in einer Tabelle oder einem Bereich.</p>
 <blockquote class="blockquote">
 <div id="exm-gruppieren-zaehlen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 13.2 (Gruppiertes Zählen) </strong></span>Die Reihenfolge der Schritte muss eingehalten werden!</p>
+<p><span class="theorem-title"><strong>Beispiel 13.3 (Gruppiertes Zählen) </strong></span>Die Reihenfolge der Schritte muss eingehalten werden!</p>
 <p><strong>Schritt 1: Sekundärindex erstellen (in <code>A1</code>)</strong></p>
 <pre class="excel"><code>= WENNS( Tabelle1[Werte] &gt; 18; "gross";
          Tabelle1[Werte] &gt; 10; "mittel"; 
@@ -462,9 +508,9 @@ Wichtig
 <p>Die WENNS-Varianten können mehrere Sekundärindizes verknüpfen. Dabei werden die vorkommenden <em>Permutationen</em> der Hash-Werte als Index verwendet. Alle Kriterienvektoren müssen dafür <strong>gleich lang</strong> sein und die Permutationen abbilden.</p>
 </div>
 </div>
-<p>Um alle <em>vorkommenden</em> Permutationen mehrerer Sekundärindizes zu ermitteln, müssen die Vektoren einen Bereich bilden. Für diese Bereich ermittelt die Funktion <code>EINDEUTIG()</code> dann jede vorkommende Zeile. Dieser Trick funktioniert jedoch nur wenn alle Sekundärindizes nebeneinander stehen, was oft nicht der Fall ist. Die Funktion <code>HSTAPELN()</code> löst dieses Problem, weil sie mehrere Vektoren zu einem Bereich zusammenfügen kann. <a href="#exm-sekundaerindizes-verknüpfen-eindeutig">Beispiel&nbsp;<span>13.3</span></a> zeigt die Vorgehensweise für drei Vektoren.</p>
+<p>Um alle <em>vorkommenden</em> Permutationen mehrerer Sekundärindizes zu ermitteln, müssen die Vektoren einen Bereich bilden. Für diese Bereich ermittelt die Funktion <code>EINDEUTIG()</code> dann jede vorkommende Zeile. Dieser Trick funktioniert jedoch nur wenn alle Sekundärindizes nebeneinander stehen, was oft nicht der Fall ist. Die Funktion <code>HSTAPELN()</code> löst dieses Problem, weil sie mehrere Vektoren zu einem Bereich zusammenfügen kann. <a href="#exm-sekundaerindizes-verknüpfen-eindeutig">Beispiel&nbsp;<span>13.4</span></a> zeigt die Vorgehensweise für drei Vektoren.</p>
 <div id="exm-sekundaerindizes-verknüpfen-eindeutig" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 13.3 (Vorkommende Permutationen mehrerer Sekundärindizes ermitteln in <code>A1</code>) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 13.4 (Vorkommende Permutationen mehrerer Sekundärindizes ermitteln in <code>A1</code>) </strong></span>&nbsp;</p>
 <pre class="excel"><code>= LET(bereich; HSTAPELN(
                 Tabelle1[Name]; 
                 Tabelle1[Durchlauf]; 
@@ -472,9 +518,9 @@ Wichtig
       EINDEUTIG(bereich)
 )</code></pre>
 </div>
-<p>Diese Permutationstabelle kann nun mit den Gruppierungsfunktionen verwendet werden. <a href="#exm-gruppieren-mit-permutationen">Beispiel&nbsp;<span>13.4</span></a> zeigt die Verwendeung der Gruppierungen aus <a href="#exm-sekundaerindizes-verknüpfen-eindeutig">Beispiel&nbsp;<span>13.3</span></a>.</p>
+<p>Diese Permutationstabelle kann nun mit den Gruppierungsfunktionen verwendet werden. <a href="#exm-gruppieren-mit-permutationen">Beispiel&nbsp;<span>13.5</span></a> zeigt die Verwendeung der Gruppierungen aus <a href="#exm-sekundaerindizes-verknüpfen-eindeutig">Beispiel&nbsp;<span>13.4</span></a>.</p>
 <div id="exm-gruppieren-mit-permutationen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 13.4 (Gruppieren mit mehreren Indizes) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 13.5 (Gruppieren mit mehreren Indizes) </strong></span>&nbsp;</p>
 <pre class="excel"><code>= MITTELWERTWENNS(
     Tabelle1[Zeit]; 
     Tabelle1[Name];      SPALTENWAHL(A1#; 1);
