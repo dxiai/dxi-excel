@@ -3,8 +3,7 @@ execute:
   echo: false
 ---
 
-# Kodieren und Gruppieren {#sec-chapter-kodieren-gruppieren}
-
+# Indizieren und Gruppieren {#sec-chapter-kodieren-gruppieren}
 
 ::: {.callout-warning}
 ## Work in Progress
@@ -61,6 +60,41 @@ Excels Funktion für die Ganzzahldivision ist eigentlich die Funktion `QUOTIENT(
 > =  REST(A1#; 5)
 > ```
 > ::: 
+
+### Indizieren mit einer Referenztabelle
+
+Oft müssen Werte in andere Werte übersetzt werden, wobei die Kodierung keiner mathematischen Logik folgt. In diesem Fall werden sog. Referenz- oder Kodierungstabellen für das Indizieren verwendet. Sehr oft werden diese Tabellen unabhängig von der Datenerhebung erstellt.
+
+Eine Referenztabelle hat mindestens zwei Spalten, wobei per Konvention die erste Spalte die möglichen Werte vor dem Indizieren. Diese Werte können in den Daten auftreten. Alle folgenden Spalten enthalten Kodierungen des ursprünglichen Werts.
+
+
+::: {.callout-warning}
+Enthält eine Referenztabelle mehr als eine Kodierung, dann müssen die Werte spaltenweise kodiert werden.
+:::
+
+> ::: {#exm-code-likert}
+> ## Likert-Skala kodieren
+>
+> Eine Liker-Skala ist ein Messinstrument zur Meinungs- oder Empfindungserhebung. Eine Likert Skala wird in der Regel zwischen zwei Extremfeststellungen erfasst, die später als Zahlen kodiert ausgewertet werden. 
+> 
+> Solche Skalen erfordern eine Referenztabelle, weil die Ordnung der Werte sich nicht aus der alphabetischen Reihenfolge der Zeichenketten ergibt. Für die Auswertung müssen die Zeichenketten in Zahlen kodiert werden. Es ist üblich die Kodierung von Likert-Skalen in Referenztabellen zu dokumentieren. Die folgende Tabelle zeigt eine eine fünfstufige Liker-Skala mit den entsprechenden Zahlenwerten für die Auswertung.
+> 
+> | Wert | Zahl |
+> | :---: | ---: |
+> | Trifft gar nicht zu | -2 |
+> | Trifft eher nicht zu | 1 |
+> | Unentschieden | 0 |
+> | Trifft eher zu | 1 |
+> | Trifft voll und ganz zu | 2 |
+>
+> Die Kodierung erfolgt mit der Funktion  `XVERWEIS()`.
+>
+> ```excel
+> = XVERWEIS(Tabelle1[Aussage_Likert]; 
+>            KodierungLikert[Wert]; 
+>            KodierungLikert[Zahl])
+> ```
+> :::
 
 ## Gruppieren
 
