@@ -266,7 +266,21 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#indizieren" id="toc-indizieren" class="nav-link active" data-scroll-target="#indizieren"><span class="header-section-number">13.1</span> Indizieren</a>
+  <ul class="collapse">
+  <li><a href="#hashing-eines-primärindex" id="toc-hashing-eines-primärindex" class="nav-link" data-scroll-target="#hashing-eines-primärindex"><span class="header-section-number">13.1.1</span> Hashing eines Primärindex</a></li>
+  <li><a href="#hashing-eines-sekundärindex" id="toc-hashing-eines-sekundärindex" class="nav-link" data-scroll-target="#hashing-eines-sekundärindex"><span class="header-section-number">13.1.2</span> Hashing eines Sekundärindex</a></li>
+  </ul></li>
+  <li><a href="#gruppieren" id="toc-gruppieren" class="nav-link" data-scroll-target="#gruppieren"><span class="header-section-number">13.2</span> Gruppieren</a>
+  <ul class="collapse">
+  <li><a href="#mehrere-sekundärindizes" id="toc-mehrere-sekundärindizes" class="nav-link" data-scroll-target="#mehrere-sekundärindizes"><span class="header-section-number">13.2.1</span> Mehrere Sekundärindizes</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -301,8 +315,177 @@ Work in Progress
 
 </div>
 </div>
+<section id="indizieren" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="indizieren"><span class="header-section-number">13.1</span> Indizieren</h2>
+<p>Es werden drei Arten von Indizes unterschieden:</p>
+<ol type="1">
+<li>Der <strong>Primärindex</strong>, mit dem ein einzelner Datensatz eindeutig <em>identifiziert</em> werden kann.</li>
+<li><strong>Fremdschlüssel</strong> sind Sekundärindizes für <em>Querverweise</em> auf eine zweite Datenstruktur (eine sog. <em>Indextabelle</em> oder engl. <em>Lookup-Table</em>).</li>
+<li><strong>Gruppenindizes</strong> sind Sekundärindizes zur Identifikation von Datensätzen mit <em>gemeinsamen Eigenschaften</em>.</li>
+</ol>
+<p>Weil ein Index Werte über einen Datensatz enthält, gehört ein Index zum jeweiligen Datensatz und wird über einen <em>Indexvektor</em> in einer Stichprobe abgebildet.</p>
+<section id="hashing-eines-primärindex" class="level3" data-number="13.1.1">
+<h3 data-number="13.1.1" class="anchored" data-anchor-id="hashing-eines-primärindex"><span class="header-section-number">13.1.1</span> Hashing eines Primärindex</h3>
+<p>In Excel muss zum Durchnummerieren die <code>SEQUENZ()</code>-Funktion verwendet werden. Das erreichen wir mit der folgenden Operation: <code>=SEQUENZ(ZEILEN(DatenBereich))</code>, wobei <code>DatenBereich</code> eine Excel-Adresse sein muss. Weil mit Excel keine leeren Tabellen existieren, führt diese Sequenz in Excel zu keinen Fehlern. Wegen dieser Eigenschaft muss ein entsprechender Bereich mindestens einen Umfang von einem Datensatz haben.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Diese Eigenschaft gilt auch für Tabellen, die nur aus Überschriften bestehen. Damit die Formel zum Nummerieren eingegeben werden kann, muss mindestens ein Datensatz existeren, weil sonst keine Zelle für die Formel <em>in</em> der Tabelle existiert.</p>
+</div>
+</div>
+</section>
+<section id="hashing-eines-sekundärindex" class="level3" data-number="13.1.2">
+<h3 data-number="13.1.2" class="anchored" data-anchor-id="hashing-eines-sekundärindex"><span class="header-section-number">13.1.2</span> Hashing eines Sekundärindex</h3>
+<p>Ein Sekundärindex kennzeichnet mehrere Datensätze mit gleichen Eigenschaften. Die einfachste Hashing-Funktion für Sekundärindizes ist <code>WENNS()</code>. Diese Funktion stellt über die Bedingungen sicher, dass alle Hashes einen Datensatz die Merkmale eindeutig auswerten.</p>
+<p>Soll ein Sekundärindex über Zahlen gebildet werden, werden die Ganzzahldivision und der Modulo-Operator häufig als Hashing-Funktion eingesetzt. Die Ganzzahldivision fasst aufeinanderfolgende Werte zu einem Wert zusammen. Der Modulo-Operator weist aufeinanderfolgenden Werte unterschiedlichen Werten zu.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excels Funktion für die Ganzzahldivision ist eigentlich die Funktion <code>QUOTIENT()</code>. Diese Funktion kann leider nur mit einzelnen Werten und nicht mit Vektoren oder Matrizen verwendet werden. Deshalb ist die Funktion <code>QUOTIENT()</code> für die Praxis nur bedingt tauglich. Stattdessen muss die Ganzzahldivision in Excel wie folgt <em>simuliert</em> werden.</p>
+<pre class="excel"><code>= GANZZAHL( A1:A9 / 3 )</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<div id="exm-tage-wochen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.1 (Tage und Wochen bestimmen) </strong></span>Gegegeben ist eine Sequenz in <code>A1</code> Startend bei <code>1</code>. Diese Sequenz bildet die <em>Werktage</em> eines Projekts ab. Der erste Tag ist ein Montag. Feiertage werden nicht berücksichtigt. Aus dieser Sequenz sollen Wochentage und Wochen ermittelt werden.</p>
+<p>Die Wochennummern im Projekt wird mithilfe der Ganzzahldivision ermittelt.</p>
+<pre class="excel"><code>= GANZZAHL(A1# / 5)</code></pre>
+<p>Die Wochentage werden mit dem Modulo-Operator bestimmt.</p>
+<pre class="excel"><code>=  REST(A1#; 5)</code></pre>
+</div>
+</blockquote>
+</section>
+</section>
+<section id="gruppieren" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="gruppieren"><span class="header-section-number">13.2</span> Gruppieren</h2>
+<p>Das Gruppieren ist in Excel auf die folgenden Funktionen beschränkt:</p>
+<ul>
+<li><code>ZÄHLENWENN()</code></li>
+<li><code>ZÄHLENWENNS()</code></li>
+<li><code>SUMMEWENN()</code></li>
+<li><code>SUMMEWENNS()</code></li>
+<li><code>MINWENNS()</code></li>
+<li><code>MAXWENNS()</code></li>
+<li><code>MITTELWERTWENN()</code></li>
+<li><code>MITTELWERTWENNS()</code></li>
+</ul>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Funktionen <code>ZÄHLENWENN()</code>, <code>ZÄHLENWENNS()</code>, <code>SUMMEWENN()</code> und <code>SUMMEWENNS()</code> wurden bis 2019 zum Erzeugen von bedingten Aggregationen verwendet. Mit der Einführung dynamischer Felder und der <code>FILTER()</code>-Funktion lassen sich bedingte Aggregationen einfacher und flexibler durch Funktionsverkettungen von FILTER() mit einer beliebigen Aggregationsfunktion erreichen.</p>
+<p><strong>Seit dieser Version hat sich die Bedeutung der Funktionen geändert.</strong> Die Funktionen werden neu als Gruppierungsfunktionen verwendet.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wenn für eine Funktion eine WENN und eine WENNS-Variante existieren, dann sollte für <em>gruppierte Aggregationen</em> <strong>immer</strong> die WENNS-Variante verwendet werden.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die beiden Funktionen <code>WENN()</code> und <code>WENNS()</code> sind <strong>keine</strong> Gruppierungsfunktionen, sondern Unterscheidungen. Trotz ähnlicher Namen, dürfen sie nicht mit den Gruppierungsfunktionen verwechselt werden.</p>
+</div>
+</div>
+<p>Die WENNS-Varianten sind für alle Aggregationen bezüglich ihrer Parameter konsistent, so dass die Syntax leichter zu merken ist. Die beiden (neuen) Funktionen <code>MINWENNS()</code> und <code>MAXWENNS()</code> veranschaulichen diese Empfehlung, weil für diese Funktionen keine WENN-Variante existiert.</p>
+<p>Eine Gruppierungsoperation erfolgt in drei Schritten:</p>
+<ol type="1">
+<li>Erzeugen der Gruppierungsindizes.</li>
+<li>Ermitteln der Gruppierungen</li>
+<li>Ausführen der Gruppierungsfunktion für alle Gruppierungen</li>
+</ol>
+<p><a href="#exm-gruppieren-zaehlen">Beispiel&nbsp;<span>13.2</span></a> zeigt diese drei Schritte. Gegeben sind Werte zwischen 1 und 25, die in drei Bereiche organisiert werden sollen. Es soll die Anzahl der Werte in den einzelnen Bereichen ermittelt werden. Die Werte liegen in einer Tabellenstruktur vor.</p>
+<p>Der Gruppierungsindex ist ein Merkmal und sollte gemeinsam mit den Daten gespeichert und versioniert werden. Dieser Sekundärindex strukturiert die Daten in einer Tabelle oder einem Bereich.</p>
+<blockquote class="blockquote">
+<div id="exm-gruppieren-zaehlen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.2 (Gruppiertes Zählen) </strong></span>Die Reihenfolge der Schritte muss eingehalten werden!</p>
+<p><strong>Schritt 1: Sekundärindex erstellen (in <code>A1</code>)</strong></p>
+<pre class="excel"><code>= WENNS( Tabelle1[Werte] &gt; 18; "gross";
+         Tabelle1[Werte] &gt; 10; "mittel"; 
+         WAHR; "klein" )</code></pre>
+<p>Dieser Schritt kann entfallen, wenn ein Sekundärindex bereits vorhanden ist.</p>
+<p><strong>Schritt 2: Gruppierungen ermitteln (in <code>C1</code>)</strong></p>
+<pre class="excel"><code>= EINDEUTIG(A1#)</code></pre>
+<p><strong>Schritt 3: Zählen (in <code>D1</code>)</strong></p>
+<pre class="excel"><code>= ZÄHLENWENNS( A1#; C1# )</code></pre>
+</div>
+</blockquote>
+<p>Beim Zählen wird der Gruppierungsindex direkt verwendet. Die anderen Gruppierungsfunktionen haben einen zusätzlichen Parameter für den Vektor über den die Operation ausgeführt werden soll.</p>
+<section id="mehrere-sekundärindizes" class="level3" data-number="13.2.1">
+<h3 data-number="13.2.1" class="anchored" data-anchor-id="mehrere-sekundärindizes"><span class="header-section-number">13.2.1</span> Mehrere Sekundärindizes</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die WENNS-Varianten können mehrere Sekundärindizes verknüpfen. Dabei werden die vorkommenden <em>Permutationen</em> der Hash-Werte als Index verwendet. Alle Kriterienvektoren müssen dafür <strong>gleich lang</strong> sein und die Permutationen abbilden.</p>
+</div>
+</div>
+<p>Um alle <em>vorkommenden</em> Permutationen mehrerer Sekundärindizes zu ermitteln, müssen die Vektoren einen Bereich bilden. Für diese Bereich ermittelt die Funktion <code>EINDEUTIG()</code> dann jede vorkommende Zeile. Dieser Trick funktioniert jedoch nur wenn alle Sekundärindizes nebeneinander stehen, was oft nicht der Fall ist. Die Funktion <code>HSTAPELN()</code> löst dieses Problem, weil sie mehrere Vektoren zu einem Bereich zusammenfügen kann. <a href="#exm-sekundaerindizes-verknüpfen-eindeutig">Beispiel&nbsp;<span>13.3</span></a> zeigt die Vorgehensweise für drei Vektoren.</p>
+<div id="exm-sekundaerindizes-verknüpfen-eindeutig" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.3 (Vorkommende Permutationen mehrerer Sekundärindizes ermitteln in <code>A1</code>) </strong></span>&nbsp;</p>
+<pre class="excel"><code>= LET(bereich; HSTAPELN(
+                Tabelle1[Name]; 
+                Tabelle1[Durchlauf]; 
+                Tabelle1[Gruppe] );
+      EINDEUTIG(bereich)
+)</code></pre>
+</div>
+<p>Diese Permutationstabelle kann nun mit den Gruppierungsfunktionen verwendet werden. <a href="#exm-gruppieren-mit-permutationen">Beispiel&nbsp;<span>13.4</span></a> zeigt die Verwendeung der Gruppierungen aus <a href="#exm-sekundaerindizes-verknüpfen-eindeutig">Beispiel&nbsp;<span>13.3</span></a>.</p>
+<div id="exm-gruppieren-mit-permutationen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.4 (Gruppieren mit mehreren Indizes) </strong></span>&nbsp;</p>
+<pre class="excel"><code>= MITTELWERTWENNS(
+    Tabelle1[Zeit]; 
+    Tabelle1[Name];      SPALTENWAHL(A1#; 1);
+    Tabelle1[Durchlauf]; SPALTENWAHL(A1#; 2); 
+    Tabelle1[Gruppe];    SPALTENWAHL(A1#; 3)
+)</code></pre>
+</div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -554,4 +737,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></div></div></footer></body></html>
+</body></html>
