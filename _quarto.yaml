@@ -78,8 +78,10 @@ book:
 
 format:
   html:
-    theme: bootstrap
+    theme: cosmo
     toc: true
     html-math-method: katex
+  pdf:
+    papersize: a4
 
 csl: _contrib/apa.csl
