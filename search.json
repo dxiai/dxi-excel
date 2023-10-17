@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Einführung in die Datenwissenschaft mit Excel",
     "section": "",
-    "text": "Vorwort\nWork in Progress\n\n\nCopyright\nDieses Werk ist lizenziert unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz (CC-BY-NC-SA). Details zur Nutzungsbedingungen und dem Copyright finden sich unter createivecommons.org.\n2023, Christian Glahn, Zurich, Switzerland"
+    "text": "Vorwort\nWork in Progress\n\n\nCopyright\nDieses Werk ist lizenziert unter einer Creative Commons Namensnennung - Nicht-kommerziell - Weitergabe unter gleichen Bedingungen 4.0 International Lizenz (CC-BY-NC-SA). Details zur Nutzungsbedingungen und dem Copyright finden sich unter createivecommons.org.\n2023, Christian Glahn, Zurich, Switzerland\n\n\n\n\n\nDie PDF-Version liegt hier zum Download"
   },
   {
     "objectID": "kapitel/einleitung/kapitel.html#ziele",
@@ -406,11 +406,25 @@
     "text": "Work in Progress"
   },
   {
-    "objectID": "kapitel/daten-beschreiben/kapitel.html",
-    "href": "kapitel/daten-beschreiben/kapitel.html",
+    "objectID": "kapitel/daten-beschreiben/kapitel.html#universelle-kennwerte",
+    "href": "kapitel/daten-beschreiben/kapitel.html#universelle-kennwerte",
     "title": "15  Daten beschreiben",
-    "section": "",
-    "text": "Work in Progress"
+    "section": "15.1 Universelle Kennwerte",
+    "text": "15.1 Universelle Kennwerte"
+  },
+  {
+    "objectID": "kapitel/daten-beschreiben/kapitel.html#lagemasse",
+    "href": "kapitel/daten-beschreiben/kapitel.html#lagemasse",
+    "title": "15  Daten beschreiben",
+    "section": "15.2 Lagemasse",
+    "text": "15.2 Lagemasse\n\n15.2.1 Modus\n\n\n15.2.2 Median\n### Mittelwert"
+  },
+  {
+    "objectID": "kapitel/daten-beschreiben/kapitel.html#streumasse",
+    "href": "kapitel/daten-beschreiben/kapitel.html#streumasse",
+    "title": "15  Daten beschreiben",
+    "section": "15.3 Streumasse",
+    "text": "15.3 Streumasse\n\n15.3.1 Interquatilsabstand\n\n\n15.3.2 Varianz und Standardabweichung"
   },
   {
     "objectID": "kapitel/daten-visualisieren/kapitel.html",
