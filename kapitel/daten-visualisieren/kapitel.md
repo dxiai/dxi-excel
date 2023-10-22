@@ -90,15 +90,54 @@ Das Kommand `Diagramm verschieben` erlaubt es, ein Diagramm auf einem eigenen Ar
 
 ### Dialog `Datenquelle auswählen`
 
-Über das Kommando `Daten markieren` wird der Dialog `Datenquelle auswählen` (@fig-dialog-daten-markieren) geöffnet, über den die Daten den Darstellungselementen zugewiesen werden.
+Über das Kommando `Daten markieren` wird der Dialog `Datenquelle auswählen` (@fig-dialog-daten-markieren-windows) geöffnet, über den die Daten den Darstellungselementen zugewiesen werden.
 
-![Dialog Datenquelle auswählen](figures/dialog_daten_markieren.png){#fig-dialog-daten-markieren}
+![Dialog Datenquelle auswählen (Windows)](figures/datenquellen_auswaehlen_windows.png){#fig-dialog-daten-markieren-windows}
+
+Durch einen Doppelklick auf eine Datenreihe öffnet sich ein zweiter Dialog, um eine Datenreihe zu konfigurieren (@fig-datenreihe-konfigurieren-windows). Über diesen Dialog sollten die Datenreihen konfiguriert werden, damit sicher gestellt wird, dass die Datenreihen auf die richtigen Werte verweisen.
+
+![Datenreihe konfigurieren (Windows)](figures/datenreihe_konfigurieren_windows.png){#fig-datenreihe-konfigurieren-windows}
+
+::: {.callout-warning}
+## MacOs vs. Windows
+
+Unter MacOS ist die gleiche Funktion etwas anders angeordnet. 
+
+![Dialog Datenquelle auswählen (MacOS)](figures/dialog_daten_markieren.png){#fig-dialog-daten-markieren-macos}
 
 Der Dialog besteht aus drei Teilen: 
 
 - Der Teil `Bereichdetails` zeigt den Datenbereich des Diagramms an. Der angezeigte Bereich sollte **nicht** in diesem Teil verändert werden.
 - Der Teil `Legendeneinträge (Reihen)` weist Spalten mit Werten den Datenreihen des Diagramms zu. In diesem Teil werden die verwendeten Datenbereiche angepasst, die im Teil `Bereichdetails` zusammengefasst angezeigt werden. 
 - Im Teil `Ausgeblendete und leere Zellen` wird die Behandlung von leeren Zellen und `#NA`-Werten festgelegt. In diesem Teil sind nur selten Anpassungen notwendig.
+:::
+
+### Diagramme formatieren
+
+Die Darstellungselemente von Diagrammen können über den **Formatierungsbereich** angepasst werden. Über den Formatierungsbereich lassen sich die alle Details eines Diagramms anpassen. 
+
+::: {.callout-warning}
+## MacOs vs. Windows
+
+Zur Formatierung der Datenreihen wird der Formatierungsbereich benötigt. Dieser wird unter Windows über das Kommando `Auswahl formatieren` geöffnet. Die wichtigsten Formatierungen sind die Datenreihenformatierungen. Je nach Diagrammtyp lassen sich in dieser Rubrik Formatierungen in Abhängigkeit zu den abgebildeten Daten justieren.
+
+![Formatierungsbereich öffnen (Windows)](figures/diagramm_formatierung_windows.png){#fig-formatierungsbereich-windows}
+
+Unter MacOS wird der Formatierungsbereich über das Kommando `Formatierungsbereich` im Menüband `Format` geöffnet.
+
+![Formatierungsbereich öffnen (MacOS)](figures/diagramm_formatierung_macos.png){#fig-formatierungsbereich-macos}
+
+Nach dem Öffnen des Formatierungsbereichs können die einzelnen Darstellungselemente gezielt formatiert werden. Immer wenn ein Darstellungselement sich auf Datenreihen bezieht, lassen sich zuätzliche Formatierungen unter der Rubrik `Reihenoptionen` konfigurieren. Diese Optionen werden unter MacOs und Windows leicht unterschiedlich dargestellt (@fig-formatierungsbereich-datenreihen)
+
+::: {#fig-formatierungsbereich-datenreihen layout-ncol=2 layout-valign="bottom"}
+
+![Windows](figures/datenreihen_formatieren_windows.png){#fig-formatierungs_data-macos}
+
+![MacOS](figures/datenreihen_formatieren_macos.png){#fig-formatierungs_data-macos}
+
+Datenreihen formatieren
+:::
+:::
 
 
 
@@ -128,6 +167,7 @@ Das `SVG`-Format sollte gewählt werden, wenn das Diagramme grossformtig oder in
 
 ![Auswahl zum Speichern eines Diagramms](figures/dialog_als_grafik_speichern.png){#fig-diagramm-speichern-unter}
 
+
 ## Diagrammtypen
 
 Alle Excel Diagramme visualisieren Werte vom Datentyp **Zahl**. Um andere Datentypen zu visualisieren, müssen diese zuerst in Zahlen kodiert werden. 
@@ -138,14 +178,52 @@ Excel unterscheidet zwischen Balken- oder Säulendiagrammen. Technisch untersche
 
 ::: {.callout-note}
 ## Merke
-Für ein  Balkendiagramm entspricht ein Wert einem Balken und der Wert bestimmt dessen Grösse. 
+Für ein  Balkendiagramm entspricht jeder Wert einem Balken und der Wert bestimmt dessen Grösse. 
 :::
 
+Die Anzahl der Werte entspricht der Anzahl der Balken. Daraus folgt, dass ein Balkendiagramm immmer diskrete Daten auf der X- und Zahlenwerte auf der Y-Achse abbildet.
+
+Balkendiagramme können keine Werte zusammenfassen. Deshalb müssen Daten vor der Visualisierung als Balkendiagramm aggregiert werden. Normalerweise erfolgt ein gruppiertes Zählen mit `ZÄHLENWENNS()`. 
+
+Die Werte können als Zeile oder als Spalte angegeben werden. Wird ein zweiter Vektor mit Textwerten angegeben, dann übernimmt Excel diese Werte als Beschriftung der X-Achse. 
+
+::: {#fig-barchart-mono layout="[[45, 55]]" layout-valign="bottom"}
+
+![Daten](figures/bar_chart_mono_data.png){#fig-daten}
+
+![Diagramm](figures/bar_chart_mono.png){#fig-barchart-mono-vis}
+
+Vorbereitete Datentabelle mit Balkendiagramm
+:::
 
 ::: {.callout-note}
 ## Merke
 Für Balkendiagramme mit zwei oder mehr Gruppen, **müssen** die Daten in der *Breitform* vorliegen.
 :::
+
+Gruppierte Daten werden farblich voneinander abgehoben. Die Farben können über das Farbschema der Arbeitsmappe über das Kommando `Farben ändern` angepasst werden.
+
+::: {#fig-barchart-multi layout-ncol=2 layout-valign="bottom"}
+
+![Daten](figures/balken_kategorisiert_daten.png){#fig-daten}
+
+![Diagramm](figures/balken_kategorisiert.png){#fig-barchart-mono-vis}
+
+Gruppierte Datentabelle mit Balkendiagramm 
+:::
+
+Sollen einzelne Kategorien farblich hervorgehoben werden, dann müssen die Werte gruppiert organisiert werden, wobei jeder Wert in einer eigenen Gruppe geführt wird (@fig-barchart-multicolor). 
+
+::: {#fig-barchart-multicolor layout-ncol=2 layout-valign="bottom"}
+
+![Daten](figures/balken_farblich_abgehoben_daten.png){#fig-daten}
+
+![Diagramm](figures/balken_farblich_abgehoben.png){#fig-barchart-mono-vis}
+
+Datentabelle und Balkendiagramm mit farblich abgehobenen Kategorien.
+:::
+
+### Spezielle Balkendiagramme 
 
 Excel bietet zwei spezielle Formen von Balkendiagrammen: *Trichterdiagramme* und *Wasserfall*-Diagramme. Beide Diagramme sind *eindimensional*. 
 
@@ -195,7 +273,7 @@ Blasendiagramme ähneln Punktdiagrammen. Weil drei Merkmale kodiert werden, müs
 
 Eine Datenreihe eines Blasendiagramms besteht aus drei Merkmalen.
 
-![Konfiguration der Datenreihen eines Blasendiagramms](figures/bubble-chart-datenreihen.png){#fig-datenreihen-bubble-chart}
+![Konfiguration der Datenreihen eines Blasendiagramms (MacOS)](figures/bubble-chart-datenreihen.png){#fig-datenreihen-bubble-chart}
 
 ### Linien-, Kreis- und Donutdiagramme 
 
@@ -226,6 +304,10 @@ Excels Liniendiagramme sollten nur für sog. Paralleldiagramme verwendet werden,
 :::
 
 ![Anwendung eines Liniendiagramms als Paralleldiagramm](figures/diagramm_parallel_plot.png){#fig-parallel-plot}
+
+::: {.callout-note}
+Eine Variante von Paralleldiagrammen sind sog. Netzdiagramme (bzw. Spider-Web-Diagramme). Netzdiagramme ordnen die Kategorien sternförmig an. In Excel finden sich Netzdiagramme unter der Kategorie `Wasserfalldiagramme`.
+::: 
 
 <!--
 ### Treemap-Diagramme
