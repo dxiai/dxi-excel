@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../kapitel/daten-visualisieren/pivot-tabellen.html" rel="next">
+<link href="../../references.html" rel="next">
 <link href="../../kapitel/daten-beschreiben/kapitel.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -246,12 +246,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span></a>
   </div>
 </li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../kapitel/daten-visualisieren/pivot-tabellen.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pivot-Tabellen</span></span></a>
-  </div>
-</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -266,7 +260,30 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#diagramme-erstellen" id="toc-diagramme-erstellen" class="nav-link active" data-scroll-target="#diagramme-erstellen"><span class="header-section-number">16.1</span> Diagramme erstellen</a>
+  <ul class="collapse">
+  <li><a href="#datenvorbereitung" id="toc-datenvorbereitung" class="nav-link" data-scroll-target="#datenvorbereitung"><span class="header-section-number">16.1.1</span> Datenvorbereitung</a></li>
+  <li><a href="#diagrammerstellung" id="toc-diagrammerstellung" class="nav-link" data-scroll-target="#diagrammerstellung"><span class="header-section-number">16.1.2</span> Diagrammerstellung</a></li>
+  <li><a href="#diagrammbearbeitung" id="toc-diagrammbearbeitung" class="nav-link" data-scroll-target="#diagrammbearbeitung"><span class="header-section-number">16.1.3</span> Diagrammbearbeitung</a></li>
+  <li><a href="#dialog-datenquelle-auswählen" id="toc-dialog-datenquelle-auswählen" class="nav-link" data-scroll-target="#dialog-datenquelle-auswählen"><span class="header-section-number">16.1.4</span> Dialog <code>Datenquelle auswählen</code></a></li>
+  <li><a href="#diagramme-exportieren" id="toc-diagramme-exportieren" class="nav-link" data-scroll-target="#diagramme-exportieren"><span class="header-section-number">16.1.5</span> Diagramme exportieren</a></li>
+  </ul></li>
+  <li><a href="#diagrammtypen" id="toc-diagrammtypen" class="nav-link" data-scroll-target="#diagrammtypen"><span class="header-section-number">16.2</span> Diagrammtypen</a>
+  <ul class="collapse">
+  <li><a href="#balkendiagramme" id="toc-balkendiagramme" class="nav-link" data-scroll-target="#balkendiagramme"><span class="header-section-number">16.2.1</span> Balkendiagramme</a></li>
+  <li><a href="#histogramm" id="toc-histogramm" class="nav-link" data-scroll-target="#histogramm"><span class="header-section-number">16.2.2</span> Histogramm</a></li>
+  <li><a href="#boxplot" id="toc-boxplot" class="nav-link" data-scroll-target="#boxplot"><span class="header-section-number">16.2.3</span> Boxplot</a></li>
+  <li><a href="#punktdiagramm" id="toc-punktdiagramm" class="nav-link" data-scroll-target="#punktdiagramm"><span class="header-section-number">16.2.4</span> Punktdiagramm</a></li>
+  <li><a href="#blasendiagramm" id="toc-blasendiagramm" class="nav-link" data-scroll-target="#blasendiagramm"><span class="header-section-number">16.2.5</span> Blasendiagramm</a></li>
+  <li><a href="#linien--kreis--und-donutdiagramme" id="toc-linien--kreis--und-donutdiagramme" class="nav-link" data-scroll-target="#linien--kreis--und-donutdiagramme"><span class="header-section-number">16.2.6</span> Linien-, Kreis- und Donutdiagramme</a></li>
+  </ul></li>
+  <li><a href="#mathematische-funktionen-visualisieren" id="toc-mathematische-funktionen-visualisieren" class="nav-link" data-scroll-target="#mathematische-funktionen-visualisieren"><span class="header-section-number">16.3</span> Mathematische Funktionen visualisieren</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -301,8 +318,392 @@ Work in Progress
 
 </div>
 </div>
+<p>Daten und Diagramme</p>
+<section id="diagramme-erstellen" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="diagramme-erstellen"><span class="header-section-number">16.1</span> Diagramme erstellen</h2>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excels Diagrammtypen erfordern, dass die Daten in einem bestimmten Format vorliegen. Das notwendige Format hängt vom Diagrammtyp ab. Es lassen sich deshalb nicht alle Visualisuerungen aus den gleichen Datenstrukturen erzeugen.</p>
+</div>
+</div>
+<section id="datenvorbereitung" class="level3" data-number="16.1.1">
+<h3 data-number="16.1.1" class="anchored" data-anchor-id="datenvorbereitung"><span class="header-section-number">16.1.1</span> Datenvorbereitung</h3>
+<p>Die verschiedenen Diagrammtypen erfordern unterschiedliche Datenformate. Deshalb müssen die Daten für die Visualisierung vorbereitet und in eine geeignete Form gebarcht werden.</p>
+<p>Alle Werte, die visualisiert werden sollen, müssen einen Bereich bilden. Dieser Bereich kann innerhalb einer Tabelle liegen oder dynamische Felder umfassen.</p>
+<p>Excel organisiert die Werte für die Darstellung in <em>Datenreihen</em>. Je nach Visualisierung besteht eine Datenreihe aus einer Überschrift und einer, zwei oder drei Spalten mit Werten.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es vereinfacht die Arbeit, wenn die Spalten einer Datenreihe möglichst nebeneinander geschrieben werden. Alternativ können die gleichen Teilspalten organisiert werden. Letzteres bietet sich immer dann an, wenn die Werte in die Breitform <em>transponiert</em> werden müssen.</p>
+</div>
+</div>
+<p>Erlaubt ein Diagramm horizontale oder vertikale Achsbeschriftungen, dann werden diese normalerweise in den Spalten <em>vor</em> den eigentlichen Werte für den Darstellungsbereicht positioniert.</p>
+</section>
+<section id="diagrammerstellung" class="level3" data-number="16.1.2">
+<h3 data-number="16.1.2" class="anchored" data-anchor-id="diagrammerstellung"><span class="header-section-number">16.1.2</span> Diagrammerstellung</h3>
+<p>Um ein Diagramm zu erstellen müssen die vorbereiteten Daten markiert werden. Excel Diagramme können <em>nicht</em> mit dynamischen Feldern umgehen, so dass <em>alle</em> darzustellenden Werte markiert werden müssen.</p>
+<p>Ausser den Spaltenüberschriften sollten keine weiteren Daten markiert werden. Dazu gehören auch die Werte, die für die Beschriftung der X-Achse benötigt werden. <a href="#fig-diagramme-werte-markieren">Abbildung&nbsp;<span>16.1</span></a> zeigt eine solche Markierung.</p>
+<div id="fig-diagramme-werte-markieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/markierte_werte_ohne_beschriftungen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.1: Markierung der zu visualisierenden Werte</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Oft liegen Daten als Tabellen oder Dynamische Felder vor. Verändert sich die Anzahl der Werte einer solchen Datenstruktur, betrifft diese Änderung <strong>nicht</strong> den markierten Wertebereich. Liegen neue Werte ausserhalb des markierten Bereichs für ein Diagramm, dann werden diese Werte nicht dargestellt. In solchen Fällen muss der Bereich für die Darstellung nachträglich erweitert werden.</p>
+</div>
+</div>
+<p>Nachdem wie zu visualisierenden Werte markiert wurden, kann das eigentliche Diagramm eingefügt werden. Dazu muss aus dem Menübalken <code>Einfügen</code> im Abschnitt <code>Diagramme</code> (<a href="#fig-menu-diagramme">Abbildung&nbsp;<span>16.2</span></a>) die gewünschte Darstellung ausgewählt werden.</p>
+<div id="fig-menu-diagramme" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/menu-einfuegen-diagramme.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.2: Menübalken Einfügen/Diagramme</figcaption>
+</figure>
+</div>
+<p>Die Auswahl erzeugt das gewünschte Diagramm für die markierten Daten auf dem aktuellen Arbeitsblatt.</p>
+</section>
+<section id="diagrammbearbeitung" class="level3" data-number="16.1.3">
+<h3 data-number="16.1.3" class="anchored" data-anchor-id="diagrammbearbeitung"><span class="header-section-number">16.1.3</span> Diagrammbearbeitung</h3>
+<p>Sobald ein Diagramm erstellt wurde, kann es über das Menüband <code>Diagrammentwurf</code> angepasst werden. Dieses Menüband wird nur angezeigt, wenn ein Diagramm ausgewählt wurde.</p>
+<div id="fig-menu-diagrammentwurf" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/menu_diagrammentwurf.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.3: Menüband Diagrammentwurf</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für die Datenvisualisierung sind das Untermenü <code>Diagrammelement hinzufügen</code> und das Kommando <code>Daten markieren</code> zentral, weil über sie die Darstellung gesteuert wird.</p>
+<p>Daneben wird das Farbschema über das Menü <code>Farben ändern</code> gesteuert.</p>
+</div>
+</div>
+<p>Das Untermenu <code>Diagrammelement hinzufügen</code> erlaubt es, einzelne Diagrammelement zur Visualisierung hinzuzufügen <strong>oder zu entfernen</strong>. Die möglichen Diagrammelemente hängen vom jeweiligen Diagrammtyp ab.</p>
+<p>Das Untermenu <code>Schnelllayout</code> bietet Vorlagen für die einzelnen Diagrammelemente. Diese Vorlagen dienen oft als Basis für die weitere Verfeinerung mit dem Untermenü <code>Diagrammelement hinzufügen</code>.</p>
+<p>Mit dem Untermenü <code>Farbenändern</code> können die im Diagramm verwendeten Farben angepasst werden. In diesem Menü finden sich verschiedene Farbpaletten. Diese Farbpaletten werden durch das aktuelle Farbschema der Arbeitsmappe bestimmt.</p>
+<p>Im Bereich <code>Diagrammformatvorlagen</code> kann die allgemeine Darstellung angepasst werden. Diese Einstellungen sollten nur angepasst werden, um ein Diagramm für eine besondere Präsentation vorzubereiten. Normalerweise werden über diesen Bereich keine Änderungen vorgenommen.</p>
+<p>Das Kommando <code>Zeile/Spalte tauschen</code> ist bei guter Vorbereitung der Daten nicht notwendig. Dieses Kommando ändert für eine Visualisierung die Verwendung von Spalten in die Verwendung von Zeilen. Dieses Kommando ist entsprechend nur Notwendig, wenn die Daten zeilenweise anstatt spaltenweise vorbereitet wurden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Manche Visualisierungen verwenden ein komplexes internes Datenmodell, so dass die mehrfache Anwendung des Kommandos <code>Zeile/Spalte tauschen</code> nicht zwingend zur urspünglichen Darstellung führt.</p>
+</div>
+</div>
+<p>Mit <code>Daten markieren</code> werden die Datenreihen und Quellen für Achsbeschriftungen in der Arbeitsmappe festgelegt. Dieses Kommando öffnet den Dialog <code>Datenquelle auswählen</code>, mit dem die Daten den einzelnen Darstellungselementen zugewiesen werden. Mit diesem Kommando können die Datenreihen korrigiert werden, wenn die automatische Erkennung von Excel nicht das gewünschte Ergebnis erzielt hat.</p>
+<p>Das Untermenü <code>Diagrammtyp ändern</code> erlaubt es, den Typ eines Diagramms zu verändern, ohne den Diagrammbereich zu verändern. Weil die verschiedenen Diagrammtyp recht unterschiedliche Anforderungen an die Datenorganisation haben, sollte hier nur Diagrammtypen innerhalb der gleichen Gruppe ausgewählt werden. Beispielsweise könnte so ein Balkendiagramm in ein Säulendiagramm geändert werden.</p>
+<p>Das Kommand <code>Diagramm verschieben</code> erlaubt es, ein Diagramm auf einem eigenen Arbeitsblatt zu platzieren. Dieses Kommando ist nur dann sinnvoll, wenn eine Arbeitsmappe zur Präsentation der Daten verwendet wird.</p>
+</section>
+<section id="dialog-datenquelle-auswählen" class="level3" data-number="16.1.4">
+<h3 data-number="16.1.4" class="anchored" data-anchor-id="dialog-datenquelle-auswählen"><span class="header-section-number">16.1.4</span> Dialog <code>Datenquelle auswählen</code></h3>
+<p>Über das Kommando <code>Daten markieren</code> wird der Dialog <code>Datenquelle auswählen</code> (<a href="#fig-dialog-daten-markieren">Abbildung&nbsp;<span>16.4</span></a>) geöffnet, über den die Daten den Darstellungselementen zugewiesen werden.</p>
+<div id="fig-dialog-daten-markieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/dialog_daten_markieren.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.4: Dialog Datenquelle auswählen</figcaption>
+</figure>
+</div>
+<p>Der Dialog besteht aus drei Teilen:</p>
+<ul>
+<li>Der Teil <code>Bereichdetails</code> zeigt den Datenbereich des Diagramms an. Der angezeigte Bereich sollte <strong>nicht</strong> in diesem Teil verändert werden.</li>
+<li>Der Teil <code>Legendeneinträge (Reihen)</code> weist Spalten mit Werten den Datenreihen des Diagramms zu. In diesem Teil werden die verwendeten Datenbereiche angepasst, die im Teil <code>Bereichdetails</code> zusammengefasst angezeigt werden.</li>
+<li>Im Teil <code>Ausgeblendete und leere Zellen</code> wird die Behandlung von leeren Zellen und <code>#NA</code>-Werten festgelegt. In diesem Teil sind nur selten Anpassungen notwendig.</li>
+</ul>
+</section>
+<section id="diagramme-exportieren" class="level3" data-number="16.1.5">
+<h3 data-number="16.1.5" class="anchored" data-anchor-id="diagramme-exportieren"><span class="header-section-number">16.1.5</span> Diagramme exportieren</h3>
+<p>Um ein Diagramm zum Einbetten in andere Programme bereitzustellen, muss das Diagramm aus Excel exportiert werden. Dazu ein Rechtsklick auf das Diagramm öffnet ein <em>Kontextmenü</em>, in welchem sich der Punkt <code>Als Grafik speichern ...</code> findet (<a href="#fig-diagramm-exportieren">Abbildung&nbsp;<span>16.5</span></a>).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+MacOS vs.&nbsp;Windows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Kommando zum Speichern von Diagrammen heisst unter MacOS <code>Als Bild speichern ...</code> und unter Windows <code>Als Grafik speichern ...</code>.</p>
+</div>
+</div>
+<div id="fig-diagramm-exportieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diagramm_speichern_windows.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.5: Kontextmenu zum Exportieren eines Diagramms</figcaption>
+</figure>
+</div>
+<p>Anschliessend erscheint ein Dialog zum Speichern der Diagrammdatei (<a href="#fig-diagramm-speichern-unter">Abbildung&nbsp;<span>16.6</span></a>). Standardmässig bietet dieser Dialog als <code>Dateityp</code> das Grafikformat <code>PNG</code> an, was in den meisten Fällen gewählt werden sollte. Alternativ können Diagramme in den Formaten <code>JPEG</code>, <code>GIF</code>, <code>PDF</code>, <code>BMP</code> und <code>SVG</code> exportiert werden. Hier sind für die Praxis nur die beiden Formate <code>PDF</code> und <code>SVG</code> von Bedeutung.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das <code>PDF</code>-Format sollte gewählt werden, wenn eine Grafik einzeln ausgedruckt werden soll.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das <code>SVG</code>-Format sollte gewählt werden, wenn das Diagramme grossformtig oder in hoher Qualität auf Web-Seiten veröffentlicht werden soll.</p>
+</div>
+</div>
+<div id="fig-diagramm-speichern-unter" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/dialog_als_grafik_speichern.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.6: Auswahl zum Speichern eines Diagramms</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="diagrammtypen" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="diagrammtypen"><span class="header-section-number">16.2</span> Diagrammtypen</h2>
+<p>Alle Excel Diagramme visualisieren Werte vom Datentyp <strong>Zahl</strong>. Um andere Datentypen zu visualisieren, müssen diese zuerst in Zahlen kodiert werden.</p>
+<section id="balkendiagramme" class="level3" data-number="16.2.1">
+<h3 data-number="16.2.1" class="anchored" data-anchor-id="balkendiagramme"><span class="header-section-number">16.2.1</span> Balkendiagramme</h3>
+<p>Excel unterscheidet zwischen Balken- oder Säulendiagrammen. Technisch unterscheiden sich die beiden Diagrammtype nur durch die Orientierung der Balken. Im Folgenden werden beide Diagrammtypen als Balkendiagramme bezeichnet.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für ein Balkendiagramm entspricht ein Wert einem Balken und der Wert bestimmt dessen Grösse.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für Balkendiagramme mit zwei oder mehr Gruppen, <strong>müssen</strong> die Daten in der <em>Breitform</em> vorliegen.</p>
+</div>
+</div>
+<p>Excel bietet zwei spezielle Formen von Balkendiagrammen: <em>Trichterdiagramme</em> und <em>Wasserfall</em>-Diagramme. Beide Diagramme sind <em>eindimensional</em>.</p>
+<p>Trichterdiagramme stellen die Balken horizontal zentriert dar, wobei nur positive Werte zulässig sind. Deshalb haben Excels Trichterdiagramme <em>keine</em> Beschriftung der X-Achse (<a href="#fig-trichterdiagramm">Abbildung&nbsp;<span>16.7</span></a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Trichterdiagramme unterscheiden sich von anderen Balkendiagrammen nur in der Anordnung der Balken.</p>
+</div>
+</div>
+<div id="fig-trichterdiagramm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/trichterdiagramm.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.7: Trichterdiagramm mit fünf Werten</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Weil Trichterdiagrammen keine beschriftete X-Achse haben und die Anordnung der Balken schwerer zu dekodieren ist, sollten diese Diagramme <strong>nicht</strong> verwendet werden.</p>
+</div>
+</div>
+<p>Wasserfalldiagramme stellen die Balken so dar als Folge dar. Diese Diagramme stellen positive und negative Werte gerichtet nebeneinander. Der Start des von links nach rechts gelesenene nächste Balken beginnt bei dem Wert, an dem der vorherige Balken endete. Bei positiven Werten befindet sich der Endpunkt über dem Startpunkt, bei negativen Werten darunter (<a href="#fig-wasserfall-leserichtungen">Abbildung&nbsp;<span>16.8</span></a>).</p>
+<div id="fig-wasserfall-leserichtungen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/wasserfalldiagramm2_richtungen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.8: Wasserfalldiagramm mit Leserichtungen</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Wasserfalldiagramme werden zur Visualisierung von Veränderungen über die Zeit verwendet.</p>
+</div>
+</div>
+<p>Bei Wasserfalldiagrammen kann die <strong>Beschriftung</strong> der X-Achse über ein zweite Datenspalte mitgegeben werden. Bei Trichterdiagrammen können auf die gleiche Weise die Beschriftungen der Y-Achse angepasst werden. In beiden Fällen müssen die Beschriftungen in der Spalte <em>vor</em> den Werten gespeichert sein.</p>
+</section>
+<section id="histogramm" class="level3" data-number="16.2.2">
+<h3 data-number="16.2.2" class="anchored" data-anchor-id="histogramm"><span class="header-section-number">16.2.2</span> Histogramm</h3>
+<p>Ein Histogramm ist in Excel <strong>immer</strong> ein eindimensionales Balkendiagramm. Werden Werte aus mehreren Spalten übergeben, dann werden alle Werte im Histogramm abgebildet.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für Daten mit diskreten Wertebereichen, sind Balkendiagramme <strong>immer</strong> einem Histogramm vorzuziehen.</p>
+</div>
+</div>
+</section>
+<section id="boxplot" class="level3" data-number="16.2.3">
+<h3 data-number="16.2.3" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">16.2.3</span> Boxplot</h3>
+</section>
+<section id="punktdiagramm" class="level3" data-number="16.2.4">
+<h3 data-number="16.2.4" class="anchored" data-anchor-id="punktdiagramm"><span class="header-section-number">16.2.4</span> Punktdiagramm</h3>
+</section>
+<section id="blasendiagramm" class="level3" data-number="16.2.5">
+<h3 data-number="16.2.5" class="anchored" data-anchor-id="blasendiagramm"><span class="header-section-number">16.2.5</span> Blasendiagramm</h3>
+<p>Blasendiagramme ähneln Punktdiagrammen. Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. Dabei wird die linke Spalte für die X-Achse verwendet. Die mittlere Spalte wird für die Y-Achse verwendet. Die rechte Spalte enthält die Werte für die Grösse der Punkte. Prinzipiell lassen sich die Werte nachträglich noch umorganisieren, oft ist es aber einfacher, die Spalten vorher anzuordnen.</p>
+<div id="fig-bubble-chart" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/bubble_chart.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.9: Beispiel eines Blasendiagramms</figcaption>
+</figure>
+</div>
+<p>Eine Datenreihe eines Blasendiagramms besteht aus drei Merkmalen.</p>
+<div id="fig-datenreihen-bubble-chart" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/bubble-chart-datenreihen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.10: Konfiguration der Datenreihen eines Blasendiagramms</figcaption>
+</figure>
+</div>
+</section>
+<section id="linien--kreis--und-donutdiagramme" class="level3" data-number="16.2.6">
+<h3 data-number="16.2.6" class="anchored" data-anchor-id="linien--kreis--und-donutdiagramme"><span class="header-section-number">16.2.6</span> Linien-, Kreis- und Donutdiagramme</h3>
+<p>Linien-, Kreis- und Donutdiagramme sind in Excel Varianten von Balkendiagrammen: Sie verwenden das gleiche Format für die Datenreihen und werden ansonsten gleich konfiguriert. Wie bei Balkendiagrammen, wird die X-Achse als eine diskrete Datenskalierung behandelt. Die Daten können also nominal- oder ordinalskaliert sein.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.11</span></a> und <a href="#fig-balken-aus-kreisdiagramm">Abbildung&nbsp;<span>16.12</span></a>)</p>
+</div>
+</div>
+<div id="fig-kreisdiagramm-aehnliche-groessen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/kreisdiagramm.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.11: Kreisdiagramm mit ähnlich grossen Werten</figcaption>
+</figure>
+</div>
+<div id="fig-balken-aus-kreisdiagramm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/balken_fuer_kreis.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.12: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.11</span></a></figcaption>
+</figure>
+</div>
+<p>Excels <strong>Liniendiagramme</strong> zeichnen für jeden Wert auf der Y-Achse einen Punkt und verbinden die Punkte mit geraden Linien.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Weil die X-Achse immer diskrete Daten abbildet, dürfen Liniendiagramme nicht mit Punktdiagrammen mit <em>interpolierten Linien</em> verwechselt werden.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excels Liniendiagramme sollten nur für sog. Paralleldiagramme verwendet werden, in denen mehrere diskrete Merkmale mit dem gleichen Wertebereich gegenübergestellt werden. Durch die Linien werden Unterschiede in den Ausprägungsprofilen sichtbar.</p>
+<p><a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.13</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
+</div>
+</div>
+<div id="fig-parallel-plot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/diagramm_parallel_plot.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.13: Anwendung eines Liniendiagramms als Paralleldiagramm</figcaption>
+</figure>
+</div>
+<!--
+### Treemap-Diagramme
+-->
+</section>
+</section>
+<section id="mathematische-funktionen-visualisieren" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="mathematische-funktionen-visualisieren"><span class="header-section-number">16.3</span> Mathematische Funktionen visualisieren</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -545,8 +946,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../kapitel/daten-visualisieren/pivot-tabellen.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Pivot-Tabellen</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../references.html" class="pagination-link">
+        <span class="nav-page-text">Referenzen</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -554,4 +955,4 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></div></div></footer></body></html>
+</body></html>
