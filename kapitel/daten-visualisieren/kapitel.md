@@ -9,10 +9,6 @@ execute:
   echo: false
 ---
 
-::: {.callout-warning}
-## Work in Progress
-:::
-
 ## Diagramme erstellen
 
 ::: {.callout-warning}
@@ -61,7 +57,7 @@ Sobald ein Diagramm erstellt wurde, kann es über das Menüband `Diagrammentwurf
 
 ::: {.callout-tip}
 ## Praxis
-Für die Datenvisualisierung sind das Untermenü `Diagrammelement hinzufügen` und das Kommando `Daten markieren` zentral, weil über sie die Darstellung gesteuert wird. 
+Für die Datenvisualisierung sind das Untermenü `Diagrammelement hinzufügen` und das Kommando `Daten auswählen` zentral, weil über sie die Darstellung gesteuert wird. 
 
 Daneben wird das Farbschema über das Menü `Farben ändern` gesteuert.
 :::
@@ -80,7 +76,12 @@ Das Kommando `Zeile/Spalte tauschen` ist bei guter Vorbereitung der Daten nicht 
 Manche Visualisierungen verwenden ein komplexes internes Datenmodell, so dass die mehrfache Anwendung des Kommandos `Zeile/Spalte tauschen` nicht zwingend zur urspünglichen Darstellung führt. 
 ::: 
 
-Mit `Daten markieren` werden die Datenreihen und Quellen für Achsbeschriftungen in der Arbeitsmappe festgelegt. Dieses Kommando öffnet den Dialog `Datenquelle auswählen`, mit dem die Daten den einzelnen Darstellungselementen zugewiesen werden. Mit diesem Kommando können die Datenreihen korrigiert werden, wenn die automatische Erkennung von Excel nicht das gewünschte Ergebnis erzielt hat.
+Mit `Daten auswählen` werden die Datenreihen und Quellen für Achsbeschriftungen in der Arbeitsmappe festgelegt. Dieses Kommando öffnet den Dialog `Datenquelle auswählen`, mit dem die Daten den einzelnen Darstellungselementen zugewiesen werden. Mit diesem Kommando können die Datenreihen korrigiert werden, wenn die automatische Erkennung von Excel nicht das gewünschte Ergebnis erzielt hat.
+
+::: {.callout-warning}
+## MacOS vs. Windows
+Das Kommando `Daten auswählen` heisst unter MacOS `Daten markieren`.
+::: 
 
 Das Untermenü `Diagrammtyp ändern` erlaubt es, den Typ eines Diagramms zu verändern, ohne den Diagrammbereich zu verändern. Weil die verschiedenen Diagrammtyp recht unterschiedliche Anforderungen an die Datenorganisation haben, sollte hier nur Diagrammtypen innerhalb der gleichen Gruppe ausgewählt werden. Beispielsweise könnte so ein Balkendiagramm in ein Säulendiagramm geändert werden. 
 
@@ -136,8 +137,6 @@ Nach dem Öffnen des Formatierungsbereichs können die einzelnen Darstellungsele
 Datenreihen formatieren
 :::
 :::
-
-
 
 ### Diagramme exportieren
 
@@ -221,7 +220,7 @@ Sollen einzelne Kategorien farblich hervorgehoben werden, dann müssen die Werte
 Datentabelle und Balkendiagramm mit farblich abgehobenen Kategorien.
 :::
 
-#### Darstellung optimieren
+#### Darstellung optimieren {#sec-barcharts-optimieren}
 
 Bei der Darstellung von Balkendiagrammen verwendet Excel immer  Standardeinstellungen. Diese nutzen die Fläche des Diagramms nicht unbedingt optimal: Auf der Y-Achse wird immer eine Hauptbeschriftung oberhalb des grössten Wers eingefügt und die Abstände  zwischen den Balken sind grösser als die Balken (@fig-balken-mit-standard). 
 
@@ -356,11 +355,96 @@ Auf diese Weise lässt sich in Excel ein Histogramm für diskrete Daten erstelle
 
 Im Fall von *nominalskalierten Werten* ist es oft wünschenswert die Balken in der Reihenfolge der Häufigkeiten zu organisieren. Das ist mit der Histogrammvisualisierung von Excel **nicht** möglich. Für solche Visualisierungen muss auf ein reguläres Balkendiagramm zurückgegriffen werden und die Daten vor der Darstellung entsprechend aufbereitet werden. 
 
-### Boxplot
+### Box-Plot
 
+Boxplots oder *Kastendiagramme* dienen der Visualisierung von Verteilungen. Im Gegensatz zu den festen Intervallen von Histogrammen, mit denen Häufigkeiten bestimmt werden, wird für Boxplots von **festen Häufigkeiten** ausgegangen. Diese Darstellung erlaubt es, auch sehr unterschiedliche Verteilungen miteinander zu vergleichen. 
 
+![Beispiel eines Boxplots](figures/boxplot.png){#fig-boxplot-ex}
+
+Weil Boxplots auch für ordinalskalierte Wertebereiche erstellt werden können, sind sie ein flexibles Werkzeug zur Visualisierung von Verteilungen.
+
+::: {.callout-note}
+## Merke
+Für Boxplots **dürfen** Werte **nicht** aggregiert werden.
+:::
+
+Werden einem Boxplot aggregierte Werte übergeben, dann bestimmt Excel die Intervallgrenze für die aggregierten Werte und nicht die ursprüngliche Verteilung. 
+
+In der Regel wird eine ganze Arbeitsblattspalte ausgewählt, um alle relevanten Werte zu markieren. Anschliessend wird aus der Diagrammkategorie `Statistik` der Diagrammtyp `Kastendiagramm ausgewählt. `
+
+Excel kann gruppierte Bloxplots erstellen. Dazu muss ein zweiter Vektor mit diskreten Daten angegeben werden. Excel gruppiert dann die Werte entlang des zweiten Vektors. 
+
+![Beispiel eines gruppierten Boxplots](figures/boxplot-categ.png){#fig-boxplot-categ}
+
+#### Boxplots optimieren
+
+Wie auch bei Balkendiagrammen fügt Excel zusätzliche Werte auf der Y-Achse ein. Diese Werte sind nur für offene Wertebereiche zulässig. Für geschlossene Wertebereiche müssen diese zusätzlichen Werte entfernt werden. Dazu wird die Beschriftung der Y-Achse ausgewählt und in der Datenreihenformatierung unter Optionen angepasst (@fig-boxplot-konfig-y). Damit die Werte auch tatsächlich übernommen werden, muss die automatische Feststellung des Wertebereichs deaktiviert werden. 
+
+![Wertebereich der Y-Achse beim Boxplot anpassen](figures/boxplot_yachse_anpassen.png){#fig-boxplot-konfig-y}
+
+Die Breite der Box kann über die Datenformatierung der X-Achse festgelegt werden (@fig-boxplot-config-breite). Die Option `Abstandsbreite` gibt den Abstand der Box zur nächsten Box als Vielfaches der Boxbreite an. Der Abstand zum Diagrammrand ist die Hälfte des Abstands zur nächsten Box. Aus den Abständen berechnet Excel die Breite der Boxen.
+
+- Ein Wert von `1.0` bedeutet, dass der Abstand genauso breit wie die Box ist. 
+- Ein Wert von `0.5` bedeutet, dass der Abstand halbso breit wie die Box ist. Dadurch wird die Box breiter. 
+- Ein Wert von `2.0` bedeutet, dass der Abstand doppelt so breit wie die Box ist. Dadurch wird die Box schmaler.
+
+![Konfiguration der Breite eines Boxplots](figures/boxplot_breite_config.png){#fig-boxplot-config-breite}
+
+::: {.callout-warning}
+## Achtung
+Werten mehrere Vektoren gleichzeitig als Boxplot dargestellt, werden die Boxen unmittelbar nebeneinander dargestellt. Diese Abstände können nicht konfiguriert werden (@fig-boxplot-multimulti)
+::: 
+
+![Gruppierter Boxplot mit mehreren Vektoren (Blau und Orange)](figures/boxplot-multi-multi.png){#fig-boxplot-multimulti}
 
 ### Punktdiagramm
+
+Ein Punktdiagramm stellt zwei Vektoren mit *kontinuierlichen Daten* gegenüber. Ein Vektor wird der X-Achse zugewiesen, der andere der Y-Achse. Entsprechend besteht jede Datenreihe für ein Punktdiagramm **immer** aus zwei Vektoren.
+
+![Beispiel eines Punktdiagramms mit einer Ausgleichsgeraden](figures/punkt-beispiel.png){#fig-bsp-punktdiagramm}
+
+::: {.callout-important}
+## Achtung
+Diskrete Daten können in Excel nicht als Punktdiagramm dargestellt werden, weil die Möglichkeit des *Jitterplots* fehlt. 
+::: 
+
+Werden mehr als zwei Vektoren für ein Punktdiagramm markiert, dann verwendet Excel standardmässig die äusserst linke Spalte *immer* für die Werte auf der X-Achse. Um dieses Verhalten zu ändern, müssen die Datenreihen unter `Daten auswählen` angepasst werden. 
+
+::: {.callout-tip}
+## Praxis
+Sollen mehrere Gruppen von Wertepaaren in einem Punktdiagramm dargestellt werden, sollten die Gruppen dem Punktdiagramm schrittweise als separate Datenreihen hinzugefügt werden. 
+:::
+
+#### Ausgleichsgeraden
+
+Ausgleichsgeraden heissen in Excel *Trendlinien*. Drei Arten von Trendlinien können direkt in ein Punktdiagramm eingebettet werden.
+
+- Linear
+- Lineare Prognose
+- Gleitender Durchschnitt 
+
+Von diesen drei Trendlinienarten ist nur `Linear` eine Ausgleichsgerade im eigentlichen Sinn. Die `Lineare Prognose` ist identisch mit der Ausgleichsgeraden und unterscheidet sich nur dadurch, dass die X-Achse einen etwas grösseren positiven Wertebereich erhält. 
+
+Zusätzlich können die folgenden Ausgleichslinien konfiguriert werden. 
+
+- Exponentiell
+- Logarithmisch
+- Polynomisch
+- Potenz
+
+::: {.callout-warning}
+Exponentielle, logarithmische und Potenzierte Ausgleichslinien sind nur für geeignete Wertebereiche ($\mathbb{R}^+$) zulässig 
+:::
+
+Die Trendlinie `Gleitender Durchschnitt` setzt voraus, dass die Werte auf der X-Achse aufsteigend sortiert sind. Diese Trendlinie wird meist nur dann verwendet, wenn die Werte auf der X-Achse Zeitangaben sind.
+
+Eine Ausgleichsgerade wird über den Menübalken `Diagrammentwurf` das Untermenu `Diagrammelement hinzufügen` unter `Trendlinien` die Option `Linear` gewählt.
+
+![Einfügen einer Ausgleichsgeraden](figures/punktdiagramm_ausgleichsgerade_config.png){#fig-ausgleichsgerade}
+
+Eine Ausgleichsgerade kann angepasst werden, indem die Linie angelickt wird und unter `Trendlinie formatieren` die Trendlinienoptionen verändert werden. In diesem Dialog können auch die weiteren Ausgleichslinien konfiguriert werden (@fig-trendkonfig).
+
+![Konfigurationsmöglichkeiten für Ausgleichsgeraden](figures/punkt-trend-konfig.png){#fig-trendkonfig}
 
 ### Blasendiagramm
 
@@ -369,6 +453,8 @@ Im Fall von *nominalskalierten Werten* ist es oft wünschenswert die Balken in d
 Blasendiagramme sind Punktdiagramme mit drei dargestellten Merkmalen.
 :::
 
+Für Blasendiagramme gelten die gleichen Optionen und Konfigurationen, wie für Punktdiagramme. 
+
 Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. Dabei wird die linke Spalte für die X-Achse verwendet. Die mittlere Spalte wird für die Y-Achse verwendet. Die rechte Spalte enthält die Werte für die Grösse der Punkte. Prinzipiell lassen sich die Werte nachträglich noch umorganisieren, oft ist es aber einfacher, die Spalten vorher anzuordnen.  
 
 ![Beispiel eines Blasendiagramms](figures/bubble_chart.png){#fig-bubble-chart}
@@ -376,6 +462,17 @@ Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. 
 Eine Datenreihe eines Blasendiagramms besteht aus drei Merkmalen.
 
 ![Konfiguration der Datenreihen eines Blasendiagramms (MacOS)](figures/bubble-chart-datenreihen.png){#fig-datenreihen-bubble-chart}
+
+In Blasendiagrammen lassen sich die Grössenwerte auf zwei Arten abbilden:
+
+1. Über den Durchmesser der Kreise.
+2. Über die Fläche der Kreise.
+
+Wird der Durchmesser gewählt, werden die Kreise für grössere Werte schneller grösser als bei der Einstellung, über die Fläche zu kodieren. Die Kodierung über den Durchmesser ist sinnvoll, wenn nur ein kleiner Wertebereich (3-5) mit dicht zusammenliegenden Werten dargestellt werden muss. In allen anderen Fällen sollte die Kodierung über die Fläche der Kreise erfolgen.
+
+Die Blasengrösse wird konfiguriert, indem zuerst auf einen Kreis mit der Maus geklickt wird und anschliessend unter Datenreihen formatieren unter `Reihenoptionen` die Strategie für die Blasengrösse angepasst wird (@fig-bubblechart-config)
+
+![Konfiguration der Blasengrösse](figures/bubble-config-size.png){#fig-bubblechart-config}
 
 ### Linien-, Kreis- und Donutdiagramme 
 
