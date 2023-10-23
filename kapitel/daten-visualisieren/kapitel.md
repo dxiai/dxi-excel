@@ -296,11 +296,6 @@ Ein Histogramm ist eine Visualisierung der Werteverteilung als Balkendiagramm.
 
 Histogramme visualisieren *kontinuierliche* bzw. metrischskalierte Wertebereiche, indem zwischen dem kleinsten und dem grössten Wert gleichmässige Intervalle gebildet werden und anschliessend die Anzahl der Werte in den Intervallen bestimmt wird.
 
-::: {.callout-tip}
-## Praxis
-Für Daten mit diskreten Wertebereichen, sind Balkendiagramme **immer** einem Histogramm vorzuziehen.
-:::
-
 ::: {.callout-note}
 ## Merke
 Für ein Excel-Histogramm müssen die Werte vor der Visualisierung **nicht** aggregiert werden.
@@ -314,13 +309,24 @@ Ein Excel-Histogramm ist **immer** ein eindimensionales Balkendiagramm. Werden W
 
 #### Histogramme optimieren
 
+::: {.callout-tip}
+## Praxis
+Im Gegensatz zu Balkendiagrammen wird die Y-Achse von Histogrammen in der Regel **nicht** angepasst.
+::: 
+
 Excel versucht die Intervalle für ein Histogramm aus dem vorliegenden Wertebereichen automatisch zu ermitteln. Dazu werden zwischen dem minimalen und maximalen Werten gleichgrosse Intervalle *proportional* zur Anzahl der Werte gewählt. Das bedeutet, dass Excel grössere Intervalle wählt, wenn weniger Werte vorhanden sind. Das ist nicht immer gewünscht oder die Intervallgrenzen liegen ungeeignet.
 
-Die Intervalle des Histogramms lassen sich über die Formatierung kontrollieren. Dazu wird mit der Maus ein Balken angeklickt. 
+Die Intervalle eines Histogramms lassen sich über die Formatierung kontrollieren. Dazu wird mit der Maus ein Balken angeklickt und anschliessend die Datenreihenoptionen ausgewählt. 
 
 ![Histgrammintervalle konfigurieren](figures/histogramm_konfigurieren.png){#fig-histogramm-konfigurieren}
 
+Die Option `Intervalle` steht nach dem Erstellen des Histogramms auf `Auto`. Hier stehen die beiden Optionen `Invervallbreite` und `Anzahl der Intervalle` zur Auswahl. 
 
+Mit `Intervallbreite` wird der **Abstand** zwischen zwei Intervallen angegeben (@fig-histo-breite). Die Intervallgrenzen werden durch den kleinsten und grössten Wert definiert. Wird beispielsweise die Intervallbreite mit 500 angegeben und der kleinste Wert ist 33, dann sind die Intervallgrenzen 33, 533, 1066 usw. Diese Grenzen sind nicht immer intuitiv, besonders wenn Histogramme zum Vergleich von Daten verwendet werden. Mit der Option `Unterlaufintervall` kann die erste Intervallgrenze festgelegt werden. Es bietet sich an, das Unterlaufintervall genauso breit zu machen, wie die Intervallbreite.
+
+Mit `Anzahl der Intervalle` wird die Anzahl der Balken im Histogramm festgelegt (@fig-histo-anzahl). Excel berechent aus diesem Wert einen geeigneten Intervallabstand.
+
+Die beiden Optionen `Überlaufintervall` und `Unterlaufintervall` ermöglichen es die Ober- bzw. Untergrenze der regulären Intervalle zu definieren. Die beiden Intervalle entsprechen dem ersten bzw. letzen Balken im Histogramm. Diese beiden Intervalle werden für die Intervallbreite **nicht** berücksichtigt, zählen aber zur Anzahl der Intervalle. Diese Intervalle können verwendet werden, wenn unterhalb der Grenze des Unterlaufintervalls bzw. oberhalb der Grenze des Überlaufintervalls vereinzelt "Ausreisser" mit grösseren Abständen als die Intervallbreite auftreten.
 
 ::: {#fig-histogramm-intervalle layout-ncol=2 layout-valign="bottom"}
 
@@ -333,10 +339,28 @@ Einstellungsmöglichkeiten für Histogrammintervalle
 
 ::: {.callout-tip}
 ## Praxis
-Im Gegensatz zu Balkendiagrammen wird die Y-Achse von Histogrammen in der Regel **nicht** angepasst.
-::: 
+Für die erste Sichtung neuer Daten ist es leichter ein Histogramm über die Anzahl der Intervalle zu definieren. Wird anschliessend auf `Intervallbreite` gewechselt, zeigt Excel die verwendete Intervallbreite an. So lassen sich die Intervalle einfach feinjustieren.
+:::
+
+#### Histogramme für diskrete Daten
+
+In der Datenreihenformatierung findet sich zusätzlich die Option `Nach Kategorie`, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Daten Kategorien. Über diese Kategorien **summiert** Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.
+
+Wird als numerischer Vektor der Einsvektor (@sec-chapter-vektor-operationen)verwendet, dann entspricht die Summe der einzelnen Kategorien der Anzahl der Werte in der Kategorie. Ein solcher Einsvektor wird mit der @lst-einsvektor-cat erzeugt.
+
+```{#lst-einsvektor-cat lst-cap="Einsvektor für Kategorien aus einer Tabelle"}
+= 1 * (Tabelle1[disktrekeWerte] == Tabelle1[diskreteWerte])
+```
+
+Auf diese Weise lässt sich in Excel ein Histogramm für diskrete Daten erstellen (@fig-histo-diskret). 
+
+![Beispiel eines Histogramms diskreter Daten](figures/histogramm_nach_kategorie.png){#fig-histo-diskret}
+
+Im Fall von *nominalskalierten Werten* ist es oft wünschenswert die Balken in der Reihenfolge der Häufigkeiten zu organisieren. Das ist mit der Histogrammvisualisierung von Excel **nicht** möglich. Für solche Visualisierungen muss auf ein reguläres Balkendiagramm zurückgegriffen werden und die Daten vor der Darstellung entsprechend aufbereitet werden. 
 
 ### Boxplot
+
+
 
 ### Punktdiagramm
 
