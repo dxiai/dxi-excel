@@ -13,8 +13,6 @@ execute:
 ## Work in Progress
 :::
 
-Daten und Diagramme
-
 ## Diagramme erstellen
 
 ::: {.callout-warning}
