@@ -62,6 +62,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -827,19 +843,6 @@ Merke
 </div>
 </div>
 <p>Histogramme visualisieren <em>kontinuierliche</em> bzw. metrischskalierte Wertebereiche, indem zwischen dem kleinsten und dem grössten Wert gleichmässige Intervalle gebildet werden und anschliessend die Anzahl der Werte in den Intervallen bestimmt wird.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Praxis
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Für Daten mit diskreten Wertebereichen, sind Balkendiagramme <strong>immer</strong> einem Histogramm vorzuziehen.</p>
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -863,14 +866,31 @@ Merke
 <p>Ein Excel-Histogramm ist <strong>immer</strong> ein eindimensionales Balkendiagramm. Werden Werte aus mehreren Spalten übergeben, dann fliessen alle Werte in das Histogramm ein.</p>
 <section id="histogramme-optimieren" class="level4" data-number="16.2.3.1">
 <h4 data-number="16.2.3.1" class="anchored" data-anchor-id="histogramme-optimieren"><span class="header-section-number">16.2.3.1</span> Histogramme optimieren</h4>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Im Gegensatz zu Balkendiagrammen wird die Y-Achse von Histogrammen in der Regel <strong>nicht</strong> angepasst.</p>
+</div>
+</div>
 <p>Excel versucht die Intervalle für ein Histogramm aus dem vorliegenden Wertebereichen automatisch zu ermitteln. Dazu werden zwischen dem minimalen und maximalen Werten gleichgrosse Intervalle <em>proportional</em> zur Anzahl der Werte gewählt. Das bedeutet, dass Excel grössere Intervalle wählt, wenn weniger Werte vorhanden sind. Das ist nicht immer gewünscht oder die Intervallgrenzen liegen ungeeignet.</p>
-<p>Die Intervalle eines Histogramms lassen sich über die Formatierung kontrollieren. Dazu wird mit der Maus ein Balken angeklickt.</p>
+<p>Die Intervalle eines Histogramms lassen sich über die Formatierung kontrollieren. Dazu wird mit der Maus ein Balken angeklickt und anschliessend die Datenreihenoptionen ausgewählt.</p>
 <div id="fig-histogramm-konfigurieren" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/histogramm_konfigurieren.png" class="img-fluid figure-img"></p>
 <figcaption class="figure-caption">Abbildung&nbsp;16.22: Histgrammintervalle konfigurieren</figcaption>
 </figure>
 </div>
+<p>Die Option <code>Intervalle</code> steht nach dem Erstellen des Histogramms auf <code>Auto</code>. Hier stehen die beiden Optionen <code>Invervallbreite</code> und <code>Anzahl der Intervalle</code> zur Auswahl.</p>
+<p>Mit <code>Intervallbreite</code> wird der <strong>Abstand</strong> zwischen zwei Intervallen angegeben (<a href="#fig-histo-breite">Abbildung&nbsp;<span>16.23 (a)</span></a>). Die Intervallgrenzen werden durch den kleinsten und grössten Wert definiert. Wird beispielsweise die Intervallbreite mit 500 angegeben und der kleinste Wert ist 33, dann sind die Intervallgrenzen 33, 533, 1066 usw. Diese Grenzen sind nicht immer intuitiv, besonders wenn Histogramme zum Vergleich von Daten verwendet werden. Mit der Option <code>Unterlaufintervall</code> kann die erste Intervallgrenze festgelegt werden. Es bietet sich an, das Unterlaufintervall genauso breit zu machen, wie die Intervallbreite.</p>
+<p>Mit <code>Anzahl der Intervalle</code> wird die Anzahl der Balken im Histogramm festgelegt (<a href="#fig-histo-anzahl">Abbildung&nbsp;<span>16.23 (b)</span></a>). Excel berechent aus diesem Wert einen geeigneten Intervallabstand.</p>
+<p>Die beiden Optionen <code>Überlaufintervall</code> und <code>Unterlaufintervall</code> ermöglichen es die Ober- bzw. Untergrenze der regulären Intervalle zu definieren. Die beiden Intervalle entsprechen dem ersten bzw. letzen Balken im Histogramm. Diese beiden Intervalle werden für die Intervallbreite <strong>nicht</strong> berücksichtigt, zählen aber zur Anzahl der Intervalle. Diese Intervalle können verwendet werden, wenn unterhalb der Grenze des Unterlaufintervalls bzw. oberhalb der Grenze des Überlaufintervalls vereinzelt “Ausreisser” mit grösseren Abständen als die Intervallbreite auftreten.</p>
 <div id="fig-histogramm-intervalle" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
@@ -904,9 +924,26 @@ Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Im Gegensatz zu Balkendiagrammen wird die Y-Achse von Histogrammen in der Regel <strong>nicht</strong> angepasst.</p>
+<p>Für die erste Sichtung neuer Daten ist es leichter ein Histogramm über die Anzahl der Intervalle zu definieren. Wird anschliessend auf <code>Intervallbreite</code> gewechselt, zeigt Excel die verwendete Intervallbreite an. So lassen sich die Intervalle einfach feinjustieren.</p>
 </div>
 </div>
+</section>
+<section id="histogramme-für-diskrete-daten" class="level4" data-number="16.2.3.2">
+<h4 data-number="16.2.3.2" class="anchored" data-anchor-id="histogramme-für-diskrete-daten"><span class="header-section-number">16.2.3.2</span> Histogramme für diskrete Daten</h4>
+<p>In der Datenreihenformatierung findet sich zusätzlich die Option <code>Nach Kategorie</code>, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Daten Kategorien. Über diese Kategorien <strong>summiert</strong> Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.</p>
+<p>Wird als numerischer Vektor der Einsvektor (<a href="../vektor-operationen/kapitel.html"><span>Kapitel&nbsp;11</span></a>)verwendet, dann entspricht die Summe der einzelnen Kategorien der Anzahl der Werte in der Kategorie. Ein solcher Einsvektor wird mit der <a href="#lst-einsvektor-cat">Listing&nbsp;<span>16.1</span></a> erzeugt.</p>
+<div id="lst-einsvektor-cat" class="listing">
+<p>Listing&nbsp;16.1: Einsvektor für Kategorien aus einer Tabelle</p>
+<pre id="lst-einsvektor-cat" data-lst-cap="Einsvektor für Kategorien aus einer Tabelle"><code>= 1 * (Tabelle1[disktrekeWerte] == Tabelle1[diskreteWerte])</code></pre>
+</div>
+<p>Auf diese Weise lässt sich in Excel ein Histogramm für diskrete Daten erstellen (<a href="#fig-histo-diskret">Abbildung&nbsp;<span>16.24</span></a>).</p>
+<div id="fig-histo-diskret" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/histogramm_nach_kategorie.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.24: Beispiel eines Histogramms diskreter Daten</figcaption>
+</figure>
+</div>
+<p>Im Fall von <em>nominalskalierten Werten</em> ist es oft wünschenswert die Balken in der Reihenfolge der Häufigkeiten zu organisieren. Das ist mit der Histogrammvisualisierung von Excel <strong>nicht</strong> möglich. Für solche Visualisierungen muss auf ein reguläres Balkendiagramm zurückgegriffen werden und die Daten vor der Darstellung entsprechend aufbereitet werden.</p>
 </section>
 </section>
 <section id="boxplot" class="level3" data-number="16.2.4">
@@ -934,14 +971,14 @@ Merke
 <div id="fig-bubble-chart" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/bubble_chart.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.24: Beispiel eines Blasendiagramms</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.25: Beispiel eines Blasendiagramms</figcaption>
 </figure>
 </div>
 <p>Eine Datenreihe eines Blasendiagramms besteht aus drei Merkmalen.</p>
 <div id="fig-datenreihen-bubble-chart" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/bubble-chart-datenreihen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.25: Konfiguration der Datenreihen eines Blasendiagramms (MacOS)</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.26: Konfiguration der Datenreihen eines Blasendiagramms (MacOS)</figcaption>
 </figure>
 </div>
 </section>
@@ -958,19 +995,19 @@ Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.26</span></a> und <a href="#fig-balken-aus-kreisdiagramm">Abbildung&nbsp;<span>16.27</span></a>)</p>
+<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.27</span></a> und <a href="#fig-balken-aus-kreisdiagramm">Abbildung&nbsp;<span>16.28</span></a>)</p>
 </div>
 </div>
 <div id="fig-kreisdiagramm-aehnliche-groessen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/kreisdiagramm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.26: Kreisdiagramm mit ähnlich grossen Werten</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.27: Kreisdiagramm mit ähnlich grossen Werten</figcaption>
 </figure>
 </div>
 <div id="fig-balken-aus-kreisdiagramm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/balken_fuer_kreis.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.27: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.26</span></a></figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.28: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.27</span></a></figcaption>
 </figure>
 </div>
 <p>Excels <strong>Liniendiagramme</strong> zeichnen für jeden Wert auf der Y-Achse einen Punkt und verbinden die Punkte mit geraden Linien.</p>
@@ -998,13 +1035,13 @@ Praxis
 </div>
 <div class="callout-body-container callout-body">
 <p>Excels Liniendiagramme sollten nur für sog. Paralleldiagramme verwendet werden, in denen mehrere diskrete Merkmale mit dem gleichen Wertebereich gegenübergestellt werden. Durch die Linien werden Unterschiede in den Ausprägungsprofilen sichtbar.</p>
-<p><a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.28</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
+<p><a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.29</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
 </div>
 </div>
 <div id="fig-parallel-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/diagramm_parallel_plot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.28: Anwendung eines Liniendiagramms als Paralleldiagramm</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.29: Anwendung eines Liniendiagramms als Paralleldiagramm</figcaption>
 </figure>
 </div>
 <p>Eine Variante von Paralleldiagrammen sind sog. Netzdiagramme (bzw. Spider-Web-Diagramme).</p>
@@ -1025,7 +1062,7 @@ Merke
 <div id="fig-spiderweb-diagramm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/spidereweb_diagramm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.29: Netzdiagramm mit den gleichen Daten wie <a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.28</span></a></figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.30: Netzdiagramm mit den gleichen Daten wie <a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.29</span></a></figcaption>
 </figure>
 </div>
 <!--
@@ -1035,6 +1072,50 @@ Merke
 </section>
 <section id="mathematische-funktionen-visualisieren" class="level2" data-number="16.3">
 <h2 data-number="16.3" class="anchored" data-anchor-id="mathematische-funktionen-visualisieren"><span class="header-section-number">16.3</span> Mathematische Funktionen visualisieren</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Mathematische Funktionen werden immer über <strong>Punktdiagramme</strong> oder <strong>Punkte mit interpolierten Linien</strong> dargestellt.</p>
+</div>
+</div>
+<p>Excel kann mathematische Funktionen nicht direkt visualisieren. Stattdessen müssen die Funktionen für einen gewünschten Wertebereich berechnet werden. Dazu werden Punkte auf der X-Achse ausgewählt und berechnet. Zwischen diesen Punkten berechnet Excel die Funktion nicht, sondern verbindet diese Punkte nur durch eine Linie. Diese Linie muss keine Gerade sein. Stattdessen versucht Excel eine Kurve so durch einen Punkt zu legen, sodass die Kurve keine Ecke hat. Die Folge dieses Verbinden von Punkten ist, dass je weniger Werte auf der X-Achse ausgewählt werden, desto ungenauer wird die Funktionsdarstellung.</p>
+<p>Um eine mathematische Funktion mit Excel zu visualisieren, muss eine Wertetabelle erstellt werden. Diese Tablle wird in den folgenden Schritten erstellt.</p>
+<ol type="1">
+<li>Die Unter- und Obergrenze des Darstellungsbereichs auf der X-Achse werden festgelegt.</li>
+<li>Aus diesen Intervallgrenzen wird die Differenz gebildet, woraus sich die Länge des Intervalls ergibt.</li>
+<li>Die Anzahl der Punkte in diesem Intervall festgelegt.</li>
+<li>Die Länge des Intervalls wird durch die Anzahl der Punkte geteilt. Daraus ergibt sich der Abstand der Punkte im Intervall.</li>
+<li>Es wird eine <strong><em>Sequenz</em></strong> mit einer Länge der Anzahl der Punkte plus Eins gebiltet. Der Startwert dieser Sequenz ist die Untergrenze des Darstellungsbereichs. Die Schrittweite entspricht dem Abstand der Punkte Abstand der Punkte.</li>
+<li>Die mathematische Funktion wird als Formel in die Spalte rechts neben der Sequenz eingegeben. Die Werte der Sequenz werden als Argumente der mathematischen Funktion verwendet.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Sequenz für die Wertetabelle muss die Anzahl der Punkte <em>plus Eins</em> enthalten, damit sowohl die Untergrenze als auch die Obergrenze des Darstellungsbereichs als Argumente verwendet werden.</p>
+</div>
+</div>
+<p>Sollen mehrere Funktionen über das gleiche Intervall dargestellt werden, dann wird der letzte Schritt für jede zusätzliche Funktion wiederholt werden. Das Intervall der <em>Funktionsargumente</em> bildet immer die erste Wertespalte. Anschliessend wird die gesamte Wertetabelle visualisiert.</p>
+<p>Diese Wertetabelle kann als Punktdiagramm dargestellt werden. Dazu wird die gesamte Wertetabelle markiert und als <strong>Punkte mit interpolierten Linien</strong> visualisiert.</p>
+<div id="fig-funktionen-visualisieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/funktionen_visualisieren.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.31: Beispiel der Visualisierung der Funktionen <span class="math inline">f(x) = 2x^2 -3</span> und <span class="math inline">g(x)=2x+4</span></figcaption>
+</figure>
+</div>
 
 
 </section>
