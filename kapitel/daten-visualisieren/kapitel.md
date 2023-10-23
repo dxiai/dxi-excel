@@ -223,6 +223,41 @@ Sollen einzelne Kategorien farblich hervorgehoben werden, dann müssen die Werte
 Datentabelle und Balkendiagramm mit farblich abgehobenen Kategorien.
 :::
 
+#### Darstellung optimieren
+
+Bei der Darstellung von Balkendiagrammen verwendet Excel immer  Standardeinstellungen. Diese nutzen die Fläche des Diagramms nicht unbedingt optimal: Auf der Y-Achse wird immer eine Hauptbeschriftung oberhalb des grössten Wers eingefügt und die Abstände  zwischen den Balken sind grösser als die Balken (@fig-balken-mit-standard). 
+
+![Balkendiagramm mit Standardeinstellungen](figures/balken_standardeinstellungen.png){#fig-balken-mit-standard}
+
+Die Y-Achse kann immer auf den Maximalwert begrenzt werden. Dazu wird die Achsbeschriftung mit der Maus ausgewählt. Anschliessend können in den Achsenoptionen die Grenzen der Y-Achse festgelegt werden. Hier sollte das Maximum auf den grössten dargestellten Wert gesetzt werden (s. @fig-achseneinstellungen).
+
+![Konfiguration der Achseneinstelleungen](figures/balken_einstellungen_achsenintervall.png){#fig-achseneinstellungen}
+
+::: {.callout-note}
+## Merke
+Für Balkendiagramme sollte das Minimum der Y-Achse immer `0.0` sein.
+:::
+
+Die Abstände zwischen den Balken werden über die Formatierung der Balken gesteuert. Dazu muss ein Balken mit der Maus ausgewählt werden. Die einzige Einstellungskategorie für die Datenformatierung sind die `Reihenoptionen`, wo sich die beiden Einstellungen `Reihenüberlappungen` und `Abstandsbreite` finden (s. @fig-balken-abstaende).
+
+![Balkenbreite und -abstände konfigurieren](figures/balken_abstaendeeinstellungen.png){#fig-balken-abstaende}
+
+@fig-balken-einstellungen-visualisierung zeigt die Bedeutung der beiden Optionen.
+
+![Unterschied zwischen Reihenüberlappung und Abstandsbreite](figures/balken_abstaendeeinstellungen-visualisierung.png){#fig-balken-einstellungen-visualisierung}
+
+Die Option `Reihenüberlappung` legt die Abstände ziwschen Balken in der gleichen Kategorie fest. Die Abstände werden in Prozent der Überlappung angegeben. 0% bedeutet keine Überlappung ohne Abstand. 100% bedeutet vollständige überlappung und -100% bedeutet einen Abstand einer Balkenbreite.
+
+Die Option `Abstandsbreite` legt die Abstände zwischen den Kategorien fest. Die Abstände werden in Prozent der Balkenbreite angegeben.
+
+::: {.callout-warning}
+## Achtung
+
+Die Überlappung und die Balkenbreite wird auch dann berücksichtigt, wenn ein Balken nicht dargestellt wird!
+:::
+
+Um farblich voneinander unterschiedene Kategorien mit gleicher Balkenbreite wie in @fig-barchart-multicolor zu erzeugen, muss die `Reihenüberlappung` auf `100%` gesetzt werden. Anschliessend können die Abstände mit der Option `Abstandsbreite` kontrolliert werden. @fig-barchart-multicolor verwendet eine `Abstandsbreite` von `10%`.
+
 ### Spezielle Balkendiagramme 
 
 Excel bietet zwei spezielle Formen von Balkendiagrammen: *Trichterdiagramme* und *Wasserfall*-Diagramme. Beide Diagramme sind *eindimensional*. 
@@ -254,12 +289,52 @@ Bei Wasserfalldiagrammen kann die **Beschriftung** der X-Achse über ein zweite 
 
 ### Histogramm
 
-Ein Histogramm ist in Excel **immer** ein eindimensionales Balkendiagramm. Werden Werte aus mehreren Spalten übergeben, dann werden alle Werte im Histogramm abgebildet. 
+::: {.callout-note}
+## Merke
+Ein Histogramm ist eine Visualisierung der Werteverteilung als Balkendiagramm. 
+:::
+
+Histogramme visualisieren *kontinuierliche* bzw. metrischskalierte Wertebereiche, indem zwischen dem kleinsten und dem grössten Wert gleichmässige Intervalle gebildet werden und anschliessend die Anzahl der Werte in den Intervallen bestimmt wird.
 
 ::: {.callout-tip}
 ## Praxis
 Für Daten mit diskreten Wertebereichen, sind Balkendiagramme **immer** einem Histogramm vorzuziehen.
 :::
+
+::: {.callout-note}
+## Merke
+Für ein Excel-Histogramm müssen die Werte vor der Visualisierung **nicht** aggregiert werden.
+:::
+
+Ein Histogramm wird oft über einen Vektor erstellt. Werden die Daten so vorbereitet, dass unter den Werten keine anderen Daten stehen, dann kann die *gesamte Spalte* markiert werden, indem auf den Spaltenbuchstaben mit der Maus geklickt wird. Anschliessend kann das Histogramm in die Arbeitmappe eingefügt werden (@fig-histogramm-erstellen)
+
+![Histogramm erstellen](figures/histogramm_erstellen.png){#fig-histogramm-erstellen}
+
+Ein Excel-Histogramm ist **immer** ein eindimensionales Balkendiagramm. Werden Werte aus mehreren Spalten übergeben, dann fliessen alle Werte in das Histogramm ein. 
+
+#### Histogramme optimieren
+
+Excel versucht die Intervalle für ein Histogramm aus dem vorliegenden Wertebereichen automatisch zu ermitteln. Dazu werden zwischen dem minimalen und maximalen Werten gleichgrosse Intervalle *proportional* zur Anzahl der Werte gewählt. Das bedeutet, dass Excel grössere Intervalle wählt, wenn weniger Werte vorhanden sind. Das ist nicht immer gewünscht oder die Intervallgrenzen liegen ungeeignet.
+
+Die Intervalle des Histogramms lassen sich über die Formatierung kontrollieren. Dazu wird mit der Maus ein Balken angeklickt. 
+
+![Histgrammintervalle konfigurieren](figures/histogramm_konfigurieren.png){#fig-histogramm-konfigurieren}
+
+
+
+::: {#fig-histogramm-intervalle layout-ncol=2 layout-valign="bottom"}
+
+![Intervallbreite](figures/histogramm_Intervall_breite.png){#fig-histo-breite}
+
+![Intervallanzahl](figures/histogramm_intervall_anzahl.png){#fig-histo-anzahl}
+
+Einstellungsmöglichkeiten für Histogrammintervalle
+:::
+
+::: {.callout-tip}
+## Praxis
+Im Gegensatz zu Balkendiagrammen wird die Y-Achse von Histogrammen in der Regel **nicht** angepasst.
+::: 
 
 ### Boxplot
 
@@ -267,7 +342,12 @@ Für Daten mit diskreten Wertebereichen, sind Balkendiagramme **immer** einem Hi
 
 ### Blasendiagramm
 
-Blasendiagramme ähneln Punktdiagrammen. Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. Dabei wird die linke Spalte für die X-Achse verwendet. Die mittlere Spalte wird für die Y-Achse verwendet. Die rechte Spalte enthält die Werte für die Grösse der Punkte. Prinzipiell lassen sich die Werte nachträglich noch umorganisieren, oft ist es aber einfacher, die Spalten vorher anzuordnen.  
+::: {.callout-note}
+## Merke
+Blasendiagramme sind Punktdiagramme mit drei dargestellten Merkmalen.
+:::
+
+Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. Dabei wird die linke Spalte für die X-Achse verwendet. Die mittlere Spalte wird für die Y-Achse verwendet. Die rechte Spalte enthält die Werte für die Grösse der Punkte. Prinzipiell lassen sich die Werte nachträglich noch umorganisieren, oft ist es aber einfacher, die Spalten vorher anzuordnen.  
 
 ![Beispiel eines Blasendiagramms](figures/bubble_chart.png){#fig-bubble-chart}
 
@@ -305,15 +385,21 @@ Excels Liniendiagramme sollten nur für sog. Paralleldiagramme verwendet werden,
 
 ![Anwendung eines Liniendiagramms als Paralleldiagramm](figures/diagramm_parallel_plot.png){#fig-parallel-plot}
 
+Eine Variante von Paralleldiagrammen sind sog. Netzdiagramme (bzw. Spider-Web-Diagramme).
+
 ::: {.callout-note}
-Eine Variante von Paralleldiagrammen sind sog. Netzdiagramme (bzw. Spider-Web-Diagramme). Netzdiagramme ordnen die Kategorien sternförmig an. In Excel finden sich Netzdiagramme unter der Kategorie `Wasserfalldiagramme`.
+## Merke
+Netzdiagramme ordnen die Kategorien der X-Achse sternförmig an. 
 ::: 
+
+In Excel finden sich Netzdiagramme unter der Kategorie `Wasserfalldiagramme`. Diese Diagramme werden oft zum Vergleich von Merkmalsprofilen verwendet, z.B. als Ergänzung einer Stärken- und Schwächen-Analyse (SWOT-Analyse) 
+
+![Netzdiagramm mit den gleichen Daten wie @fig-parallel-plot](figures/spidereweb_diagramm.png){#fig-spiderweb-diagramm}
 
 <!--
 ### Treemap-Diagramme
 -->
 
 ## Mathematische Funktionen visualisieren
-
 
 
