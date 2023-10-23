@@ -692,11 +692,71 @@ Merke
 <p></p><figcaption class="figure-caption">Abbildung&nbsp;16.14: Datentabelle und Balkendiagramm mit farblich abgehobenen Kategorien.</figcaption><p></p>
 </figure>
 </div>
+<section id="darstellung-optimieren" class="level4" data-number="16.2.1.1">
+<h4 data-number="16.2.1.1" class="anchored" data-anchor-id="darstellung-optimieren"><span class="header-section-number">16.2.1.1</span> Darstellung optimieren</h4>
+<p>Bei der Darstellung von Balkendiagrammen verwendet Excel immer Standardeinstellungen. Diese nutzen die Fläche des Diagramms nicht unbedingt optimal: Auf der Y-Achse wird immer eine Hauptbeschriftung oberhalb des grössten Wers eingefügt und die Abstände zwischen den Balken sind grösser als die Balken (<a href="#fig-balken-mit-standard">Abbildung&nbsp;<span>16.15</span></a>).</p>
+<div id="fig-balken-mit-standard" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/balken_standardeinstellungen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.15: Balkendiagramm mit Standardeinstellungen</figcaption>
+</figure>
+</div>
+<p>Die Y-Achse kann immer auf den Maximalwert begrenzt werden. Dazu wird die Achsbeschriftung mit der Maus ausgewählt. Anschliessend können in den Achsenoptionen die Grenzen der Y-Achse festgelegt werden. Hier sollte das Maximum auf den grössten dargestellten Wert gesetzt werden (s. <a href="#fig-achseneinstellungen">Abbildung&nbsp;<span>16.16</span></a>).</p>
+<div id="fig-achseneinstellungen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/balken_einstellungen_achsenintervall.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.16: Konfiguration der Achseneinstelleungen</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für Balkendiagramme sollte das Minimum der Y-Achse immer <code>0.0</code> sein.</p>
+</div>
+</div>
+<p>Die Abstände zwischen den Balken werden über die Formatierung der Balken gesteuert. Dazu muss ein Balken mit der Maus ausgewählt werden. Die einzige Einstellungskategorie für die Datenformatierung sind die <code>Reihenoptionen</code>, wo sich die beiden Einstellungen <code>Reihenüberlappungen</code> und <code>Abstandsbreite</code> finden (s. <a href="#fig-balken-abstaende">Abbildung&nbsp;<span>16.17</span></a>).</p>
+<div id="fig-balken-abstaende" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/balken_abstaendeeinstellungen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.17: Balkenbreite und -abstände konfigurieren</figcaption>
+</figure>
+</div>
+<p><a href="#fig-balken-einstellungen-visualisierung">Abbildung&nbsp;<span>16.18</span></a> zeigt die Bedeutung der beiden Optionen.</p>
+<div id="fig-balken-einstellungen-visualisierung" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/balken_abstaendeeinstellungen-visualisierung.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.18: Unterschied zwischen Reihenüberlappung und Abstandsbreite</figcaption>
+</figure>
+</div>
+<p>Die Option <code>Reihenüberlappung</code> legt die Abstände ziwschen Balken in der gleichen Kategorie fest. Die Abstände werden in Prozent der Überlappung angegeben. 0% bedeutet keine Überlappung ohne Abstand. 100% bedeutet vollständige überlappung und -100% bedeutet einen Abstand einer Balkenbreite.</p>
+<p>Die Option <code>Abstandsbreite</code> legt die Abstände zwischen den Kategorien fest. Die Abstände werden in Prozent der Balkenbreite angegeben.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Überlappung und die Balkenbreite wird auch dann berücksichtigt, wenn ein Balken nicht dargestellt wird!</p>
+</div>
+</div>
+<p>Um farblich voneinander unterschiedene Kategorien mit gleicher Balkenbreite wie in <a href="#fig-barchart-multicolor">Abbildung&nbsp;<span>16.14</span></a> zu erzeugen, muss die <code>Reihenüberlappung</code> auf <code>100%</code> gesetzt werden. Anschliessend können die Abstände mit der Option <code>Abstandsbreite</code> kontrolliert werden. <a href="#fig-barchart-multicolor">Abbildung&nbsp;<span>16.14</span></a> verwendet eine <code>Abstandsbreite</code> von <code>10%</code>.</p>
+</section>
 </section>
 <section id="spezielle-balkendiagramme" class="level3" data-number="16.2.2">
 <h3 data-number="16.2.2" class="anchored" data-anchor-id="spezielle-balkendiagramme"><span class="header-section-number">16.2.2</span> Spezielle Balkendiagramme</h3>
 <p>Excel bietet zwei spezielle Formen von Balkendiagrammen: <em>Trichterdiagramme</em> und <em>Wasserfall</em>-Diagramme. Beide Diagramme sind <em>eindimensional</em>.</p>
-<p>Trichterdiagramme stellen die Balken horizontal zentriert dar, wobei nur positive Werte zulässig sind. Deshalb haben Excels Trichterdiagramme <em>keine</em> Beschriftung der X-Achse (<a href="#fig-trichterdiagramm">Abbildung&nbsp;<span>16.15</span></a>).</p>
+<p>Trichterdiagramme stellen die Balken horizontal zentriert dar, wobei nur positive Werte zulässig sind. Deshalb haben Excels Trichterdiagramme <em>keine</em> Beschriftung der X-Achse (<a href="#fig-trichterdiagramm">Abbildung&nbsp;<span>16.19</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -713,7 +773,7 @@ Merke
 <div id="fig-trichterdiagramm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/trichterdiagramm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.15: Trichterdiagramm mit fünf Werten</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.19: Trichterdiagramm mit fünf Werten</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -729,11 +789,11 @@ Praxis
 <p>Weil Trichterdiagrammen keine beschriftete X-Achse haben und die Anordnung der Balken schwerer zu dekodieren ist, sollten diese Diagramme <strong>nicht</strong> verwendet werden.</p>
 </div>
 </div>
-<p>Wasserfalldiagramme stellen die Balken so dar als Folge dar. Diese Diagramme stellen positive und negative Werte gerichtet nebeneinander. Der Start des von links nach rechts gelesenene nächste Balken beginnt bei dem Wert, an dem der vorherige Balken endete. Bei positiven Werten befindet sich der Endpunkt über dem Startpunkt, bei negativen Werten darunter (<a href="#fig-wasserfall-leserichtungen">Abbildung&nbsp;<span>16.16</span></a>).</p>
+<p>Wasserfalldiagramme stellen die Balken so dar als Folge dar. Diese Diagramme stellen positive und negative Werte gerichtet nebeneinander. Der Start des von links nach rechts gelesenene nächste Balken beginnt bei dem Wert, an dem der vorherige Balken endete. Bei positiven Werten befindet sich der Endpunkt über dem Startpunkt, bei negativen Werten darunter (<a href="#fig-wasserfall-leserichtungen">Abbildung&nbsp;<span>16.20</span></a>).</p>
 <div id="fig-wasserfall-leserichtungen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/wasserfalldiagramm2_richtungen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.16: Wasserfalldiagramm mit Leserichtungen</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.20: Wasserfalldiagramm mit Leserichtungen</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -753,7 +813,20 @@ Merke
 </section>
 <section id="histogramm" class="level3" data-number="16.2.3">
 <h3 data-number="16.2.3" class="anchored" data-anchor-id="histogramm"><span class="header-section-number">16.2.3</span> Histogramm</h3>
-<p>Ein Histogramm ist in Excel <strong>immer</strong> ein eindimensionales Balkendiagramm. Werden Werte aus mehreren Spalten übergeben, dann werden alle Werte im Histogramm abgebildet.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ein Histogramm ist eine Visualisierung der Werteverteilung als Balkendiagramm.</p>
+</div>
+</div>
+<p>Histogramme visualisieren <em>kontinuierliche</em> bzw. metrischskalierte Wertebereiche, indem zwischen dem kleinsten und dem grössten Wert gleichmässige Intervalle gebildet werden und anschliessend die Anzahl der Werte in den Intervallen bestimmt wird.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -767,6 +840,74 @@ Praxis
 <p>Für Daten mit diskreten Wertebereichen, sind Balkendiagramme <strong>immer</strong> einem Histogramm vorzuziehen.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für ein Excel-Histogramm müssen die Werte vor der Visualisierung <strong>nicht</strong> aggregiert werden.</p>
+</div>
+</div>
+<p>Ein Histogramm wird oft über einen Vektor erstellt. Werden die Daten so vorbereitet, dass unter den Werten keine anderen Daten stehen, dann kann die <em>gesamte Spalte</em> markiert werden, indem auf den Spaltenbuchstaben mit der Maus geklickt wird. Anschliessend kann das Histogramm in die Arbeitmappe eingefügt werden (<a href="#fig-histogramm-erstellen">Abbildung&nbsp;<span>16.21</span></a>)</p>
+<div id="fig-histogramm-erstellen" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/histogramm_erstellen.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.21: Histogramm erstellen</figcaption>
+</figure>
+</div>
+<p>Ein Excel-Histogramm ist <strong>immer</strong> ein eindimensionales Balkendiagramm. Werden Werte aus mehreren Spalten übergeben, dann fliessen alle Werte in das Histogramm ein.</p>
+<section id="histogramme-optimieren" class="level4" data-number="16.2.3.1">
+<h4 data-number="16.2.3.1" class="anchored" data-anchor-id="histogramme-optimieren"><span class="header-section-number">16.2.3.1</span> Histogramme optimieren</h4>
+<p>Excel versucht die Intervalle für ein Histogramm aus dem vorliegenden Wertebereichen automatisch zu ermitteln. Dazu werden zwischen dem minimalen und maximalen Werten gleichgrosse Intervalle <em>proportional</em> zur Anzahl der Werte gewählt. Das bedeutet, dass Excel grössere Intervalle wählt, wenn weniger Werte vorhanden sind. Das ist nicht immer gewünscht oder die Intervallgrenzen liegen ungeeignet.</p>
+<p>Die Intervalle eines Histogramms lassen sich über die Formatierung kontrollieren. Dazu wird mit der Maus ein Balken angeklickt.</p>
+<div id="fig-histogramm-konfigurieren" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/histogramm_konfigurieren.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.22: Histgrammintervalle konfigurieren</figcaption>
+</figure>
+</div>
+<div id="fig-histogramm-intervalle" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-histo-breite" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/histogramm_Intervall_breite.png" class="img-fluid figure-img" data-ref-parent="fig-histogramm-intervalle"></p>
+<figcaption class="figure-caption">(a) Intervallbreite</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell quarto-layout-cell-subref" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-histo-anzahl" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/histogramm_intervall_anzahl.png" class="img-fluid figure-img" data-ref-parent="fig-histogramm-intervalle"></p>
+<figcaption class="figure-caption">(b) Intervallanzahl</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Abbildung&nbsp;16.23: Einstellungsmöglichkeiten für Histogrammintervalle</figcaption><p></p>
+</figure>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Im Gegensatz zu Balkendiagrammen wird die Y-Achse von Histogrammen in der Regel <strong>nicht</strong> angepasst.</p>
+</div>
+</div>
+</section>
 </section>
 <section id="boxplot" class="level3" data-number="16.2.4">
 <h3 data-number="16.2.4" class="anchored" data-anchor-id="boxplot"><span class="header-section-number">16.2.4</span> Boxplot</h3>
@@ -776,18 +917,31 @@ Praxis
 </section>
 <section id="blasendiagramm" class="level3" data-number="16.2.6">
 <h3 data-number="16.2.6" class="anchored" data-anchor-id="blasendiagramm"><span class="header-section-number">16.2.6</span> Blasendiagramm</h3>
-<p>Blasendiagramme ähneln Punktdiagrammen. Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. Dabei wird die linke Spalte für die X-Achse verwendet. Die mittlere Spalte wird für die Y-Achse verwendet. Die rechte Spalte enthält die Werte für die Grösse der Punkte. Prinzipiell lassen sich die Werte nachträglich noch umorganisieren, oft ist es aber einfacher, die Spalten vorher anzuordnen.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Blasendiagramme sind Punktdiagramme mit drei dargestellten Merkmalen.</p>
+</div>
+</div>
+<p>Weil drei Merkmale kodiert werden, müssen die Daten in drei Spalten vorliegen. Dabei wird die linke Spalte für die X-Achse verwendet. Die mittlere Spalte wird für die Y-Achse verwendet. Die rechte Spalte enthält die Werte für die Grösse der Punkte. Prinzipiell lassen sich die Werte nachträglich noch umorganisieren, oft ist es aber einfacher, die Spalten vorher anzuordnen.</p>
 <div id="fig-bubble-chart" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/bubble_chart.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.17: Beispiel eines Blasendiagramms</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.24: Beispiel eines Blasendiagramms</figcaption>
 </figure>
 </div>
 <p>Eine Datenreihe eines Blasendiagramms besteht aus drei Merkmalen.</p>
 <div id="fig-datenreihen-bubble-chart" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/bubble-chart-datenreihen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.18: Konfiguration der Datenreihen eines Blasendiagramms (MacOS)</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.25: Konfiguration der Datenreihen eines Blasendiagramms (MacOS)</figcaption>
 </figure>
 </div>
 </section>
@@ -804,19 +958,19 @@ Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.19</span></a> und <a href="#fig-balken-aus-kreisdiagramm">Abbildung&nbsp;<span>16.20</span></a>)</p>
+<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.26</span></a> und <a href="#fig-balken-aus-kreisdiagramm">Abbildung&nbsp;<span>16.27</span></a>)</p>
 </div>
 </div>
 <div id="fig-kreisdiagramm-aehnliche-groessen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/kreisdiagramm.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.19: Kreisdiagramm mit ähnlich grossen Werten</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.26: Kreisdiagramm mit ähnlich grossen Werten</figcaption>
 </figure>
 </div>
 <div id="fig-balken-aus-kreisdiagramm" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/balken_fuer_kreis.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.20: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.19</span></a></figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.27: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen">Abbildung&nbsp;<span>16.26</span></a></figcaption>
 </figure>
 </div>
 <p>Excels <strong>Liniendiagramme</strong> zeichnen für jeden Wert auf der Y-Achse einen Punkt und verbinden die Punkte mit geraden Linien.</p>
@@ -844,27 +998,35 @@ Praxis
 </div>
 <div class="callout-body-container callout-body">
 <p>Excels Liniendiagramme sollten nur für sog. Paralleldiagramme verwendet werden, in denen mehrere diskrete Merkmale mit dem gleichen Wertebereich gegenübergestellt werden. Durch die Linien werden Unterschiede in den Ausprägungsprofilen sichtbar.</p>
-<p><a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.21</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
+<p><a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.28</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
 </div>
 </div>
 <div id="fig-parallel-plot" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/diagramm_parallel_plot.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;16.21: Anwendung eines Liniendiagramms als Paralleldiagramm</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;16.28: Anwendung eines Liniendiagramms als Paralleldiagramm</figcaption>
 </figure>
 </div>
+<p>Eine Variante von Paralleldiagrammen sind sog. Netzdiagramme (bzw. Spider-Web-Diagramme).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Hinweis
+Merke
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Eine Variante von Paralleldiagrammen sind sog. Netzdiagramme (bzw. Spider-Web-Diagramme). Netzdiagramme ordnen die Kategorien sternförmig an. In Excel finden sich Netzdiagramme unter der Kategorie <code>Wasserfalldiagramme</code>.</p>
+<p>Netzdiagramme ordnen die Kategorien der X-Achse sternförmig an.</p>
 </div>
+</div>
+<p>In Excel finden sich Netzdiagramme unter der Kategorie <code>Wasserfalldiagramme</code>. Diese Diagramme werden oft zum Vergleich von Merkmalsprofilen verwendet, z.B. als Ergänzung einer Stärken- und Schwächen-Analyse (SWOT-Analyse)</p>
+<div id="fig-spiderweb-diagramm" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/spidereweb_diagramm.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;16.29: Netzdiagramm mit den gleichen Daten wie <a href="#fig-parallel-plot">Abbildung&nbsp;<span>16.28</span></a></figcaption>
+</figure>
 </div>
 <!--
 ### Treemap-Diagramme
