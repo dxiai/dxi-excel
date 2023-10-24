@@ -44,7 +44,7 @@ Excel365 unterscheidet sich leicht für MacOS und Windows. Im Rahmen dieses Buch
 
 Die auffälligsten Unterschiede betreffen den Importer und die bedingte Formatierung.
 
-- Der Importer ist unter Windows etwas flexibeler gestaltet als unter MacOS. Dieser Unterschied betrifft den Inhalt dieses Buchs nicht.
+- Der Importer ist unter Windows etwas flexibler gestaltet als unter MacOS. Dieser Unterschied betrifft den Inhalt dieses Buchs nicht.
 - Die  *bedingte Formatierung* wird unter MacOS traditionell mit einen völlig andereren Dialog konfiguriert wird als unter Windows.
 
 ::: {.callout-warning}
