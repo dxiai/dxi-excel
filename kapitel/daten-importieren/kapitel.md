@@ -153,6 +153,12 @@ Im Gegensatz zu Excel behandelt Power Query Datum und Uhrzeit als eigenen Datent
 
 : Power Query Datentypen mit Symbolen {#tbl-power-query-datentypen}
 
+Der Datentyp einer Spalte lässt sich mit dem Kommando `Datentyp` anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (@fig-pq-spaltentyp-aendern). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. @fig-pq-datentyp-schritt-dialog), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (`Aktuelle ersetzen`) oder ob ein neuer Arbeitsschritt eingefügt werden soll (`Neuen Schritt hinzufügen`). Hier kann normalerweise `Aktuelle ersetzen` ausgewählt werden.
+
+![Änderung des Datentyps einer Spalte](figures/power_query_datentyp_aendern.png){#fig-pq-spaltentyp-aendern}
+
+![Abfrage vor dem Ändern eines Datentyps](figures/power_query_datentyp_aendern_dialog.png){#fig-pq-datentyp-schritt-dialog}
+
 ::: {.callout-warning}
 ## MacOS vs. Windows
 
@@ -160,9 +166,9 @@ Gelegentlich müssen Zahlen an das richtige Gebietsschema angepasst werden, dami
 
 Unter MacOS können gebietsspezifische Datenformate sowohl über den Menübalken Transformieren als auch über die Spaltenüberschrift erreicht und angepasst werden. 
 
-Unter Windows ist die Option `mit Gebietsschema` nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü `Typ ändern` ausgewählt. Dort findet sich ganz unten der Punkt `Mit Gebietsschema...`. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird.
+Unter Windows ist die Option `mit Gebietsschema` nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü `Typ ändern` ausgewählt. Dort findet sich ganz unten der Punkt `Mit Gebietsschema...`. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird. Beide Optionen funktionieren auch unter MacOS. 
 
-![Gebietsschema Datentyp in PowerQuery unter Windows](figures/windows_mit_gebietsschema.png){#fig-windows-gebietsschema}
+![Gebietsschema Datentyp in PowerQuery über das Datentypmenü der Spaltenüberschrift](figures/windows_mit_gebietsschema.png){#fig-windows-gebietsschema}
 :::
 
 ::: {.callout-note}
@@ -170,17 +176,10 @@ Unter Windows ist die Option `mit Gebietsschema` nur hinter dem Datentyp-Icon ü
 
 Beim Import mit Gebietsschema gilt es folgendes zu beachten:
 
-- Zahlen mit Komma als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der das Komma verwendet wird (z.B. Deutschland oder Frankreich). 
+- Wenn Zahlen mit Komma als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der das Komma verwendet wird (z.B. Deutschland oder Frankreich). 
 
-Wenn Zahlen mit Punkt als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der ein Punkt verwendet wird (z.B. Schweiz oder Vereinigte Staaten).
+- Wenn Zahlen mit Punkt als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der ein Punkt verwendet wird (z.B. Schweiz oder Vereinigte Staaten).
 ::: 
-
-
-Der Datentyp einer Spalte lässt sich mit dem Kommando `Datentyp` anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (@fig-pq-spaltentyp-aendern). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. @fig-pq-datentyp-schritt-dialog), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (`Aktuelle ersetzen`) oder ob ein neuer Arbeitsschritt eingefügt werden soll (`Neuen Schritt hinzufügen`). Hier kann normalerweise `Aktuelle ersetzen` ausgewählt werden.
-
-![Änderung des Datentyps einer Spalte](figures/power_query_datentyp_aendern.png){#fig-pq-spaltentyp-aendern}
-
-![Abfrage vor dem Ändern eines Datentyps](figures/power_query_datentyp_aendern_dialog.png){#fig-pq-datentyp-schritt-dialog}
 
 ### Spalten umbenennen
 
