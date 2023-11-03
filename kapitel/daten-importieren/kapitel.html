@@ -593,6 +593,19 @@ Wichtig
 </tbody>
 </table>
 </div>
+<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<a href="#fig-pq-spaltentyp-aendern">Abbildung&nbsp;<span>7.6</span></a>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog">Abbildung&nbsp;<span>7.7</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
+<div id="fig-pq-spaltentyp-aendern" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_datentyp_aendern.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.6: Änderung des Datentyps einer Spalte</figcaption>
+</figure>
+</div>
+<div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/power_query_datentyp_aendern_dialog.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.7: Abfrage vor dem Ändern eines Datentyps</figcaption>
+</figure>
+</div>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -605,11 +618,11 @@ MacOS vs.&nbsp;Windows
 <div class="callout-body-container callout-body">
 <p>Gelegentlich müssen Zahlen an das richtige Gebietsschema angepasst werden, damit die Werte korrekt eingelesen werden. Das ist immer dann notwendig, wenn das Dezimaltrennzeichen in der zu importierenden Datei vom aktuellen Gebietsschema abweicht.</p>
 <p>Unter MacOS können gebietsspezifische Datenformate sowohl über den Menübalken Transformieren als auch über die Spaltenüberschrift erreicht und angepasst werden.</p>
-<p>Unter Windows ist die Option <code>mit Gebietsschema</code> nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü <code>Typ ändern</code> ausgewählt. Dort findet sich ganz unten der Punkt <code>Mit Gebietsschema...</code>. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird.</p>
+<p>Unter Windows ist die Option <code>mit Gebietsschema</code> nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü <code>Typ ändern</code> ausgewählt. Dort findet sich ganz unten der Punkt <code>Mit Gebietsschema...</code>. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird. Beide Optionen funktionieren auch unter MacOS.</p>
 <div id="fig-windows-gebietsschema" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/windows_mit_gebietsschema.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.6: Gebietsschema Datentyp in PowerQuery unter Windows</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.8: Gebietsschema Datentyp in PowerQuery über das Datentypmenü der Spaltenüberschrift</figcaption>
 </figure>
 </div>
 </div>
@@ -626,23 +639,10 @@ Merke
 <div class="callout-body-container callout-body">
 <p>Beim Import mit Gebietsschema gilt es folgendes zu beachten:</p>
 <ul>
-<li>Zahlen mit Komma als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der das Komma verwendet wird (z.B. Deutschland oder Frankreich).</li>
+<li><p>Wenn Zahlen mit Komma als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der das Komma verwendet wird (z.B. Deutschland oder Frankreich).</p></li>
+<li><p>Wenn Zahlen mit Punkt als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der ein Punkt verwendet wird (z.B. Schweiz oder Vereinigte Staaten).</p></li>
 </ul>
-<p>Wenn Zahlen mit Punkt als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der ein Punkt verwendet wird (z.B. Schweiz oder Vereinigte Staaten).</p>
 </div>
-</div>
-<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<a href="#fig-pq-spaltentyp-aendern">Abbildung&nbsp;<span>7.7</span></a>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog">Abbildung&nbsp;<span>7.8</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
-<div id="fig-pq-spaltentyp-aendern" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_datentyp_aendern.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.7: Änderung des Datentyps einer Spalte</figcaption>
-</figure>
-</div>
-<div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_datentyp_aendern_dialog.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.8: Abfrage vor dem Ändern eines Datentyps</figcaption>
-</figure>
 </div>
 </section>
 <section id="spalten-umbenennen" class="level3" data-number="7.2.2">
