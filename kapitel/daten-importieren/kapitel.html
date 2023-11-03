@@ -555,10 +555,10 @@ Wichtig
 <td style="text-align: left;">Ganzzahl</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Zahl mit Gebietsschema</td>
+<td style="text-align: left;">(Zahl) mit Gebietsschema</td>
 <td style="text-align: center;"><img src="figures/powerquery_datentyp_gebietsschema.png" class="img-fluid" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
-<td style="text-align: left;"><strong><em>Nur MacOS</em></strong>; Das Gebietsschema legt den Tausender- und Dezimaltrenner fest</td>
+<td style="text-align: left;">Das Gebietsschema legt den Tausender- und Dezimaltrenner fest</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Datum/Uhrzeit</td>
@@ -593,17 +593,55 @@ Wichtig
 </tbody>
 </table>
 </div>
-<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<a href="#fig-pq-spaltentyp-aendern">Abbildung&nbsp;<span>7.6</span></a>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog">Abbildung&nbsp;<span>7.7</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+MacOS vs.&nbsp;Windows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Gelegentlich müssen Zahlen an das richtige Gebietsschema angepasst werden, damit die Werte korrekt eingelesen werden. Das ist immer dann notwendig, wenn das Dezimaltrennzeichen in der zu importierenden Datei vom aktuellen Gebietsschema abweicht.</p>
+<p>Unter MacOS können gebietsspezifische Datenformate sowohl über den Menübalken Transformieren als auch über die Spaltenüberschrift erreicht und angepasst werden.</p>
+<p>Unter Windows ist die Option <code>mit Gebietsschema</code> nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü <code>Typ ändern</code> ausgewählt. Dort findet sich ganz unten der Punkt <code>Mit Gebietsschema...</code>. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird.</p>
+<div id="fig-windows-gebietsschema" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/windows_mit_gebietsschema.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">Abbildung&nbsp;7.6: Gebietsschema Datentyp in PowerQuery unter Windows</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beim Import mit Gebietsschema gilt es folgendes zu beachten:</p>
+<ul>
+<li>Zahlen mit Komma als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der das Komma verwendet wird (z.B. Deutschland oder Frankreich).</li>
+</ul>
+<p>Wenn Zahlen mit Punkt als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der ein Punkt verwendet wird (z.B. Schweiz oder Vereinigte Staaten).</p>
+</div>
+</div>
+<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<a href="#fig-pq-spaltentyp-aendern">Abbildung&nbsp;<span>7.7</span></a>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog">Abbildung&nbsp;<span>7.8</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
 <div id="fig-pq-spaltentyp-aendern" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_datentyp_aendern.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.6: Änderung des Datentyps einer Spalte</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.7: Änderung des Datentyps einer Spalte</figcaption>
 </figure>
 </div>
 <div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_datentyp_aendern_dialog.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.7: Abfrage vor dem Ändern eines Datentyps</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.8: Abfrage vor dem Ändern eines Datentyps</figcaption>
 </figure>
 </div>
 </section>
@@ -655,7 +693,7 @@ Praxis
 <div id="fig-power-query-editor-spalten-auswaehlen-entfernen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_spalten_verwalten.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.8: Power Query Kommandos zum auswählen oder entfernen von Spalten (Menu <code>Start</code>)</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.9: Power Query Kommandos zum auswählen oder entfernen von Spalten (Menu <code>Start</code>)</figcaption>
 </figure>
 </div>
 <p>Beide Kommandos verändern die Datenstruktur, indem Spalten entfernt werden. Das Kommando <code>Spalten auswählen</code> lässt die ausgewählten Spalten in der Datenstruktur und entfernt alle anderen. Das Kommando <code>Spalten entfernen</code> entfernt nur die ausgewählten Spalten.</p>
@@ -680,7 +718,7 @@ Achtung
 <div id="fig-menubalken-daten-kommando-alle-aktualisieren" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/daten_update_ribbon.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.9: Menubalken Daten - Kommando Alle aktualisieren</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.10: Menubalken Daten - Kommando Alle aktualisieren</figcaption>
 </figure>
 </div>
 <p>Es werden nur die importierten Daten aktualisiert. Wurde die Tabelle durch Formeln erweitert, werden diese Formeln <em>nicht</em> gelöscht, sondern auf die neuen Daten erweitert.</p>
@@ -703,7 +741,7 @@ Wichtig
 <p>Gelegentlich ändert sich der Ort einer Datenquelle. Sehr häufig tritt diese Situation ein, wenn eine Datei in einen anderen Ordner verschoben wird. In solchen Fällen muss die Datenverbindung angepasst werden. Dazu muss in Power Query die Datenquelle angepasst werden.</p>
 <ol type="1">
 <li>Powerquery öffnen</li>
-<li>Einstellungen im Schritt “Quelle” auswählen (s. <a href="#fig-power-query-editor-datenquelle-anpassen">Abbildung&nbsp;<span>7.10</span></a>)</li>
+<li>Einstellungen im Schritt “Quelle” auswählen (s. <a href="#fig-power-query-editor-datenquelle-anpassen">Abbildung&nbsp;<span>7.11</span></a>)</li>
 <li>Pfad zur Datenquelle anpassen</li>
 </ol>
 <p>Nachdem die richtige Datei ausgewählt wurde, sollte immer das Schema kontrolliert werden, ob die Änderung keine Auswirkungen auf das Schema hat. Wird dieser Schritt übersprungen, kann es zu Fehlern beim Import kommen und im schlimmsten Fall werden die Formeln in der Arbeitsmappe durch eine Fehlerfortpflanzung zerstört.</p>
@@ -711,14 +749,14 @@ Wichtig
 <div id="fig-power-query-editor-datenquelle-anpassen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_quelle_anpassen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.10: Power Query: Quelle Anpassen (Ausschnitt)</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.11: Power Query: Quelle Anpassen (Ausschnitt)</figcaption>
 </figure>
 </div>
-<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen">Abbildung&nbsp;<span>7.11</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
+<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen">Abbildung&nbsp;<span>7.12</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
 <div id="fig-menubalken-daten-abfragen-verbindungen" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/daten_update_ribbon_abfragen_liste.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.11: Menubalken Daten - Abfragen &amp; Verbindungen</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.12: Menubalken Daten - Abfragen &amp; Verbindungen</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -731,11 +769,11 @@ MacOS vs.&nbsp;Windows
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Unter Windows lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel von dort immer den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten">Abbildung&nbsp;<span>7.12</span></a>).</p>
+<p>Unter Windows lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel von dort immer den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten">Abbildung&nbsp;<span>7.13</span></a>).</p>
 <div id="fig-power-query-unter-macos-starten" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="figures/power_query_macos_starten.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.12: Power Query unter MacOS starten</figcaption>
+<figcaption class="figure-caption">Abbildung&nbsp;7.13: Power Query unter MacOS starten</figcaption>
 </figure>
 </div>
 </div>
