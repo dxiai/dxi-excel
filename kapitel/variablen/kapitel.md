@@ -5,7 +5,7 @@ execute:
 
 # Variablen, Funktionen und Operatoren {#sec-chapter-variablen-fkts-ops}
 
-## Variablen
+## Variablen {#sec-variablen}
 
 Excel kennt keine strikte Unterscheidung zwischen Konstanten und Variablen. Grundsätzlich sind alle Werte in Excel Konstanten, weil direkt eingegebene oder durch eine Formel erzeugte Werte nicht durch andere Formel verändert werden können.
 
@@ -16,6 +16,19 @@ Die Sperre eines Arbeitsblatts wird im Menuband `Überprüfen` mit dem Kommando 
 :::
 
 Ist ein Arbeitsblatt gesperrt, sind die Werte auf diesem Arbeitsblatt unveränderlich und verhalten sich wie Konstanten. Ist ein Arbeitsblatt nicht gesperrt, dann verhalten sich die Werte wie Variablen.
+
+**Bezeichner** unterliegen in Excel gewissen Beschränkungen. 
+
+1. Bezeichner dürfen nur aus Buchstaben, Zahlen, Dollarzeichen, Punkten und Unterstrichen (`_`) bestehen.
+2. Bezeichner dürfen keine bestehenden Funktionsnamen sein. 
+3. Bezeichner dürfen keine gültigen Adressen im A1-Format sein.
+4. Bezeichner dürfen keine gültigen Adressen im Z1S1-Format sein.
+
+::: {#exm-ungueltiger-bezeichner}
+## Ungültiger Bezeichner
+
+Der Bezeichner `x1` ist ungültig, weil dieser identisch mit der Adresse `X1` wäre. Wird Bezeichner um einen Unterstrich zu `x_1` erweitert, dann gibt es keine Kollision mit der Adresse mehr und der Bezeichner ist gültig. 
+:::
 
 ### Dynamische Bereiche {#sec-dynamisches-feld}
 
@@ -252,6 +265,10 @@ Der *logische Ausdruck* prüft, ob ein Feld mit dem Index `G1#` und `H1#` im Sti
 In dieser Operation wird die Funktion `INDEX()` zwei Mal mit den gleichen Parametern aufgerufen. Das ist unpraktisch, weil die Operation an zwei Stellen angepasst müsste, wenn die Daten mehr oder weniger Spalten haben. Besser wäre es, wenn das Zwischenergebnis der `INDEX()`-Funktion aus der Operation herausgelöst wird und über eine Funktionsverkettung eingebunden wird. Das ist aber nicht möglich, weil Excel bei diesem Zwischenschritt die fehlenden Werte in `0` ändert, sodass anschliessend der logische Ausdruck immer `FALSCH` liefern würde.
 
 Mittels der `LET()` Funktion wird das Ergebnis dieses Zwischenschritts in einer temporären *Variablen* gespeichert. Gegenüber der normalen Funktionsverkettung durch Funktionspfade hat diese Strategie den Vorteil, dass für Excel die Operation nicht abgeschlossen ist und deshalb die fehlenden Werte *noch nicht* in den Wert `0` umgewandelt werden. Der logische Ausdruck in der `WENN()`-Funktion kann also `WAHR` ergeben, wenn in den Daten ein Wert fehlt. Ausserdem muss die Indizierung für eine Position nur einmal durchgeführt werden, was bei komplexen Formeln die Übersichtlichkeit erhöht und die Ausführung beschleunigt.
+
+::: {.callout-warning}
+Die Namen  in der `LET()` unterliegen den gleichen Beschränkungen, wie alle anderen Bezeichner (Abschnitt [@sec-variablen]). 
+::: 
 
 Die ursprüngliche Formel lässt sich also dahingehend vereinfachen, dass der Aufruf der `INDEX()`-Funktion "ausgeklammert" und in der Hilfsvariablen `Feld` gespeichert wird. 
 
