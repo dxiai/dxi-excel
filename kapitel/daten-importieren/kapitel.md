@@ -144,7 +144,7 @@ Im Gegensatz zu Excel behandelt Power Query Datum und Uhrzeit als eigenen Datent
 | Prozentzahl | ![](figures/powerquery_datentyp_prozent.png){width=32} | Zahlen | Dezimalzahl mal `100` |
 | Währung | ![](figures/powerquery_datentyp_waehrung.png){width=32} | Zahlen | Dezimalzahl mit Währungsformatierung |
 | Binärzahl | ![](figures/powerquery_datentyp_binary.png){width=32} | Zahlen | Ganzzahl |
-| Zahl mit Gebietsschema | ![](figures/powerquery_datentyp_gebietsschema.png){width=32} | Zahlen | ***Nur MacOS***; Das Gebietsschema legt den Tausender- und Dezimaltrenner fest |
+| (Zahl) mit Gebietsschema | ![](figures/powerquery_datentyp_gebietsschema.png){width=32} | Zahlen | Das Gebietsschema legt den Tausender- und Dezimaltrenner fest|
 | Datum/Uhrzeit | ![](figures/powerquery_datentyp_zeitstempel.png){width=32} | Datum und Uhrzeit | Zeitstempel als formatierte Dezimalzahl |
 | Datum | ![](figures/powerquery_datentyp_datum.png){width=32} | Datum und Uhrzeit | Ganzzahl mit Datumsformatierung |
 | Uhrzeit | ![](figures/powerquery_datentyp_uhrzeit.png){width=32} | Datum und Uhrzeit | Dezimalzahl zwischen 0 und 1 mit Zeitformatierung |
@@ -152,6 +152,29 @@ Im Gegensatz zu Excel behandelt Power Query Datum und Uhrzeit als eigenen Datent
 | Datum/Uhrzeit/Zeitzone | ![](figures/powerquery_datentyp_zeitstempel_mit_zone.png){width=32} | Datum und Uhrzeit | Internationalisierter Zeitstempel als formatierte Dezimalzahl, die Zeitzone **muss** in den Werten kodiert sein, sonst wird +1 angeommen. |
 
 : Power Query Datentypen mit Symbolen {#tbl-power-query-datentypen}
+
+::: {.callout-warning}
+## MacOS vs. Windows
+
+Gelegentlich müssen Zahlen an das richtige Gebietsschema angepasst werden, damit die Werte korrekt eingelesen werden. Das ist immer dann notwendig, wenn das Dezimaltrennzeichen in der zu importierenden Datei vom aktuellen Gebietsschema abweicht.
+
+Unter MacOS können gebietsspezifische Datenformate sowohl über den Menübalken Transformieren als auch über die Spaltenüberschrift erreicht und angepasst werden. 
+
+Unter Windows ist die Option `mit Gebietsschema` nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü `Typ ändern` ausgewählt. Dort findet sich ganz unten der Punkt `Mit Gebietsschema...`. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird.
+
+![Gebietsschema Datentyp in PowerQuery unter Windows](figures/windows_mit_gebietsschema.png){#fig-windows-gebietsschema}
+:::
+
+::: {.callout-note}
+## Merke
+
+Beim Import mit Gebietsschema gilt es folgendes zu beachten:
+
+- Zahlen mit Komma als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der das Komma verwendet wird (z.B. Deutschland oder Frankreich). 
+
+Wenn Zahlen mit Punkt als Dezimaltrennung importiert werden sollen, dann muss eine Region ausgewählt werden, in der ein Punkt verwendet wird (z.B. Schweiz oder Vereinigte Staaten).
+::: 
+
 
 Der Datentyp einer Spalte lässt sich mit dem Kommando `Datentyp` anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (@fig-pq-spaltentyp-aendern). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. @fig-pq-datentyp-schritt-dialog), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (`Aktuelle ersetzen`) oder ob ein neuer Arbeitsschritt eingefügt werden soll (`Neuen Schritt hinzufügen`). Hier kann normalerweise `Aktuelle ersetzen` ausgewählt werden.
 
