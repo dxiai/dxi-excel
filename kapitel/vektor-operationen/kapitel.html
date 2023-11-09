@@ -264,23 +264,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link active" data-scroll-target="#sequenzen"><span class="header-section-number">11.1</span> Sequenzen</a>
+  <li><a href="#vektorenlänge-bestimmen." id="toc-vektorenlänge-bestimmen." class="nav-link active" data-scroll-target="#vektorenlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorenlänge bestimmen.</a></li>
+  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link" data-scroll-target="#sequenzen"><span class="header-section-number">11.2</span> Sequenzen</a></li>
+  <li><a href="#konkatenation" id="toc-konkatenation" class="nav-link" data-scroll-target="#konkatenation"><span class="header-section-number">11.3</span> Konkatenation</a></li>
+  <li><a href="#transformationen" id="toc-transformationen" class="nav-link" data-scroll-target="#transformationen"><span class="header-section-number">11.4</span> Transformationen</a>
   <ul class="collapse">
-  <li><a href="#nullvektor" id="toc-nullvektor" class="nav-link" data-scroll-target="#nullvektor"><span class="header-section-number">11.1.1</span> Nullvektor</a></li>
-  <li><a href="#einsvektor" id="toc-einsvektor" class="nav-link" data-scroll-target="#einsvektor"><span class="header-section-number">11.1.2</span> Einsvektor</a></li>
+  <li><a href="#transformationen-mit-einem-skalar" id="toc-transformationen-mit-einem-skalar" class="nav-link" data-scroll-target="#transformationen-mit-einem-skalar"><span class="header-section-number">11.4.1</span> Transformationen mit einem Skalar</a></li>
+  <li><a href="#transformationen-mit-einem-vektor" id="toc-transformationen-mit-einem-vektor" class="nav-link" data-scroll-target="#transformationen-mit-einem-vektor"><span class="header-section-number">11.4.2</span> Transformationen mit einem Vektor</a></li>
   </ul></li>
-  <li><a href="#konkatenation" id="toc-konkatenation" class="nav-link" data-scroll-target="#konkatenation"><span class="header-section-number">11.2</span> Konkatenation</a></li>
-  <li><a href="#transformationen" id="toc-transformationen" class="nav-link" data-scroll-target="#transformationen"><span class="header-section-number">11.3</span> Transformationen</a>
+  <li><a href="#aggregationen" id="toc-aggregationen" class="nav-link" data-scroll-target="#aggregationen"><span class="header-section-number">11.5</span> Aggregationen</a></li>
+  <li><a href="#zählen" id="toc-zählen" class="nav-link" data-scroll-target="#zählen"><span class="header-section-number">11.6</span> Zählen</a>
   <ul class="collapse">
-  <li><a href="#transformationen-mit-einem-skalar" id="toc-transformationen-mit-einem-skalar" class="nav-link" data-scroll-target="#transformationen-mit-einem-skalar"><span class="header-section-number">11.3.1</span> Transformationen mit einem Skalar</a></li>
-  <li><a href="#transformationen-mit-einem-vektor" id="toc-transformationen-mit-einem-vektor" class="nav-link" data-scroll-target="#transformationen-mit-einem-vektor"><span class="header-section-number">11.3.2</span> Transformationen mit einem Vektor</a></li>
-  </ul></li>
-  <li><a href="#aggregationen" id="toc-aggregationen" class="nav-link" data-scroll-target="#aggregationen"><span class="header-section-number">11.4</span> Aggregationen</a></li>
-  <li><a href="#zählen" id="toc-zählen" class="nav-link" data-scroll-target="#zählen"><span class="header-section-number">11.5</span> Zählen</a>
-  <ul class="collapse">
-  <li><a href="#zählen-durch-summieren" id="toc-zählen-durch-summieren" class="nav-link" data-scroll-target="#zählen-durch-summieren"><span class="header-section-number">11.5.1</span> Zählen durch Summieren</a></li>
-  <li><a href="#zählen-durch-filtern" id="toc-zählen-durch-filtern" class="nav-link" data-scroll-target="#zählen-durch-filtern"><span class="header-section-number">11.5.2</span> Zählen durch Filtern</a></li>
-  <li><a href="#zählen-durch-nummerieren" id="toc-zählen-durch-nummerieren" class="nav-link" data-scroll-target="#zählen-durch-nummerieren"><span class="header-section-number">11.5.3</span> Zählen durch Nummerieren</a></li>
+  <li><a href="#zählen-durch-summieren" id="toc-zählen-durch-summieren" class="nav-link" data-scroll-target="#zählen-durch-summieren"><span class="header-section-number">11.6.1</span> Zählen durch Summieren</a></li>
+  <li><a href="#zählen-durch-filtern" id="toc-zählen-durch-filtern" class="nav-link" data-scroll-target="#zählen-durch-filtern"><span class="header-section-number">11.6.2</span> Zählen durch Filtern</a></li>
+  <li><a href="#zählen-durch-nummerieren" id="toc-zählen-durch-nummerieren" class="nav-link" data-scroll-target="#zählen-durch-nummerieren"><span class="header-section-number">11.6.3</span> Zählen durch Nummerieren</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
@@ -318,44 +315,65 @@ Work in Progress
 
 </div>
 </div>
-<section id="sequenzen" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">11.1</span> Sequenzen</h2>
-<section id="nullvektor" class="level3" data-number="11.1.1">
-<h3 data-number="11.1.1" class="anchored" data-anchor-id="nullvektor"><span class="header-section-number">11.1.1</span> Nullvektor</h3>
-</section>
-<section id="einsvektor" class="level3" data-number="11.1.2">
-<h3 data-number="11.1.2" class="anchored" data-anchor-id="einsvektor"><span class="header-section-number">11.1.2</span> Einsvektor</h3>
-</section>
-</section>
-<section id="konkatenation" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="konkatenation"><span class="header-section-number">11.2</span> Konkatenation</h2>
-<p><code>HSTAPELN</code></p>
-<p><code>VSTAPELN</code></p>
-</section>
-<section id="transformationen" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="transformationen"><span class="header-section-number">11.3</span> Transformationen</h2>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="vektorenlänge-bestimmen." class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="vektorenlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorenlänge bestimmen.</h2>
+<p>Jeder Vektor hat eine Länge, wobei diese Länge nicht zwingend der Anzahl der Werte entsprechen muss. Deshalb sollte die Länge eines Vektors mit Excel <em>nicht</em> mit der Funktion <code>ANZAHL()</code> bzw. <code>ANZAHL2()</code> bestimmt werden, sondern über die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code>. Der Vorteil dieser beiden Funktionen ist, dass sie die Vektorlänge auch dann korrekt bestimmen, wenn einzelne Werte im Vektor nicht vorhanden sind.</p>
+<p>Die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code> geben die Anzahl der Zeilen respektive Spalten für den übergebenen Bereich zurück. Für einen Spaltenvektor gibt die Funktion <code>ZEILEN()</code> die Länge des Vektors zurück und die Funktion <code>SPALTEN()</code> hat den Wert <code>1</code>. Die Funktion <code>SPALTEN()</code> gibt die Vektorlänge von Zeilenvektoren zurück. Entsprechend hat in diesem Fall die Funktion <code>ZEILEN()</code> immer den Wert <code>1</code> als Ergebnis.</p>
+<p>Aus den beiden Werten der Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code> kann die Orientierung eines Vektors mit der Operation <code>ZEILEN(vektor) - SPALTEN(vektor)</code> bestimmt werden. Ist das Ergebnis grösser <code>0</code> handelt es sich um einen Spaltenvektor und ist er kleiner <code>0</code> handelt es sich um einen Zeilenvektor.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Merke
+Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Beliebige Transformationen lassen sich mit <code>MAP()</code> umsetzen.</p>
+<p>Zur Feststellung der Orientierung muss in der Regel nur die erste Bedingung geprüft werden.</p>
 </div>
 </div>
-<section id="transformationen-mit-einem-skalar" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="transformationen-mit-einem-skalar"><span class="header-section-number">11.3.1</span> Transformationen mit einem Skalar</h3>
 </section>
-<section id="transformationen-mit-einem-vektor" class="level3" data-number="11.3.2">
-<h3 data-number="11.3.2" class="anchored" data-anchor-id="transformationen-mit-einem-vektor"><span class="header-section-number">11.3.2</span> Transformationen mit einem Vektor</h3>
+<section id="sequenzen" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">11.2</span> Sequenzen</h2>
+<p>Sequenzen werden mithilfe der Generatorfunktion <code>SEQUENZ()</code> erzeugt. Die Funktion hat vier Parameter. Die ersten beiden Parameter der Funktion zeigen die Anzahl der Zeilen und Spalten an, über welche sich die Sequenz erstrecken soll. Der dritte Parameter erwartet den Startwert der Sequenz und mit dem letzten Parameter wird die Schrittweite der Sequenz angegeben.</p>
+<div id="exm-sequenz-geradezahlen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.1 (Sequenz von geraden Zahlen erzeugen) </strong></span>&nbsp;</p>
+<pre><code>=SEQUENZ(10; 1; 0;2)</code></pre>
+</div>
+<p>Nur der erste Parameter der Funktion <code>SEQUENZ()</code> muss angegeben werden. In diesem Fall wird für alle anderen Parameter der Wert <code>1</code> angenommen.</p>
+<div id="exm-einfache-sequenz" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.2 (Sequenz der Länge 10 erzeugen) </strong></span>&nbsp;</p>
+<pre><code>=SEQUENZ(10)</code></pre>
+</div>
+<p>Zwei spezielle Sequenzen sind der Nullvektor und der Einsvektor. In beiden Vektoren wiederholt sich der Wert an jeder Position. Die zugehörige Sequenz hat also die Schrittweite <code>0</code>.</p>
+<div id="exm-einsvektor-via-sequenz" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.3 (Einsvektor der Länge 10 erzeugen) </strong></span>&nbsp;</p>
+<pre><code>=SEQUENZ(10; 1; 1; 0)</code></pre>
+</div>
+<p>Analog zum Einsvektor in <span class="quarto-unresolved-ref">?exm-einsvektor-via-sequeny</span> wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert <code>0</code> haben muss.</p>
+</section>
+<section id="konkatenation" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="konkatenation"><span class="header-section-number">11.3</span> Konkatenation</h2>
+<p><code>HSTAPELN</code></p>
+<p><code>VSTAPELN</code></p>
+</section>
+<section id="transformationen" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="transformationen"><span class="header-section-number">11.4</span> Transformationen</h2>
+<section id="transformationen-mit-einem-skalar" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="transformationen-mit-einem-skalar"><span class="header-section-number">11.4.1</span> Transformationen mit einem Skalar</h3>
+<p>Bei Transformationen mit einem Skalar, wird die Transformation für jeden Wert des Vektors und dem Skalar durchgeführt.</p>
+<p>Excel fehlt eine Funktion zum Wiederholen von beliebigen Werten. Mithilfe von Sequenzen kann diese Funktionalität leicht nachgebaut werden. Dazu wird eine Sequenz der gewünschten Länge erzeugt und anschliessend für jeden dieser Werte der Wiederholungswert zurückgegeben (<a href="#exm-beliebige-werte-wiederholen">Beispiel&nbsp;<span>11.4</span></a>). Der Wiederholungswert ist dabei ein Skalar, der für jeden Wert des erzeugten Sequenzvektors zurückgegeben wird.</p>
+<div id="exm-beliebige-werte-wiederholen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.4 (Zeichenkette 10 Mal wiederholen) </strong></span>= WENN(SEQUENZ(10); “Daten”)</p>
+</div>
+</section>
+<section id="transformationen-mit-einem-vektor" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="transformationen-mit-einem-vektor"><span class="header-section-number">11.4.2</span> Transformationen mit einem Vektor</h3>
 </section>
 </section>
-<section id="aggregationen" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="aggregationen"><span class="header-section-number">11.4</span> Aggregationen</h2>
+<section id="aggregationen" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="aggregationen"><span class="header-section-number">11.5</span> Aggregationen</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -370,16 +388,16 @@ Merke
 </div>
 </div>
 </section>
-<section id="zählen" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="zählen"><span class="header-section-number">11.5</span> Zählen</h2>
-<section id="zählen-durch-summieren" class="level3" data-number="11.5.1">
-<h3 data-number="11.5.1" class="anchored" data-anchor-id="zählen-durch-summieren"><span class="header-section-number">11.5.1</span> Zählen durch Summieren</h3>
+<section id="zählen" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="zählen"><span class="header-section-number">11.6</span> Zählen</h2>
+<section id="zählen-durch-summieren" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="zählen-durch-summieren"><span class="header-section-number">11.6.1</span> Zählen durch Summieren</h3>
 </section>
-<section id="zählen-durch-filtern" class="level3" data-number="11.5.2">
-<h3 data-number="11.5.2" class="anchored" data-anchor-id="zählen-durch-filtern"><span class="header-section-number">11.5.2</span> Zählen durch Filtern</h3>
+<section id="zählen-durch-filtern" class="level3" data-number="11.6.2">
+<h3 data-number="11.6.2" class="anchored" data-anchor-id="zählen-durch-filtern"><span class="header-section-number">11.6.2</span> Zählen durch Filtern</h3>
 </section>
-<section id="zählen-durch-nummerieren" class="level3" data-number="11.5.3">
-<h3 data-number="11.5.3" class="anchored" data-anchor-id="zählen-durch-nummerieren"><span class="header-section-number">11.5.3</span> Zählen durch Nummerieren</h3>
+<section id="zählen-durch-nummerieren" class="level3" data-number="11.6.3">
+<h3 data-number="11.6.3" class="anchored" data-anchor-id="zählen-durch-nummerieren"><span class="header-section-number">11.6.3</span> Zählen durch Nummerieren</h3>
 
 
 </section>
