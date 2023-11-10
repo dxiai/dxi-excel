@@ -12,6 +12,11 @@ execute:
 ## Work in Progress
 :::
 
+::: {.callout-note}
+## Merke
+Alle Bereiche mit mehr als einer Zelle werden unabhängig von den vorliegenden Datentypen in Excel als *Matrix* bezeichnet. 
+:::
+
 ## Vektorform einer Matrix
 
 `ZUSPALTE()`
@@ -26,7 +31,14 @@ execute:
 
 ## Einheitsmatrix erzeugen
 
-Excel erlaubt nur das Erzeugen der Identitätsmatrix. Die Funktion `MEINHEIT()` erzeugt also immer eine quadratische Einheitsmatrix. 
+Die Funktion `MEINHEIT()` erzeugt also immer eine quadratische Einheitsmatrix. 
+
+::: {#exm-einheitsmatrix}
+## Einheitsmatrix der Grösse 5
+```
+= MEINHEIT(5)
+```
+:::
 
 ## Matrizen Transponieren
 
