@@ -264,15 +264,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#vektorenlänge-bestimmen." id="toc-vektorenlänge-bestimmen." class="nav-link active" data-scroll-target="#vektorenlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorenlänge bestimmen.</a></li>
+  <li><a href="#vektorlänge-bestimmen." id="toc-vektorlänge-bestimmen." class="nav-link active" data-scroll-target="#vektorlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorlänge bestimmen.</a></li>
   <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link" data-scroll-target="#sequenzen"><span class="header-section-number">11.2</span> Sequenzen</a></li>
   <li><a href="#konkatenation" id="toc-konkatenation" class="nav-link" data-scroll-target="#konkatenation"><span class="header-section-number">11.3</span> Konkatenation</a></li>
   <li><a href="#transformationen" id="toc-transformationen" class="nav-link" data-scroll-target="#transformationen"><span class="header-section-number">11.4</span> Transformationen</a>
   <ul class="collapse">
-  <li><a href="#transformationen-mit-einem-skalar" id="toc-transformationen-mit-einem-skalar" class="nav-link" data-scroll-target="#transformationen-mit-einem-skalar"><span class="header-section-number">11.4.1</span> Transformationen mit einem Skalar</a></li>
-  <li><a href="#transformationen-mit-einem-vektor" id="toc-transformationen-mit-einem-vektor" class="nav-link" data-scroll-target="#transformationen-mit-einem-vektor"><span class="header-section-number">11.4.2</span> Transformationen mit einem Vektor</a></li>
+  <li><a href="#skalartransformationen" id="toc-skalartransformationen" class="nav-link" data-scroll-target="#skalartransformationen"><span class="header-section-number">11.4.1</span> Skalartransformationen</a></li>
+  <li><a href="#vektortransformationen" id="toc-vektortransformationen" class="nav-link" data-scroll-target="#vektortransformationen"><span class="header-section-number">11.4.2</span> Vektortransformationen</a></li>
+  <li><a href="#bedingungen-als-transformationen" id="toc-bedingungen-als-transformationen" class="nav-link" data-scroll-target="#bedingungen-als-transformationen"><span class="header-section-number">11.4.3</span> Bedingungen als Transformationen</a></li>
+  <li><a href="#rezept-beliebige-werte-wiederholen" id="toc-rezept-beliebige-werte-wiederholen" class="nav-link" data-scroll-target="#rezept-beliebige-werte-wiederholen"><span class="header-section-number">11.4.4</span> Rezept: Beliebige Werte wiederholen</a></li>
   </ul></li>
-  <li><a href="#aggregationen" id="toc-aggregationen" class="nav-link" data-scroll-target="#aggregationen"><span class="header-section-number">11.5</span> Aggregationen</a></li>
+  <li><a href="#aggregationen" id="toc-aggregationen" class="nav-link" data-scroll-target="#aggregationen"><span class="header-section-number">11.5</span> Aggregationen</a>
+  <ul class="collapse">
+  <li><a href="#filtern-als-aggregation" id="toc-filtern-als-aggregation" class="nav-link" data-scroll-target="#filtern-als-aggregation"><span class="header-section-number">11.5.1</span> Filtern als Aggregation</a></li>
+  <li><a href="#rezept-laufende-summe" id="toc-rezept-laufende-summe" class="nav-link" data-scroll-target="#rezept-laufende-summe"><span class="header-section-number">11.5.2</span> Rezept: Laufende Summe</a></li>
+  </ul></li>
   <li><a href="#zählen" id="toc-zählen" class="nav-link" data-scroll-target="#zählen"><span class="header-section-number">11.6</span> Zählen</a>
   <ul class="collapse">
   <li><a href="#zählen-durch-summieren" id="toc-zählen-durch-summieren" class="nav-link" data-scroll-target="#zählen-durch-summieren"><span class="header-section-number">11.6.1</span> Zählen durch Summieren</a></li>
@@ -315,10 +321,60 @@ Work in Progress
 
 </div>
 </div>
-<section id="vektorenlänge-bestimmen." class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="vektorenlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorenlänge bestimmen.</h2>
+<p><strong>Vektoren</strong> sind zusammengesetzte Datenstrukturen, die Werte vom gleichen Datentyp darstellen. Vektoren werden in Excel entweder als <em>Bereiche</em> (z.B. <code>A1:A5</code>), als <em>Arrays</em> (z.B. <code>B1#</code>) oder als <em>Tabellenspalten</em> (z.B. <code>Tabelle1[[Spalte1]]</code>) adressiert.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excel erzwingt das Datentyp-Kriterium von Vektoren nicht, so dass Vektoren strenggenommen Listen sind.</p>
+</div>
+</div>
+<p>Falls der gleiche Datentyp in einem Vektor nicht vorausgesetzt werden kann, müssen die Daten für die Verarbeitung vorbereitet werden. Das kann beispielsweise dadurch geschehen, dass der gewünschte Datentyp (oder Wertebereich) durch <strong>filtern</strong> eingeschränkt wird.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Excel kennt keine abstrakten Vektoren, sondern unterscheidet Zeilen- und Spaltenvektoren.</p>
+</div>
+</div>
+<div id="def-vektor-orientierung" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 11.1 </strong></span>Als <strong>Orientierung</strong> eines Vektors wird die Anordnung der Werte bezeichnet.</p>
+</div>
+<p>Für viele Vektoroperationen existiert deshalb eine Funktion für Spaltenvektoren und eine für Zeilenvektoren.</p>
+<p>Um Vektoren von der einen zur anderen Orientierung zu überführen, dient die Funktion <code>MTRANS()</code>. Soll eine <em>bestimmte</em> Orientierung für beliebige Vektoren erzwungen werden, dann kann die Funktion <code>ZUSPALTE()</code> zum Erzwingen eines Spaltenvektors oder die Funktion <code>ZUZEILE()</code> zum Erzwingen eines Zeilenvektors verwendet werden.</p>
+<div id="exm-erzwingen-spaltenvektor" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.1 (Erzwingen eines Spaltenvektors) </strong></span>&nbsp;</p>
+<pre><code>= ZUSPALTE(A1:D1)</code></pre>
+</div>
+<section id="vektorlänge-bestimmen." class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="vektorlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorlänge bestimmen.</h2>
 <p>Jeder Vektor hat eine Länge, wobei diese Länge nicht zwingend der Anzahl der Werte entsprechen muss. Deshalb sollte die Länge eines Vektors mit Excel <em>nicht</em> mit der Funktion <code>ANZAHL()</code> bzw. <code>ANZAHL2()</code> bestimmt werden, sondern über die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code>. Der Vorteil dieser beiden Funktionen ist, dass sie die Vektorlänge auch dann korrekt bestimmen, wenn einzelne Werte im Vektor nicht vorhanden sind.</p>
 <p>Die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code> geben die Anzahl der Zeilen respektive Spalten für den übergebenen Bereich zurück. Für einen Spaltenvektor gibt die Funktion <code>ZEILEN()</code> die Länge des Vektors zurück und die Funktion <code>SPALTEN()</code> hat den Wert <code>1</code>. Die Funktion <code>SPALTEN()</code> gibt die Vektorlänge von Zeilenvektoren zurück. Entsprechend hat in diesem Fall die Funktion <code>ZEILEN()</code> immer den Wert <code>1</code> als Ergebnis.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die kleinste Excel Struktur ist die Zelle. Deshalb werden <strong>keine</strong> Vektoren der Länge <code>0</code> unterstützt! Es ist unmöglich, Vektoren der Länge <code>0</code> durch Funktionen zu erzeugen!</p>
+</div>
+</div>
 <p>Aus den beiden Werten der Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code> kann die Orientierung eines Vektors mit der Operation <code>ZEILEN(vektor) - SPALTEN(vektor)</code> bestimmt werden. Ist das Ergebnis grösser <code>0</code> handelt es sich um einen Spaltenvektor und ist er kleiner <code>0</code> handelt es sich um einen Zeilenvektor.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -338,42 +394,89 @@ Praxis
 <h2 data-number="11.2" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">11.2</span> Sequenzen</h2>
 <p>Sequenzen werden mithilfe der Generatorfunktion <code>SEQUENZ()</code> erzeugt. Die Funktion hat vier Parameter. Die ersten beiden Parameter der Funktion zeigen die Anzahl der Zeilen und Spalten an, über welche sich die Sequenz erstrecken soll. Der dritte Parameter erwartet den Startwert der Sequenz und mit dem letzten Parameter wird die Schrittweite der Sequenz angegeben.</p>
 <div id="exm-sequenz-geradezahlen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.1 (Sequenz von geraden Zahlen erzeugen) </strong></span>&nbsp;</p>
-<pre><code>=SEQUENZ(10; 1; 0;2)</code></pre>
+<p><span class="theorem-title"><strong>Beispiel 11.2 (Sequenz von geraden Zahlen erzeugen) </strong></span>&nbsp;</p>
+<pre><code>=SEQUENZ(10; 1; 0; 2)</code></pre>
 </div>
 <p>Nur der erste Parameter der Funktion <code>SEQUENZ()</code> muss angegeben werden. In diesem Fall wird für alle anderen Parameter der Wert <code>1</code> angenommen.</p>
 <div id="exm-einfache-sequenz" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.2 (Sequenz der Länge 10 erzeugen) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 11.3 (Sequenz der Länge 10 als Spaltenvektor erzeugen) </strong></span>&nbsp;</p>
 <pre><code>=SEQUENZ(10)</code></pre>
 </div>
 <p>Zwei spezielle Sequenzen sind der Nullvektor und der Einsvektor. In beiden Vektoren wiederholt sich der Wert an jeder Position. Die zugehörige Sequenz hat also die Schrittweite <code>0</code>.</p>
 <div id="exm-einsvektor-via-sequenz" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.3 (Einsvektor der Länge 10 erzeugen) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 11.4 (Einsvektor der Länge 10 erzeugen) </strong></span>&nbsp;</p>
 <pre><code>=SEQUENZ(10; 1; 1; 0)</code></pre>
 </div>
 <p>Analog zum Einsvektor in <span class="quarto-unresolved-ref">?exm-einsvektor-via-sequeny</span> wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert <code>0</code> haben muss.</p>
 </section>
 <section id="konkatenation" class="level2" data-number="11.3">
 <h2 data-number="11.3" class="anchored" data-anchor-id="konkatenation"><span class="header-section-number">11.3</span> Konkatenation</h2>
-<p><code>HSTAPELN</code></p>
-<p><code>VSTAPELN</code></p>
+<p>Die Konkatenation verbindet zwei Vektoren zu einem neuen <strong>Vektor</strong>, wobei die Reihenfolge der Werte erhalten bleibt. Deshalb können in Excel nur Vektoren mit gleicher Orientierung konkateniert werden.</p>
+<p>Zum Konkatenieren von Spaltenvektoren dient die Funktion <code>VSTAPELN()</code> (für “vertikal stapeln”). Zum Konkatenieren von Zeilenvektoren dient die Funktion <code>HSTAPELN()</code> (für “horizontal stapeln”).</p>
+<p>Die beiden Funktionen <code>HSTAPELN()</code> und <code>VSTAPELN()</code> prüfen die Orientierung von Vektoren <em>nicht</em>! Werden zwei Vektoren mit unterschiedlicher Orientierung mit diesen Funktionen “gestapelt”, entsteht eine Matrix, wobei die Vektoren in der Reihenfolge der Argumentübergabe als Zeile oder Spalte gezeigt werden. Die restlichen Positionen der Matrix werden mit dem Fehlerwert <code>#NV</code> belegt.</p>
 </section>
 <section id="transformationen" class="level2" data-number="11.4">
 <h2 data-number="11.4" class="anchored" data-anchor-id="transformationen"><span class="header-section-number">11.4</span> Transformationen</h2>
-<section id="transformationen-mit-einem-skalar" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="transformationen-mit-einem-skalar"><span class="header-section-number">11.4.1</span> Transformationen mit einem Skalar</h3>
+<p>Das Ergebnis einer Transformationsoperation ist <strong>immer</strong> ein <strong>Vektor</strong> mit der <strong>gleichen Länge</strong> wie der ursprüngliche Vektor.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beliebige Transformationen lassen sich mit <code>MAP()</code> umsetzen.</p>
+</div>
+</div>
+<section id="skalartransformationen" class="level3" data-number="11.4.1">
+<h3 data-number="11.4.1" class="anchored" data-anchor-id="skalartransformationen"><span class="header-section-number">11.4.1</span> Skalartransformationen</h3>
 <p>Bei Transformationen mit einem Skalar, wird die Transformation für jeden Wert des Vektors und dem Skalar durchgeführt.</p>
-<p>Excel fehlt eine Funktion zum Wiederholen von beliebigen Werten. Mithilfe von Sequenzen kann diese Funktionalität leicht nachgebaut werden. Dazu wird eine Sequenz der gewünschten Länge erzeugt und anschliessend für jeden dieser Werte der Wiederholungswert zurückgegeben (<a href="#exm-beliebige-werte-wiederholen">Beispiel&nbsp;<span>11.4</span></a>). Der Wiederholungswert ist dabei ein Skalar, der für jeden Wert des erzeugten Sequenzvektors zurückgegeben wird.</p>
-<div id="exm-beliebige-werte-wiederholen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.4 (Zeichenkette 10 Mal wiederholen) </strong></span>= WENN(SEQUENZ(10); “Daten”)</p>
+</section>
+<section id="vektortransformationen" class="level3" data-number="11.4.2">
+<h3 data-number="11.4.2" class="anchored" data-anchor-id="vektortransformationen"><span class="header-section-number">11.4.2</span> Vektortransformationen</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Damit das Ergebnis einer Vektor-Transformation wieder ein Vektor ist, müssen beide Vektoren die <em>gleiche Orientierung</em> haben. D.h. es können nur Zeilenvektoren mit Zeilenvektoren bzw. Spaltenvektoren mit Spaltenvektoren transformiert werden</p>
+</div>
 </div>
 </section>
-<section id="transformationen-mit-einem-vektor" class="level3" data-number="11.4.2">
-<h3 data-number="11.4.2" class="anchored" data-anchor-id="transformationen-mit-einem-vektor"><span class="header-section-number">11.4.2</span> Transformationen mit einem Vektor</h3>
+<section id="bedingungen-als-transformationen" class="level3" data-number="11.4.3">
+<h3 data-number="11.4.3" class="anchored" data-anchor-id="bedingungen-als-transformationen"><span class="header-section-number">11.4.3</span> Bedingungen als Transformationen</h3>
+<p>Spezielle Transformationen sind Bedingungen. Dabei wird ein Vektor erzeugt, dessen Werte durch einen oder mehrere logische Ausdrücke bestimmt werden.</p>
+</section>
+<section id="rezept-beliebige-werte-wiederholen" class="level3" data-number="11.4.4">
+<h3 data-number="11.4.4" class="anchored" data-anchor-id="rezept-beliebige-werte-wiederholen"><span class="header-section-number">11.4.4</span> Rezept: Beliebige Werte wiederholen</h3>
+<p>Excel fehlt eine Funktion zum Wiederholen von beliebigen Werten. Mithilfe von Sequenzen kann diese Funktionalität leicht nachgebaut werden. Dazu wird eine Sequenz der gewünschten Länge erzeugt und anschliessend für jeden dieser Werte der Wiederholungswert zurückgegeben (<a href="#exm-beliebige-werte-wiederholen">Beispiel&nbsp;<span>11.5</span></a>). Der Wiederholungswert ist dabei ein Skalar, der für jeden Wert des erzeugten Sequenzvektors zurückgegeben wird.</p>
+<div id="exm-beliebige-werte-wiederholen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.5 (Zeichenkette <code>Daten</code> zehn Mal wiederholen) </strong></span>&nbsp;</p>
+<pre><code>= WENN(SEQUENZ(10); "Daten")</code></pre>
+</div>
 </section>
 </section>
 <section id="aggregationen" class="level2" data-number="11.5">
 <h2 data-number="11.5" class="anchored" data-anchor-id="aggregationen"><span class="header-section-number">11.5</span> Aggregationen</h2>
+<p>Beim Aggregieren werden die Werte eines Vektors durch eine Aggregationsoperation zusammengefasst.</p>
+<p>Dass Ergebnis von Aggregationen sind Skalare <strong>oder</strong> Vektoren mit einer Länge von <em>maximal der Länge</em> des ursprünglichen Vektors.</p>
+<p>Häufig verwendete Funktionen zum Aggregieren sind:</p>
+<ul>
+<li><code>SUMME()</code></li>
+<li><code>PRODUKT()</code></li>
+<li><code>ANZAHL()</code></li>
+<li><code>MAX()</code></li>
+<li><code>MIN()</code></li>
+<li><code>MITTELWERT()</code></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -387,17 +490,98 @@ Merke
 <p>Beliebige Aggregationen lassen sich mit <code>REDUCE()</code> umsetzen.</p>
 </div>
 </div>
+<section id="filtern-als-aggregation" class="level3" data-number="11.5.1">
+<h3 data-number="11.5.1" class="anchored" data-anchor-id="filtern-als-aggregation"><span class="header-section-number">11.5.1</span> Filtern als Aggregation</h3>
+<p>Das Filtern ist eine spezielle Aggregation, bei der das Ergebnis nur die Werte enthält, auf welche ein logischer Ausdruck zutrifft. Das Ergebnis einer Filter-Operation kann maximal die gleiche Länge haben, wie der zu filternde Vektor. In den meisten Fällen</p>
+</section>
+<section id="rezept-laufende-summe" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="rezept-laufende-summe"><span class="header-section-number">11.5.2</span> Rezept: Laufende Summe</h3>
+<p>Eine laufende Summe oder <em>kumulative Summe</em> liefert für jeden Wert eines Vektors die Summe des Werts mit den Vorgängerwerten. <strong>Diese Operation ist eine spezielle Aggregation.</strong> Excel verfügt keine eigene Funktion für diese Aggregation. Stattdessen kann sie mit <a href="#lst-cumsum">Listing&nbsp;<span>11.1</span></a> erzeugt werden.</p>
+<div id="lst-cumsum" class="listing">
+<p>Listing&nbsp;11.1: Kumulative Summe</p>
+<pre id="lst-cumsum" data-lst-cap="Kumulative Summe"><code>= SCAN(0; A2:A100; LAMBDA(accu; wert; accu + wert))</code></pre>
+</div>
+<p>Um die laufende Summe herzuleiten, muss sich die Aggregation der normalen Summe als Reduktion mit <code>REDUCE()</code> veranschaulicht werden (s. <a href="#lst-reduce-sum">Listing&nbsp;<span>11.2</span></a>)</p>
+<div id="lst-reduce-sum" class="listing">
+<p>Listing&nbsp;11.2: Summen-Aggregation</p>
+<pre id="lst-reduce-sum" data-lst-cap="Summen-Aggregation"><code>= REDUCE(0; A2:A100; LAMBDA(accu; wert; accu + wert))</code></pre>
+</div>
+<p>Beim Reduzieren mit <code>REDUCE()</code> muss immer ein Initialwert angegeben werden, dem der zu aggregierende Vektor folgt. Abschliessend wird die Aggregationsfunktion angegeben. Beim Reduzieren wird die Aggregationsfunktion für jeden Wert im Vektor nacheinander ausgeführt. Eine Aggregationsfunktion hat zwei Parameter: Der erste Parameter ist das Ergebnis der Aggregationsfunktion für die vorangegangenden Werte, wobei für den ersten Wert der Initialwert verwendet wird. Der zweite Parameter ist der Wert an einer Position im Vektor.</p>
+<p>In der Praxis ist die Funktion <code>SUMME()</code> dem Reduzieren mit <code>REDUCE()</code> immer vorzuziehen. Für die kumulative Summe fehlt aber eine entsprechende Funktion. Für diese Aggregation kann die Funktion <code>SCAN()</code> anstelle von <code>REDUCE()</code> verwendet werden. <code>SCAN()</code> erzeugt einen Vektor mit den Teilergebnissen einer Aggregationsfunktion. Dieser aggregierte Vektor hat die gleiche Länge wie der ursprüngliche Vektor.</p>
+</section>
 </section>
 <section id="zählen" class="level2" data-number="11.6">
 <h2 data-number="11.6" class="anchored" data-anchor-id="zählen"><span class="header-section-number">11.6</span> Zählen</h2>
+<p>Beim Zählen werden zählbare Einheiten von nicht-zählbaren Einheiten getrennt und die Anzahl der zählbaren Einheiten bestimmt. Die einfachste Form des Zählens ist das Bestimmen der der Länge eines Vektors. Dabei wird die Anzahl der Werte des Vektors <em>gezählt</em>.</p>
+<p>Alle Zählen-Operationen bestehen entsprechend immer aus zwei Schritten:</p>
+<ul>
+<li>Einer Transformation zum Identifizieren der zählbaren Einheiten</li>
+<li>Einer Aggregation zum eigentlichen Zählen.</li>
+</ul>
+<p>Die Funktionen <code>ANZAHL()</code> zählt nur Werte vom Datentyp Zahl. Wahrheitswerte, Zeichenketten, Fehler und leere Zellen werden von dieser Funktion ignoriert. Die Funktion <code>ANZAHL2()</code> zählt die nicht leeren Zellen in einem Bereich unabhängig vom Datentyp. Diese Funktion zählt auch Fehlerwerte mit.</p>
 <section id="zählen-durch-summieren" class="level3" data-number="11.6.1">
 <h3 data-number="11.6.1" class="anchored" data-anchor-id="zählen-durch-summieren"><span class="header-section-number">11.6.1</span> Zählen durch Summieren</h3>
+<p>Beim Zählen durch Summieren werden die zählbaren Elemente eines Vektors mithilfe eines logischen Ausdrucks <strong>transformiert</strong>. Daraus ergibt sich ein Vektor aus Wahrheitswerten. Dieser Vektor wird in einem zweiten Schritt mit der <code>SUMME()</code>-Funktion <strong>aggregiert</strong>.</p>
+<p>Auf diese Weise lassen sich gezielte Häufigkeiten bestimmen.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vektoren, die nur die Werte <code>0</code> und <code>1</code> bzw. <code>FALSCH</code> und <code>WAHR</code> beinhalten, legen das Zählen durch Summieren nahe.</p>
+</div>
+</div>
+<div id="exm-count-sum" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.6 (Zählen durch Summieren) </strong></span>&nbsp;</p>
+<pre><code>= SUMME(data_ab[Punkte] &lt; 100)</code></pre>
+</div>
 </section>
 <section id="zählen-durch-filtern" class="level3" data-number="11.6.2">
 <h3 data-number="11.6.2" class="anchored" data-anchor-id="zählen-durch-filtern"><span class="header-section-number">11.6.2</span> Zählen durch Filtern</h3>
+<p>Beim Zählen durch Filtern werden die zählbaren Einheiten durch eine Filter-Aggregation isoliert. Die Anzahl der zählbaren Einheiten entspricht immer der Länge des gefilterten Vektors.</p>
+<div id="exm-count-sum" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.7 (Zählen durch Filtern) </strong></span>&nbsp;</p>
+<pre><code>= ANZAHL2(FILTER(data_ab[Punkte] &lt; 100))</code></pre>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zählen durch Filtern sollte nur dann eingesetzt werden, wenn der Ergebnisvektor für weitere Operationen benötigt wird. Ist dies nicht der Fall, ist das Zählen durch Summieren effizienter.</p>
+</div>
+</div>
 </section>
 <section id="zählen-durch-nummerieren" class="level3" data-number="11.6.3">
 <h3 data-number="11.6.3" class="anchored" data-anchor-id="zählen-durch-nummerieren"><span class="header-section-number">11.6.3</span> Zählen durch Nummerieren</h3>
+<p>Beim Zählen durch Nummerieren werden die zu zählenden Werte eines Vektors nummeriert. Anschliessend wird der Maximal-Wert der Nummerierung bestimmt. Diese Technik nutzt aus, dass beim Nummerieren im Hintergrund eine Sequenz mit der Schrittweite <code>1</code> verwendet wird. Das letzte zählbare Element hat erhält so automatisch die Anzahl aller Element als Nummer.</p>
+<div id="exm-count-sum" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 11.8 (Zählen durch Nummerieren) </strong></span>&nbsp;</p>
+<pre><code>= MAX(SEQUENZ(ZEILEN(daten_ab[[Punkte]])))</code></pre>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zählen durch Nummerieren sollte nur verwendet werden, wenn die Nummerierung entweder bereits vorliegt oder für weitere Operationen benötigt wird.</p>
+</div>
+</div>
 
 
 </section>
