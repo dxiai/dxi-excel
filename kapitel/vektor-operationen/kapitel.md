@@ -9,7 +9,6 @@ execute:
 
 # Vektoroperationen {#sec-chapter-vektor-operationen}
 
-
 **Vektoren** sind zusammengesetzte Datenstrukturen, die Werte vom gleichen Datentyp darstellen. Vektoren werden in Excel entweder als *Bereiche* (z.B. `A1:A5`), als *Arrays* (z.B. `B1#`) oder als *Tabellenspalten* (z.B. `Tabelle1[[Spalte1]]`) adressiert. 
 
 ::: {.callout-warning}
@@ -63,7 +62,6 @@ Zur Feststellung der Orientierung muss in der Regel nur die erste Bedingung gepr
 Vektoren, auf die mit der Tabellen-Adressierung zugegriffen wird, sind **immer** Spaltenvektoren.
 ::: 
 
-
 ## Konstante Vektoren
 
 Konstante Vektoren sind Vektoren, die als Konstante in einer Formel eingegeben werden und nur konstante Werte enthalten. Ein konstanter Vektor wird durch geschweifte Klammern eingerahmt und kann Zahlen, Zeichenketten, Wahrheits- und Fehlerwerte enthalten (@exm-konstanter-vektor).
@@ -115,7 +113,6 @@ Liegen Werte in Wertepaaren vor, dann können die Werte mit dem Wertezugriff ver
 = ZEILENWAHL(A1:A2; {2; 1})
 ```
 :::
-
 
 ## Sequenzen
 
