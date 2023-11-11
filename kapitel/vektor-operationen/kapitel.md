@@ -24,7 +24,7 @@ Falls der gleiche Datentyp in einem Vektor nicht vorausgesetzt werden kann, müs
 
 ::: {.callout-note}
 ## Merke
-Excel kennt keine abstrakten Vektoren, sondern unterscheidet Zeilen- und Spaltenvektoren.
+Excel kennt keine abstrakten Vektoren, sondern unterscheidet zwischen Zeilen- und Spaltenvektoren.
 :::
 
 ::: {#def-vektor-orientierung}
@@ -60,6 +60,66 @@ Aus den beiden Werten der Funktionen `ZEILEN()` und `SPALTEN()` kann die Orienti
 Zur Feststellung der Orientierung muss in der Regel nur die erste Bedingung geprüft werden.
 ::: 
 
+::: {.callout-note}
+## Merke
+
+Vektoren, auf die mit der Tabellen-Adressierung zugegriffen wird, sind **immer** Spaltenvektoren.
+::: 
+
+
+## Konstante Vektoren
+
+Konstante Vektoren sind Vektoren, die als Konstante in einer Formel eingegeben werden und nur konstante Werte enthalten. Ein konstanter Vektor wird durch geschweifte Klammern eingerahmt und kann Zahlen, Zeichenketten, Wahrheits- und Fehlerwerte enthalten (@exm-konstanter-vektor).
+
+::: {.callout-note}
+## Merke
+
+Konstante Vektoren sind **immer** Spaltenvektoren.
+:::
+
+::: {#exm-konstanter-vektor}
+## Konstanter Zahlenvektor der Länge 3
+```
+= {3; 2; 1}
+```
+:::
+
+Konstante Vektoren dürfen keine Referenzen auf Adressen, Bezeichner, Formeln usw. enthalten (@exm-invalid-const-vector). Ungültige konstante Vektoren erzeugen einen `#WERT!`-Fehler
+
+::: {#exm-invalid-const-vector}
+## Ungültiger konstanter Vektor
+```
+= {1; A2; 3}
+```
+::: 
+
+## Wertezugriff
+
+Der Zugriff auf einzelne Werte erfolgt durch die Funktionen `ZEILENWAHL()` für Spaltenvektoren bzw. `SPALTENWAHL()` für Zeilenvektoren. Der erste Parameter ist immer der Vektor. Mit dem zweiten Parameter wird der Index des gewünschten Werts angegeben. Der zweite Parameter kann als Vektor angegeben werden. In diesem Fall werden alle angegebenen Indizes als Vektor zurückgegeben.
+
+::: {.callout-note}
+## Merke
+Werden mehrere Indizes angegeben, so werden die Werte in der Reihenfolge der angegebenen Indizes zurückgegeben.
+:::
+
+::: {.callout-warning}
+## Achtung
+
+Beim Wertezugriff dürfen nur gültige Indizes verwendet werden. Werden mehrere Indizes angegeben und mindestens einer von ihnen ist ungültig, dann werden keine Werte. In solchen Fällen ist das Ergebnis ein `#WERT!`-Fehler.
+:::
+
+### Rezept: Wertepaare tauschen
+
+Liegen Werte in Wertepaaren vor, dann können die Werte mit dem Wertezugriff vertauscht werden: 
+
+::: {#exm-werte-tauschen}
+## Werte eines Spaltenvektors der Länge 2 vertauschen
+```
+= ZEILENWAHL(A1:A2; {2; 1})
+```
+:::
+
+
 ## Sequenzen
 
 Sequenzen werden mithilfe der Generatorfunktion `SEQUENZ()` erzeugt. Die Funktion hat vier Parameter. Die ersten beiden Parameter der Funktion zeigen die Anzahl der Zeilen und Spalten an, über welche sich die Sequenz erstrecken soll. Der dritte Parameter erwartet den Startwert der Sequenz und mit dem letzten Parameter wird die Schrittweite der Sequenz angegeben. 
@@ -91,6 +151,20 @@ Zwei spezielle Sequenzen sind der Nullvektor und der Einsvektor. In beiden Vekto
 
 Analog zum Einsvektor in @exm-einsvektor-via-sequeny wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert `0` haben muss. 
 
+### Rezept: Vektor umkehren
+
+Die Wertereihenfolge eines beliebigen Vektors kann durch eine umgekehrte Sequenz umgekehrt werden.
+
+::: {#exm-vektorumkehren}
+## Vektorwerte umkehren
+```
+= ZEILENWAHL(
+    A1:A10; 
+    SEQUENZ(ZEILEN(A1:A10); 1; ZEILEN(A1:A10); -1)
+)
+```
+:::
+
 ## Konkatenation
 
 Die Konkatenation verbindet zwei Vektoren zu einem neuen **Vektor**, wobei die Reihenfolge der Werte erhalten bleibt. Deshalb können in Excel nur Vektoren mit gleicher Orientierung konkateniert werden. 
@@ -101,29 +175,118 @@ Die beiden Funktionen `HSTAPELN()` und `VSTAPELN()` prüfen die Orientierung von
 
 ## Transformationen
 
-Das Ergebnis einer Transformationsoperation ist **immer** ein **Vektor** mit der **gleichen Länge** wie der ursprüngliche Vektor.
+Das Ergebnis einer Transformationsoperation ist **immer** ein **Vektor** mit der **gleichen Länge** wie der ursprüngliche Vektor. Dazu wird eine Operation für jeden Wert eines Vektors ausgeführt. 
+
+Typische Funktionen für Transforamtionen sind  beispielsweise: 
+
+- `POTENZ()`
+- `REST()`
+- `NICHT()`
+- `ABS()`
+- `TEIL()`
 
 :::  {.callout-note}
 ## Merke
 Beliebige Transformationen lassen sich mit `MAP()` umsetzen.
 :::
 
-### Skalartransformationen
+### Skalartransformation
 
 Bei Transformationen mit einem Skalar, wird die Transformation für jeden Wert des Vektors und dem Skalar durchgeführt.
 
-### Vektortransformationen
+::: {#exm-skalartransformation}
+## Verdoppeln von Werten durch Skalartransformation
+```
+= 2 * A2:A5
+```
+
+Diese Operation entspricht den folgenden Einzeloperationen.
+
+```
+= 2 * A2
+= 2 * A3
+= 2 * A4
+= 2 * A5
+```
+::: 
+
+### Vektortransformation
+
+Bei der Vektortransformation wird eine Operation paarweise auf die Werte an der gleichen Position von zwei Vektoren angewendet. 
 
 ::: {.callout-note}
 ## Merke
-Damit das Ergebnis einer Vektor-Transformation wieder ein Vektor ist, müssen beide Vektoren die *gleiche Orientierung* haben. D.h. es können nur Zeilenvektoren mit Zeilenvektoren bzw. Spaltenvektoren mit Spaltenvektoren transformiert werden
+Damit das Ergebnis einer Vektor-Transformation in Excel wieder einen Vektor ergibt, müssen beide Vektoren die *gleiche Orientierung* **und** die *gleiche Länge* haben. D.h. es können nur Zeilenvektoren mit Zeilenvektoren bzw. Spaltenvektoren mit Spaltenvektoren transformiert werden
+:::
+
+::: {.callout-note}
+## Merke
+Alle Excel-Operatoren können für Vektortransformationen verwendet werden. 
+:::
+
+::: {#exm-vektortransform-addition}
+## Werte paarweise addieren
+```
+= A1:A5 + B1:B5
+```
+
+Diese Operation entspricht den folgenden Teiloperationen: 
+
+```
+= A1 + B1
+= A2 + B2
+= A3 + B3
+= A4 + B4
+= A5 + B5
+```
 :::
 
 ### Bedingungen als Transformationen
 
-Spezielle Transformationen sind Bedingungen. Dabei wird ein Vektor erzeugt, dessen Werte durch einen oder mehrere logische Ausdrücke bestimmt werden.
+Spezielle Transformationen sind Bedingungen. Dabei wird ein Vektor erzeugt, dessen Werte durch einen oder mehrere logische Ausdrücke bestimmt werden. 
 
+Excel wertet eine Bedingung über Vektoren für jeden Wert des Vektors separat aus. Die Bedingung in @exm-wenn-transform wertet die Bedinung für die Werte an `A2`, `A3`, `A4` und `A5` sowohl im logischen Ausdruck als auch in den Alternativen separat aus. 
 
+::: {#exm-wenn-transform}
+## Bedingte Transformation
+```
+= LET(vektor; A2:A5; WENN( vektor > 200; vektor; -1))
+```
+
+Das entspricht den folgenden Operationen.
+
+```
+= WENN( A2 > 200; A2; -1)
+= WENN( A3 > 200; A3; -1)
+= WENN( A4 > 200; A4; -1)
+= WENN( A5 > 200; A5; -1)
+```
+
+Die Verwendung von `LET()` dient nur zum Verdeutlichen, dass der gleiche Vektor sowohl im logischen Ausdruck als auch in der Option *Falls Wahr* verwendet wird.
+:::
+
+Weil die logischen Funktionen `UND()`, `ODER()` und `XODER()` *Aggregatoren* sind, können sie nicht für Vektortransformationen verwendet werden, sondern **müssen** in Transformationen durch die entsprechenden arithmetischen Operationen ersetzt werden (@exm-wenn-transform-und).
+
+::: {#exm-wenn-transform-und}
+## Bedingte Transformation mit einem mit Und verknüpften logischen Ausdruck
+```
+= LET(vektor; A2:A5; WENN( (vektor > 200)*(vector < 300); vektor; -1))
+```
+
+Die Operation entspricht den folgenden Einzeloperationen: 
+
+```
+= WENN( UND(A2 > 200; A2 < 300); A2; -1)
+= WENN( UND(A3 > 200; A3 < 300); A3; -1)
+= WENN( UND(A4 > 200; A4 < 300); A4; -1)
+= WENN( UND(A5 > 200; A5 < 300); A5; -1)
+```
+:::
+
+::: {.callout-tip}
+## Praxis
+Einzeloperationen über Vektoren sollten in der Praxis **immer** durch die entsprechenden Vektoroperationen ersetzt werden. Nur so lassen sich typische Excel-Fehler systematisch vermeiden und die Reaktionszeit von komplexen Arbeitsmappen deutlich beschleunigen.
+:::
 
 ### Rezept: Beliebige Werte wiederholen
 
@@ -158,7 +321,7 @@ Beliebige Aggregationen lassen sich mit `REDUCE()` umsetzen.
 
 ### Filtern als Aggregation
 
-Das Filtern ist eine spezielle Aggregation, bei der das Ergebnis nur die Werte enthält, auf welche ein logischer Ausdruck zutrifft. Das Ergebnis einer Filter-Operation kann maximal die gleiche Länge haben, wie der zu filternde Vektor. In den meisten Fällen 
+Das Filtern ist eine spezielle Aggregation, bei der das Ergebnis nur die Werte enthält, auf welche ein logischer Ausdruck zutrifft. Das Ergebnis einer Filter-Operation kann maximal die gleiche Länge haben, wie der zu filternde Vektor. Die Aggregationsfunktion zum Filtern wertet den logischen Ausdruck zur Auswahl der Werte aus.
 
 ### Rezept: Laufende Summe
 
@@ -177,6 +340,20 @@ Um die laufende Summe herzuleiten, muss sich die Aggregation der normalen Summe 
 Beim Reduzieren mit `REDUCE()` muss immer ein Initialwert angegeben werden, dem der zu aggregierende Vektor folgt. Abschliessend wird die Aggregationsfunktion angegeben. Beim Reduzieren wird die Aggregationsfunktion für jeden Wert im Vektor nacheinander ausgeführt. Eine Aggregationsfunktion hat zwei Parameter: Der erste Parameter ist das Ergebnis der Aggregationsfunktion für die vorangegangenden Werte, wobei für den ersten Wert der Initialwert verwendet wird. Der zweite Parameter ist der Wert an einer Position im Vektor. 
 
 In der Praxis ist die Funktion `SUMME()` dem Reduzieren mit `REDUCE()` immer vorzuziehen. Für die kumulative Summe fehlt aber eine entsprechende Funktion. Für diese Aggregation kann die Funktion `SCAN()` anstelle von `REDUCE()` verwendet werden. `SCAN()` erzeugt einen Vektor mit den Teilergebnissen einer Aggregationsfunktion. Dieser aggregierte Vektor hat die gleiche Länge wie der ursprüngliche Vektor.
+
+### Kombinierte Transformation und Aggregation
+
+Sehr häufig werden Vektortransformationen und Aggregationen kombiniert. Zur Veranschaulichung dient hier die Subtraktion von zwei Werten in einem Zahlenvektor. Dazu wird ein Vektor der Länge `2` angenommen. Der erste Wert in diesem Vektor soll von dessen zweiten Wert abgezogen werden. Excel hat allerdings keine Funktion zur Subtraktion, sondern nur die Funktion `SUMME()`. Für die Subtraktion müssen die Werte so angepasst werden, dass diese Werte summiert werden können. Dazu wird eine Vektortransformation in Form einer Multiplikation mit dem konstanten Vektor `{-1; 1}` durchgeführt (@lst-vtransform-for-subtraction).
+
+``` {#lst-vtransform-for-subtraction lst-cap="Vorbereitende Vektortransformation"}
+= A1:A2 * {-1; 1}
+```
+
+Nun ist sichergestellt, das der erste Wert vom zweiten Wert abgezogen wird. Hier gilt zu beachten, dass die Subtraktion unabhängig von den Werten definiert wird. Diese Vorbereitung ermöglicht es, den transformierten Vektor als Parameter für die Summenfunktion zu verwenden. Die vollständige Lösung ist in diesem Fall die folgende Excel Formel: 
+
+``` {#lst-vector-subtraction lst-cap="Subtraktion als kombinierte Vektortransformation und Aggregation"}
+= SUMME(A1:A2 * {-1; 1})
+```
 
 ## Zählen
 
