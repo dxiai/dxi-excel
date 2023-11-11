@@ -9,9 +9,6 @@ execute:
 
 # Vektoroperationen {#sec-chapter-vektor-operationen}
 
-::: {.callout-warning}
-## Work in Progress
-:::
 
 **Vektoren** sind zusammengesetzte Datenstrukturen, die Werte vom gleichen Datentyp darstellen. Vektoren werden in Excel entweder als *Bereiche* (z.B. `A1:A5`), als *Arrays* (z.B. `B1#`) oder als *Tabellenspalten* (z.B. `Tabelle1[[Spalte1]]`) adressiert. 
 
