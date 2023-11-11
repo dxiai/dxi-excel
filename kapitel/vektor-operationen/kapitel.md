@@ -149,7 +149,7 @@ Zwei spezielle Sequenzen sind der Nullvektor und der Einsvektor. In beiden Vekto
 ```
 :::
 
-Analog zum Einsvektor in @exm-einsvektor-via-sequeny wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert `0` haben muss. 
+Analog zum Einsvektor in @exm-einsvektor-via-sequenz wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert `0` haben muss. 
 
 ### Rezept: Vektor umkehren
 
