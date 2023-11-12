@@ -88,9 +88,9 @@ Konstante Vektoren dürfen keine Referenzen auf Adressen, Bezeichner, Formeln us
 ```
 ::: 
 
-## Wertezugriff
+## Wertereferenzierung
 
-Der Zugriff auf einzelne Werte erfolgt durch die Funktionen `ZEILENWAHL()` für Spaltenvektoren bzw. `SPALTENWAHL()` für Zeilenvektoren. Der erste Parameter ist immer der Vektor. Mit dem zweiten Parameter wird der Index des gewünschten Werts angegeben. Der zweite Parameter kann als Vektor angegeben werden. In diesem Fall werden alle angegebenen Indizes als Vektor zurückgegeben.
+Die Referenzierung auf einzelne Werte erfolgt durch die Funktionen `ZEILENWAHL()` für Spaltenvektoren bzw. `SPALTENWAHL()` für Zeilenvektoren. Der erste Parameter ist immer der Vektor. Mit dem zweiten Parameter wird der Index des gewünschten Werts angegeben. Der zweite Parameter kann als Vektor angegeben werden. In diesem Fall werden alle angegebenen Indizes als Vektor zurückgegeben.
 
 ::: {.callout-note}
 ## Merke
@@ -100,12 +100,12 @@ Werden mehrere Indizes angegeben, so werden die Werte in der Reihenfolge der ang
 ::: {.callout-warning}
 ## Achtung
 
-Beim Wertezugriff dürfen nur gültige Indizes verwendet werden. Werden mehrere Indizes angegeben und mindestens einer von ihnen ist ungültig, dann werden keine Werte. In solchen Fällen ist das Ergebnis ein `#WERT!`-Fehler.
+Bei der Wertereferenzierung dürfen nur gültige Indizes verwendet werden. Werden mehrere Indizes angegeben und mindestens einer von ihnen ist ungültig, dann werden keine Werte. In solchen Fällen ist das Ergebnis ein `#WERT!`-Fehler.
 :::
 
 ### Rezept: Wertepaare tauschen
 
-Liegen Werte in Wertepaaren vor, dann können die Werte mit dem Wertezugriff vertauscht werden: 
+Liegen Werte in Wertepaaren vor, dann können die Werte mit der Wertereferenzierung vertauscht werden: 
 
 ::: {#exm-werte-tauschen}
 ## Werte eines Spaltenvektors der Länge 2 vertauschen
