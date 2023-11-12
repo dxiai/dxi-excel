@@ -38,7 +38,7 @@ Um Vektoren von der einen zur anderen Orientierung zu überführen, dient die Fu
 ```
 ::: 
 
-## Vektorlänge bestimmen.
+## Vektorlänge
 
 Jeder Vektor hat eine Länge, wobei diese Länge nicht zwingend der Anzahl der Werte entsprechen muss. Deshalb sollte die Länge eines Vektors mit Excel *nicht* mit der Funktion `ANZAHL()` bzw. `ANZAHL2()` bestimmt werden, sondern über die Funktionen `ZEILEN()` und `SPALTEN()`. Der Vorteil dieser beiden Funktionen ist, dass sie die Vektorlänge auch dann korrekt bestimmen, wenn einzelne Werte im Vektor nicht vorhanden sind.
 
