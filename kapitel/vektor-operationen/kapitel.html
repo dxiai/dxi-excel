@@ -264,9 +264,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#vektorlänge-bestimmen." id="toc-vektorlänge-bestimmen." class="nav-link active" data-scroll-target="#vektorlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorlänge bestimmen.</a></li>
+  <li><a href="#vektorlänge" id="toc-vektorlänge" class="nav-link active" data-scroll-target="#vektorlänge"><span class="header-section-number">11.1</span> Vektorlänge</a></li>
   <li><a href="#konstante-vektoren" id="toc-konstante-vektoren" class="nav-link" data-scroll-target="#konstante-vektoren"><span class="header-section-number">11.2</span> Konstante Vektoren</a></li>
-  <li><a href="#wertezugriff" id="toc-wertezugriff" class="nav-link" data-scroll-target="#wertezugriff"><span class="header-section-number">11.3</span> Wertezugriff</a>
+  <li><a href="#wertereferenzierung" id="toc-wertereferenzierung" class="nav-link" data-scroll-target="#wertereferenzierung"><span class="header-section-number">11.3</span> Wertereferenzierung</a>
   <ul class="collapse">
   <li><a href="#rezept-wertepaare-tauschen" id="toc-rezept-wertepaare-tauschen" class="nav-link" data-scroll-target="#rezept-wertepaare-tauschen"><span class="header-section-number">11.3.1</span> Rezept: Wertepaare tauschen</a></li>
   </ul></li>
@@ -354,8 +354,8 @@ Merke
 <p><span class="theorem-title"><strong>Beispiel 11.1 (Erzwingen eines Spaltenvektors) </strong></span>&nbsp;</p>
 <pre><code>= ZUSPALTE(A1:D1)</code></pre>
 </div>
-<section id="vektorlänge-bestimmen." class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="vektorlänge-bestimmen."><span class="header-section-number">11.1</span> Vektorlänge bestimmen.</h2>
+<section id="vektorlänge" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="vektorlänge"><span class="header-section-number">11.1</span> Vektorlänge</h2>
 <p>Jeder Vektor hat eine Länge, wobei diese Länge nicht zwingend der Anzahl der Werte entsprechen muss. Deshalb sollte die Länge eines Vektors mit Excel <em>nicht</em> mit der Funktion <code>ANZAHL()</code> bzw. <code>ANZAHL2()</code> bestimmt werden, sondern über die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code>. Der Vorteil dieser beiden Funktionen ist, dass sie die Vektorlänge auch dann korrekt bestimmen, wenn einzelne Werte im Vektor nicht vorhanden sind.</p>
 <p>Die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code> geben die Anzahl der Zeilen respektive Spalten für den übergebenen Bereich zurück. Für einen Spaltenvektor gibt die Funktion <code>ZEILEN()</code> die Länge des Vektors zurück und die Funktion <code>SPALTEN()</code> hat den Wert <code>1</code>. Die Funktion <code>SPALTEN()</code> gibt die Vektorlänge von Zeilenvektoren zurück. Entsprechend hat in diesem Fall die Funktion <code>ZEILEN()</code> immer den Wert <code>1</code> als Ergebnis.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -425,9 +425,9 @@ Merke
 <pre><code>= {1; A2; 3}</code></pre>
 </div>
 </section>
-<section id="wertezugriff" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="wertezugriff"><span class="header-section-number">11.3</span> Wertezugriff</h2>
-<p>Der Zugriff auf einzelne Werte erfolgt durch die Funktionen <code>ZEILENWAHL()</code> für Spaltenvektoren bzw. <code>SPALTENWAHL()</code> für Zeilenvektoren. Der erste Parameter ist immer der Vektor. Mit dem zweiten Parameter wird der Index des gewünschten Werts angegeben. Der zweite Parameter kann als Vektor angegeben werden. In diesem Fall werden alle angegebenen Indizes als Vektor zurückgegeben.</p>
+<section id="wertereferenzierung" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="wertereferenzierung"><span class="header-section-number">11.3</span> Wertereferenzierung</h2>
+<p>Die Referenzierung auf einzelne Werte erfolgt durch die Funktionen <code>ZEILENWAHL()</code> für Spaltenvektoren bzw. <code>SPALTENWAHL()</code> für Zeilenvektoren. Der erste Parameter ist immer der Vektor. Mit dem zweiten Parameter wird der Index des gewünschten Werts angegeben. Der zweite Parameter kann als Vektor angegeben werden. In diesem Fall werden alle angegebenen Indizes als Vektor zurückgegeben.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -451,12 +451,12 @@ Achtung
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Beim Wertezugriff dürfen nur gültige Indizes verwendet werden. Werden mehrere Indizes angegeben und mindestens einer von ihnen ist ungültig, dann werden keine Werte. In solchen Fällen ist das Ergebnis ein <code>#WERT!</code>-Fehler.</p>
+<p>Bei der Wertereferenzierung dürfen nur gültige Indizes verwendet werden. Werden mehrere Indizes angegeben und mindestens einer von ihnen ist ungültig, dann werden keine Werte. In solchen Fällen ist das Ergebnis ein <code>#WERT!</code>-Fehler.</p>
 </div>
 </div>
 <section id="rezept-wertepaare-tauschen" class="level3" data-number="11.3.1">
 <h3 data-number="11.3.1" class="anchored" data-anchor-id="rezept-wertepaare-tauschen"><span class="header-section-number">11.3.1</span> Rezept: Wertepaare tauschen</h3>
-<p>Liegen Werte in Wertepaaren vor, dann können die Werte mit dem Wertezugriff vertauscht werden:</p>
+<p>Liegen Werte in Wertepaaren vor, dann können die Werte mit der Wertereferenzierung vertauscht werden:</p>
 <div id="exm-werte-tauschen" class="theorem example">
 <p><span class="theorem-title"><strong>Beispiel 11.4 (Werte eines Spaltenvektors der Länge 2 vertauschen) </strong></span>&nbsp;</p>
 <pre><code>= ZEILENWAHL(A1:A2; {2; 1})</code></pre>
