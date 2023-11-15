@@ -336,74 +336,88 @@
     "text": "11.8 Zählen\nBeim Zählen werden zählbare Einheiten von nicht-zählbaren Einheiten getrennt und die Anzahl der zählbaren Einheiten bestimmt. Die einfachste Form des Zählens ist das Bestimmen der der Länge eines Vektors. Dabei wird die Anzahl der Werte des Vektors gezählt.\nAlle Zählen-Operationen bestehen entsprechend immer aus zwei Schritten:\n\nEiner Transformation zum Identifizieren der zählbaren Einheiten\nEiner Aggregation zum eigentlichen Zählen.\n\nDie Funktionen ANZAHL() zählt nur Werte vom Datentyp Zahl. Wahrheitswerte, Zeichenketten, Fehler und leere Zellen werden von dieser Funktion ignoriert. Die Funktion ANZAHL2() zählt die nicht leeren Zellen in einem Bereich unabhängig vom Datentyp. Diese Funktion zählt auch Fehlerwerte mit.\n\n11.8.1 Zählen durch Summieren\nBeim Zählen durch Summieren werden die zählbaren Elemente eines Vektors mithilfe eines logischen Ausdrucks transformiert. Daraus ergibt sich ein Vektor aus Wahrheitswerten. Dieser Vektor wird in einem zweiten Schritt mit der SUMME()-Funktion aggregiert.\nAuf diese Weise lassen sich gezielte Häufigkeiten bestimmen.\n\n\n\n\n\n\nMerke\n\n\n\nVektoren, die nur die Werte 0 und 1 bzw. FALSCH und WAHR beinhalten, legen das Zählen durch Summieren nahe.\n\n\n\nBeispiel 11.14 (Zählen durch Summieren)  \n= SUMME(data_ab[Punkte] &lt; 100)\n\n\n\n11.8.2 Zählen durch Filtern\nBeim Zählen durch Filtern werden die zählbaren Einheiten durch eine Filter-Aggregation isoliert. Die Anzahl der zählbaren Einheiten entspricht immer der Länge des gefilterten Vektors.\n\nBeispiel 11.15 (Zählen durch Filtern)  \n= ANZAHL2(FILTER(data_ab[Punkte] &lt; 100))\n\n\n\n\n\n\n\nMerke\n\n\n\nZählen durch Filtern sollte nur dann eingesetzt werden, wenn der Ergebnisvektor für weitere Operationen benötigt wird. Ist dies nicht der Fall, ist das Zählen durch Summieren effizienter.\n\n\n\n\n11.8.3 Zählen durch Nummerieren\nBeim Zählen durch Nummerieren werden die zu zählenden Werte eines Vektors nummeriert. Anschliessend wird der Maximal-Wert der Nummerierung bestimmt. Diese Technik nutzt aus, dass beim Nummerieren im Hintergrund eine Sequenz mit der Schrittweite 1 verwendet wird. Das letzte zählbare Element hat erhält so automatisch die Anzahl aller Element als Nummer.\n\nBeispiel 11.16 (Zählen durch Nummerieren)  \n= MAX(SEQUENZ(ZEILEN(daten_ab[[Punkte]])))\n\n\n\n\n\n\n\nMerke\n\n\n\nZählen durch Nummerieren sollte nur verwendet werden, wenn die Nummerierung entweder bereits vorliegt oder für weitere Operationen benötigt wird."
   },
   {
-    "objectID": "kapitel/matrix-operationen/kapitel.html#vektorform-einer-matrix",
-    "href": "kapitel/matrix-operationen/kapitel.html#vektorform-einer-matrix",
+    "objectID": "kapitel/matrix-operationen/kapitel.html#matrizen-erstellen",
+    "href": "kapitel/matrix-operationen/kapitel.html#matrizen-erstellen",
     "title": "12  Matrix-Operationen",
-    "section": "12.1 Vektorform einer Matrix",
-    "text": "12.1 Vektorform einer Matrix\nZUSPALTE()\nZUZEILE()"
+    "section": "12.1 Matrizen erstellen",
+    "text": "12.1 Matrizen erstellen\nIn Excel können Matrizen auf drei Arten erstellt werden.\n\nDurch direkte Eingabe\nDurch eine Operation mit einem Zeilen und einem Spaltenvektor.\nErzeugen durch eine Generatorfunktion\n\nBei der direkten Eingabe werden die Werte direkt in einen Bereich in Excel eingegeben. Am einfachsten wird dazu der Bereich der Matrix mit der Maus markiert und anschliessend werden die Werte eingegeben und mit der Eingabetaste oder der Tabulatortaste bestätigt. Excel bewegt die Markierung für die aktive Zelle im markierten Bereich automatisch an die nächste freie Position: Wird mit der Eingabetaste bestätigt, dann bewegt Excel die Eingabemarkierung spaltensweise durch den markierten Bereich. Wird die Eingabe mit der Tabulatortaste bestätigt, dann bewegt Excel die Eingabemarkierung zeilenweise durch den markierten Bereich.\nJede Transformation mit einem Spalten- und einem Zeilenvektor erzeugt in Excel eine Matrix. Dabei werden die Werte über Kreuz ausgewertet, so dass jede Position der Matrix einer paarweisen Operation entspricht. Die dimensionalität der so erzeugten Matrix ist immer die Zeilenanzahl des Spaltenvektors und die Spaltenanzahl des Zeilenvektors.\n\n\n\n\n\n\nMerke\n\n\n\nOperationen über einem Spalten- und einem Zeilenvektor entsprechen dem äusseren Produkt. Das äussere Produkt ist in Excel nur für Vektoren definiert!\n\n\nMit den beiden Generatorfunktionen SEQUENZ() und ZUFALLSMATRIX() lassen sich Werte in matrizenartigen Bereichen erzeugen. Dazu wird die gewünschte Zeilen- und Spaltenanzahl als die ersten beiden Argumente übergeben. Die beiden Funktionen füllen anschliessend den angegebenen Bereich mit Werten."
+  },
+  {
+    "objectID": "kapitel/matrix-operationen/kapitel.html#matrixdimensionen",
+    "href": "kapitel/matrix-operationen/kapitel.html#matrixdimensionen",
+    "title": "12  Matrix-Operationen",
+    "section": "12.2 Matrixdimensionen",
+    "text": "12.2 Matrixdimensionen\nDie Dimensionen einer Matrix ergibt sich aus den Funktionen ZEILEN() und SPALTEN(). Beide Werte müssen getrennt bestimmt werden."
+  },
+  {
+    "objectID": "kapitel/matrix-operationen/kapitel.html#matrixwerte-referenzieren",
+    "href": "kapitel/matrix-operationen/kapitel.html#matrixwerte-referenzieren",
+    "title": "12  Matrix-Operationen",
+    "section": "12.3 Matrixwerte referenzieren",
+    "text": "12.3 Matrixwerte referenzieren\nDie Werte einer Matrix werden mit der Funktion INDEX() referenziert. Diese Funktion hat drei Parameter.\n\nDie Matrix\nDie Zeilennummer des gesuchten Werts\nDie Spaltennummern der gesuchten Werts.\n\nFür die Zeilen- und die Spaltennummer können Vektoren angegeben werden, um mehrere Werte auf einmal zu referenzieren.\nUm eine ganze Spalte- bzw. Zeile zu referezieren sollten die Funktionen SPALTENWAHL() bzw. ZEILENWAHL() eingesetzt werden."
+  },
+  {
+    "objectID": "kapitel/matrix-operationen/kapitel.html#vektorform",
+    "href": "kapitel/matrix-operationen/kapitel.html#vektorform",
+    "title": "12  Matrix-Operationen",
+    "section": "12.4 Vektorform",
+    "text": "12.4 Vektorform\nDie Vektorform einer Matrix wird in Excel durch die Funktionen ZUSPALTE() bzw. ZUZEILE() erzeugt. Die beiden Funktionen unterscheiden sich nur durch die Orientierung des Ergebnisvektors. Die zeilenweise Vektorform wird standardmässig von beiden Funktionen erzeugt. Um eine spaltenweise Vektorform zu erhalten, kann der dritte Parameter scan_by_column auf WAHR gesetzt werden."
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#matrizen-vergleichen",
     "href": "kapitel/matrix-operationen/kapitel.html#matrizen-vergleichen",
     "title": "12  Matrix-Operationen",
-    "section": "12.2 Matrizen vergleichen",
-    "text": "12.2 Matrizen vergleichen\n= UND(Matrix1!A1# = Matrix2!A1#)"
+    "section": "12.5 Matrizen vergleichen",
+    "text": "12.5 Matrizen vergleichen\n= UND(\n    ZEILEN(Matrix1!A1#) = ZEILEN(Matrix2!A1#); \n    SPALTEN(Matrix1!A1#) = SPALTEN(Matrix2!A1#); \n    Matrix1!A1# = Matrix2!A1#\n)"
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#einheitsmatrix-erzeugen",
     "href": "kapitel/matrix-operationen/kapitel.html#einheitsmatrix-erzeugen",
     "title": "12  Matrix-Operationen",
-    "section": "12.3 Einheitsmatrix erzeugen",
-    "text": "12.3 Einheitsmatrix erzeugen\nDie Funktion MEINHEIT() erzeugt also immer eine quadratische Einheitsmatrix.\n\nBeispiel 12.1 (Einheitsmatrix der Grösse 5)  \n= MEINHEIT(5)"
+    "section": "12.6 Einheitsmatrix erzeugen",
+    "text": "12.6 Einheitsmatrix erzeugen\nDie Funktion MEINHEIT() erzeugt immer eine quadratische Einheitsmatrix.\n\nBeispiel 12.1 (Einheitsmatrix der Grösse 5)  \n= MEINHEIT(5)"
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#matrizen-transponieren",
     "href": "kapitel/matrix-operationen/kapitel.html#matrizen-transponieren",
     "title": "12  Matrix-Operationen",
-    "section": "12.4 Matrizen Transponieren",
-    "text": "12.4 Matrizen Transponieren\nMTRANS()"
+    "section": "12.7 Matrizen Transponieren",
+    "text": "12.7 Matrizen Transponieren\nMatrizen werden mit der Funktion MTRANS() transponiert. Dabei werden die Zeilen- und Spaltenindizes getauscht.\n\nBeispiel 12.2  \n= MTRANS(Matrix1!A1#)"
   },
   {
-    "objectID": "kapitel/matrix-operationen/kapitel.html#matrixaddition",
-    "href": "kapitel/matrix-operationen/kapitel.html#matrixaddition",
+    "objectID": "kapitel/matrix-operationen/kapitel.html#paarweise-operationen",
+    "href": "kapitel/matrix-operationen/kapitel.html#paarweise-operationen",
     "title": "12  Matrix-Operationen",
-    "section": "12.5 Matrixaddition",
-    "text": "12.5 Matrixaddition"
+    "section": "12.8 Paarweise Operationen",
+    "text": "12.8 Paarweise Operationen"
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#vektoraddition",
     "href": "kapitel/matrix-operationen/kapitel.html#vektoraddition",
     "title": "12  Matrix-Operationen",
-    "section": "12.6 Vektoraddition",
-    "text": "12.6 Vektoraddition"
+    "section": "12.9 Vektoraddition",
+    "text": "12.9 Vektoraddition"
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#skalarmultiplikation",
     "href": "kapitel/matrix-operationen/kapitel.html#skalarmultiplikation",
     "title": "12  Matrix-Operationen",
-    "section": "12.7 Skalarmultiplikation",
-    "text": "12.7 Skalarmultiplikation"
+    "section": "12.10 Skalarmultiplikation",
+    "text": "12.10 Skalarmultiplikation"
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#matrixmultiplikationkreuzprodukt",
     "href": "kapitel/matrix-operationen/kapitel.html#matrixmultiplikationkreuzprodukt",
     "title": "12  Matrix-Operationen",
-    "section": "12.8 Matrixmultiplikation/Kreuzprodukt",
-    "text": "12.8 Matrixmultiplikation/Kreuzprodukt\nMMULT()\n\n12.8.1 Inverse Matrix\nMINV()\n\n\n12.8.2 Zeilen- und Spaltensummen"
-  },
-  {
-    "objectID": "kapitel/matrix-operationen/kapitel.html#äusseres-vektorprodukt",
-    "href": "kapitel/matrix-operationen/kapitel.html#äusseres-vektorprodukt",
-    "title": "12  Matrix-Operationen",
-    "section": "12.9 Äusseres Vektorprodukt",
-    "text": "12.9 Äusseres Vektorprodukt\n\n12.9.1 Dreieckmatrizen erzeugen\n\n\n12.9.2 Vorgänger- und Nachfolgersummen"
+    "section": "12.11 Matrixmultiplikation/Kreuzprodukt",
+    "text": "12.11 Matrixmultiplikation/Kreuzprodukt\nMMULT()\n\n12.11.1 Inverse Matrix\nMINV()\n\n\n12.11.2 Determinante\nMDET()\n\n\n12.11.3 Zeilen- und Spaltensummen\n\n\n12.11.4 Dreieckmatrizen erzeugen\n\n\n12.11.5 Vorgänger- und Nachfolgersummen"
   },
   {
     "objectID": "kapitel/matrix-operationen/kapitel.html#co-occurence-matrizen",
     "href": "kapitel/matrix-operationen/kapitel.html#co-occurence-matrizen",
     "title": "12  Matrix-Operationen",
-    "section": "12.10 Co-Occurence Matrizen",
-    "text": "12.10 Co-Occurence Matrizen"
+    "section": "12.12 Co-Occurence Matrizen",
+    "text": "12.12 Co-Occurence Matrizen"
   },
   {
     "objectID": "kapitel/kodieren-gruppieren/kapitel.html#indizieren",
