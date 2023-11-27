@@ -62,6 +62,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -269,20 +285,27 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#matrixwerte-referenzieren" id="toc-matrixwerte-referenzieren" class="nav-link" data-scroll-target="#matrixwerte-referenzieren"><span class="header-section-number">12.3</span> Matrixwerte referenzieren</a></li>
   <li><a href="#vektorform" id="toc-vektorform" class="nav-link" data-scroll-target="#vektorform"><span class="header-section-number">12.4</span> Vektorform</a></li>
   <li><a href="#matrizen-vergleichen" id="toc-matrizen-vergleichen" class="nav-link" data-scroll-target="#matrizen-vergleichen"><span class="header-section-number">12.5</span> Matrizen vergleichen</a></li>
-  <li><a href="#einheitsmatrix-erzeugen" id="toc-einheitsmatrix-erzeugen" class="nav-link" data-scroll-target="#einheitsmatrix-erzeugen"><span class="header-section-number">12.6</span> Einheitsmatrix erzeugen</a></li>
-  <li><a href="#matrizen-transponieren" id="toc-matrizen-transponieren" class="nav-link" data-scroll-target="#matrizen-transponieren"><span class="header-section-number">12.7</span> Matrizen Transponieren</a></li>
-  <li><a href="#paarweise-operationen" id="toc-paarweise-operationen" class="nav-link" data-scroll-target="#paarweise-operationen"><span class="header-section-number">12.8</span> Paarweise Operationen</a></li>
-  <li><a href="#vektoraddition" id="toc-vektoraddition" class="nav-link" data-scroll-target="#vektoraddition"><span class="header-section-number">12.9</span> Vektoraddition</a></li>
-  <li><a href="#skalarmultiplikation" id="toc-skalarmultiplikation" class="nav-link" data-scroll-target="#skalarmultiplikation"><span class="header-section-number">12.10</span> Skalarmultiplikation</a></li>
-  <li><a href="#matrixmultiplikationkreuzprodukt" id="toc-matrixmultiplikationkreuzprodukt" class="nav-link" data-scroll-target="#matrixmultiplikationkreuzprodukt"><span class="header-section-number">12.11</span> Matrixmultiplikation/Kreuzprodukt</a>
+  <li><a href="#matrix-operationen" id="toc-matrix-operationen" class="nav-link" data-scroll-target="#matrix-operationen"><span class="header-section-number">12.6</span> Matrix Operationen</a>
   <ul class="collapse">
-  <li><a href="#inverse-matrix" id="toc-inverse-matrix" class="nav-link" data-scroll-target="#inverse-matrix"><span class="header-section-number">12.11.1</span> Inverse Matrix</a></li>
-  <li><a href="#determinante" id="toc-determinante" class="nav-link" data-scroll-target="#determinante"><span class="header-section-number">12.11.2</span> Determinante</a></li>
-  <li><a href="#zeilen--und-spaltensummen" id="toc-zeilen--und-spaltensummen" class="nav-link" data-scroll-target="#zeilen--und-spaltensummen"><span class="header-section-number">12.11.3</span> Zeilen- und Spaltensummen</a></li>
-  <li><a href="#dreieckmatrizen-erzeugen" id="toc-dreieckmatrizen-erzeugen" class="nav-link" data-scroll-target="#dreieckmatrizen-erzeugen"><span class="header-section-number">12.11.4</span> Dreieckmatrizen erzeugen</a></li>
-  <li><a href="#vorgänger--und-nachfolgersummen" id="toc-vorgänger--und-nachfolgersummen" class="nav-link" data-scroll-target="#vorgänger--und-nachfolgersummen"><span class="header-section-number">12.11.5</span> Vorgänger- und Nachfolgersummen</a></li>
+  <li><a href="#matrizen-transponieren" id="toc-matrizen-transponieren" class="nav-link" data-scroll-target="#matrizen-transponieren"><span class="header-section-number">12.6.1</span> Matrizen Transponieren</a></li>
+  <li><a href="#sec-vektoroperationen" id="toc-sec-vektoroperationen" class="nav-link" data-scroll-target="#sec-vektoroperationen"><span class="header-section-number">12.6.2</span> Skalar- und Vektoroperationen</a></li>
+  <li><a href="#kreuzproduktmatrixprodukt" id="toc-kreuzproduktmatrixprodukt" class="nav-link" data-scroll-target="#kreuzproduktmatrixprodukt"><span class="header-section-number">12.6.3</span> Kreuzprodukt/Matrixprodukt</a></li>
+  <li><a href="#sec-äusseres-produkt" id="toc-sec-äusseres-produkt" class="nav-link" data-scroll-target="#sec-äusseres-produkt"><span class="header-section-number">12.6.4</span> Das äussere Produkt</a></li>
+  <li><a href="#sec-paarweise-operationen" id="toc-sec-paarweise-operationen" class="nav-link" data-scroll-target="#sec-paarweise-operationen"><span class="header-section-number">12.6.5</span> Paarweise Operationen</a></li>
   </ul></li>
-  <li><a href="#co-occurence-matrizen" id="toc-co-occurence-matrizen" class="nav-link" data-scroll-target="#co-occurence-matrizen"><span class="header-section-number">12.12</span> Co-Occurence Matrizen</a></li>
+  <li><a href="#mathematische-hilfsoperationen" id="toc-mathematische-hilfsoperationen" class="nav-link" data-scroll-target="#mathematische-hilfsoperationen"><span class="header-section-number">12.7</span> Mathematische Hilfsoperationen</a>
+  <ul class="collapse">
+  <li><a href="#identitätsmatrix-erzeugen" id="toc-identitätsmatrix-erzeugen" class="nav-link" data-scroll-target="#identitätsmatrix-erzeugen"><span class="header-section-number">12.7.1</span> Identitätsmatrix erzeugen</a></li>
+  <li><a href="#determinante" id="toc-determinante" class="nav-link" data-scroll-target="#determinante"><span class="header-section-number">12.7.2</span> Determinante</a></li>
+  <li><a href="#inverse-matrix" id="toc-inverse-matrix" class="nav-link" data-scroll-target="#inverse-matrix"><span class="header-section-number">12.7.3</span> Inverse Matrix</a></li>
+  </ul></li>
+  <li><a href="#rezepte" id="toc-rezepte" class="nav-link" data-scroll-target="#rezepte"><span class="header-section-number">12.8</span> Rezepte</a>
+  <ul class="collapse">
+  <li><a href="#sec-zeilensummen" id="toc-sec-zeilensummen" class="nav-link" data-scroll-target="#sec-zeilensummen"><span class="header-section-number">12.8.1</span> Zeilen- und Spaltensummen</a></li>
+  <li><a href="#sec-triangle-matrix" id="toc-sec-triangle-matrix" class="nav-link" data-scroll-target="#sec-triangle-matrix"><span class="header-section-number">12.8.2</span> Dreieckmatrizen erzeugen</a></li>
+  <li><a href="#sec-cumsum" id="toc-sec-cumsum" class="nav-link" data-scroll-target="#sec-cumsum"><span class="header-section-number">12.8.3</span> Kumulative Summe</a></li>
+  <li><a href="#sec-table-matrix" id="toc-sec-table-matrix" class="nav-link" data-scroll-target="#sec-table-matrix"><span class="header-section-number">12.8.4</span> Co-Occurence Matrizen</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
     </div>
@@ -306,19 +329,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Work in Progress
-</div>
-</div>
-<div class="callout-body-container callout-body">
-
-</div>
-</div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -338,11 +348,17 @@ Merke
 <p>In Excel können Matrizen auf drei Arten erstellt werden.</p>
 <ol type="1">
 <li>Durch direkte Eingabe</li>
-<li>Durch eine Operation mit einem Zeilen und einem Spaltenvektor.</li>
+<li>Durch das Überführen aus der Vektorform</li>
+<li>Durch eine Operation mit einem Zeilen und einem Spaltenvektors</li>
 <li>Erzeugen durch eine Generatorfunktion</li>
 </ol>
 <p>Bei der direkten Eingabe werden die Werte direkt in einen Bereich in Excel eingegeben. Am einfachsten wird dazu der Bereich der Matrix mit der Maus markiert und anschliessend werden die Werte eingegeben und mit der Eingabetaste oder der Tabulatortaste bestätigt. Excel bewegt die Markierung für die aktive Zelle im markierten Bereich automatisch an die nächste freie Position: Wird mit der Eingabetaste bestätigt, dann bewegt Excel die Eingabemarkierung <em>spaltensweise</em> durch den markierten Bereich. Wird die Eingabe mit der Tabulatortaste bestätigt, dann bewegt Excel die Eingabemarkierung <em>zeilenweise</em> durch den markierten Bereich.</p>
-<p>Jede Transformation mit einem Spalten- und einem Zeilenvektor erzeugt in Excel eine Matrix. Dabei werden die Werte über Kreuz ausgewertet, so dass jede Position der Matrix einer paarweisen Operation entspricht. Die dimensionalität der so erzeugten Matrix ist immer die Zeilenanzahl des Spaltenvektors und die Spaltenanzahl des Zeilenvektors.</p>
+<p>Liegt eine <em>Vektorform</em> einer Matrix vor, dann kann sie mit den Funktionen <code>ZEILENUMBRUCH()</code> oder <code>SPALTENUMBRUCH()</code> in eine Matrix mit einer festen Spalten- bzw. Zeilenzahl erzeugt werden. Neben dem Ausgangsvektor erwarten diese Funktionen die Länge einer Zeile bzw. einer Spalte. Damit ein Vektor in eine Matrix konvertiert werden kann, muss die Länge des Vektors durch die Zeilen- bzw. Spaltenlänge teilbar sein. Erfüllt ein Vektor dieses Kriterium nicht, dann füllt Excel die Positionen bis zur vollständigen Zeile bzw. Spalte mit dem Wert <code>#NV</code> auf.</p>
+<div id="exm-zeilenumbruch-matrix-gen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.1 (Matrix aus einer Sequenz erzeugen) </strong></span>&nbsp;</p>
+<pre><code>=ZEILENUMBRUCH(SEQUENZ(12); 3)</code></pre>
+</div>
+<p>Jede Transformation mit einem Spalten- und einem Zeilenvektor erzeugt in Excel eine Matrix (s. <a href="#sec-äusseres-produkt">Abschnitt&nbsp;<span>12.6.4</span></a>). Dabei werden die Werte über Kreuz ausgewertet, so dass jede Position der Matrix einer paarweisen Operation entspricht. Die dimensionalität der so erzeugten Matrix ist immer die Zeilenanzahl des Spaltenvektors und die Spaltenanzahl des Zeilenvektors.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -367,74 +383,390 @@ Merke
 <p>Die Werte einer Matrix werden mit der Funktion <code>INDEX()</code> referenziert. Diese Funktion hat drei Parameter.</p>
 <ol type="1">
 <li>Die Matrix</li>
-<li>Die Zeilennummer des gesuchten Werts</li>
-<li>Die Spaltennummern der gesuchten Werts.</li>
+<li>Der Zeilenindex des gesuchten Werts</li>
+<li>Der Spaltenindex der gesuchten Werts.</li>
 </ol>
-<p>Für die Zeilen- und die Spaltennummer können Vektoren angegeben werden, um mehrere Werte auf einmal zu referenzieren.</p>
-<p>Um eine ganze Spalte- bzw. Zeile zu referezieren sollten die Funktionen <code>SPALTENWAHL()</code> bzw. <code>ZEILENWAHL()</code> eingesetzt werden.</p>
+<p>Für den Zeilen- und den Spaltenindex können Vektoren angegeben werden, um mehrere Werte auf einmal zu referenzieren.</p>
+<blockquote class="blockquote">
+<div id="exm-index-with-vectors" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.2 (Werte der Matrix Diagonalen referenzieren) </strong></span>&nbsp;</p>
+<pre><code>= INDEX(A1:D4; SEQUENZ(4); SEQUENZ(4))</code></pre>
+<p>Weil diese Operation die gleiche Sequenz zwei Mal erzeugt, lässt sie sich mit <code>LET()</code> vereinfachen.</p>
+<pre><code>=LET(
+    diagonalenIndex; SEQUENZ(4);
+    INDEX(A1:D4; diagonalenIndex; diagonalenIndex)
+)</code></pre>
+</div>
+</blockquote>
+<p>Um einzelne Spalten bzw. Zeilen zu referezieren sollten die Funktionen <code>SPALTENWAHL()</code> bzw. <code>ZEILENWAHL()</code> verwendet werden, weil sie nur einen Indexwert benötigen.</p>
 </section>
 <section id="vektorform" class="level2" data-number="12.4">
 <h2 data-number="12.4" class="anchored" data-anchor-id="vektorform"><span class="header-section-number">12.4</span> Vektorform</h2>
 <p>Die Vektorform einer Matrix wird in Excel durch die Funktionen <code>ZUSPALTE()</code> bzw. <code>ZUZEILE()</code> erzeugt. Die beiden Funktionen unterscheiden sich nur durch die Orientierung des Ergebnisvektors. Die zeilenweise Vektorform wird standardmässig von beiden Funktionen erzeugt. Um eine spaltenweise Vektorform zu erhalten, kann der dritte Parameter <code>scan_by_column</code> auf <code>WAHR</code> gesetzt werden.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Enthält eine Matrix fehlende Werte, die durch den Fehlerwert <code>#NV</code> markiert sind, lassen sich diese in der Vektorform direkt entfernen, indem der zweite Parameter auf <code>2</code> (Fehlerwerte ignorieren) bzw. <code>3</code> (Leere Zellen und Fehlerwerte ignorieren) gesetzt wird.</p>
+<p>Dabei muss beachtet werden, sich die Matrix anschliessend nicht mehr aus dem Vektor reproduzieren lässt.</p>
+</div>
+</div>
 </section>
 <section id="matrizen-vergleichen" class="level2" data-number="12.5">
 <h2 data-number="12.5" class="anchored" data-anchor-id="matrizen-vergleichen"><span class="header-section-number">12.5</span> Matrizen vergleichen</h2>
-<pre><code>= UND(
-    ZEILEN(Matrix1!A1#) = ZEILEN(Matrix2!A1#); 
-    SPALTEN(Matrix1!A1#) = SPALTEN(Matrix2!A1#); 
-    Matrix1!A1# = Matrix2!A1#
+<p>Zwei Matrizen sind genau dann gleich, wenn sie gleiche Anzahl von Zeilen und Spalten sowie an jedem Index den gleichen Wert haben. Intuitiv bietet sich der paarweise Vergleich der Indizes an. Existieren nicht alle Indizes in der jeweils anderen Matrix, füllt Excel die fehlenden Indizes mit einem Fehler auf. Das führt dazu, dass die logische Verknüpfung in diesen Fällen einen Fehler zurückgibt. Deshalb ist es notwendig, dass zusätzlich gprüft wird, ob das Ergebnis dieser Operation einen Fehlerwert ergibt (<a href="#exm-matrizen-vergleichen">Beispiel&nbsp;<span>12.3</span></a>).</p>
+<div id="exm-matrizen-vergleichen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.3 (Formel zum Vergleich von zwei Matrizen) </strong></span>&nbsp;</p>
+<pre><code>= WENNFEHLER(
+    UND(
+        Matrix1!A1# = Matrix2!A1#
+    );
+    FALSCH
 )</code></pre>
-</section>
-<section id="einheitsmatrix-erzeugen" class="level2" data-number="12.6">
-<h2 data-number="12.6" class="anchored" data-anchor-id="einheitsmatrix-erzeugen"><span class="header-section-number">12.6</span> Einheitsmatrix erzeugen</h2>
-<p>Die Funktion <code>MEINHEIT()</code> erzeugt immer eine quadratische Einheitsmatrix.</p>
-<div id="exm-einheitsmatrix" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 12.1 (Einheitsmatrix der Grösse 5) </strong></span>&nbsp;</p>
-<pre><code>= MEINHEIT(5)</code></pre>
+</div>
+<p>Ein zweiter praktischer Vergleich ist das Überprüfen einer quadratischen Matrix. Dabei wir nur eine Matrix geprüft. Weil die Werte in diesem Fall keine Bedeutung haben ist die Formel sehr einfach (<a href="#exm-quadratische-matrix-prüfen">Beispiel&nbsp;<span>12.4</span></a>).</p>
+<div id="exm-quadratische-matrix-prüfen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.4 (Überprüfen einer quadratischen Matrix) </strong></span>&nbsp;</p>
+<pre><code>= ZEILEN(Matrix1!a1#) = SPALTEN(Matrix1!A1#);</code></pre>
 </div>
 </section>
-<section id="matrizen-transponieren" class="level2" data-number="12.7">
-<h2 data-number="12.7" class="anchored" data-anchor-id="matrizen-transponieren"><span class="header-section-number">12.7</span> Matrizen Transponieren</h2>
+<section id="matrix-operationen" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="matrix-operationen"><span class="header-section-number">12.6</span> Matrix Operationen</h2>
+<section id="matrizen-transponieren" class="level3" data-number="12.6.1">
+<h3 data-number="12.6.1" class="anchored" data-anchor-id="matrizen-transponieren"><span class="header-section-number">12.6.1</span> Matrizen Transponieren</h3>
 <p>Matrizen werden mit der Funktion <code>MTRANS()</code> transponiert. Dabei werden die Zeilen- und Spaltenindizes getauscht.</p>
 <div id="exm-matrix-transponieren" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 12.2 </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.5 (Eine Matrix transponieren) </strong></span>&nbsp;</p>
 <pre><code>= MTRANS(Matrix1!A1#)</code></pre>
 </div>
 </section>
-<section id="paarweise-operationen" class="level2" data-number="12.8">
-<h2 data-number="12.8" class="anchored" data-anchor-id="paarweise-operationen"><span class="header-section-number">12.8</span> Paarweise Operationen</h2>
+<section id="sec-vektoroperationen" class="level3" data-number="12.6.2">
+<h3 data-number="12.6.2" class="anchored" data-anchor-id="sec-vektoroperationen"><span class="header-section-number">12.6.2</span> Skalar- und Vektoroperationen</h3>
+<p>Alle Skalaroperationen werden von Excel wie erwartet ausgeführt: die Operation wird mit dem Skalar für jeden Wert der Matrix ausgeführt.</p>
+<p>Bei Vektoroperationen ist die Orientierung des Vektors für das Verhalten der Operation bestimmend.</p>
+<ul>
+<li>Spaltenvektoren werden spaltenweise mit der Matrix verknüpft. Dabei werden die Werte mit dem jeweils gleichen Zeilenindex zusammengefasst.</li>
+<li>Zeilenvektoren werden zeilenweise mit der Matrix verknüpft. Dabei werden die Werte mit dem jeweils gleichen Spaltenindex zusammengefasst.</li>
+</ul>
+<blockquote class="blockquote">
+<div id="exm-vektoroperationen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.6 (Orientierung bei der Verknüpfung eines Vektors und einer Matrix.) </strong></span>&nbsp;</p>
+<pre><code>= SEQUENZ(4) + SEQUENZ(4; 4)</code></pre>
+<p>Obwohl die folgende Opeartion sehr ähnlich aussieht, hat sie ein anderes Ergebnis.</p>
+<pre><code>= SEQUENZ(1; 4) + SEQUENZ(4; 4)</code></pre>
+</div>
+</blockquote>
+<p>In beiden Fällen gilt, dass der Vektor genauso viele Zeilen bzw. Spalten haben muss, wie die verknüpfte Matrix, so dass für die Verknüpfungsoperation beide Operanden vorhanden sind. Fehlt einer der Operanden, dann ist die Verknüpfung für diesen Index <em>nicht definiert</em>, so dass Excel für diese Positionen einen <code>#NV</code>-Fehler erzeugt.</p>
+<div id="def-partielle-verknüpfung" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 12.1 </strong></span>Excel führt eine <strong>unvollständige</strong> bzw. <strong>partielle Vektoroperation</strong> durch, wenn nicht alle Indizes entweder im Vektor oder in der Matrix vorhanden sind.</p>
+</div>
+<div id="exm-unvollständige-vektoroperationen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.7 (Orientierung bei der Verknüpfung eines Vektors und einer Matrix.) </strong></span>&nbsp;</p>
+<pre><code>= SEQUENZ(5) + SEQUENZ(4; 4)</code></pre>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für Skalar- und Vektoroperationen sind nur Operatoren und Funktionen zulässig, die einen <strong>Skalar</strong> zum Ergebnis haben. Grundsätzlich sind alle Arithmetischen und Vergleichsoperatoren sowie der Textketten-Operator <code>&amp;</code> für Skalar- und Vektoroperationen geeignet.</p>
+<p><strong>Manche</strong> Operationen erzeugen einen Fehler, andere geben bei überschüssigen Werten den jeweils ersten Index aus.</p>
+</div>
+</div>
 </section>
-<section id="vektoraddition" class="level2" data-number="12.9">
-<h2 data-number="12.9" class="anchored" data-anchor-id="vektoraddition"><span class="header-section-number">12.9</span> Vektoraddition</h2>
+<section id="kreuzproduktmatrixprodukt" class="level3" data-number="12.6.3">
+<h3 data-number="12.6.3" class="anchored" data-anchor-id="kreuzproduktmatrixprodukt"><span class="header-section-number">12.6.3</span> Kreuzprodukt/Matrixprodukt</h3>
+<p>Das Kreuzprodukt (oder <em>innere Matrixprodukt</em>) ist die Entsprechung zur Multiplikation von zwei Skalaren. Diese Operation wird in Excel durch die Funktion <code>MMULT()</code> ausgeführt. Das Kreuzprodukt ist nicht transitiv. Deshalb ist die Reihenfolge der Operanden wichtig, denn für das Kreuzprodukt muss die Spaltenlänge der linken Matrix mit der Zeilenlänge der rechten Matrix übereinstimmen. Ist diese Bedinung nicht gegeben, dann erzeugt Excel einen <code>#WERT!</code>-Fehler.</p>
+<p>Das Ergebnis des Kreuzprodukts ist eine Matrix mit der Zeilenlänge der linken und der Spaltenlänge der rechten Matrix.</p>
+<p>Weil das Kreuzprodukt die Summe mit der Multiplikation verbindet, ergeben sich interessante Vereinfachungen, wenn die Werte einer Matrix nur die Werte <code>0</code> und <code>1</code> sind (s. <a href="#sec-zeilensummen"><span>Kapitel&nbsp;12.8.1</span></a> und <a href="#sec-cumsum"><span>Kapitel&nbsp;12.8.3</span></a>).</p>
+<blockquote class="blockquote">
+<div id="exm-summenprodukt" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.8 (Die Funktion <code>SUMMENPRODUKT()</code> als Kreuzprodukt) </strong></span>Die Funktion <code>SUMMENPRODUKT()</code> zwischen zwei Vektoren lässt sich auch als Kreuzprodukt formulieren:</p>
+<pre><code>= MMULT(SEQUENZ(1;4); SEQUENZ(4))</code></pre>
+<p>Das Ergebnis dieser Operation ist eine <span class="math inline">1 \times 1</span>-Matrix (bzw. ein Skalar), weil die linke Matrix nur eine Zeile und die rechte Matrix nur eine Spalte hat.</p>
+</div>
+</blockquote>
 </section>
-<section id="skalarmultiplikation" class="level2" data-number="12.10">
-<h2 data-number="12.10" class="anchored" data-anchor-id="skalarmultiplikation"><span class="header-section-number">12.10</span> Skalarmultiplikation</h2>
+<section id="sec-äusseres-produkt" class="level3" data-number="12.6.4">
+<h3 data-number="12.6.4" class="anchored" data-anchor-id="sec-äusseres-produkt"><span class="header-section-number">12.6.4</span> Das äussere Produkt</h3>
+<p>In Excel ist das äussere Produkt nur für Vektoren (bzw. <code>1,n</code>- oder <code>m,1</code>-Matrizen) definiert. Dabei müssen die Vektoren unterschiedliche Orientierungen haben. Das Ergebnis ist dann eine <span class="math inline">m \times n</span>-Matrix, wobei <span class="math inline">m</span> die Länge des Spaltenvektors und <span class="math inline">n</span> die Länge des Zeilenvektors ist.</p>
+<div id="exm-äusseres-vektorprodukt" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.9 (Multiplikationstabelle für das kleine Einmaleins erstellen) </strong></span>&nbsp;</p>
+<pre><code>= SEQUENZ(10) * SEQUENZ(1;10)</code></pre>
+</div>
+<p>Das äusser Produkt ist nicht auf die Multiplikation beschränkt, sondern für beliebige Operationen, wobei die Operation einen <em>Skalar</em> zum Ergebnis haben muss. Dieser Wert wird am Kreuzungsindex der Ergebnismatrix eingesetzt.</p>
+<p>Diese Eigenschaft wird dazu ausgenutzt, um Matrizen mit speziellen Eigenschaften zu konstruieren (<a href="#sec-triangle-matrix">Abschnitt&nbsp;<span>12.8.2</span></a>).</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Werden beliebige Matrizen auf die gleiche Weise verknüpft, führt Excel eine paarweise Verknüpfung aus, die für alle nicht exisiterenden Index-Paare den Fehlerwert <code>#NV</code> erzeugt (<a href="#sec-paarweise-operationen">Abschnitt&nbsp;<span>12.6.5</span></a>).</p>
+</div>
+</div>
+<p>Wird ein Vergleich als Operator für das äussere Produkt verwendet, dann ist das Ergebnis der Operation ein Wahrheitswert. Um diesen Wahrheitswert in eine Zahl umzuwandeln, muss eine arithmetische Operation nachgereiht werden. Hierzu ist die Multiplikation mit <code>1</code> oder die Addition mit <code>0</code> üblich.</p>
+<div id="exm-äusseres-produkt-vergleich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.10 (Äusseres Produkt zum Erzeugen einer Dreiecksmatrix) </strong></span>&nbsp;</p>
+<pre><code>= 1 * (SEQUENZ(4) &lt;= SEQUENZ(1;4))</code></pre>
+</div>
 </section>
-<section id="matrixmultiplikationkreuzprodukt" class="level2" data-number="12.11">
-<h2 data-number="12.11" class="anchored" data-anchor-id="matrixmultiplikationkreuzprodukt"><span class="header-section-number">12.11</span> Matrixmultiplikation/Kreuzprodukt</h2>
-<p><code>MMULT()</code></p>
-<section id="inverse-matrix" class="level3" data-number="12.11.1">
-<h3 data-number="12.11.1" class="anchored" data-anchor-id="inverse-matrix"><span class="header-section-number">12.11.1</span> Inverse Matrix</h3>
-<p><code>MINV()</code></p>
-</section>
-<section id="determinante" class="level3" data-number="12.11.2">
-<h3 data-number="12.11.2" class="anchored" data-anchor-id="determinante"><span class="header-section-number">12.11.2</span> Determinante</h3>
-<p><code>MDET()</code></p>
-</section>
-<section id="zeilen--und-spaltensummen" class="level3" data-number="12.11.3">
-<h3 data-number="12.11.3" class="anchored" data-anchor-id="zeilen--und-spaltensummen"><span class="header-section-number">12.11.3</span> Zeilen- und Spaltensummen</h3>
-</section>
-<section id="dreieckmatrizen-erzeugen" class="level3" data-number="12.11.4">
-<h3 data-number="12.11.4" class="anchored" data-anchor-id="dreieckmatrizen-erzeugen"><span class="header-section-number">12.11.4</span> Dreieckmatrizen erzeugen</h3>
-</section>
-<section id="vorgänger--und-nachfolgersummen" class="level3" data-number="12.11.5">
-<h3 data-number="12.11.5" class="anchored" data-anchor-id="vorgänger--und-nachfolgersummen"><span class="header-section-number">12.11.5</span> Vorgänger- und Nachfolgersummen</h3>
+<section id="sec-paarweise-operationen" class="level3" data-number="12.6.5">
+<h3 data-number="12.6.5" class="anchored" data-anchor-id="sec-paarweise-operationen"><span class="header-section-number">12.6.5</span> Paarweise Operationen</h3>
+<p>Werden beliebige Matrizen miteinander verknüft, dann führt Excel eine paarweise Verknüpfung aus. D.h. ein Operator oder eine Funktion wird paarweise für die Werte mit den gleichen Indizes ausgeführt. Dabei handelt es sich um eine Verallgemeinerung der Vektoroperation (<a href="#sec-vektoroperationen">Abschnitt&nbsp;<span>12.6.2</span></a>), wobei wie auch bei den Vektoroperationen die Operation nur ausgeführt werden kann, wenn für beide Operanden in der jeweiligen Matrix ein Wert existiert.</p>
+<p>Bei paarweisen Operationen mit zwei Matrizen müssen beide Matrizen die gleichen Dimensionen haben. Ist diese Bedingung nicht gegeben, führt Excel eine <em>partielle Verknüpfung</em> (<a href="#def-partielle-verknüpfung">Definition&nbsp;<span>12.1</span></a>) aus.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Zwischen den paarweisen Operationen und dem äusseren Produkt besteht kein Zusammenhang. Für Vektoren bzw. <span class="math inline">1 \times n</span>-Matrizen führt Excel immer das äussere Produkt aus, für alle anderen Matrizen paarweise Operationen.</p>
+</div>
+</div>
 </section>
 </section>
-<section id="co-occurence-matrizen" class="level2" data-number="12.12">
-<h2 data-number="12.12" class="anchored" data-anchor-id="co-occurence-matrizen"><span class="header-section-number">12.12</span> Co-Occurence Matrizen</h2>
+<section id="mathematische-hilfsoperationen" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="mathematische-hilfsoperationen"><span class="header-section-number">12.7</span> Mathematische Hilfsoperationen</h2>
+<p>Neben den bereits vorgestellten Operationen verfügt Excel über drei weitere Funktionen für <strong><em>quadratische Matrizen</em></strong>.</p>
+<ul>
+<li><code>MEINHEIT()</code></li>
+<li><code>MINV()</code></li>
+<li><code>MDET()</code></li>
+</ul>
+<section id="identitätsmatrix-erzeugen" class="level3" data-number="12.7.1">
+<h3 data-number="12.7.1" class="anchored" data-anchor-id="identitätsmatrix-erzeugen"><span class="header-section-number">12.7.1</span> Identitätsmatrix erzeugen</h3>
+<p>Die Funktion <code>MEINHEIT()</code> erzeugt eine Identitätsmatrix mit der angegebenen Zeilen-/Spaltenanzahl. Die Identitätsmatrix ist eine quadratische Diagonalmatrix mit den Wert <code>1</code> entlang der Diagonalen und dem Wert <code>0</code> an allen anderen Positionen.</p>
+<div id="exm-einheitsmatrix" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.11 (Einheitsmatrix der Grösse 5) </strong></span>&nbsp;</p>
+<pre><code>= MEINHEIT(5)</code></pre>
+</div>
+</section>
+<section id="determinante" class="level3" data-number="12.7.2">
+<h3 data-number="12.7.2" class="anchored" data-anchor-id="determinante"><span class="header-section-number">12.7.2</span> Determinante</h3>
+<p>Eine wichtige Kennzahl für quadratische Matrizen ist die Determinante. Sie wird mit der Funktion <code>MDET()</code> berechnet.</p>
+<div id="exm-determinante-seqmatrix" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.12 (Bestimmung der Determinante einer Matrix) </strong></span>&nbsp;</p>
+<pre><code>=MDET(SPALTENUMBRUCH(SEQUENZ))</code></pre>
+</div>
+</section>
+<section id="inverse-matrix" class="level3" data-number="12.7.3">
+<h3 data-number="12.7.3" class="anchored" data-anchor-id="inverse-matrix"><span class="header-section-number">12.7.3</span> Inverse Matrix</h3>
+<p>Für viele Berechnungen ist die Inverse <span class="math inline">A^{-1}</span> einer quadratischen Matrix <span class="math inline">A</span> notwendig. Falls eine Matrix invertierbar ist, gibt die Funktion <code>MINV()</code> die Inverse zurück. Diese Funktion löst die Gleichung <span class="math inline">A \times A^{-1} = I</span> und bestimmt die Inverse Matrix <span class="math inline">A^{-1}</span>.</p>
+<div id="exm-inverse-matrix" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.13 (Inverse einer <span class="math inline">4 \times 4</span>-Matrix) </strong></span>&nbsp;</p>
+<pre><code>=MINV(
+    ZEILENUMBRUCH(
+        SEQUENZ(16);
+        4
+    )
+)</code></pre>
+</div>
+<p>Ist die Matrix nicht invertierbar, dann gibt die Funktion den Fehler <code>#ZAHL!</code> zurück. In diesem Fall ist die Determinante gleich <code>0</code>.</p>
+<div id="exm-inverse-matrix" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 12.14 (Nicht-invertiertbare <span class="math inline">4 \times 4</span>-Matrix) </strong></span>&nbsp;</p>
+<pre><code>=MINV(
+    SPALTENUMBRUCH(
+        SEQUENZ(16);
+        4
+    )
+)</code></pre>
+</div>
+<p>Wird der Funktion keine quadratische Matrix übergeben, dann hat diese Funktion einen <code>#WERT!</code> zum Ergebnis.</p>
+</section>
+</section>
+<section id="rezepte" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="rezepte"><span class="header-section-number">12.8</span> Rezepte</h2>
+<p>Die folgenden Rezepte Nutzen das Kreuzprodukt und das äussere Produkt.</p>
+<section id="sec-zeilensummen" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="sec-zeilensummen"><span class="header-section-number">12.8.1</span> Zeilen- und Spaltensummen</h3>
+<p>Es sollen die Summen für jede Zeile einer Matrix (oder Tabelle) berechnet werden und das Ergebnis soll ein Vektor sein.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Für die Excel-Formeln wird angenommen, dass eine Matrix an der Adresse <code>M1</code> vektorisiert vorliegt. In der Praxis muss den entsprechenden Parametern die korrekte Adresse der Matrix übergeben werden.</p>
+</div>
+</div>
+<section id="lösung" class="level4" data-number="12.8.1.1">
+<h4 data-number="12.8.1.1" class="anchored" data-anchor-id="lösung"><span class="header-section-number">12.8.1.1</span> Lösung</h4>
+<pre class="excel"><code>= MMULT(M1#; SEQUENZ(SPALTEN(M1#);1;1;0))</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Diese Operation ist bei der Arbeit mit Excel wichtig, weil diese Operation in Excel effizienter ist, als zeilenweise Aggregationen über vektorisierte oder nicht-verktorisierte Daten.</p>
+</div>
+</div>
+</section>
+<section id="erklärung" class="level4" data-number="12.8.1.2">
+<h4 data-number="12.8.1.2" class="anchored" data-anchor-id="erklärung"><span class="header-section-number">12.8.1.2</span> Erklärung</h4>
+<p>Um Zeilensummen für eine Matrix zu erstellen, nutzen wir die Eigenschaften des Kreuzprodukts aus und multiplizieren eine Matrix mit dem Einsvektor. Das Ergebnis dieser Operation ist ein Vektor, der in jeder Zeile die Summe der Werte aus der entsprechenden Zeile der Matrix enthält.</p>
+<p>Das Kreuzprodukt ist nur für Matrizen definiert, wenn die erste (linke) Matrix <span class="math inline">A</span> gleich viele Spalten hat, wie die Zeilenanzahl der zweiten (rechten) Matrix <span class="math inline">B</span>. Die Ergebnismatrix des Kreuzprodukts hat gleich viele Zeilen, wie die erste Matrix und gleich viele Spalten wie die zweite. Für jede Position <span class="math inline">c_{ij}</span> der Ergebnismatrix <span class="math inline">C</span> gilt dann die folgende Formel:</p>
+<p><span class="math display">
+c_{ij} = \sum^n_{k=1}{a_{ik}b_{kj}}
+</span></p>
+<p>Um die Zeilensummen einer Matrix <span class="math inline">A</span> zu erhalten, müssen wir die Matrix <span class="math inline">B</span> entsprechend konstruieren.</p>
+<ol type="1">
+<li>Matrix <span class="math inline">B</span> darf nur eine Spalte haben, damit die Ergebnismatrix nur eine Spalte hat.</li>
+<li>Matrix <span class="math inline">B</span> darf die Werte in Matrix <span class="math inline">A</span> nicht verändern.</li>
+<li>Matrix <span class="math inline">B</span> muss gleich viele Zeilen haben, wie Matrix <span class="math inline">A</span> Spalten hat.</li>
+</ol>
+<p>Diese Anforderungen 1 und 2 werden durch den Einsvektor mit <code>n</code>-Zeilen erfüllt. Dabei nutzen wir aus, dass ein Spaltenvektor das gleiche wie eine Matrix mit einer Spalte ist.</p>
+<p>Die Anforderungen 3 können wir über die Spaltenzahl der Matrix bestimmen und erstellen dann einen Einsvektor mit entsprechender Zeilenanzahl.</p>
+<p>Daraus ergibt sich für den Einsvektor <span class="math inline">v_e</span> und der Matrix an Adresse <code>M1</code> die Formel:</p>
+<pre><code>=SEQUENZ(SPALTEN(M1#); 1; 1; 0)</code></pre>
+<p>Weil der Einsvektor an jeder Position das neutrale Element der Multiplikation enthält, vereinfacht sich die Formel für das Kreuzprodukt stark:</p>
+<p><span class="math display">
+c_{i1} = \sum^n_{k=1}{a_{ik}}
+</span></p>
+<p>Bei dieser Formel ist zu beachten, dass die 1 in <span class="math inline">c_{i1}</span> für die einzige Spalte des Einsvektors steht und i für die Zeilen in der Matrix A. Daraus wird deutlich, dass wir nun die Zeilensummen für die Matrix A erhalten.</p>
+<p>Der Einsvektor muss bei dieser Operation als die rechte Matrix eingesetzt werden, sodass gilt:</p>
+<p><span class="math display">
+A \times v_e
+</span></p>
+<p>Als Excel-Formel wird das wie folgt ausgedrückt:</p>
+<pre><code>=MMULT(M1#; SEQUENZ(SPALTEN(M1#); 1; 1; 0))</code></pre>
+<p>Aus dieser Lösung lässt sich auch die Spaltensumme ableiten: Für die Spaltensumme muss das neutrale Element der Multiplikation in die erste Matrix wandern. Dazu wird ein <em>Zeilenvektor</em> erstellt und mit diesem das Kreuzprodukt mit der Matrix gebildet. Weil in diesem Fall die Spaltensumme gebildet werden soll, kommen die Werte für die Spalten aus der rechten Matrix. Deshalb müssen wir das Kreuzprodukt wie folgt bilden:</p>
+<p><span class="math display">
+v_e \times B
+</span></p>
+<p>Daraus ergibt sich die folgende Excel-Formel:</p>
+<pre class="excel"><code>= MMULT(SEQUENZ(1; ZEILEN(M1#); 1; 0); M1#)</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei der Zeilen- und Spaltensumme handelt es sich um ein sogenanntes <em>Muster</em>, dass an verschiedenen Stellen verwendet werden kann. Ein <em>Muster</em> ist im Kern eine <em>Funktion</em>, die <em>parametrisiert</em> werden kann.</p>
+</div>
+</div>
+<p>Wir können dieses Muster mit der Funktion <code>LET()</code> (<a href="https://moodle.zhaw.ch/mod/page/view.php?id=544755">zum Exkurs über die <code>LET()</code>-Funktion</a>) so anpassen, dass wir den Bereich für unsere Matrix nur einmal anpassen müssen.</p>
+<p>Daraus ergeben sich die folgenden Excel-Formeln:</p>
+<ul>
+<li>Zeilensumme: <code>= LET(Matrix; M1#; MMULT(Matrix; SEQUENZ(SPALTEN(Matrix); 1; 1; 0)))</code></li>
+<li>Spaltensumme: <code>= LET(Matrix; M1#; MMULT(SEQUENZ(1; ZEILEN(Matrix); 1; 0); Matrix))</code></li>
+</ul>
+</section>
+</section>
+<section id="sec-triangle-matrix" class="level3" data-number="12.8.2">
+<h3 data-number="12.8.2" class="anchored" data-anchor-id="sec-triangle-matrix"><span class="header-section-number">12.8.2</span> Dreieckmatrizen erzeugen</h3>
+<p>Es soll eine quadratische Dreiecksmatrix mit <span class="math inline">n</span>-Zeilen erzeugt werden.</p>
+<section id="lösung-1" class="level4" data-number="12.8.2.1">
+<h4 data-number="12.8.2.1" class="anchored" data-anchor-id="lösung-1"><span class="header-section-number">12.8.2.1</span> Lösung</h4>
+<p>Die Anzahl der Zeilen befindet sich in diesem Beispiel an Adresse <code>A1</code>.</p>
+<p>Obere Dreiecksmatrix</p>
+<pre><code>= 1 * (SEQUENZ(A#) &lt;= SEQUENZ(1; A1#))</code></pre>
+<p>Untere Dreiecksmatrix</p>
+<pre><code>= 1 * (SEQUENZ(A#) &gt;= SEQUENZ(1; A1#))</code></pre>
+</section>
+<section id="erklärung-1" class="level4" data-number="12.8.2.2">
+<h4 data-number="12.8.2.2" class="anchored" data-anchor-id="erklärung-1"><span class="header-section-number">12.8.2.2</span> Erklärung</h4>
+<p>Bei einer Dreiecksmatrix steht unterhalb bzw. oberhalb der Diagonalen der Wert 1 und sonst der Wert <code>0</code>. Gelegentlich (wie in der obigen Lösung) wird die Diagonale zu den mit <code>1</code> belegten Positionen hinzugezählt.</p>
+<p>Die Lösung nutzt aus, dass Excel bei unterschiedlich orientierten Vektoren das äussere Produkt bildet und so eine Matrix erzeugt. Die Basis für diese Operation bilden zwei Sequenzen, die über kreuz verglichen werden.</p>
+<p>Die Sequenzen können dabei als Nummerierungen der Matrixpositionen verstanden werden. Der Vergleich ergibt jeweils bis zur Diagonalen <code>FALSCH</code> und ab der Diagonalen <code>WAHR</code>, weil die Nummerierung der Positionen ab der Diagonalen <em>gleich</em> ist.</p>
+<p>Die Multiplikation mit <code>1</code> ist notwendig, damit die Matrix Zahlen und keine Wahrheitswerte enthält.</p>
+</section>
+</section>
+<section id="sec-cumsum" class="level3" data-number="12.8.3">
+<h3 data-number="12.8.3" class="anchored" data-anchor-id="sec-cumsum"><span class="header-section-number">12.8.3</span> Kumulative Summe</h3>
+<p>Es soll die kumulative Summe eines Vektors gebildet werden.</p>
+<section id="lösung-2" class="level4" data-number="12.8.3.1">
+<h4 data-number="12.8.3.1" class="anchored" data-anchor-id="lösung-2"><span class="header-section-number">12.8.3.1</span> Lösung</h4>
+<p>Für Spaltenvektoren:</p>
+<pre><code>=LET(
+    VLAENGE; ZEILEN(A1#); 
+    MMULT(
+        A1#; 
+        1 * (SEQUENZ(VLAENGE) &gt;= SEQUENZ(1; VLAENGE))
+    )
+)</code></pre>
+<p>Für Zeilenvektoren:</p>
+<pre><code>=LET(
+    HLAENGE; SPALTEN(A1#); 
+    MMULT( 
+        1 * (SEQUENZ(HLAENGE) &lt;= SEQUENZ(1; HLAENGE));
+        A1#
+    )
+)</code></pre>
+</section>
+<section id="erklärung-2" class="level4" data-number="12.8.3.2">
+<h4 data-number="12.8.3.2" class="anchored" data-anchor-id="erklärung-2"><span class="header-section-number">12.8.3.2</span> Erklärung</h4>
+<p>Die kumulative Summe dreht die Logik der Zeilen- bzw. Spaltensumme um. In diesem Fall wird eine Matrix erzeugt, die für jede Position im Vektor anzeigt, welche Vektorwerte summiert werden sollen. Entsprechend darf diese Matrix nur die Werte <code>0</code> oder <code>1</code> enthalten, da die Werte im Ausgangsvektor nicht verändert werden dürfen.</p>
+<p>Für die kumulative Summe müssen alle Werte bis und mit der aktuellen Position summiert werden. Eine Dreiecksmatrix leistet genau diesen Zweck: Für Spaltenvektoren zeigt die untere Dreickesmatrix zeilenweise an, welche Positionen für die kumulative Summe berücksichtigt werden müssen.</p>
+<p>Weil die Diagonale der Dreiecksmatrix die gleiche Länge hat wie der Ausgangsvektor, ist sichergestellt, dass der Ergebnisvektor die gleiche Länge wie der Ausgangsvektor hat.</p>
+<p>Dieser Trick funktioniert nur, wenn die das neutrale Element der Multiplikation in der Dreiecksmatrix verwendet wird.</p>
+</section>
+</section>
+<section id="sec-table-matrix" class="level3" data-number="12.8.4">
+<h3 data-number="12.8.4" class="anchored" data-anchor-id="sec-table-matrix"><span class="header-section-number">12.8.4</span> Co-Occurence Matrizen</h3>
+<p>Es sollen die gemeinsam auftretenden Werte in zwei <strong>diskretskalierten Vektoren</strong> gezählt werden und in einer <em>Kreuztabelle</em> gegenübergestellt werden.</p>
+<section id="lösung-3" class="level4" data-number="12.8.4.1">
+<h4 data-number="12.8.4.1" class="anchored" data-anchor-id="lösung-3"><span class="header-section-number">12.8.4.1</span> Lösung</h4>
+<p>Für Spaltenvektoren:</p>
+<pre><code>=MMULT(
+    1 * (EINDEUTIG(A1#) = MTRANS(A1#)); 
+    1 * (MTRANS(EINDEUTIG(B1#)) = B1#)
+)</code></pre>
+</section>
+<section id="erklärung-3" class="level4" data-number="12.8.4.2">
+<h4 data-number="12.8.4.2" class="anchored" data-anchor-id="erklärung-3"><span class="header-section-number">12.8.4.2</span> Erklärung</h4>
+<p>Im ersten Schritt werden für jeden Vektor separat die Positionen der eindeutigen Werte in einer Matrix markiert. Die eindeutigen Werte sind die Werte vorkommenden Werte des Wertebereichs. Diese Werte werden mit der Funktion <code>EINDEUTIG()</code> bestimmt. Das Ergebnis des ersten Schritts ist eine Matrix, die nur die Werte <code>1</code> und <code>0</code> enthält. Der Wert <code>1</code> ist an der Position gesetzt, an der ein Wert des Wertebeichs im Ausgangsvektor gefunden wurde.Dazu dient die folgende Formel:</p>
+<pre><code>= 1 * (EINDEUTIG(A1#) = MTRANS(A1#))</code></pre>
+<p>Diese Formel lässt sich auf beide Ausgangsvektoren anwenden. Dadurch ergeben zwei Matrizen mit gleich vielen Spalten, die nur die Werte <code>1</code> und <code>0</code> enthalten.</p>
+<p>Damit die gemeinsamen Vorkommnisse gezählt werden, wird das Kreuzprodukt verwendet. Dabei wird ausgenutzt, dass das Kreuzprodukt die Produkte der Zeilen- und Spaltenwerte summiert. Weil beide Matrizen nur die Werte <code>0</code> und <code>1</code> enthalten, entspricht diese Operation dem <em>Zählen durch Summieren</em>.</p>
+<p>Diese Operation zählt nur das gemeinsame Auftreten, weil in beiden Matrizen sichergestellt ist, dass in jeder Spalte genau eine <code>1</code> vorkommt, werden nur die Werte an den gleichen Positionen in den Ausgangsvektoren gezählt.</p>
+<p>Damit dieser Trick funktioniert, muss eine der beiden Matrizen transponiert werden, bevor das Kreuzprodukt gebildet werden kann. Daraus ergibt sich die folgende Formel.</p>
+<pre><code>= MMULT(
+    1 * (EINDEUTIG(A1#) = MTRANS(A1#));
+    MTRANS(1 * (EINDEUTIG(B1#) = MTRANS(B1#)))
+)</code></pre>
+<p>An dieser Formel ist wenig elegant, dass für den zweiten Parameter zwei Mal transponiert wird. Dieser Teilterm lässt sich dadurch vereinfachen, indem die zweite Transponierung bereits bei der Erzeugung der Matrix vorweggenommen wird, denn es gilt:</p>
+<pre><code>MTRANS(1 * (EINDEUTIG(B1#) = MTRANS(B1#)))</code></pre>
+<p><em>ist equivalent mit</em></p>
+<pre><code>1 * (MTRANS(EINDEUTIG(B1#)) = B1#)</code></pre>
+<p>Wird diese Vereinfachung in die obige Formel eingesetzt, dann ergibt sich die Formel der Lösung.</p>
+<p>Das Ergebnis ist eine sog. Kontingenztabelle, die die Häufigkeiten der gemeinsam auftretenden Werte anzeigt.</p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
