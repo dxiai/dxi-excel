@@ -417,21 +417,35 @@
     "href": "kapitel/daten-beschreiben/kapitel.html#universelle-kennwerte",
     "title": "15  Daten beschreiben",
     "section": "15.1 Universelle Kennwerte",
-    "text": "15.1 Universelle Kennwerte"
+    "text": "15.1 Universelle Kennwerte\nDie universellen Kennwerte von Datenrahmen werden mit Excel auf die Gleicheweise bestimmt, wie die Dimensionen einer Matrix (s. Kapitel 12):\nEs werden die Zeilen und Spalten der Daten bestimmt. Beim Stichprobenumfang müssen ggf. ungültige Datensätzte gefiltert werden. Hierzu hilft meist ein Sekundärindex, mit dem die gültigen Datensätze markiert werden."
+  },
+  {
+    "objectID": "kapitel/daten-beschreiben/kapitel.html#variablenumfänge",
+    "href": "kapitel/daten-beschreiben/kapitel.html#variablenumfänge",
+    "title": "15  Daten beschreiben",
+    "section": "15.2 Variablenumfänge",
+    "text": "15.2 Variablenumfänge\nDie Variablenumfänge ist durch die Anzahl der gültigen Werte gegeben. Die Funktion ANZAHL() ignoriert sowohl die leeren Zellen als auch Fehlerwerte, Wahrheitswerte und Zeichenketten. Sie eignet sich damit zur Bestimmung des Variablenumfangs für Zahlenvektoren.\nFür alle anderen Vektoren bietet sich die Funktion ANZAHL2() an. Diese Funktion ignoriert jedoch keine Fehlerwerte. Deshalb müssen für Zeichenkettenvektoren fehlenden Werte, die mit #NV markiert wurden, gefiltert werden, bevor der Vektorumfang bestimmt wird."
+  },
+  {
+    "objectID": "kapitel/daten-beschreiben/kapitel.html#ungültige-werte-entfernen",
+    "href": "kapitel/daten-beschreiben/kapitel.html#ungültige-werte-entfernen",
+    "title": "15  Daten beschreiben",
+    "section": "15.3 Ungültige Werte entfernen",
+    "text": "15.3 Ungültige Werte entfernen\nWird diese Operation über mehrere Adressen verteilt, wandelt Excel die leeren Zellen in den Wert 0 um. Deshalb müssen zuerst alle leeren Zellen und anschliessend alle Fehlerwerte gefiltert werden.\n\nBeispiel 15.1 (Entfernen ungültiger Werte)  \n= FILTER(\n    Tabelle[Vektor]; \n    NICHT(ISTLEER(Tabelle[Vektor]) + ISTFEHLER(Tabelle[Vektor]))\n)\n\nErst über diese bereinigten Daten darf der Vektorumfang bestimmt werden. Weil durch das Entfernen der ungültigen Werte die Vektorlänge identisch mit dem Vektorumfang ist, kann der Vektorumfang auch mittels der Funktion ZEILEN() bzw. SPALTEN() bestimmt werden.\nIst der Datentyp eines Vektors festgelegt, dann lässt sich das Filtern ungültiger Werte stark vereinfachen. Dazu wird die Typenerkennung mit der entsprechenden IST-Funktion als Filter eingesetzt.\n\nBeispiel 15.2 (Entfernen ungültiger Werte durch erzwingen des Datentyps Zeichenkette)  \n= FILTER(\n    Tabelle[Vektor]; \n    ISTTEXT(Tabelle[Vektor])\n)\n\nDiese Strategie hat den Vorteil, dass auch alle Werte mit falschen Datentyp als ungültig erkannt und entfernt werden.\n\n\n\n\n\n\nMerke\n\n\n\nUngültige Werte müssen auch für alle Lagemasse entfernt werden."
   },
   {
     "objectID": "kapitel/daten-beschreiben/kapitel.html#lagemasse",
     "href": "kapitel/daten-beschreiben/kapitel.html#lagemasse",
     "title": "15  Daten beschreiben",
-    "section": "15.2 Lagemasse",
-    "text": "15.2 Lagemasse\n\n15.2.1 Modus\n\n\n15.2.2 Median\n### Mittelwert"
+    "section": "15.4 Lagemasse",
+    "text": "15.4 Lagemasse\n\n15.4.1 Median\nDer Median wird mit der Funktion MEDIAN() bestimmt. Dabei muss beachtet werden, dass diese Funktion ausschliesslich mit Rohdaten verwendet werden muss. Werden aggregierte Werte dieser Funktion übergeben, liefert diese Funktion den Median der aggregierten Werte und nicht den gesuchten Wert.\nOrdinalskalierte Daten können auch als Zeichenketten vorliegen. Diese Werte müssen zuerst in Zahlen kodiert werden, um den Median bestimmen zukönnen.\n\nBeispiel 15.3 (Bestimmen des Medians)  \n=MEDIAN(\n    FILTER(\n        Tabelle[Vektor]; \n        ISTZAHL(Tabelle[Vektor])\n    )\n)\n\n\n\n15.4.2 Mittelwert\nDer Mittelwert wird mit der Funktion MITTELWERT() bestimmt. Dieser Kennwert darf nur für metrisch-skalierte Daten bestimmt werden. Diese Daten liegen immer als Zahlen vor, weshalb diese Werte nicht kodiert werden müssen.\n\nBeispiel 15.4 (Bestimmen des Medians)  \n=MEDIAN(\n    FILTER(\n        Tabelle[Vektor]; \n        ISTZAHL(Tabelle[Vektor])\n    )\n)"
   },
   {
     "objectID": "kapitel/daten-beschreiben/kapitel.html#streumasse",
     "href": "kapitel/daten-beschreiben/kapitel.html#streumasse",
     "title": "15  Daten beschreiben",
-    "section": "15.3 Streumasse",
-    "text": "15.3 Streumasse\n\n15.3.1 Interquatilsabstand\n\n\n15.3.2 Varianz und Standardabweichung"
+    "section": "15.5 Streumasse",
+    "text": "15.5 Streumasse\n\n15.5.1 Bandbreite\nDie Bandbreite ergibt sich aus der Differenz zwischen dem kleinsten und dem grössten gemessenen Wert. Die Bandbreite wird nur als eigenständiger Wert angegeben, um ähnliche Bandbreiten in unterschiedlichen Wertebereichen anzuzeigen. Sonst wird nur das Minimum mit MIN() und das Maximum mit MAX() für den Vektor bestimmt.\n\n\n15.5.2 Quartiele\nDie Quartile werden mit der Funktion QUARTILE.INKL() bestimmt. Dazu wird der bereinigte Vektor als erster Parameter übergeben und anschliessend der das jeweilige Quartil. Das untere Quartil wird mit dem Wert 1 als zweiten Parameter berechnet und das obere Quartil mit dem Wert 3.\nWie beim Median können die Werte für die Quartile mit Zahlenwerten berechnet werden.\nDie Funktion QUARTILE.INKL() erlaubt es, die Minimalwert, den Maximalwert und den Median mit einem Aufrug zu bestimmen. Dazu wird als zweiter Parameter eine Sequenz von 0-4 übergeben.\n\nDer Wert 0 steht für das Minimum,\nDer Wert 1 für das untere Quartil,\nDer Wert 2 für den Median,\nDer Wert 3 für das obere Quartil und\nDer Wert 4 steht für das Maximum.\n\n\nBeispiel 15.5 (Bandbreite, Median und Quartile mit QUARTILE.INKL() bestimmen.)  \n=QUARTILE.INKL(\n    FILTER(\n        Tabelle[Vektor]; \n        ISTZAHL(Tabelle[Vektor])\n    );\n    SEQUENZ(1; 5; 0)\n)\n\n\n\n15.5.3 Varianz und Standardabweichung\nDie Varianz der gemessenen Werte eines Vektors werden mit der Funktion VAR.S() bestimmt. Die Standardabweichung der gemessenen Werte wird mit der Funktion STABW.S() bestimmt. Excel kennt für die echte Varianz und die echte Standardabweichung die Funktionen VAR.P() udn STABW.P(), diese werden für die Beschreibung gemessener Daten nicht verwendet.\n\n\n15.5.4 Interquartilsabstand\nExcel kennt keine Funktion für den Interquartilsabstand. Dieser muss aus den beiden Quartilen mit der Formel aus Beispiel 15.6 berechnet werden.\n\nBeispiel 15.6  \n= Quartil3 - Quartil1\n\n\n\n15.5.5 Mittlere Absolute Abweichung (MAD)\nDie mittlere absolute Abweichung muss in EXCEL ebenfalls händisch berechnet werden.\n\nBeispiel 15.7  \n=LET(\n    Werte; FILTER(\n        Tabelle[Vektor]; \n        ISTZAHL(Tabelle[Vektor])\n    ); \n    MEDIAN(\n        ABS(\n            Werte - MEDIAN(Werte)\n        ) \n    )\n)"
   },
   {
     "objectID": "kapitel/daten-visualisieren/kapitel.html#diagramme-erstellen",

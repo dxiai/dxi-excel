@@ -265,15 +265,20 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#universelle-kennwerte" id="toc-universelle-kennwerte" class="nav-link active" data-scroll-target="#universelle-kennwerte"><span class="header-section-number">15.1</span> Universelle Kennwerte</a></li>
-  <li><a href="#lagemasse" id="toc-lagemasse" class="nav-link" data-scroll-target="#lagemasse"><span class="header-section-number">15.2</span> Lagemasse</a>
+  <li><a href="#variablenumfänge" id="toc-variablenumfänge" class="nav-link" data-scroll-target="#variablenumfänge"><span class="header-section-number">15.2</span> Variablenumfänge</a></li>
+  <li><a href="#ungültige-werte-entfernen" id="toc-ungültige-werte-entfernen" class="nav-link" data-scroll-target="#ungültige-werte-entfernen"><span class="header-section-number">15.3</span> Ungültige Werte entfernen</a></li>
+  <li><a href="#lagemasse" id="toc-lagemasse" class="nav-link" data-scroll-target="#lagemasse"><span class="header-section-number">15.4</span> Lagemasse</a>
   <ul class="collapse">
-  <li><a href="#modus" id="toc-modus" class="nav-link" data-scroll-target="#modus"><span class="header-section-number">15.2.1</span> Modus</a></li>
-  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">15.2.2</span> Median</a></li>
+  <li><a href="#median" id="toc-median" class="nav-link" data-scroll-target="#median"><span class="header-section-number">15.4.1</span> Median</a></li>
+  <li><a href="#mittelwert" id="toc-mittelwert" class="nav-link" data-scroll-target="#mittelwert"><span class="header-section-number">15.4.2</span> Mittelwert</a></li>
   </ul></li>
-  <li><a href="#streumasse" id="toc-streumasse" class="nav-link" data-scroll-target="#streumasse"><span class="header-section-number">15.3</span> Streumasse</a>
+  <li><a href="#streumasse" id="toc-streumasse" class="nav-link" data-scroll-target="#streumasse"><span class="header-section-number">15.5</span> Streumasse</a>
   <ul class="collapse">
-  <li><a href="#interquatilsabstand" id="toc-interquatilsabstand" class="nav-link" data-scroll-target="#interquatilsabstand"><span class="header-section-number">15.3.1</span> Interquatilsabstand</a></li>
-  <li><a href="#varianz-und-standardabweichung" id="toc-varianz-und-standardabweichung" class="nav-link" data-scroll-target="#varianz-und-standardabweichung"><span class="header-section-number">15.3.2</span> Varianz und Standardabweichung</a></li>
+  <li><a href="#bandbreite" id="toc-bandbreite" class="nav-link" data-scroll-target="#bandbreite"><span class="header-section-number">15.5.1</span> Bandbreite</a></li>
+  <li><a href="#quartiele" id="toc-quartiele" class="nav-link" data-scroll-target="#quartiele"><span class="header-section-number">15.5.2</span> Quartiele</a></li>
+  <li><a href="#varianz-und-standardabweichung" id="toc-varianz-und-standardabweichung" class="nav-link" data-scroll-target="#varianz-und-standardabweichung"><span class="header-section-number">15.5.3</span> Varianz und Standardabweichung</a></li>
+  <li><a href="#interquartilsabstand" id="toc-interquartilsabstand" class="nav-link" data-scroll-target="#interquartilsabstand"><span class="header-section-number">15.5.4</span> Interquartilsabstand</a></li>
+  <li><a href="#mittlere-absolute-abweichung-mad" id="toc-mittlere-absolute-abweichung-mad" class="nav-link" data-scroll-target="#mittlere-absolute-abweichung-mad"><span class="header-section-number">15.5.5</span> Mittlere Absolute Abweichung (MAD)</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
@@ -313,24 +318,136 @@ Work in Progress
 </div>
 <section id="universelle-kennwerte" class="level2" data-number="15.1">
 <h2 data-number="15.1" class="anchored" data-anchor-id="universelle-kennwerte"><span class="header-section-number">15.1</span> Universelle Kennwerte</h2>
+<p>Die universellen Kennwerte von Datenrahmen werden mit Excel auf die Gleicheweise bestimmt, wie die Dimensionen einer Matrix (s. <a href="../matrix-operationen/kapitel.html"><span>Kapitel&nbsp;12</span></a>):</p>
+<p>Es werden die Zeilen und Spalten der Daten bestimmt. Beim Stichprobenumfang müssen ggf. ungültige Datensätzte gefiltert werden. Hierzu hilft meist ein Sekundärindex, mit dem die gültigen Datensätze markiert werden.</p>
 </section>
-<section id="lagemasse" class="level2" data-number="15.2">
-<h2 data-number="15.2" class="anchored" data-anchor-id="lagemasse"><span class="header-section-number">15.2</span> Lagemasse</h2>
-<section id="modus" class="level3" data-number="15.2.1">
-<h3 data-number="15.2.1" class="anchored" data-anchor-id="modus"><span class="header-section-number">15.2.1</span> Modus</h3>
+<section id="variablenumfänge" class="level2" data-number="15.2">
+<h2 data-number="15.2" class="anchored" data-anchor-id="variablenumfänge"><span class="header-section-number">15.2</span> Variablenumfänge</h2>
+<p>Die Variablenumfänge ist durch die Anzahl der gültigen Werte gegeben. Die Funktion <code>ANZAHL()</code> ignoriert sowohl die leeren Zellen als auch Fehlerwerte, Wahrheitswerte und Zeichenketten. Sie eignet sich damit zur Bestimmung des Variablenumfangs für Zahlenvektoren.</p>
+<p>Für alle anderen Vektoren bietet sich die Funktion <code>ANZAHL2()</code> an. Diese Funktion ignoriert jedoch keine Fehlerwerte. Deshalb müssen für Zeichenkettenvektoren fehlenden Werte, die mit <code>#NV</code> markiert wurden, gefiltert werden, bevor der Vektorumfang bestimmt wird.</p>
 </section>
-<section id="median" class="level3" data-number="15.2.2">
-<h3 data-number="15.2.2" class="anchored" data-anchor-id="median"><span class="header-section-number">15.2.2</span> Median</h3>
-<p>###&nbsp;Mittelwert</p>
+<section id="ungültige-werte-entfernen" class="level2" data-number="15.3">
+<h2 data-number="15.3" class="anchored" data-anchor-id="ungültige-werte-entfernen"><span class="header-section-number">15.3</span> Ungültige Werte entfernen</h2>
+<p>Wird diese Operation über mehrere Adressen verteilt, wandelt Excel die leeren Zellen in den Wert 0 um. Deshalb müssen zuerst alle leeren Zellen und anschliessend alle Fehlerwerte gefiltert werden.</p>
+<div id="exm-ungültige-werte-entfernen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.1 (Entfernen ungültiger Werte) </strong></span>&nbsp;</p>
+<pre><code>= FILTER(
+    Tabelle[Vektor]; 
+    NICHT(ISTLEER(Tabelle[Vektor]) + ISTFEHLER(Tabelle[Vektor]))
+)</code></pre>
+</div>
+<p>Erst über diese bereinigten Daten darf der Vektorumfang bestimmt werden. Weil durch das Entfernen der ungültigen Werte die Vektorlänge identisch mit dem Vektorumfang ist, kann der Vektorumfang auch mittels der Funktion <code>ZEILEN()</code> bzw. <code>SPALTEN()</code> bestimmt werden.</p>
+<p>Ist der Datentyp eines Vektors festgelegt, dann lässt sich das Filtern ungültiger Werte stark vereinfachen. Dazu wird die Typenerkennung mit der entsprechenden <code>IST</code>-Funktion als Filter eingesetzt.</p>
+<div id="exm-ungültige-werte-entfernen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.2 (Entfernen ungültiger Werte durch erzwingen des Datentyps Zeichenkette) </strong></span>&nbsp;</p>
+<pre><code>= FILTER(
+    Tabelle[Vektor]; 
+    ISTTEXT(Tabelle[Vektor])
+)</code></pre>
+</div>
+<p>Diese Strategie hat den Vorteil, dass auch alle Werte mit falschen Datentyp als ungültig erkannt und entfernt werden.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Ungültige Werte müssen auch für alle Lagemasse entfernt werden.</p>
+</div>
+</div>
+</section>
+<section id="lagemasse" class="level2" data-number="15.4">
+<h2 data-number="15.4" class="anchored" data-anchor-id="lagemasse"><span class="header-section-number">15.4</span> Lagemasse</h2>
+<section id="median" class="level3" data-number="15.4.1">
+<h3 data-number="15.4.1" class="anchored" data-anchor-id="median"><span class="header-section-number">15.4.1</span> Median</h3>
+<p>Der Median wird mit der Funktion <code>MEDIAN()</code> bestimmt. Dabei muss beachtet werden, dass diese Funktion <strong><em>ausschliesslich</em></strong> mit Rohdaten verwendet werden <strong>muss</strong>. Werden aggregierte Werte dieser Funktion übergeben, liefert diese Funktion den Median der aggregierten Werte und nicht den gesuchten Wert.</p>
+<p>Ordinalskalierte Daten können auch als Zeichenketten vorliegen. Diese Werte müssen zuerst in Zahlen kodiert werden, um den Median bestimmen zukönnen.</p>
+<div id="exm-median-bestimmen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.3 (Bestimmen des Medians) </strong></span>&nbsp;</p>
+<pre><code>=MEDIAN(
+    FILTER(
+        Tabelle[Vektor]; 
+        ISTZAHL(Tabelle[Vektor])
+    )
+)</code></pre>
+</div>
+</section>
+<section id="mittelwert" class="level3" data-number="15.4.2">
+<h3 data-number="15.4.2" class="anchored" data-anchor-id="mittelwert"><span class="header-section-number">15.4.2</span> Mittelwert</h3>
+<p>Der Mittelwert wird mit der Funktion <code>MITTELWERT()</code> bestimmt. Dieser Kennwert darf nur für metrisch-skalierte Daten bestimmt werden. Diese Daten liegen immer als Zahlen vor, weshalb diese Werte nicht kodiert werden müssen.</p>
+<div id="exm-median-bestimmen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.4 (Bestimmen des Medians) </strong></span>&nbsp;</p>
+<pre><code>=MEDIAN(
+    FILTER(
+        Tabelle[Vektor]; 
+        ISTZAHL(Tabelle[Vektor])
+    )
+)</code></pre>
+</div>
 </section>
 </section>
-<section id="streumasse" class="level2" data-number="15.3">
-<h2 data-number="15.3" class="anchored" data-anchor-id="streumasse"><span class="header-section-number">15.3</span> Streumasse</h2>
-<section id="interquatilsabstand" class="level3" data-number="15.3.1">
-<h3 data-number="15.3.1" class="anchored" data-anchor-id="interquatilsabstand"><span class="header-section-number">15.3.1</span> Interquatilsabstand</h3>
+<section id="streumasse" class="level2" data-number="15.5">
+<h2 data-number="15.5" class="anchored" data-anchor-id="streumasse"><span class="header-section-number">15.5</span> Streumasse</h2>
+<section id="bandbreite" class="level3" data-number="15.5.1">
+<h3 data-number="15.5.1" class="anchored" data-anchor-id="bandbreite"><span class="header-section-number">15.5.1</span> Bandbreite</h3>
+<p>Die Bandbreite ergibt sich aus der Differenz zwischen dem kleinsten und dem grössten gemessenen Wert. Die Bandbreite wird nur als eigenständiger Wert angegeben, um ähnliche Bandbreiten in unterschiedlichen Wertebereichen anzuzeigen. Sonst wird nur das Minimum mit <code>MIN()</code> und das Maximum mit <code>MAX()</code> für den Vektor bestimmt.</p>
 </section>
-<section id="varianz-und-standardabweichung" class="level3" data-number="15.3.2">
-<h3 data-number="15.3.2" class="anchored" data-anchor-id="varianz-und-standardabweichung"><span class="header-section-number">15.3.2</span> Varianz und Standardabweichung</h3>
+<section id="quartiele" class="level3" data-number="15.5.2">
+<h3 data-number="15.5.2" class="anchored" data-anchor-id="quartiele"><span class="header-section-number">15.5.2</span> Quartiele</h3>
+<p>Die Quartile werden mit der Funktion <code>QUARTILE.INKL()</code> bestimmt. Dazu wird der bereinigte Vektor als erster Parameter übergeben und anschliessend der das jeweilige Quartil. Das untere Quartil wird mit dem Wert <code>1</code> als zweiten Parameter berechnet und das obere Quartil mit dem Wert <code>3</code>.</p>
+<p>Wie beim Median können die Werte für die Quartile mit Zahlenwerten berechnet werden.</p>
+<p>Die Funktion <code>QUARTILE.INKL()</code> erlaubt es, die Minimalwert, den Maximalwert und den Median mit einem Aufrug zu bestimmen. Dazu wird als zweiter Parameter eine Sequenz von <code>0</code>-<code>4</code> übergeben.</p>
+<ul>
+<li>Der Wert <code>0</code> steht für das Minimum,</li>
+<li>Der Wert <code>1</code> für das untere Quartil,</li>
+<li>Der Wert <code>2</code> für den Median,</li>
+<li>Der Wert <code>3</code> für das obere Quartil und</li>
+<li>Der Wert <code>4</code> steht für das Maximum.</li>
+</ul>
+<div id="exm-alle-ordinalen-kennwerte" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.5 (Bandbreite, Median und Quartile mit <code>QUARTILE.INKL()</code> bestimmen.) </strong></span>&nbsp;</p>
+<pre><code>=QUARTILE.INKL(
+    FILTER(
+        Tabelle[Vektor]; 
+        ISTZAHL(Tabelle[Vektor])
+    );
+    SEQUENZ(1; 5; 0)
+)</code></pre>
+</div>
+</section>
+<section id="varianz-und-standardabweichung" class="level3" data-number="15.5.3">
+<h3 data-number="15.5.3" class="anchored" data-anchor-id="varianz-und-standardabweichung"><span class="header-section-number">15.5.3</span> Varianz und Standardabweichung</h3>
+<p>Die Varianz der gemessenen Werte eines Vektors werden mit der Funktion <code>VAR.S()</code> bestimmt. Die Standardabweichung der gemessenen Werte wird mit der Funktion <code>STABW.S()</code> bestimmt. Excel kennt für die echte Varianz und die echte Standardabweichung die Funktionen <code>VAR.P()</code> udn <code>STABW.P()</code>, diese werden für die Beschreibung gemessener Daten nicht verwendet.</p>
+</section>
+<section id="interquartilsabstand" class="level3" data-number="15.5.4">
+<h3 data-number="15.5.4" class="anchored" data-anchor-id="interquartilsabstand"><span class="header-section-number">15.5.4</span> Interquartilsabstand</h3>
+<p>Excel kennt keine Funktion für den Interquartilsabstand. Dieser muss aus den beiden Quartilen mit der Formel aus <a href="#exm-Interquartilsabstand">Beispiel&nbsp;<span>15.6</span></a> berechnet werden.</p>
+<div id="exm-Interquartilsabstand" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.6 </strong></span>&nbsp;</p>
+<pre><code>= Quartil3 - Quartil1</code></pre>
+</div>
+</section>
+<section id="mittlere-absolute-abweichung-mad" class="level3" data-number="15.5.5">
+<h3 data-number="15.5.5" class="anchored" data-anchor-id="mittlere-absolute-abweichung-mad"><span class="header-section-number">15.5.5</span> Mittlere Absolute Abweichung (MAD)</h3>
+<p>Die mittlere absolute Abweichung muss in EXCEL ebenfalls händisch berechnet werden.</p>
+<div id="exm-mad-berechnen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 15.7 </strong></span>&nbsp;</p>
+<pre><code>=LET(
+    Werte; FILTER(
+        Tabelle[Vektor]; 
+        ISTZAHL(Tabelle[Vektor])
+    ); 
+    MEDIAN(
+        ABS(
+            Werte - MEDIAN(Werte)
+        ) 
+    )
+)</code></pre>
+</div>
 
 
 </section>
