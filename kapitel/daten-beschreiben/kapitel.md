@@ -108,9 +108,15 @@ Die Bandbreite ergibt sich aus der Differenz zwischen dem kleinsten und dem grö
 
 Die Quartile werden mit der Funktion `QUARTILE.INKL()` bestimmt. Dazu wird der bereinigte Vektor als erster Parameter übergeben und anschliessend der das jeweilige Quartil. Das untere Quartil wird mit dem Wert `1` als zweiten Parameter berechnet und das obere Quartil mit dem Wert `3`.
 
-Es ist möglich, die Minimalwert, den Maximalwert und den Median zusammen mit den beiden Quartilen mit der Funktion `QUARTILE.INKL()` zu bestimmen. Dazu wird als zweiter Parameter eine Sequenz von `0`-`4` übergeben.
-
 Wie beim Median können die Werte für die Quartile mit Zahlenwerten berechnet werden. 
+
+Die Funktion `QUARTILE.INKL()` erlaubt es, die Minimalwert, den Maximalwert und den Median mit einem Aufrug zu bestimmen. Dazu wird als zweiter Parameter eine Sequenz von `0`-`4` übergeben.
+
+- Der Wert `0` steht für das Minimum,
+- Der Wert `1` für das untere Quartil,
+- Der Wert `2` für den Median,
+- Der Wert `3` für das obere Quartil und 
+- Der Wert `4` steht für das Maximum.
 
 ::: {#exm-alle-ordinalen-kennwerte}
 ## Bandbreite, Median und Quartile mit `QUARTILE.INKL()` bestimmen.
@@ -129,7 +135,7 @@ Wie beim Median können die Werte für die Quartile mit Zahlenwerten berechnet w
 
 Die Varianz der gemessenen Werte eines Vektors werden mit der Funktion `VAR.S()` bestimmt. Die Standardabweichung der gemessenen Werte wird mit der Funktion `STABW.S()` bestimmt. Excel kennt für die echte Varianz und die echte Standardabweichung die Funktionen `VAR.P()` udn `STABW.P()`, diese werden für die Beschreibung gemessener Daten nicht verwendet. 
 
-### Interquatilsabstand
+### Interquartilsabstand
 
 Excel kennt keine Funktion für den Interquartilsabstand. Dieser muss aus den beiden Quartilen mit der Formel aus @exm-Interquartilsabstand berechnet werden.
 
