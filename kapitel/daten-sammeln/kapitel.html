@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -66,7 +67,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Keine Treffer",
     "search-matching-documents-text": "Treffer",
@@ -75,6 +82,7 @@ div.csl-indent {
     "search-more-match-text": "weitere Treffer in diesem Dokument",
     "search-more-matches-text": "weitere Treffer in diesem Dokument",
     "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Abbrechen",
     "search-submit-button-title": "Abschicken",
     "search-label": "Suchen"
@@ -98,6 +106,33 @@ div.csl-indent {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -106,12 +141,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html">Datenquellen</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daten sammeln</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html">Datenquellen</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daten sammeln</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -121,12 +156,12 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Einführung in die Datenwissenschaft mit Excel</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/dxiai/dxi-excel" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/dxiai/dxi-excel" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -292,7 +327,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -322,12 +357,12 @@ div.csl-indent {
   <li><a href="#datenüberprüfung-für-nominalskalierte-wertebereiche" id="toc-datenüberprüfung-für-nominalskalierte-wertebereiche" class="nav-link" data-scroll-target="#datenüberprüfung-für-nominalskalierte-wertebereiche"><span class="header-section-number">5.2.6</span> Datenüberprüfung für nominalskalierte Wertebereiche</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html">Datenquellen</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daten sammeln</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chapter-daten-sammeln" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span></h1>
 </div>
@@ -342,7 +377,9 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <section id="sec-datacollection-forms" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="sec-datacollection-forms"><span class="header-section-number">5.1</span> Daten mit Formularen sammeln</h2>
@@ -394,10 +431,14 @@ Hinweis
 <li>Net Promoter Score</li>
 </ul></li>
 </ul>
-<div id="fig-formular-antworttypen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/ms_forms_fragetypen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.1: MS Forms Fragetypmenu</figcaption>
+<div id="fig-formular-antworttypen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-formular-antworttypen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/ms_forms_fragetypen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-formular-antworttypen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.1: MS Forms Fragetypmenu
+</figcaption>
 </figure>
 </div>
 <p>Jede dieser Varianten hat die folgenden gemeinsamen Optionen:</p>
@@ -477,12 +518,16 @@ Warnung
 <section id="daten-direkt-eingeben" class="level2" data-number="5.2">
 <h2 data-number="5.2" class="anchored" data-anchor-id="daten-direkt-eingeben"><span class="header-section-number">5.2</span> Daten direkt eingeben</h2>
 <p>Bei der direkten Eingabe von Daten muss zuerst die Ergebnistabelle manuell erstellt werden, um damit die Daten zu sammeln.</p>
-<p>Damit die Daten einheitlich erfasst werden, benötigt die Tabelle ein Schema. In Excel wird diese Schema über die Tabellenüberschriften definiert und kann bei einer späteren Verarbeitung weiter angepasst werden (s. <a href="../daten-importieren/kapitel.html"><span>Kapitel&nbsp;7</span></a>).</p>
-<p>Ein einfaches Datenschema umfasst nur die Spaltenüberschriften, die erfasst werden sollen. Dazu müssen die Tabellenüberschriften definiert werden. Die Tabellenüberschriften werden in der ersten Zeile der Tabelle eingetragen. Überschriften für weitere Merkmale können zu einem späteren Zeitpunkt noch ergänzt werden. Anschliessend werden die Überschriften markiert und es wird für diesen Bereich eine <strong>Tabelle</strong> eingefügt. Hierbei muss die Option <code>Tabelle hat Überschriften</code> aktiviert werden (s. <a href="#fig-tabelle-erstellen">Abbildung&nbsp;<span>5.2</span></a>).</p>
-<div id="fig-tabelle-erstellen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/tabelle_erstellen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.2: Tabelle erstellen</figcaption>
+<p>Damit die Daten einheitlich erfasst werden, benötigt die Tabelle ein Schema. In Excel wird diese Schema über die Tabellenüberschriften definiert und kann bei einer späteren Verarbeitung weiter angepasst werden (s. <a href="../daten-importieren/kapitel.html" class="quarto-xref"><span>Kapitel 7</span></a>).</p>
+<p>Ein einfaches Datenschema umfasst nur die Spaltenüberschriften, die erfasst werden sollen. Dazu müssen die Tabellenüberschriften definiert werden. Die Tabellenüberschriften werden in der ersten Zeile der Tabelle eingetragen. Überschriften für weitere Merkmale können zu einem späteren Zeitpunkt noch ergänzt werden. Anschliessend werden die Überschriften markiert und es wird für diesen Bereich eine <strong>Tabelle</strong> eingefügt. Hierbei muss die Option <code>Tabelle hat Überschriften</code> aktiviert werden (s. <a href="#fig-tabelle-erstellen" class="quarto-xref">Abbildung&nbsp;<span>5.2</span></a>).</p>
+<div id="fig-tabelle-erstellen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tabelle-erstellen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/tabelle_erstellen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tabelle-erstellen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.2: Tabelle erstellen
+</figcaption>
 </figure>
 </div>
 <p>Daten werden der Tabelle hinzugefügt, indem in der Zeile unterhalb der Tabelle neue Werte eingetragen werden. Die Tabellenstruktur mit dem Schema wird automatisch erweitert.</p>
@@ -503,17 +548,25 @@ Praxis
 <p>Das Erstellen eines Schemas zur Dateneingabe ist in Excel zwar aufwändig, dennoch sollte dieser Schritt nicht übersprungen werden, weil die Datenüberprüfung die Datenqualität verbessert und die Datenverarbeitung erheblich vereinfacht.</p>
 </div>
 </div>
-<p>In Excel müssen Vektoren durch die Option <em>Datenüberprüfung</em> definiert werden. Die Option <em>Datenüberprüfung</em> findet sich im Ribbon unter <em>Daten</em> (s. <a href="#fig-datenueberpruefung-ribbon">Abbildung&nbsp;<span>5.3</span></a>) im Abschnitt <em>Datentools</em> (s. <a href="#fig-datenueberpruefung-datentools-details">Abbildung&nbsp;<span>5.4</span></a>).</p>
-<div id="fig-datenueberpruefung-ribbon" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/datenueberpruefung_ribbon.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.3: Ribbon Datenüberprüfung</figcaption>
+<p>In Excel müssen Vektoren durch die Option <em>Datenüberprüfung</em> definiert werden. Die Option <em>Datenüberprüfung</em> findet sich im Ribbon unter <em>Daten</em> (s. <a href="#fig-datenueberpruefung-ribbon" class="quarto-xref">Abbildung&nbsp;<span>5.3</span></a>) im Abschnitt <em>Datentools</em> (s. <a href="#fig-datenueberpruefung-datentools-details" class="quarto-xref">Abbildung&nbsp;<span>5.4</span></a>).</p>
+<div id="fig-datenueberpruefung-ribbon" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datenueberpruefung-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/datenueberpruefung_ribbon.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datenueberpruefung-ribbon-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.3: Ribbon Datenüberprüfung
+</figcaption>
 </figure>
 </div>
-<div id="fig-datenueberpruefung-datentools-details" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/datentools_details.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.4: Datentools Details</figcaption>
+<div id="fig-datenueberpruefung-datentools-details" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datenueberpruefung-datentools-details-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/datentools_details.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datenueberpruefung-datentools-details-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.4: Datentools Details
+</figcaption>
 </figure>
 </div>
 <p>Die Schemadefinition erfolgt in drei zusätzlichen Schritten:</p>
@@ -533,10 +586,14 @@ Praxis
 <li>Konstante Werte müssen in der Datenüberprüfung explizit angegeben und nicht über Bezüge verwiesen werden.</li>
 </ul>
 <p>Excel bringt einige vordefinierte Überprüfungen mit, die über die Dropdown-Liste ausgewählt werden können. Die meisten Überprüfungen sind für Zahlenintervalle definiert. Die Standardeinstellung <code>Jeden Wert</code> ist gleichbedeutend mit keiner Überprüfung, weil alle Werte als Eingabe akzeptiert werden. Generelle Überprüfungen von Datentypen sind nicht vorgegeben und müssen über die Option <code>Benutzerdefiniert</code> definiert werden.</p>
-<div id="fig-datenueberpruefung-dialog" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/datenueberpruefung_dialog.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.5: Dialog Datenüberprüfung mit allen Überprüfungsoptionen</figcaption>
+<div id="fig-datenueberpruefung-dialog" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datenueberpruefung-dialog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/datenueberpruefung_dialog.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datenueberpruefung-dialog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.5: Dialog Datenüberprüfung mit allen Überprüfungsoptionen
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -557,10 +614,14 @@ Hinweis
 <h3 data-number="5.2.3" class="anchored" data-anchor-id="datenüberprüfung-für-zahlen-zeichenketten-oder-wahrheitswerte"><span class="header-section-number">5.2.3</span> Datenüberprüfung für Zahlen, Zeichenketten oder Wahrheitswerte</h3>
 <p>Eine generelle Überprüfung für die fundamentalen Datentypen ist in Excel nicht vorgesehen. Solche Überprüfungen müssen über die Option <code>Benutzerdefiniert</code> festgelegt werden.</p>
 <p>Im Eingabefeld Formel kann eine beliebig komplexe Formel stehen. Die Formel muss einen Wahrheitswert zurückgeben. Wird der Wahrheitswert <code>WAHR</code> zurückgegeben, dann wird der Wert akzeptiert. Wird der Wahrheitswert <code>FALSCH</code> zurückgegeben, dann wird der Wert nicht akzeptiert.</p>
-<p>Um die fundamentalen Datentypen zu überprüfen, können die Informationsfunktionen <code>ISTZAHL()</code>, <code>ISTTEXT()</code> und <code>ISTLOG()</code> verwendet werden (s. <a href="#tbl-datenueberpruefung-fundamentale-datentypen">Tabelle&nbsp;<span>5.1</span></a>). Diese Funktionen geben <code>WAHR</code> zurück, wenn der Wert dem angegebenen Datentyp entspricht. Ansonsten geben sie <code>FALSCH</code> zurück.</p>
-<div id="tbl-datenueberpruefung-fundamentale-datentypen" class="anchored">
+<p>Um die fundamentalen Datentypen zu überprüfen, können die Informationsfunktionen <code>ISTZAHL()</code>, <code>ISTTEXT()</code> und <code>ISTLOG()</code> verwendet werden (s. <a href="#tbl-datenueberpruefung-fundamentale-datentypen" class="quarto-xref">Tabelle&nbsp;<span>5.1</span></a>). Diese Funktionen geben <code>WAHR</code> zurück, wenn der Wert dem angegebenen Datentyp entspricht. Ansonsten geben sie <code>FALSCH</code> zurück.</p>
+<div id="tbl-datenueberpruefung-fundamentale-datentypen" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-datenueberpruefung-fundamentale-datentypen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;5.1: Überprüfungsausdrücke für die fundamentalen Datentypen
+</figcaption>
+<div aria-describedby="tbl-datenueberpruefung-fundamentale-datentypen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Tabelle&nbsp;5.1: Überprüfungsausdrücke für die fundamentalen Datentypen</caption>
 <thead>
 <tr class="header">
 <th>Datentyp</th>
@@ -583,14 +644,20 @@ Hinweis
 </tbody>
 </table>
 </div>
+</figure>
+</div>
 </section>
 <section id="datenüberprüfung-für-ganze-zahlen" class="level3" data-number="5.2.4">
 <h3 data-number="5.2.4" class="anchored" data-anchor-id="datenüberprüfung-für-ganze-zahlen"><span class="header-section-number">5.2.4</span> Datenüberprüfung für ganze Zahlen</h3>
-<p>Die Überprüfung ganzer Zahlen ist in Excel über die Option <code>Ganze Zahl</code> möglich. Diese Option überprüft, ob der Wert eine ganze Zahl ist. Diese Option kann aber nicht direkt für alle ganze Zahlen eingesetzt werden. Um alle zulässigen ganzen Zahlen zu erfassen muss unter der Option <code>Daten</code> der Punkt <code>größer als</code> ausgewählt werden. Anschliessend muss als <code>Minimum</code> der Wert <code>-9.99999999999999E+307</code> eingetragen werden (s. <a href="#fig-datenueberpruefung-ganze-zahlen">Abbildung&nbsp;<span>5.6</span></a>). Dieser Wert ist der kleinste Wert, der in Excel als (ganze) Zahl erfasst werden kann <span class="citation" data-cites="microsoft_excel_2023">(<a href="../../references.html#ref-microsoft_excel_2023" role="doc-biblioref">Microsoft Support, 2023</a>)</span>.</p>
-<div id="fig-datenueberpruefung-ganze-zahlen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/datenueberpruefung_ganze_zahlen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.6: Dialog Datenüberprüfung für alle ganzen Zaheln</figcaption>
+<p>Die Überprüfung ganzer Zahlen ist in Excel über die Option <code>Ganze Zahl</code> möglich. Diese Option überprüft, ob der Wert eine ganze Zahl ist. Diese Option kann aber nicht direkt für alle ganze Zahlen eingesetzt werden. Um alle zulässigen ganzen Zahlen zu erfassen muss unter der Option <code>Daten</code> der Punkt <code>größer als</code> ausgewählt werden. Anschliessend muss als <code>Minimum</code> der Wert <code>-9.99999999999999E+307</code> eingetragen werden (s. <a href="#fig-datenueberpruefung-ganze-zahlen" class="quarto-xref">Abbildung&nbsp;<span>5.6</span></a>). Dieser Wert ist der kleinste Wert, der in Excel als (ganze) Zahl erfasst werden kann <span class="citation" data-cites="microsoft_excel_2023">(<a href="../../references.html#ref-microsoft_excel_2023" role="doc-biblioref">Microsoft Support, 2023</a>)</span>.</p>
+<div id="fig-datenueberpruefung-ganze-zahlen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datenueberpruefung-ganze-zahlen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/datenueberpruefung_ganze_zahlen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datenueberpruefung-ganze-zahlen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.6: Dialog Datenüberprüfung für alle ganzen Zaheln
+</figcaption>
 </figure>
 </div>
 </section>
@@ -621,19 +688,23 @@ Achtung
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Die Datenüberprüfung kann nicht mit Tabellenadressen umgehen. Deshalb müssen die gültigen Werte als absolute Arbeitsblattadressen angegeben werden (s. <a href="#fig-datenueberpruefung-mit-zuordnungstabelle">Abbildung&nbsp;<span>5.7</span></a>).</p>
+<p>Die Datenüberprüfung kann nicht mit Tabellenadressen umgehen. Deshalb müssen die gültigen Werte als absolute Arbeitsblattadressen angegeben werden (s. <a href="#fig-datenueberpruefung-mit-zuordnungstabelle" class="quarto-xref">Abbildung&nbsp;<span>5.7</span></a>).</p>
 </div>
 </div>
-<div id="fig-datenueberpruefung-mit-zuordnungstabelle" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/datenueberpruefung_mit_zuordnungstabelle.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;5.7: Datenüberprüfung mit Zuordnungstabelle für ordinalskalierte Wertebereiche</figcaption>
+<div id="fig-datenueberpruefung-mit-zuordnungstabelle" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datenueberpruefung-mit-zuordnungstabelle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/datenueberpruefung_mit_zuordnungstabelle.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datenueberpruefung-mit-zuordnungstabelle-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;5.7: Datenüberprüfung mit Zuordnungstabelle für ordinalskalierte Wertebereiche
+</figcaption>
 </figure>
 </div>
 </section>
 <section id="datenüberprüfung-für-nominalskalierte-wertebereiche" class="level3" data-number="5.2.6">
 <h3 data-number="5.2.6" class="anchored" data-anchor-id="datenüberprüfung-für-nominalskalierte-wertebereiche"><span class="header-section-number">5.2.6</span> Datenüberprüfung für nominalskalierte Wertebereiche</h3>
-<p>Die Überprüfung nominalskalierter Wertebereiche wird in Excel durch die Option <code>Liste</code> realisiert. Die Option <code>Liste</code> erlaubt die Auswahl von Werten aus einer Liste in der gleichen Arbeitsmappe. Diese Liste ist einfach ein Bereich mit Werten, eine Spalte in einer anderen Tabelle oder eine benannte Liste (s. <a href="../variablen/kapitel.html"><span>Kapitel&nbsp;8</span></a>). Die Liste muss in einer Spalte definiert werden, weil die Datenüberprüfung nur auf Spalten angewendet werden kann. Deshalb ist es nicht möglich, eine zeilenorientierte Liste für die Datenüberprüfung anzuwenden.</p>
+<p>Die Überprüfung nominalskalierter Wertebereiche wird in Excel durch die Option <code>Liste</code> realisiert. Die Option <code>Liste</code> erlaubt die Auswahl von Werten aus einer Liste in der gleichen Arbeitsmappe. Diese Liste ist einfach ein Bereich mit Werten, eine Spalte in einer anderen Tabelle oder eine benannte Liste (s. <a href="../variablen/kapitel.html" class="quarto-xref"><span>Kapitel 8</span></a>). Die Liste muss in einer Spalte definiert werden, weil die Datenüberprüfung nur auf Spalten angewendet werden kann. Deshalb ist es nicht möglich, eine zeilenorientierte Liste für die Datenüberprüfung anzuwenden.</p>
 <p>Für nominalskalierte Wertebereiche werden alle zulässigen Werte in einer Spalte gestgelegt. Anschliessend wird im Dialog Datenüberprüfung unter <code>Quelle</code> der Bereich mit den zulässigen Werten angegeben.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -651,7 +722,7 @@ Tipp
 <p>Bei der Dateneingabe wird anschliessend ein Auswahlliste mit den zulässigen Werten, so dass die Werte nicht mehr direkt eingetippt werden müssen. Diese Auswahlliste kann unterbunden werden, wenn die Option <code>Zellendropdown</code> deaktiviert wird.</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-fisher_good_2019" class="csl-entry" role="listitem">
 Fisher, N. I., &amp; Kordupleski, R. E. (2019). Good and bad market research: A critical review of Net Promoter Score. <em>Applied Stochastic Models in Business and Industry</em>, <em>35</em>(1), 138–151. <a href="https://doi.org/10.1002/asmb.2417">https://doi.org/10.1002/asmb.2417</a>
 </div>
@@ -751,10 +822,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -764,8 +852,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -777,7 +874,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -821,6 +1041,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -846,6 +1067,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -907,12 +1154,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../kapitel/einleitung/01_jargon.html" class="pagination-link">
+      <a href="../../kapitel/einleitung/01_jargon.html" class="pagination-link" aria-label="Excel Jargon">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Excel Jargon</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../kapitel/datentypen/kapitel.html" class="pagination-link">
+      <a href="../../kapitel/datentypen/kapitel.html" class="pagination-link" aria-label="Datentypen">
         <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datentypen</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -921,4 +1168,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>

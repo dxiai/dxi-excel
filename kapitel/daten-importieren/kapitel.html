@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Keine Treffer",
     "search-matching-documents-text": "Treffer",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "weitere Treffer in diesem Dokument",
     "search-more-matches-text": "weitere Treffer in diesem Dokument",
     "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Abbrechen",
     "search-submit-button-title": "Abschicken",
     "search-label": "Suchen"
@@ -71,12 +78,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html">Datenquellen</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-importieren/kapitel.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html">Datenquellen</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-importieren/kapitel.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -86,12 +93,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Einführung in die Datenwissenschaft mit Excel</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/dxiai/dxi-excel" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/dxiai/dxi-excel" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -257,7 +264,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -276,12 +283,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#daten-aktualisieren" id="toc-daten-aktualisieren" class="nav-link" data-scroll-target="#daten-aktualisieren"><span class="header-section-number">7.4</span> Daten aktualisieren</a></li>
   <li><a href="#datenverbindung-anpassen" id="toc-datenverbindung-anpassen" class="nav-link" data-scroll-target="#datenverbindung-anpassen"><span class="header-section-number">7.5</span> Datenverbindung anpassen</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/daten-sammeln/kapitel.html">Datenquellen</a></li><li class="breadcrumb-item"><a href="../../kapitel/daten-importieren/kapitel.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chapter-daten-importieren" class="quarto-section-identifier"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></span></h1>
 </div>
@@ -296,14 +303,20 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p>Viele Excel Arbeitsmappen kombinieren Berechnungen und Daten. Excel kann allerdings auch Daten aus anderen Quellen importieren. Quellen können andere Dateien, Datenbanken oder Web-APIs sein und in verschiedenen Formaten vorliegen. Dafür stellt Excel Parser für verschiedene Dateiformate bereit, damit die Daten importiert werden können.</p>
 <p>Daten werden korrekt mit dem Kommando <strong>Daten abrufen (Power Query)</strong> importiert. Das Kommando ist in der Gruppe <strong>Daten</strong> im Abschnitt <strong>Daten abrufen und transformieren</strong> zu finden. Das Kommando <em>Daten abrufen</em> startet die sog. <strong>Power Query</strong> Umgebung. In dieser Umgebung können Daten aus verschiedenen Quellen importiert und vor der Bereitstellung korrigiert werden.</p>
-<div id="fig-menubalken-power-query-kommando-daten-abrufen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/daten_import_ribbon.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.1: Menubalken Power Query - Kommando Daten abrufen</figcaption>
+<div id="fig-menubalken-power-query-kommando-daten-abrufen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-menubalken-power-query-kommando-daten-abrufen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/daten_import_ribbon.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-menubalken-power-query-kommando-daten-abrufen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.1: Menubalken Power Query - Kommando Daten abrufen
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -317,10 +330,14 @@ Power Query
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>Power Query</strong> ist eine Umgebung für den Datenimport, die von verschiedenen Microsoft Produkten verwendet wird. Die Umgebung ist in Excel, Power BI, Power Apps und Power Automate verfügbar. Power Query stellt eine einheitliche Schnittstelle für den Datenimport bereit und basiert auf einer <em>Import-Beschreibungssprache</em>. Mit diese Sprache lassen sich Daten für die Arbeit vorbereiten, so dass viele Datenbereinigungsschritte in Excel Arbeitsmappen entfallen können.</p>
-<div id="fig-power-query-editor-fenster" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_spaltentyp.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.2: Power Query Editor Fenster</figcaption>
+<div id="fig-power-query-editor-fenster" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-editor-fenster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_spaltentyp.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-editor-fenster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.2: Power Query Editor Fenster
+</figcaption>
 </figure>
 </div>
 <p>Zu den zentralen Funktionen von Power Query gehören:</p>
@@ -364,7 +381,7 @@ Merke
 </div>
 <section id="datenverbindungen-herstellen" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="datenverbindungen-herstellen"><span class="header-section-number">7.1</span> Datenverbindungen herstellen</h2>
-<p>Eine Datenverbindung wird über das Kommando <code>Daten abrufen (Power Query)</code> ausgelöst. Das Kommando ist in der Gruppe <strong>Daten</strong> im Abschnitt <strong>Daten abrufen und transformieren</strong> zu finden. Das Kommando bereitet den Import durch Power Query vor, indem zuerst das Dateiformat und anschliessend die zugehörige Datenquellen ausgewählt wird. Nach diesen Schritten kann Excel die Daten <code>Laden</code> oder die <code>Daten transformieren</code> (s. <a href="#fig-power-query-laden-oder-transformieren">Abbildung&nbsp;<span>7.3</span></a>).</p>
+<p>Eine Datenverbindung wird über das Kommando <code>Daten abrufen (Power Query)</code> ausgelöst. Das Kommando ist in der Gruppe <strong>Daten</strong> im Abschnitt <strong>Daten abrufen und transformieren</strong> zu finden. Das Kommando bereitet den Import durch Power Query vor, indem zuerst das Dateiformat und anschliessend die zugehörige Datenquellen ausgewählt wird. Nach diesen Schritten kann Excel die Daten <code>Laden</code> oder die <code>Daten transformieren</code> (s. <a href="#fig-power-query-laden-oder-transformieren" class="quarto-xref">Abbildung&nbsp;<span>7.3</span></a>).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -378,10 +395,14 @@ Praxis
 <p>Die Daten sollten nur in Ausnahmefällen unkontrolliert geladen werden. Die Daten sollten vor dem Importieren in Power Query überprüft und transformiert werden. Dadurch wird sichergestellt, dass die Daten korrekt importiert werden.</p>
 </div>
 </div>
-<div id="fig-power-query-laden-oder-transformieren" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/daten_import_navigator.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.3: Laden oder Transformieren-Auswahl beim Import einer Excel Arbeitsmappe</figcaption>
+<div id="fig-power-query-laden-oder-transformieren" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-laden-oder-transformieren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/daten_import_navigator.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-laden-oder-transformieren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.3: Laden oder Transformieren-Auswahl beim Import einer Excel Arbeitsmappe
+</figcaption>
 </figure>
 </div>
 <p>Wird die Option <code>Daten transformieren</code> ausgewählt, öffnet sich der Power Query Editor. In diesem Editor können die Daten überprüft und transformiert werden. Das Transformieren der Daten umfasst vier Arten der Transformation:</p>
@@ -402,10 +423,14 @@ Praxis
 <li><code>Geänderter Typ</code> (Windows) bzw. <code>geänderter Spaltentyp</code> (MacOS)</li>
 </ol>
 <p>Der Schritt <code>Geänderter Typ</code> enthält die Schemadefinition. Power Query versucht das Schema automatisch zu erkennen. Das funktioniert besonders bei Zahlenwerten nicht immer zuverlässig. Deshalb muss das Schema immer kontrolliert und gegebenenfalls angepasst werden.</p>
-<div id="fig-power-query-editor-scheme" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_schema_anpassung.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.4: Schemaanpassung mit Power Query</figcaption>
+<div id="fig-power-query-editor-scheme" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-editor-scheme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_schema_anpassung.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-editor-scheme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.4: Schemaanpassung mit Power Query
+</figcaption>
 </figure>
 </div>
 <p>Nachdem das Schema kontrolliert wurde, können die Daten nach Excel importiert werden. Dazu wird das Kommando <code>Schließen &amp; laden</code> in Power Query Menukategorie <code>Start</code> ausgeführt.</p>
@@ -428,10 +453,14 @@ Achtung
 <section id="datenschema-anpassen" class="level2" data-number="7.2">
 <h2 data-number="7.2" class="anchored" data-anchor-id="datenschema-anpassen"><span class="header-section-number">7.2</span> Datenschema anpassen</h2>
 <p>Die einfachste Möglichkeit zur Anpassung des Datenschemas ist die Verwendung der Menukategorie <code>Transformation</code>. Dieses Menu zeigt alle verfügbaren Transformationen an. Die Transformationen sind in sechs Kategorien gegliedert:</p>
-<div id="fig-power-query-ribbon-transformation" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_ribbon_transformation.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.5: Power Query Menu Transformation</figcaption>
+<div id="fig-power-query-ribbon-transformation" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-ribbon-transformation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_ribbon_transformation.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-ribbon-transformation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.5: Power Query Menu Transformation
+</figcaption>
 </figure>
 </div>
 <ol type="1">
@@ -461,11 +490,11 @@ Hinweis
 <div class="callout-body-container callout-body">
 <p>Die meisten Transformationen gehören konzeptionell zu späteren Kapiteln.</p>
 <ul>
-<li><p><code>Gruppieren nach</code> und <code>Werte ersetzen</code> werden im <a href="../kodieren-gruppieren/kapitel.html"><span>Kapitel&nbsp;13</span></a> behandelt.</p></li>
-<li><p><code>Vertauschen</code> wird im <a href="../matrix-operationen/kapitel.html"><span>Kapitel&nbsp;12</span></a> behandelt.</p></li>
-<li><p><code>Zellen zählen</code>, <code>Ausfüllen</code> und alle Transformationen in den Kategorien <code>Zahlenspalten</code>, <code>Datums- &amp; Uhrzeitspalten</code> und <code>Strukturierte Spalten</code> werden im <a href="../vektor-operationen/kapitel.html"><span>Kapitel&nbsp;11</span></a> behandelt.</p></li>
-<li><p><code>Spalte pivotisieren</code> und <code>Spalte entpivotisieren</code> werden im <a href="../daten-formen/kapitel.html"><span>Kapitel&nbsp;14</span></a> behandelt.</p></li>
-<li><p><code>Format</code>, <code>Analysieren</code> und <code>Extrahieren</code> (Kategorie <code>Textspalte</code>) werden im <a href="../zeichenketten/kapitel.html"><span>Kapitel&nbsp;9</span></a> behandelt.</p></li>
+<li><p><code>Gruppieren nach</code> und <code>Werte ersetzen</code> werden im <a href="../kodieren-gruppieren/kapitel.html" class="quarto-xref"><span>Kapitel 13</span></a> behandelt.</p></li>
+<li><p><code>Vertauschen</code> wird im <a href="../matrix-operationen/kapitel.html" class="quarto-xref"><span>Kapitel 12</span></a> behandelt.</p></li>
+<li><p><code>Zellen zählen</code>, <code>Ausfüllen</code> und alle Transformationen in den Kategorien <code>Zahlenspalten</code>, <code>Datums- &amp; Uhrzeitspalten</code> und <code>Strukturierte Spalten</code> werden im <a href="../vektor-operationen/kapitel.html" class="quarto-xref"><span>Kapitel 11</span></a> behandelt.</p></li>
+<li><p><code>Spalte pivotisieren</code> und <code>Spalte entpivotisieren</code> werden im <a href="../daten-formen/kapitel.html" class="quarto-xref"><span>Kapitel 14</span></a> behandelt.</p></li>
+<li><p><code>Format</code>, <code>Analysieren</code> und <code>Extrahieren</code> (Kategorie <code>Textspalte</code>) werden im <a href="../zeichenketten/kapitel.html" class="quarto-xref"><span>Kapitel 9</span></a> behandelt.</p></li>
 </ul>
 <p>In diesen Kapiteln werden die Transformationen von Power Query separat hervorgehoben.</p>
 </div>
@@ -486,7 +515,7 @@ Wichtig
 <p>Die Datentypen müssen im Schritt <code>Geänderter Typ</code> (Windows) bzw. <code>geänderter Spaltentyp</code> (MacOS) angepasst werden.</p>
 </div>
 </div>
-<p>Power Query zeigt neben den Spaltenüberschriften mit einem Symbol den Datentyp der Spalte an. <a href="#tbl-power-query-datentypen">Tabelle&nbsp;<span>7.1</span></a> zeigt die Symbole für die verschiedenen Datentypen. Zusätzlich wird der Datentyp im Menubalken neben dem Kommando <code>Datentyp</code> angezeigt. Die Datentypen sind in vier Kategorien unterteilt:</p>
+<p>Power Query zeigt neben den Spaltenüberschriften mit einem Symbol den Datentyp der Spalte an. <a href="#tbl-power-query-datentypen" class="quarto-xref">Tabelle&nbsp;<span>7.1</span></a> zeigt die Symbole für die verschiedenen Datentypen. Zusätzlich wird der Datentyp im Menubalken neben dem Kommando <code>Datentyp</code> angezeigt. Die Datentypen sind in vier Kategorien unterteilt:</p>
 <ul>
 <li>Zahlen</li>
 <li>Datum und Uhrzeit</li>
@@ -494,9 +523,13 @@ Wichtig
 <li>Wahrheitswerte</li>
 </ul>
 <p>Im Gegensatz zu Excel behandelt Power Query Datum und Uhrzeit als eigenen Datentyp. Power Query muss diese Unterscheidung machen, weil in den Datenquellen diese Werte als Zeichenketten kodiert vorliegen. Dabei handelt es sich um <em>strukturierte Daten</em>. Power Query hat für diese Daten spezielle <em>Parser</em>, die die Zeichenketten aus der Datenquelle in Zahlenwerte für Excel umwandeln.</p>
-<div id="tbl-power-query-datentypen" class="anchored">
+<div id="tbl-power-query-datentypen" class="quarto-float anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-power-query-datentypen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;7.1: Power Query Datentypen mit Symbolen
+</figcaption>
+<div aria-describedby="tbl-power-query-datentypen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="table">
-<caption>Tabelle&nbsp;7.1: Power Query Datentypen mit Symbolen</caption>
 <colgroup>
 <col style="width: 16%">
 <col style="width: 20%">
@@ -514,96 +547,106 @@ Wichtig
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Text</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_text.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_text.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zeichenketten</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">TRUE/FALSE</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_bool.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_bool.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Wahrheitswerte</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Dezimalzahl</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_dezimal.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_dezimal.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Ganze Zahl</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_ganzzahl.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_ganzzahl.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
 <td style="text-align: left;"></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Prozentzahl</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_prozent.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_prozent.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
 <td style="text-align: left;">Dezimalzahl mal <code>100</code></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Währung</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_waehrung.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_waehrung.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
 <td style="text-align: left;">Dezimalzahl mit Währungsformatierung</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Binärzahl</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_binary.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_binary.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
 <td style="text-align: left;">Ganzzahl</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">(Zahl) mit Gebietsschema</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_gebietsschema.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_gebietsschema.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Zahlen</td>
 <td style="text-align: left;">Das Gebietsschema legt den Tausender- und Dezimaltrenner fest</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Datum/Uhrzeit</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_zeitstempel.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_zeitstempel.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Datum und Uhrzeit</td>
 <td style="text-align: left;">Zeitstempel als formatierte Dezimalzahl</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Datum</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_datum.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_datum.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Datum und Uhrzeit</td>
 <td style="text-align: left;">Ganzzahl mit Datumsformatierung</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Uhrzeit</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_uhrzeit.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_uhrzeit.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Datum und Uhrzeit</td>
 <td style="text-align: left;">Dezimalzahl zwischen 0 und 1 mit Zeitformatierung</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Dauer</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_dauer.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_dauer.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Datum und Uhrzeit</td>
 <td style="text-align: left;">Dezimalzahl als Zeitdauer</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Datum/Uhrzeit/Zeitzone</td>
-<td style="text-align: center;"><img src="figures/powerquery_datentyp_zeitstempel_mit_zone.png" class="img-fluid" width="32"></td>
+<td style="text-align: center;"><img src="figures/powerquery_datentyp_zeitstempel_mit_zone.png" class="img-fluid figure-img" width="32"></td>
 <td style="text-align: center;">Datum und Uhrzeit</td>
 <td style="text-align: left;">Internationalisierter Zeitstempel als formatierte Dezimalzahl, die Zeitzone <strong>muss</strong> in den Werten kodiert sein, sonst wird +1 angeommen.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<a href="#fig-pq-spaltentyp-aendern">Abbildung&nbsp;<span>7.6</span></a>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog">Abbildung&nbsp;<span>7.7</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
-<div id="fig-pq-spaltentyp-aendern" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_datentyp_aendern.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.6: Änderung des Datentyps einer Spalte</figcaption>
 </figure>
 </div>
-<div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_datentyp_aendern_dialog.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.7: Abfrage vor dem Ändern eines Datentyps</figcaption>
+<p>Der Datentyp einer Spalte lässt sich mit dem Kommando <code>Datentyp</code> anpassen. Wird auf das Kommando im Menubalken geklickt, öffnet sich eine Auswahlliste, aus der der richtige Datentyp ausgewählt werden kann (<a href="#fig-pq-spaltentyp-aendern" class="quarto-xref">Abbildung&nbsp;<span>7.6</span></a>). Wird der Datentyp geändert, dann erfolgt eine Abfrage (s. <a href="#fig-pq-datentyp-schritt-dialog" class="quarto-xref">Abbildung&nbsp;<span>7.7</span></a>), ob der Datentyp im aktuellen Arbeitsschritt erstzt werden soll (<code>Aktuelle ersetzen</code>) oder ob ein neuer Arbeitsschritt eingefügt werden soll (<code>Neuen Schritt hinzufügen</code>). Hier kann normalerweise <code>Aktuelle ersetzen</code> ausgewählt werden.</p>
+<div id="fig-pq-spaltentyp-aendern" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pq-spaltentyp-aendern-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_datentyp_aendern.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pq-spaltentyp-aendern-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.6: Änderung des Datentyps einer Spalte
+</figcaption>
+</figure>
+</div>
+<div id="fig-pq-datentyp-schritt-dialog" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pq-datentyp-schritt-dialog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_datentyp_aendern_dialog.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pq-datentyp-schritt-dialog-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.7: Abfrage vor dem Ändern eines Datentyps
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -619,10 +662,14 @@ MacOS vs.&nbsp;Windows
 <p>Gelegentlich müssen Zahlen an das richtige Gebietsschema angepasst werden, damit die Werte korrekt eingelesen werden. Das ist immer dann notwendig, wenn das Dezimaltrennzeichen in der zu importierenden Datei vom aktuellen Gebietsschema abweicht.</p>
 <p>Unter MacOS können gebietsspezifische Datenformate sowohl über den Menübalken Transformieren als auch über die Spaltenüberschrift erreicht und angepasst werden.</p>
 <p>Unter Windows ist die Option <code>mit Gebietsschema</code> nur hinter dem Datentyp-Icon über die Spaltenüberschrift erreichbar. Dazu wird mit der rechten Maustaste auf die Spaltenüberschrift geklickt und anschliessend das Untermenü <code>Typ ändern</code> ausgewählt. Dort findet sich ganz unten der Punkt <code>Mit Gebietsschema...</code>. Alternativ lässt sich dieses Menü auch erreichen, indem mit der linken Maustaste auf das Datentyp-Icon links neben der Spaltenüberschrift geklickt wird. Beide Optionen funktionieren auch unter MacOS.</p>
-<div id="fig-windows-gebietsschema" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/windows_mit_gebietsschema.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.8: Gebietsschema Datentyp in PowerQuery über das Datentypmenü der Spaltenüberschrift</figcaption>
+<div id="fig-windows-gebietsschema" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-windows-gebietsschema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/windows_mit_gebietsschema.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-windows-gebietsschema-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.8: Gebietsschema Datentyp in PowerQuery über das Datentypmenü der Spaltenüberschrift
+</figcaption>
 </figure>
 </div>
 </div>
@@ -690,10 +737,14 @@ Praxis
 <h2 data-number="7.3" class="anchored" data-anchor-id="spalten-auswählen-oder-entfernen"><span class="header-section-number">7.3</span> Spalten auswählen oder entfernen</h2>
 <p>Zwei besondere Transformationen sind <code>Spalten auswählen</code> und <code>Spalten entfernen</code>. Diese Transformationen werden im Menuband <code>Start</code> angeboten. Mit diesen Transformationen lassen sich unbenötigte Spalten aus den Daten entfernen. Dadurch werden die Daten in Excel übersichtlicher.</p>
 <p>Diese Funktion kommt bei Excel-Arbeitsmappen häufig zum Einsatz, wenn nach Ende der Daten zusätzliche leere Spalten folgen. Diese Spalten können mit <code>Spalten entfernen</code> entfernt werden.</p>
-<div id="fig-power-query-editor-spalten-auswaehlen-entfernen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_spalten_verwalten.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.9: Power Query Kommandos zum auswählen oder entfernen von Spalten (Menu <code>Start</code>)</figcaption>
+<div id="fig-power-query-editor-spalten-auswaehlen-entfernen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-editor-spalten-auswaehlen-entfernen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_spalten_verwalten.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-editor-spalten-auswaehlen-entfernen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.9: Power Query Kommandos zum auswählen oder entfernen von Spalten (Menu <code>Start</code>)
+</figcaption>
 </figure>
 </div>
 <p>Beide Kommandos verändern die Datenstruktur, indem Spalten entfernt werden. Das Kommando <code>Spalten auswählen</code> lässt die ausgewählten Spalten in der Datenstruktur und entfernt alle anderen. Das Kommando <code>Spalten entfernen</code> entfernt nur die ausgewählten Spalten.</p>
@@ -715,10 +766,14 @@ Achtung
 <h2 data-number="7.4" class="anchored" data-anchor-id="daten-aktualisieren"><span class="header-section-number">7.4</span> Daten aktualisieren</h2>
 <p>Die Daten können sich aber ändern, z.B. weil ein Formular ausgefüllt wurde oder eine Datenbank aktualisiert wurde. Dadurch ändern sich die Daten in der Datenquelle. In solchen Fällen ist die Kopie in der Arbeitsmappe nicht mehr aktuell. Um die Daten zu aktualisieren, muss die Datenverbindung aktualisiert werden.</p>
 <p>Dazu wird das Kommando <strong>Alle aktualisieren</strong> verwendet. Das Kommando ist im Menu <strong>Daten</strong> im Abschnitt <strong>Verbindungen</strong> zu finden. Das Kommando aktualisiert alle Datenverbindungen in der Arbeitsmappe entsprechend der Importspezifikation.</p>
-<div id="fig-menubalken-daten-kommando-alle-aktualisieren" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/daten_update_ribbon.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.10: Menubalken Daten - Kommando Alle aktualisieren</figcaption>
+<div id="fig-menubalken-daten-kommando-alle-aktualisieren" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-menubalken-daten-kommando-alle-aktualisieren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/daten_update_ribbon.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-menubalken-daten-kommando-alle-aktualisieren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.10: Menubalken Daten - Kommando Alle aktualisieren
+</figcaption>
 </figure>
 </div>
 <p>Es werden nur die importierten Daten aktualisiert. Wurde die Tabelle durch Formeln erweitert, werden diese Formeln <em>nicht</em> gelöscht, sondern auf die neuen Daten erweitert.</p>
@@ -741,22 +796,30 @@ Wichtig
 <p>Gelegentlich ändert sich der Ort einer Datenquelle. Sehr häufig tritt diese Situation ein, wenn eine Datei in einen anderen Ordner verschoben wird. In solchen Fällen muss die Datenverbindung angepasst werden. Dazu muss in Power Query die Datenquelle angepasst werden.</p>
 <ol type="1">
 <li>Powerquery öffnen</li>
-<li>Einstellungen im Schritt “Quelle” auswählen (s. <a href="#fig-power-query-editor-datenquelle-anpassen">Abbildung&nbsp;<span>7.11</span></a>)</li>
+<li>Einstellungen im Schritt “Quelle” auswählen (s. <a href="#fig-power-query-editor-datenquelle-anpassen" class="quarto-xref">Abbildung&nbsp;<span>7.11</span></a>)</li>
 <li>Pfad zur Datenquelle anpassen</li>
 </ol>
 <p>Nachdem die richtige Datei ausgewählt wurde, sollte immer das Schema kontrolliert werden, ob die Änderung keine Auswirkungen auf das Schema hat. Wird dieser Schritt übersprungen, kann es zu Fehlern beim Import kommen und im schlimmsten Fall werden die Formeln in der Arbeitsmappe durch eine Fehlerfortpflanzung zerstört.</p>
 <p>Abschliessend kann wieder das Kommando <strong>Schliessen &amp; Landen</strong> ausgeführt werden.</p>
-<div id="fig-power-query-editor-datenquelle-anpassen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_quelle_anpassen.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.11: Power Query: Quelle Anpassen (Ausschnitt)</figcaption>
+<div id="fig-power-query-editor-datenquelle-anpassen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-editor-datenquelle-anpassen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_quelle_anpassen.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-editor-datenquelle-anpassen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.11: Power Query: Quelle Anpassen (Ausschnitt)
+</figcaption>
 </figure>
 </div>
-<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen">Abbildung&nbsp;<span>7.12</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
-<div id="fig-menubalken-daten-abfragen-verbindungen" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/daten_update_ribbon_abfragen_liste.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.12: Menubalken Daten - Abfragen &amp; Verbindungen</figcaption>
+<p>Alle Datenverbindungen werden auch im Dialog <strong>Abfragen &amp; Verbindungen</strong> (s. <a href="#fig-menubalken-daten-abfragen-verbindungen" class="quarto-xref">Abbildung&nbsp;<span>7.12</span></a>) angezeigt. Der Dialog ist in der Gruppe <strong>Verbindungen</strong> im Abschnitt <strong>Daten</strong> zu finden. Der Dialog zeigt alle Datenverbindungen an, die in der Arbeitsmappe verwendet werden.</p>
+<div id="fig-menubalken-daten-abfragen-verbindungen" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-menubalken-daten-abfragen-verbindungen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/daten_update_ribbon_abfragen_liste.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-menubalken-daten-abfragen-verbindungen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.12: Menubalken Daten - Abfragen &amp; Verbindungen
+</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -769,11 +832,15 @@ MacOS vs.&nbsp;Windows
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Unter Windows lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel von dort immer den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten">Abbildung&nbsp;<span>7.13</span></a>).</p>
-<div id="fig-power-query-unter-macos-starten" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/power_query_macos_starten.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;7.13: Power Query unter MacOS starten</figcaption>
+<p>Unter Windows lassen sich die Datenquellen im Dialog <strong>Abfragen &amp; Verbindungen</strong> anpassen. Die Windows Version von Excel von dort immer den Power Query Editor. Die Version für MacOS macht das nicht. Um Änderungen an einer Abfrage vorzunehmen, muss die Abfrage in Power Query über das Kommando <code>Daten abrufen</code> geöffnet werden (s. <a href="#fig-power-query-unter-macos-starten" class="quarto-xref">Abbildung&nbsp;<span>7.13</span></a>).</p>
+<div id="fig-power-query-unter-macos-starten" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-power-query-unter-macos-starten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/power_query_macos_starten.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-power-query-unter-macos-starten-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;7.13: Power Query unter MacOS starten
+</figcaption>
 </figure>
 </div>
 </div>
@@ -862,10 +929,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -875,8 +959,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -888,7 +981,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -932,6 +1148,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -957,6 +1174,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1018,12 +1261,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../kapitel/datentypen/kapitel.html" class="pagination-link">
+      <a href="../../kapitel/datentypen/kapitel.html" class="pagination-link" aria-label="Datentypen">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datentypen</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../kapitel/variablen/kapitel.html" class="pagination-link">
+      <a href="../../kapitel/variablen/kapitel.html" class="pagination-link" aria-label="Variablen, Funktionen und Operatoren">
         <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1032,4 +1275,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>

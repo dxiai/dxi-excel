@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Keine Treffer",
     "search-matching-documents-text": "Treffer",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "weitere Treffer in diesem Dokument",
     "search-more-matches-text": "weitere Treffer in diesem Dokument",
     "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Abbrechen",
     "search-submit-button-title": "Abschicken",
     "search-label": "Suchen"
@@ -79,6 +86,33 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating">
@@ -87,12 +121,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -102,12 +136,12 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Einführung in die Datenwissenschaft mit Excel</a> 
         <div class="sidebar-tools-main">
-    <a href="https://github.com/dxiai/dxi-excel" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+    <a href="https://github.com/dxiai/dxi-excel" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
 </div>
     </div>
       </div>
@@ -273,7 +307,7 @@ ul.task-list li input[type="checkbox"] {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -305,12 +339,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#neue-funktionen-festlegen" id="toc-neue-funktionen-festlegen" class="nav-link" data-scroll-target="#neue-funktionen-festlegen"><span class="header-section-number">8.5.3</span> Neue Funktionen festlegen</a></li>
   </ul></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action">Problem melden</a></p></div></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chapter-variablen-fkts-ops" class="quarto-section-identifier"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span></h1>
 </div>
@@ -325,7 +359,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <section id="sec-variablen" class="level2" data-number="8.1">
 <h2 data-number="8.1" class="anchored" data-anchor-id="sec-variablen"><span class="header-section-number">8.1</span> Variablen</h2>
@@ -353,20 +389,20 @@ Warnung
 <li>Bezeichner dürfen keine gültigen Adressen im Z1S1-Format sein.</li>
 </ol>
 <div id="exm-ungueltiger-bezeichner" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.1 (Ungültiger Bezeichner) </strong></span>Der Bezeichner <code>x1</code> ist ungültig, weil dieser identisch mit der Adresse <code>X1</code> wäre. Wird Bezeichner um einen Unterstrich zu <code>x_1</code> erweitert, dann gibt es keine Kollision mit der Adresse mehr und der Bezeichner ist gültig.</p>
+<p><span class="theorem-title"><strong>Beispiel 8.1 (Ungültiger Bezeichner)</strong></span> Der Bezeichner <code>x1</code> ist ungültig, weil dieser identisch mit der Adresse <code>X1</code> wäre. Wird Bezeichner um einen Unterstrich zu <code>x_1</code> erweitert, dann gibt es keine Kollision mit der Adresse mehr und der Bezeichner ist gültig.</p>
 </div>
 <section id="sec-dynamisches-feld" class="level3" data-number="8.1.1">
 <h3 data-number="8.1.1" class="anchored" data-anchor-id="sec-dynamisches-feld"><span class="header-section-number">8.1.1</span> Dynamische Bereiche</h3>
 <p>Formeln können mehr als einen Wert verarbeiten und mehr als einen Ergebnis liefern. Solche Formeln müssen nur in die linke obere Ecke eines Bereichs eingetragen werden. Excel erkennt automatisch, dass die Formel auf einen Bereich angewendet werden soll und erzeugt die entsprechende Formel für alle Zellen des Bereichs. Das Ergebnis einer solchen Formel ist ein <em>dynamischer Bereich</em>.</p>
 <div id="def-vektorisieren" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8.1 </strong></span><strong>Vektorisieren</strong> heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.</p>
+<p><span class="theorem-title"><strong>Definition 8.1</strong></span> <strong>Vektorisieren</strong> heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.</p>
 </div>
 <div id="exm-vektorisieren" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.2 (Vektorisieren eines statischen Bereichs) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.2 (Vektorisieren eines statischen Bereichs)</strong></span> &nbsp;</p>
 <pre><code>=A1:A10</code></pre>
 </div>
 <p>Im Gegensatz zu einem normalen Bereich, ist bei einem dynamischen Bereich nur die linke obere Zelle bekannt. Um trotzdem alle Zellen eines solchen Bereichs zu adressieren, wird die Gatter- (<code>#</code>) Notation verwendet.</p>
-<p>Das <a href="#exm-vektorisieren">Beispiel&nbsp;<span>8.2</span></a> erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle <code>B1</code> eingetragen. Anschliessend können die Werte im Bereich <code>B1:B10</code> über die Gatter-Notation addressiert werden: <code>B1#</code>.</p>
+<p>Das <a href="#exm-vektorisieren" class="quarto-xref">Beispiel&nbsp;<span>8.2</span></a> erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle <code>B1</code> eingetragen. Anschliessend können die Werte im Bereich <code>B1:B10</code> über die Gatter-Notation addressiert werden: <code>B1#</code>.</p>
 <p>Der Vorteil des Vektorisierens ist, dass der Bereich durch das Einfügen neuer Zeilen vergrössert werden kann, ohne dass die nachfolgenden vektorisierten Formeln angepasst werden müssen.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -378,7 +414,7 @@ Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Weil Tabellen automatisch vektorisiert werden, ist es einfacher Werte in einer Tabelle zu erfassen bzw. als Tabelle zu importieren (s. <a href="../daten-importieren/kapitel.html"><span>Kapitel&nbsp;7</span></a>) und anschliessend über die Tabellenadressierung auf die Werte zu verweisen.</p>
+<p>Weil Tabellen automatisch vektorisiert werden, ist es einfacher Werte in einer Tabelle zu erfassen bzw. als Tabelle zu importieren (s. <a href="../daten-importieren/kapitel.html" class="quarto-xref"><span>Kapitel 7</span></a>) und anschliessend über die Tabellenadressierung auf die Werte zu verweisen.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -396,7 +432,7 @@ Merke
 </div>
 <blockquote class="blockquote">
 <div id="exm-tabellen-zu-vektoren" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.3 (Vektorisieren von Tabellenspalten) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.3 (Vektorisieren von Tabellenspalten)</strong></span> &nbsp;</p>
 <pre><code>= Tabelle1[Spalte1]</code></pre>
 <p>Diese Formel vektorisiert die Spalte mit dem Namen <code>Spalte1</code> aus der Tabelle <code>Tabelle1</code>. Angenommen, dass diese Formel in Zelle <code>A1</code> des aktuellen Arbeitsblattes steht, dann kann anschliessend auf den Vektor über die Gatter-Notation zugegriffen werden:</p>
 <pre><code>=A1#</code></pre>
@@ -410,7 +446,7 @@ Merke
 <p>Auf diese Weise lassen sich oft adressierte Zelleen oder Bereiche benennen. Dadurch kann die Adresse für Verwendung in Formeln abstrahiert werden.</p>
 <p>Die Verwendung von benannten Bereichen wird weiter vereinfacht, dass bei der Eingabe von Formeln die Namen der benannten Bereiche als Vorschlag angezeigt werden.</p>
 <div id="exm-dynamischer-benannter-bereich" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.4 (Adressierung eines dynamischen benannten Bereichs) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.4 (Adressierung eines dynamischen benannten Bereichs)</strong></span> &nbsp;</p>
 <pre><code>=umsatz#</code></pre>
 </div>
 <p>Benannte Zellen helfen, auf wichtige Zellen in einer Arbeitsmappe zuzugreifen.</p>
@@ -463,7 +499,7 @@ Hinweis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Eine Tabelle ist ein spezieller benannter Bereich, der als Ganzes oder in Teilen referenziert werden kann (s. <a href="../datentypen/kapitel.html#sec-tabellenadressen">Abschnitt&nbsp;<span>6.4.2</span></a>).</p>
+<p>Eine Tabelle ist ein spezieller benannter Bereich, der als Ganzes oder in Teilen referenziert werden kann (s. <a href="../datentypen/kapitel.html#sec-tabellenadressen" class="quarto-xref">Abschnitt&nbsp;<span>6.4.2</span></a>).</p>
 </div>
 </div>
 </section>
@@ -498,7 +534,7 @@ Makros
 <div class="callout-body-container callout-body">
 <p>Neben den Funktionen und Kommandos existieren in Excel noch <em>Makros</em>. Mit Makros können neue Kommandos und Funktionen programmiert werden. Makros folgen aber nicht den Regeln von Formeln, weil sie in einer anderen Programmiersprache geschrieben werden.</p>
 <p>Makros unterliegen nicht den Einschränkungen von Excel-Funktionen. Diese Freiheit ist gleichzeitig ein Fluch, denn Makros sind ein Sicherheitsrisiko und Excel präsentiert entsprechende Warnungen, wenn Makros in einer Arbeitsmappe gefunden wurde.</p>
-<p>Aktuelle Bestrebungen von Microsoft zielen darauf ab, Makros langfristig durch Funktionen zu ersetzen. Ein Teil dieser Bestrebungen ist die Einführung von <code>LAMBDA()</code>-Funktionen (s. <a href="#sec-lambda-funktionen">Abschnitt&nbsp;<span>8.5</span></a>).</p>
+<p>Aktuelle Bestrebungen von Microsoft zielen darauf ab, Makros langfristig durch Funktionen zu ersetzen. Ein Teil dieser Bestrebungen ist die Einführung von <code>LAMBDA()</code>-Funktionen (s. <a href="#sec-lambda-funktionen" class="quarto-xref">Abschnitt&nbsp;<span>8.5</span></a>).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -511,7 +547,7 @@ Merke
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Excel hat keine Identitätsfunktion. Die Identitätsfunktion wird durch eine Formel simuliert, die nur eine Adresse enthält. Solche Formeln werden für das <em>Vektorisieren</em> (<a href="#def-vektorisieren">Definition&nbsp;<span>8.1</span></a>) von Bereichen eingesetzt.</p>
+<p>Excel hat keine Identitätsfunktion. Die Identitätsfunktion wird durch eine Formel simuliert, die nur eine Adresse enthält. Solche Formeln werden für das <em>Vektorisieren</em> (<a href="#def-vektorisieren" class="quarto-xref">Definition&nbsp;<span>8.1</span></a>) von Bereichen eingesetzt.</p>
 </div>
 </div>
 <section id="generatoren-in-excel" class="level3" data-number="8.2.1">
@@ -551,16 +587,20 @@ Merke
 <h3 data-number="8.3.1" class="anchored" data-anchor-id="substitution-über-funktionspfade"><span class="header-section-number">8.3.1</span> Substitution über Funktionspfade</h3>
 <p>Eine komplexe Operation lassen sich in Excel durch Substitution über Funktionspfade vereinfachen.</p>
 <div id="def-funktionspfad" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 8.2 </strong></span>Ein <strong>Funktionspfad</strong> sind Formeln, die sich über ihre Adressen aufeinander beziehen.</p>
+<p><span class="theorem-title"><strong>Definition 8.2</strong></span> Ein <strong>Funktionspfad</strong> sind Formeln, die sich über ihre Adressen aufeinander beziehen.</p>
 </div>
 <p>Bei einem Funktionspfad werden die substituierten Funktionen als Formeln in separate Zellen geschrieben. Die Adresse der jeweiligen Formel wird als Substitution für die Funktion eingesetzt. Sind die Formeln in einem benannten Bereich, dann kann der Name des Bereichs zur Substitution verwendet werden.</p>
-<div id="fig-funktionspfad" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/funktionspfad.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;8.1: Funktionspfad</figcaption>
+<div id="fig-funktionspfad" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-funktionspfad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/funktionspfad.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-funktionspfad-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;8.1: Funktionspfad
+</figcaption>
 </figure>
 </div>
-<p>Funktionspfade können mithilfe des Kommandos <code>Spur zum Vorgänger</code> im Menü <code>Formeln</code> sichtbar gemacht werden (<a href="#fig-funktionspfad">Abbildung&nbsp;<span>8.1</span></a>).</p>
+<p>Funktionspfade können mithilfe des Kommandos <code>Spur zum Vorgänger</code> im Menü <code>Formeln</code> sichtbar gemacht werden (<a href="#fig-funktionspfad" class="quarto-xref">Abbildung&nbsp;<span>8.1</span></a>).</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -580,7 +620,7 @@ Praxis
 <p>Excels <code>LET()</code>-Funktion erlaubt das Vereinfachen komplizierter Formeln durch <em>Variablen</em>. Diese <em>Variablen</em> existieren nur im Kontext der <code>LET()</code>-Funktion und können nicht ausserhalb dieser Funktion verwendet werden.</p>
 <p>Eine Variable in der <code>LET()</code>-Funktion entspricht einer Substitution eines Teilausdrucks einer Formel.</p>
 <div id="exm-let-substitution" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.5 (<code>LET()</code>-Funktion zur Substitution) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.5 (<code>LET()</code>-Funktion zur Substitution)</strong></span> &nbsp;</p>
 <pre class="excel"><code>=LET(
     Daten; 'Unbearbeitete Daten'!A:F;
     DatenFeld; INDEX(
@@ -591,9 +631,9 @@ Praxis
     WENN(ISTLEER(DatenFeld);#NV;DatenFeld)
  )</code></pre>
 </div>
-<p>In <a href="#exm-let-substitution">Beispiel&nbsp;<span>8.5</span></a> wird der referenzierte Bereich und der Aufruf der <code>INDEX()</code> substituiert. Die Substitution wird durch die Variablen <code>Daten</code> und <code>DatenFeld</code> realisiert.</p>
+<p>In <a href="#exm-let-substitution" class="quarto-xref">Beispiel&nbsp;<span>8.5</span></a> wird der referenzierte Bereich und der Aufruf der <code>INDEX()</code> substituiert. Die Substitution wird durch die Variablen <code>Daten</code> und <code>DatenFeld</code> realisiert.</p>
 <div id="exm-ohne-let-substitution" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.6 (Formel ohne Substitution) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.6 (Formel ohne Substitution)</strong></span> &nbsp;</p>
 <pre><code>=WENN(ISTLEER(INDEX(
         'Unbearbeitete Daten'!A:F;
         sequenz(ZEILEN('Unbearbeitete Daten'!A:F));
@@ -652,7 +692,7 @@ Warnung
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Die Namen in der <code>LET()</code> unterliegen den gleichen Beschränkungen, wie alle anderen Bezeichner (Abschnitt <a href="#sec-variablen"><span>Kapitel&nbsp;8.1</span></a>).</p>
+<p>Die Namen in der <code>LET()</code> unterliegen den gleichen Beschränkungen, wie alle anderen Bezeichner (Abschnitt <a href="#sec-variablen" class="quarto-xref"><span>Kapitel 8.1</span></a>).</p>
 </div>
 </div>
 <p>Die ursprüngliche Formel lässt sich also dahingehend vereinfachen, dass der Aufruf der <code>INDEX()</code>-Funktion “ausgeklammert” und in der Hilfsvariablen <code>Feld</code> gespeichert wird.</p>
@@ -664,7 +704,7 @@ Warnung
         Feld
      )
  )</code></pre>
-<p>Diese Lösung entspricht ungefähr der Funktionskette <a href="#eq-funktionskette-let">Formel&nbsp;<span>8.1</span></a>.</p>
+<p>Diese Lösung entspricht ungefähr der Funktionskette <a href="#eq-funktionskette-let" class="quarto-xref">Formel&nbsp;<span>8.1</span></a>.</p>
 <p><span id="eq-funktionskette-let"><span class="math display">
 Index() \triangleright Wenn()
 \tag{8.1}</span></span></p>
@@ -673,9 +713,9 @@ Index() \triangleright Wenn()
 </section>
 <section id="sec-lambda-funktionen" class="level2" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="sec-lambda-funktionen"><span class="header-section-number">8.5</span> Funktionen selbst definieren</h2>
-<p>In Excel können eigene Funktionen mit der Funktion <code>LAMBDA()</code> erzeugt werden. Die <code>LAMBDA()</code>-Funktion erzeugt die Funktion aus ihren Parametern. Dabei ist der letzte Parameter immer der Funktionskörper. Die restlichen Parameter sind die Parameter der Funktion. Es können max 253 Parameter angegeben werden, wobei keine optionalen oder vorbelegten Parameter möglich sind. <a href="#exm-lambda-basic">Beispiel&nbsp;<span>8.7</span></a> zeigt eine einfache Funktionsdefinition mit zwei Parametern.</p>
+<p>In Excel können eigene Funktionen mit der Funktion <code>LAMBDA()</code> erzeugt werden. Die <code>LAMBDA()</code>-Funktion erzeugt die Funktion aus ihren Parametern. Dabei ist der letzte Parameter immer der Funktionskörper. Die restlichen Parameter sind die Parameter der Funktion. Es können max 253 Parameter angegeben werden, wobei keine optionalen oder vorbelegten Parameter möglich sind. <a href="#exm-lambda-basic" class="quarto-xref">Beispiel&nbsp;<span>8.7</span></a> zeigt eine einfache Funktionsdefinition mit zwei Parametern.</p>
 <div id="exm-lambda-basic" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.7 (Funktionsdefinition mit zwei Parametern ohne Ausführung) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.7 (Funktionsdefinition mit zwei Parametern ohne Ausführung)</strong></span> &nbsp;</p>
 <pre class="excel"><code>= LAMBDA(a; b; a + b)</code></pre>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -691,9 +731,9 @@ Warnung
 <p>Mit Excels <code>LAMBDA()</code>-Funktion können nur Funktionen durch Verkettung anderer Funktionen erzeugt werden.</p>
 </div>
 </div>
-<p>Für Excel sind Funktionen kein darstellbarer Datentyp. Wird also eine Funktion mit <code>LAMBDA()</code> definiert, ohne dass sie unmittelbar ausgeführt wird, zeigt Excel den Fehler <code>#KALK!</code> an. Dieser Fehler kann dadurch vermieden werden, indem die Funktion unmittelbar ausgeführt wird (s. <a href="#exm-lambda-basic-run">Beispiel&nbsp;<span>8.8</span></a>).</p>
+<p>Für Excel sind Funktionen kein darstellbarer Datentyp. Wird also eine Funktion mit <code>LAMBDA()</code> definiert, ohne dass sie unmittelbar ausgeführt wird, zeigt Excel den Fehler <code>#KALK!</code> an. Dieser Fehler kann dadurch vermieden werden, indem die Funktion unmittelbar ausgeführt wird (s. <a href="#exm-lambda-basic-run" class="quarto-xref">Beispiel&nbsp;<span>8.8</span></a>).</p>
 <div id="exm-lambda-basic-run" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.8 (Funktionsdefinition mit zwei Parametern mit sofortiger Ausführung) </strong></span>&nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 8.8 (Funktionsdefinition mit zwei Parametern mit sofortiger Ausführung)</strong></span> &nbsp;</p>
 <pre class="excel"><code>= LAMBDA(a; b; a + b)(1;2)</code></pre>
 </div>
 <div class="callout callout-style-default callout-warning callout-titled">
@@ -752,12 +792,12 @@ Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Die Funktion <code>MATRIXERSTELLEN()</code> kann meistens durch das <strong><em>äussere Produkt</em></strong> (<a href="../matrix-operationen/kapitel.html"><span>Kapitel&nbsp;12</span></a>) ersetzt werden.</p>
+<p>Die Funktion <code>MATRIXERSTELLEN()</code> kann meistens durch das <strong><em>äussere Produkt</em></strong> (<a href="../matrix-operationen/kapitel.html" class="quarto-xref"><span>Kapitel 12</span></a>) ersetzt werden.</p>
 </div>
 </div>
-<p>Der Callback für <code>MATRIXERSTELLEN()</code> darf nur zwei Parameter haben, denen die aktuellen Index-Werte zugewiesen werden. Daraus ergibt sich, dass im Funktionskörper nur diese beiden Parameter bereitgestellt werden. Komplexere Anwendungen lassen sich mit <em>Closures</em> erzeugen. Dazu wird eine Funktion mit LAMBDA() erzeugt, die zusätzliche Werte oder Datenstrukturen als Parameter unterstützt. Diese Funktion erzeugt anschliessend den Callback für <code>MATRIXERZEUGEN()</code>. Der Callback ist also ein Closure der erzeugenden Funktion. Dadurch kann der Callback die Werte und Datenstrukturen der erzeugenden Funktion beim Aufruf durch die Funktion <code>MATRIXERZEUGEN()</code> ebenfalls verwenden (s. <a href="#exm-matrixerstellen-mit-closure">Beispiel&nbsp;<span>8.9</span></a>).</p>
+<p>Der Callback für <code>MATRIXERSTELLEN()</code> darf nur zwei Parameter haben, denen die aktuellen Index-Werte zugewiesen werden. Daraus ergibt sich, dass im Funktionskörper nur diese beiden Parameter bereitgestellt werden. Komplexere Anwendungen lassen sich mit <em>Closures</em> erzeugen. Dazu wird eine Funktion mit LAMBDA() erzeugt, die zusätzliche Werte oder Datenstrukturen als Parameter unterstützt. Diese Funktion erzeugt anschliessend den Callback für <code>MATRIXERZEUGEN()</code>. Der Callback ist also ein Closure der erzeugenden Funktion. Dadurch kann der Callback die Werte und Datenstrukturen der erzeugenden Funktion beim Aufruf durch die Funktion <code>MATRIXERZEUGEN()</code> ebenfalls verwenden (s. <a href="#exm-matrixerstellen-mit-closure" class="quarto-xref">Beispiel&nbsp;<span>8.9</span></a>).</p>
 <div id="exm-matrixerstellen-mit-closure" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 8.9 (Matrix mit Closure erstellen) </strong></span>Im Bereich <code>A1:A4</code> stehen beliebige Zeichenketten.</p>
+<p><span class="theorem-title"><strong>Beispiel 8.9 (Matrix mit Closure erstellen)</strong></span> Im Bereich <code>A1:A4</code> stehen beliebige Zeichenketten.</p>
 <pre><code>=MATRIXERSTELLEN(5;3;
     LAMBDA(namen;
            LAMBDA(a;b; 
@@ -771,19 +811,27 @@ Praxis
 </section>
 <section id="neue-funktionen-festlegen" class="level3" data-number="8.5.3">
 <h3 data-number="8.5.3" class="anchored" data-anchor-id="neue-funktionen-festlegen"><span class="header-section-number">8.5.3</span> Neue Funktionen festlegen</h3>
-<p>Neben Schleifen können mit <code>LAMBDA()</code> neue Funktionen erzeugt werden. Dazu muss in einem Arbeitsblatt ein Name mit der Funktionsdefinition erzeugt werden. Namen werden über das Menüband <code>Formeln</code> mit dem Kommando <code>Namen definieren</code> erzeugt. Dieses Kommando öffnet einen Dialog, über welchen ein Name definiert werden kann(<a href="#fig-lambda-funcdef">Abbildung&nbsp;<span>8.2</span></a>). In diesem Dialog müssen die beiden Felder <code>Name</code> und <code>Bezieht sich auf</code> ausgefüllt werden.</p>
+<p>Neben Schleifen können mit <code>LAMBDA()</code> neue Funktionen erzeugt werden. Dazu muss in einem Arbeitsblatt ein Name mit der Funktionsdefinition erzeugt werden. Namen werden über das Menüband <code>Formeln</code> mit dem Kommando <code>Namen definieren</code> erzeugt. Dieses Kommando öffnet einen Dialog, über welchen ein Name definiert werden kann(<a href="#fig-lambda-funcdef" class="quarto-xref">Abbildung&nbsp;<span>8.2</span></a>). In diesem Dialog müssen die beiden Felder <code>Name</code> und <code>Bezieht sich auf</code> ausgefüllt werden.</p>
 <p>Der <code>Name</code> ist der Bezeichner der neuen Funktion. Hier dürfen keine Namen vorhandener Funktionen oder benannter Bereiche verwendet werden. Das Feld <code>Bezieht sich auf</code> muss eine LAMBDA-Formel mit der Funktionsdefinition beinhalten. Als <code>Bereich</code> sollte immer <code>Arbeitsmappe</code> ausgewählt sein, weil sonst die Funktion auf ein einziges Arbeitsblatt beschränkt wäre. Zur Dokumentation sollte im Feld <code>Kommentar</code> zusätzlich eine Kurzbeschreibung der Funktion angegeben werden. Leider zeigt Excel diesen Kommentar nicht als Kurzhilfe für den Funktionsnamen an.</p>
-<div id="fig-lambda-funcdef" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/funktion_definieren.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;8.2: Funktionsdefinition mit <code>LAMBDA()</code></figcaption>
+<div id="fig-lambda-funcdef" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-lambda-funcdef-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/funktion_definieren.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-lambda-funcdef-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;8.2: Funktionsdefinition mit <code>LAMBDA()</code>
+</figcaption>
 </figure>
 </div>
-<p>Nachdem eine Funktion einem Namen zugewiesen wurde, kann dieser Name wie jede andere Funktion in Formeln verwendet werden (<a href="#fig-call-own-function">Abbildung&nbsp;<span>8.3</span></a>).</p>
-<div id="fig-call-own-function" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="figures/funktion_anwenden.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Abbildung&nbsp;8.3: Eigene Funktion anwenden</figcaption>
+<p>Nachdem eine Funktion einem Namen zugewiesen wurde, kann dieser Name wie jede andere Funktion in Formeln verwendet werden (<a href="#fig-call-own-function" class="quarto-xref">Abbildung&nbsp;<span>8.3</span></a>).</p>
+<div id="fig-call-own-function" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-call-own-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/funktion_anwenden.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-call-own-function-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;8.3: Eigene Funktion anwenden
+</figcaption>
 </figure>
 </div>
 <p>Als Funktionskörper können beliebige Excel Operationen vorkommen. Es bietet sich jedoch an, für komplexere Funktionen den Funktionskörper mit <code>LET()</code> einzuleiten. Dadurch lassen sich einzelne Arbeitsschritte leichter isolieren und verketten.</p>
@@ -872,10 +920,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -885,8 +950,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -898,7 +972,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -942,6 +1139,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -967,6 +1165,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1028,12 +1252,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../kapitel/daten-importieren/kapitel.html" class="pagination-link">
+      <a href="../../kapitel/daten-importieren/kapitel.html" class="pagination-link" aria-label="Daten importieren">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../kapitel/zeichenketten/kapitel.html" class="pagination-link">
+      <a href="../../kapitel/zeichenketten/kapitel.html" class="pagination-link" aria-label="Zeichenketten">
         <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1042,4 +1266,5 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 
 
 
-</body></html>
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
