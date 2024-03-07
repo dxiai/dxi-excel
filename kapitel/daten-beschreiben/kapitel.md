@@ -7,10 +7,6 @@ execute:
 
 # Daten beschreiben
 
-::: {.callout-warning}
-## Work in Progress
-:::
-
 ## Universelle Kennwerte
 
 Die universellen Kennwerte von Datenrahmen werden mit Excel auf die Gleicheweise bestimmt, wie die Dimensionen einer Matrix (s. @sec-chapter-matrix-operationen): 
