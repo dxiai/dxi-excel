@@ -96,7 +96,7 @@ Der Apostroph-Dekorator muss zwingend verwendet werden, wenn auf eine Zeichenket
 - Die Zeichenkette beginnt mit einem Gleichheitszeichen (`=`), einem Pluszeichen (`+`), einem Minuszeichen (`-`) oder einem Prozentzeichen (`%`).
 - Die Zeichenkette besteht nur aus Ziffern, dem Dezimaltrenner (`.`) oder dem Tausendertrenner (`‘`) enthält
 - Die Zeichenkette ähnelt der wissenschaftliche Notation für Zahlen mit und ohne Vorzeichen für den Exponenten. Z.B. `5.E3`.
-- Die Zeichenkette ähnelt einm Datum.
+- Die Zeichenkette ähnelt einem Datum.
 - Die Zeichenkette entspricht einen Fehlerwert, unabhängig von der Schreibweise. Z.B. `#nv`.
 - Die Zeichenkette entspricht einem Wahrheitswert (`WAHR` oder `FALSCH`) unabhängig von der Schreibweise.
 
@@ -315,8 +315,8 @@ Der `Diese Zeile`-Operator ist immer relativ zum Arbeitsblatt und nicht relativ 
 
 Wird der `Diese Zeile`-Operator in Tabellen unterschiedlicher Länge verwendet, dann können zwei Fälle eintreten: 
 
-1. Ist die adressierte Tabelle kürzer als die adressierende Tablle, dann wird für die Zeilen, die keine Entsprechung in der adressierten Tabelle haben, der Fehler `#WERT!` zurückgegeben.
-2. Ist die adressierte Tabelle länger als die adressierende Tablle, dann werden alle überzähligen Zeilen *ignoriert*.
+1. Ist die adressierte Tabelle kürzer als die adressierende Tabelle, dann wird für die Zeilen, die keine Entsprechung in der adressierten Tabelle haben, der Fehler `#WERT!` zurückgegeben.
+2. Ist die adressierte Tabelle länger als die adressierende Tabelle, dann werden alle überzähligen Zeilen *ignoriert*.
 
 ::: {.callout-tip}
 ## Praxis
@@ -335,7 +335,7 @@ Tabelle1[#Kopfzeilen]
 ```
 :::
 
-Um gezielt Kofzeilen zu adressieren, kann die Adressierung aus @exm-kopfzeilen mit der Adressierung aus @exm-tabellenbereich kombiniert werden (@exm-kopfzeilen-bereich).
+Um gezielt Kopfzeilen zu adressieren, kann die Adressierung aus @exm-kopfzeilen mit der Adressierung aus @exm-tabellenbereich kombiniert werden (@exm-kopfzeilen-bereich).
 
 ::: {#exm-kopfzeilen-bereich}
 ## Kopfzeilen einer Tabelle adressieren
@@ -347,7 +347,7 @@ Tabelle1[[#Kopfzeilen];[Spalte1]:[Spalte3]]
 
 #### Absolute Adressierung in Tabellen
 
-Ein Tabellenbereich ist immer absolut adressiert. Wird aber nur eine einzelne Spalte einer Tabelle adressiert, dann wird die Adresse relativ addressiert. Damit beim Autoauffüllen diese Adresse nicht verändert wird, muss die Adresse als Bereich angegeben werden.
+Ein Tabellenbereich ist immer absolut adressiert. Wird aber nur eine einzelne Spalte einer Tabelle adressiert, dann wird die Adresse relativ adressiert. Damit beim Autoauffüllen diese Adresse nicht verändert wird, muss die Adresse als Bereich angegeben werden.
 
 ::: {#exm-absoluter-tabellenbereich-eine-spalte}
 ## Absolute Tabellenadressierung von einer Spalte

@@ -13,7 +13,7 @@ Die aktuelle Version ist **Excel365** und muss auf einem Desktop-Computer oder L
 
 Teil des Microsoft365 Abonnements sind die Web- und die Mobilversionen von Excel. Beide Versionen sind in der Funktion leicht eingeschränkte Versionen von Excel365. Die Mobilversion ist für die Arbeit auf einem Smartphone oder Tablet optimiert. Die Web-Version benötigt einen Web-Browser und kann auf jedem Gerät mit Internetzugang verwendet werden. Der Unterschied zwischen Excel365 und den wird immer kleiner und die meisten Konzepte in diese Buch lassen sich auch in Excel im Web umsetzen.
 
-Excel's Desktop Version ohne Abonnement wurde auf dem Stand von Juni 2019 eingefrohren. Diese Version wird nur noch mit Sicherheitsupdates versorgt. Neue Funktionen sind in dieser Version nicht verfügbar. Diese Version ist noch recht weit verbreitet und lässt sich nur schwer von der aktuellen Version unterscheiden, denn tatsächlich handelt es sich bei Excel365 und der Desktop-Version ohne Abonement um die selbe Anwendung. Fehlt das Abonnement, dann sind die neuen Funktionen nicht verfügbar und werden nicht angezeigt oder ausgeführt. Falls diese Version aktiv ist und eine Arbeitsmappe, die mit einer Version mit Abonement erstellt wurde, öffnet, dann erfolgt eine Fehlermeldung und die entsprechenden Funktionen werden blockiert. 
+Excel's Desktop Version ohne Abonnement wurde auf dem Stand von Juni 2019 eingefroren. Diese Version wird nur noch mit Sicherheitsupdates versorgt. Neue Funktionen sind in dieser Version nicht verfügbar. Diese Version ist noch recht weit verbreitet und lässt sich nur schwer von der aktuellen Version unterscheiden, denn tatsächlich handelt es sich bei Excel365 und der Desktop-Version ohne Abonnement um die selbe Anwendung. Fehlt das Abonnement, dann sind die neuen Funktionen nicht verfügbar und werden nicht angezeigt oder ausgeführt. Falls diese Version aktiv ist und eine Arbeitsmappe, die mit einer Version mit Abonnement erstellt wurde, öffnet, dann erfolgt eine Fehlermeldung und die entsprechenden Funktionen werden blockiert. 
 
 Dieses Buch setzt die aktuelle Version von Excel365 voraus. In den folgenden Kapiteln ist also immer Excel365 gemeint, wenn schlicht von Excel geschrieben wird. Die meisten Beispiele und Konzepte lassen sich in der Desktop-Version *ohne Abonnement* nicht umsetzen. Viele Beispiele lassen sich mit der Web- oder Mobilversion nachvollziehen, diesen Versionen fehlt allerdings der Importer für Daten aus anderen Dateien, der in @sec-chapter-daten-importieren behandelt wird und für viele Beispiele Voraussetzung ist.
 
@@ -44,7 +44,7 @@ Excel365 unterscheidet sich leicht für MacOS und Windows. Im Rahmen dieses Buch
 
 Die auffälligsten Unterschiede betreffen den Importer und die bedingte Formatierung.
 
-- Der Importer ist unter Windows etwas flexibeler gestaltet als unter MacOS. Dieser Unterschied betrifft den Inhalt dieses Buchs nicht.
+- Der Importer ist unter Windows etwas flexibler gestaltet als unter MacOS. Dieser Unterschied betrifft den Inhalt dieses Buchs nicht.
 - Die  *bedingte Formatierung* wird unter MacOS traditionell mit einen völlig andereren Dialog konfiguriert wird als unter Windows.
 
 ::: {.callout-warning}
@@ -55,7 +55,7 @@ In den (wenigen) Fällen, in denen sich die Excel-Versionen auf den beiden Betri
 ::: {.callout-warning}
 ## MacOS
 
-Soll unter MacOS Excel365 eine alte Version ohne Abonement ersetzen, dann muss die alte Version zuerst deinstalliert werden. Sind zusätzlich andere Office-Programme von Microsoft ohne Abonement installiert, dann müssen diese ebenfalls deinstalliert werden. Beim Deinstallieren werden die Konfigurationsdateien nicht gelöscht. Diese *müssen* manuell gelöscht werden. Erst jetzt kann die neue Version von Microsoft365 installiert werden.
+Soll unter MacOS Excel365 eine alte Version ohne Abonnement ersetzen, dann muss die alte Version zuerst deinstalliert werden. Sind zusätzlich andere Office-Programme von Microsoft ohne Abonnement installiert, dann müssen diese ebenfalls deinstalliert werden. Beim Deinstallieren werden die Konfigurationsdateien nicht gelöscht. Diese *müssen* manuell gelöscht werden. Erst jetzt kann die neue Version von Microsoft365 installiert werden.
 :::
 
 ## Excel und Sprachen

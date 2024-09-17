@@ -51,7 +51,7 @@ Die Unterschiede ergeben sich in den Antwortmöglichkeiten.
 
 ### Offene Texteingabe (*Text*)
 
-Die offene Texteingabe erlaubt einzeilige und mehrzeilige (*lange*) *offene Antworten* möglich sind. Damit können un- oder semistrukturierte Daten erfasst werden. Diese Antwortmöglichkeit lässt sich auf Zahlenwerte und Zahlenintervalle eingeschränken.
+Die offene Texteingabe erlaubt einzeilige und mehrzeilige (*lange*) *offene Antworten* möglich sind. Damit können un- oder semistrukturierte Daten erfasst werden. Diese Antwortmöglichkeit lässt sich auf Zahlenwerte und Zahlenintervalle einschränken.
 
 ### Datumseingabe (*Datum*)
 

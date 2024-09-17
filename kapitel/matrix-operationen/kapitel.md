@@ -227,7 +227,7 @@ Wird ein Vergleich als Operator für das äussere Produkt verwendet, dann ist da
 
 ### Paarweise Operationen {#sec-paarweise-operationen}
 
-Werden beliebige Matrizen miteinander verknüft, dann führt Excel eine paarweise Verknüpfung aus. D.h. ein Operator oder eine Funktion wird paarweise für die Werte mit den gleichen Indizes ausgeführt. Dabei handelt es sich um eine Verallgemeinerung der Vektoroperation ([Abschnitt @sec-vektoroperationen]), wobei wie auch bei den Vektoroperationen die Operation nur ausgeführt werden kann, wenn für beide Operanden in der jeweiligen Matrix ein Wert existiert.
+Werden beliebige Matrizen miteinander verknüpft, dann führt Excel eine paarweise Verknüpfung aus. D.h. ein Operator oder eine Funktion wird paarweise für die Werte mit den gleichen Indizes ausgeführt. Dabei handelt es sich um eine Verallgemeinerung der Vektoroperation ([Abschnitt @sec-vektoroperationen]), wobei wie auch bei den Vektoroperationen die Operation nur ausgeführt werden kann, wenn für beide Operanden in der jeweiligen Matrix ein Wert existiert.
 
 Bei paarweisen Operationen mit zwei Matrizen müssen beide Matrizen die gleichen Dimensionen haben. Ist diese Bedingung nicht gegeben, führt Excel eine *partielle Verknüpfung* (@def-partielle-verknüpfung) aus. 
 

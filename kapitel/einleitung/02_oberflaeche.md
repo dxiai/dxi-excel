@@ -14,7 +14,7 @@ Ein Excel Arbeitsblatt ist ein Gitterraster, das aus Zellen besteht. Jede Zelle 
 Eine **Zelle** ist ein Feld im Raster eines Arbeitsblatt.
 :::
 
-Excel zeigt durch eine Hervorhebung an, welche Zelle aktuell markiert ist. Diese **Markierung** kann mit der Maus oder mit den Pfeiltasten bewegt werden. Wenn nur eine Zelle markiert ist, dann entspricht die Markierung der **aktiven Zelle**. Eine Markierung kann auch mehrere Zellen umfassen. In diesem Fall wird die *aktive Zelle* durch eine helle Hervorhebung gekennzeichnet, während der Rest der Markierung ausgegraut ist. Alle Eingaben mit der Tastatur bezeihen sich immer auf die aktive Zelle.
+Excel zeigt durch eine Hervorhebung an, welche Zelle aktuell markiert ist. Diese **Markierung** kann mit der Maus oder mit den Pfeiltasten bewegt werden. Wenn nur eine Zelle markiert ist, dann entspricht die Markierung der **aktiven Zelle**. Eine Markierung kann auch mehrere Zellen umfassen. In diesem Fall wird die *aktive Zelle* durch eine helle Hervorhebung gekennzeichnet, während der Rest der Markierung ausgegraut ist. Alle Eingaben mit der Tastatur beziehen sich immer auf die aktive Zelle.
 
 Oben und Links vom Tabellenbereich findet sich die Beschriftung für die Spalten und Zeilen. Spalten werden mit Buchstaben benannt, Zeilen werden mit Zahlen benannt. Daraus ergibt sich ein Koordinatensystem, mit dem jede Zelle eindeutig adressiert wird. 
 
@@ -85,11 +85,11 @@ Am unteren Rand von Excels Anwendungsfenster findet sich die Statusleiste. Die S
 
 Der aktuelle Zoom der Arbeitsmappe und die Zoom-Einstellung finden sich ganz rechts in der Statusleiste. Dabei wird der aktuelle Zoom als ein Prozentwert dargestellt. Über den "Schieberegler" links daneben lässt sich der Zoom anpassen.
 
-Wenn der Zoom-Wert angeklickt wird, dann erscheint ein kleiner Dialog, über denden Zoom-Wert als Prozentzahl direkt eingegeben kann. Das ist praktisch, wenn für eine Präsentation oder zum Arbeiten ein bestimmter Zoom-Wert bevorzugt wird.
+Wenn der Zoom-Wert angeklickt wird, dann erscheint ein kleiner Dialog, über den Zoom-Wert als Prozentzahl direkt eingegeben kann. Das ist praktisch, wenn für eine Präsentation oder zum Arbeiten ein bestimmter Zoom-Wert bevorzugt wird.
 
 ::: {.callout-warning}
 ## Achtung
-Die Zoom-Einstellung muss für jeddes Arbeitsblatt separat eingestellt werden und wird beim nächsten Speichern der Arbeitsmappe mitgesichert.
+Die Zoom-Einstellung muss für jedes Arbeitsblatt separat eingestellt werden und wird beim nächsten Speichern zusammen mit der Arbeitsmappe gesichert.
 :::
 
 ### Status und Fehlermeldungen

@@ -149,7 +149,7 @@ Im Gegensatz zu Excel behandelt Power Query Datum und Uhrzeit als eigenen Datent
 | Datum | ![](figures/powerquery_datentyp_datum.png){width=32} | Datum und Uhrzeit | Ganzzahl mit Datumsformatierung |
 | Uhrzeit | ![](figures/powerquery_datentyp_uhrzeit.png){width=32} | Datum und Uhrzeit | Dezimalzahl zwischen 0 und 1 mit Zeitformatierung |
 | Dauer | ![](figures/powerquery_datentyp_dauer.png){width=32} | Datum und Uhrzeit | Dezimalzahl als Zeitdauer |
-| Datum/Uhrzeit/Zeitzone | ![](figures/powerquery_datentyp_zeitstempel_mit_zone.png){width=32} | Datum und Uhrzeit | Internationalisierter Zeitstempel als formatierte Dezimalzahl, die Zeitzone **muss** in den Werten kodiert sein, sonst wird +1 angeommen. |
+| Datum/Uhrzeit/Zeitzone | ![](figures/powerquery_datentyp_zeitstempel_mit_zone.png){width=32} | Datum und Uhrzeit | Internationalisierter Zeitstempel als formatierte Dezimalzahl, die Zeitzone **muss** in den Werten kodiert sein, sonst wird +1 angenommen. |
 
 : Power Query Datentypen mit Symbolen {#tbl-power-query-datentypen}
 
@@ -183,7 +183,7 @@ Beim Import mit Gebietsschema gilt es folgendes zu beachten:
 
 ### Spalten umbenennen
 
-Falls einzelne Spaltenüberschriften einer Datenquelle unhantlich sind, lassen sich diese Spalten umbenennen. Dazu wird das Kommando `Umbenennen` verwendet. Das Kommando ist im Menuband `Transformieren` im Abschnitt `Beliebige Spalte` zu finden. Das Kommando öffnet einen Dialog, in dem der neue Name der Spalte eingegeben werden kann. Die Überschrift wird in einem eigenen Arbeitsschritt geändert.
+Falls einzelne Spaltenüberschriften einer Datenquelle unhandlich sind, lassen sich diese Spalten umbenennen. Dazu wird das Kommando `Umbenennen` verwendet. Das Kommando ist im Menuband `Transformieren` im Abschnitt `Beliebige Spalte` zu finden. Das Kommando öffnet einen Dialog, in dem der neue Name der Spalte eingegeben werden kann. Die Überschrift wird in einem eigenen Arbeitsschritt geändert.
 
 Spalten lassen sich auch durch einen Doppelklick auf den Spaltennamen umbenennen.
 
