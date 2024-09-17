@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Einführung in die Datenwissenschaft mit Excel - 10&nbsp; Aussagenlogik</title>
+<title>10&nbsp; Aussagenlogik – Einführung in die Datenwissenschaft mit Excel</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,7 +69,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
  var mathElements = document.getElementsByClassName("math");
  var macros = [];
@@ -84,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
    });
 }}});
   </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -121,13 +121,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/boolsche-operationen/kapitel.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -160,9 +160,9 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Ausgangslage und Vorbereitung</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -195,9 +195,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Datenquellen</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -224,9 +224,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Mathematik der Daten</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -277,9 +277,9 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Deskriptive Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Abschnitt umschalten">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -381,7 +381,7 @@ window.Quarto = {
 <p>Wie im Kapitel Datentypen bereits erwähnt, kennt Excel den Datentyp der Wahrheitswerte. Diese Wahrheitswerte können entweder den Wert <code>WAHR</code> oder <code>FALSCH</code> haben. Eine Operation, die Wahrheitswerte ergibt wird als <em>logischer Ausdruck</em> bezeichnet. Weil logische Ausdrücke für viele Funktionen und Operationen notwendig sind, wandelt Excel die Werte anderer Datentypen bei Bedarf um. Dabei gelten die folgenden Regeln:</p>
 <ul>
 <li><code>0</code> und die <em>leere Zelle</em> entspricht dem Wert <code>FALSCH</code>.</li>
-<li>Alle Zahlen ungleich <code>0</code> entstprechen dem Wert <code>WAHR</code>.</li>
+<li>Alle Zahlen ungleich <code>0</code> entsprechen dem Wert <code>WAHR</code>.</li>
 <li>Alle Zeichenketten inklusive der <em>leeren Zeichenkette</em> entsprechen dem Wert <code>WAHR</code>.</li>
 <li>Fehlerwerte bleiben unverändert.</li>
 </ul>
@@ -405,9 +405,9 @@ Warnung
 <h2 data-number="10.2" class="anchored" data-anchor-id="aussagenlogische-operationen"><span class="header-section-number">10.2</span> Aussagenlogische Operationen</h2>
 <p>Für Wahrheitswerte existieren spezielle Operationen, um die Regeln der <em>Aussagenlogik</em> bzw. der <em>Boole’schen Algebra</em> abzubilden. Diese Operationen verknüpfen Wahrheitswerte und haben Wahrheitswerte als Ergebnis. Die vier Grundoperationen <code>NICHT</code> (<span class="math inline">\lnot</span>), <code>UND</code> (<span class="math inline">\land</span>), <code>ODER</code> (<span class="math inline">\lor</span>, “inklusives Oder”) und <code>XODER</code> (<span class="math inline">\oplus</span>, “entweder-oder”) sind in Excel als Funktionen verfügbar.</p>
 <p>Die Funktion <code>NICHT()</code> wandelt einen Wert in den jeweils den anderen Wahrheitswert um. Falls anstelle eines Wahrheitswerts ein anderer Datentyp übergeben wurde, gelten die oben angegebenen Regeln für die Umwandlung.</p>
-<p>Die Funktionen <code>UND()</code>, <code>ODER()</code> und <code>XODER()</code> sind <em>Aggregatoren</em>. Das bedeutet, dass Sie alle Werte in dem angegebenen Bereichen zusammenfassen. Das ist oft nicht das gewünschte Verhalten. Deshalb muss bei der Arbeit mit Vektoren auf die Bool’sche Arithmetik zurückgegriffen werden, um logische Ausdrücke richtig auszuwerten.</p>
+<p>Die Funktionen <code>UND()</code>, <code>ODER()</code> und <code>XODER()</code> sind <em>Aggregatoren</em>. Das bedeutet, dass Sie alle Werte in dem angegebenen Bereichen zusammenfassen. Das ist oft nicht das gewünschte Verhalten. Deshalb muss bei der Arbeit mit Vektoren auf die Boolesche Arithmetik zurückgegriffen werden, um logische Ausdrücke richtig auszuwerten.</p>
 <p>Zum Beispiel sollen für die folgenden Werte <em>paarweise</em> der logische Ausdruck <span class="math inline">a \land b</span> ausgewertet werden, so dass für alle Wertepaare der richtige Wahrheitswert ermittelt wird.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
@@ -442,10 +442,10 @@ Warnung
 </tbody>
 </table>
 <p>Die Formel <code>= UND(A1:A6; B1:B6)</code> liefert den Wert <code>FALSCH</code> zurück, weil nicht alle Werte im <em>gesamten Bereich</em> von <code>A1:A6</code> und <code>B1:B6</code> gleich <code>WAHR</code> sind. Es gibt keine Funktion und keinen eigenen logischen Operator zur paarweisen logischen Verknüpfung dieser beiden Bereiche. Deshalb werden in Excel oft logische Ausdrücke in der Boole’schen Arithmethik eingesetzt, um nur die Werte aus den gleichen Datensätzen miteinander zu vergleichen. Diese Schreibweise ist immer dann notwendig, wenn logische Ausdrücke sich auf die einzelnen Datensätze beziehen.</p>
-<p>Die Formel <code>= A1:A6 * B1:B6</code> hat die Werte <code>{0;0;1;0;1;0}</code> zum Ergebnis. Um Wahrheitswerte zuerhalten kann noch auf die Ungleichheit mit <code>0</code> geprüft werden. Dazu wird die Formel wie folgt ergänzt: <code>= (A1:A6 * B1:B6) &lt;&gt; 0</code>. Das Ergebnis ist nun <code>{FALSCH; FALSCH; WAHR; FALSCH; WAHR; FALSCH}</code>. Dieser Schritt ist in der Praxis selten notwendig, weil für die meisten Operationen Zahlenwerte implizit als Wahrheitswerte behandelt werden.</p>
+<p>Die Formel <code>= A1:A6 * B1:B6</code> hat die Werte <code>{0;0;1;0;1;0}</code> zum Ergebnis. Um Wahrheitswerte zu erhalten, kann noch auf die Ungleichheit mit <code>0</code> geprüft werden. Dazu wird die Formel wie folgt ergänzt: <code>= (A1:A6 * B1:B6) &lt;&gt; 0</code>. Das Ergebnis ist nun <code>{FALSCH; FALSCH; WAHR; FALSCH; WAHR; FALSCH}</code>. Dieser Schritt ist in der Praxis selten notwendig, weil für die meisten Operationen Zahlenwerte implizit als Wahrheitswerte behandelt werden.</p>
 <p>Weil Excel alle Werte ungleich <code>0</code> als <code>WAHR</code> interpretiert, können die Operationen <code>UND()</code> mit <code>*</code> und die Operation <code>ODER()</code> mit <code>+</code> direkt ersetzt werden. Hierbei ist darauf zu achten, dass das nummerische Ergebnis dieser Addition oder Multiplikation <em>ausschliesslich</em> als Wahrheitswert von Bedeutung ist.</p>
 <p>Die Operation <code>XODER()</code> entspricht der Ungleichheit <code>&lt;&gt;</code>. Dabei muss allerdings darauf geachtet werden, das dieser Vergleich als Ersatz für <code>XODER()</code> <em>ausschliesslich</em> für Wahrheitswerte bzw. <code>0</code> und <code>1</code> erlaubt ist. Für die oben gezeigten Werte ergibt die Formel <code>= (A1:A5 &lt;&gt; B1:B5)</code> die Werte <code>{WAHR; WAHR; FALSCH; WAHR; FALSCH; FALSCH}</code>. Das Ergebnis ist deshalb sichergestellt, weil alle Vergleichswerte <code>0</code> oder <code>1</code> sind. Werden jedoch auch andere Vergleichswerte zugelassen, dann liefert die Formel <code>= (A1:A6 &lt;&gt; B1:B6)</code> die Werte <code>{WAHR; WAHR; WAHR; WAHR; WAHR; WAHR}</code>. Dieses Verhalten zeigt das folgende Beispiel.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
@@ -479,11 +479,11 @@ Warnung
 </tr>
 </tbody>
 </table>
-<p>Damit das Richtige Ergebnis erzeugt wird, müssen die Werte in Wahrheitswerte konvertiert werden. Dazu muss die Formel durch Vergleiche ungleich <code>0</code> erweitert werden:</p>
+<p>Damit das richtige Ergebnis erzeugt wird, müssen die Werte in Wahrheitswerte konvertiert werden. Dazu muss die Formel durch Vergleiche ungleich <code>0</code> erweitert werden:</p>
 <pre><code>= (A1:A6 &lt;&gt; 0) &lt;&gt; (B1:B6 &lt;&gt; 0)</code></pre>
 <p>Diese Formel liefert die gewünschten Werte <code>{WAHR; WAHR; FALSCH; WAHR; FALSCH; FALSCH}</code>.</p>
 <p>Die folgende Tabelle zeigt logischen Operatoren und die zugehörigen Terme für die Boole’sche Arithmetik.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Operator</th>
@@ -547,7 +547,7 @@ Merke
 <h3 data-number="10.3.1" class="anchored" data-anchor-id="der-in-operator-mit-xverweis"><span class="header-section-number">10.3.1</span> Der <span class="math inline">\in</span>-Operator mit XVERWEIS</h3>
 <p>Mithilfe der Funktion <code>XVERGLEICH()</code> kann der <span class="math inline">\in</span>-Operator aus der <em>Mengenlehre</em> in Excel für logische Ausdrücke bereitgestellt werden. Mit dieser Funktion <code>XVERWEIS()</code> können sowohl der <span class="math inline">\in</span> als auch der <span class="math inline">\notin</span>-Operator mit <code>XVERWEIS()</code> abgebildet werden.</p>
 <p>Für die folgenden Beispiele verwenden wir die Werte:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
@@ -596,14 +596,14 @@ Merke
 <section id="sec-vector-logic" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="sec-vector-logic"><span class="header-section-number">10.4</span> Komplexe logische Ausdrücke und Datenstrukturen</h2>
 <p>Excel hat zwar Funktionen für die logischen Operatoren <em>Und</em> (<code>UND()</code>), Oder (<code>ODER()</code>) und <em>Exklusives Oder</em> (<code>XODER()</code>), diese Funktionen haben aber den Nachteil, dass sie nur Werte zusammenfassen können. In der Praxis werden jedoch oft <em>Datenstrukturen</em> als Variablen für logische Ausdrücke verwendet. Diese sollen durch die logischen Operatoren verknüpft und nicht zusammengefasst werden.</p>
-<p>Um logische Verknüfungen für Datenstrukturen zu realisieren, müssen die logischen Operatoren mit der Boole’schen Arithmetik umgesetzt werden. Dazu werden die logischen Operatoren durch die entsprechenden arithmetischen Operatoren ersetzt.</p>
+<p>Um logische Verknüpfungen für Datenstrukturen zu realisieren, müssen die logischen Operatoren mit der Boole’schen Arithmetik umgesetzt werden. Dazu werden die logischen Operatoren durch die entsprechenden arithmetischen Operatoren ersetzt.</p>
 <blockquote class="blockquote">
 <div id="exm-vector-logic" class="theorem example">
 <p><span class="theorem-title"><strong>Beispiel 10.2</strong></span> Für die folgenden Werte soll der folgende logische Ausdruck geprüft werden.</p>
 <p><span class="math display">
 a \land b \lor (c &lt; 10) \land d
 </span></p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
@@ -680,7 +680,7 @@ a \land b \lor (c &lt; 10) \land d
 <pre><code>= WENN(FALSCH; "Guten Tag")</code></pre>
 <p>Ausser der Fallunterscheidung hat <code>WENN()</code> keine weiteren Eigenschaften. Deshalb wird diese Funktion in der Praxis oft mit anderen Funktionen kombiniert. Das kann mit der Funktion <code>WENN()</code> selbst geschehen. In diesem Fall wird von geschachtelten Fallunterscheidungen gesprochen.</p>
 <p>Zur Veranschaulichung dient das folgende Beispiel:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: right;"></th>
@@ -752,7 +752,7 @@ Merke
         WAHR; "Ungültig")</code></pre>
 <p>Diese Formel prüft die Werte in <code>A2:A3</code> auf Gleichheit mit den Werten <code>1</code>, <code>3</code>, <code>4</code> und <code>8</code>. Für diese Zahlen wird die zugehörige Zahlwert als Zeichenkette ausgegeben. Falls keiner dieser Werte gefunden wird, wird der Wert <code>Ungültig</code> zurückgegeben.</p>
 </div>
-<p>Die Fallunterscheidung mit <code>WENNS()</code> endet beim ersten logischen Ausdruck, der <code>WAHR</code> ergibt. Die Funktion prüft der Reihe nach alle angegebenen logischen Ausdrücke. Sobald einer dieser Ausdrücke <code>WAHR</code> ist, wird der zugehörige Ergebniswert ausgegeben und die Funktion wird beendet. Diese Eigenschaft begründet, dass die logischen Ausdrück nur die Fälle prüfen müssen, die von den vorangegangenen logischen Ausdrücken nicht abgedeckt wurden.</p>
+<p>Die Fallunterscheidung mit <code>WENNS()</code> endet beim ersten logischen Ausdruck, der <code>WAHR</code> ergibt. Die Funktion prüft der Reihe nach alle angegebenen logischen Ausdrücke. Sobald einer dieser Ausdrücke <code>WAHR</code> ist, wird der zugehörige Ergebniswert ausgegeben und die Funktion wird beendet. Diese Eigenschaft begründet, dass die logischen Ausdrücke nur die Fälle prüfen müssen, die von den vorangegangenen logischen Ausdrücken nicht abgedeckt wurden.</p>
 <div id="exm-vereinfachte-fallunterscheidung" class="theorem example">
 <p><span class="theorem-title"><strong>Beispiel 10.5 (Fallunterscheidung mit <code>WENNS()</code> vereinfachen)</strong></span> Gegeben ist die Formel mit geschachtelten Entscheidungen.</p>
 <pre><code>= WENN(J2&gt;=O2;
@@ -805,7 +805,7 @@ Merke
         J2&gt;N2; K2+(M2-K2)/(N2-L2)*(J2-L2); 
         WAHR;  M2+(O2-M2)/(O2-N2)*(J2-N2)
   )</code></pre>
-<p>Diese Formel hat noch den Makel, dass der letzte Fall <code>WAHR</code> keine Konstante abbildet. Besser wäre es, wenn der zweite und der letzte Fall vertauscht wären, so dass der Wert <code>0</code> der letzte Wert ist. Dazu müssen die logischen Ausdrücke umorganisiert werden. Bei der Umorganisation ist die Reihenfolge der logischen Ausdrücke zu beachten: Die letzten beiden Fälle sind nicht umabhängig vom logischen Ausdruck <code>J2&gt;L2</code>. Beim Umorganisieren darf diese Abhängigkeit nicht verloren gehen.</p>
+<p>Diese Formel hat noch den Makel, dass der letzte Fall <code>WAHR</code> keine Konstante abbildet. Besser wäre es, wenn der zweite und der letzte Fall vertauscht wären, so dass der Wert <code>0</code> der letzte Wert ist. Dazu müssen die logischen Ausdrücke umorganisiert werden. Bei der Umorganisation ist die Reihenfolge der logischen Ausdrücke zu beachten: Die letzten beiden Fälle sind nicht unabhängig vom logischen Ausdruck <code>J2&gt;L2</code>. Beim Umorganisieren darf diese Abhängigkeit nicht verloren gehen.</p>
 <pre><code>= WENNS(J2&lt;O2; 100; 
         (J2&lt;=L2)*(J2&gt;N2); K2+(M2-K2)/(N2-L2)*(J2-L2); 
         J2&lt;=L2; M2+(O2-M2)/(O2-N2)*(J2-N2)
@@ -853,13 +853,13 @@ Merke
 </div>
 </div>
 <p>Nicht erreichbare Entscheidungen lassen sich durch das Formale prüfen der logischen Ausdrücke leicht erkennen. Dazu werden logischen Ausdrücke und die zugehörigen Wertebereiche für den Wahr- und Falsch-Fall untereinander aufgeschrieben. Ein logischer Ausdruck kann einen Wertebereich nur dann abdecken, wenn dieser eine Teilmenge des Wertebereichs der aktuellen logischen Verzweigung ist.</p>
-<div id="tbl-wenns-nicht-erreichbar" class="quarto-float anchored">
+<div id="tbl-wenns-nicht-erreichbar" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wenns-nicht-erreichbar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>10.6</span></a>
 </figcaption>
 <div aria-describedby="tbl-wenns-nicht-erreichbar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">Rang</th>
@@ -899,7 +899,7 @@ Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-w
 </figure>
 </div>
 <p>Weil die Funktion <code>WENNS()</code> verwendet wird, ist der Wertebereich für einen logischen Ausdruck durch die Falsch-Fälle der logischen Ausdrücke mit niedrigerem Rang abgedeckt.</p>
-<p>Für Rang 3 muss wegen dieser Tabelle der logischen Ausdruck in <a href="#eq-nichterreichbar" class="quarto-xref">Formel&nbsp;<span>10.1</span></a> gelten. Dieser Ausdruck kann jedoch nie Wahr ergeben, weil der geiche Wert in Variable <span class="math inline">A1</span> nicht kleiner oder gleich 3 und gleichzeitig grösser als 4 sein kann.</p>
+<p>Für Rang 3 muss wegen dieser Tabelle der logischen Ausdruck in <a href="#eq-nichterreichbar" class="quarto-xref">Formel&nbsp;<span>10.1</span></a> gelten. Dieser Ausdruck kann jedoch nie Wahr ergeben, weil der gleiche Wert in Variable <span class="math inline">A1</span> nicht kleiner oder gleich 3 und gleichzeitig grösser als 4 sein kann.</p>
 <p><span id="eq-nichterreichbar"><span class="math display">
 \begin{aligned}
 &amp; (A1 &lt;= 5) \land &amp; (A1 &lt;= 3) \land &amp; (A1 &gt; 4) \\
@@ -924,7 +924,7 @@ Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-w
 <p>Die Funktion <code>XVERWEIS()</code> ist als Excels Version des <span class="math inline">\in</span>-Operators bereits bekannt. Die Funktion kann auch als Alternative zur Funktion <code>ERSTERWERT()</code> verwendet werden. In diesem Fall werden als Rückgabematrix keine Wahrheitswerte, sondern die Ergebnisse der Fallunterscheidung angegeben.</p>
 <p>Der Vorteil dieser Anwendung ist, dass die Fallunterscheidung nicht mehr auf die Anzahl der Parameterpaare beschränkt ist und die Parameterpaare zum Zeitpunkt der Formelerstellung auch nicht bekannt sein müssen.</p>
 <p>Das folgende Beispiel zeigt die Umsetzung des Beispiels aus dem Abschnitt <code>ERSTERWERT</code> mit <code>XVERWEIS()</code>. Dazu wird zuerst eine Tabelle mit den Vergleichswerten und den zugehörigen Ergebnissen erstellt.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">C</th>
@@ -987,7 +987,7 @@ Warnung
 <blockquote class="blockquote">
 <div id="exm-excel-filter" class="theorem example">
 <p><span class="theorem-title"><strong>Beispiel 10.7 (Filtern mit Excel)</strong></span> Gegeben sind die folgende Werte in den Spalten <code>A</code> und <code>B</code>. Die <code>Filter()</code>-Funktion steht an Adresse <code>D2</code>.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -1037,7 +1037,7 @@ Warnung
 </table>
 <p>Weil die Werte in Spalte <code>B</code> vom Datentyp Wahrheitswert sind, kann &gt; dieser Vektor zur Auswahl der Städtenamen in Spalte <code>A</code> verwendet werden.</p>
 <p>Anstelle eines Vektors mit Wahrheitswerten wird meistens ein Vergleich als zweiter Parameter übergeben. Dieser Vergleich muss einen Vektor erzeugen, der genauso lang ist, wie der Vektor im ersten Parameter. Solche Vektoren werden dynamisch erzeugt, indem ein Vergleich entweder den Vektor selbst oder einen benachbarten Vektor verwendet.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;"></th>
@@ -1104,13 +1104,13 @@ Hinweis
 </div>
 </div>
 <p>Um mit komplexen logischen Ausdrücken in Filtern zu verwenden, müssen wir die logischen Operatoren durch ihre <em>arithmetische Schreibweise</em> ersetzen.</p>
-<div id="tbl-filter-complex" class="quarto-float anchored">
+<div id="tbl-filter-complex" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-filter-complex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Tabelle&nbsp;10.2: Beispiel eines komplexen logischen Ausdrucks mit <code>FILTER()</code>
 </figcaption>
 <div aria-describedby="tbl-filter-complex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
+<table class="caption-top table">
 <colgroup>
 <col style="width: 17%">
 <col style="width: 13%">
@@ -1314,9 +1314,9 @@ Hinweis
 </section>
 <section id="eine-zahl-für-genau-eine-bedingung-zurückgeben" class="level3" data-number="10.9.2">
 <h3 data-number="10.9.2" class="anchored" data-anchor-id="eine-zahl-für-genau-eine-bedingung-zurückgeben"><span class="header-section-number">10.9.2</span> Eine Zahl für genau eine Bedingung zurückgeben</h3>
-<p>Ein häufiger Spezialfall für Unterscheidungen ist die Auswahl von <em>Zahlen</em>, die genau <strong>einen</strong> logischen Ausdrück erfüllen. Solche Unterscheidungen geben im <code>FALSCH</code>-Fall <code>0</code> und im anderen Fall die gesuchte Zahl zurück. In diesem Spezialfall kann der Zielwert ohne Umweg über die <code>WENN()</code>-Funktion mit dem logischen Ausdruck multipliziert werden. Der logische Ausdruck liefert <code>1</code> für <code>WAHR</code> und <code>0</code> für <code>FALSCH</code>. Die Multiplikation mit <code>0</code> liefert immer <code>0</code>. Die Multiplikation mit <code>1</code> liefert den Zielwert.</p>
+<p>Ein häufiger Spezialfall für Unterscheidungen ist die Auswahl von <em>Zahlen</em>, die genau <strong>einen</strong> logischen Ausdruck erfüllen. Solche Unterscheidungen geben im <code>FALSCH</code>-Fall <code>0</code> und im anderen Fall die gesuchte Zahl zurück. In diesem Spezialfall kann der Zielwert ohne Umweg über die <code>WENN()</code>-Funktion mit dem logischen Ausdruck multipliziert werden. Der logische Ausdruck liefert <code>1</code> für <code>WAHR</code> und <code>0</code> für <code>FALSCH</code>. Die Multiplikation mit <code>0</code> liefert immer <code>0</code>. Die Multiplikation mit <code>1</code> liefert den Zielwert.</p>
 <p>Das Beispiel gibt für die folgenden Werte alle Zahlen zurück, die grösser als 10 <em>und</em> kleiner als 20 sind.</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
@@ -1380,7 +1380,7 @@ Warnung
 <h3 data-number="10.9.3" class="anchored" data-anchor-id="fehlerwerte-vergleichen"><span class="header-section-number">10.9.3</span> Fehlerwerte vergleichen</h3>
 <p>Fehlerwerte können nicht direkt mit den Vergleichsoperatoren verglichen werden, weil Excel immer den ersten gefundenen Fehlerwert als Ergebnis einer Operation zurückgibt. Deshalb müssen Fehlerwerte zuerst in normale Werte konvertiert werden. Damit verschiedene Fehlerwerte miteinander verglichen werden können, müssen die verschiedenen Fehlerwerte zuerst in eindeutige Zahlen umgewandelt werden. Das übernimmt die Funktion <code>FEHLER.TYP()</code>. Diese Zahlen können anschliessend wie gewohnt weiter verarbeitet werden.</p>
 <p>Das folgende Beispiel weist den gegebenen Fehlerwerten eine Fehlermeldung zu:</p>
-<table class="table">
+<table class="caption-top table">
 <thead>
 <tr class="header">
 <th style="text-align: center;">A</th>
@@ -1476,18 +1476,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -1519,7 +1508,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1527,7 +1538,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
