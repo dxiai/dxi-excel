@@ -145,7 +145,7 @@ Bei Vektoroperationen ist die Orientierung des Vektors für das Verhalten der Op
 > = SEQUENZ(4) + SEQUENZ(4; 4)
 > ```
 > 
-> Obwohl die folgende Opeartion sehr ähnlich aussieht, hat sie ein anderes Ergebnis. 
+> Obwohl die folgende Operation sehr ähnlich aussieht, hat sie ein anderes Ergebnis. 
 > 
 > ```
 > = SEQUENZ(1; 4) + SEQUENZ(4; 4)

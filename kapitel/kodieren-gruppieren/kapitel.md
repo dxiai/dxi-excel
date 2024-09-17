@@ -73,7 +73,7 @@ Enthält eine Referenztabelle mehr als eine Kodierung, dann müssen die Werte sp
 >
 > Eine Liker-Skala ist ein Messinstrument zur Meinungs- oder Empfindungserhebung. Eine Likert Skala wird in der Regel zwischen zwei Extremfeststellungen erfasst, die später als Zahlen kodiert ausgewertet werden. 
 > 
-> Solche Skalen erfordern eine Referenztabelle, weil die Ordnung der Werte sich nicht aus der alphabetischen Reihenfolge der Zeichenketten ergibt. Für die Auswertung müssen die Zeichenketten in Zahlen kodiert werden. Es ist üblich die Kodierung von Likert-Skalen in Referenztabellen zu dokumentieren. Die folgende Tabelle zeigt eine eine fünfstufige Liker-Skala mit den entsprechenden Zahlenwerten für die Auswertung.
+> Solche Skalen erfordern eine Referenztabelle, weil die Ordnung der Werte sich nicht aus der alphabetischen Reihenfolge der Zeichenketten ergibt. Für die Auswertung müssen die Zeichenketten in Zahlen kodiert werden. Es ist üblich die Kodierung von Likert-Skalen in Referenztabellen zu dokumentieren. Die folgende Tabelle zeigt eine fünfstufige Liker-Skala mit den entsprechenden Zahlenwerten für die Auswertung.
 > 
 > | Wert | Zahl |
 > | :---: | ---: |

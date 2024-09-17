@@ -351,7 +351,7 @@ Nun ist sichergestellt, das der erste Wert vom zweiten Wert abgezogen wird. Hier
 
 ## Zählen
 
-Beim Zählen werden zählbare Einheiten von nicht-zählbaren Einheiten getrennt und die Anzahl der zählbaren Einheiten bestimmt. Die einfachste Form des Zählens ist das Bestimmen der der Länge eines Vektors. Dabei wird die Anzahl der Werte des Vektors *gezählt*.
+Beim Zählen werden zählbare Einheiten von nicht-zählbaren Einheiten getrennt und die Anzahl der zählbaren Einheiten bestimmt. Die einfachste Form des Zählens ist das Bestimmen der Länge eines Vektors. Dabei wird die Anzahl der Werte des Vektors *gezählt*.
 
 Alle Zählen-Operationen bestehen entsprechend immer aus zwei Schritten:
 
