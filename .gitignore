@@ -74,3 +74,4 @@ index.out
 **/*.pdf
 **/*.toc
 _freeze/
+site_libs/
