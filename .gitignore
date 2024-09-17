@@ -68,3 +68,9 @@ index.toc
 index.out
 **/*.rmarkdown
 **/*_files/
+**/*.html
+**/*.aux
+**/*.log
+**/*.pdf
+**/*.toc
+_freeze/
