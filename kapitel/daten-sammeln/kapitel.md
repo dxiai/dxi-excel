@@ -15,7 +15,7 @@ Bei der Dateneingabe über Formulare werden die Daten mithilfe von *Fragen* mit 
 In vielen Formularsystemen wird der *Antworttyp* als ***Fragetyp*** bezeichnet, obwohl die Frage immer in Text-Bildform präsentiert wird und der *Typ* durch die unterschiedlichen Antwortmöglichkeiten bestimmt wird.
 :::
 
-Durch das Festlegen des Antworttyps wird gleichzeigt der Wertebereich des gemessenen Merkmals definiert. Dadurch ergibt sich beim Erstellen eines Formulars das Datenschema automatisch.
+Durch das Festlegen des Antworttyps wird gleichzeitig der Wertebereich des gemessenen Merkmals definiert. Dadurch ergibt sich beim Erstellen eines Formulars das Datenschema automatisch.
 
 Excel hat kein eigenes Formularsystem. Stattdessen kann [Microsoft Forms](https://www.microsoft365.com/launch/forms) verwendet werden. Microsoft Forms ist ein Online-Formulardienst, der in Microsoft365 integriert ist. Forms sammelt die Eingaben mit einem Formular und speichert die Daten in einer Excel Arbeitsmappe. Diese Formulare können über einen Web-Link geteilt werden und im Web-Browser ausgefüllt werden. Dadurch kann das Datensammeln auf verschiedene Personen verteilt werden.
 
@@ -59,7 +59,7 @@ Diese Eingabe ist eine Variante der *offenen Texteingabe* zur Eingabe eines Datu
 
 Das eingegebene Datum wird als Zahl gespeichert und als Datum dargestellt. 
 
-### Datei hochlanden 
+### Datei hochladen 
 
 Die zweite Variante für *offene Antworten* ist das Hochladen von Dateien. Mit diesem Antworttyp lassen sich Bilder, Videos oder Tonaufnahmen leicht erfassen.
 
@@ -189,7 +189,7 @@ Um die fundamentalen Datentypen zu überprüfen, können die Informationsfunktio
 
 Die Überprüfung ganzer Zahlen ist in Excel über die Option `Ganze Zahl` möglich. Diese Option überprüft, ob der Wert eine ganze Zahl ist. Diese Option kann aber nicht direkt für alle ganze Zahlen eingesetzt werden. Um alle zulässigen ganzen Zahlen zu erfassen muss unter der Option `Daten` der Punkt `größer als` ausgewählt werden. Anschliessend muss als `Minimum` der Wert `-9.99999999999999E+307` eingetragen werden (s. @fig-datenueberpruefung-ganze-zahlen). Dieser Wert ist der kleinste Wert, der in Excel als (ganze) Zahl erfasst werden kann [@microsoft_excel_2023]. 
 
-![Dialog Datenüberprüfung für alle ganzen Zaheln](figures/datenueberpruefung_ganze_zahlen.png){#fig-datenueberpruefung-ganze-zahlen}
+![Dialog Datenüberprüfung für alle ganzen Zahlen](figures/datenueberpruefung_ganze_zahlen.png){#fig-datenueberpruefung-ganze-zahlen}
 
 ### Datenüberprüfung für ordinalskalierte Wertebereiche
 
@@ -213,7 +213,7 @@ Die Datenüberprüfung kann nicht mit Tabellenadressen umgehen. Deshalb müssen 
 
 Die Überprüfung nominalskalierter Wertebereiche wird in Excel durch die Option `Liste` realisiert. Die Option `Liste` erlaubt die Auswahl von Werten aus einer Liste in der gleichen Arbeitsmappe. Diese Liste ist einfach ein Bereich mit Werten, eine Spalte in einer anderen Tabelle oder eine benannte Liste (s. @sec-chapter-variablen-fkts-ops). Die Liste muss in einer Spalte definiert werden, weil die Datenüberprüfung nur auf Spalten angewendet werden kann. Deshalb ist es nicht möglich, eine zeilenorientierte Liste für die Datenüberprüfung anzuwenden.
 
-Für nominalskalierte Wertebereiche werden alle zulässigen Werte in einer Spalte gestgelegt. Anschliessend wird im Dialog Datenüberprüfung unter `Quelle` der Bereich mit den zulässigen Werten angegeben.
+Für nominalskalierte Wertebereiche werden alle zulässigen Werte in einer Spalte festgelegt. Anschliessend wird im Dialog Datenüberprüfung unter `Quelle` der Bereich mit den zulässigen Werten angegeben.
 
 ::: {.callout-tip}
 Im Gegensatz zu ordinalskalierten Wertebereichen, sollten nominalskalierte Wertebereiche nicht als Zahlen kodiert werden, sondern als Zeichenketten erfasst werden.

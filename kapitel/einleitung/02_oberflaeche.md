@@ -19,10 +19,10 @@ Excel zeigt durch eine Hervorhebung an, welche Zelle aktuell markiert ist. Diese
 Oben und Links vom Tabellenbereich findet sich die Beschriftung für die Spalten und Zeilen. Spalten werden mit Buchstaben benannt, Zeilen werden mit Zahlen benannt. Daraus ergibt sich ein Koordinatensystem, mit dem jede Zelle eindeutig adressiert wird. 
 
 ::: {#def-koordinaten}
-Die Koordinaten einer Zelle sind die **Zellenadresse**.
+Die Koordinaten einer Zelle sind in der **Zelladresse** kodiert.
 :::
  
-Im [Abschnitt @sec-adressierung-ds] werden die verschiendenen Arten der Adressierung von Zellen und Zellbereichen detailliert beschrieben.
+Im [Abschnitt @sec-adressierung-ds] werden die verschiedenen Arten der Adressierung von Zellen und Zellbereichen detailliert beschrieben.
 
 ## Arbeitsblattreiter
 

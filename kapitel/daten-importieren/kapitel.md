@@ -217,7 +217,7 @@ Beim trennen von Spalten dürfen nicht semistrukturierte Daten getrennt werden, 
 
 ## Spalten auswählen oder entfernen
 
-Zwei besondere Transformationen sind `Spalten auswählen` und `Spalten entfernen`. Diese Transformationen werden im Menuband `Start` angeboten. Mit diesen Transformationen lassen sich unbenötigte Spalten aus den Daten entfernen. Dadurch werden die Daten in Excel übersichtlicher. 
+Zwei besondere Transformationen sind `Spalten auswählen` und `Spalten entfernen`. Diese Transformationen werden im Menuband `Start` angeboten. Mit diesen Transformationen lassen sich nicht benötigte Spalten aus den Daten entfernen. Dadurch werden die Daten in Excel übersichtlicher. 
 
 Diese Funktion kommt bei Excel-Arbeitsmappen häufig zum Einsatz, wenn nach Ende der Daten zusätzliche leere Spalten folgen. Diese Spalten können mit `Spalten entfernen` entfernt werden.
 
