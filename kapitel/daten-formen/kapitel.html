@@ -69,6 +69,49 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -275,15 +318,15 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#pivotmit-und-fehlende-werte" id="toc-pivotmit-und-fehlende-werte" class="nav-link" data-scroll-target="#pivotmit-und-fehlende-werte"><span class="header-section-number">14.1.1</span> <code>PIVOTMIT()</code> und fehlende Werte</a></li>
   <li><a href="#eine-breitform-mit-pivotmit-erzeugen." id="toc-eine-breitform-mit-pivotmit-erzeugen." class="nav-link" data-scroll-target="#eine-breitform-mit-pivotmit-erzeugen."><span class="header-section-number">14.1.2</span> Eine Breitform mit <code>PIVOTMIT()</code> erzeugen.</a></li>
-  <li><a href="#vektoren-auf-ihre-normalform-prüfen" id="toc-vektoren-auf-ihre-normalform-prüfen" class="nav-link" data-scroll-target="#vektoren-auf-ihre-normalform-prüfen"><span class="header-section-number">14.1.3</span> Vektoren auf ihre Normalform prüfen</a></li>
-  <li><a href="#breitform-ohne-überschriften-erhalten" id="toc-breitform-ohne-überschriften-erhalten" class="nav-link" data-scroll-target="#breitform-ohne-überschriften-erhalten"><span class="header-section-number">14.1.4</span> Breitform ohne Überschriften erhalten</a></li>
+  <li><a href="#breitform-ohne-überschriften-erhalten" id="toc-breitform-ohne-überschriften-erhalten" class="nav-link" data-scroll-target="#breitform-ohne-überschriften-erhalten"><span class="header-section-number">14.1.3</span> Breitform ohne Überschriften erhalten</a></li>
   </ul></li>
-  <li><a href="#die-index-funktion" id="toc-die-index-funktion" class="nav-link" data-scroll-target="#die-index-funktion"><span class="header-section-number">14.2</span> Die <code>INDEX()</code>-Funktion</a>
+  <li><a href="#vektoren-auf-ihre-normalform-prüfen" id="toc-vektoren-auf-ihre-normalform-prüfen" class="nav-link" data-scroll-target="#vektoren-auf-ihre-normalform-prüfen"><span class="header-section-number">14.2</span> Vektoren auf ihre Normalform prüfen</a></li>
+  <li><a href="#die-index-funktion" id="toc-die-index-funktion" class="nav-link" data-scroll-target="#die-index-funktion"><span class="header-section-number">14.3</span> Die <code>INDEX()</code>-Funktion</a>
   <ul class="collapse">
-  <li><a href="#index-mit-vektoren-als-indexparameter" id="toc-index-mit-vektoren-als-indexparameter" class="nav-link" data-scroll-target="#index-mit-vektoren-als-indexparameter"><span class="header-section-number">14.2.1</span> <code>INDEX()</code> mit Vektoren als Indexparameter</a></li>
-  <li><a href="#die-umkehrung-von-pivotmit-konstruieren" id="toc-die-umkehrung-von-pivotmit-konstruieren" class="nav-link" data-scroll-target="#die-umkehrung-von-pivotmit-konstruieren"><span class="header-section-number">14.2.2</span> Die Umkehrung von <code>PIVOTMIT()</code> konstruieren</a></li>
-  <li><a href="#spaltenwahl-und-zeilenwahl" id="toc-spaltenwahl-und-zeilenwahl" class="nav-link" data-scroll-target="#spaltenwahl-und-zeilenwahl"><span class="header-section-number">14.2.3</span> <code>SPALTENWAHL()</code> und <code>ZEILENWAHL()</code></a></li>
+  <li><a href="#index-mit-vektoren-als-indexparameter" id="toc-index-mit-vektoren-als-indexparameter" class="nav-link" data-scroll-target="#index-mit-vektoren-als-indexparameter"><span class="header-section-number">14.3.1</span> <code>INDEX()</code> mit Vektoren als Indexparameter</a></li>
+  <li><a href="#die-umkehrung-von-pivotmit-konstruieren" id="toc-die-umkehrung-von-pivotmit-konstruieren" class="nav-link" data-scroll-target="#die-umkehrung-von-pivotmit-konstruieren"><span class="header-section-number">14.3.2</span> Die Umkehrung von <code>PIVOTMIT()</code> konstruieren</a></li>
   </ul></li>
+  <li><a href="#spaltenwahl-und-zeilenwahl" id="toc-spaltenwahl-und-zeilenwahl" class="nav-link" data-scroll-target="#spaltenwahl-und-zeilenwahl"><span class="header-section-number">14.4</span> <code>SPALTENWAHL()</code> und <code>ZEILENWAHL()</code></a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -319,7 +362,7 @@ Work in Progress
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>Dieses Kapitel wird aktuell überarbeitet und erweitert. Fehlerhinweise und Korrekturen sind willkommen.</p>
 </div>
 </div>
 <p>Speziell für die Datenvisualisierung, erfordert Excel das Umformen von Daten. Dabei kann es notwendig werden, die Daten von der Normalform in eine Breitform umzuformen. Auch für andere Operationen kann es sinnvoll sein, Daten eine definierte Form zu geben. Zu diesen Operationen gehören z.B. gruppierte Aggregationen.</p>
@@ -403,8 +446,54 @@ Merke
 </div>
 </div>
 </section>
-<section id="vektoren-auf-ihre-normalform-prüfen" class="level3" data-number="14.1.3">
-<h3 data-number="14.1.3" class="anchored" data-anchor-id="vektoren-auf-ihre-normalform-prüfen"><span class="header-section-number">14.1.3</span> Vektoren auf ihre Normalform prüfen</h3>
+<section id="breitform-ohne-überschriften-erhalten" class="level3" data-number="14.1.3">
+<h3 data-number="14.1.3" class="anchored" data-anchor-id="breitform-ohne-überschriften-erhalten"><span class="header-section-number">14.1.3</span> Breitform ohne Überschriften erhalten</h3>
+<p>Weil die Funktion <code>PIVOTMIT()</code> auch Zeilen- und Spaltenüberschriften erzeugt, lassen sich die einzelnen Vektoren nicht direkt mit <code>SPALTENWAHL()</code> extrahieren. Leider lassen sich die Spaltenüberschriften nicht unterbinden.</p>
+<p>Damit die Überschriften nicht in den Daten vorliegen, müssen diese nach der Transformation entfernt werden:</p>
+<pre><code>= LET(breitform; PIVOTMIT(
+                    Zeilenindex; 
+                    Spaltenindex; 
+                    Werte; 
+                    SUMME;; 
+                    0;; 
+                    0);
+      zeilenwerte; ZEILEN(breitform) - 1;
+      spaltenwerte; SPALTEN(breitform);
+      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
+      wertespalten; SEQUENZ(1;spaltenwerte; 1);
+      INDEX(breitform; wertezeilen; wertespalten)
+)</code></pre>
+<p>Um auch die Werte des Zeilenindex zu entfernen, muss die Spaltenanzahl ebenfalls verringert werden.</p>
+<pre><code>= LET(breitform; PIVOTMIT(
+                    Zeilenindex; 
+                    Spaltenindex; 
+                    Werte; 
+                    SUMME;; 
+                    0;; 
+                    0);
+      zeilenwerte; ZEILEN(breitform) - 1;
+      spaltenwerte; SPALTEN(breitform) - 1;
+      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
+      wertespalten; SEQUENZ(1; spaltenwerte; 2);
+      INDEX(breitform; wertezeilen; wertespalten)
+)</code></pre>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Intuitiv bietet sich die Funktion <code>BEREICH.VERSCHIEBEN()</code> ebenfalls an. Diese Funktion erfordert jedoch eine Zellbezug, so dass diese Funktion nicht in Operationen mit <code>LET()</code> und <code>LAMBDA()</code> eingesetzt werden kann.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="vektoren-auf-ihre-normalform-prüfen" class="level2" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="vektoren-auf-ihre-normalform-prüfen"><span class="header-section-number">14.2</span> Vektoren auf ihre Normalform prüfen</h2>
 <p>Zwei Indexvektoren liegen genau dann in ihrer Normalform vor, wenn alle Wertepaare (bzw. Tupel) eindeutig sind, d.h. genau einmal vorkommen. Damit eine Breitform der Daten für diese Indexvektoren erzeugt werden kann, muss gelegentlich geprüft werden, ob diese auch tatsächlich in ihrer Normalform vorliegen.</p>
 <p>Gegeben seien die folgenden Daten im Bereich A1:C6:</p>
 <table class="caption-top table">
@@ -466,54 +555,8 @@ Merke
 <pre><code>= ZEILEN(A2:A6) = ZEILEN(EINDEUTIG(A2:B6))</code></pre>
 <p>Ergibt diese Operation <code>WAHR</code>, dann kann die Breitform ohne Informationsverlust erzeugt werden.</p>
 </section>
-<section id="breitform-ohne-überschriften-erhalten" class="level3" data-number="14.1.4">
-<h3 data-number="14.1.4" class="anchored" data-anchor-id="breitform-ohne-überschriften-erhalten"><span class="header-section-number">14.1.4</span> Breitform ohne Überschriften erhalten</h3>
-<p>Weil die Funktion <code>PIVOTMIT()</code> auch Zeilen- und Spaltenüberschriften erzeugt, lassen sich die einzelnen Vektoren nicht direkt mit <code>SPALTENWAHL()</code> extrahieren. Leider lassen sich die Spaltenüberschriften nicht unterbinden.</p>
-<p>Damit die Überschriften nicht in den Daten vorliegen, müssen diese nach der Transformation entfernt werden:</p>
-<pre><code>= LET(breitform; PIVOTMIT(
-                    Zeilenindex; 
-                    Spaltenindex; 
-                    Werte; 
-                    SUMME;; 
-                    0;; 
-                    0);
-      zeilenwerte; ZEILEN(breitform) - 1;
-      spaltenwerte; SPALTEN(breitform);
-      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
-      wertespalten; SEQUENZ(1;spaltenwerte; 1);
-      INDEX(breitform; wertezeilen; wertespalten)
-)</code></pre>
-<p>Um auch die Werte des Zeilenindex zu entfernen, muss die Spaltenanzahl ebenfalls verringert werden.</p>
-<pre><code>= LET(breitform; PIVOTMIT(
-                    Zeilenindex; 
-                    Spaltenindex; 
-                    Werte; 
-                    SUMME;; 
-                    0;; 
-                    0);
-      zeilenwerte; ZEILEN(breitform) - 1;
-      spaltenwerte; SPALTEN(breitform) - 1;
-      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
-      wertespalten; SEQUENZ(1; spaltenwerte; 2);
-      INDEX(breitform; wertezeilen; wertespalten)
-)</code></pre>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Achtung
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Intuitiv bietet sich die Funktion <code>BEREICH.VERSCHIEBEN()</code> ebenfalls an. Diese Funktion erfordert jedoch eine Zellbezug, so dass diese Funktion nicht in Operationen mit <code>LET()</code> und <code>LAMBDA()</code> eingesetzt werden kann.</p>
-</div>
-</div>
-</section>
-</section>
-<section id="die-index-funktion" class="level2" data-number="14.2">
-<h2 data-number="14.2" class="anchored" data-anchor-id="die-index-funktion"><span class="header-section-number">14.2</span> Die <code>INDEX()</code>-Funktion</h2>
+<section id="die-index-funktion" class="level2" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="die-index-funktion"><span class="header-section-number">14.3</span> Die <code>INDEX()</code>-Funktion</h2>
 <p>Die Funktion <code>PIVOTMIT()</code> hat keine unmittelbare Umkehrfunktion. Mithilfe der <code>INDEX()</code>-Funktion lässt sich eine Umkehrfunktion konstruieren. Diese Funktion wurde bereits im letzten Abschnitt zum entfernen der Werte der Indexvektoren eingesetzt.</p>
 <p>Die <code>INDEX()</code>-Funktion ist eine sog. Referenzfunktion, mit der auf Werte mittels ihrer Position in einem Vektor oder einer Matrix zugegriffen werden kann. Die <code>INDEX()</code>-Funktion erwartet drei Parameter:</p>
 <ol type="1">
@@ -521,19 +564,123 @@ Achtung
 <li>einen gültigen Zeilenindex, und</li>
 <li>einen gültigen Spaltenindex.</li>
 </ol>
-<p>Der Zeilen- und Spaltenindex sind Ganzzahlen, die sich auf die Position der Werte beziehen. Auf diese Weise lassen sich Werte aus einem Vektor oder einer Matrix extrahieren.</p>
-<section id="index-mit-vektoren-als-indexparameter" class="level3" data-number="14.2.1">
-<h3 data-number="14.2.1" class="anchored" data-anchor-id="index-mit-vektoren-als-indexparameter"><span class="header-section-number">14.2.1</span> <code>INDEX()</code> mit Vektoren als Indexparameter</h3>
-<p>Die INDEX()-Funktion erlaubt Vektoren für den Zeilen- und Spaltenindex. Auf diese Weise lassen sich mehrere Werte auf einmal referenzieren. Liegen die Vektoren in gleicher Orientierung vor, dann bildet die Funktion Indexpaare. Die Operation <code>= INDEX(A1:C5; {1; 2; 4}, {1; 2; 2})</code> wählt beispielsweise nur die Werte an <code>A1</code>, <code>B2</code> und <code>B4</code> aus.</p>
+<p>Der Zeilen- und Spaltenindex sind Ganzzahlen, die sich auf die Position der Werte beziehen. Auf diese Weise lassen sich Werte aus einem Vektor oder einer Matrix extrahieren. Die beiden Indexwerte beziehen sich dabei relativ zur linken oberen Zelle des übergebenen Bereichs, wobei die Referenzzelle einen Zeilen- und Spaltenindex von 1 hat. Aus dieser Spezifikation ergibt sich, dass die <code>INDEX()</code>-Funktion keine negativen Indexwerte akzeptiert.</p>
+<section id="index-mit-vektoren-als-indexparameter" class="level3" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="index-mit-vektoren-als-indexparameter"><span class="header-section-number">14.3.1</span> <code>INDEX()</code> mit Vektoren als Indexparameter</h3>
+<p>Die INDEX()-Funktion erlaubt Vektoren für den Zeilen- und Spaltenindex. Auf diese Weise lassen sich mehrere Werte auf einmal referenzieren. Liegen die Vektoren in gleicher Orientierung vor, dann bildet die Funktion Indexpaare. Die Operation <code>= INDEX(A1:C5; {1; 2; 4}, {1; 2; 2})</code> wählt beispielsweise die Werte der Adressen <code>A1</code>, <code>B2</code> und <code>B4</code> aus.</p>
 <p>Liegen die Indizes in verschiedenen Orientierungen vor, dann bildet die <code>INDEX()</code>-Funktion eine Indexmatrix mit allen Permutationen der angegebenen Indizes. Die Werte werden dann als Matrix angeordnet. Z.B. die Operation <code>=INDEX(A1:D4; {1;2;4}; ZUZEILE({1;2;2}))</code> wählt die Werte an <code>A1</code>, <code>A2</code>, <code>A4</code>, <code>B1</code>, <code>B2</code>, <code>B4</code> sowie nocheinmal <code>B1</code>, <code>B2</code> und <code>B4</code> aus. Diese Dopplung entsteht durch die doppelte Angabe des Werts <code>2</code> im Spaltenindex. Auf den ersten Blick erscheint dieses Verhalten unpraktisch, im folgenden Abschnitt wird genau diese Eigenschaft ausgenutzt.</p>
 <p>Die Funktion INDEX() behält die Orientierung der Parametervektoren bei. Diese Eigenschaft lässt sich ausnutzen, um eine Verkettung mit <code>MTRANS()</code> zu vermeiden. Die Operation <code>=MTRANS(INDEX(A1:D4; {1;2;4}; ZUZEILE({1;2;2})))</code> ist mit der Operation <code>=INDEX(A1:D4; ZUZEILE({1;2;4}); {1;2;2})</code> funktional gleich.</p>
 </section>
-<section id="die-umkehrung-von-pivotmit-konstruieren" class="level3" data-number="14.2.2">
-<h3 data-number="14.2.2" class="anchored" data-anchor-id="die-umkehrung-von-pivotmit-konstruieren"><span class="header-section-number">14.2.2</span> Die Umkehrung von <code>PIVOTMIT()</code> konstruieren</h3>
+<section id="die-umkehrung-von-pivotmit-konstruieren" class="level3" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="die-umkehrung-von-pivotmit-konstruieren"><span class="header-section-number">14.3.2</span> Die Umkehrung von <code>PIVOTMIT()</code> konstruieren</h3>
 <p>Beim Umformen von der Breitform in die Langform müssen nicht nur die Werte als Vektor dargestellt werden, sondern auch die beiden Indexvektoren wiederhergestellt werden. Entsprechend reicht der naive Aufruf von <code>ZUSPALTE()</code> nicht.</p>
+<p>Analog zur Eingabe von PIVOTMIT() soll die Umkehrung drei Vektoren als Ergebnis erzeugen. Damit die Operation eine Umkehrung von PIVOTMIT() ist, ist der Ausgangswert der Umkehrung eine Matrix mit Zeilen- und Spaltenüberschriften.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Im folgenden wird der Bezeichner <code>datenbereich</code> in Excel-Formeln verwendet, dieser muss gegen die konkrete Adresse der in Breitform vorliegenden Daten ersetzt werden. Das Gleiche gilt für andere Bezeichner, die sich auf vorangegangene Berechnungen beziehen.</p>
+</div>
+</div>
+<p>Für die Umkehrung wird ausgenutzt, dass die Langform die höchstens soviele Datensätze wie Werte in der Ausgangsstruktur haben kann. Es gilt also <span class="math inline">n_z \cdot n_s</span>. Weil die Datenstruktur beschriftet ist, müssen die Zeilen- und Spaltenumfänge der Datenstruktur um 1 reduziert werden. Daraus ergibt die folgenden Excel-Operation für den Umfang der Ergebnisdatenstruktur.</p>
+<pre><code>= (ZEILEN(datenbereich) - 1) * (SPALTEN(datenbereich) - 1)</code></pre>
+<p>Als nächstes werden drei Indexvektoren als Spaltenvektoren erzeugt:</p>
+<ol type="1">
+<li>Der Indexvektor für die Zielposition im Ergebnis.</li>
+<li>Der Indexvektor für die jeweilige Zeile</li>
+<li>Der Indexvektor für die jeweilige Spalte</li>
+</ol>
+<p>Der Indexvektor für die Zielposition ergibt sich direkt aus dem gerade bestimmten Umfang. Diesen Vektor bezeichnen wir hier als <em>Zielindex</em>.</p>
+<pre><code>= SEQUENZ(zielumfang)</code></pre>
+<p>oder explizit</p>
+<pre><code>= SEQUENZ((ZEILEN(datenbereich) - 1) * (SPALTEN(datenbereich) - 1))</code></pre>
+<p>Dieser Indexvektor enthält alle Positionen der Werte im Zielvektor. Aus diesem Vektor lassen sich die beiden Indexvektoren bestimmen.</p>
+<pre><code>// Zeilenindex
+= GANZZAHL((zielindex - 1)/(SPALTEN(datenbereich) - 1)) + 2
+
+// Spaltenindex
+= REST(zielindex - 1; SPALTEN(datenbereich) - 1) + 2</code></pre>
+<p>In beiden Termen ist die Addition mit 2 notwending, weil zuerst der Indexbeginn bei 1 korrigiert (<code>+ 1</code>) und anschliessend die Überschriftsspalte bzw. -Zeile im Index berücksichtigt (<code>+ 1</code>) werden muss. Diese beiden Korrekturen korrespondieren mit den <code>- 1</code> in gleichen Term.</p>
+<p>Liegt eine Tabelle in einer Breitform ohne Beschriftungen vor, dann müssen die Indizes ohne Korrekturen berechnet werden:</p>
+<pre><code>// Zielindex
+= SEQUENZ(ZEILEN(datenbereich) * SPALTEN(datenbereich))
+
+// Zeilenindex
+= GANZZAHL((zielindex - 1)/(SPALTEN(datenbereich))) + 1
+
+// Spaltenindex
+= REST(zielindex - 1; SPALTEN(datenbereich)) + 1</code></pre>
+<p>Mit dem Zeilen- und dem Spaltenindex lassen sich nun die drei Ausgangsvektoren aus dem Datenbereich rekonstruieren:</p>
+<pre><code>// Zeilenwerte
+= INDEX(datenbereich; zeilenindex; 1)
+
+// Spaltenwerte
+= INDEX(datenbereich; 1; spaltenindex)
+
+// Werte
+= INDEX(datenbereich; zeilenindex; spaltenindex)</code></pre>
+<p>Weil <code>PIVOTMIT()</code> auch Werte für nicht vorhandene Indexpaare erzeugt, müssen diese Indexpaare abschliessend aus dem Ergebnis entfernt werden:</p>
+<pre><code>// Für die Zeilenwerte
+= FILTER(zeilenwerte; werte &lt;&gt; "")
+
+// Für die Spaltenwerte
+= FILTER(Spaltenwerte; werte &lt;&gt; "")
+
+// Für die Werte
+= FILTER(werte; werte &lt;&gt; "")</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Falls die drei Vektoren unmittelbar nebeneinander stehen, können die Operationen auch zusammengefasst werden:</p>
+<pre><code>= FILTER(zeilenwerte:werte; werte &lt;&gt; "")</code></pre>
+</div>
+</div>
+<p>Diese Operationen lassen sich in der folgenden Excel-Formel zusammenfassen:</p>
+<pre><code>= LET(
+    zeilenumfang; ZEILEN(datenbereich) - 1;
+    spaltenumfang; SPALTEN(datenbereich) - 1;
+    zielumfang; zeilenumfang * spaltenumfang; 
+    zielindex; SEQUENZ(zielumfang) - 1; 
+    zeilenindex; GANZZAHL(zielindex / spaltenumfang) + 2;
+    spaltenindex; REST(zielindex; spaltenumfang) + 2;
+    werte; INDEX(datenbereich; zeilenindex; spaltenindex); 
+    zwischenergebnis; HSTAPELN(
+        INDEX(datenbereich; zeilenindex; 1);
+        INDEX(datenbereich; 1; spaltenindex); 
+        werte
+    ); 
+    FILTER(zwischenergebnis; werte &lt;&gt; "")
+)</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Funktion <code>HSTAPELN()</code> wird in dieser Formel dazu verwendet, eine zusammenhängende Datenstruktur für die abschliessende <code>FILTER()</code>-Operation zu erzeugen.</p>
+</div>
+</div>
 </section>
-<section id="spaltenwahl-und-zeilenwahl" class="level3" data-number="14.2.3">
-<h3 data-number="14.2.3" class="anchored" data-anchor-id="spaltenwahl-und-zeilenwahl"><span class="header-section-number">14.2.3</span> <code>SPALTENWAHL()</code> und <code>ZEILENWAHL()</code></h3>
+</section>
+<section id="spaltenwahl-und-zeilenwahl" class="level2" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="spaltenwahl-und-zeilenwahl"><span class="header-section-number">14.4</span> <code>SPALTENWAHL()</code> und <code>ZEILENWAHL()</code></h2>
 <p>Die beiden Funktionen <code>SPALTENWAHL()</code> und <code>ZEILENWAHL()</code>, sind Vereinfachungen der <code>INDEX()</code>-Funktion.</p>
 <p>Die Funktion <code>SPALTENWAHL()</code> wählt ganze Spalten aus. Beispielsweise wählt der Aufruf von <code>SPALTENWAHL(A1:D17; 2)</code> die zweite Spalte des Bereichs <code>A1:D17</code> aus. Man erhält dann die Werte im Bereich <code>B1:B17</code>. Diese Funktion entspricht der folgenden Operation mit <code>INDEX()</code>.</p>
 <pre><code>= INDEX(
@@ -563,7 +710,6 @@ Praxis
 </div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
