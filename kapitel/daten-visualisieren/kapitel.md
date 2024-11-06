@@ -343,6 +343,18 @@ Für die erste Sichtung neuer Daten ist es leichter ein Histogramm über die Anz
 
 In der Datenreihenformatierung findet sich zusätzlich die Option `Nach Kategorie`, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Werte Kategorien. Über diese Kategorien **summiert** Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.
 
+::: {.callout-important}
+## Achtung
+
+Die Option `Nach Kategorie` erfordert Zeichenketten, die nicht in Zahlen umgewandelt werden können. Zahlen oder Zeichenketten, die wie Zahlen aussehen, werden für diese Option nicht unterstützt. Um Zahlenwerte in eine "Kategorie" umzuwandeln, muss dem Zahlwert ein Buchstabe vorangestellt werden, welcher nicht in Zahlen vorkommen kann.  
+
+Die folgende Operation führt eine solche Umwandlung beispielhaft durch. 
+
+```
+= "K " & Tabelle1[diskreteZahlen]
+```
+:::
+
 Wird als numerischer Vektor der Einsvektor (@sec-chapter-vektor-operationen)verwendet, dann entspricht die Summe der einzelnen Kategorien der Anzahl der Werte in der Kategorie. Ein solcher Einsvektor wird mit der @lst-einsvektor-cat erzeugt.
 
 ```{#lst-einsvektor-cat lst-cap="Einsvektor für Kategorien aus einer Tabelle"}
