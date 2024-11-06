@@ -341,7 +341,7 @@ Für die erste Sichtung neuer Daten ist es leichter ein Histogramm über die Anz
 
 #### Histogramme für diskrete Daten
 
-In der Datenreihenformatierung findet sich zusätzlich die Option `Nach Kategorie`, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Daten Kategorien. Über diese Kategorien **summiert** Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.
+In der Datenreihenformatierung findet sich zusätzlich die Option `Nach Kategorie`, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Werte Kategorien. Über diese Kategorien **summiert** Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.
 
 Wird als numerischer Vektor der Einsvektor (@sec-chapter-vektor-operationen)verwendet, dann entspricht die Summe der einzelnen Kategorien der Anzahl der Werte in der Kategorie. Ein solcher Einsvektor wird mit der @lst-einsvektor-cat erzeugt.
 
@@ -372,7 +372,7 @@ Werden einem Boxplot aggregierte Werte übergeben, dann bestimmt Excel die Inter
 
 In der Regel wird eine ganze Arbeitsblattspalte ausgewählt, um alle relevanten Werte zu markieren. Anschliessend wird aus der Diagrammkategorie `Statistik` der Diagrammtyp `Kastendiagramm ausgewählt. `
 
-Excel kann gruppierte Bloxplots erstellen. Dazu muss ein zweiter Vektor mit diskreten Daten angegeben werden. Excel gruppiert dann die Werte entlang des zweiten Vektors. 
+Excel kann gruppierte Bloxplots erstellen. Dazu muss ein zweiter Vektor mit diskreten Werten angegeben werden. Excel gruppiert dann die Werte entlang des zweiten Vektors. 
 
 ![Beispiel eines gruppierten Boxplots](figures/boxplot-categ.png){#fig-boxplot-categ}
 
