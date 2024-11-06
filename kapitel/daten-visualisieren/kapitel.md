@@ -403,11 +403,6 @@ Ein Punktdiagramm stellt zwei Vektoren mit *kontinuierlichen Daten* gegenüber. 
 
 ![Beispiel eines Punktdiagramms mit einer Ausgleichsgeraden](figures/punkt-beispiel.png){#fig-bsp-punktdiagramm}
 
-::: {.callout-important}
-## Achtung
-Diskrete Daten können in Excel nicht als Punktdiagramm dargestellt werden, weil die Möglichkeit des *Jitterplots* fehlt. 
-::: 
-
 Werden mehr als zwei Vektoren für ein Punktdiagramm markiert, dann verwendet Excel standardmässig die äusserst linke Spalte *immer* für die Werte auf der X-Achse. Um dieses Verhalten zu ändern, müssen die Datenreihen unter `Daten auswählen` angepasst werden. 
 
 ::: {.callout-tip}
@@ -445,6 +440,48 @@ Eine Ausgleichsgerade wird über den Menübalken `Diagrammentwurf` das Untermenu
 Eine Ausgleichsgerade kann angepasst werden, indem die Linie angelickt wird und unter `Trendlinie formatieren` die Trendlinienoptionen verändert werden. In diesem Dialog können auch die weiteren Ausgleichslinien konfiguriert werden (@fig-trendkonfig).
 
 ![Konfigurationsmöglichkeiten für Ausgleichsgeraden](figures/punkt-trend-konfig.png){#fig-trendkonfig}
+
+### Jitter-Diagramm
+
+Excel stellt für diskrete Werte keine eigene Visualisierung für den Vektorenvergleich bereit. Eine direkte Anwendung des Punktdiagramms führt zum Problem, dass die Punkte für jedes Wertepaar genau übereinander liegen. So lassen sich die Verteilungen in der Visualisierung nicht ablesen. Um ein Jitter-Diagramm zu erzeugen, müssen die Werte vor der Visualisierung leicht angepasst werden, so dass die Punkte nicht exakt übereinander liegen. Für diese Anpassung müssen die Werte beider Vektoren als Zahlen vorliegen (s. @sec-chapter-kodieren-gruppieren). Weil die Werte diskret sind, kann der Bereich zwischen den Werten genutzt werden. Grundsätzlich steht der Bereich bis 0.5 Abstand vom jeweiligen Wert für das Jittering zur Verfügung. Weil dadurch aber die Punkte nebeneinanderliegender Werte nicht mehr korrekt zugeordnet werden können, sollte zwischen zwei Werten eine *Pufferzone* vorgesehen werden, in der keine Punkte vorkommen dürfen. Dadurch wird eine visuelle Grenze zwischen den Werten erzeugt. 
+
+::: {.callout-warning}
+## Wichtig
+
+Bei Jitter-Diagrammen sollten zusätzlich angeführt werden, dass die Punkte von den tatsächlichen Werten abweichen. 
+::: 
+
+::: {.callout-tip}
+## Praxis
+
+Die Pufferzone sollte bei ganzzahligen Werten .4 breit sein, damit eine ausreichend grosse visuelle Grenze wahrgenommen werden kann. Daraus ergibt sich ein Bereich von ±0.3 um den tatsächlichen Wert für den Darstellungsbereich. 
+::: 
+
+Für ein Jitter-Diagramm müssen alle Werte zufällig vom tatsächlichen Wert ein klein wenig verschoben werden. Damit vermieden wird, dass zu viele Werte exakt übereinander dargestellt werden, wird also für jeden Wert in den Daten ein eigener Zufallswert bestimmt. Dieser Wert muss im Intervall zwischen -0.3 und 0.3 liegen (s. Praxis-Box).
+
+Der zweite Parameter ist immer `2`, weil eine X- und eine Y-Achse vorliegt. Anschliessend werden diese Verschiebungen auf die tatsächlichen Werte addiert. Diese neuen Werte bilden die Grundlage für das Diagramm, dass wie oben beschrieben als Punktdiagramm erstellt wird. 
+
+::: {#exm-werte-puffer-addieren}
+## Pufferwerte addieren
+
+Dieses Beispiel nimmt an, dass die beiden Vektoren an den Adressen A1 und B1 beginnen. 
+
+Im ersten Schritt werden die Werte für den Darstellungsbereich um den ursprünglichen Wert erzeugt. 
+
+```
+= ZUFALLSMATRIX(zeilen(A1#); 2; -0.3; 0.3)
+```
+
+Im zweiten Schritt werden diese Verschiebungen auf die Werte addisert. 
+
+``` excel
+= A1#:B1# + D1#
+```
+
+Das Ergebnis ist ein Bereich, der visualisiert werden kann. 
+:::
+
+![Beispiel für ein Jitter-Diagramm](figures/jitterplot.png){#fig-jitterplot}
 
 ### Blasendiagramm
 
