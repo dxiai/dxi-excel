@@ -12,6 +12,7 @@ execute:
 
 ::: {.callout-warning}
 ## Work in Progress
+Dieses Kapitel wird aktuell überarbeitet und erweitert. Fehlerhinweise und Korrekturen sind willkommen.
 :::
 
 Speziell für die Datenvisualisierung, erfordert Excel das Umformen von Daten. Dabei kann es notwendig werden, die Daten von der Normalform in eine Breitform umzuformen. Auch für andere Operationen kann es sinnvoll sein, Daten eine definierte Form zu geben. Zu diesen Operationen gehören z.B. gruppierte Aggregationen.
@@ -75,7 +76,53 @@ Die Funktion `PIVOTMIT()` erfordert eine *Aggregationsfunktion*. Diese Funktion 
 Eine Langform kann nur in eine Breitform umgeformt werden, wenn alle Wertepaare der Indexvektoren **eindeutig** sind. Eine solche Langform liegt dann in ihrer **Normalform** *für die beiden Indexvektoren* vor.
 :::
 
-### Vektoren auf ihre Normalform prüfen
+### Breitform ohne Überschriften erhalten
+
+Weil die Funktion `PIVOTMIT()` auch Zeilen- und Spaltenüberschriften erzeugt, lassen sich die einzelnen Vektoren nicht direkt mit `SPALTENWAHL()` extrahieren. Leider lassen sich die Spaltenüberschriften nicht unterbinden.
+
+Damit die Überschriften nicht in den Daten vorliegen, müssen diese nach der Transformation entfernt werden: 
+
+```
+= LET(breitform; PIVOTMIT(
+                    Zeilenindex; 
+                    Spaltenindex; 
+                    Werte; 
+                    SUMME;; 
+                    0;; 
+                    0);
+      zeilenwerte; ZEILEN(breitform) - 1;
+      spaltenwerte; SPALTEN(breitform);
+      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
+      wertespalten; SEQUENZ(1;spaltenwerte; 1);
+      INDEX(breitform; wertezeilen; wertespalten)
+)
+```
+
+Um auch die Werte des Zeilenindex zu entfernen, muss die Spaltenanzahl ebenfalls verringert werden.
+
+```
+= LET(breitform; PIVOTMIT(
+                    Zeilenindex; 
+                    Spaltenindex; 
+                    Werte; 
+                    SUMME;; 
+                    0;; 
+                    0);
+      zeilenwerte; ZEILEN(breitform) - 1;
+      spaltenwerte; SPALTEN(breitform) - 1;
+      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
+      wertespalten; SEQUENZ(1; spaltenwerte; 2);
+      INDEX(breitform; wertezeilen; wertespalten)
+)
+```
+
+::: {.callout-important}
+## Achtung
+
+Intuitiv bietet sich die Funktion `BEREICH.VERSCHIEBEN()` ebenfalls an. Diese Funktion erfordert jedoch eine Zellbezug, so dass diese Funktion nicht in Operationen mit `LET()` und `LAMBDA()` eingesetzt werden kann.
+:::
+
+## Vektoren auf ihre Normalform prüfen
 
 Zwei Indexvektoren liegen genau dann in ihrer Normalform vor, wenn alle Wertepaare (bzw. Tupel) eindeutig sind, d.h. genau einmal vorkommen. Damit eine Breitform der Daten für diese Indexvektoren erzeugt werden kann, muss gelegentlich geprüft werden, ob diese auch tatsächlich in ihrer Normalform vorliegen.
 
@@ -130,52 +177,6 @@ Diese Prüfung lässt sich in eine Operation zusammenfassen.
 
 Ergibt diese Operation `WAHR`, dann kann die Breitform ohne Informationsverlust erzeugt werden. 
 
-### Breitform ohne Überschriften erhalten
-
-Weil die Funktion `PIVOTMIT()` auch Zeilen- und Spaltenüberschriften erzeugt, lassen sich die einzelnen Vektoren nicht direkt mit `SPALTENWAHL()` extrahieren. Leider lassen sich die Spaltenüberschriften nicht unterbinden.
-
-Damit die Überschriften nicht in den Daten vorliegen, müssen diese nach der Transformation entfernt werden: 
-
-```
-= LET(breitform; PIVOTMIT(
-                    Zeilenindex; 
-                    Spaltenindex; 
-                    Werte; 
-                    SUMME;; 
-                    0;; 
-                    0);
-      zeilenwerte; ZEILEN(breitform) - 1;
-      spaltenwerte; SPALTEN(breitform);
-      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
-      wertespalten; SEQUENZ(1;spaltenwerte; 1);
-      INDEX(breitform; wertezeilen; wertespalten)
-)
-```
-
-Um auch die Werte des Zeilenindex zu entfernen, muss die Spaltenanzahl ebenfalls verringert werden.
-
-```
-= LET(breitform; PIVOTMIT(
-                    Zeilenindex; 
-                    Spaltenindex; 
-                    Werte; 
-                    SUMME;; 
-                    0;; 
-                    0);
-      zeilenwerte; ZEILEN(breitform) - 1;
-      spaltenwerte; SPALTEN(breitform) - 1;
-      wertezeilen; SEQUENZ(zeilenwerte; 1; 2);
-      wertespalten; SEQUENZ(1; spaltenwerte; 2);
-      INDEX(breitform; wertezeilen; wertespalten)
-)
-```
-
-::: {.callout-important}
-## Achtung
-
-Intuitiv bietet sich die Funktion `BEREICH.VERSCHIEBEN()` ebenfalls an. Diese Funktion erfordert jedoch eine Zellbezug, so dass diese Funktion nicht in Operationen mit `LET()` und `LAMBDA()` eingesetzt werden kann.
-:::
-
 ## Die `INDEX()`-Funktion
 
 Die Funktion `PIVOTMIT()` hat keine unmittelbare Umkehrfunktion. Mithilfe der `INDEX()`-Funktion lässt sich eine Umkehrfunktion konstruieren. Diese Funktion wurde bereits im letzten Abschnitt zum entfernen der Werte der Indexvektoren eingesetzt.
@@ -186,23 +187,139 @@ Die `INDEX()`-Funktion ist eine sog. Referenzfunktion, mit der auf Werte mittels
 2. einen gültigen Zeilenindex, und 
 3. einen gültigen Spaltenindex.
 
-Der Zeilen- und Spaltenindex sind Ganzzahlen, die sich auf die Position der Werte beziehen. Auf diese Weise lassen sich Werte aus einem Vektor oder einer Matrix extrahieren. 
-
-
+Der Zeilen- und Spaltenindex sind Ganzzahlen, die sich auf die Position der Werte beziehen. Auf diese Weise lassen sich Werte aus einem Vektor oder einer Matrix extrahieren. Die beiden Indexwerte beziehen sich dabei relativ zur linken oberen Zelle des übergebenen Bereichs, wobei die Referenzzelle einen Zeilen- und Spaltenindex von 1 hat. Aus dieser Spezifikation ergibt sich, dass die `INDEX()`-Funktion keine negativen Indexwerte akzeptiert. 
 
 ### `INDEX()` mit Vektoren als Indexparameter
 
-Die INDEX()-Funktion erlaubt Vektoren für den Zeilen- und Spaltenindex. Auf diese Weise lassen sich mehrere Werte auf einmal referenzieren. Liegen die Vektoren in gleicher Orientierung vor, dann bildet die Funktion Indexpaare. Die Operation `= INDEX(A1:C5; {1; 2; 4}, {1; 2; 2})` wählt beispielsweise nur die Werte an `A1`, `B2` und `B4` aus.
+Die INDEX()-Funktion erlaubt Vektoren für den Zeilen- und Spaltenindex. Auf diese Weise lassen sich mehrere Werte auf einmal referenzieren. Liegen die Vektoren in gleicher Orientierung vor, dann bildet die Funktion Indexpaare. Die Operation `= INDEX(A1:C5; {1; 2; 4}, {1; 2; 2})` wählt beispielsweise die Werte der Adressen `A1`, `B2` und `B4` aus.
 
 Liegen die Indizes in verschiedenen Orientierungen vor, dann bildet die `INDEX()`-Funktion eine Indexmatrix mit allen Permutationen der angegebenen Indizes. Die Werte werden dann als Matrix angeordnet. Z.B. die Operation `=INDEX(A1:D4; {1;2;4}; ZUZEILE({1;2;2}))` wählt die Werte an `A1`, `A2`, `A4`, `B1`, `B2`, `B4` sowie nocheinmal `B1`, `B2` und `B4` aus. Diese Dopplung entsteht durch die doppelte Angabe des Werts `2` im Spaltenindex. Auf den ersten Blick erscheint dieses Verhalten unpraktisch, im folgenden Abschnitt wird genau diese Eigenschaft ausgenutzt. 
 
-Die Funktion INDEX() behält die Orientierung der Parametervektoren bei. Diese Eigenschaft lässt sich ausnutzen, um eine Verkettung mit `MTRANS()` zu vermeiden. Die Operation `=MTRANS(INDEX(A1:D4; {1;2;4}; ZUZEILE({1;2;2})))` ist mit der Operation `=INDEX(A1:D4; ZUZEILE({1;2;4}); {1;2;2})` funktional gleich. 
+Die Funktion INDEX() behält die Orientierung der Parametervektoren bei. Diese Eigenschaft lässt sich ausnutzen, um eine Verkettung mit `MTRANS()` zu vermeiden. Die Operation `=MTRANS(INDEX(A1:D4; {1;2;4}; ZUZEILE({1;2;2})))` ist mit der Operation `=INDEX(A1:D4; ZUZEILE({1;2;4}); {1;2;2})` funktional gleich.
 
 ### Die Umkehrung von `PIVOTMIT()` konstruieren
 
-Beim Umformen von der Breitform in die Langform müssen nicht nur die Werte als Vektor dargestellt werden, sondern auch die beiden Indexvektoren wiederhergestellt werden. Entsprechend reicht der naive Aufruf von `ZUSPALTE()` nicht. 
+Beim Umformen von der Breitform in die Langform müssen nicht nur die Werte als Vektor dargestellt werden, sondern auch die beiden Indexvektoren wiederhergestellt werden. Entsprechend reicht der naive Aufruf von `ZUSPALTE()` nicht.
 
-### `SPALTENWAHL()` und `ZEILENWAHL()`
+Analog zur Eingabe von PIVOTMIT() soll die Umkehrung drei Vektoren als Ergebnis erzeugen. Damit die Operation eine Umkehrung von PIVOTMIT() ist, ist der Ausgangswert der Umkehrung eine Matrix mit Zeilen- und Spaltenüberschriften. 
+
+::: {.callout-note}
+Im folgenden wird der Bezeichner `datenbereich` in Excel-Formeln verwendet, dieser muss gegen die konkrete Adresse der in Breitform vorliegenden Daten ersetzt werden. Das Gleiche gilt für andere Bezeichner, die sich auf vorangegangene Berechnungen beziehen.
+::: 
+
+Für die Umkehrung wird ausgenutzt, dass die Langform die höchstens soviele Datensätze wie Werte in der Ausgangsstruktur haben kann. Es gilt also $n_z \cdot n_s$. Weil die Datenstruktur beschriftet ist, müssen die Zeilen- und Spaltenumfänge der Datenstruktur um 1 reduziert werden. Daraus ergibt die  folgenden Excel-Operation für den Umfang der Ergebnisdatenstruktur.
+
+```
+= (ZEILEN(datenbereich) - 1) * (SPALTEN(datenbereich) - 1)
+```
+
+Als nächstes werden drei Indexvektoren als Spaltenvektoren erzeugt: 
+
+1. Der Indexvektor für die Zielposition im Ergebnis. 
+2. Der Indexvektor für die jeweilige Zeile
+3. Der Indexvektor für die jeweilige Spalte
+
+Der Indexvektor für die Zielposition ergibt sich direkt aus dem gerade bestimmten Umfang. Diesen Vektor bezeichnen wir hier als *Zielindex*.
+
+```
+= SEQUENZ(zielumfang)
+```
+
+oder explizit
+
+```
+= SEQUENZ((ZEILEN(datenbereich) - 1) * (SPALTEN(datenbereich) - 1))
+```
+
+Dieser Indexvektor enthält alle Positionen der Werte im Zielvektor. Aus diesem Vektor lassen sich die beiden Indexvektoren bestimmen.
+
+```
+// Zeilenindex
+= GANZZAHL((zielindex - 1)/(SPALTEN(datenbereich) - 1)) + 2
+
+// Spaltenindex
+= REST(zielindex - 1; SPALTEN(datenbereich) - 1) + 2
+```
+
+In beiden Termen ist die Addition mit 2 notwending, weil zuerst der Indexbeginn bei 1 korrigiert (`+ 1`) und anschliessend die Überschriftsspalte bzw. -Zeile im Index berücksichtigt (`+ 1`) werden muss. Diese beiden Korrekturen korrespondieren mit den `- 1` in gleichen Term. 
+
+Liegt eine Tabelle in einer Breitform ohne Beschriftungen vor, dann müssen die Indizes ohne Korrekturen berechnet werden: 
+
+```
+// Zielindex
+= SEQUENZ(ZEILEN(datenbereich) * SPALTEN(datenbereich))
+
+// Zeilenindex
+= GANZZAHL((zielindex - 1)/(SPALTEN(datenbereich))) + 1
+
+// Spaltenindex
+= REST(zielindex - 1; SPALTEN(datenbereich)) + 1
+```
+
+Mit dem Zeilen- und dem Spaltenindex lassen sich nun die drei Ausgangsvektoren aus dem Datenbereich rekonstruieren: 
+
+```
+// Zeilenwerte
+= INDEX(datenbereich; zeilenindex; 1)
+
+// Spaltenwerte
+= INDEX(datenbereich; 1; spaltenindex)
+
+// Werte
+= INDEX(datenbereich; zeilenindex; spaltenindex)
+```
+
+Weil `PIVOTMIT()` auch Werte für nicht vorhandene Indexpaare erzeugt, müssen diese Indexpaare abschliessend aus dem Ergebnis entfernt werden: 
+
+``` 
+// Für die Zeilenwerte
+= FILTER(zeilenwerte; werte <> "")
+
+// Für die Spaltenwerte
+= FILTER(Spaltenwerte; werte <> "")
+
+// Für die Werte
+= FILTER(werte; werte <> "")
+```
+
+::: {.callout-tip}
+## Tip 
+
+Falls die drei Vektoren unmittelbar nebeneinander stehen, können die Operationen auch zusammengefasst werden: 
+
+```
+= FILTER(zeilenwerte:werte; werte <> "")
+```
+:::
+
+Diese Operationen lassen sich in der folgenden Excel-Formel zusammenfassen: 
+
+```
+= LET(
+    zeilenumfang; ZEILEN(datenbereich) - 1;
+    spaltenumfang; SPALTEN(datenbereich) - 1;
+    zielumfang; zeilenumfang * spaltenumfang; 
+    zielindex; SEQUENZ(zielumfang) - 1; 
+    zeilenindex; GANZZAHL(zielindex / spaltenumfang) + 2;
+    spaltenindex; REST(zielindex; spaltenumfang) + 2;
+    werte; INDEX(datenbereich; zeilenindex; spaltenindex); 
+    zwischenergebnis; HSTAPELN(
+        INDEX(datenbereich; zeilenindex; 1);
+        INDEX(datenbereich; 1; spaltenindex); 
+        werte
+    ); 
+    FILTER(zwischenergebnis; werte <> "")
+)
+```
+
+::: {.callout-note}
+
+Die Funktion `HSTAPELN()` wird in dieser Formel dazu verwendet, eine zusammenhängende Datenstruktur für die abschliessende `FILTER()`-Operation zu erzeugen. 
+
+:::
+
+
+## `SPALTENWAHL()` und `ZEILENWAHL()`
 
 Die beiden Funktionen `SPALTENWAHL()` und `ZEILENWAHL()`, sind Vereinfachungen der `INDEX()`-Funktion. 
 
