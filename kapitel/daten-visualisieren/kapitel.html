@@ -1098,7 +1098,7 @@ Praxis
 </section>
 <section id="histogramme-für-diskrete-daten" class="level4" data-number="16.2.3.2">
 <h4 data-number="16.2.3.2" class="anchored" data-anchor-id="histogramme-für-diskrete-daten"><span class="header-section-number">16.2.3.2</span> Histogramme für diskrete Daten</h4>
-<p>In der Datenreihenformatierung findet sich zusätzlich die Option <code>Nach Kategorie</code>, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Daten Kategorien. Über diese Kategorien <strong>summiert</strong> Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.</p>
+<p>In der Datenreihenformatierung findet sich zusätzlich die Option <code>Nach Kategorie</code>, die keine weiteren Konfigurationsmöglichkeiten bietet. In diesem Fall akzeptiert Excel einen Vektor mit diskreten und einen mit numerischen Daten. Wird diese Option für die Intervalle gewählt, dann bilden die eindeutigen diskreten Werte Kategorien. Über diese Kategorien <strong>summiert</strong> Excel den numerischen Vektor, um die Höhe der Balken zu bestimmen. Das Ergebnis ist in den meisten Fällen kein Histogramm im eigentlichen Sinn, weil es eine Summe anstatt einer Anzahl anzeigt.</p>
 <p>Wird als numerischer Vektor der Einsvektor (<a href="../vektor-operationen/kapitel.html" class="quarto-xref"><span>Kapitel 11</span></a>)verwendet, dann entspricht die Summe der einzelnen Kategorien der Anzahl der Werte in der Kategorie. Ein solcher Einsvektor wird mit der <a href="#lst-einsvektor-cat" class="quarto-xref">Listing&nbsp;<span>16.1</span></a> erzeugt.</p>
 <div id="lst-einsvektor-cat" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
@@ -1153,7 +1153,7 @@ Merke
 </div>
 <p>Werden einem Boxplot aggregierte Werte übergeben, dann bestimmt Excel die Intervallgrenze für die aggregierten Werte und nicht die ursprüngliche Verteilung.</p>
 <p>In der Regel wird eine ganze Arbeitsblattspalte ausgewählt, um alle relevanten Werte zu markieren. Anschliessend wird aus der Diagrammkategorie <code>Statistik</code> der Diagrammtyp <code>Kastendiagramm ausgewählt.</code></p>
-<p>Excel kann gruppierte Bloxplots erstellen. Dazu muss ein zweiter Vektor mit diskreten Daten angegeben werden. Excel gruppiert dann die Werte entlang des zweiten Vektors.</p>
+<p>Excel kann gruppierte Bloxplots erstellen. Dazu muss ein zweiter Vektor mit diskreten Werten angegeben werden. Excel gruppiert dann die Werte entlang des zweiten Vektors.</p>
 <div id="fig-boxplot-categ" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplot-categ-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
