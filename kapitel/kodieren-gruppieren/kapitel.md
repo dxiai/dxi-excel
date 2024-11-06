@@ -94,7 +94,7 @@ Enthält eine Referenztabelle mehr als eine Kodierung, dann müssen die Werte sp
 
 ## Gruppieren
 
-Das Gruppieren ist in Excel auf die folgenden Funktionen beschränkt: 
+Das Gruppieren war in Excel auf die folgenden Funktionen beschränkt: 
 
 - `ZÄHLENWENN()`
 - `ZÄHLENWENNS()`
@@ -109,6 +109,8 @@ Das Gruppieren ist in Excel auf die folgenden Funktionen beschränkt:
 Die Funktionen `ZÄHLENWENN()`, `ZÄHLENWENNS()`, `SUMMEWENN()` und `SUMMEWENNS()` wurden bis 2019 zum Erzeugen von bedingten Aggregationen verwendet. Mit der Einführung dynamischer Felder und der `FILTER()`-Funktion lassen sich bedingte Aggregationen einfacher und flexibler durch Funktionsverkettungen von FILTER() mit einer beliebigen Aggregationsfunktion erreichen. 
 
 **Seit dieser Version hat sich die Bedeutung der Funktionen geändert.** Die Funktionen werden neu als Gruppierungsfunktionen verwendet. 
+
+Mit der Einführung der `GRUPPIERENNACH()` Funktion wurden gruppierte Operation flexibler gestaltet (siehe dazu @sec-groupby). 
 :::
 
 ::: {.callout-note}
@@ -121,7 +123,7 @@ Wenn für eine Funktion eine WENN und eine WENNS-Variante existieren, dann sollt
 Die beiden Funktionen `WENN()` und `WENNS()` sind **keine** Gruppierungsfunktionen, sondern Unterscheidungen. Trotz ähnlicher Namen, dürfen sie nicht mit den Gruppierungsfunktionen verwechselt werden. 
 :::
 
-Die WENNS-Varianten sind  für alle Aggregationen bezüglich ihrer Parameter konsistent, so dass die Syntax leichter zu merken ist. Die beiden (neuen) Funktionen `MINWENNS()` und `MAXWENNS()` veranschaulichen diese Empfehlung, weil für diese Funktionen keine WENN-Variante existiert.  
+Die WENNS-Varianten sind  für alle Aggregationen bezüglich ihrer Parameter konsistent, so dass die Syntax leichter zu merken ist. Die beiden Funktionen `MINWENNS()` und `MAXWENNS()` veranschaulichen diese Empfehlung, weil für diese Funktionen keine WENN-Variante existiert.  
 
 Eine Gruppierungsoperation erfolgt in drei Schritten: 
 
@@ -196,3 +198,63 @@ Diese Permutationstabelle kann nun mit den Gruppierungsfunktionen verwendet werd
 ```
 ::: 
 
+## Die `GRUPPIERENNACH()`-Funktion {#sec-groupby}
+
+Mit der Einführung der Funktion `GRUPPIERENNACH()` erlaubt Excel beliebige Gruppierungen, wodurch gruppierte Aggregationen weiter vereinfacht wurden. Die `GRUPPIERENNACH()`-Funktion fasst den Schritt der Eindeutigen Werte im Indexvektor und die nachfolgende gruppierte Aggregation zusammen. Das Ergebnis liefert immer die eindeutigen Werte des Gruppierungsindex zusammen mit den jeweiligen Aggregationen als Ergebnis zurück. 
+
+::: {.callout-tip}
+## Praxis
+Die Syntax der Funktion `GRUPPIERENNACH()` ist deutlich einfacher als die älteren Gruppierungsfunktionen.
+:::
+
+Der erste Parameter die `GRUPPIERENNACH()`-Funktion ist immer der Indexvektor, der zweite Parameter ist immer der Wertevektor, über welchen aggregiert werden soll. Der dritte Parameter ist eine Aggregationsfunktion, die als *Funktionsreferenz* übergeben werden muss. Das bedeutet, dass hinter dem Funktionsnamen ***keine*** Klammern und auch keine Parameterliste stehen darf. 
+
+Die `GRUPPIERENNACH()` Funktion fügt unter den gruppierten Ergebnissen normalerweise eine `Total`-Zeile für ein Gesamtergebnis ein. Diese zusätzliche Zeile kann durch den Wert `0` als fünften Parameter unterdrückt werden. Der vierte Parameter übernimmt die Überschiften in das Ergebnis, falls diese ebenfalls übergeben wurden. Dieser Parameter hat in vielen Fällen keine Bedeutung und wird deshalb meist ausgelassen. 
+
+@tbl-gruppierungsfunktionen stellt die Syntax der älteren und neueren Gruppierungsfunktionen gegenüber. 
+
+| Alte Syntax | Neue Syntax mit `GRUPPIERENNACH()` | 
+| :--- | :--- | 
+| `=ZÄHLENWENNS(daten[index]; EINDEUTIG(daten[index]))` | `GRUPPIERENNACH(daten[index]; daten[werte]; ZEILEN;; 0)` | 
+| `=SUMMEWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))` | `GRUPPIERENNACH(daten[index]; daten[werte]; SUMME;; 0)` |
+| `=MINWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))` | `GRUPPIERENNACH(daten[index]; daten[werte]; MIN;; 0)` |
+| `=MAXWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))` | `GRUPPIERENNACH(daten[index]; daten[werte]; MAX;; 0)` |
+| `=MITTELWERTWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))` | `GRUPPIERENNACH(daten[index]; daten[werte]; MITTELWERT;; 0)` |
+
+: Gegenüberstellung alte und neue Gruppierungsstrategien {#tbl-gruppierungsfunktionen} 
+
+::: {.callout-note}
+## Merke
+
+Damit eine Gruppierung durchgeführt werden kann, muss auch mit `GRUPPIERENNACH()` ein oder mehrere Indexvektoren erzeugt werden, falls noch keine Indexvektoren für die Daten existieren. 
+::: 
+
+Die Gruppierungsstrategie mit `GRUPPIERENNACH()` hat den Vorteil, dass auch nicht vorgegebene Aggregationen durchgeführt werden können. Das  @exm-gruppierter-median zeigt die gruppierte Aggregation des Medians, die ohne `GRUPPIERENNACH()` nur umständlich umgesetzt werden kann.
+
+::: {#exm-gruppierter-median}
+## Gruppierter Median 
+
+``` excel
+= GRUPPIERENNACH(data_ab[Angebot]; data_ab[Interesse]; MEDIAN;; 0)
+```
+:::
+
+::: {.callout-note}
+## Merke
+
+Anders als andere Excel-Funktionen führen Fehlerwerte nicht zu einem einzelnen Fehlerwert im Ergebnis. Im Index-Vektor werden Fehlerwerte als eigene Gruppe behandelt. Erst innerhalb einer Gruppe führen Fehlerwerte im Wertevektor zu einem Fehler. 
+::: 
+
+### Gruppieren über mehrere Indizes
+
+Um über mehrere Indizes gleichzeitig zu indizieren, müssen diese in den Daten einen Bereich bilden. Alle Indexvektoren müssen also unmittelbar nebeneinander liegen. Anschliessend wird dieser Bereich als Index der Funktion `GRUPPIERENNACH()` übergeben. In diesem Fall werden alle vorhandenen Permutationen der Indexvektoren als Index für die Gruppierungen verwendet. 
+
+Das @exm-gruppierungen-mehrere-indizes zeigt die Anwendung über mehrere aufeinanderfolgende Indizes in einer Tabelle. 
+
+::: {#exm-gruppierungen-mehrere-indizes}
+## Gruppieren über mehrere Indizes
+
+``` excel
+= GRUPPIERENNACH(data_ab[[Interesse]:[Bedeutung]]; data_ab[Punkte]; SUMME;; 0)
+```
+::: 
