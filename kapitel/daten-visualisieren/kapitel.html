@@ -330,8 +330,9 @@ window.Quarto = {
   <li><a href="#histogramm" id="toc-histogramm" class="nav-link" data-scroll-target="#histogramm"><span class="header-section-number">16.2.3</span> Histogramm</a></li>
   <li><a href="#box-plot" id="toc-box-plot" class="nav-link" data-scroll-target="#box-plot"><span class="header-section-number">16.2.4</span> Box-Plot</a></li>
   <li><a href="#punktdiagramm" id="toc-punktdiagramm" class="nav-link" data-scroll-target="#punktdiagramm"><span class="header-section-number">16.2.5</span> Punktdiagramm</a></li>
-  <li><a href="#blasendiagramm" id="toc-blasendiagramm" class="nav-link" data-scroll-target="#blasendiagramm"><span class="header-section-number">16.2.6</span> Blasendiagramm</a></li>
-  <li><a href="#linien--kreis--und-donutdiagramme" id="toc-linien--kreis--und-donutdiagramme" class="nav-link" data-scroll-target="#linien--kreis--und-donutdiagramme"><span class="header-section-number">16.2.7</span> Linien-, Kreis- und Donutdiagramme</a></li>
+  <li><a href="#jitter-diagramm" id="toc-jitter-diagramm" class="nav-link" data-scroll-target="#jitter-diagramm"><span class="header-section-number">16.2.6</span> Jitter-Diagramm</a></li>
+  <li><a href="#blasendiagramm" id="toc-blasendiagramm" class="nav-link" data-scroll-target="#blasendiagramm"><span class="header-section-number">16.2.7</span> Blasendiagramm</a></li>
+  <li><a href="#linien--kreis--und-donutdiagramme" id="toc-linien--kreis--und-donutdiagramme" class="nav-link" data-scroll-target="#linien--kreis--und-donutdiagramme"><span class="header-section-number">16.2.8</span> Linien-, Kreis- und Donutdiagramme</a></li>
   </ul></li>
   <li><a href="#mathematische-funktionen-visualisieren" id="toc-mathematische-funktionen-visualisieren" class="nav-link" data-scroll-target="#mathematische-funktionen-visualisieren"><span class="header-section-number">16.3</span> Mathematische Funktionen visualisieren</a></li>
   </ul>
@@ -1230,19 +1231,6 @@ Abbildung&nbsp;16.30: Beispiel eines Punktdiagramms mit einer Ausgleichsgeraden
 </figcaption>
 </figure>
 </div>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Achtung
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Diskrete Daten können in Excel nicht als Punktdiagramm dargestellt werden, weil die Möglichkeit des <em>Jitterplots</em> fehlt.</p>
-</div>
-</div>
 <p>Werden mehr als zwei Vektoren für ein Punktdiagramm markiert, dann verwendet Excel standardmässig die äusserst linke Spalte <em>immer</em> für die Werte auf der X-Achse. Um dieses Verhalten zu ändern, müssen die Datenreihen unter <code>Daten auswählen</code> angepasst werden.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1311,8 +1299,58 @@ Abbildung&nbsp;16.32: Konfigurationsmöglichkeiten für Ausgleichsgeraden
 </div>
 </section>
 </section>
-<section id="blasendiagramm" class="level3" data-number="16.2.6">
-<h3 data-number="16.2.6" class="anchored" data-anchor-id="blasendiagramm"><span class="header-section-number">16.2.6</span> Blasendiagramm</h3>
+<section id="jitter-diagramm" class="level3" data-number="16.2.6">
+<h3 data-number="16.2.6" class="anchored" data-anchor-id="jitter-diagramm"><span class="header-section-number">16.2.6</span> Jitter-Diagramm</h3>
+<p>Excel stellt für diskrete Werte keine eigene Visualisierung für den Vektorenvergleich bereit. Eine direkte Anwendung des Punktdiagramms führt zum Problem, dass die Punkte für jedes Wertepaar genau übereinander liegen. So lassen sich die Verteilungen in der Visualisierung nicht ablesen. Um ein Jitter-Diagramm zu erzeugen, müssen die Werte vor der Visualisierung leicht angepasst werden, so dass die Punkte nicht exakt übereinander liegen. Für diese Anpassung müssen die Werte beider Vektoren als Zahlen vorliegen (s. <a href="../kodieren-gruppieren/kapitel.html" class="quarto-xref"><span>Kapitel 13</span></a>). Weil die Werte diskret sind, kann der Bereich zwischen den Werten genutzt werden. Grundsätzlich steht der Bereich bis 0.5 Abstand vom jeweiligen Wert für das Jittering zur Verfügung. Weil dadurch aber die Punkte nebeneinanderliegender Werte nicht mehr korrekt zugeordnet werden können, sollte zwischen zwei Werten eine <em>Pufferzone</em> vorgesehen werden, in der keine Punkte vorkommen dürfen. Dadurch wird eine visuelle Grenze zwischen den Werten erzeugt.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Bei Jitter-Diagrammen sollten zusätzlich angeführt werden, dass die Punkte von den tatsächlichen Werten abweichen.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Pufferzone sollte bei ganzzahligen Werten .4 breit sein, damit eine ausreichend grosse visuelle Grenze wahrgenommen werden kann. Daraus ergibt sich ein Bereich von ±0.3 um den tatsächlichen Wert für den Darstellungsbereich.</p>
+</div>
+</div>
+<p>Für ein Jitter-Diagramm müssen alle Werte zufällig vom tatsächlichen Wert ein klein wenig verschoben werden. Damit vermieden wird, dass zu viele Werte exakt übereinander dargestellt werden, wird also für jeden Wert in den Daten ein eigener Zufallswert bestimmt. Dieser Wert muss im Intervall zwischen -0.3 und 0.3 liegen (s. Praxis-Box).</p>
+<p>Der zweite Parameter ist immer <code>2</code>, weil eine X- und eine Y-Achse vorliegt. Anschliessend werden diese Verschiebungen auf die tatsächlichen Werte addiert. Diese neuen Werte bilden die Grundlage für das Diagramm, dass wie oben beschrieben als Punktdiagramm erstellt wird.</p>
+<div id="exm-werte-puffer-addieren" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 16.1 (Pufferwerte addieren)</strong></span> Dieses Beispiel nimmt an, dass die beiden Vektoren an den Adressen A1 und B1 beginnen.</p>
+<p>Im ersten Schritt werden die Werte für den Darstellungsbereich um den ursprünglichen Wert erzeugt.</p>
+<pre><code>= ZUFALLSMATRIX(zeilen(A1#); 2; -0.3; 0.3)</code></pre>
+<p>Im zweiten Schritt werden diese Verschiebungen auf die Werte addisert.</p>
+<pre class="excel"><code>= A1#:B1# + D1#</code></pre>
+<p>Das Ergebnis ist ein Bereich, der visualisiert werden kann.</p>
+</div>
+<div id="fig-jitterplot" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-jitterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/jitterplot.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-jitterplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Abbildung&nbsp;16.33: Beispiel für ein Jitter-Diagramm
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="blasendiagramm" class="level3" data-number="16.2.7">
+<h3 data-number="16.2.7" class="anchored" data-anchor-id="blasendiagramm"><span class="header-section-number">16.2.7</span> Blasendiagramm</h3>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1334,7 +1372,7 @@ Merke
 <img src="figures/bubble_chart.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bubble-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.33: Beispiel eines Blasendiagramms
+Abbildung&nbsp;16.34: Beispiel eines Blasendiagramms
 </figcaption>
 </figure>
 </div>
@@ -1345,7 +1383,7 @@ Abbildung&nbsp;16.33: Beispiel eines Blasendiagramms
 <img src="figures/bubble-chart-datenreihen.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datenreihen-bubble-chart-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.34: Konfiguration der Datenreihen eines Blasendiagramms (MacOS)
+Abbildung&nbsp;16.35: Konfiguration der Datenreihen eines Blasendiagramms (MacOS)
 </figcaption>
 </figure>
 </div>
@@ -1355,20 +1393,20 @@ Abbildung&nbsp;16.34: Konfiguration der Datenreihen eines Blasendiagramms (MacOS
 <li>Über die Fläche der Kreise.</li>
 </ol>
 <p>Wird der Durchmesser gewählt, werden die Kreise für grössere Werte schneller grösser als bei der Einstellung, über die Fläche zu kodieren. Die Kodierung über den Durchmesser ist sinnvoll, wenn nur ein kleiner Wertebereich (3-5) mit dicht zusammenliegenden Werten dargestellt werden muss. In allen anderen Fällen sollte die Kodierung über die Fläche der Kreise erfolgen.</p>
-<p>Die Blasengrösse wird konfiguriert, indem zuerst auf einen Kreis mit der Maus geklickt wird und anschliessend unter Datenreihen formatieren unter <code>Reihenoptionen</code> die Strategie für die Blasengrösse angepasst wird (<a href="#fig-bubblechart-config" class="quarto-xref">Abbildung&nbsp;<span>16.35</span></a>)</p>
+<p>Die Blasengrösse wird konfiguriert, indem zuerst auf einen Kreis mit der Maus geklickt wird und anschliessend unter Datenreihen formatieren unter <code>Reihenoptionen</code> die Strategie für die Blasengrösse angepasst wird (<a href="#fig-bubblechart-config" class="quarto-xref">Abbildung&nbsp;<span>16.36</span></a>)</p>
 <div id="fig-bubblechart-config" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-bubblechart-config-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="figures/bubble-config-size.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bubblechart-config-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.35: Konfiguration der Blasengrösse
+Abbildung&nbsp;16.36: Konfiguration der Blasengrösse
 </figcaption>
 </figure>
 </div>
 </section>
-<section id="linien--kreis--und-donutdiagramme" class="level3" data-number="16.2.7">
-<h3 data-number="16.2.7" class="anchored" data-anchor-id="linien--kreis--und-donutdiagramme"><span class="header-section-number">16.2.7</span> Linien-, Kreis- und Donutdiagramme</h3>
+<section id="linien--kreis--und-donutdiagramme" class="level3" data-number="16.2.8">
+<h3 data-number="16.2.8" class="anchored" data-anchor-id="linien--kreis--und-donutdiagramme"><span class="header-section-number">16.2.8</span> Linien-, Kreis- und Donutdiagramme</h3>
 <p>Linien-, Kreis- und Donutdiagramme sind in Excel Varianten von Balkendiagrammen: Sie verwenden das gleiche Format für die Datenreihen und werden ansonsten gleich konfiguriert. Wie bei Balkendiagrammen, wird die X-Achse als eine diskrete Datenskalierung behandelt. Die Daten können also nominal- oder ordinalskaliert sein.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1380,7 +1418,7 @@ Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen" class="quarto-xref">Abbildung&nbsp;<span>16.36</span></a> und <a href="#fig-balken-aus-kreisdiagramm" class="quarto-xref">Abbildung&nbsp;<span>16.37</span></a>)</p>
+<p>Kreis- und Donutdiagramme sind identisch mit Balkendiagrammen, wenn alle Werte <strong>positiv</strong> sind. Für mehr als drei Werte können die meisten Menschen sich diese Diagramme oft nicht richtig interpretieren. Deshalb sollten Kreis- und Donutdiagramme möglichst nur zur Darstellung (extremer) Mengenverhältinisse verwendet werden. Grundsätzlich ist ein Balkendiagramm einem Kreis- oder Donutdiagramm vorzuziehen. (s. <a href="#fig-kreisdiagramm-aehnliche-groessen" class="quarto-xref">Abbildung&nbsp;<span>16.37</span></a> und <a href="#fig-balken-aus-kreisdiagramm" class="quarto-xref">Abbildung&nbsp;<span>16.38</span></a>)</p>
 </div>
 </div>
 <div id="fig-kreisdiagramm-aehnliche-groessen" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1389,7 +1427,7 @@ Praxis
 <img src="figures/kreisdiagramm.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kreisdiagramm-aehnliche-groessen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.36: Kreisdiagramm mit ähnlich grossen Werten
+Abbildung&nbsp;16.37: Kreisdiagramm mit ähnlich grossen Werten
 </figcaption>
 </figure>
 </div>
@@ -1399,7 +1437,7 @@ Abbildung&nbsp;16.36: Kreisdiagramm mit ähnlich grossen Werten
 <img src="figures/balken_fuer_kreis.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-balken-aus-kreisdiagramm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.37: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen" class="quarto-xref">Abbildung&nbsp;<span>16.36</span></a>
+Abbildung&nbsp;16.38: Balkendiagramm für die gleichen Werte aus <a href="#fig-kreisdiagramm-aehnliche-groessen" class="quarto-xref">Abbildung&nbsp;<span>16.37</span></a>
 </figcaption>
 </figure>
 </div>
@@ -1428,7 +1466,7 @@ Praxis
 </div>
 <div class="callout-body-container callout-body">
 <p>Excels Liniendiagramme sollten nur für sog. Paralleldiagramme verwendet werden, in denen mehrere diskrete Merkmale mit dem gleichen Wertebereich gegenübergestellt werden. Durch die Linien werden Unterschiede in den Ausprägungsprofilen sichtbar.</p>
-<p><a href="#fig-parallel-plot" class="quarto-xref">Abbildung&nbsp;<span>16.38</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
+<p><a href="#fig-parallel-plot" class="quarto-xref">Abbildung&nbsp;<span>16.39</span></a> zeigt ein solches Paralleldiagramm. Dieses Beispiel macht die Grenzen dieses Diagrammtyps sichbar, weil Excel sich überlagernde Linien nicht nebeneinander darstellen kann.</p>
 </div>
 </div>
 <div id="fig-parallel-plot" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -1437,7 +1475,7 @@ Praxis
 <img src="figures/diagramm_parallel_plot.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-parallel-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.38: Anwendung eines Liniendiagramms als Paralleldiagramm
+Abbildung&nbsp;16.39: Anwendung eines Liniendiagramms als Paralleldiagramm
 </figcaption>
 </figure>
 </div>
@@ -1462,7 +1500,7 @@ Merke
 <img src="figures/spidereweb_diagramm.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spiderweb-diagramm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.39: Netzdiagramm mit den gleichen Daten wie <a href="#fig-parallel-plot" class="quarto-xref">Abbildung&nbsp;<span>16.38</span></a>
+Abbildung&nbsp;16.40: Netzdiagramm mit den gleichen Daten wie <a href="#fig-parallel-plot" class="quarto-xref">Abbildung&nbsp;<span>16.39</span></a>
 </figcaption>
 </figure>
 </div>
@@ -1517,7 +1555,7 @@ Hinweis
 <img src="figures/funktionen_visualisieren.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-funktionen-visualisieren-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Abbildung&nbsp;16.40: Beispiel der Visualisierung der Funktionen <span class="math inline">f(x) = 2x^2 -3</span> und <span class="math inline">g(x)=2x+4</span>
+Abbildung&nbsp;16.41: Beispiel der Visualisierung der Funktionen <span class="math inline">f(x) = 2x^2 -3</span> und <span class="math inline">g(x)=2x+4</span>
 </figcaption>
 </figure>
 </div>
