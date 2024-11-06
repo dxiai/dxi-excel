@@ -281,6 +281,10 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#mehrere-sekundärindizes" id="toc-mehrere-sekundärindizes" class="nav-link" data-scroll-target="#mehrere-sekundärindizes"><span class="header-section-number">13.2.1</span> Mehrere Sekundärindizes</a></li>
   </ul></li>
+  <li><a href="#sec-groupby" id="toc-sec-groupby" class="nav-link" data-scroll-target="#sec-groupby"><span class="header-section-number">13.3</span> Die <code>GRUPPIERENNACH()</code>-Funktion</a>
+  <ul class="collapse">
+  <li><a href="#gruppieren-über-mehrere-indizes" id="toc-gruppieren-über-mehrere-indizes" class="nav-link" data-scroll-target="#gruppieren-über-mehrere-indizes"><span class="header-section-number">13.3.1</span> Gruppieren über mehrere Indizes</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
     </div>
@@ -421,7 +425,7 @@ Warnung
 </section>
 <section id="gruppieren" class="level2" data-number="13.2">
 <h2 data-number="13.2" class="anchored" data-anchor-id="gruppieren"><span class="header-section-number">13.2</span> Gruppieren</h2>
-<p>Das Gruppieren ist in Excel auf die folgenden Funktionen beschränkt:</p>
+<p>Das Gruppieren war in Excel auf die folgenden Funktionen beschränkt:</p>
 <ul>
 <li><code>ZÄHLENWENN()</code></li>
 <li><code>ZÄHLENWENNS()</code></li>
@@ -444,6 +448,7 @@ Wichtig
 <div class="callout-body-container callout-body">
 <p>Die Funktionen <code>ZÄHLENWENN()</code>, <code>ZÄHLENWENNS()</code>, <code>SUMMEWENN()</code> und <code>SUMMEWENNS()</code> wurden bis 2019 zum Erzeugen von bedingten Aggregationen verwendet. Mit der Einführung dynamischer Felder und der <code>FILTER()</code>-Funktion lassen sich bedingte Aggregationen einfacher und flexibler durch Funktionsverkettungen von FILTER() mit einer beliebigen Aggregationsfunktion erreichen.</p>
 <p><strong>Seit dieser Version hat sich die Bedeutung der Funktionen geändert.</strong> Die Funktionen werden neu als Gruppierungsfunktionen verwendet.</p>
+<p>Mit der Einführung der <code>GRUPPIERENNACH()</code> Funktion wurden gruppierte Operation flexibler gestaltet (siehe dazu <a href="#sec-groupby" class="quarto-xref"><span>Kapitel 13.3</span></a>).</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -472,7 +477,7 @@ Achtung
 <p>Die beiden Funktionen <code>WENN()</code> und <code>WENNS()</code> sind <strong>keine</strong> Gruppierungsfunktionen, sondern Unterscheidungen. Trotz ähnlicher Namen, dürfen sie nicht mit den Gruppierungsfunktionen verwechselt werden.</p>
 </div>
 </div>
-<p>Die WENNS-Varianten sind für alle Aggregationen bezüglich ihrer Parameter konsistent, so dass die Syntax leichter zu merken ist. Die beiden (neuen) Funktionen <code>MINWENNS()</code> und <code>MAXWENNS()</code> veranschaulichen diese Empfehlung, weil für diese Funktionen keine WENN-Variante existiert.</p>
+<p>Die WENNS-Varianten sind für alle Aggregationen bezüglich ihrer Parameter konsistent, so dass die Syntax leichter zu merken ist. Die beiden Funktionen <code>MINWENNS()</code> und <code>MAXWENNS()</code> veranschaulichen diese Empfehlung, weil für diese Funktionen keine WENN-Variante existiert.</p>
 <p>Eine Gruppierungsoperation erfolgt in drei Schritten:</p>
 <ol type="1">
 <li>Erzeugen der Gruppierungsindizes.</li>
@@ -530,6 +535,109 @@ Wichtig
     Tabelle1[Durchlauf]; SPALTENWAHL(A1#; 2); 
     Tabelle1[Gruppe];    SPALTENWAHL(A1#; 3)
 )</code></pre>
+</div>
+</section>
+</section>
+<section id="sec-groupby" class="level2" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="sec-groupby"><span class="header-section-number">13.3</span> Die <code>GRUPPIERENNACH()</code>-Funktion</h2>
+<p>Mit der Einführung der Funktion <code>GRUPPIERENNACH()</code> erlaubt Excel beliebige Gruppierungen, wodurch gruppierte Aggregationen weiter vereinfacht wurden. Die <code>GRUPPIERENNACH()</code>-Funktion fasst den Schritt der Eindeutigen Werte im Indexvektor und die nachfolgende gruppierte Aggregation zusammen. Das Ergebnis liefert immer die eindeutigen Werte des Gruppierungsindex zusammen mit den jeweiligen Aggregationen als Ergebnis zurück.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Syntax der Funktion <code>GRUPPIERENNACH()</code> ist deutlich einfacher als die älteren Gruppierungsfunktionen.</p>
+</div>
+</div>
+<p>Der erste Parameter die <code>GRUPPIERENNACH()</code>-Funktion ist immer der Indexvektor, der zweite Parameter ist immer der Wertevektor, über welchen aggregiert werden soll. Der dritte Parameter ist eine Aggregationsfunktion, die als <em>Funktionsreferenz</em> übergeben werden muss. Das bedeutet, dass hinter dem Funktionsnamen <strong><em>keine</em></strong> Klammern und auch keine Parameterliste stehen darf.</p>
+<p>Die <code>GRUPPIERENNACH()</code> Funktion fügt unter den gruppierten Ergebnissen normalerweise eine <code>Total</code>-Zeile für ein Gesamtergebnis ein. Diese zusätzliche Zeile kann durch den Wert <code>0</code> als fünften Parameter unterdrückt werden. Der vierte Parameter übernimmt die Überschiften in das Ergebnis, falls diese ebenfalls übergeben wurden. Dieser Parameter hat in vielen Fällen keine Bedeutung und wird deshalb meist ausgelassen.</p>
+<p><a href="#tbl-gruppierungsfunktionen" class="quarto-xref">Tabelle&nbsp;<span>13.1</span></a> stellt die Syntax der älteren und neueren Gruppierungsfunktionen gegenüber.</p>
+<div id="tbl-gruppierungsfunktionen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-gruppierungsfunktionen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;13.1: Gegenüberstellung alte und neue Gruppierungsstrategien
+</figcaption>
+<div aria-describedby="tbl-gruppierungsfunktionen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Alte Syntax</th>
+<th style="text-align: left;">Neue Syntax mit <code>GRUPPIERENNACH()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>=ZÄHLENWENNS(daten[index]; EINDEUTIG(daten[index]))</code></td>
+<td style="text-align: left;"><code>GRUPPIERENNACH(daten[index]; daten[werte]; ZEILEN;; 0)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>=SUMMEWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))</code></td>
+<td style="text-align: left;"><code>GRUPPIERENNACH(daten[index]; daten[werte]; SUMME;; 0)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>=MINWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))</code></td>
+<td style="text-align: left;"><code>GRUPPIERENNACH(daten[index]; daten[werte]; MIN;; 0)</code></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>=MAXWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))</code></td>
+<td style="text-align: left;"><code>GRUPPIERENNACH(daten[index]; daten[werte]; MAX;; 0)</code></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>=MITTELWERTWENNS(daten[werte]; daten[index]; EINDEUTIG(daten[index]))</code></td>
+<td style="text-align: left;"><code>GRUPPIERENNACH(daten[index]; daten[werte]; MITTELWERT;; 0)</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Damit eine Gruppierung durchgeführt werden kann, muss auch mit <code>GRUPPIERENNACH()</code> ein oder mehrere Indexvektoren erzeugt werden, falls noch keine Indexvektoren für die Daten existieren.</p>
+</div>
+</div>
+<p>Die Gruppierungsstrategie mit <code>GRUPPIERENNACH()</code> hat den Vorteil, dass auch nicht vorgegebene Aggregationen durchgeführt werden können. Das <a href="#exm-gruppierter-median" class="quarto-xref">Beispiel&nbsp;<span>13.6</span></a> zeigt die gruppierte Aggregation des Medians, die ohne <code>GRUPPIERENNACH()</code> nur umständlich umgesetzt werden kann.</p>
+<div id="exm-gruppierter-median" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.6 (Gruppierter Median)</strong></span> &nbsp;</p>
+<pre class="excel"><code>= GRUPPIERENNACH(data_ab[Angebot]; data_ab[Interesse]; MEDIAN;; 0)</code></pre>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Anders als andere Excel-Funktionen führen Fehlerwerte nicht zu einem einzelnen Fehlerwert im Ergebnis. Im Index-Vektor werden Fehlerwerte als eigene Gruppe behandelt. Erst innerhalb einer Gruppe führen Fehlerwerte im Wertevektor zu einem Fehler.</p>
+</div>
+</div>
+<section id="gruppieren-über-mehrere-indizes" class="level3" data-number="13.3.1">
+<h3 data-number="13.3.1" class="anchored" data-anchor-id="gruppieren-über-mehrere-indizes"><span class="header-section-number">13.3.1</span> Gruppieren über mehrere Indizes</h3>
+<p>Um über mehrere Indizes gleichzeitig zu indizieren, müssen diese in den Daten einen Bereich bilden. Alle Indexvektoren müssen also unmittelbar nebeneinander liegen. Anschliessend wird dieser Bereich als Index der Funktion <code>GRUPPIERENNACH()</code> übergeben. In diesem Fall werden alle vorhandenen Permutationen der Indexvektoren als Index für die Gruppierungen verwendet.</p>
+<p>Das <a href="#exm-gruppierungen-mehrere-indizes" class="quarto-xref">Beispiel&nbsp;<span>13.7</span></a> zeigt die Anwendung über mehrere aufeinanderfolgende Indizes in einer Tabelle.</p>
+<div id="exm-gruppierungen-mehrere-indizes" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 13.7 (Gruppieren über mehrere Indizes)</strong></span> &nbsp;</p>
+<pre class="excel"><code>= GRUPPIERENNACH(data_ab[[Interesse]:[Bedeutung]]; data_ab[Punkte]; SUMME;; 0)</code></pre>
 </div>
 
 
