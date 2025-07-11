@@ -34,6 +34,7 @@ book:
     - kapitel/einleitung/excel-versionen.md
     - kapitel/einleitung/02_oberflaeche.md
     - kapitel/einleitung/01_jargon.md
+    - kapitel/adressen_formeln/kapitel.md
   
   - part: "Datenquellen"
     chapters:

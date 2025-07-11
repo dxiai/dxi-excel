@@ -30,52 +30,6 @@ Ist ein Arbeitsblatt gesperrt, sind die Werte auf diesem Arbeitsblatt unverände
 Der Bezeichner `x1` ist ungültig, weil dieser identisch mit der Adresse `X1` wäre. Wird Bezeichner um einen Unterstrich zu `x_1` erweitert, dann gibt es keine Kollision mit der Adresse mehr und der Bezeichner ist gültig. 
 :::
 
-### Dynamische Bereiche {#sec-dynamisches-feld}
-
-Formeln können mehr als einen Wert verarbeiten und mehr als einen Ergebnis liefern. Solche Formeln müssen nur in die linke obere Ecke eines Bereichs eingetragen werden. Excel erkennt automatisch, dass die Formel auf einen Bereich angewendet werden soll und erzeugt die entsprechende Formel für alle Zellen des Bereichs. Das Ergebnis einer solchen Formel ist ein *dynamischer Bereich*.
-
-::: {#def-vektorisieren}
-**Vektorisieren** heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.
-:::
-
-::: {#exm-vektorisieren}
-## Vektorisieren eines statischen Bereichs
-
-```
-=A1:A10
-```
-:::
-
-Im Gegensatz zu einem normalen Bereich, ist bei einem dynamischen Bereich nur die linke obere Zelle bekannt. Um trotzdem alle Zellen eines solchen Bereichs zu adressieren, wird die Gatter- (`#`) Notation verwendet.
-
-Das @exm-vektorisieren erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle `B1` eingetragen. Anschliessend können die Werte im Bereich `B1:B10` über die Gatter-Notation adressiert werden: `B1#`.
-
-Der Vorteil des Vektorisierens ist, dass der Bereich durch das Einfügen neuer Zeilen vergrössert werden kann, ohne dass die nachfolgenden vektorisierten Formeln angepasst werden müssen.
-
-::: {.callout-tip}
-## Praxis
-
-Weil Tabellen automatisch vektorisiert werden, ist es einfacher Werte in einer Tabelle zu erfassen bzw. als Tabelle zu importieren (s. @sec-chapter-daten-importieren) und anschliessend über die Tabellenadressierung auf die Werte zu verweisen.
-:::
-
-::: {.callout-note}
-## Merke
-Tabellenadressierungen auf eine Spalte oder einen Spaltenberech sind immer Vektorisiert.
-:::
-
-> ::: {#exm-tabellen-zu-vektoren}
-> ## Vektorisieren von Tabellenspalten
-> 
-> ```
-> = Tabelle1[Spalte1]
-> ```
-> 
-> Diese Formel vektorisiert die Spalte mit dem Namen `Spalte1` aus der Tabelle `Tabelle1`. Angenommen, dass diese Formel in Zelle `A1` des aktuellen Arbeitsblattes steht, dann kann anschliessend auf den Vektor über die Gatter-Notation zugegriffen werden: 
-> 
-> ```
-> =A1#
-> ```
-> ::: 
 
 ### Benannte Bereiche
 
@@ -112,6 +66,25 @@ Wenn einem benannten Bereich Zellen hinzugefügt werden, dann wird der benannte 
 ::: {.callout-note}
 Eine Tabelle ist ein spezieller benannter Bereich, der als Ganzes oder in Teilen referenziert werden kann (s. [Abschnitt @sec-tabellenadressen]).
 :::
+
+## Operatoren {#sec-operatoren}
+
+Operatoren sind spezielle Symbole in Formeln, die zur Verknüpfung von Werten dienen. 
+
+Excel unterscheidet zwischen den folgenden Operatoren:
+
+- Adressoperatoren (Bezugsoperatoren, s. @sec-adressierung)
+- Arithmetische Operatoren
+- Vergleichsoperatoren
+- Textoperatoren
+
+### Adressoperatoren
+
+### Arithmetische Operatoren
+
+### Vergleichsoperatoren
+
+### Textoperator
 
 ## Funktionen {#sec-funktionen}
 
