@@ -23,7 +23,7 @@ Die Sperre eines Arbeitsblatts wird im Menuband `Überprüfen` mit dem Kommando 
 
 Ist ein Arbeitsblatt gesperrt, sind die Werte auf diesem Arbeitsblatt unveränderlich und verhalten sich wie Konstanten. Ist ein Arbeitsblatt nicht gesperrt, dann verhalten sich die Werte wie Variablen.
 
-**Bezeichner** unterliegen in Excel gewissen Beschränkungen. 
+**Bezeichner** unterliegen in Excel Beschränkungen. Es dürfen also nicht beliebige Bezeichner verwendet werden, sondern nur jene, die folgende Regeln einhalten.  
 
 1. Bezeichner dürfen nur aus Buchstaben, Zahlen, Dollarzeichen, Punkten und Unterstrichen (`_`) bestehen.
 2. Bezeichner dürfen keine bestehenden Funktionsnamen sein. 
