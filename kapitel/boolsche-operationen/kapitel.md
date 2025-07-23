@@ -82,7 +82,7 @@ Die folgende Tabelle zeigt logischen Operatoren und die zugehörigen Terme für 
 | $\lor$ | `a + b - a * b` | `a + b` |
 | $\oplus$ | `a + b - 2 * a * b` oder `( a - b ) ^ 2` | `(a <> b)` |`
 
-## Vergleiche
+## Vergleiche {#sec-vergleiche}
 
 Eine besondere Art von logischen Ausdrücken sind *Vergleiche*. Ein Vergleich prüft das Verhältnis zweier Werte zueinander. Excel kennt die üblichen Vergleichsoperatoren, die jeweils einen Wahrheitswert zurückliefern.
 
