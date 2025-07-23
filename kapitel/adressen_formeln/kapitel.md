@@ -7,7 +7,7 @@ execute:
   echo: false
 ---
 
-# Adressen und Formeln {#sec-chapter-adressen-formeln}
+# Formeln und Adressen {#sec-chapter-adressen-formeln}
 
 ## Formeln
 
@@ -28,7 +28,12 @@ Formeln können Werte enthalten. In diesem Fall ist der angegebene Wert das Erge
 ```
 ::: 
 
-Einzelne Werte machen wenig Sinn in einer Formel. Meist werden Werte durch Operatoren oder Funktionen verknüpft. 
+Werden nur Werte in einer Formel verwendet, dann wird die Formel als *konstante Funktion* bezeichnet, weil die Formel unabhängig von ihrer Position immer den gleichen (konstanten) Wert liefert. Werte stehen meistens nicht allein, sondern  werden durch Operatoren oder Funktionen verknüpft. 
+
+::: {.callout-tip}
+## Praxis
+Grundsätzlich sollte vermieden werden, Werte direkt in einer Formel zu verwenden. Stattdessen sollten Werte in Bereichen, Tabellen oder Arbeitsmappennamen definiert werden.
+::: 
 
 Operatoren entsprechen den bekannten mathematischen Operatoren. So kann eine Tabellenkalkulation als Taschenrechner verwendet werden. 
 
@@ -39,9 +44,9 @@ Operatoren entsprechen den bekannten mathematischen Operatoren. So kann eine Tab
 ```
 ::: 
 
-Mehr zu Operatoren findet sich unter @sec-operatoren. 
+Mehr zu Operatoren findet sich unter @sec-operatoren.
 
-
+Funktionen sind die zweite Möglichkeit, um in Excel Berechnungen durchzuführen.
 
 ::: {#exm-formel-mit-funktion}
 ## Eine Formel die zwei Werte summiert
@@ -50,10 +55,41 @@ Mehr zu Operatoren findet sich unter @sec-operatoren.
 ```
 ::: 
 
+Excel verfügt über 450 Funktionen, die in Formeln eingesetzt werden können. Diese Funktionen sind über das Menuband `Formeln` erreichbar und in die folgenden Funktionsgruppen gegliedert: 
 
+* Finanzmathematik
+* Logisch
+* Text
+* Datum und Uhrzeit
+* Nachschlagen und Verweisen
+* Mathematik und Trigonometrie
+* Statistik
+* Technik
+* Cube 
+* Informationen
+
+Daneben findet sich die Kategorie `Kompatibilität`. Diese Kategorie fasst veraltete Funktionen zusammen, die nicht mehr in neuen Arbeitsblättern verwendet werden sollten. Diese Funktionen dienen der Unterstützung alter Arbeitsmappen und unterstützen die moderne Arbeit mit Excel nicht und werden auch nicht mehr angepasst. Deshalb sollten diese Funktionen möglichst mit ihren aktualisierten Varianten ersetzt werden. 
+
+Neben diesen veralteten Funktionen gibt es viele Funktionen, die bei der modernen Arbeit mit Excel nicht mehr eingesetzt werden und von geeigneteren Funktionen abgelöst wurden. Obwohl diese älteren Funktionen mit der modernen Arbeitsweise vereinbaren lassen, wird empfohlen, die entsprechende flexiblere Funktion zu verwednden. Eine Auswahl dieser Funktionen listet @tbl-alte-funktionen.
+
+| alte Funktion | Ersatzfunktion | 
+| :--- | :--- |
+| ISTFEHL | ISTFEHLER | 
+| VERWEIS | XVERWEIS | 
+| SVERWEIS | XVERWEIS | 
+| WVERWEIS | XVERWEIS |
+| VERGLEICH | XVERGLEICH |  
+| SVERGLEICH | XVERGLEICH | 
+| WVERGLEICH | XVERGLEICH |
+| WECHSELN | REGEXERSETZEN |
+
+: Auswahl alte Funktionen und ihre flexibleren Nachfolger {#tbl-alte-funktionen}
+
+Jede Excel-Funktion hat ein Ergebnis, das von einer anderen Funktion oder mit einem Operator verwendet werden kann. 
 
 ## Adressen {#sec-adressierung}
 
+Um Werte und Berechnungen zu trennen, werden in Formeln die Adressen verwendet, an denen die gewünschten Werte stehen.
 
 ::: {#def-bezug}
 Ein **Bezug** ist die Adresse eines Bereichs.
@@ -76,7 +112,7 @@ Arbeitsblattadressen besteht aus drei Teilen:
 - Bereichsbeginn
 - Bereichsende
 
-Der Bereichsbeginn verweist immer auf die linke obere Zelle des Bereichs. Der Bereichsende verweist immer auf die rechte untere Zelle des Bereichs. Eine Zelle wird immer durch den Spaltenindex (Buchstabe) und den Zeilenindex (Zahl) identifiziert. Werden die Koordinaten des Bereichsbeginns und des Bereichsendes bei der Eingabe vertauscht, dann wird der Bereich automatisch korrigiert. 
+Ein Bereich ist im Excel Jargon ein rechteckiges Feld von Zellen. Der Bereichsbeginn verweist immer auf die linke obere Zelle des Bereichs. Der Bereichsende verweist immer auf die rechte untere Zelle des Bereichs. Eine Zelle wird immer durch den Spaltenindex (Buchstabe) und den Zeilenindex (Zahl) identifiziert. Werden die Koordinaten des Bereichsbeginns und des Bereichsendes bei der Eingabe vertauscht, dann wird der Bereich automatisch korrigiert.
 
 ::: {#exm-bereichsadresse}
 ## Arbeitsblattadresse
@@ -114,18 +150,53 @@ Tabelle2!B2
 ```
 :::
 
+Zusätzlich können ganze Zeilen oder ganze Spalten adressiert werden. In solchen Fällen wird jeweils die Start- und Endzeile bzw. -Spalte des Bereichs angegeben. Das @exm-bereichsadresse-mehrere-zeilen verweist auf den Bereich, der sich von der zweiten bis zur vierten Zeile auf dem Arbeitsblatt `Tabelle2` erstreckt.
+
+::: {#exm-bereichsadresse-mehrere-zeilen}
+## Adresse mehrerer Zeilen auf einem anderen Arbeitsblatt
+```
+Tabelle2!2:4
+```
+:::
+
+Um eine einzelene Zeile zu adressieren, muss diese Zeile sowohl als Bereichsanfang als auch als Bereichsende angegebene werden. 
+
+::: {#exm-bereichsadresse-eine-zeile}
+## Adresse einer Zeile auf einem anderen Arbeitsblatt
+```
+Tabelle2!2:2
+```
+:::
+
+Analog dazu werden ganze Spalten adressiert. 
+
+::: {#exm-bereichsadresse-mehrere-Spalten}
+## Adresse mehrerer Zeilen auf einem anderen Arbeitsblatt
+```
+Tabelle2!A:C
+```
+:::
+
+::: {#exm-bereichsadresse-eine-Spalte}
+## Adresse einer Spalte auf dem gleichen Arbeitsblatt
+```
+A:A
+```
+:::
+
+### Adresserweiterungen
+
 Weil Arbeitsblattadressen von vielen interaktiven Excelkommandos verwendet werden, gibt es zwei Arten von Arbeitsblattadressen:
 
 - Relative Adressen
 - Absolute Adressen
 
-Die Art der Adresse legt fest, wie ein interaktives Kommando mit einer Adresse umgehen soll. Die populärste interaktive Funktion ist das *Autoauffüllen*. Dabei wird eine Zelle mit einer Formel interaktiv auf einen Bereich von Zellen übertragen.
+Die Art der Adresse legt fest, wie ein interaktives Kommando mit einer Adresse umgehen soll. Die populärste interaktive Funktionalität ist das *Autoauffüllen*. Dabei wird eine Zelle mit einer Formel interaktiv auf einen Bereich von Zellen übertragen.
 
 ::: {.callout-warning}
-
 Das Autoauffüllen ist eine einfache und beliebte Methode, um Formeln in Excel auf verschiedene Werte wiederholt anzuwenden. Bis 2019 war das Autoauffüllen die einzige Möglichkeit für die Datentransformation.
 
-Die relative und absolute Adressierung ist eine wichtige Voraussetzung für das Autoauffüllen.  Leider ist das Autoauffüllen auch die Ursache für viele Fehler beim Umgang mit Excel.
+Die relative und absolute Adressierung ist eine wichtige Voraussetzung für das Autoauffüllen.  Leider ist das Autoauffüllen auch die Ursache für viele Fehler beim Umgang mit Excel. Deshalb sollte das Autoauffüllen nur noch in Ausnahmefällen verwendet werden. 
 :::
 
 ::: {.callout-tip}
@@ -133,6 +204,7 @@ Die relative und absolute Adressierung ist eine wichtige Voraussetzung für das 
 
 In Excel365 kann das Autoauffüllen durch vektorisierte Funktionen fast vollständig ersetzt werden. Dadurch lassen sich viele Excel-typische Fehler vermeiden. Dadurch ist die Unterscheidung zwischen der relativen und absoluten Adressierung nicht mehr so wichtig.
 :::
+
 #### Relative Adressen
 
 ::: {#def-relative-adresse}
@@ -155,11 +227,85 @@ Ein Beispiel für eine absolute Adresse ist `$A$1`. Diese Adresse bezeichnet die
 
 Auf diese Weise lassen sich konstante Werte in Formeln einbauen.
 
+### Dynamische Bereiche {#sec-dynamisches-feld}
+
+::: {.callout-note}
+Aktuell unterstützen nur Excel und Numbers dynamische Bereiche.
+:::
+
+
+Formeln können mehr als einen Wert verarbeiten und mehr als ein Ergebnis liefern. Solche Formeln müssen nur in die linke obere Ecke eines Zielbereichs eingetragen werden. Excel erkennt automatisch, dass die Formel auf einen Bereich angewendet werden soll und erzeugt die entsprechende Formel für alle Zellen des Bereichs. Das Ergebnis einer solchen Formel ist ein *dynamischer Bereich*.
+
+::: {#def-vektorisieren}
+**Vektorisieren** heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.
+:::
+
+::: {#exm-vektorisieren}
+## Vektorisieren eines statischen Bereichs
+
+```
+= A1:B10
+```
+:::
+
+Im Gegensatz zu einem normalen Bereich, ist bei einem dynamischen Bereich nur die linke obere Zelle bekannt. Um trotzdem alle Zellen eines solchen Bereichs zu adressieren, wird die Gatter- (`#`) Notation verwendet.
+
+Das @exm-vektorisieren erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle `B1` eingetragen. Anschliessend können die Werte im Bereich `B1:B10` über die Gatter-Notation adressiert werden: `B1#`.
+
+Der Vorteil des Vektorisierens ist, dass der Bereich durch das Einfügen neuer Zeilen vergrössert werden kann, ohne dass die nachfolgenden vektorisierten Formeln angepasst werden müssen.
+
+::: {#exm-adresse-dynbereich}
+## Adresse eines dynamischen Bereichs
+```
+=D1#
+```
+:::
+
+Manche Funtionen liefern immer dynamische Bereiche als Ergebnis zurück, selbst wenn dieser Bereich nur aus einer Zelle besteht. Dazu gehört z.B. die Funktion `FILTER`.
+
+::: {.callout-important}
+## Achtung
+
+**Nicht alle Funktionen verhalten sich auf diese Weise.** Viele Funktionen haben nur dann dynamsiche Bereiche als Ergebnis, wenn mindestens eine Adresse verwendet wird, die einen Bereich mit mehr als einer Zelle umfasst. 
+
+Deshalb ist es wichtig vorher zu prüfen, ob eine Formel tatsächlich einen dynamischen Bereich zum Ergebnis hat, bevor diese Adressierung verwendet werden kann.
+::: 
+
+#### Bereinigte Bereiche
+
+In der Praxis werden häufig Werte adressiert, die in einem Bereich liegen, welcher sich über eine ganze Zeile oder eine ganze Spalte erstreckt wobei die eigentlichen Werte nur in einem kleinem Ausschnitt dieses Bereichs liegen und die restlichen Zellen in diesem Bereich sind leer. Excel erlaubt es alle leeren Zellen am Anfang und am Ende eines Bereichs bereits bei der Adressierung zu entfernen. Das Ergebnis ist ein dynamischer Bereich, welcher nur den verwertbare Werte umfasst.
+
+::: {.callout-important}
+Aktuell kann nur Excel Bereiche bereingen. Diese Funktion wird nicht von anderen Tabellenkalkulationen unterstützt. 
+:::
+
+Um einen Bereich zu bereinigen, wird ein Punkt auf der Seite des Bereichsoperators (`:`) angefügt, auf welcher leere Zellen entfernt werden sollen. Ein Punkt auf der linken Seite des Doppelpunkts bedeutet, dass die leeren Zeilen oder Spalten vor dem obersten-linken Wert entfernt werden. Ein Punkt auf der rechten Seite des Doppelpunkts bedeutet, dass alle leeren Zeilen oder Spalten nach dem untersten-rechten Wert entfernt werden. 
+
+::: {#exm-bereinigterbereich}
+## Beidseitig bereinigter Bereich 
+```
+A.:.B
+```
+:::
+
+Die Punkadressierung ist eine Kurzform der Funktion `ABSCHNBEREICH()`
+
+::: {.callout-note}
+## Merke
+
+Beim Bereinigen werden keine Zellen, Zeilen oder Spalten zwischen den Daten entfernt.
+:::
+
+
 ### Tabellenadressen {#sec-tabellenadressen}
+
+Beim Adressieren von Zellen auf Arbeitsblättern geht oft wichtige Information in den Formeln verloren. Damit diese Information erhalten bleibt, 
 
 Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden [@microsoft_support_using_2023]. Das Ergebnis einer solchen Adressierung ist immer ein *dynamisches Feld* bzw. ein *dynamischer Bereich* (s. [Abschnitt @sec-dynamisches-feld]).
 
 ::: {.callout-note}
+## Merke 
+
 Jede Tabellenadresse kann auch als Arbeitsblattadresse dargestellt werden. Umgekehrt ist dies nicht möglich.
 :::
 
@@ -281,95 +427,4 @@ Tabelle1[[Spalte1]:[Spalte1]]
 :::
 
 Wird eine Formel mit dieser Adresse interaktiv aufgefüllt, dann wird die Adresse nicht verändert.
-
-
---- 
-### Adressgrundstruktur
-
-
-
----
-### Adressen und Auto-ausfüllen
-
-
-### Bereichsadressen 
-
-Eine Bereichsadresse verweis
-
-::: {.callout-note}
-Aktuell unterstützen nur Excel und Numbers Bereichsadressen ohne Funktionsaufrufe.
-:::
-
-#### Zeilen- und Spaltenadressen
-
-
-
-#### Bereinigte Bereiche
-
-`A.:.A`
-
-::: {.callout-note}
-Aktuell kann nur Excel Bereiche bereingen.
-:::
-
-Die Punkadressierung ist eine Kurzform
-
-### Dynamische Bereiche {#sec-dynamisches-feld}
-
-::: {.callout-note}
-Aktuell unterstützen nur Excel und Numbers dynamische Bereiche.
-:::
-
-
-Formeln können mehr als einen Wert verarbeiten und mehr als einen Ergebnis liefern. Solche Formeln müssen nur in die linke obere Ecke eines Bereichs eingetragen werden. Excel erkennt automatisch, dass die Formel auf einen Bereich angewendet werden soll und erzeugt die entsprechende Formel für alle Zellen des Bereichs. Das Ergebnis einer solchen Formel ist ein *dynamischer Bereich*.
-
-::: {#def-vektorisieren}
-**Vektorisieren** heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.
-:::
-
-::: {#exm-vektorisieren}
-## Vektorisieren eines statischen Bereichs
-
-```
-=A1:A10
-```
-:::
-
-Im Gegensatz zu einem normalen Bereich, ist bei einem dynamischen Bereich nur die linke obere Zelle bekannt. Um trotzdem alle Zellen eines solchen Bereichs zu adressieren, wird die Gatter- (`#`) Notation verwendet.
-
-Das @exm-vektorisieren erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle `B1` eingetragen. Anschliessend können die Werte im Bereich `B1:B10` über die Gatter-Notation adressiert werden: `B1#`.
-
-Der Vorteil des Vektorisierens ist, dass der Bereich durch das Einfügen neuer Zeilen vergrössert werden kann, ohne dass die nachfolgenden vektorisierten Formeln angepasst werden müssen.
-
-::: {.callout-tip}
-## Praxis
-
-Weil Tabellen automatisch vektorisiert werden, ist es einfacher Werte in einer Tabelle zu erfassen bzw. als Tabelle zu importieren (s. @sec-chapter-daten-importieren) und anschliessend über die Tabellenadressierung auf die Werte zu verweisen.
-:::
-
-::: {.callout-note}
-## Merke
-Tabellenadressierungen auf eine Spalte oder einen Spaltenberech sind immer Vektorisiert.
-:::
-
-> ::: {#exm-tabellen-zu-vektoren}
-> ## Vektorisieren von Tabellenspalten
-> 
-> ```
-> = Tabelle1[Spalte1]
-> ```
-> 
-> Diese Formel vektorisiert die Spalte mit dem Namen `Spalte1` aus der Tabelle `Tabelle1`. Angenommen, dass diese Formel in Zelle `A1` des aktuellen Arbeitsblattes steht, dann kann anschliessend auf den Vektor über die Gatter-Notation zugegriffen werden: 
-> 
-> ```
-> =A1#
-> ```
-> ::: 
-
-
-### Tabellenadressen 
-
-#### Interne Adressierung mit `@`
-
-#### Adressierung von Kopfzeilen
 
