@@ -1,4 +1,10 @@
 ---
+abstract: | 
+    Dieses Kapitel vertieft die Basistechniken zur Adressierung. Es zeigt, wie Konstanten und Variablen in Excel erstellt werden und wie Funktionen und Operatoren in Excel-Formeln zur Lösung komplexer Probleme eingesetzt werden. Neben Operatoren und Funktionen formalisiert dieses Kapitel die beiden Excel-Dekoratoren `=` und `'`. 
+
+    Es werden die folgenden Operatoren und Funktionen behandelt:
+    `:`, `.:`, `:.`, `.:.`, `#`, `@`, `+`, `-`, `*`, `/`, `%`, `^`, `&`, `=`, `>`, `<`, `<=`, `>=`, `<>`, `TEXTKETTE()`, ` ` (Leerschlagoperator), `SEQUENZ()`, `ZUFALLSMATRIX()`, `LET()`, `LAMBDA()`, `MAP()`, `REDUCE()`, `NACHZEILE()`, `NACHSPALTE()`, `SCAN()`
+
 execute: 
   echo: false
 ---
@@ -67,6 +73,16 @@ Wenn einem benannten Bereich Zellen hinzugefügt werden, dann wird der benannte 
 Eine Tabelle ist ein spezieller benannter Bereich, der als Ganzes oder in Teilen referenziert werden kann (s. [Abschnitt @sec-tabellenadressen]).
 :::
 
+## Arbeitsmappennamen
+
+Benanntebereiche eignen sich besonders für variable Werte, welche durch Anwender geändert werden können und dürfen. Konstante Werte sind Werte, die nicht interaktiv geändert werden dürfen. Um solche Konstanten zu spezifizieren, wird Excels `Namens-Manager` (s. @fig-namensmanager) verwendet. 
+
+![Namensmanager im Menubalken `Formeln`](figures/namensmanager_bar.png)
+
+![Namensmanager-Dialog](figures/namensmanager_dialog.png)
+
+So definierte Namen stehen in der gesamten Arbeitsmappe zur Verfügung. 
+
 ## Operatoren {#sec-operatoren}
 
 Operatoren sind spezielle Symbole in Formeln, die zur Verknüpfung von Werten dienen. 
@@ -80,11 +96,158 @@ Excel unterscheidet zwischen den folgenden Operatoren:
 
 ### Adressoperatoren
 
+Mit Adressoperatoren lassen sich Adressen zu Bereichen verknüpfen. Diese Bereiche werden in der Regel als Vektoren oder Matrizen (s. @sec-chapter-vektoren) behandelt.
+
+Excel stellt sieben Adressoperatoren bereit: 
+
+Die vier Doppenpunktoperatoren: 
+
+- `:`
+- `.:`
+- `.:.`
+- `:.`
+
+Den Feld- bzw. dynamischen Feldoperator:
+
+- `#`
+
+Der linke Operand steht bei allen diesen Operatoren für die linke obere Zelle. Diese Zelle heisst Startzelle des Bereichs. Für die ersten vier Operatoren steht der rechte Operand für die rechte untere Zelle, welche als Endzelle des Bereichs bezeichnet wird. 
+
+Wird bei den Doppelpunktoperatoren die Start- und Endzelle vertauscht, passt Excel die Adressierung so an, damit die Bereichsadresse der oben genannten Konvention entspricht. 
+
+::: {#exm-verdrehte-bereichsoperanden}
+## Verdrehte Bereichsadressierungen für den Bereich B3:D7
+
+```
+B7:D3
+D7:B3
+D3:B7
+```
+:::
+
+#### Schnittstellenoperator
+
+Eine Besonderheit ist der Schnittmengenoperator oder auch Leerschlagopertor (` `). Dieser Operator liefert aus zwei sich überschneidenden Bereichen die sich überschneidenden Werte. Falls sich die angegebenen Bereiche nicht überschneiden, wird der `#NULL!`-Fehler erzeugt. 
+
+::: {#exm-schnittmengenoperator}
+## Der Schnittmengenoperator 
+
+```
+H10:M16 K13:O19
+```
+
+Diese Adresse gibt den Bereich `K13:M16` zurück.
+::: 
+
+#### Der Gleiche-Zeile-Operator
+
+Der "Gleiche-Zeile"-Operator bzw. der "implizite Schnittmengen"-Operator (`@`) zeigt an, dass Werte an der gleichen Position verwendet werden sollen. Dieser *Prefix*-Operator unterscheidet sich im Verhalten je nachdem ob er auf Adress- oder Tabellenbereiche angewandt wird. 
+
+Diese besondere Stärke der `@`-Addressierung kommt in Tabellenformeln zum Tragen. Tabellenformeln sind Formeln, die Berechnungen in einer eigenen Tabellespalte durchführen. Wird in solchen Formeln eine Tabellenadresse in der **gleichen** Tabelle mit `@` eingeleitet, dann bedeutet der Operator, dass der Wert in der gleichen Zeile verwendet werden soll und nicht die gesamte Spalte (s. @exm-at-tabellenformel).
+
+::: {#exm-at-tabellenformel}
+## `@`-Operator in einer Tabellenformel
+
+Addiere auf den Wert in Spalte `foo` 1 hinzu. 
+
+```
+=[@foo] + 1
+```
+:::
+
+Wird der `@`-Operator für eine Adresse in einer anderen Tabelle verwendet, dann müssen die Wertebereiche beider Tabellen in der gleichen Zeile starten, weil der `@`-Operator erfordert, dass die referenzierte Adresse in der gleichen Arbeitsblattzeile und nicht in der gleichen Tabellenzeile steht. Verweist eine @-Adressierung auf eine Tabellenspalte, die an der gleichen Arbeitsblattzeile keinen Wert hat, dann erzeugt der Operator einen `#WERT!`-Fehler (s. @fig-bad-at-address). 
+
+![Beispiel für nicht deckungsgleiche Tabellen bei der Adressierung mit `@`](figures/bad_at_address.png){#fig-bad-at-address}
+
+
+Wird der `@`-Operator für Arbeitsblattbereiche verwendet, dann muss die entsprechende Formel an der gleichen Arbeitsblattzeile **und** Arbeitsblattspalte stehen. Das ist nur möglich, wenn die Formel auf einem anderen Arbeitsblatt steht. Diese Beschränkung zeigt an, dass dieser Operator nicht für die Referenzierung von Arbeitsblattbereichen verwendet werden sollte.
+
+::: {#exm-at-arbeitsblattadresse}
+## Arbeitsblattadresse mit `@`-Operator
+```
+= @Tabelle1!AB10#
+```
+
+Diese Formel muss an einer gültigen Adresse ab `AB10` auf einem anderen Arbeitsblatt stehen. 
+:::
+
 ### Arithmetische Operatoren
+
+Excel stellt sechs Arithmetische Operatoren zur Verfügung. 
+
+| Operator | Bedeutung | 
+| :---: | :--- | 
+| `+` | Addition | 
+| `-` | Subtraktion oder negatives Vorzeichen (Multiplikation mit `-1`)|
+| `*` | Multiplikation | 
+| `/` | Division | 
+| `%` | Prozent (Division durch `100`) |
+| `^` | Potenz (z.B. `2 ^ 3` entspricht $2^3$) |
+
+: Excels arithmetische Operatoren  {#tbl-arithmetische-operatoren}
 
 ### Vergleichsoperatoren
 
+Excel verwendet die bekannten sechs Vergleichsoperatoren. Die Vergleichsoperatoren werden in @sec-chapter-boolsche-operationen im Abschnitt Vergleiche behandelt. 
+
+- `=`
+- `>`
+- `<`
+- `>=`
+- `<=`
+- `<>` (ungleich)
+
 ### Textoperator
+
+Excels Text- bzw. Textkettenoperator `&` verknüpft zwei Zeichenketten. Dieser Operator ist gleichwertig mit der Funktion `TEXTKETTE()` mit genau zwei Parametern. unabhängig vom Datentyp der Operandenden ist das Ergebnis dieser Operation immer eine Zeichenkette. 
+
+::: {#exm-amp-operator}
+## Verwendung des `&`-Operators
+
+Fügt ein Ausrufezeichen zum Wert in Adresse `A1`
+```
+= A1 & "!"
+```
+::: 
+
+## Dekoratoren
+
+::: {#def-dekorator}
+Ein **Dekorator** ist Sprachelement einer Programmiersprache, mit dem die normale Interpretation von Symbolen verändert werden kann.
+:::
+
+Excel hat zwei Dekoratoren. Diese Dekoratoren müssen immer als erstes Symbol einer Zelle stehen. D.h. es dürfen auch keine Leerzeichen vor einem Dekorator stehen. Die beiden Dekoratoren sind:
+
+- Der Apostroph-Dekorator (`'`)
+- Der Gleich-Dekorator (`=`)
+
+::: {.callout-warning}
+## Wichtig 
+:::
+
+### Apostroph-Dekoraktor {#sec-text-dekorator}
+
+Der Apostroph-Dekorator (`'`) erzwingt, dass die nachfolgenden Symbole als Zeichenkette interpretiert werden müssen. 
+
+Mithilfe des Apostroph-Dekorators wird die automatische Typerkennung für die laufende Eingabe deaktiviert. Auf diese Weise lassen sich Zeichenketten eingeben, die nur aus Ziffern bestehen oder Zeichenketten, die Datentumswerten ähneln.
+
+Der Apostroph-Dekorator muss zwingend verwendet werden, wenn auf eine Zeichenkette eine der folgenden Bedingungen zutrifft.
+
+- Die Zeichenkette beginnt mit einem Gleichheitszeichen (`=`), einem Pluszeichen (`+`), einem Minuszeichen (`-`) oder einem Prozentzeichen (`%`).
+- Die Zeichenkette besteht nur aus Ziffern, dem Dezimaltrenner (`.`) oder dem Tausendertrenner (`‘`) enthält
+- Die Zeichenkette ähnelt der wissenschaftliche Notation für Zahlen mit und ohne Vorzeichen für den Exponenten. Z.B. `5.E3`.
+- Die Zeichenkette ähnelt einem Datum.
+- Die Zeichenkette entspricht einen Fehlerwert, unabhängig von der Schreibweise. Z.B. `#nv`.
+- Die Zeichenkette entspricht einem Wahrheitswert (`WAHR` oder `FALSCH`) unabhängig von der Schreibweise.
+
+Das Apostroph kann entfallen, wenn die aktive Zelle vorher bereits als Datentyp `Text` formatiert wurde. In diesem Fall verlieren alle Symbole ihre spezielle Bedeutung. In solche Zellen können keine Formeln eingegeben werden.
+
+### Gleich-Dekorator {#sec-formel-dekorator}
+
+Der Gleich-Dekorator (`=`) zeigt an, dass die nachfolgenden Symbole als Formel interpretiert werden müssen.
+
+Bei der Eingabe des Gleich-Dekorators wechselt Excel für die laufende Eingabe in den Formelmodus. Mit beenden der Eingabe mit der Eingabetaste wird der Formelmodus wieder verlassen und das Ergebnis der eingegebenen Formel wird in der Zelle angezeigt.
+
 
 ## Funktionen {#sec-funktionen}
 
