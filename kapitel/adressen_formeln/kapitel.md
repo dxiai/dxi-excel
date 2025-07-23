@@ -1,7 +1,8 @@
 ---
 # bibliography: references.bib
 
-abstract: ""
+abstract: |
+    Dieses Kapitel stellt die wichtigsten Konzepte zur Arbeit mit Excel vor. Dazu gehören *Werte*, *Formeln* und *Adressen*. 
 
 execute: 
   echo: false
