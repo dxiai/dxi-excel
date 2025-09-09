@@ -77,7 +77,7 @@ Eine Tabelle ist ein spezieller benannter Bereich, der als Ganzes oder in Teilen
 
 Benanntebereiche eignen sich besonders für variable Werte, welche durch Anwender geändert werden können und dürfen. Konstante Werte sind Werte, die nicht interaktiv geändert werden dürfen. Um solche Konstanten zu spezifizieren, wird Excels `Namens-Manager` (s. @fig-namensmanager) verwendet. 
 
-![Namensmanager im Menubalken `Formeln`](figures/namensmanager_bar.png)
+![Namensmanager im Menubalken `Formeln`](figures/namensmanager_bar.png){#fig-namensmanager}
 
 ![Namensmanager-Dialog](figures/namensmanager_dialog.png)
 
@@ -96,7 +96,7 @@ Excel unterscheidet zwischen den folgenden Operatoren:
 
 ### Adressoperatoren
 
-Mit Adressoperatoren lassen sich Adressen zu Bereichen verknüpfen. Diese Bereiche werden in der Regel als Vektoren oder Matrizen (s. @sec-chapter-vektoren) behandelt.
+Mit Adressoperatoren lassen sich Adressen zu Bereichen verknüpfen. Diese Bereiche werden in der Regel als Vektoren oder Matrizen (s. @sec-chapter-vektor-operationen) behandelt.
 
 Excel stellt sieben Adressoperatoren bereit: 
 
