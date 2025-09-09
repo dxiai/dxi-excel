@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; Vektoroperationen – Einführung in die Datenwissenschaft mit Excel</title>
+<title>12&nbsp; Vektoroperationen – Einführung in die Datenwissenschaft mit Excel</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,15 +32,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <link href="../../kapitel/matrix-operationen/kapitel.html" rel="next">
 <link href="../../kapitel/boolsche-operationen/kapitel.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ed6da6eef3892af8a4b5ed59bfb951f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -72,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/vektor-operationen/kapitel.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/vektor-operationen/kapitel.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -148,6 +149,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Excel Jargon</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/adressen_formeln/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Formeln und Adressen</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -162,19 +169,19 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-sammeln/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/datentypen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-importieren/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Daten importieren</span></span></a>
   </div>
 </li>
       </ul>
@@ -191,43 +198,43 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/variablen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/zeichenketten/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/boolsche-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/vektor-operationen/kapitel.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/matrix-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/kodieren-gruppieren/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-formen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Daten formen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Daten formen</span></span></a>
   </div>
 </li>
       </ul>
@@ -244,13 +251,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-beschreiben/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Daten beschreiben</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Daten beschreiben</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-visualisieren/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span></a>
   </div>
 </li>
       </ul>
@@ -271,35 +278,35 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#vektorlänge" id="toc-vektorlänge" class="nav-link active" data-scroll-target="#vektorlänge"><span class="header-section-number">11.1</span> Vektorlänge</a></li>
-  <li><a href="#konstante-vektoren" id="toc-konstante-vektoren" class="nav-link" data-scroll-target="#konstante-vektoren"><span class="header-section-number">11.2</span> Konstante Vektoren</a></li>
-  <li><a href="#wertereferenzierung" id="toc-wertereferenzierung" class="nav-link" data-scroll-target="#wertereferenzierung"><span class="header-section-number">11.3</span> Wertereferenzierung</a>
+  <li><a href="#vektorlänge" id="toc-vektorlänge" class="nav-link active" data-scroll-target="#vektorlänge"><span class="header-section-number">12.1</span> Vektorlänge</a></li>
+  <li><a href="#konstante-vektoren" id="toc-konstante-vektoren" class="nav-link" data-scroll-target="#konstante-vektoren"><span class="header-section-number">12.2</span> Konstante Vektoren</a></li>
+  <li><a href="#wertereferenzierung" id="toc-wertereferenzierung" class="nav-link" data-scroll-target="#wertereferenzierung"><span class="header-section-number">12.3</span> Wertereferenzierung</a>
   <ul class="collapse">
-  <li><a href="#rezept-wertepaare-tauschen" id="toc-rezept-wertepaare-tauschen" class="nav-link" data-scroll-target="#rezept-wertepaare-tauschen"><span class="header-section-number">11.3.1</span> Rezept: Wertepaare tauschen</a></li>
+  <li><a href="#rezept-wertepaare-tauschen" id="toc-rezept-wertepaare-tauschen" class="nav-link" data-scroll-target="#rezept-wertepaare-tauschen"><span class="header-section-number">12.3.1</span> Rezept: Wertepaare tauschen</a></li>
   </ul></li>
-  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link" data-scroll-target="#sequenzen"><span class="header-section-number">11.4</span> Sequenzen</a>
+  <li><a href="#sequenzen" id="toc-sequenzen" class="nav-link" data-scroll-target="#sequenzen"><span class="header-section-number">12.4</span> Sequenzen</a>
   <ul class="collapse">
-  <li><a href="#rezept-vektor-umkehren" id="toc-rezept-vektor-umkehren" class="nav-link" data-scroll-target="#rezept-vektor-umkehren"><span class="header-section-number">11.4.1</span> Rezept: Vektor umkehren</a></li>
+  <li><a href="#rezept-vektor-umkehren" id="toc-rezept-vektor-umkehren" class="nav-link" data-scroll-target="#rezept-vektor-umkehren"><span class="header-section-number">12.4.1</span> Rezept: Vektor umkehren</a></li>
   </ul></li>
-  <li><a href="#konkatenation" id="toc-konkatenation" class="nav-link" data-scroll-target="#konkatenation"><span class="header-section-number">11.5</span> Konkatenation</a></li>
-  <li><a href="#transformationen" id="toc-transformationen" class="nav-link" data-scroll-target="#transformationen"><span class="header-section-number">11.6</span> Transformationen</a>
+  <li><a href="#konkatenation" id="toc-konkatenation" class="nav-link" data-scroll-target="#konkatenation"><span class="header-section-number">12.5</span> Konkatenation</a></li>
+  <li><a href="#transformationen" id="toc-transformationen" class="nav-link" data-scroll-target="#transformationen"><span class="header-section-number">12.6</span> Transformationen</a>
   <ul class="collapse">
-  <li><a href="#skalartransformation" id="toc-skalartransformation" class="nav-link" data-scroll-target="#skalartransformation"><span class="header-section-number">11.6.1</span> Skalartransformation</a></li>
-  <li><a href="#vektortransformation" id="toc-vektortransformation" class="nav-link" data-scroll-target="#vektortransformation"><span class="header-section-number">11.6.2</span> Vektortransformation</a></li>
-  <li><a href="#bedingungen-als-transformationen" id="toc-bedingungen-als-transformationen" class="nav-link" data-scroll-target="#bedingungen-als-transformationen"><span class="header-section-number">11.6.3</span> Bedingungen als Transformationen</a></li>
-  <li><a href="#rezept-beliebige-werte-wiederholen" id="toc-rezept-beliebige-werte-wiederholen" class="nav-link" data-scroll-target="#rezept-beliebige-werte-wiederholen"><span class="header-section-number">11.6.4</span> Rezept: Beliebige Werte wiederholen</a></li>
+  <li><a href="#skalartransformation" id="toc-skalartransformation" class="nav-link" data-scroll-target="#skalartransformation"><span class="header-section-number">12.6.1</span> Skalartransformation</a></li>
+  <li><a href="#vektortransformation" id="toc-vektortransformation" class="nav-link" data-scroll-target="#vektortransformation"><span class="header-section-number">12.6.2</span> Vektortransformation</a></li>
+  <li><a href="#bedingungen-als-transformationen" id="toc-bedingungen-als-transformationen" class="nav-link" data-scroll-target="#bedingungen-als-transformationen"><span class="header-section-number">12.6.3</span> Bedingungen als Transformationen</a></li>
+  <li><a href="#rezept-beliebige-werte-wiederholen" id="toc-rezept-beliebige-werte-wiederholen" class="nav-link" data-scroll-target="#rezept-beliebige-werte-wiederholen"><span class="header-section-number">12.6.4</span> Rezept: Beliebige Werte wiederholen</a></li>
   </ul></li>
-  <li><a href="#aggregationen" id="toc-aggregationen" class="nav-link" data-scroll-target="#aggregationen"><span class="header-section-number">11.7</span> Aggregationen</a>
+  <li><a href="#aggregationen" id="toc-aggregationen" class="nav-link" data-scroll-target="#aggregationen"><span class="header-section-number">12.7</span> Aggregationen</a>
   <ul class="collapse">
-  <li><a href="#filtern-als-aggregation" id="toc-filtern-als-aggregation" class="nav-link" data-scroll-target="#filtern-als-aggregation"><span class="header-section-number">11.7.1</span> Filtern als Aggregation</a></li>
-  <li><a href="#rezept-laufende-summe" id="toc-rezept-laufende-summe" class="nav-link" data-scroll-target="#rezept-laufende-summe"><span class="header-section-number">11.7.2</span> Rezept: Laufende Summe</a></li>
-  <li><a href="#kombinierte-transformation-und-aggregation" id="toc-kombinierte-transformation-und-aggregation" class="nav-link" data-scroll-target="#kombinierte-transformation-und-aggregation"><span class="header-section-number">11.7.3</span> Kombinierte Transformation und Aggregation</a></li>
+  <li><a href="#filtern-als-aggregation" id="toc-filtern-als-aggregation" class="nav-link" data-scroll-target="#filtern-als-aggregation"><span class="header-section-number">12.7.1</span> Filtern als Aggregation</a></li>
+  <li><a href="#rezept-laufende-summe" id="toc-rezept-laufende-summe" class="nav-link" data-scroll-target="#rezept-laufende-summe"><span class="header-section-number">12.7.2</span> Rezept: Laufende Summe</a></li>
+  <li><a href="#kombinierte-transformation-und-aggregation" id="toc-kombinierte-transformation-und-aggregation" class="nav-link" data-scroll-target="#kombinierte-transformation-und-aggregation"><span class="header-section-number">12.7.3</span> Kombinierte Transformation und Aggregation</a></li>
   </ul></li>
-  <li><a href="#zählen" id="toc-zählen" class="nav-link" data-scroll-target="#zählen"><span class="header-section-number">11.8</span> Zählen</a>
+  <li><a href="#zählen" id="toc-zählen" class="nav-link" data-scroll-target="#zählen"><span class="header-section-number">12.8</span> Zählen</a>
   <ul class="collapse">
-  <li><a href="#zählen-durch-summieren" id="toc-zählen-durch-summieren" class="nav-link" data-scroll-target="#zählen-durch-summieren"><span class="header-section-number">11.8.1</span> Zählen durch Summieren</a></li>
-  <li><a href="#zählen-durch-filtern" id="toc-zählen-durch-filtern" class="nav-link" data-scroll-target="#zählen-durch-filtern"><span class="header-section-number">11.8.2</span> Zählen durch Filtern</a></li>
-  <li><a href="#zählen-durch-nummerieren" id="toc-zählen-durch-nummerieren" class="nav-link" data-scroll-target="#zählen-durch-nummerieren"><span class="header-section-number">11.8.3</span> Zählen durch Nummerieren</a></li>
+  <li><a href="#zählen-durch-summieren" id="toc-zählen-durch-summieren" class="nav-link" data-scroll-target="#zählen-durch-summieren"><span class="header-section-number">12.8.1</span> Zählen durch Summieren</a></li>
+  <li><a href="#zählen-durch-filtern" id="toc-zählen-durch-filtern" class="nav-link" data-scroll-target="#zählen-durch-filtern"><span class="header-section-number">12.8.2</span> Zählen durch Filtern</a></li>
+  <li><a href="#zählen-durch-nummerieren" id="toc-zählen-durch-nummerieren" class="nav-link" data-scroll-target="#zählen-durch-nummerieren"><span class="header-section-number">12.8.3</span> Zählen durch Nummerieren</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
@@ -307,9 +314,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/vektor-operationen/kapitel.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/vektor-operationen/kapitel.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-chapter-vektor-operationen" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></h1>
+<h1 class="title"><span id="sec-chapter-vektor-operationen" class="quarto-section-identifier"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></h1>
 </div>
 
 
@@ -355,16 +362,16 @@ Merke
 </div>
 </div>
 <div id="def-vektor-orientierung" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 11.1</strong></span> Als <strong>Orientierung</strong> eines Vektors wird die Anordnung der Werte bezeichnet.</p>
+<p><span class="theorem-title"><strong>Definition 12.1</strong></span> Als <strong>Orientierung</strong> eines Vektors wird die Anordnung der Werte bezeichnet.</p>
 </div>
 <p>Für viele Vektoroperationen existiert deshalb eine Funktion für Spaltenvektoren und eine für Zeilenvektoren.</p>
 <p>Um Vektoren von der einen zur anderen Orientierung zu überführen, dient die Funktion <code>MTRANS()</code>. Soll eine <em>bestimmte</em> Orientierung für beliebige Vektoren erzwungen werden, dann kann die Funktion <code>ZUSPALTE()</code> zum Erzwingen eines Spaltenvektors oder die Funktion <code>ZUZEILE()</code> zum Erzwingen eines Zeilenvektors verwendet werden.</p>
 <div id="exm-erzwingen-spaltenvektor" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.1 (Erzwingen eines Spaltenvektors)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.1 (Erzwingen eines Spaltenvektors)</strong></span> &nbsp;</p>
 <pre><code>= ZUSPALTE(A1:D1)</code></pre>
 </div>
-<section id="vektorlänge" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="vektorlänge"><span class="header-section-number">11.1</span> Vektorlänge</h2>
+<section id="vektorlänge" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="vektorlänge"><span class="header-section-number">12.1</span> Vektorlänge</h2>
 <p>Jeder Vektor hat eine Länge, wobei diese Länge nicht zwingend der Anzahl der Werte entsprechen muss. Deshalb sollte die Länge eines Vektors mit Excel <em>nicht</em> mit der Funktion <code>ANZAHL()</code> bzw. <code>ANZAHL2()</code> bestimmt werden, sondern über die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code>. Der Vorteil dieser beiden Funktionen ist, dass sie die Vektorlänge auch dann korrekt bestimmen, wenn einzelne Werte im Vektor nicht vorhanden sind.</p>
 <p>Die Funktionen <code>ZEILEN()</code> und <code>SPALTEN()</code> geben die Anzahl der Zeilen respektive Spalten für den übergebenen Bereich zurück. Für einen Spaltenvektor gibt die Funktion <code>ZEILEN()</code> die Länge des Vektors zurück und die Funktion <code>SPALTEN()</code> hat den Wert <code>1</code>. Die Funktion <code>SPALTEN()</code> gibt die Vektorlänge von Zeilenvektoren zurück. Entsprechend hat in diesem Fall die Funktion <code>ZEILEN()</code> immer den Wert <code>1</code> als Ergebnis.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -408,9 +415,9 @@ Merke
 </div>
 </div>
 </section>
-<section id="konstante-vektoren" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="konstante-vektoren"><span class="header-section-number">11.2</span> Konstante Vektoren</h2>
-<p>Konstante Vektoren sind Vektoren, die als Konstante in einer Formel eingegeben werden und nur konstante Werte enthalten. Ein konstanter Vektor wird durch geschweifte Klammern eingerahmt und kann Zahlen, Zeichenketten, Wahrheits- und Fehlerwerte enthalten (<a href="#exm-konstanter-vektor" class="quarto-xref">Beispiel&nbsp;<span>11.2</span></a>).</p>
+<section id="konstante-vektoren" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="konstante-vektoren"><span class="header-section-number">12.2</span> Konstante Vektoren</h2>
+<p>Konstante Vektoren sind Vektoren, die als Konstante in einer Formel eingegeben werden und nur konstante Werte enthalten. Ein konstanter Vektor wird durch geschweifte Klammern eingerahmt und kann Zahlen, Zeichenketten, Wahrheits- und Fehlerwerte enthalten (<a href="#exm-konstanter-vektor" class="quarto-xref">Beispiel&nbsp;<span>12.2</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -425,17 +432,17 @@ Merke
 </div>
 </div>
 <div id="exm-konstanter-vektor" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.2 (Konstanter Zahlenvektor der Länge 3)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.2 (Konstanter Zahlenvektor der Länge 3)</strong></span> &nbsp;</p>
 <pre><code>= {3; 2; 1}</code></pre>
 </div>
-<p>Konstante Vektoren dürfen keine Referenzen auf Adressen, Bezeichner, Formeln usw. enthalten (<a href="#exm-invalid-const-vector" class="quarto-xref">Beispiel&nbsp;<span>11.3</span></a>). Ungültige konstante Vektoren erzeugen einen <code>#WERT!</code>-Fehler</p>
+<p>Konstante Vektoren dürfen keine Referenzen auf Adressen, Bezeichner, Formeln usw. enthalten (<a href="#exm-invalid-const-vector" class="quarto-xref">Beispiel&nbsp;<span>12.3</span></a>). Ungültige konstante Vektoren erzeugen einen <code>#WERT!</code>-Fehler</p>
 <div id="exm-invalid-const-vector" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.3 (Ungültiger konstanter Vektor)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.3 (Ungültiger konstanter Vektor)</strong></span> &nbsp;</p>
 <pre><code>= {1; A2; 3}</code></pre>
 </div>
 </section>
-<section id="wertereferenzierung" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="wertereferenzierung"><span class="header-section-number">11.3</span> Wertereferenzierung</h2>
+<section id="wertereferenzierung" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="wertereferenzierung"><span class="header-section-number">12.3</span> Wertereferenzierung</h2>
 <p>Die Referenzierung auf einzelne Werte erfolgt durch die Funktionen <code>ZEILENWAHL()</code> für Spaltenvektoren bzw. <code>SPALTENWAHL()</code> für Zeilenvektoren. Der erste Parameter ist immer der Vektor. Mit dem zweiten Parameter wird der Index des gewünschten Werts angegeben. Der zweite Parameter kann als Vektor angegeben werden. In diesem Fall werden alle angegebenen Indizes als Vektor zurückgegeben.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -463,38 +470,38 @@ Achtung
 <p>Bei der Wertereferenzierung dürfen nur gültige Indizes verwendet werden. Werden mehrere Indizes angegeben und mindestens einer von ihnen ist ungültig, dann werden keine Werte. In solchen Fällen ist das Ergebnis ein <code>#WERT!</code>-Fehler.</p>
 </div>
 </div>
-<section id="rezept-wertepaare-tauschen" class="level3" data-number="11.3.1">
-<h3 data-number="11.3.1" class="anchored" data-anchor-id="rezept-wertepaare-tauschen"><span class="header-section-number">11.3.1</span> Rezept: Wertepaare tauschen</h3>
+<section id="rezept-wertepaare-tauschen" class="level3" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="rezept-wertepaare-tauschen"><span class="header-section-number">12.3.1</span> Rezept: Wertepaare tauschen</h3>
 <p>Liegen Werte in Wertepaaren vor, dann können die Werte mit der Wertereferenzierung vertauscht werden:</p>
 <div id="exm-werte-tauschen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.4 (Werte eines Spaltenvektors der Länge 2 vertauschen)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.4 (Werte eines Spaltenvektors der Länge 2 vertauschen)</strong></span> &nbsp;</p>
 <pre><code>= ZEILENWAHL(A1:A2; {2; 1})</code></pre>
 </div>
 </section>
 </section>
-<section id="sequenzen" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">11.4</span> Sequenzen</h2>
+<section id="sequenzen" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="sequenzen"><span class="header-section-number">12.4</span> Sequenzen</h2>
 <p>Sequenzen werden mithilfe der Generatorfunktion <code>SEQUENZ()</code> erzeugt. Die Funktion hat vier Parameter. Die ersten beiden Parameter der Funktion zeigen die Anzahl der Zeilen und Spalten an, über welche sich die Sequenz erstrecken soll. Der dritte Parameter erwartet den Startwert der Sequenz und mit dem letzten Parameter wird die Schrittweite der Sequenz angegeben.</p>
 <div id="exm-sequenz-geradezahlen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.5 (Sequenz von geraden Zahlen erzeugen)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.5 (Sequenz von geraden Zahlen erzeugen)</strong></span> &nbsp;</p>
 <pre><code>=SEQUENZ(10; 1; 0; 2)</code></pre>
 </div>
 <p>Nur der erste Parameter der Funktion <code>SEQUENZ()</code> muss angegeben werden. In diesem Fall wird für alle anderen Parameter der Wert <code>1</code> angenommen.</p>
 <div id="exm-einfache-sequenz" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.6 (Sequenz der Länge 10 als Spaltenvektor erzeugen)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.6 (Sequenz der Länge 10 als Spaltenvektor erzeugen)</strong></span> &nbsp;</p>
 <pre><code>=SEQUENZ(10)</code></pre>
 </div>
 <p>Zwei spezielle Sequenzen sind der Nullvektor und der Einsvektor. In beiden Vektoren wiederholt sich der Wert an jeder Position. Die zugehörige Sequenz hat also die Schrittweite <code>0</code>.</p>
 <div id="exm-einsvektor-via-sequenz" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.7 (Einsvektor der Länge 10 erzeugen)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.7 (Einsvektor der Länge 10 erzeugen)</strong></span> &nbsp;</p>
 <pre><code>=SEQUENZ(10; 1; 1; 0)</code></pre>
 </div>
-<p>Analog zum Einsvektor in <a href="#exm-einsvektor-via-sequenz" class="quarto-xref">Beispiel&nbsp;<span>11.7</span></a> wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert <code>0</code> haben muss.</p>
-<section id="rezept-vektor-umkehren" class="level3" data-number="11.4.1">
-<h3 data-number="11.4.1" class="anchored" data-anchor-id="rezept-vektor-umkehren"><span class="header-section-number">11.4.1</span> Rezept: Vektor umkehren</h3>
+<p>Analog zum Einsvektor in <a href="#exm-einsvektor-via-sequenz" class="quarto-xref">Beispiel&nbsp;<span>12.7</span></a> wird der Nullvektor erzeugt, wobei der dritte Parameter den Wert <code>0</code> haben muss.</p>
+<section id="rezept-vektor-umkehren" class="level3" data-number="12.4.1">
+<h3 data-number="12.4.1" class="anchored" data-anchor-id="rezept-vektor-umkehren"><span class="header-section-number">12.4.1</span> Rezept: Vektor umkehren</h3>
 <p>Die Wertereihenfolge eines beliebigen Vektors kann durch eine umgekehrte Sequenz umgekehrt werden.</p>
 <div id="exm-vektorumkehren" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.8 (Vektorwerte umkehren)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.8 (Vektorwerte umkehren)</strong></span> &nbsp;</p>
 <pre><code>= ZEILENWAHL(
     A1:A10; 
     SEQUENZ(ZEILEN(A1:A10); 1; ZEILEN(A1:A10); -1)
@@ -502,14 +509,14 @@ Achtung
 </div>
 </section>
 </section>
-<section id="konkatenation" class="level2" data-number="11.5">
-<h2 data-number="11.5" class="anchored" data-anchor-id="konkatenation"><span class="header-section-number">11.5</span> Konkatenation</h2>
+<section id="konkatenation" class="level2" data-number="12.5">
+<h2 data-number="12.5" class="anchored" data-anchor-id="konkatenation"><span class="header-section-number">12.5</span> Konkatenation</h2>
 <p>Die Konkatenation verbindet zwei Vektoren zu einem neuen <strong>Vektor</strong>, wobei die Reihenfolge der Werte erhalten bleibt. Deshalb können in Excel nur Vektoren mit gleicher Orientierung konkateniert werden.</p>
 <p>Zum Konkatenieren von Spaltenvektoren dient die Funktion <code>VSTAPELN()</code> (für “vertikal stapeln”). Zum Konkatenieren von Zeilenvektoren dient die Funktion <code>HSTAPELN()</code> (für “horizontal stapeln”).</p>
 <p>Die beiden Funktionen <code>HSTAPELN()</code> und <code>VSTAPELN()</code> prüfen die Orientierung von Vektoren <em>nicht</em>! Werden zwei Vektoren mit unterschiedlicher Orientierung mit diesen Funktionen “gestapelt”, entsteht eine Matrix, wobei die Vektoren in der Reihenfolge der Argumentübergabe als Zeile oder Spalte gezeigt werden. Die restlichen Positionen der Matrix werden mit dem Fehlerwert <code>#NV</code> belegt.</p>
 </section>
-<section id="transformationen" class="level2" data-number="11.6">
-<h2 data-number="11.6" class="anchored" data-anchor-id="transformationen"><span class="header-section-number">11.6</span> Transformationen</h2>
+<section id="transformationen" class="level2" data-number="12.6">
+<h2 data-number="12.6" class="anchored" data-anchor-id="transformationen"><span class="header-section-number">12.6</span> Transformationen</h2>
 <p>Das Ergebnis einer Transformationsoperation ist <strong>immer</strong> ein <strong>Vektor</strong> mit der <strong>gleichen Länge</strong> wie der ursprüngliche Vektor. Dazu wird eine Operation für jeden Wert eines Vektors ausgeführt.</p>
 <p>Typische Funktionen für Transforamtionen sind beispielsweise:</p>
 <ul>
@@ -532,11 +539,11 @@ Merke
 <p>Beliebige Transformationen lassen sich mit <code>MAP()</code> umsetzen.</p>
 </div>
 </div>
-<section id="skalartransformation" class="level3" data-number="11.6.1">
-<h3 data-number="11.6.1" class="anchored" data-anchor-id="skalartransformation"><span class="header-section-number">11.6.1</span> Skalartransformation</h3>
+<section id="skalartransformation" class="level3" data-number="12.6.1">
+<h3 data-number="12.6.1" class="anchored" data-anchor-id="skalartransformation"><span class="header-section-number">12.6.1</span> Skalartransformation</h3>
 <p>Bei Transformationen mit einem Skalar, wird die Transformation für jeden Wert des Vektors und dem Skalar durchgeführt.</p>
 <div id="exm-skalartransformation" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.9 (Verdoppeln von Werten durch Skalartransformation)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.9 (Verdoppeln von Werten durch Skalartransformation)</strong></span> &nbsp;</p>
 <pre><code>= 2 * A2:A5</code></pre>
 <p>Diese Operation entspricht den folgenden Einzeloperationen.</p>
 <pre><code>= 2 * A2
@@ -545,8 +552,8 @@ Merke
 = 2 * A5</code></pre>
 </div>
 </section>
-<section id="vektortransformation" class="level3" data-number="11.6.2">
-<h3 data-number="11.6.2" class="anchored" data-anchor-id="vektortransformation"><span class="header-section-number">11.6.2</span> Vektortransformation</h3>
+<section id="vektortransformation" class="level3" data-number="12.6.2">
+<h3 data-number="12.6.2" class="anchored" data-anchor-id="vektortransformation"><span class="header-section-number">12.6.2</span> Vektortransformation</h3>
 <p>Bei der Vektortransformation wird eine Operation paarweise auf die Werte an der gleichen Position von zwei Vektoren angewendet.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -575,7 +582,7 @@ Merke
 </div>
 </div>
 <div id="exm-vektortransform-addition" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.10 (Werte paarweise addieren)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.10 (Werte paarweise addieren)</strong></span> &nbsp;</p>
 <pre><code>= A1:A5 + B1:B5</code></pre>
 <p>Diese Operation entspricht den folgenden Teiloperationen:</p>
 <pre><code>= A1 + B1
@@ -585,12 +592,12 @@ Merke
 = A5 + B5</code></pre>
 </div>
 </section>
-<section id="bedingungen-als-transformationen" class="level3" data-number="11.6.3">
-<h3 data-number="11.6.3" class="anchored" data-anchor-id="bedingungen-als-transformationen"><span class="header-section-number">11.6.3</span> Bedingungen als Transformationen</h3>
+<section id="bedingungen-als-transformationen" class="level3" data-number="12.6.3">
+<h3 data-number="12.6.3" class="anchored" data-anchor-id="bedingungen-als-transformationen"><span class="header-section-number">12.6.3</span> Bedingungen als Transformationen</h3>
 <p>Spezielle Transformationen sind Bedingungen. Dabei wird ein Vektor erzeugt, dessen Werte durch einen oder mehrere logische Ausdrücke bestimmt werden.</p>
-<p>Excel wertet eine Bedingung über Vektoren für jeden Wert des Vektors separat aus. Die Bedingung in <a href="#exm-wenn-transform" class="quarto-xref">Beispiel&nbsp;<span>11.11</span></a> wertet die Bedinung für die Werte an <code>A2</code>, <code>A3</code>, <code>A4</code> und <code>A5</code> sowohl im logischen Ausdruck als auch in den Alternativen separat aus.</p>
+<p>Excel wertet eine Bedingung über Vektoren für jeden Wert des Vektors separat aus. Die Bedingung in <a href="#exm-wenn-transform" class="quarto-xref">Beispiel&nbsp;<span>12.11</span></a> wertet die Bedinung für die Werte an <code>A2</code>, <code>A3</code>, <code>A4</code> und <code>A5</code> sowohl im logischen Ausdruck als auch in den Alternativen separat aus.</p>
 <div id="exm-wenn-transform" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.11 (Bedingte Transformation)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.11 (Bedingte Transformation)</strong></span> &nbsp;</p>
 <pre><code>= LET(vektor; A2:A5; WENN( vektor &gt; 200; vektor; -1))</code></pre>
 <p>Das entspricht den folgenden Operationen.</p>
 <pre><code>= WENN( A2 &gt; 200; A2; -1)
@@ -599,9 +606,9 @@ Merke
 = WENN( A5 &gt; 200; A5; -1)</code></pre>
 <p>Die Verwendung von <code>LET()</code> dient nur zum Verdeutlichen, dass der gleiche Vektor sowohl im logischen Ausdruck als auch in der Option <em>Falls Wahr</em> verwendet wird.</p>
 </div>
-<p>Weil die logischen Funktionen <code>UND()</code>, <code>ODER()</code> und <code>XODER()</code> <em>Aggregatoren</em> sind, können sie nicht für Vektortransformationen verwendet werden, sondern <strong>müssen</strong> in Transformationen durch die entsprechenden arithmetischen Operationen ersetzt werden (<a href="#exm-wenn-transform-und" class="quarto-xref">Beispiel&nbsp;<span>11.12</span></a>).</p>
+<p>Weil die logischen Funktionen <code>UND()</code>, <code>ODER()</code> und <code>XODER()</code> <em>Aggregatoren</em> sind, können sie nicht für Vektortransformationen verwendet werden, sondern <strong>müssen</strong> in Transformationen durch die entsprechenden arithmetischen Operationen ersetzt werden (<a href="#exm-wenn-transform-und" class="quarto-xref">Beispiel&nbsp;<span>12.12</span></a>).</p>
 <div id="exm-wenn-transform-und" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.12 (Bedingte Transformation mit einem mit Und verknüpften logischen Ausdruck)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.12 (Bedingte Transformation mit einem mit Und verknüpften logischen Ausdruck)</strong></span> &nbsp;</p>
 <pre><code>= LET(vektor; A2:A5; WENN( (vektor &gt; 200)*(vector &lt; 300); vektor; -1))</code></pre>
 <p>Die Operation entspricht den folgenden Einzeloperationen:</p>
 <pre><code>= WENN( UND(A2 &gt; 200; A2 &lt; 300); A2; -1)
@@ -623,17 +630,17 @@ Praxis
 </div>
 </div>
 </section>
-<section id="rezept-beliebige-werte-wiederholen" class="level3" data-number="11.6.4">
-<h3 data-number="11.6.4" class="anchored" data-anchor-id="rezept-beliebige-werte-wiederholen"><span class="header-section-number">11.6.4</span> Rezept: Beliebige Werte wiederholen</h3>
-<p>Excel fehlt eine Funktion zum Wiederholen von beliebigen Werten. Mithilfe von Sequenzen kann diese Funktionalität leicht nachgebaut werden. Dazu wird eine Sequenz der gewünschten Länge erzeugt und anschliessend für jeden dieser Werte der Wiederholungswert zurückgegeben (<a href="#exm-beliebige-werte-wiederholen" class="quarto-xref">Beispiel&nbsp;<span>11.13</span></a>). Der Wiederholungswert ist dabei ein Skalar, der für jeden Wert des erzeugten Sequenzvektors zurückgegeben wird.</p>
+<section id="rezept-beliebige-werte-wiederholen" class="level3" data-number="12.6.4">
+<h3 data-number="12.6.4" class="anchored" data-anchor-id="rezept-beliebige-werte-wiederholen"><span class="header-section-number">12.6.4</span> Rezept: Beliebige Werte wiederholen</h3>
+<p>Excel fehlt eine Funktion zum Wiederholen von beliebigen Werten. Mithilfe von Sequenzen kann diese Funktionalität leicht nachgebaut werden. Dazu wird eine Sequenz der gewünschten Länge erzeugt und anschliessend für jeden dieser Werte der Wiederholungswert zurückgegeben (<a href="#exm-beliebige-werte-wiederholen" class="quarto-xref">Beispiel&nbsp;<span>12.13</span></a>). Der Wiederholungswert ist dabei ein Skalar, der für jeden Wert des erzeugten Sequenzvektors zurückgegeben wird.</p>
 <div id="exm-beliebige-werte-wiederholen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.13 (Zeichenkette <code>Daten</code> zehn Mal wiederholen)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.13 (Zeichenkette <code>Daten</code> zehn Mal wiederholen)</strong></span> &nbsp;</p>
 <pre><code>= WENN(SEQUENZ(10); "Daten")</code></pre>
 </div>
 </section>
 </section>
-<section id="aggregationen" class="level2" data-number="11.7">
-<h2 data-number="11.7" class="anchored" data-anchor-id="aggregationen"><span class="header-section-number">11.7</span> Aggregationen</h2>
+<section id="aggregationen" class="level2" data-number="12.7">
+<h2 data-number="12.7" class="anchored" data-anchor-id="aggregationen"><span class="header-section-number">12.7</span> Aggregationen</h2>
 <p>Beim Aggregieren werden die Werte eines Vektors durch eine Aggregationsoperation zusammengefasst.</p>
 <p>Dass Ergebnis von Aggregationen sind Skalare <strong>oder</strong> Vektoren mit einer Länge von <em>maximal der Länge</em> des ursprünglichen Vektors.</p>
 <p>Häufig verwendete Funktionen zum Aggregieren sind:</p>
@@ -658,47 +665,47 @@ Merke
 <p>Beliebige Aggregationen lassen sich mit <code>REDUCE()</code> umsetzen.</p>
 </div>
 </div>
-<section id="filtern-als-aggregation" class="level3" data-number="11.7.1">
-<h3 data-number="11.7.1" class="anchored" data-anchor-id="filtern-als-aggregation"><span class="header-section-number">11.7.1</span> Filtern als Aggregation</h3>
+<section id="filtern-als-aggregation" class="level3" data-number="12.7.1">
+<h3 data-number="12.7.1" class="anchored" data-anchor-id="filtern-als-aggregation"><span class="header-section-number">12.7.1</span> Filtern als Aggregation</h3>
 <p>Das Filtern ist eine spezielle Aggregation, bei der das Ergebnis nur die Werte enthält, auf welche ein logischer Ausdruck zutrifft. Das Ergebnis einer Filter-Operation kann maximal die gleiche Länge haben, wie der zu filternde Vektor. Die Aggregationsfunktion zum Filtern wertet den logischen Ausdruck zur Auswahl der Werte aus.</p>
 </section>
-<section id="rezept-laufende-summe" class="level3" data-number="11.7.2">
-<h3 data-number="11.7.2" class="anchored" data-anchor-id="rezept-laufende-summe"><span class="header-section-number">11.7.2</span> Rezept: Laufende Summe</h3>
-<p>Eine laufende Summe oder <em>kumulative Summe</em> liefert für jeden Wert eines Vektors die Summe des Werts mit den Vorgängerwerten. <strong>Diese Operation ist eine spezielle Aggregation.</strong> Excel verfügt keine eigene Funktion für diese Aggregation. Stattdessen kann sie mit <a href="#lst-cumsum" class="quarto-xref">Listing&nbsp;<span>11.1</span></a> erzeugt werden.</p>
+<section id="rezept-laufende-summe" class="level3" data-number="12.7.2">
+<h3 data-number="12.7.2" class="anchored" data-anchor-id="rezept-laufende-summe"><span class="header-section-number">12.7.2</span> Rezept: Laufende Summe</h3>
+<p>Eine laufende Summe oder <em>kumulative Summe</em> liefert für jeden Wert eines Vektors die Summe des Werts mit den Vorgängerwerten. <strong>Diese Operation ist eine spezielle Aggregation.</strong> Excel verfügt keine eigene Funktion für diese Aggregation. Stattdessen kann sie mit <a href="#lst-cumsum" class="quarto-xref">Listing&nbsp;<span>12.1</span></a> erzeugt werden.</p>
 <div id="lst-cumsum" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-cumsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Listing&nbsp;11.1: Kumulative Summe
+Listing&nbsp;12.1: Kumulative Summe
 </figcaption>
 <div aria-describedby="lst-cumsum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<pre id="lst-cumsum"><code>= SCAN(0; A2:A100; LAMBDA(accu; wert; accu + wert))</code></pre>
+<pre><code>= SCAN(0; A2:A100; LAMBDA(accu; wert; accu + wert))</code></pre>
 </div>
 </figure>
 </div>
-<p>Um die laufende Summe herzuleiten, muss sich die Aggregation der normalen Summe als Reduktion mit <code>REDUCE()</code> veranschaulicht werden (s. <a href="#lst-reduce-sum" class="quarto-xref">Listing&nbsp;<span>11.2</span></a>)</p>
+<p>Um die laufende Summe herzuleiten, muss sich die Aggregation der normalen Summe als Reduktion mit <code>REDUCE()</code> veranschaulicht werden (s. <a href="#lst-reduce-sum" class="quarto-xref">Listing&nbsp;<span>12.2</span></a>)</p>
 <div id="lst-reduce-sum" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-reduce-sum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Listing&nbsp;11.2: Summen-Aggregation
+Listing&nbsp;12.2: Summen-Aggregation
 </figcaption>
 <div aria-describedby="lst-reduce-sum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<pre id="lst-reduce-sum"><code>= REDUCE(0; A2:A100; LAMBDA(accu; wert; accu + wert))</code></pre>
+<pre><code>= REDUCE(0; A2:A100; LAMBDA(accu; wert; accu + wert))</code></pre>
 </div>
 </figure>
 </div>
 <p>Beim Reduzieren mit <code>REDUCE()</code> muss immer ein Initialwert angegeben werden, dem der zu aggregierende Vektor folgt. Abschliessend wird die Aggregationsfunktion angegeben. Beim Reduzieren wird die Aggregationsfunktion für jeden Wert im Vektor nacheinander ausgeführt. Eine Aggregationsfunktion hat zwei Parameter: Der erste Parameter ist das Ergebnis der Aggregationsfunktion für die vorangegangenden Werte, wobei für den ersten Wert der Initialwert verwendet wird. Der zweite Parameter ist der Wert an einer Position im Vektor.</p>
 <p>In der Praxis ist die Funktion <code>SUMME()</code> dem Reduzieren mit <code>REDUCE()</code> immer vorzuziehen. Für die kumulative Summe fehlt aber eine entsprechende Funktion. Für diese Aggregation kann die Funktion <code>SCAN()</code> anstelle von <code>REDUCE()</code> verwendet werden. <code>SCAN()</code> erzeugt einen Vektor mit den Teilergebnissen einer Aggregationsfunktion. Dieser aggregierte Vektor hat die gleiche Länge wie der ursprüngliche Vektor.</p>
 </section>
-<section id="kombinierte-transformation-und-aggregation" class="level3" data-number="11.7.3">
-<h3 data-number="11.7.3" class="anchored" data-anchor-id="kombinierte-transformation-und-aggregation"><span class="header-section-number">11.7.3</span> Kombinierte Transformation und Aggregation</h3>
-<p>Sehr häufig werden Vektortransformationen und Aggregationen kombiniert. Zur Veranschaulichung dient hier die Subtraktion von zwei Werten in einem Zahlenvektor. Dazu wird ein Vektor der Länge <code>2</code> angenommen. Der erste Wert in diesem Vektor soll von dessen zweiten Wert abgezogen werden. Excel hat allerdings keine Funktion zur Subtraktion, sondern nur die Funktion <code>SUMME()</code>. Für die Subtraktion müssen die Werte so angepasst werden, dass diese Werte summiert werden können. Dazu wird eine Vektortransformation in Form einer Multiplikation mit dem konstanten Vektor <code>{-1; 1}</code> durchgeführt (<a href="#lst-vtransform-for-subtraction" class="quarto-xref">Listing&nbsp;<span>11.3</span></a>).</p>
+<section id="kombinierte-transformation-und-aggregation" class="level3" data-number="12.7.3">
+<h3 data-number="12.7.3" class="anchored" data-anchor-id="kombinierte-transformation-und-aggregation"><span class="header-section-number">12.7.3</span> Kombinierte Transformation und Aggregation</h3>
+<p>Sehr häufig werden Vektortransformationen und Aggregationen kombiniert. Zur Veranschaulichung dient hier die Subtraktion von zwei Werten in einem Zahlenvektor. Dazu wird ein Vektor der Länge <code>2</code> angenommen. Der erste Wert in diesem Vektor soll von dessen zweiten Wert abgezogen werden. Excel hat allerdings keine Funktion zur Subtraktion, sondern nur die Funktion <code>SUMME()</code>. Für die Subtraktion müssen die Werte so angepasst werden, dass diese Werte summiert werden können. Dazu wird eine Vektortransformation in Form einer Multiplikation mit dem konstanten Vektor <code>{-1; 1}</code> durchgeführt (<a href="#lst-vtransform-for-subtraction" class="quarto-xref">Listing&nbsp;<span>12.3</span></a>).</p>
 <div id="lst-vtransform-for-subtraction" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-vtransform-for-subtraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Listing&nbsp;11.3: Vorbereitende Vektortransformation
+Listing&nbsp;12.3: Vorbereitende Vektortransformation
 </figcaption>
 <div aria-describedby="lst-vtransform-for-subtraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<pre id="lst-vtransform-for-subtraction"><code>= A1:A2 * {-1; 1}</code></pre>
+<pre><code>= A1:A2 * {-1; 1}</code></pre>
 </div>
 </figure>
 </div>
@@ -706,17 +713,17 @@ Listing&nbsp;11.3: Vorbereitende Vektortransformation
 <div id="lst-vector-subtraction" class="listing quarto-float quarto-figure quarto-figure-left anchored">
 <figure class="quarto-float quarto-float-lst figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-lst" id="lst-vector-subtraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Listing&nbsp;11.4: Subtraktion als kombinierte Vektortransformation und Aggregation
+Listing&nbsp;12.4: Subtraktion als kombinierte Vektortransformation und Aggregation
 </figcaption>
 <div aria-describedby="lst-vector-subtraction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<pre id="lst-vector-subtraction"><code>= SUMME(A1:A2 * {-1; 1})</code></pre>
+<pre><code>= SUMME(A1:A2 * {-1; 1})</code></pre>
 </div>
 </figure>
 </div>
 </section>
 </section>
-<section id="zählen" class="level2" data-number="11.8">
-<h2 data-number="11.8" class="anchored" data-anchor-id="zählen"><span class="header-section-number">11.8</span> Zählen</h2>
+<section id="zählen" class="level2" data-number="12.8">
+<h2 data-number="12.8" class="anchored" data-anchor-id="zählen"><span class="header-section-number">12.8</span> Zählen</h2>
 <p>Beim Zählen werden zählbare Einheiten von nicht-zählbaren Einheiten getrennt und die Anzahl der zählbaren Einheiten bestimmt. Die einfachste Form des Zählens ist das Bestimmen der Länge eines Vektors. Dabei wird die Anzahl der Werte des Vektors <em>gezählt</em>.</p>
 <p>Alle Zählen-Operationen bestehen entsprechend immer aus zwei Schritten:</p>
 <ul>
@@ -724,8 +731,8 @@ Listing&nbsp;11.4: Subtraktion als kombinierte Vektortransformation und Aggregat
 <li>Einer Aggregation zum eigentlichen Zählen.</li>
 </ul>
 <p>Die Funktionen <code>ANZAHL()</code> zählt nur Werte vom Datentyp Zahl. Wahrheitswerte, Zeichenketten, Fehler und leere Zellen werden von dieser Funktion ignoriert. Die Funktion <code>ANZAHL2()</code> zählt die nicht leeren Zellen in einem Bereich unabhängig vom Datentyp. Diese Funktion zählt auch Fehlerwerte mit.</p>
-<section id="zählen-durch-summieren" class="level3" data-number="11.8.1">
-<h3 data-number="11.8.1" class="anchored" data-anchor-id="zählen-durch-summieren"><span class="header-section-number">11.8.1</span> Zählen durch Summieren</h3>
+<section id="zählen-durch-summieren" class="level3" data-number="12.8.1">
+<h3 data-number="12.8.1" class="anchored" data-anchor-id="zählen-durch-summieren"><span class="header-section-number">12.8.1</span> Zählen durch Summieren</h3>
 <p>Beim Zählen durch Summieren werden die zählbaren Elemente eines Vektors mithilfe eines logischen Ausdrucks <strong>transformiert</strong>. Daraus ergibt sich ein Vektor aus Wahrheitswerten. Dieser Vektor wird in einem zweiten Schritt mit der <code>SUMME()</code>-Funktion <strong>aggregiert</strong>.</p>
 <p>Auf diese Weise lassen sich gezielte Häufigkeiten bestimmen.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -742,15 +749,15 @@ Merke
 </div>
 </div>
 <div id="exm-count-sum" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.14 (Zählen durch Summieren)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.14 (Zählen durch Summieren)</strong></span> &nbsp;</p>
 <pre><code>= SUMME(data_ab[Punkte] &lt; 100)</code></pre>
 </div>
 </section>
-<section id="zählen-durch-filtern" class="level3" data-number="11.8.2">
-<h3 data-number="11.8.2" class="anchored" data-anchor-id="zählen-durch-filtern"><span class="header-section-number">11.8.2</span> Zählen durch Filtern</h3>
+<section id="zählen-durch-filtern" class="level3" data-number="12.8.2">
+<h3 data-number="12.8.2" class="anchored" data-anchor-id="zählen-durch-filtern"><span class="header-section-number">12.8.2</span> Zählen durch Filtern</h3>
 <p>Beim Zählen durch Filtern werden die zählbaren Einheiten durch eine Filter-Aggregation isoliert. Die Anzahl der zählbaren Einheiten entspricht immer der Länge des gefilterten Vektors.</p>
 <div id="exm-count-sum" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.15 (Zählen durch Filtern)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.15 (Zählen durch Filtern)</strong></span> &nbsp;</p>
 <pre><code>= ANZAHL2(FILTER(data_ab[Punkte] &lt; 100))</code></pre>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -767,11 +774,11 @@ Merke
 </div>
 </div>
 </section>
-<section id="zählen-durch-nummerieren" class="level3" data-number="11.8.3">
-<h3 data-number="11.8.3" class="anchored" data-anchor-id="zählen-durch-nummerieren"><span class="header-section-number">11.8.3</span> Zählen durch Nummerieren</h3>
+<section id="zählen-durch-nummerieren" class="level3" data-number="12.8.3">
+<h3 data-number="12.8.3" class="anchored" data-anchor-id="zählen-durch-nummerieren"><span class="header-section-number">12.8.3</span> Zählen durch Nummerieren</h3>
 <p>Beim Zählen durch Nummerieren werden die zu zählenden Werte eines Vektors nummeriert. Anschliessend wird der Maximal-Wert der Nummerierung bestimmt. Diese Technik nutzt aus, dass beim Nummerieren im Hintergrund eine Sequenz mit der Schrittweite <code>1</code> verwendet wird. Das letzte zählbare Element hat erhält so automatisch die Anzahl aller Element als Nummer.</p>
 <div id="exm-count-sum" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 11.16 (Zählen durch Nummerieren)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 12.16 (Zählen durch Nummerieren)</strong></span> &nbsp;</p>
 <pre><code>= MAX(SEQUENZ(ZEILEN(daten_ab[[Punkte]])))</code></pre>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -794,239 +801,242 @@ Merke
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Kopiert");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Kopiert");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1034,194 +1044,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../kapitel/boolsche-operationen/kapitel.html" class="pagination-link" aria-label="Aussagenlogik">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../kapitel/matrix-operationen/kapitel.html" class="pagination-link" aria-label="Matrix-Operationen">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

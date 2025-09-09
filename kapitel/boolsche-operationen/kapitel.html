@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.32">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; Aussagenlogik – Einführung in die Datenwissenschaft mit Excel</title>
+<title>11&nbsp; Aussagenlogik – Einführung in die Datenwissenschaft mit Excel</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,15 +32,16 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../../">
 <link href="../../kapitel/vektor-operationen/kapitel.html" rel="next">
 <link href="../../kapitel/zeichenketten/kapitel.html" rel="prev">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-2486e1f0a3ee9ee1fc393803a1361cdb.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-ed6da6eef3892af8a4b5ed59bfb951f5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,7 +116,7 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -124,7 +125,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/boolsche-operationen/kapitel.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/boolsche-operationen/kapitel.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
@@ -191,6 +192,12 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Excel Jargon</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/adressen_formeln/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Formeln und Adressen</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -205,19 +212,19 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-sammeln/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/datentypen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-importieren/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Daten importieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Daten importieren</span></span></a>
   </div>
 </li>
       </ul>
@@ -234,43 +241,43 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/variablen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/zeichenketten/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/boolsche-operationen/kapitel.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/vektor-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/matrix-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/kodieren-gruppieren/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-formen/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Daten formen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Daten formen</span></span></a>
   </div>
 </li>
       </ul>
@@ -287,13 +294,13 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-beschreiben/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Daten beschreiben</span></span></a>
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Daten beschreiben</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-visualisieren/kapitel.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span></a>
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span></a>
   </div>
 </li>
       </ul>
@@ -314,35 +321,35 @@ window.Quarto = {
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
-  <li><a href="#wahrheitswerte-in-excel" id="toc-wahrheitswerte-in-excel" class="nav-link active" data-scroll-target="#wahrheitswerte-in-excel"><span class="header-section-number">10.1</span> Wahrheitswerte in Excel</a></li>
-  <li><a href="#aussagenlogische-operationen" id="toc-aussagenlogische-operationen" class="nav-link" data-scroll-target="#aussagenlogische-operationen"><span class="header-section-number">10.2</span> Aussagenlogische Operationen</a></li>
-  <li><a href="#vergleiche" id="toc-vergleiche" class="nav-link" data-scroll-target="#vergleiche"><span class="header-section-number">10.3</span> Vergleiche</a>
+  <li><a href="#wahrheitswerte-in-excel" id="toc-wahrheitswerte-in-excel" class="nav-link active" data-scroll-target="#wahrheitswerte-in-excel"><span class="header-section-number">11.1</span> Wahrheitswerte in Excel</a></li>
+  <li><a href="#aussagenlogische-operationen" id="toc-aussagenlogische-operationen" class="nav-link" data-scroll-target="#aussagenlogische-operationen"><span class="header-section-number">11.2</span> Aussagenlogische Operationen</a></li>
+  <li><a href="#sec-vergleiche" id="toc-sec-vergleiche" class="nav-link" data-scroll-target="#sec-vergleiche"><span class="header-section-number">11.3</span> Vergleiche</a>
   <ul class="collapse">
-  <li><a href="#der-in-operator-mit-xverweis" id="toc-der-in-operator-mit-xverweis" class="nav-link" data-scroll-target="#der-in-operator-mit-xverweis"><span class="header-section-number">10.3.1</span> Der <span class="math inline">\in</span>-Operator mit XVERWEIS</a></li>
-  <li><a href="#zeichenketten-vergleichen" id="toc-zeichenketten-vergleichen" class="nav-link" data-scroll-target="#zeichenketten-vergleichen"><span class="header-section-number">10.3.2</span> Zeichenketten vergleichen</a></li>
+  <li><a href="#der-in-operator-mit-xverweis" id="toc-der-in-operator-mit-xverweis" class="nav-link" data-scroll-target="#der-in-operator-mit-xverweis"><span class="header-section-number">11.3.1</span> Der <span class="math inline">\in</span>-Operator mit XVERWEIS</a></li>
+  <li><a href="#zeichenketten-vergleichen" id="toc-zeichenketten-vergleichen" class="nav-link" data-scroll-target="#zeichenketten-vergleichen"><span class="header-section-number">11.3.2</span> Zeichenketten vergleichen</a></li>
   </ul></li>
-  <li><a href="#sec-vector-logic" id="toc-sec-vector-logic" class="nav-link" data-scroll-target="#sec-vector-logic"><span class="header-section-number">10.4</span> Komplexe logische Ausdrücke und Datenstrukturen</a></li>
-  <li><a href="#fälle-unterscheiden" id="toc-fälle-unterscheiden" class="nav-link" data-scroll-target="#fälle-unterscheiden"><span class="header-section-number">10.5</span> Fälle unterscheiden</a>
+  <li><a href="#sec-vector-logic" id="toc-sec-vector-logic" class="nav-link" data-scroll-target="#sec-vector-logic"><span class="header-section-number">11.4</span> Komplexe logische Ausdrücke und Datenstrukturen</a></li>
+  <li><a href="#fälle-unterscheiden" id="toc-fälle-unterscheiden" class="nav-link" data-scroll-target="#fälle-unterscheiden"><span class="header-section-number">11.5</span> Fälle unterscheiden</a>
   <ul class="collapse">
-  <li><a href="#wenn" id="toc-wenn" class="nav-link" data-scroll-target="#wenn"><span class="header-section-number">10.5.1</span> WENN</a></li>
-  <li><a href="#wenns" id="toc-wenns" class="nav-link" data-scroll-target="#wenns"><span class="header-section-number">10.5.2</span> WENNS</a></li>
-  <li><a href="#nicht-erreichbare-entscheidungen" id="toc-nicht-erreichbare-entscheidungen" class="nav-link" data-scroll-target="#nicht-erreichbare-entscheidungen"><span class="header-section-number">10.5.3</span> Nicht erreichbare Entscheidungen</a></li>
-  <li><a href="#ersterwert" id="toc-ersterwert" class="nav-link" data-scroll-target="#ersterwert"><span class="header-section-number">10.5.4</span> ERSTERWERT</a></li>
-  <li><a href="#xverweis-zur-fallunterscheidung" id="toc-xverweis-zur-fallunterscheidung" class="nav-link" data-scroll-target="#xverweis-zur-fallunterscheidung"><span class="header-section-number">10.5.5</span> XVERWEIS zur Fallunterscheidung</a></li>
-  <li><a href="#anwendungshilfe-für-fallunterscheidungen" id="toc-anwendungshilfe-für-fallunterscheidungen" class="nav-link" data-scroll-target="#anwendungshilfe-für-fallunterscheidungen"><span class="header-section-number">10.5.6</span> Anwendungshilfe für Fallunterscheidungen</a></li>
+  <li><a href="#wenn" id="toc-wenn" class="nav-link" data-scroll-target="#wenn"><span class="header-section-number">11.5.1</span> WENN</a></li>
+  <li><a href="#wenns" id="toc-wenns" class="nav-link" data-scroll-target="#wenns"><span class="header-section-number">11.5.2</span> WENNS</a></li>
+  <li><a href="#nicht-erreichbare-entscheidungen" id="toc-nicht-erreichbare-entscheidungen" class="nav-link" data-scroll-target="#nicht-erreichbare-entscheidungen"><span class="header-section-number">11.5.3</span> Nicht erreichbare Entscheidungen</a></li>
+  <li><a href="#ersterwert" id="toc-ersterwert" class="nav-link" data-scroll-target="#ersterwert"><span class="header-section-number">11.5.4</span> ERSTERWERT</a></li>
+  <li><a href="#xverweis-zur-fallunterscheidung" id="toc-xverweis-zur-fallunterscheidung" class="nav-link" data-scroll-target="#xverweis-zur-fallunterscheidung"><span class="header-section-number">11.5.5</span> XVERWEIS zur Fallunterscheidung</a></li>
+  <li><a href="#anwendungshilfe-für-fallunterscheidungen" id="toc-anwendungshilfe-für-fallunterscheidungen" class="nav-link" data-scroll-target="#anwendungshilfe-für-fallunterscheidungen"><span class="header-section-number">11.5.6</span> Anwendungshilfe für Fallunterscheidungen</a></li>
   </ul></li>
-  <li><a href="#filtern" id="toc-filtern" class="nav-link" data-scroll-target="#filtern"><span class="header-section-number">10.6</span> Filtern</a>
+  <li><a href="#filtern" id="toc-filtern" class="nav-link" data-scroll-target="#filtern"><span class="header-section-number">11.6</span> Filtern</a>
   <ul class="collapse">
-  <li><a href="#excel-filter-und-logische-operationen" id="toc-excel-filter-und-logische-operationen" class="nav-link" data-scroll-target="#excel-filter-und-logische-operationen"><span class="header-section-number">10.6.1</span> Excel Filter und logische Operationen</a></li>
+  <li><a href="#excel-filter-und-logische-operationen" id="toc-excel-filter-und-logische-operationen" class="nav-link" data-scroll-target="#excel-filter-und-logische-operationen"><span class="header-section-number">11.6.1</span> Excel Filter und logische Operationen</a></li>
   </ul></li>
-  <li><a href="#selektieren" id="toc-selektieren" class="nav-link" data-scroll-target="#selektieren"><span class="header-section-number">10.7</span> Selektieren</a></li>
-  <li><a href="#sortieren" id="toc-sortieren" class="nav-link" data-scroll-target="#sortieren"><span class="header-section-number">10.8</span> Sortieren</a></li>
-  <li><a href="#rezepte" id="toc-rezepte" class="nav-link" data-scroll-target="#rezepte"><span class="header-section-number">10.9</span> Rezepte</a>
+  <li><a href="#selektieren" id="toc-selektieren" class="nav-link" data-scroll-target="#selektieren"><span class="header-section-number">11.7</span> Selektieren</a></li>
+  <li><a href="#sortieren" id="toc-sortieren" class="nav-link" data-scroll-target="#sortieren"><span class="header-section-number">11.8</span> Sortieren</a></li>
+  <li><a href="#rezepte" id="toc-rezepte" class="nav-link" data-scroll-target="#rezepte"><span class="header-section-number">11.9</span> Rezepte</a>
   <ul class="collapse">
-  <li><a href="#fehlerwerte-abfangen" id="toc-fehlerwerte-abfangen" class="nav-link" data-scroll-target="#fehlerwerte-abfangen"><span class="header-section-number">10.9.1</span> Fehlerwerte abfangen</a></li>
-  <li><a href="#eine-zahl-für-genau-eine-bedingung-zurückgeben" id="toc-eine-zahl-für-genau-eine-bedingung-zurückgeben" class="nav-link" data-scroll-target="#eine-zahl-für-genau-eine-bedingung-zurückgeben"><span class="header-section-number">10.9.2</span> Eine Zahl für genau eine Bedingung zurückgeben</a></li>
-  <li><a href="#fehlerwerte-vergleichen" id="toc-fehlerwerte-vergleichen" class="nav-link" data-scroll-target="#fehlerwerte-vergleichen"><span class="header-section-number">10.9.3</span> Fehlerwerte vergleichen</a></li>
-  <li><a href="#filtern-und-summen" id="toc-filtern-und-summen" class="nav-link" data-scroll-target="#filtern-und-summen"><span class="header-section-number">10.9.4</span> Filtern und Summen</a></li>
+  <li><a href="#fehlerwerte-abfangen" id="toc-fehlerwerte-abfangen" class="nav-link" data-scroll-target="#fehlerwerte-abfangen"><span class="header-section-number">11.9.1</span> Fehlerwerte abfangen</a></li>
+  <li><a href="#eine-zahl-für-genau-eine-bedingung-zurückgeben" id="toc-eine-zahl-für-genau-eine-bedingung-zurückgeben" class="nav-link" data-scroll-target="#eine-zahl-für-genau-eine-bedingung-zurückgeben"><span class="header-section-number">11.9.2</span> Eine Zahl für genau eine Bedingung zurückgeben</a></li>
+  <li><a href="#fehlerwerte-vergleichen" id="toc-fehlerwerte-vergleichen" class="nav-link" data-scroll-target="#fehlerwerte-vergleichen"><span class="header-section-number">11.9.3</span> Fehlerwerte vergleichen</a></li>
+  <li><a href="#filtern-und-summen" id="toc-filtern-und-summen" class="nav-link" data-scroll-target="#filtern-und-summen"><span class="header-section-number">11.9.4</span> Filtern und Summen</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
@@ -350,9 +357,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/boolsche-operationen/kapitel.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/boolsche-operationen/kapitel.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-chapter-boolsche-operationen" class="quarto-section-identifier"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></h1>
+<h1 class="title"><span id="sec-chapter-boolsche-operationen" class="quarto-section-identifier"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></h1>
 </div>
 
 
@@ -376,8 +383,8 @@ window.Quarto = {
 </header>
 
 
-<section id="wahrheitswerte-in-excel" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="wahrheitswerte-in-excel"><span class="header-section-number">10.1</span> Wahrheitswerte in Excel</h2>
+<section id="wahrheitswerte-in-excel" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="wahrheitswerte-in-excel"><span class="header-section-number">11.1</span> Wahrheitswerte in Excel</h2>
 <p>Wie im Kapitel Datentypen bereits erwähnt, kennt Excel den Datentyp der Wahrheitswerte. Diese Wahrheitswerte können entweder den Wert <code>WAHR</code> oder <code>FALSCH</code> haben. Eine Operation, die Wahrheitswerte ergibt wird als <em>logischer Ausdruck</em> bezeichnet. Weil logische Ausdrücke für viele Funktionen und Operationen notwendig sind, wandelt Excel die Werte anderer Datentypen bei Bedarf um. Dabei gelten die folgenden Regeln:</p>
 <ul>
 <li><code>0</code> und die <em>leere Zelle</em> entspricht dem Wert <code>FALSCH</code>.</li>
@@ -401,8 +408,8 @@ Warnung
 </div>
 </div>
 </section>
-<section id="aussagenlogische-operationen" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="aussagenlogische-operationen"><span class="header-section-number">10.2</span> Aussagenlogische Operationen</h2>
+<section id="aussagenlogische-operationen" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="aussagenlogische-operationen"><span class="header-section-number">11.2</span> Aussagenlogische Operationen</h2>
 <p>Für Wahrheitswerte existieren spezielle Operationen, um die Regeln der <em>Aussagenlogik</em> bzw. der <em>Boole’schen Algebra</em> abzubilden. Diese Operationen verknüpfen Wahrheitswerte und haben Wahrheitswerte als Ergebnis. Die vier Grundoperationen <code>NICHT</code> (<span class="math inline">\lnot</span>), <code>UND</code> (<span class="math inline">\land</span>), <code>ODER</code> (<span class="math inline">\lor</span>, “inklusives Oder”) und <code>XODER</code> (<span class="math inline">\oplus</span>, “entweder-oder”) sind in Excel als Funktionen verfügbar.</p>
 <p>Die Funktion <code>NICHT()</code> wandelt einen Wert in den jeweils den anderen Wahrheitswert um. Falls anstelle eines Wahrheitswerts ein anderer Datentyp übergeben wurde, gelten die oben angegebenen Regeln für die Umwandlung.</p>
 <p>Die Funktionen <code>UND()</code>, <code>ODER()</code> und <code>XODER()</code> sind <em>Aggregatoren</em>. Das bedeutet, dass Sie alle Werte in dem angegebenen Bereichen zusammenfassen. Das ist oft nicht das gewünschte Verhalten. Deshalb muss bei der Arbeit mit Vektoren auf die Boolesche Arithmetik zurückgegriffen werden, um logische Ausdrücke richtig auszuwerten.</p>
@@ -515,8 +522,8 @@ Warnung
 </tbody>
 </table>
 </section>
-<section id="vergleiche" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="vergleiche"><span class="header-section-number">10.3</span> Vergleiche</h2>
+<section id="sec-vergleiche" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="sec-vergleiche"><span class="header-section-number">11.3</span> Vergleiche</h2>
 <p>Eine besondere Art von logischen Ausdrücken sind <em>Vergleiche</em>. Ein Vergleich prüft das Verhältnis zweier Werte zueinander. Excel kennt die üblichen Vergleichsoperatoren, die jeweils einen Wahrheitswert zurückliefern.</p>
 <p>In Excel werden die Vergleichsoperatoren wie folgt geschrieben:</p>
 <ul>
@@ -543,8 +550,8 @@ Merke
 </div>
 </div>
 <p>Weil die Operationen <code>*</code>, <code>+</code> und <code>-</code> normalerweise vor den Vergleichsoperatoren ausgeführt werden, müssen alle Vergleiche eines logischen Ausdrucks für die Boole’sche Arithmetik in Klammern gesetzt werden.</p>
-<section id="der-in-operator-mit-xverweis" class="level3" data-number="10.3.1">
-<h3 data-number="10.3.1" class="anchored" data-anchor-id="der-in-operator-mit-xverweis"><span class="header-section-number">10.3.1</span> Der <span class="math inline">\in</span>-Operator mit XVERWEIS</h3>
+<section id="der-in-operator-mit-xverweis" class="level3" data-number="11.3.1">
+<h3 data-number="11.3.1" class="anchored" data-anchor-id="der-in-operator-mit-xverweis"><span class="header-section-number">11.3.1</span> Der <span class="math inline">\in</span>-Operator mit XVERWEIS</h3>
 <p>Mithilfe der Funktion <code>XVERGLEICH()</code> kann der <span class="math inline">\in</span>-Operator aus der <em>Mengenlehre</em> in Excel für logische Ausdrücke bereitgestellt werden. Mit dieser Funktion <code>XVERWEIS()</code> können sowohl der <span class="math inline">\in</span> als auch der <span class="math inline">\notin</span>-Operator mit <code>XVERWEIS()</code> abgebildet werden.</p>
 <p>Für die folgenden Beispiele verwenden wir die Werte:</p>
 <table class="caption-top table">
@@ -583,23 +590,23 @@ Merke
 </ul>
 <p>Der Trick besteht darin, dass die <em>Rückgabematrix</em> durch einen Vergleich aus dem Suchbereich erzeugt wird. Dadurch wird die Rückgabematrix mit den gleichen Wahrheitswerten für alle Werte im Suchbereich gefüllt. Die erste Formel ergibt deshalb <code>{WAHR; FALSCH}</code> und die zweite Formel <code>{FALSCH; WAHR}</code>, weil der Wert <code>4</code> im Suchbereich vorkommt und der Wert <code>7</code> nicht. Diese Werte können direkt in logischen Ausdrücken verwendet werden.</p>
 </section>
-<section id="zeichenketten-vergleichen" class="level3" data-number="10.3.2">
-<h3 data-number="10.3.2" class="anchored" data-anchor-id="zeichenketten-vergleichen"><span class="header-section-number">10.3.2</span> Zeichenketten vergleichen</h3>
+<section id="zeichenketten-vergleichen" class="level3" data-number="11.3.2">
+<h3 data-number="11.3.2" class="anchored" data-anchor-id="zeichenketten-vergleichen"><span class="header-section-number">11.3.2</span> Zeichenketten vergleichen</h3>
 <p>Die Vergleichsoperatoren zeigen die Unterschiede zweier Zeichenketten bezüglich der alphabetischen Sortierung an. Die “kleinste” Zeichenkette ist die leere Zeichenkette. Gross- und Kleinschreibung wird bei Zeichenkettenvergleichen nicht unterschieden.</p>
 <p>Weil Excel für Vergleiche die nicht-druckbaren Zeichen mit Ausnahme des Leerzeichens und des Tabulators ignoriert, gibt der Vergleichsoperator <code>=</code> <code>WAHR</code> auch für Zeichenketten zurück, die unterschiedliche nicht-druckbare Zeichen enthalten. Das gleiche Problem entsteht beim Vergleich von unterschiedlicher Gross- und Kleinschreibung. Um auch diese Unterschiede zu erkennen, müssen wir die Funktion <code>IDENTISCH()</code> verwenden. Diese Funktion vergleicht die Zeichenketten Zeichen für Zeichen und liefert nur dann <code>WAHR</code> zurück, wenn die Zeichenketten exakt gleich sind.</p>
 <div id="exm-identisch" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.1</strong></span> ##&nbsp;Anwendung der <code>IDENTISCH()</code> Funktion als Vergleichsoperator.</p>
+<p><span class="theorem-title"><strong>Beispiel 11.1</strong></span> ##&nbsp;Anwendung der <code>IDENTISCH()</code> Funktion als Vergleichsoperator.</p>
 <pre><code>= WENN(IDENTISCH("A"; "a"); "Gleich"; "Ungleich")</code></pre>
 </div>
 </section>
 </section>
-<section id="sec-vector-logic" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="sec-vector-logic"><span class="header-section-number">10.4</span> Komplexe logische Ausdrücke und Datenstrukturen</h2>
+<section id="sec-vector-logic" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="sec-vector-logic"><span class="header-section-number">11.4</span> Komplexe logische Ausdrücke und Datenstrukturen</h2>
 <p>Excel hat zwar Funktionen für die logischen Operatoren <em>Und</em> (<code>UND()</code>), Oder (<code>ODER()</code>) und <em>Exklusives Oder</em> (<code>XODER()</code>), diese Funktionen haben aber den Nachteil, dass sie nur Werte zusammenfassen können. In der Praxis werden jedoch oft <em>Datenstrukturen</em> als Variablen für logische Ausdrücke verwendet. Diese sollen durch die logischen Operatoren verknüpft und nicht zusammengefasst werden.</p>
 <p>Um logische Verknüpfungen für Datenstrukturen zu realisieren, müssen die logischen Operatoren mit der Boole’schen Arithmetik umgesetzt werden. Dazu werden die logischen Operatoren durch die entsprechenden arithmetischen Operatoren ersetzt.</p>
 <blockquote class="blockquote">
 <div id="exm-vector-logic" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.2</strong></span> Für die folgenden Werte soll der folgende logische Ausdruck geprüft werden.</p>
+<p><span class="theorem-title"><strong>Beispiel 11.2</strong></span> Für die folgenden Werte soll der folgende logische Ausdruck geprüft werden.</p>
 <p><span class="math display">
 a \land b \lor (c &lt; 10) \land d
 </span></p>
@@ -649,7 +656,7 @@ a \land b \lor (c &lt; 10) \land d
 <p>Die Ausnahme von dieser Regel ist Verwendung der logischen Funktionen als Tabellenfunktion. In diesem Fall können die Werte zeilenweise auch von den logischen Funktionen verarbeitet werden.</p>
 <blockquote class="blockquote">
 <div id="exm-table-logic" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.3</strong></span> Werden die Werte aus <a href="#exm-vector-logic" class="quarto-xref">Beispiel&nbsp;<span>10.2</span></a> als Tabelle konvertiert und mit <code>BeispielTabelle</code> benannt, dann können die logischen Funktionen in einer <em>gleich langen Tabelle</em> mit der <em>gleichen Startzeile</em> auch als Tabellenfunktionen verwendet werden. In diesem Fall werden die Werte zeilenweise verarbeitet.</p>
+<p><span class="theorem-title"><strong>Beispiel 11.3</strong></span> Werden die Werte aus <a href="#exm-vector-logic" class="quarto-xref">Beispiel&nbsp;<span>11.2</span></a> als Tabelle konvertiert und mit <code>BeispielTabelle</code> benannt, dann können die logischen Funktionen in einer <em>gleich langen Tabelle</em> mit der <em>gleichen Startzeile</em> auch als Tabellenfunktionen verwendet werden. In diesem Fall werden die Werte zeilenweise verarbeitet.</p>
 <pre><code>=ODER(
       UND(BeispielTabelle[@a];BeispielTabelle[@b]);
       UND(BeispielTabelle[@c] &lt; 10; BeispielTabelle[@d])
@@ -658,12 +665,12 @@ a \land b \lor (c &lt; 10) \land d
 </div>
 </blockquote>
 </section>
-<section id="fälle-unterscheiden" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="fälle-unterscheiden"><span class="header-section-number">10.5</span> Fälle unterscheiden</h2>
+<section id="fälle-unterscheiden" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="fälle-unterscheiden"><span class="header-section-number">11.5</span> Fälle unterscheiden</h2>
 <p>Logische Ausdrücke eigenen sich besonders gut, um <em>Fallunterscheidungen</em> zu formulieren, weil ein logischer Ausdruck immer nur zwei Werte als Ergebnis haben kann. Es gibt also für jeden logischen Ausdruck immer nur zwei unterscheidbare Fälle.</p>
 <p>Excel hat zwei zentrale Funktionen für Fallunterscheidungen: <code>WENN()</code> und <code>WENNS()</code>. Die Funktion <code>WENN()</code> ist eine <em>einfache</em> Unterscheidung, die Funktion <code>WENNS()</code> unterstützt <em>mehrfache</em> Unterscheidungen. In anderen Programmiersprachen wird in diesem Zusammenhang auch von <em>Verzweigungen</em> gesprochen.</p>
-<section id="wenn" class="level3" data-number="10.5.1">
-<h3 data-number="10.5.1" class="anchored" data-anchor-id="wenn"><span class="header-section-number">10.5.1</span> WENN</h3>
+<section id="wenn" class="level3" data-number="11.5.1">
+<h3 data-number="11.5.1" class="anchored" data-anchor-id="wenn"><span class="header-section-number">11.5.1</span> WENN</h3>
 <p>Die Funktion <code>WENN()</code> ist eine <em>einfache</em> Fallunterscheidung. Einfach bedeutet hier, dass die beiden Fälles <em>eines</em> logischen Ausdrucks unterschieden werden. Entsprechend hat die Funktion <code>WENN()</code> drei Parameter:</p>
 <ol type="1">
 <li>Der auszuwertende logische Ausdruck.</li>
@@ -706,8 +713,8 @@ a \land b \lor (c &lt; 10) \land d
                       "Ungültig"))))</code></pre>
 <p>Eine solche geschachtelte Fallunterscheidung wird als <em>Entscheidungsbaum</em> bezeichnet.</p>
 </section>
-<section id="wenns" class="level3" data-number="10.5.2">
-<h3 data-number="10.5.2" class="anchored" data-anchor-id="wenns"><span class="header-section-number">10.5.2</span> WENNS</h3>
+<section id="wenns" class="level3" data-number="11.5.2">
+<h3 data-number="11.5.2" class="anchored" data-anchor-id="wenns"><span class="header-section-number">11.5.2</span> WENNS</h3>
 <p>Die Funktion <code>WENN()</code> ist eine <em>einfache</em> Fallunterscheidung. In vielen Excel-Arbeitsmappen existieren geschachtelte Aufrufe von <code>WENN()</code>-Funktionen. Diese Aufrufe machen die Formeln nicht nur schwer lesbar, sondern auch fehleranfällig und ineffizient. Deshalb sollten geschachtelte Fallunterscheidungen unbedingt vermieden werden. Mit der Funktion <code>WENNS()</code> lassen sich geschachtelte Fallunterscheidungen vermeiden, indem alle Fallunterscheidungen in einem einzigen Funktionsaufruf zusammengefasst werden.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -724,7 +731,7 @@ Merke
 </div>
 <p>Die Funktion <code>WENNS()</code> erwartet Parameterpaare, bestehend aus einem logischen Ausdruck und dem Ergebnis, falls dieser logische Ausdruck <code>WAHR</code> ergibt. Die Funktion kann bis zu 127 Parameterpaare verarbeiten, so dass sich auch sehr komplexe Fallunterscheidungen mit dieser Funktion abbilden lassen.</p>
 <div id="exm-wenns-vereinfachen" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.4</strong></span> Das folgende Beispiel zeigt die Verwendung der Funktion <code>WENNS()</code> für die geschachtelte Fallunterscheidung aus dem Abschnitt <code>WENN</code>.</p>
+<p><span class="theorem-title"><strong>Beispiel 11.4</strong></span> Das folgende Beispiel zeigt die Verwendung der Funktion <code>WENNS()</code> für die geschachtelte Fallunterscheidung aus dem Abschnitt <code>WENN</code>.</p>
 <pre><code>= WENNS(A2:A3 = 1; "Eins"; 
         A2:A3 = 3; "Drei"; 
         A2:A3 = 4; "Vier"; 
@@ -754,7 +761,7 @@ Merke
 </div>
 <p>Die Fallunterscheidung mit <code>WENNS()</code> endet beim ersten logischen Ausdruck, der <code>WAHR</code> ergibt. Die Funktion prüft der Reihe nach alle angegebenen logischen Ausdrücke. Sobald einer dieser Ausdrücke <code>WAHR</code> ist, wird der zugehörige Ergebniswert ausgegeben und die Funktion wird beendet. Diese Eigenschaft begründet, dass die logischen Ausdrücke nur die Fälle prüfen müssen, die von den vorangegangenen logischen Ausdrücken nicht abgedeckt wurden.</p>
 <div id="exm-vereinfachte-fallunterscheidung" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.5 (Fallunterscheidung mit <code>WENNS()</code> vereinfachen)</strong></span> Gegeben ist die Formel mit geschachtelten Entscheidungen.</p>
+<p><span class="theorem-title"><strong>Beispiel 11.5 (Fallunterscheidung mit <code>WENNS()</code> vereinfachen)</strong></span> Gegeben ist die Formel mit geschachtelten Entscheidungen.</p>
 <pre><code>= WENN(J2&gt;=O2;
     (WENN(J2&gt;L2;
           0;
@@ -814,17 +821,17 @@ Merke
 <p>Diese Formel ist deutlich einfacher und weniger Fehleranfällig als die ursprüngliche Formel mit geschachtelten <code>WENN()</code>-Funktionen. Es lassen sich auch weitere Fälle hinzufügen, ohne dass die Formel komplexer wird. Dabei ist zu beachten, dass diese Fälle <em>vor</em> dem Fall <code>WAHR</code> angegeben werden müssen.</p>
 </div>
 </section>
-<section id="nicht-erreichbare-entscheidungen" class="level3" data-number="10.5.3">
-<h3 data-number="10.5.3" class="anchored" data-anchor-id="nicht-erreichbare-entscheidungen"><span class="header-section-number">10.5.3</span> Nicht erreichbare Entscheidungen</h3>
+<section id="nicht-erreichbare-entscheidungen" class="level3" data-number="11.5.3">
+<h3 data-number="11.5.3" class="anchored" data-anchor-id="nicht-erreichbare-entscheidungen"><span class="header-section-number">11.5.3</span> Nicht erreichbare Entscheidungen</h3>
 <p>Ein besonderes Problem sind Entscheidungen, die zwar definiert aber nie erreicht werden können. Solche Entscheidungen sind immer <em>redundant</em>. Eine nicht erreichbare Entscheidung kann nur dann auftreten, wenn eine vorangegangene Entscheidung bereits den geprüften Fall abdeckt. Ergibt ein solcher logischer Ausdruck <code>Falsch</code>, dann wird eine spätere Entscheidung für den gleichen Fall im Falsch-Zweig des Entscheidungsbaums ebenfalls <code>Falsch</code> ergeben. Der Wahr-Zweig dieser Entscheidung kann damit nie erreicht werden.</p>
 <div id="exm-wenns-nicht-erreichbar" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.6 (Nicht erreichbare Entscheidung)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 11.6 (Nicht erreichbare Entscheidung)</strong></span> &nbsp;</p>
 <pre><code>=WENNS( A1 &gt; 5; "Sehr gut"; 
         A1 &gt; 3; "Genügend"; 
         A1 &gt; 4; "Gut"; 
         A1 &lt;= 3; "Ungenügend")</code></pre>
 </div>
-<p>In <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>10.6</span></a> kann nie das Ergebnis “Gut” erzeugt werden, weil der zweite logische Ausdruck (A1 &gt; 3) alle Werte “maskiert”, die durch den dritten logischen Ausdruck (A1 &gt; 4) als “Gut” markiert werden müssten. “Ungenügend” würde trotzdem angezeigt werden, wenn der Wert in A1 entweder 1, 2 oder 3 ist.</p>
+<p>In <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>11.6</span></a> kann nie das Ergebnis “Gut” erzeugt werden, weil der zweite logische Ausdruck (A1 &gt; 3) alle Werte “maskiert”, die durch den dritten logischen Ausdruck (A1 &gt; 4) als “Gut” markiert werden müssten. “Ungenügend” würde trotzdem angezeigt werden, wenn der Wert in A1 entweder 1, 2 oder 3 ist.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -838,7 +845,7 @@ Wichtig
 <p>Eine nicht erreichbare Entscheidung ist kein technischer Fehler, sondern ein logischer Fehler.</p>
 </div>
 </div>
-<p>Im <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>10.6</span></a> kann die Entscheidung <code>A1 &gt; 4</code> nicht erreicht werden, weil das vorherige und allgemeinere Kriterium <code>A1 &gt; 3</code> für die gleichen Werte zutrifft.</p>
+<p>Im <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>11.6</span></a> kann die Entscheidung <code>A1 &gt; 4</code> nicht erreicht werden, weil das vorherige und allgemeinere Kriterium <code>A1 &gt; 3</code> für die gleichen Werte zutrifft.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -856,7 +863,7 @@ Merke
 <div id="tbl-wenns-nicht-erreichbar" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-wenns-nicht-erreichbar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>10.6</span></a>
+Tabelle&nbsp;11.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-wenns-nicht-erreichbar" class="quarto-xref">Beispiel&nbsp;<span>11.6</span></a>
 </figcaption>
 <div aria-describedby="tbl-wenns-nicht-erreichbar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -899,17 +906,17 @@ Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-w
 </figure>
 </div>
 <p>Weil die Funktion <code>WENNS()</code> verwendet wird, ist der Wertebereich für einen logischen Ausdruck durch die Falsch-Fälle der logischen Ausdrücke mit niedrigerem Rang abgedeckt.</p>
-<p>Für Rang 3 muss wegen dieser Tabelle der logischen Ausdruck in <a href="#eq-nichterreichbar" class="quarto-xref">Formel&nbsp;<span>10.1</span></a> gelten. Dieser Ausdruck kann jedoch nie Wahr ergeben, weil der gleiche Wert in Variable <span class="math inline">A1</span> nicht kleiner oder gleich 3 und gleichzeitig grösser als 4 sein kann.</p>
+<p>Für Rang 3 muss wegen dieser Tabelle der logischen Ausdruck in <a href="#eq-nichterreichbar" class="quarto-xref">Formel&nbsp;<span>11.1</span></a> gelten. Dieser Ausdruck kann jedoch nie Wahr ergeben, weil der gleiche Wert in Variable <span class="math inline">A1</span> nicht kleiner oder gleich 3 und gleichzeitig grösser als 4 sein kann.</p>
 <p><span id="eq-nichterreichbar"><span class="math display">
 \begin{aligned}
 &amp; (A1 &lt;= 5) \land &amp; (A1 &lt;= 3) \land &amp; (A1 &gt; 4) \\
 \Leftrightarrow &amp; &amp; (A1 &lt;= 3) \land &amp; (A1 &gt; 4) \\
 \Leftrightarrow &amp;  &amp; \text{Falsch}
 \end{aligned}
-\tag{10.1}</span></span></p>
+\tag{11.1}</span></span></p>
 </section>
-<section id="ersterwert" class="level3" data-number="10.5.4">
-<h3 data-number="10.5.4" class="anchored" data-anchor-id="ersterwert"><span class="header-section-number">10.5.4</span> ERSTERWERT</h3>
+<section id="ersterwert" class="level3" data-number="11.5.4">
+<h3 data-number="11.5.4" class="anchored" data-anchor-id="ersterwert"><span class="header-section-number">11.5.4</span> ERSTERWERT</h3>
 <p>Die Funktion <code>ERSTERWERT()</code> bildet einen Spezialfall von <code>WENNS()</code> ab: Es wird bei allen logischen Ausdrücken ein Vergleich auf Gleichheit des <em>Suchkriteriums</em> mit verschiedenen Referenzwerten durchgeführt. In diesem Fall können die logischen Ausdrücke mit <code>ERSTERWERT()</code> stark vereinfacht werden. Das lässt sich am ersten Beispiel im Abschnitt <code>WENNS</code> veranschaulichen.</p>
 <p>Weil alle logischen Ausdrücke die Gleichheit über den gleichen Adressbereich prüfen, kann die Operation mit der Funktion <code>ERSTERWERT()</code> vereinfacht wie folgt werden.</p>
 <pre><code>= ERSTERWERT(A2:A3; 
@@ -919,8 +926,8 @@ Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-w
              8; "Acht"; 
              "Ungültig")</code></pre>
 </section>
-<section id="xverweis-zur-fallunterscheidung" class="level3" data-number="10.5.5">
-<h3 data-number="10.5.5" class="anchored" data-anchor-id="xverweis-zur-fallunterscheidung"><span class="header-section-number">10.5.5</span> XVERWEIS zur Fallunterscheidung</h3>
+<section id="xverweis-zur-fallunterscheidung" class="level3" data-number="11.5.5">
+<h3 data-number="11.5.5" class="anchored" data-anchor-id="xverweis-zur-fallunterscheidung"><span class="header-section-number">11.5.5</span> XVERWEIS zur Fallunterscheidung</h3>
 <p>Die Funktion <code>XVERWEIS()</code> ist als Excels Version des <span class="math inline">\in</span>-Operators bereits bekannt. Die Funktion kann auch als Alternative zur Funktion <code>ERSTERWERT()</code> verwendet werden. In diesem Fall werden als Rückgabematrix keine Wahrheitswerte, sondern die Ergebnisse der Fallunterscheidung angegeben.</p>
 <p>Der Vorteil dieser Anwendung ist, dass die Fallunterscheidung nicht mehr auf die Anzahl der Parameterpaare beschränkt ist und die Parameterpaare zum Zeitpunkt der Formelerstellung auch nicht bekannt sein müssen.</p>
 <p>Das folgende Beispiel zeigt die Umsetzung des Beispiels aus dem Abschnitt <code>ERSTERWERT</code> mit <code>XVERWEIS()</code>. Dazu wird zuerst eine Tabelle mit den Vergleichswerten und den zugehörigen Ergebnissen erstellt.</p>
@@ -954,8 +961,8 @@ Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-w
 <pre><code>= XVERWEIS(A2:A3; C2:D5; D2:D5; "Ungültig")</code></pre>
 <p>Ein weiterer Vorteil von <code>XVERGLEICH()</code> gegenüber <code>ERSTERWERT()</code> sind Vergleiche mit den Operatoren <code>=</code>, <code>&lt;=</code> oder <code>&gt;=</code>. Diese Vergleiche lassen sich über den fünften Parameter von <code>XVERWEIS()</code> konfigurieren. Dabei steht der Wert <code>0</code> für die Gleichheit, der Wert <code>-1</code> für kleiner oder gleich und der Wert <code>1</code> für grösser oder gleich. Die Vergleiche sind immer so organisiert, dass der linke Operand dem Suchkriterium entspricht und der rechte Operand dem Wert in der Suchmatrix. Bei einem Treffer wird der Wert aus der Rückgabematrix zurückgegeben. Gibt es keinen Treffer für den Vergleich wird der Wert aus dem vierten Parameter <code>wenn_nicht_gefunden</code> geliefert.</p>
 </section>
-<section id="anwendungshilfe-für-fallunterscheidungen" class="level3" data-number="10.5.6">
-<h3 data-number="10.5.6" class="anchored" data-anchor-id="anwendungshilfe-für-fallunterscheidungen"><span class="header-section-number">10.5.6</span> Anwendungshilfe für Fallunterscheidungen</h3>
+<section id="anwendungshilfe-für-fallunterscheidungen" class="level3" data-number="11.5.6">
+<h3 data-number="11.5.6" class="anchored" data-anchor-id="anwendungshilfe-für-fallunterscheidungen"><span class="header-section-number">11.5.6</span> Anwendungshilfe für Fallunterscheidungen</h3>
 <p>Die Anwendung der verschiedenen Fallunterscheidungsfunktionen hängt von verschiedenen Kriterien ab. Diese sind hier zusammengefasst:</p>
 <p>Die Funktion <code>WENN()</code> wird immer dann eingesetzt, wenn ein logischer Ausdruck geprüft werden muss und nur die beiden Fälle dieses Ausdrucks unterschieden werden müssen.</p>
 <p>Die Funktion <code>WENNS()</code> wird immer dann eingesetzt werden, wenn mehrere logische Ausdrücke geprüft werden müssen. Die logischen Ausdrücke können dabei beliebig komplex sein und sich auf verschiedene Daten und Bereiche beziehen.</p>
@@ -964,8 +971,8 @@ Tabelle&nbsp;10.1: Formale Prüfung der logischen Ausdrücke aus <a href="#exm-w
 <p>Die Funktion <code>XVERWEIS()</code> muss anstatt von <code>ERSTERWERT()</code> verwendet werden, wenn die Referenzwerte des Vergleichs zum Zeitpunkt der Formelerstellung noch nicht bekannt sind oder leicht änderbar bleiben sollen.</p>
 </section>
 </section>
-<section id="filtern" class="level2" data-number="10.6">
-<h2 data-number="10.6" class="anchored" data-anchor-id="filtern"><span class="header-section-number">10.6</span> Filtern</h2>
+<section id="filtern" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="filtern"><span class="header-section-number">11.6</span> Filtern</h2>
 <p>Excel bietet die Funktion <code>FILTER()</code> zum Filtern von Daten. Diese Funktion erzeugt einen Ergebnisbereich mit den Werten, die durch den angegebenen logischen Ausdruck ausgewählt wurden.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -982,11 +989,11 @@ Warnung
 </div>
 <p>Das Ergebnis der Funktion <code>FILTER()</code> ist ein dynamischer Bereich mit den ausgewählten Werten. Im Gegensatz zu Tabellen-Filter sind die nicht dargestellten Werte nicht mehr Teil der Daten. Deshalb sind die Ergebnisse der <code>FILTER()</code>-Funktion konsistent mit den Ergebnissen der nachgereihten Operationen.</p>
 <div id="def-excel-filter" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10.1</strong></span> Excels <code>FILTER()</code>-Funktion wählt aus einem Vektor die Werte aus, für die ein <strong>Auswahlvektor</strong> den Wert <code>WAHR</code> oder einen Wert, der dem logischen <code>WAHR</code> entspricht.</p>
+<p><span class="theorem-title"><strong>Definition 11.1</strong></span> Excels <code>FILTER()</code>-Funktion wählt aus einem Vektor die Werte aus, für die ein <strong>Auswahlvektor</strong> den Wert <code>WAHR</code> oder einen Wert, der dem logischen <code>WAHR</code> entspricht.</p>
 </div>
 <blockquote class="blockquote">
 <div id="exm-excel-filter" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.7 (Filtern mit Excel)</strong></span> Gegeben sind die folgende Werte in den Spalten <code>A</code> und <code>B</code>. Die <code>Filter()</code>-Funktion steht an Adresse <code>D2</code>.</p>
+<p><span class="theorem-title"><strong>Beispiel 11.7 (Filtern mit Excel)</strong></span> Gegeben sind die folgende Werte in den Spalten <code>A</code> und <code>B</code>. Die <code>Filter()</code>-Funktion steht an Adresse <code>D2</code>.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -1087,9 +1094,9 @@ Warnung
 </table>
 </div>
 </blockquote>
-<section id="excel-filter-und-logische-operationen" class="level3" data-number="10.6.1">
-<h3 data-number="10.6.1" class="anchored" data-anchor-id="excel-filter-und-logische-operationen"><span class="header-section-number">10.6.1</span> Excel Filter und logische Operationen</h3>
-<p>Weil die <code>FILTER()</code>-Funktion immer über Vektoren arbeitet, können die logischen Funktionen nicht verwendet werden, weil sie keine Vektoren erzeugen. Deshalb <em>muss</em> der logische Ausdruck des Filters als Boole’sche Arithmetik formuliert werden (<a href="#sec-vector-logic" class="quarto-xref"><span>Kapitel 10.4</span></a>).</p>
+<section id="excel-filter-und-logische-operationen" class="level3" data-number="11.6.1">
+<h3 data-number="11.6.1" class="anchored" data-anchor-id="excel-filter-und-logische-operationen"><span class="header-section-number">11.6.1</span> Excel Filter und logische Operationen</h3>
+<p>Weil die <code>FILTER()</code>-Funktion immer über Vektoren arbeitet, können die logischen Funktionen nicht verwendet werden, weil sie keine Vektoren erzeugen. Deshalb <em>muss</em> der logische Ausdruck des Filters als Boole’sche Arithmetik formuliert werden (<a href="#sec-vector-logic" class="quarto-xref"><span>Kapitel 11.4</span></a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1107,7 +1114,7 @@ Hinweis
 <div id="tbl-filter-complex" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-tbl figure">
 <figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-filter-complex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Tabelle&nbsp;10.2: Beispiel eines komplexen logischen Ausdrucks mit <code>FILTER()</code>
+Tabelle&nbsp;11.2: Beispiel eines komplexen logischen Ausdrucks mit <code>FILTER()</code>
 </figcaption>
 <div aria-describedby="tbl-filter-complex-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class="caption-top table">
@@ -1185,11 +1192,11 @@ Tabelle&nbsp;10.2: Beispiel eines komplexen logischen Ausdrucks mit <code>FILTER
 </div>
 </section>
 </section>
-<section id="selektieren" class="level2" data-number="10.7">
-<h2 data-number="10.7" class="anchored" data-anchor-id="selektieren"><span class="header-section-number">10.7</span> Selektieren</h2>
+<section id="selektieren" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="selektieren"><span class="header-section-number">11.7</span> Selektieren</h2>
 <p>Sehr häufig liegen umfangreiche Daten mit vielen Vektoren vor. Soll sich eine Analyse auf einzelne Vektoren beschränken, dann sollen, analog zum Filtern von Datensätzen, nur diese Vektoren ausgewählt werden.</p>
 <div id="def-selektieren" class="theorem definition">
-<p><span class="theorem-title"><strong>Definition 10.2</strong></span> Das Filtern von Vektoren wird als <strong>selektieren</strong> bezeichnet.</p>
+<p><span class="theorem-title"><strong>Definition 11.2</strong></span> Das Filtern von Vektoren wird als <strong>selektieren</strong> bezeichnet.</p>
 </div>
 <p>Weil die Vektoren einer Stichprobe in der Regel benannt sind, werden Vektoren über ihre Namen <em>selektiert</em>.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -1219,7 +1226,7 @@ Merke
 <li>Vektorname enthält an einer beliebigen Position eine bestimme Zeichenkette</li>
 </ul>
 <p>Diese Operationen lassen sich als logische Ausdrücke formulieren, wodurch sich komplexere Selektoren umsetzen lassen.</p>
-<p>Der einfachste Weg zum Vektoren adressieren ist die Verwendung des Vektornamens über die Tabellenadressierung. Dabei wird der Vektorname in eckige Klammern gesetzt (s. <a href="../datentypen/kapitel.html#sec-tabellenadressen" class="quarto-xref">Abschnitt&nbsp;<span>6.4.2</span></a>). Die Tabellenadressierung ist jedoch auf vollständige Namen und auf zusammenhängende Bereiche beschränkt.</p>
+<p>Der einfachste Weg zum Vektoren adressieren ist die Verwendung des Vektornamens über die Tabellenadressierung. Dabei wird der Vektorname in eckige Klammern gesetzt (s. <a href="../adressen_formeln/kapitel.html#sec-tabellenadressen" class="quarto-xref">Abschnitt&nbsp;<span>5.2.4</span></a>). Die Tabellenadressierung ist jedoch auf vollständige Namen und auf zusammenhängende Bereiche beschränkt.</p>
 <p>Die Verwendung einer Selektor-Funktion zur Auswahl von Vektoren ist nicht auf Tabellen beschränkt, sondern kann mit beliebigen tabellarischen Strukturen angewendet werden. In Excel wird eine Selektor Funktion durch die Funktionskette eines Filters mit der Funktion <code>SPALTENWAHL()</code> erreicht.</p>
 <p>Neben der Tabellenadressierung bietet Excel die Funktion <code>SPALTENWAHL()</code>, um Vektoren aus einem Bereich auszulesen. Diese Funktion benötigt aber die Position der gewünschten Spalte, denn oft sollen aber Vektoren über Namen oder Namensteile ausgewählt werden. Dafür kommt die Funktion <code>XVERGLEICH()</code> zur Anwendung. Mit <code>XVERGLEICH()</code> erhalten wir die Position eines gesuchten Werts in einem angegebenen Bereich.</p>
 <p>Die Idee hinter dem hier beschriebenen Ansatz ist, dass wir herausfinden, wo unser gewünschter Vektor in der Stichprobe steht. Anschliessend wählen wir alle Werte an dieser Position mit der Funktion <code>Spaltenwahl()</code> aus.</p>
@@ -1251,14 +1258,14 @@ Hinweis
 <li>Wir wählen die einzelnen Vektoren mit der folgenden Formel an der Adresse A2 aus.</li>
 </ol>
 <div id="exm-excel-selektion" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.8 (Selektion von Vektoren in Excel)</strong></span> &nbsp;</p>
+<p><span class="theorem-title"><strong>Beispiel 11.8 (Selektion von Vektoren in Excel)</strong></span> &nbsp;</p>
 <pre><code>=SPALTENWAHL(Stichprobendaten!$B$2#; 
              XVERGLEICH(A1:C1; Stichprobendaten!$B$1#))</code></pre>
 </div>
 <p>Der Vorteil dieser Strategie ist, dass die Selektion individuelle, nicht-zusammenhängende Vektoren selektieren kann und nicht auf Tabellen beschränkt ist.</p>
 </section>
-<section id="sortieren" class="level2" data-number="10.8">
-<h2 data-number="10.8" class="anchored" data-anchor-id="sortieren"><span class="header-section-number">10.8</span> Sortieren</h2>
+<section id="sortieren" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="sortieren"><span class="header-section-number">11.8</span> Sortieren</h2>
 <p>Excel kennt zwei Funktionen zum Sortieren:</p>
 <ul>
 <li><code>SORTIEREN()</code></li>
@@ -1286,8 +1293,8 @@ Hinweis
 </div>
 <p>Die Funktion ermöglicht es, mehrere Vektoren auf einmal nach <strong>mehreren</strong> gemeinsamen Kriterien zu sortieren. Dazu müssen zuerst die Sortierkriterien identifiziert werden.</p>
 <p>Die Funktion <code>SORTIERENNACH()</code> deckt den Spezialfall ab, wenn die Sortierung nach einem externen Kriterium erfolgen soll. Während <code>SORTIEREN()</code> erfordert, dass die Sortierindizes im zu sortierenden Bereich enthalten sind, können die Sortierindizes bei <code>SORTIERENNACH()</code> an einer beliebigen Stelle in der Arbeitsmappe liegen.</p>
-<section id="schritt-1-sortierkriterien-festlegen." class="level4" data-number="10.8.0.1">
-<h4 data-number="10.8.0.1" class="anchored" data-anchor-id="schritt-1-sortierkriterien-festlegen."><span class="header-section-number">10.8.0.1</span> Schritt 1: Sortierkriterien festlegen.</h4>
+<section id="schritt-1-sortierkriterien-festlegen." class="level4" data-number="11.8.0.1">
+<h4 data-number="11.8.0.1" class="anchored" data-anchor-id="schritt-1-sortierkriterien-festlegen."><span class="header-section-number">11.8.0.1</span> Schritt 1: Sortierkriterien festlegen.</h4>
 <p>Die Sortierkriterien sind durch die Werte im Sortierindex festgelegt, nach denen sortiert werden soll. Der Sortierindex ist ein Vektor mit einem Wert für eine Zeile bzw. Spalte der Sortiermatrix. Entlang der Werte im Sortierindex wird die Sortiermatrix sortiert.</p>
 <p>In Excel können die Vektoren mit den Sortierkriterien an einer beliebigen Position in einer Arbeitsmappe liegen. Dabei müssen zwei Bedingungen erfüllt sein:</p>
 <ol type="1">
@@ -1295,25 +1302,25 @@ Hinweis
 <li>Die Sortierindex und die Sortiermatrix müssen die gleiche Orientierung haben.</li>
 </ol>
 </section>
-<section id="schritt-2" class="level4" data-number="10.8.0.2">
-<h4 data-number="10.8.0.2" class="anchored" data-anchor-id="schritt-2"><span class="header-section-number">10.8.0.2</span> Schritt 2:</h4>
+<section id="schritt-2" class="level4" data-number="11.8.0.2">
+<h4 data-number="11.8.0.2" class="anchored" data-anchor-id="schritt-2"><span class="header-section-number">11.8.0.2</span> Schritt 2:</h4>
 <p>Im zweiten Schritt werden die zu sortierenden Vektoren ausgewählt.</p>
 <p>In R wird dieser zweite Schritt automatisch auf die vorgegebene Stichprobe angewandt. In Excel können wir zusammenhängende Vektoren als “Matrix” an die <code>SORTIERENNACH()</code>-Funktion übergeben. Hängen die Vektoren nicht direkt zusammen, dann müssen mehrere Sortieroperationen mit den gleichen Referenzen auf die Sortierreferenzen durchgeführt werden.</p>
 <p>In Excel wird die Sortierrichtung als <code>Sortierreihenfolge</code> bezeichnet und als separater Parameter für das jeweilige Sortierkriterium angegeben. Dabei steht <code>1</code> für die aufsteigende Sortierung und <code>-1</code> für die absteigende Sortierung.</p>
 </section>
 </section>
-<section id="rezepte" class="level2" data-number="10.9">
-<h2 data-number="10.9" class="anchored" data-anchor-id="rezepte"><span class="header-section-number">10.9</span> Rezepte</h2>
-<section id="fehlerwerte-abfangen" class="level3" data-number="10.9.1">
-<h3 data-number="10.9.1" class="anchored" data-anchor-id="fehlerwerte-abfangen"><span class="header-section-number">10.9.1</span> Fehlerwerte abfangen</h3>
+<section id="rezepte" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="rezepte"><span class="header-section-number">11.9</span> Rezepte</h2>
+<section id="fehlerwerte-abfangen" class="level3" data-number="11.9.1">
+<h3 data-number="11.9.1" class="anchored" data-anchor-id="fehlerwerte-abfangen"><span class="header-section-number">11.9.1</span> Fehlerwerte abfangen</h3>
 <p>Viele Excel-Funktionen geben einen Fehlerwert zurück, falls die Funktion kein gültiges Ergebnis ermitteln kann. Weil sich diese Fehlerwerte in Operationen fortpflanzen, müssen diese Werte durch einen geeigneten regulären Wert ersetzt werden. Das kann mit der folgenden Entscheidung erreicht werden.</p>
 <pre><code>= WENN(ISTFEHLER(A1); 0; A1)</code></pre>
 <p>Diese Operation ersetzt alle Fehlerwerte durch den Wert <code>0</code> und lässt alle anderen Werte unverändert.</p>
 <p>Weil diese Entscheidung sehr oft vorkommt, gibt es die Funktion <code>WENNFEHLER()</code>, mit der die gleiche Operation einfacher ausgedrückt werden kann.</p>
 <pre><code>= WENNFEHLER(A1; 0)</code></pre>
 </section>
-<section id="eine-zahl-für-genau-eine-bedingung-zurückgeben" class="level3" data-number="10.9.2">
-<h3 data-number="10.9.2" class="anchored" data-anchor-id="eine-zahl-für-genau-eine-bedingung-zurückgeben"><span class="header-section-number">10.9.2</span> Eine Zahl für genau eine Bedingung zurückgeben</h3>
+<section id="eine-zahl-für-genau-eine-bedingung-zurückgeben" class="level3" data-number="11.9.2">
+<h3 data-number="11.9.2" class="anchored" data-anchor-id="eine-zahl-für-genau-eine-bedingung-zurückgeben"><span class="header-section-number">11.9.2</span> Eine Zahl für genau eine Bedingung zurückgeben</h3>
 <p>Ein häufiger Spezialfall für Unterscheidungen ist die Auswahl von <em>Zahlen</em>, die genau <strong>einen</strong> logischen Ausdruck erfüllen. Solche Unterscheidungen geben im <code>FALSCH</code>-Fall <code>0</code> und im anderen Fall die gesuchte Zahl zurück. In diesem Spezialfall kann der Zielwert ohne Umweg über die <code>WENN()</code>-Funktion mit dem logischen Ausdruck multipliziert werden. Der logische Ausdruck liefert <code>1</code> für <code>WAHR</code> und <code>0</code> für <code>FALSCH</code>. Die Multiplikation mit <code>0</code> liefert immer <code>0</code>. Die Multiplikation mit <code>1</code> liefert den Zielwert.</p>
 <p>Das Beispiel gibt für die folgenden Werte alle Zahlen zurück, die grösser als 10 <em>und</em> kleiner als 20 sind.</p>
 <table class="caption-top table">
@@ -1376,8 +1383,8 @@ Warnung
 <p>Damit dieses Rezept funktioniert, müssen <em>alle</em> Teile des logischen Ausdrucks genau die Werte FALSCH oder WAHR bzw. 0 oder 1 zurückgeben. Das ist notwendig, weil nur das neutrale Element die Zielwerte unverändert lässt. Eine direkte Übergabe von Zahlen im logischen Ausdruck verfälscht das Ergebnis, weil nicht mit dem <em>neutralen Element</em> gerechnet wird.</p>
 <p>Soll für einen logischen Ausdruck nur der Wert 1 oder 0 zurückgegeben werden, dann kann der Rückgabebereich am Anfang der Formel weggelassen werden. Es wird dann nur der logische Ausdruck angegeben. Die Formel <code>= (A1:A10 &gt; 10) * (A1:A10 &lt; 20)</code> hat die Werte <code>{1;0;1;0;1;0;0;1;0;0}</code> als Ergebnis.</p>
 </section>
-<section id="fehlerwerte-vergleichen" class="level3" data-number="10.9.3">
-<h3 data-number="10.9.3" class="anchored" data-anchor-id="fehlerwerte-vergleichen"><span class="header-section-number">10.9.3</span> Fehlerwerte vergleichen</h3>
+<section id="fehlerwerte-vergleichen" class="level3" data-number="11.9.3">
+<h3 data-number="11.9.3" class="anchored" data-anchor-id="fehlerwerte-vergleichen"><span class="header-section-number">11.9.3</span> Fehlerwerte vergleichen</h3>
 <p>Fehlerwerte können nicht direkt mit den Vergleichsoperatoren verglichen werden, weil Excel immer den ersten gefundenen Fehlerwert als Ergebnis einer Operation zurückgibt. Deshalb müssen Fehlerwerte zuerst in normale Werte konvertiert werden. Damit verschiedene Fehlerwerte miteinander verglichen werden können, müssen die verschiedenen Fehlerwerte zuerst in eindeutige Zahlen umgewandelt werden. Das übernimmt die Funktion <code>FEHLER.TYP()</code>. Diese Zahlen können anschliessend wie gewohnt weiter verarbeitet werden.</p>
 <p>Das folgende Beispiel weist den gegebenen Fehlerwerten eine Fehlermeldung zu:</p>
 <table class="caption-top table">
@@ -1409,12 +1416,12 @@ Warnung
               "Kein Fehler")</code></pre>
 <p>Für diesen Schritt muss die Operation mit der Funktion <code>WENNFEHLER()</code> erweitert werden, weil die Funktion <code>FEHLER.TYP()</code> einen Fehler ausgibt, wenn der übergebene Wert kein Fehlerwert ist. Weil die Fehlertypen mit Werten grösser <code>0</code> durchnummeriert sind, bietet sich für reguläre Werte der Wert <code>0</code> an.</p>
 </section>
-<section id="filtern-und-summen" class="level3" data-number="10.9.4">
-<h3 data-number="10.9.4" class="anchored" data-anchor-id="filtern-und-summen"><span class="header-section-number">10.9.4</span> Filtern und Summen</h3>
-<p>Bis Juli 2020 mussten die Funktionen <code>SUMMEWENN()</code> oder <code>SUMMEWENNS()</code> verwendet werden, um Daten nach Kriterien zu summieren. Diese Funktionen haben allerdings den Nachteil, dass keine echten logischen Ausdrücke verwendet werden können. Seit Juli 2020 steht die <code>FILTER()</code>-Funktion zur Verfügung. Dadurch können echte logische Ausdrücke als Filterkriterien eingesetzt werden. Gleichzeitig hat sich die Bedeutung der Funktionen <code>SUMMEWENN()</code> und <code>SUMMEWENNS()</code>geändert (s. <a href="../kodieren-gruppieren/kapitel.html" class="quarto-xref"><span>Kapitel 13</span></a>).</p>
+<section id="filtern-und-summen" class="level3" data-number="11.9.4">
+<h3 data-number="11.9.4" class="anchored" data-anchor-id="filtern-und-summen"><span class="header-section-number">11.9.4</span> Filtern und Summen</h3>
+<p>Bis Juli 2020 mussten die Funktionen <code>SUMMEWENN()</code> oder <code>SUMMEWENNS()</code> verwendet werden, um Daten nach Kriterien zu summieren. Diese Funktionen haben allerdings den Nachteil, dass keine echten logischen Ausdrücke verwendet werden können. Seit Juli 2020 steht die <code>FILTER()</code>-Funktion zur Verfügung. Dadurch können echte logische Ausdrücke als Filterkriterien eingesetzt werden. Gleichzeitig hat sich die Bedeutung der Funktionen <code>SUMMEWENN()</code> und <code>SUMMEWENNS()</code>geändert (s. <a href="../kodieren-gruppieren/kapitel.html" class="quarto-xref"><span>Kapitel 14</span></a>).</p>
 <p>Die folgende Formel sollten wir jetzt mit der Filter-Technik umschreiben.</p>
 <div id="exm-summenwenn-filter" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 10.9 (Summenwenn durch Filter-Summe ersetzen)</strong></span> Alt wurde geschrieben:</p>
+<p><span class="theorem-title"><strong>Beispiel 11.9 (Summenwenn durch Filter-Summe ersetzen)</strong></span> Alt wurde geschrieben:</p>
 <pre><code>= SUMMEWENN(B2#; "&lt; 0")</code></pre>
 <p>Neu ist die gleiche Funktion etwas ausführlicher:</p>
 <pre><code>= SUMME( FILTER(B2#; B2# &lt; 0) )</code></pre>
@@ -1442,239 +1449,242 @@ Warnung
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
-window.document.addEventListener("DOMContentLoaded", function (event) {
-  const toggleBodyColorMode = (bsSheetEl) => {
-    const mode = bsSheetEl.getAttribute("data-mode");
-    const bodyEl = window.document.querySelector("body");
-    if (mode === "dark") {
-      bodyEl.classList.add("quarto-dark");
-      bodyEl.classList.remove("quarto-light");
-    } else {
-      bodyEl.classList.add("quarto-light");
-      bodyEl.classList.remove("quarto-dark");
-    }
-  }
-  const toggleBodyColorPrimary = () => {
-    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
-    if (bsSheetEl) {
-      toggleBodyColorMode(bsSheetEl);
-    }
-  }
-  toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
-  const isCodeAnnotation = (el) => {
-    for (const clz of el.classList) {
-      if (clz.startsWith('code-annotation-')) {                     
-        return true;
-      }
-    }
-    return false;
-  }
-  const onCopySuccess = function(e) {
-    // button target
-    const button = e.trigger;
-    // don't keep focus
-    button.blur();
-    // flash "checked"
-    button.classList.add('code-copy-button-checked');
-    var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Kopiert");
-    let tooltip;
-    if (window.bootstrap) {
-      button.setAttribute("data-bs-toggle", "tooltip");
-      button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Kopiert");
-      tooltip = new bootstrap.Tooltip(button, 
-        { trigger: "manual", 
-          customClass: "code-copy-button-tooltip",
-          offset: [0, -8]});
-      tooltip.show();    
-    }
-    setTimeout(function() {
-      if (tooltip) {
-        tooltip.hide();
-        button.removeAttribute("data-bs-title");
-        button.removeAttribute("data-bs-toggle");
-        button.removeAttribute("data-bs-placement");
-      }
-      button.setAttribute("title", currentTitle);
-      button.classList.remove('code-copy-button-checked');
-    }, 1000);
-    // clear code selection
-    e.clearSelection();
-  }
-  const getTextToCopy = function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-  }
-  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
-    text: getTextToCopy
-  });
-  clipboard.on('success', onCopySuccess);
-  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
-    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
-      text: getTextToCopy,
-      container: window.document.getElementById('quarto-embedded-source-code-modal')
-    });
-    clipboardModal.on('success', onCopySuccess);
-  }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
-    const config = {
-      allowHTML: true,
-      maxWidth: 500,
-      delay: 100,
-      arrow: false,
-      appendTo: function(el) {
-          return el.parentElement;
-      },
-      interactive: true,
-      interactiveBorder: 10,
-      theme: 'quarto',
-      placement: 'bottom-start',
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
-    window.tippy(el, config); 
-  }
-  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
-  for (var i=0; i<noterefs.length; i++) {
-    const ref = noterefs[i];
-    tippyHover(ref, function() {
-      // use id or data attribute instead here
-      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
-      try { href = new URL(href).hash; } catch {}
-      const id = href.replace(/^#\/?/, "");
-      const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
         }
       }
+      return false;
     }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
           }
         }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
         }
-        return container.innerHTML
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
       } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
         if (window.Quarto?.typesetMath) {
           window.Quarto.typesetMath(note);
         }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
       }
     }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
           }
         } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
           .then(res => res.text())
           .then(html => {
             const parser = new DOMParser();
             const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
+            const note = htmlDoc.querySelector('main.content');
             if (note !== null) {
-              const html = processXRef(id, note);
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
               instance.setContent(html);
             } 
           }).finally(() => {
@@ -1682,194 +1692,170 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             instance.show();
           });
         }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
-    });
-  }
-      let selectedAnnoteEl;
-      const selectorForAnnotation = ( cell, annotation) => {
-        let cellAttr = 'data-code-cell="' + cell + '"';
-        let lineAttr = 'data-code-annotation="' +  annotation + '"';
-        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
-        return selector;
-      }
-      const selectCodeLines = (annoteEl) => {
-        const doc = window.document;
-        const targetCell = annoteEl.getAttribute("data-target-cell");
-        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
-        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
-        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
-        const lineIds = lines.map((line) => {
-          return targetCell + "-" + line;
-        })
-        let top = null;
-        let height = null;
-        let parent = null;
-        if (lineIds.length > 0) {
-            //compute the position of the single el (top and bottom and make a div)
-            const el = window.document.getElementById(lineIds[0]);
-            top = el.offsetTop;
-            height = el.offsetHeight;
-            parent = el.parentElement.parentElement;
-          if (lineIds.length > 1) {
-            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-            height = bottom - top;
-          }
-          if (top !== null && height !== null && parent !== null) {
-            // cook up a div (if necessary) and position it 
-            let div = window.document.getElementById("code-annotation-line-highlight");
-            if (div === null) {
-              div = window.document.createElement("div");
-              div.setAttribute("id", "code-annotation-line-highlight");
-              div.style.position = 'absolute';
-              parent.appendChild(div);
-            }
-            div.style.top = top - 2 + "px";
-            div.style.height = height + 4 + "px";
-            div.style.left = 0;
-            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-            if (gutterDiv === null) {
-              gutterDiv = window.document.createElement("div");
-              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-              gutterDiv.style.position = 'absolute';
-              const codeCell = window.document.getElementById(targetCell);
-              const gutter = codeCell.querySelector('.code-annotation-gutter');
-              gutter.appendChild(gutterDiv);
-            }
-            gutterDiv.style.top = top - 2 + "px";
-            gutterDiv.style.height = height + 4 + "px";
-          }
-          selectedAnnoteEl = annoteEl;
-        }
-      };
-      const unselectCodeLines = () => {
-        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
-        elementsIds.forEach((elId) => {
-          const div = window.document.getElementById(elId);
-          if (div) {
-            div.remove();
-          }
-        });
-        selectedAnnoteEl = undefined;
-      };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
-      // Attach click handler to the DT
-      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
-      for (const annoteDlNode of annoteDls) {
-        annoteDlNode.addEventListener('click', (event) => {
-          const clickedEl = event.target;
-          if (clickedEl !== selectedAnnoteEl) {
-            unselectCodeLines();
-            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
-            if (activeEl) {
-              activeEl.classList.remove('code-annotation-active');
-            }
-            selectCodeLines(clickedEl);
-            clickedEl.classList.add('code-annotation-active');
-          } else {
-            // Unselect the line
-            unselectCodeLines();
-            clickedEl.classList.remove('code-annotation-active');
-          }
-        });
-      }
-  const findCites = (el) => {
-    const parentEl = el.parentElement;
-    if (parentEl) {
-      const cites = parentEl.dataset.cites;
-      if (cites) {
-        return {
-          el,
-          cites: cites.split(' ')
-        };
-      } else {
-        return findCites(el.parentElement)
-      }
-    } else {
-      return undefined;
-    }
-  };
-  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
-  for (var i=0; i<bibliorefs.length; i++) {
-    const ref = bibliorefs[i];
-    const citeInfo = findCites(ref);
-    if (citeInfo) {
-      tippyHover(citeInfo.el, function() {
-        var popup = window.document.createElement('div');
-        citeInfo.cites.forEach(function(cite) {
-          var citeDiv = window.document.createElement('div');
-          citeDiv.classList.add('hanging-indent');
-          citeDiv.classList.add('csl-entry');
-          var biblioDiv = window.document.getElementById('ref-' + cite);
-          if (biblioDiv) {
-            citeDiv.innerHTML = biblioDiv.innerHTML;
-          }
-          popup.appendChild(citeDiv);
-        });
-        return popup.innerHTML;
+      }, function(instance) {
       });
     }
-  }
-});
-</script>
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../../kapitel/zeichenketten/kapitel.html" class="pagination-link" aria-label="Zeichenketten">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="../../kapitel/vektor-operationen/kapitel.html" class="pagination-link" aria-label="Vektoroperationen">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

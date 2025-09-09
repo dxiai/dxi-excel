@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; Formeln und Adressen – Einführung in die Datenwissenschaft mit Excel</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<link href="../../kapitel/daten-sammeln/kapitel.html" rel="next">
+<link href="../../kapitel/einleitung/01_jargon.html" rel="prev">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Keine Treffer",
+    "search-matching-documents-text": "Treffer",
+    "search-copy-link-title": "Link in die Suche kopieren",
+    "search-hide-matches-text": "Zusätzliche Treffer verbergen",
+    "search-more-match-text": "weitere Treffer in diesem Dokument",
+    "search-more-matches-text": "weitere Treffer in diesem Dokument",
+    "search-clear-button-title": "Zurücksetzen",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Abbrechen",
+    "search-submit-button-title": "Abschicken",
+    "search-label": "Suchen"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/einleitung/kapitel.html">Ausgangslage und Vorbereitung</a></li><li class="breadcrumb-item"><a href="../../kapitel/adressen_formeln/kapitel.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Formeln und Adressen</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../../">Einführung in die Datenwissenschaft mit Excel</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/dxiai/dxi-excel" title="Quellcode" class="quarto-navigation-tool px-1" aria-label="Quellcode"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Suchen"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Vorwort</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Ausgangslage und Vorbereitung</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/einleitung/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einleitung</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/einleitung/excel-versionen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Excel Versionen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/einleitung/02_oberflaeche.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Bedienoberfläche</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/einleitung/01_jargon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Excel Jargon</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/adressen_formeln/kapitel.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Formeln und Adressen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Datenquellen</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/daten-sammeln/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/datentypen/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Datentypen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/daten-importieren/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Daten importieren</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Mathematik der Daten</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/variablen/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Variablen, Funktionen und Operatoren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/zeichenketten/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Zeichenketten</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/boolsche-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Aussagenlogik</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/vektor-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/matrix-operationen/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/kodieren-gruppieren/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Indizieren und Gruppieren</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/daten-formen/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Daten formen</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Deskriptive Datenanalyse</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/daten-beschreiben/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Daten beschreiben</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../kapitel/daten-visualisieren/kapitel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">Daten visualisieren</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referenzen</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Inhaltsverzeichnis</h2>
+   
+  <ul>
+  <li><a href="#formeln" id="toc-formeln" class="nav-link active" data-scroll-target="#formeln"><span class="header-section-number">5.1</span> Formeln</a></li>
+  <li><a href="#sec-adressierung" id="toc-sec-adressierung" class="nav-link" data-scroll-target="#sec-adressierung"><span class="header-section-number">5.2</span> Adressen</a>
+  <ul class="collapse">
+  <li><a href="#arbeitsblattadressen" id="toc-arbeitsblattadressen" class="nav-link" data-scroll-target="#arbeitsblattadressen"><span class="header-section-number">5.2.1</span> Arbeitsblattadressen</a></li>
+  <li><a href="#adresserweiterungen" id="toc-adresserweiterungen" class="nav-link" data-scroll-target="#adresserweiterungen"><span class="header-section-number">5.2.2</span> Adresserweiterungen</a></li>
+  <li><a href="#sec-dynamisches-feld" id="toc-sec-dynamisches-feld" class="nav-link" data-scroll-target="#sec-dynamisches-feld"><span class="header-section-number">5.2.3</span> Dynamische Bereiche</a></li>
+  <li><a href="#sec-tabellenadressen" id="toc-sec-tabellenadressen" class="nav-link" data-scroll-target="#sec-tabellenadressen"><span class="header-section-number">5.2.4</span> Tabellenadressen</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/einleitung/kapitel.html">Ausgangslage und Vorbereitung</a></li><li class="breadcrumb-item"><a href="../../kapitel/adressen_formeln/kapitel.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Formeln und Adressen</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span id="sec-chapter-adressen-formeln" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Formeln und Adressen</span></span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Zusammenfassung</div>
+    <p>Dieses Kapitel stellt die wichtigsten Konzepte zur Arbeit mit Excel vor. Dazu gehören <em>Werte</em>, <em>Formeln</em> und <em>Adressen</em>.</p>
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="formeln" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="formeln"><span class="header-section-number">5.1</span> Formeln</h2>
+<p>Excel-Arbeitsblätter sind in Zellen organisiert. Eine Zelle kann einen Wert oder einen Wert und eine <em>Formel</em> enthalten. Im letzteren Fall wird normalerweise der Wert angezeigt und erst beim Bearbeiten der Zelle wird die Formel sichtbar.</p>
+<div id="def-excel-formel" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.1</strong></span> Eine <strong>Formel</strong> legt die Berechnung für den angezeigten Wert fest.</p>
+</div>
+<p>In allen Tabellenkalkulationen werden Formeln immer mit einem Gleichheitszeichen eingeleitet (<code>=</code>). Dieses Gleicheheitszeichen wird auch <em>Formeldekorator</em> genannt, weil es nur anzeigt, dass nachfolgend eine Operation und kein Wert steht.</p>
+<p>Formeln können Werte enthalten. In diesem Fall ist der angegebene Wert das Ergebnis der Formel.</p>
+<div id="exm-formel-mit-wert" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.1 (Eine Formel mit einem Wert ohne Operator)</strong></span> &nbsp;</p>
+<pre><code>= 1</code></pre>
+</div>
+<p>Werden nur Werte in einer Formel verwendet, dann wird die Formel als <em>konstante Funktion</em> bezeichnet, weil die Formel unabhängig von ihrer Position immer den gleichen (konstanten) Wert liefert. Werte stehen meistens nicht allein, sondern werden durch Operatoren oder Funktionen verknüpft.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Grundsätzlich sollte vermieden werden, Werte direkt in einer Formel zu verwenden. Stattdessen sollten Werte in Bereichen, Tabellen oder Arbeitsmappennamen definiert werden.</p>
+</div>
+</div>
+<p>Operatoren entsprechen den bekannten mathematischen Operatoren. So kann eine Tabellenkalkulation als Taschenrechner verwendet werden.</p>
+<div id="exm-formel-mit-operator" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.2 (Eine Formel die zwei Werte addiert)</strong></span> &nbsp;</p>
+<pre><code>= 1 + 2</code></pre>
+</div>
+<p>Mehr zu Operatoren findet sich unter <a href="../variablen/kapitel.html#sec-operatoren" class="quarto-xref"><span>Kapitel 9.3</span></a>.</p>
+<p>Funktionen sind die zweite Möglichkeit, um in Excel Berechnungen durchzuführen.</p>
+<div id="exm-formel-mit-funktion" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.3 (Eine Formel die zwei Werte summiert)</strong></span> &nbsp;</p>
+<pre><code>= SUMME(1; 2)</code></pre>
+</div>
+<p>Excel verfügt über 450 Funktionen, die in Formeln eingesetzt werden können. Diese Funktionen sind über das Menuband <code>Formeln</code> erreichbar und in die folgenden Funktionsgruppen gegliedert:</p>
+<ul>
+<li>Finanzmathematik</li>
+<li>Logisch</li>
+<li>Text</li>
+<li>Datum und Uhrzeit</li>
+<li>Nachschlagen und Verweisen</li>
+<li>Mathematik und Trigonometrie</li>
+<li>Statistik</li>
+<li>Technik</li>
+<li>Cube</li>
+<li>Informationen</li>
+</ul>
+<p>Daneben findet sich die Kategorie <code>Kompatibilität</code>. Diese Kategorie fasst veraltete Funktionen zusammen, die nicht mehr in neuen Arbeitsblättern verwendet werden sollten. Diese Funktionen dienen der Unterstützung alter Arbeitsmappen und unterstützen die moderne Arbeit mit Excel nicht und werden auch nicht mehr angepasst. Deshalb sollten diese Funktionen möglichst mit ihren aktualisierten Varianten ersetzt werden.</p>
+<p>Neben diesen veralteten Funktionen gibt es viele Funktionen, die bei der modernen Arbeit mit Excel nicht mehr eingesetzt werden und von geeigneteren Funktionen abgelöst wurden. Obwohl diese älteren Funktionen mit der modernen Arbeitsweise vereinbaren lassen, wird empfohlen, die entsprechende flexiblere Funktion zu verwednden. Eine Auswahl dieser Funktionen listet <a href="#tbl-alte-funktionen" class="quarto-xref">Tabelle&nbsp;<span>5.1</span></a>.</p>
+<div id="tbl-alte-funktionen" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-alte-funktionen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Tabelle&nbsp;5.1: Auswahl alte Funktionen und ihre flexibleren Nachfolger
+</figcaption>
+<div aria-describedby="tbl-alte-funktionen-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">alte Funktion</th>
+<th style="text-align: left;">Ersatzfunktion</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ISTFEHL</td>
+<td style="text-align: left;">ISTFEHLER</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">VERWEIS</td>
+<td style="text-align: left;">XVERWEIS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">SVERWEIS</td>
+<td style="text-align: left;">XVERWEIS</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WVERWEIS</td>
+<td style="text-align: left;">XVERWEIS</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">VERGLEICH</td>
+<td style="text-align: left;">XVERGLEICH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">SVERGLEICH</td>
+<td style="text-align: left;">XVERGLEICH</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">WVERGLEICH</td>
+<td style="text-align: left;">XVERGLEICH</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">WECHSELN</td>
+<td style="text-align: left;">REGEXERSETZEN</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Jede Excel-Funktion hat ein Ergebnis, das von einer anderen Funktion oder mit einem Operator verwendet werden kann.</p>
+</section>
+<section id="sec-adressierung" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-adressierung"><span class="header-section-number">5.2</span> Adressen</h2>
+<p>Um Werte und Berechnungen zu trennen, werden in Formeln die Adressen verwendet, an denen die gewünschten Werte stehen.</p>
+<div id="def-bezug" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.2</strong></span> Ein <strong>Bezug</strong> ist die Adresse eines Bereichs.</p>
+</div>
+<p>In Excel gibt es zwei Arten von Bezügen:</p>
+<ul>
+<li>Arbeitsblattadressen</li>
+<li>Tabellenadressen</li>
+</ul>
+<section id="arbeitsblattadressen" class="level3" data-number="5.2.1">
+<h3 data-number="5.2.1" class="anchored" data-anchor-id="arbeitsblattadressen"><span class="header-section-number">5.2.1</span> Arbeitsblattadressen</h3>
+<div id="def-arbeitsblattadresse" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.3</strong></span> Eine <strong>Arbeitsblattadresse</strong> enthält die Koordinaten eines Bereichs auf einem Arbeitsblatt.</p>
+</div>
+<p>Arbeitsblattadressen besteht aus drei Teilen:</p>
+<ul>
+<li>Arbeitsblattname</li>
+<li>Bereichsbeginn</li>
+<li>Bereichsende</li>
+</ul>
+<p>Ein Bereich ist im Excel Jargon ein rechteckiges Feld von Zellen. Der Bereichsbeginn verweist immer auf die linke obere Zelle des Bereichs. Der Bereichsende verweist immer auf die rechte untere Zelle des Bereichs. Eine Zelle wird immer durch den Spaltenindex (Buchstabe) und den Zeilenindex (Zahl) identifiziert. Werden die Koordinaten des Bereichsbeginns und des Bereichsendes bei der Eingabe vertauscht, dann wird der Bereich automatisch korrigiert.</p>
+<div id="exm-bereichsadresse" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.4 (Arbeitsblattadresse)</strong></span> &nbsp;</p>
+<pre><code>Tabelle1!A1:C3</code></pre>
+</div>
+<p><a href="#exm-bereichsadresse" class="quarto-xref">Beispiel&nbsp;<span>5.5</span></a> verweist auf den Bereich mit drei Spalten und drei Zeilen auf dem Arbeitsblatt <code>Tabelle1</code> beginnend mit der Zelle <code>A1</code> und endend mit der Zelle <code>C3</code>.</p>
+<p>Oft werden Arbeitsblattadressen nicht vollständig sondern gekürzt angegeben. Es gibt zwei Möglichkeiten, um Arbeitsblattadressen zu kürzen:</p>
+<p>Werden Bereiche auf dem gleichen Arbeitsblatt adressiert, dann kann der Arbeitsblattname weggelassen werden.</p>
+<div id="exm-bereichsadresse" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.5 (Arbeitsblattadresse in Formeln auf dem Arbeitsblatt Tabelle1)</strong></span> &nbsp;</p>
+<pre><code>A1:C3</code></pre>
+</div>
+<p>Wird ein Bereich mit nur einer Zelle adressiert, dann wird das Bereichsende weggelassen.</p>
+<div id="exm-bereichsadresse-eine-zelle-arbeitsblatt" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.6 (Adresse einer Zelle auf dem gleichen Arbeitsblatt)</strong></span> &nbsp;</p>
+<pre><code>B2</code></pre>
+</div>
+<div id="exm-bereichsadresse-eine-zelle-anderes-arbeitsblatt" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.7 (Adresse einer Zelle auf dem gleichen Arbeitsblatt)</strong></span> &nbsp;</p>
+<pre><code>Tabelle2!B2</code></pre>
+</div>
+<p>Zusätzlich können ganze Zeilen oder ganze Spalten adressiert werden. In solchen Fällen wird jeweils die Start- und Endzeile bzw. -Spalte des Bereichs angegeben. Das <a href="#exm-bereichsadresse-mehrere-zeilen" class="quarto-xref">Beispiel&nbsp;<span>5.8</span></a> verweist auf den Bereich, der sich von der zweiten bis zur vierten Zeile auf dem Arbeitsblatt <code>Tabelle2</code> erstreckt.</p>
+<div id="exm-bereichsadresse-mehrere-zeilen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.8 (Adresse mehrerer Zeilen auf einem anderen Arbeitsblatt)</strong></span> &nbsp;</p>
+<pre><code>Tabelle2!2:4</code></pre>
+</div>
+<p>Um eine einzelene Zeile zu adressieren, muss diese Zeile sowohl als Bereichsanfang als auch als Bereichsende angegebene werden.</p>
+<div id="exm-bereichsadresse-eine-zeile" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.9 (Adresse einer Zeile auf einem anderen Arbeitsblatt)</strong></span> &nbsp;</p>
+<pre><code>Tabelle2!2:2</code></pre>
+</div>
+<p>Analog dazu werden ganze Spalten adressiert.</p>
+<div id="exm-bereichsadresse-mehrere-Spalten" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.10 (Adresse mehrerer Zeilen auf einem anderen Arbeitsblatt)</strong></span> &nbsp;</p>
+<pre><code>Tabelle2!A:C</code></pre>
+</div>
+<div id="exm-bereichsadresse-eine-Spalte" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.11 (Adresse einer Spalte auf dem gleichen Arbeitsblatt)</strong></span> &nbsp;</p>
+<pre><code>A:A</code></pre>
+</div>
+</section>
+<section id="adresserweiterungen" class="level3" data-number="5.2.2">
+<h3 data-number="5.2.2" class="anchored" data-anchor-id="adresserweiterungen"><span class="header-section-number">5.2.2</span> Adresserweiterungen</h3>
+<p>Weil Arbeitsblattadressen von vielen interaktiven Excelkommandos verwendet werden, gibt es zwei Arten von Arbeitsblattadressen:</p>
+<ul>
+<li>Relative Adressen</li>
+<li>Absolute Adressen</li>
+</ul>
+<p>Die Art der Adresse legt fest, wie ein interaktives Kommando mit einer Adresse umgehen soll. Die populärste interaktive Funktionalität ist das <em>Autoauffüllen</em>. Dabei wird eine Zelle mit einer Formel interaktiv auf einen Bereich von Zellen übertragen.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Das Autoauffüllen ist eine einfache und beliebte Methode, um Formeln in Excel auf verschiedene Werte wiederholt anzuwenden. Bis 2019 war das Autoauffüllen die einzige Möglichkeit für die Datentransformation.</p>
+<p>Die relative und absolute Adressierung ist eine wichtige Voraussetzung für das Autoauffüllen. Leider ist das Autoauffüllen auch die Ursache für viele Fehler beim Umgang mit Excel. Deshalb sollte das Autoauffüllen nur noch in Ausnahmefällen verwendet werden.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In Excel365 kann das Autoauffüllen durch vektorisierte Funktionen fast vollständig ersetzt werden. Dadurch lassen sich viele Excel-typische Fehler vermeiden. Dadurch ist die Unterscheidung zwischen der relativen und absoluten Adressierung nicht mehr so wichtig.</p>
+</div>
+</div>
+<section id="relative-adressen" class="level4" data-number="5.2.2.1">
+<h4 data-number="5.2.2.1" class="anchored" data-anchor-id="relative-adressen"><span class="header-section-number">5.2.2.1</span> Relative Adressen</h4>
+<div id="def-relative-adresse" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.4</strong></span> Eine <strong>relative Adresse</strong> ist eine Adresse eines Bereichs, die <em>veränderlich</em> ist.</p>
+</div>
+<p>Relative Adressen werden in Excel von interaktiven Funktionen, wie dem <em>Autoauffüllen</em> verwendet, um die Adressen automatisch anzupassen. Eine relative Adresse wird relativ zur aktuellen Zelle angepasst.</p>
+<p>Ein Beispiel für eine relative Adresse ist <code>A1</code>. Diese Adresse bezeichnet die Zelle, die sich in der ersten Zeile und der ersten Spalte auf dem aktuellen Arbeitsblatt befindet. Wird die adressierte Zelle interaktiv nach unten aufgefüllt, dann wird die Adresse automatisch zu <code>A2</code>, <code>A3</code>, usw. angepasst. Wird die adressierte Zelle nach rechts aufgefüllt, dann wird die Adresse automatisch zu <code>B1</code>, <code>C1</code>, usw. angepasst.</p>
+</section>
+<section id="absolute-adressen" class="level4" data-number="5.2.2.2">
+<h4 data-number="5.2.2.2" class="anchored" data-anchor-id="absolute-adressen"><span class="header-section-number">5.2.2.2</span> Absolute Adressen</h4>
+<div id="def-absolute-adresse" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.5</strong></span> Eine <strong>absolute Adresse</strong> ist eine Adresse eines Bereichs, die ganz oder teilweise <em>unveränderlich</em> ist.</p>
+</div>
+<p>Der unveränderliche Teil einer Arbeitsblattadresse wird mit einem Dollarzeichen (<code>$</code>) markiert. Dieser Teil der Adresse wird bei der Anpassung der Adresse nicht verändert. So lassen sich Adressen angeben, die durch interaktive Kommandos nicht verändert werden.</p>
+<p>Ein Beispiel für eine absolute Adresse ist <code>$A$1</code>. Diese Adresse bezeichnet die Zelle, die sich in der ersten Zeile und der ersten Spalte auf dem aktuellen Arbeitsblatt befindet. Wird die adressierte Zelle interaktiv horizontal oder vertikal aufgefüllt, dann wird die Adresse nicht angepasst.</p>
+<p>Auf diese Weise lassen sich konstante Werte in Formeln einbauen.</p>
+</section>
+</section>
+<section id="sec-dynamisches-feld" class="level3" data-number="5.2.3">
+<h3 data-number="5.2.3" class="anchored" data-anchor-id="sec-dynamisches-feld"><span class="header-section-number">5.2.3</span> Dynamische Bereiche</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hinweis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Aktuell unterstützen nur Excel und Numbers dynamische Bereiche.</p>
+</div>
+</div>
+<p>Formeln können mehr als einen Wert verarbeiten und mehr als ein Ergebnis liefern. Solche Formeln müssen nur in die linke obere Ecke eines Zielbereichs eingetragen werden. Excel erkennt automatisch, dass die Formel auf einen Bereich angewendet werden soll und erzeugt die entsprechende Formel für alle Zellen des Bereichs. Das Ergebnis einer solchen Formel ist ein <em>dynamischer Bereich</em>.</p>
+<div id="def-vektorisieren" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 5.6</strong></span> <strong>Vektorisieren</strong> heisst das Erzeugen eines dynamischen Bereichs aus einem statischen Bereich.</p>
+</div>
+<div id="exm-vektorisieren" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.12 (Vektorisieren eines statischen Bereichs)</strong></span> &nbsp;</p>
+<pre><code>= A1:B10</code></pre>
+</div>
+<p>Im Gegensatz zu einem normalen Bereich, ist bei einem dynamischen Bereich nur die linke obere Zelle bekannt. Um trotzdem alle Zellen eines solchen Bereichs zu adressieren, wird die Gatter- (<code>#</code>) Notation verwendet.</p>
+<p>Das <a href="#exm-vektorisieren" class="quarto-xref">Beispiel&nbsp;<span>5.12</span></a> erzeugt einen Bereich mit 10 Zellen. Die Formel wird in die linke obere Zelle des Bereichs eingetragen. Die Formel wird z.B. in die Zelle <code>B1</code> eingetragen. Anschliessend können die Werte im Bereich <code>B1:B10</code> über die Gatter-Notation adressiert werden: <code>B1#</code>.</p>
+<p>Der Vorteil des Vektorisierens ist, dass der Bereich durch das Einfügen neuer Zeilen vergrössert werden kann, ohne dass die nachfolgenden vektorisierten Formeln angepasst werden müssen.</p>
+<div id="exm-adresse-dynbereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.13 (Adresse eines dynamischen Bereichs)</strong></span> &nbsp;</p>
+<pre><code>=D1#</code></pre>
+</div>
+<p>Manche Funtionen liefern immer dynamische Bereiche als Ergebnis zurück, selbst wenn dieser Bereich nur aus einer Zelle besteht. Dazu gehört z.B. die Funktion <code>FILTER</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Achtung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Nicht alle Funktionen verhalten sich auf diese Weise.</strong> Viele Funktionen haben nur dann dynamsiche Bereiche als Ergebnis, wenn mindestens eine Adresse verwendet wird, die einen Bereich mit mehr als einer Zelle umfasst.</p>
+<p>Deshalb ist es wichtig vorher zu prüfen, ob eine Formel tatsächlich einen dynamischen Bereich zum Ergebnis hat, bevor diese Adressierung verwendet werden kann.</p>
+</div>
+</div>
+<section id="bereinigte-bereiche" class="level4" data-number="5.2.3.1">
+<h4 data-number="5.2.3.1" class="anchored" data-anchor-id="bereinigte-bereiche"><span class="header-section-number">5.2.3.1</span> Bereinigte Bereiche</h4>
+<p>In der Praxis werden häufig Werte adressiert, die in einem Bereich liegen, welcher sich über eine ganze Zeile oder eine ganze Spalte erstreckt wobei die eigentlichen Werte nur in einem kleinem Ausschnitt dieses Bereichs liegen und die restlichen Zellen in diesem Bereich sind leer. Excel erlaubt es alle leeren Zellen am Anfang und am Ende eines Bereichs bereits bei der Adressierung zu entfernen. Das Ergebnis ist ein dynamischer Bereich, welcher nur den verwertbare Werte umfasst.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Aktuell kann nur Excel Bereiche bereingen. Diese Funktion wird nicht von anderen Tabellenkalkulationen unterstützt.</p>
+</div>
+</div>
+<p>Um einen Bereich zu bereinigen, wird ein Punkt auf der Seite des Bereichsoperators (<code>:</code>) angefügt, auf welcher leere Zellen entfernt werden sollen. Ein Punkt auf der linken Seite des Doppelpunkts bedeutet, dass die leeren Zeilen oder Spalten vor dem obersten-linken Wert entfernt werden. Ein Punkt auf der rechten Seite des Doppelpunkts bedeutet, dass alle leeren Zeilen oder Spalten nach dem untersten-rechten Wert entfernt werden.</p>
+<div id="exm-bereinigterbereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.14 (Beidseitig bereinigter Bereich)</strong></span> &nbsp;</p>
+<pre><code>A.:.B</code></pre>
+</div>
+<p>Die Punkadressierung ist eine Kurzform der Funktion <code>ABSCHNBEREICH()</code></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Beim Bereinigen werden keine Zellen, Zeilen oder Spalten zwischen den Daten entfernt.</p>
+</div>
+</div>
+</section>
+</section>
+<section id="sec-tabellenadressen" class="level3" data-number="5.2.4">
+<h3 data-number="5.2.4" class="anchored" data-anchor-id="sec-tabellenadressen"><span class="header-section-number">5.2.4</span> Tabellenadressen</h3>
+<p>Beim Adressieren von Zellen auf Arbeitsblättern geht oft wichtige Information in den Formeln verloren. Damit diese Information erhalten bleibt,</p>
+<p>Spalten und einzelne Werte können über die Tabellenadressierung abgefragt werden <span class="citation" data-cites="microsoft_support_using_2023">(<a href="../../references.html#ref-microsoft_support_using_2023" role="doc-biblioref">Microsoft Support, 2023</a>)</span>. Das Ergebnis einer solchen Adressierung ist immer ein <em>dynamisches Feld</em> bzw. ein <em>dynamischer Bereich</em> (s. <a href="#sec-dynamisches-feld" class="quarto-xref">Abschnitt&nbsp;<span>5.2.3</span></a>).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Merke
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jede Tabellenadresse kann auch als Arbeitsblattadresse dargestellt werden. Umgekehrt ist dies nicht möglich.</p>
+</div>
+</div>
+<p>Eine Tabellenadresse besteht aus zwei Teilen:</p>
+<ul>
+<li>Dem Tabellennamen</li>
+<li>Dem Spaltennamen</li>
+</ul>
+<div id="exm-tabellenadresse" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.15 (Tabellenadresse)</strong></span> &nbsp;</p>
+<pre><code>Tabelle1[Spalte1]</code></pre>
+</div>
+<p>Das <a href="#exm-tabellenadresse" class="quarto-xref">Beispiel&nbsp;<span>5.15</span></a> verweist auf die Spalte <code>Spalte1</code> der Tabelle <code>Tabelle1</code>.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Die Namen von Tabellen sind <em>unabhängig</em> den Arbeitsblattnamen. In der gleichen Arbeitsmappe darf jeweils nur eine Tabelle und nur ein Arbeitsblatt mit dem gleichen Namen existieren. Es ist aber möglich, dass eine Tabelle und ein Arbeitsblatt den gleichen Namen haben. Das kann zu Verwirrungen führen, denn die Adresse <code>Tabelle1[Spalte1]</code> und die Adresse <code>Tabelle1!A:A</code> verweisen nicht zwingend auf die gleiche Spalte, denn eine Tabelle muss nicht auf einem Arbeitsblatt mit dem gleichen Namen stehen!</p>
+</div>
+</div>
+<p>Tabellenadressen können auch gekürzt werden:</p>
+<ul>
+<li>Werden Spalten in der gleichen Tabelle angesprochen, dann kann der Tabellenname weggelassen werden.</li>
+<li>Soll die gesamte Tabelle angesprochen werden, dann kann der Spaltenname weggelassen werden.</li>
+</ul>
+<section id="tabellenbereiche" class="level4" data-number="5.2.4.1">
+<h4 data-number="5.2.4.1" class="anchored" data-anchor-id="tabellenbereiche"><span class="header-section-number">5.2.4.1</span> Tabellenbereiche</h4>
+<p>Um mehrere Spalten einer Tabelle anzusprechen kann der Bereichsoperator (<code>:</code>) wie bei der Arbeitsblattadressierung verwendet werden. Zusätzlich müssen die Spalten in ein weiteres Paar eckiger Klammern eingeschlossen werden.</p>
+<div id="exm-tabellenbereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.16 (Tabellenbereich)</strong></span> &nbsp;</p>
+<pre><code>Tabelle1[[Spalte1]:[Spalte3]]</code></pre>
+</div>
+<p><a href="#exm-tabellenbereich" class="quarto-xref">Beispiel&nbsp;<span>5.16</span></a> verweist auf alle Spalten zwischen <code>Spalte1</code> und <code>Spalte3</code> der Tabelle <code>Tabelle1</code>.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Werden zu einem späteren Zeitpunkt neue Spalten zwischen den adressierten Spalten hinzugefügt, dann werden die neuen Spalten automatisch in die Adressierung einbezogen.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Wichtig
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Es ist nicht möglich mehrere Spalten einer Tabellen <em>gleichzeitig</em> gezielt zu adressieren, wenn diese nicht unmittelbar nebeneinander stehen. Diese Adressierung ist unmöglich, weil Excel nur rechteckige Bereiche adressieren kann und solche Spalten keinen <em>rechteckigen Bereich</em> bilden.</p>
+<p>Die Adressierung aus <a href="#exm-tabellenbereich" class="quarto-xref">Beispiel&nbsp;<span>5.16</span></a> kann nicht angepasst werden, so dass nur <code>Spalte1</code> und <code>Spalte3</code> adressiert werden, ausser die Spalten <code>Spalte1</code> und <code>Spalte3</code> stehen direkt nebeneinander.</p>
+</div>
+</div>
+</section>
+<section id="diese-zeile-operator" class="level4" data-number="5.2.4.2">
+<h4 data-number="5.2.4.2" class="anchored" data-anchor-id="diese-zeile-operator"><span class="header-section-number">5.2.4.2</span> <code>Diese Zeile</code>-Operator</h4>
+<p>Einzelne Zeilen einer Tabelle können mit dem <code>Diese Zeile</code>-Operator adressiert werden. Der <code>Diese Zeile</code>-Operator wird mit dem Wert <code>[#Diese Zeile]</code> oder mit <code>@</code> angegeben. Dieser Operator reduziert die Tabelle auf eine einzelne Zeile und wählt anschliessend die gewünschte Spalte aus. <code>Diese Zeile</code> bedeutet für Excel die aktuelle Zeile des Arbeitsblatts.</p>
+<blockquote class="blockquote">
+<div id="exm-diese-zeile" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.17 (<code>Diese Zeile</code>-Operator für eine Tabellenzelle)</strong></span> &nbsp;</p>
+<pre><code>= Tabelle[@Spalte]</code></pre>
+<p>oder</p>
+<pre><code>= @Tabelle[Spalte]</code></pre>
+</div>
+</blockquote>
+<p>Der Operator ist speziell für die Verwendung in Formeln in Tabellenzellen gedacht. Obwohl der Operator in allen Formeln eingesetzt werden kann, sollte der Einsatz auf Formeln beschränkt werden, die sich in einer Tabelle befinden.</p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der <code>Diese Zeile</code>-Operator kann nicht auf Tabellen angewendet werden, um eine ganze Zeile zu adressieren. Es darf immer nur eine einzelne Zelle adressiert werden. Die Adressierung <code>@Tabelle</code> ist also ungültig.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warnung
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der <code>Diese Zeile</code>-Operator ist immer relativ zum Arbeitsblatt und nicht relativ zur aktuellen Tabelle. Es muss nur der Zeilenindex gleich sein, die Zielzelle kann sich auf einem anderen Arbeitsblatt befinden.</p>
+</div>
+</div>
+<p>Wird der <code>Diese Zeile</code>-Operator in Tabellen unterschiedlicher Länge verwendet, dann können zwei Fälle eintreten:</p>
+<ol type="1">
+<li>Ist die adressierte Tabelle kürzer als die adressierende Tabelle, dann wird für die Zeilen, die keine Entsprechung in der adressierten Tabelle haben, der Fehler <code>#WERT!</code> zurückgegeben.</li>
+<li>Ist die adressierte Tabelle länger als die adressierende Tabelle, dann werden alle überzähligen Zeilen <em>ignoriert</em>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Praxis
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Der <code>Diese Zeile</code>-Operator kann nur auf eine einzelne Zelle in der gleichen Zeile auf einem Arbeitsblatts angewendet werden. Wegen dieser Einschränkung des <code>Diese Zeile</code>-Operators sollten alle Tabellen so gestaltet werden, dass sie in der ersten Zeile des Arbeitsblatts beginnen. Dadurch kann der <code>Diese Zeile</code>-Operator in allen Tabellen verwendet werden.</p>
+</div>
+</div>
+</section>
+<section id="überschriften-adressieren" class="level4" data-number="5.2.4.3">
+<h4 data-number="5.2.4.3" class="anchored" data-anchor-id="überschriften-adressieren"><span class="header-section-number">5.2.4.3</span> Überschriften adressieren</h4>
+<p>Eine Excel Tabelle hat immer Spaltenüberschriften. Diese Überschriften können ebenfalls über die Tabellenadressierung adressiert werden. Dazu wird als Spaltenname der Wert <code>#Kopfzeilen</code> verwendet.</p>
+<div id="exm-kopfzeilen" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.18 (Kopfzeilen einer Tabelle adressieren)</strong></span> &nbsp;</p>
+<pre><code>Tabelle1[#Kopfzeilen]</code></pre>
+</div>
+<p>Um gezielt Kopfzeilen zu adressieren, kann die Adressierung aus <a href="#exm-kopfzeilen" class="quarto-xref">Beispiel&nbsp;<span>5.18</span></a> mit der Adressierung aus <a href="#exm-tabellenbereich" class="quarto-xref">Beispiel&nbsp;<span>5.16</span></a> kombiniert werden (<a href="#exm-kopfzeilen-bereich" class="quarto-xref">Beispiel&nbsp;<span>5.19</span></a>).</p>
+<div id="exm-kopfzeilen-bereich" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.19 (Kopfzeilen einer Tabelle adressieren)</strong></span> &nbsp;</p>
+<pre><code>Tabelle1[[#Kopfzeilen];[Spalte1]:[Spalte3]]</code></pre>
+</div>
+</section>
+<section id="absolute-adressierung-in-tabellen" class="level4" data-number="5.2.4.4">
+<h4 data-number="5.2.4.4" class="anchored" data-anchor-id="absolute-adressierung-in-tabellen"><span class="header-section-number">5.2.4.4</span> Absolute Adressierung in Tabellen</h4>
+<p>Ein Tabellenbereich ist immer absolut adressiert. Wird aber nur eine einzelne Spalte einer Tabelle adressiert, dann wird die Adresse relativ adressiert. Damit beim Autoauffüllen diese Adresse nicht verändert wird, muss die Adresse als Bereich angegeben werden.</p>
+<div id="exm-absoluter-tabellenbereich-eine-spalte" class="theorem example">
+<p><span class="theorem-title"><strong>Beispiel 5.20 (Absolute Tabellenadressierung von einer Spalte)</strong></span> &nbsp;</p>
+<pre><code>Tabelle1[[Spalte1]:[Spalte1]]</code></pre>
+</div>
+<p>Wird eine Formel mit dieser Adresse interaktiv aufgefüllt, dann wird die Adresse nicht verändert.</p>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
+<div id="ref-microsoft_support_using_2023" class="csl-entry" role="listitem">
+Microsoft Support. (2023). <em>Using structured references with Excel tables</em>. <a href="https://support.microsoft.com/en-gb/office/using-structured-references-with-excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e">https://support.microsoft.com/en-gb/office/using-structured-references-with-excel-tables-f5ed2452-2337-4f71-bed3-c8ae6d2b276e</a>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Kopiert");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Kopiert");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../kapitel/einleitung/01_jargon.html" class="pagination-link" aria-label="Excel Jargon">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Excel Jargon</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../kapitel/daten-sammeln/kapitel.html" class="pagination-link" aria-label="Daten sammeln">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Daten sammeln</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></div></div></footer></body></html>
