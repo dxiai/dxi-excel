@@ -172,7 +172,7 @@ Tabelle2!2:2
 Analog dazu werden ganze Spalten adressiert. 
 
 ::: {#exm-bereichsadresse-mehrere-Spalten}
-## Adresse mehrerer Zeilen auf einem anderen Arbeitsblatt
+## Adresse mehrerer Spalten auf einem anderen Arbeitsblatt
 ```
 Tabelle2!A:C
 ```
