@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.32">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>13&nbsp; Matrix-Operationen – Einführung in die Datenwissenschaft mit Excel</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -34,14 +40,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../kapitel/vektor-operationen/kapitel.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-63b5708e65d6cd79cd7618c58d0c21e7.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-485d01fc63b59abcd3ee1bf1e8e2748d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-01a495efc5497ac6e3f5457e7ed18e65.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -98,7 +105,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -116,17 +123,17 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Zum Hauptinhalt springen</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Symbolleiste">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/matrix-operationen/kapitel.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Seitenleiste umschalten" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Pfad"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/matrix-operationen/kapitel.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Suchen" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -137,7 +144,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Website">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../../">Einführung in die Datenwissenschaft mit Excel</a> 
@@ -161,13 +168,10 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">Ausgangslage und Vorbereitung</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Ausgangslage und Vorbereitung</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/einleitung/kapitel.html" class="sidebar-item-text sidebar-link">
@@ -202,13 +206,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Datenquellen</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Datenquellen</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-sammeln/kapitel.html" class="sidebar-item-text sidebar-link">
@@ -231,13 +232,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
- <span class="menu-text">Mathematik der Daten</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Mathematik der Daten</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/variablen/kapitel.html" class="sidebar-item-text sidebar-link">
@@ -284,13 +282,10 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
- <span class="menu-text">Deskriptive Datenanalyse</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Abschnitt umschalten">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-controls="quarto-sidebar-section-4" aria-expanded="true">
+ <span class="menu-text" id="quarto-sidebar-section-4-label">Deskriptive Datenanalyse</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" aria-labelledby="quarto-sidebar-section-4-label" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../kapitel/daten-beschreiben/kapitel.html" class="sidebar-item-text sidebar-link">
@@ -317,7 +312,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Inhaltsverzeichnis</h2>
    
   <ul>
@@ -330,7 +325,7 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#matrizen-transponieren" id="toc-matrizen-transponieren" class="nav-link" data-scroll-target="#matrizen-transponieren"><span class="header-section-number">13.6.1</span> Matrizen Transponieren</a></li>
   <li><a href="#sec-vektoroperationen" id="toc-sec-vektoroperationen" class="nav-link" data-scroll-target="#sec-vektoroperationen"><span class="header-section-number">13.6.2</span> Skalar- und Vektoroperationen</a></li>
-  <li><a href="#kreuzproduktmatrixprodukt" id="toc-kreuzproduktmatrixprodukt" class="nav-link" data-scroll-target="#kreuzproduktmatrixprodukt"><span class="header-section-number">13.6.3</span> Kreuzprodukt/Matrixprodukt</a></li>
+  <li><a href="#matrixprodukt" id="toc-matrixprodukt" class="nav-link" data-scroll-target="#matrixprodukt"><span class="header-section-number">13.6.3</span> Matrixprodukt</a></li>
   <li><a href="#sec-äusseres-produkt" id="toc-sec-äusseres-produkt" class="nav-link" data-scroll-target="#sec-äusseres-produkt"><span class="header-section-number">13.6.4</span> Das äussere Produkt</a></li>
   <li><a href="#sec-paarweise-operationen" id="toc-sec-paarweise-operationen" class="nav-link" data-scroll-target="#sec-paarweise-operationen"><span class="header-section-number">13.6.5</span> Paarweise Operationen</a></li>
   </ul></li>
@@ -351,9 +346,9 @@ window.Quarto = {
 <div class="toc-actions"><ul><li><a href="https://github.com/dxiai/dxi-excel/issues/new" class="toc-action"><i class="bi bi-github"></i>Problem melden</a></li></ul></div></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/matrix-operationen/kapitel.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="Pfad"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../kapitel/variablen/kapitel.html">Mathematik der Daten</a></li><li class="breadcrumb-item"><a href="../../kapitel/matrix-operationen/kapitel.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-chapter-matrix-operationen" class="quarto-section-identifier"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Matrix-Operationen</span></span></h1>
 </div>
@@ -378,7 +373,7 @@ window.Quarto = {
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Merke
+<span class="screen-reader-only">Hinweis</span>Merke
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -408,7 +403,7 @@ Merke
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Merke
+<span class="screen-reader-only">Hinweis</span>Merke
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -452,7 +447,7 @@ Merke
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Praxis
+<span class="screen-reader-only">Tipp</span>Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -519,7 +514,7 @@ Praxis
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Achtung
+<span class="screen-reader-only">Warnung</span>Achtung
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -528,14 +523,14 @@ Achtung
 </div>
 </div>
 </section>
-<section id="kreuzproduktmatrixprodukt" class="level3" data-number="13.6.3">
-<h3 data-number="13.6.3" class="anchored" data-anchor-id="kreuzproduktmatrixprodukt"><span class="header-section-number">13.6.3</span> Kreuzprodukt/Matrixprodukt</h3>
-<p>Das Kreuzprodukt (oder <em>innere Matrixprodukt</em>) ist die Entsprechung zur Multiplikation von zwei Skalaren. Diese Operation wird in Excel durch die Funktion <code>MMULT()</code> ausgeführt. Das Kreuzprodukt ist nicht transitiv. Deshalb ist die Reihenfolge der Operanden wichtig, denn für das Kreuzprodukt muss die Spaltenlänge der linken Matrix mit der Zeilenlänge der rechten Matrix übereinstimmen. Ist diese Bedinung nicht gegeben, dann erzeugt Excel einen <code>#WERT!</code>-Fehler.</p>
-<p>Das Ergebnis des Kreuzprodukts ist eine Matrix mit der Zeilenlänge der linken und der Spaltenlänge der rechten Matrix.</p>
-<p>Weil das Kreuzprodukt die Summe mit der Multiplikation verbindet, ergeben sich interessante Vereinfachungen, wenn die Werte einer Matrix nur die Werte <code>0</code> und <code>1</code> sind (s. <a href="#sec-zeilensummen" class="quarto-xref"><span>Kapitel 13.8.1</span></a> und <a href="#sec-cumsum" class="quarto-xref"><span>Kapitel 13.8.3</span></a>).</p>
+<section id="matrixprodukt" class="level3" data-number="13.6.3">
+<h3 data-number="13.6.3" class="anchored" data-anchor-id="matrixprodukt"><span class="header-section-number">13.6.3</span> Matrixprodukt</h3>
+<p>Die Matrixmultiplikation (oder das <em>innere Matrixprodukt</em>) ist die Entsprechung zur Multiplikation von zwei Skalaren. Diese Operation wird in Excel durch die Funktion <code>MMULT()</code> ausgeführt. Die Matrixmultiplikation ist nicht transitiv. Deshalb ist die Reihenfolge der Operanden wichtig, denn für die Matrixmultiplikation muss die Spaltenlänge der linken Matrix mit der Zeilenlänge der rechten Matrix übereinstimmen. Ist diese Bedingung nicht gegeben, dann erzeugt Excel einen <code>#WERT!</code>-Fehler.</p>
+<p>Das Ergebnis der Matrixmultiplikation ist eine Matrix mit der Zeilenlänge der linken und der Spaltenlänge der rechten Matrix.</p>
+<p>Weil die Matrixmultiplikation die Summe mit der Multiplikation verbindet, ergeben sich interessante Vereinfachungen, wenn die Werte einer Matrix nur die Werte <code>0</code> und <code>1</code> sind (s. <a href="#sec-zeilensummen" class="quarto-xref"><span>Kapitel 13.8.1</span></a> und <a href="#sec-cumsum" class="quarto-xref"><span>Kapitel 13.8.3</span></a>).</p>
 <blockquote class="blockquote">
 <div id="exm-summenprodukt" class="theorem example">
-<p><span class="theorem-title"><strong>Beispiel 13.8 (Die Funktion <code>SUMMENPRODUKT()</code> als Kreuzprodukt)</strong></span> Die Funktion <code>SUMMENPRODUKT()</code> zwischen zwei Vektoren lässt sich auch als Kreuzprodukt formulieren:</p>
+<p><span class="theorem-title"><strong>Beispiel 13.8 (Die Funktion <code>SUMMENPRODUKT()</code> als Matrixmultiplikation)</strong></span> Die Funktion <code>SUMMENPRODUKT()</code> zwischen zwei Vektoren lässt sich auch als Matrixmultiplikation formulieren:</p>
 <pre><code>= MMULT(SEQUENZ(1;4); SEQUENZ(4))</code></pre>
 <p>Das Ergebnis dieser Operation ist eine <span class="math inline">1 \times 1</span>-Matrix (bzw. ein Skalar), weil die linke Matrix nur eine Zeile und die rechte Matrix nur eine Spalte hat.</p>
 </div>
@@ -556,7 +551,7 @@ Achtung
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Achtung
+<span class="screen-reader-only">Warnung</span>Achtung
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -579,7 +574,7 @@ Achtung
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Merke
+<span class="screen-reader-only">Hinweis</span>Merke
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -639,7 +634,7 @@ Merke
 </section>
 <section id="rezepte" class="level2" data-number="13.8">
 <h2 data-number="13.8" class="anchored" data-anchor-id="rezepte"><span class="header-section-number">13.8</span> Rezepte</h2>
-<p>Die folgenden Rezepte Nutzen das Kreuzprodukt und das äussere Produkt.</p>
+<p>Die folgenden Rezepte Nutzen die Matrixmultiplikation und das äussere Produkt.</p>
 <section id="sec-zeilensummen" class="level3" data-number="13.8.1">
 <h3 data-number="13.8.1" class="anchored" data-anchor-id="sec-zeilensummen"><span class="header-section-number">13.8.1</span> Zeilen- und Spaltensummen</h3>
 <p>Es sollen die Summen für jede Zeile einer Matrix (oder Tabelle) berechnet werden und das Ergebnis soll ein Vektor sein.</p>
@@ -665,7 +660,7 @@ Hinweis
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Praxis
+<span class="screen-reader-only">Tipp</span>Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -675,8 +670,8 @@ Praxis
 </section>
 <section id="erklärung" class="level4" data-number="13.8.1.2">
 <h4 data-number="13.8.1.2" class="anchored" data-anchor-id="erklärung"><span class="header-section-number">13.8.1.2</span> Erklärung</h4>
-<p>Um Zeilensummen für eine Matrix zu erstellen, nutzen wir die Eigenschaften des Kreuzprodukts aus und multiplizieren eine Matrix mit dem Einsvektor. Das Ergebnis dieser Operation ist ein Vektor, der in jeder Zeile die Summe der Werte aus der entsprechenden Zeile der Matrix enthält.</p>
-<p>Das Kreuzprodukt ist nur für Matrizen definiert, wenn die erste (linke) Matrix <span class="math inline">A</span> gleich viele Spalten hat, wie die Zeilenanzahl der zweiten (rechten) Matrix <span class="math inline">B</span>. Die Ergebnismatrix des Kreuzprodukts hat gleich viele Zeilen, wie die erste Matrix und gleich viele Spalten wie die zweite. Für jede Position <span class="math inline">c_{ij}</span> der Ergebnismatrix <span class="math inline">C</span> gilt dann die folgende Formel:</p>
+<p>Um Zeilensummen für eine Matrix zu erstellen, nutzen wir die Eigenschaften der Matrixmultiplikation aus und multiplizieren eine Matrix mit dem Einsvektor. Das Ergebnis dieser Operation ist ein Vektor, der in jeder Zeile die Summe der Werte aus der entsprechenden Zeile der Matrix enthält.</p>
+<p>Die Matrixmultiplikation ist nur für Matrizen definiert, wenn die erste (linke) Matrix <span class="math inline">A</span> gleich viele Spalten hat, wie die Zeilenanzahl der zweiten (rechten) Matrix <span class="math inline">B</span>. Die Ergebnismatrix der Matrixmultiplikation hat gleich viele Zeilen, wie die erste Matrix und gleich viele Spalten wie die zweite. Für jede Position <span class="math inline">c_{ij}</span> der Ergebnismatrix <span class="math inline">C</span> gilt dann die folgende Formel:</p>
 <p><span class="math display">
 c_{ij} = \sum^n_{k=1}{a_{ik}b_{kj}}
 </span></p>
@@ -690,7 +685,7 @@ c_{ij} = \sum^n_{k=1}{a_{ik}b_{kj}}
 <p>Die Anforderungen 3 können wir über die Spaltenzahl der Matrix bestimmen und erstellen dann einen Einsvektor mit entsprechender Zeilenanzahl.</p>
 <p>Daraus ergibt sich für den Einsvektor <span class="math inline">v_e</span> und der Matrix an Adresse <code>M1</code> die Formel:</p>
 <pre><code>=SEQUENZ(SPALTEN(M1#); 1; 1; 0)</code></pre>
-<p>Weil der Einsvektor an jeder Position das neutrale Element der Multiplikation enthält, vereinfacht sich die Formel für das Kreuzprodukt stark:</p>
+<p>Weil der Einsvektor an jeder Position das neutrale Element der Multiplikation enthält, vereinfacht sich die Formel für die Matrixmultiplikation stark:</p>
 <p><span class="math display">
 c_{i1} = \sum^n_{k=1}{a_{ik}}
 </span></p>
@@ -701,7 +696,7 @@ A \times v_e
 </span></p>
 <p>Als Excel-Formel wird das wie folgt ausgedrückt:</p>
 <pre><code>=MMULT(M1#; SEQUENZ(SPALTEN(M1#); 1; 1; 0))</code></pre>
-<p>Aus dieser Lösung lässt sich auch die Spaltensumme ableiten: Für die Spaltensumme muss das neutrale Element der Multiplikation in die erste Matrix wandern. Dazu wird ein <em>Zeilenvektor</em> erstellt und mit diesem das Kreuzprodukt mit der Matrix gebildet. Weil in diesem Fall die Spaltensumme gebildet werden soll, kommen die Werte für die Spalten aus der rechten Matrix. Deshalb müssen wir das Kreuzprodukt wie folgt bilden:</p>
+<p>Aus dieser Lösung lässt sich auch die Spaltensumme ableiten: Für die Spaltensumme muss das neutrale Element der Multiplikation in die erste Matrix wandern. Dazu wird ein <em>Zeilenvektor</em> erstellt und mit diesem das Matrixprodukt mit der Matrix gebildet. Weil in diesem Fall die Spaltensumme gebildet werden soll, kommen die Werte für die Spalten aus der rechten Matrix. Deshalb müssen wir die Matrixmultiplikation wie folgt durchführen:</p>
 <p><span class="math display">
 v_e \times B
 </span></p>
@@ -713,7 +708,7 @@ v_e \times B
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Praxis
+<span class="screen-reader-only">Tipp</span>Praxis
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -793,9 +788,9 @@ Praxis
 <p>Im ersten Schritt werden für jeden Vektor separat die Positionen der eindeutigen Werte in einer Matrix markiert. Die eindeutigen Werte sind die Werte vorkommenden Werte des Wertebereichs. Diese Werte werden mit der Funktion <code>EINDEUTIG()</code> bestimmt. Das Ergebnis des ersten Schritts ist eine Matrix, die nur die Werte <code>1</code> und <code>0</code> enthält. Der Wert <code>1</code> ist an der Position gesetzt, an der ein Wert des Wertebeichs im Ausgangsvektor gefunden wurde.Dazu dient die folgende Formel:</p>
 <pre><code>= 1 * (EINDEUTIG(A1#) = MTRANS(A1#))</code></pre>
 <p>Diese Formel lässt sich auf beide Ausgangsvektoren anwenden. Dadurch ergeben zwei Matrizen mit gleich vielen Spalten, die nur die Werte <code>1</code> und <code>0</code> enthalten.</p>
-<p>Damit die gemeinsamen Vorkommnisse gezählt werden, wird das Kreuzprodukt verwendet. Dabei wird ausgenutzt, dass das Kreuzprodukt die Produkte der Zeilen- und Spaltenwerte summiert. Weil beide Matrizen nur die Werte <code>0</code> und <code>1</code> enthalten, entspricht diese Operation dem <em>Zählen durch Summieren</em>.</p>
+<p>Damit die gemeinsamen Vorkommnisse gezählt werden, wird die Matrixmultiplikation verwendet. Dabei wird ausgenutzt, dass die Matrixmultiplikation die Produkte der Zeilen- und Spaltenwerte summiert. Weil beide Matrizen nur die Werte <code>0</code> und <code>1</code> enthalten, entspricht diese Operation dem <em>Zählen durch Summieren</em>.</p>
 <p>Diese Operation zählt nur das gemeinsame Auftreten, weil in beiden Matrizen sichergestellt ist, dass in jeder Spalte genau eine <code>1</code> vorkommt, werden nur die Werte an den gleichen Positionen in den Ausgangsvektoren gezählt.</p>
-<p>Damit dieser Trick funktioniert, muss eine der beiden Matrizen transponiert werden, bevor das Kreuzprodukt gebildet werden kann. Daraus ergibt sich die folgende Formel.</p>
+<p>Damit dieser Trick funktioniert, muss eine der beiden Matrizen transponiert werden, bevor die Matrixmultiplikation durchgeführt werden kann. Daraus ergibt sich die folgende Formel.</p>
 <pre><code>= MMULT(
     1 * (EINDEUTIG(A1#) = MTRANS(A1#));
     MTRANS(1 * (EINDEUTIG(B1#) = MTRANS(B1#)))
@@ -864,13 +859,14 @@ Praxis
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -890,7 +886,8 @@ Praxis
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -899,8 +896,69 @@ Praxis
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -914,6 +972,7 @@ Praxis
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -1076,44 +1135,54 @@ Praxis
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -1212,7 +1281,10 @@ Praxis
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollbarer Code","output":"Scrollbare Ausgabe"};
+  </script>
+<nav class="page-navigation" aria-label="Seite">
   <div class="nav-page nav-page-previous">
       <a href="../../kapitel/vektor-operationen/kapitel.html" class="pagination-link" aria-label="Vektoroperationen">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Vektoroperationen</span></span>
