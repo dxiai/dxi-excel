@@ -75,3 +75,4 @@ index.out
 **/*.toc
 _freeze/
 site_libs/
+**/*.quarto_ipynb
