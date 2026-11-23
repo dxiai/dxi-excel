@@ -174,18 +174,18 @@ Für Skalar- und Vektoroperationen sind nur Operatoren und Funktionen zulässig,
 **Manche** Operationen erzeugen einen Fehler, andere geben bei überschüssigen Werten den jeweils ersten Index aus. 
 :::
 
-### Kreuzprodukt/Matrixprodukt
+### Matrixprodukt
 
-Das Kreuzprodukt (oder *innere Matrixprodukt*) ist die Entsprechung zur Multiplikation von zwei Skalaren. Diese Operation wird in Excel durch die Funktion `MMULT()` ausgeführt. Das Kreuzprodukt ist nicht transitiv. Deshalb ist die Reihenfolge der Operanden wichtig, denn für das Kreuzprodukt muss die Spaltenlänge der linken Matrix mit der Zeilenlänge der rechten Matrix übereinstimmen. Ist diese Bedinung nicht gegeben, dann erzeugt Excel einen `#WERT!`-Fehler.
+Die Matrixmultiplikation (oder das *innere Matrixprodukt*) ist die Entsprechung zur Multiplikation von zwei Skalaren. Diese Operation wird in Excel durch die Funktion `MMULT()` ausgeführt. Die Matrixmultiplikation ist nicht transitiv. Deshalb ist die Reihenfolge der Operanden wichtig, denn für die Matrixmultiplikation muss die Spaltenlänge der linken Matrix mit der Zeilenlänge der rechten Matrix übereinstimmen. Ist diese Bedingung nicht gegeben, dann erzeugt Excel einen `#WERT!`-Fehler.
 
-Das Ergebnis des Kreuzprodukts ist eine Matrix mit der Zeilenlänge der linken und der Spaltenlänge der rechten Matrix.
+Das Ergebnis der Matrixmultiplikation ist eine Matrix mit der Zeilenlänge der linken und der Spaltenlänge der rechten Matrix.
 
-Weil das Kreuzprodukt die Summe mit der Multiplikation verbindet, ergeben sich interessante Vereinfachungen, wenn die Werte einer Matrix nur die Werte `0` und `1` sind (s. @sec-zeilensummen und @sec-cumsum).
+Weil die Matrixmultiplikation die Summe mit der Multiplikation verbindet, ergeben sich interessante Vereinfachungen, wenn die Werte einer Matrix nur die Werte `0` und `1` sind (s. @sec-zeilensummen und @sec-cumsum).
 
 > ::: {#exm-summenprodukt}
-> ## Die Funktion `SUMMENPRODUKT()` als Kreuzprodukt
+> ## Die Funktion `SUMMENPRODUKT()` als Matrixmultiplikation
 > 
-> Die Funktion `SUMMENPRODUKT()` zwischen zwei Vektoren lässt sich auch als Kreuzprodukt formulieren: 
+> Die Funktion `SUMMENPRODUKT()` zwischen zwei Vektoren lässt sich auch als Matrixmultiplikation formulieren: 
 > 
 > ```
 > = MMULT(SEQUENZ(1;4); SEQUENZ(4))
@@ -304,7 +304,7 @@ Wird der Funktion keine quadratische Matrix übergeben, dann hat diese Funktion 
 
 ## Rezepte
 
-Die folgenden Rezepte Nutzen das Kreuzprodukt und das äussere Produkt. 
+Die folgenden Rezepte Nutzen die Matrixmultiplikation und das äussere Produkt. 
 
 ### Zeilen- und Spaltensummen {#sec-zeilensummen}
 
@@ -326,9 +326,9 @@ Diese Operation ist bei der Arbeit mit Excel wichtig, weil diese Operation in Ex
 
 #### Erklärung
 
-Um Zeilensummen für eine Matrix zu erstellen, nutzen wir die Eigenschaften des Kreuzprodukts aus und multiplizieren eine Matrix mit dem Einsvektor. Das Ergebnis dieser Operation ist ein Vektor, der in jeder Zeile die Summe der Werte aus der entsprechenden Zeile der Matrix enthält. 
+Um Zeilensummen für eine Matrix zu erstellen, nutzen wir die Eigenschaften der Matrixmultiplikation aus und multiplizieren eine Matrix mit dem Einsvektor. Das Ergebnis dieser Operation ist ein Vektor, der in jeder Zeile die Summe der Werte aus der entsprechenden Zeile der Matrix enthält. 
 
-Das Kreuzprodukt ist nur für Matrizen definiert, wenn die erste (linke) Matrix $A$ gleich viele Spalten hat, wie die Zeilenanzahl der zweiten (rechten) Matrix $B$. Die Ergebnismatrix des Kreuzprodukts hat gleich viele Zeilen, wie die erste Matrix und gleich viele Spalten wie die zweite. Für jede Position $c_{ij}$ der Ergebnismatrix $C$ gilt dann die folgende Formel:
+Die Matrixmultiplikation ist nur für Matrizen definiert, wenn die erste (linke) Matrix $A$ gleich viele Spalten hat, wie die Zeilenanzahl der zweiten (rechten) Matrix $B$. Die Ergebnismatrix der Matrixmultiplikation hat gleich viele Zeilen, wie die erste Matrix und gleich viele Spalten wie die zweite. Für jede Position $c_{ij}$ der Ergebnismatrix $C$ gilt dann die folgende Formel:
 
 $$
 c_{ij} = \sum^n_{k=1}{a_{ik}b_{kj}}
@@ -350,7 +350,7 @@ Daraus ergibt sich für den Einsvektor $v_e$ und der Matrix an Adresse `M1` die 
 =SEQUENZ(SPALTEN(M1#); 1; 1; 0)
 ```
 
-Weil der Einsvektor an jeder Position das neutrale Element der Multiplikation enthält, vereinfacht sich die Formel für das Kreuzprodukt stark: 
+Weil der Einsvektor an jeder Position das neutrale Element der Multiplikation enthält, vereinfacht sich die Formel für die Matrixmultiplikation stark: 
 
 $$
 c_{i1} = \sum^n_{k=1}{a_{ik}}
@@ -370,7 +370,7 @@ Als Excel-Formel wird das wie folgt ausgedrückt:
 =MMULT(M1#; SEQUENZ(SPALTEN(M1#); 1; 1; 0))
 ```
 
-Aus dieser Lösung lässt sich auch die Spaltensumme ableiten: Für die Spaltensumme muss das neutrale Element der Multiplikation in die erste Matrix wandern. Dazu wird ein *Zeilenvektor* erstellt und mit diesem das Kreuzprodukt mit der Matrix gebildet. Weil in diesem Fall die Spaltensumme gebildet werden soll, kommen die Werte für die Spalten aus der rechten Matrix. Deshalb müssen wir das Kreuzprodukt wie folgt bilden:
+Aus dieser Lösung lässt sich auch die Spaltensumme ableiten: Für die Spaltensumme muss das neutrale Element der Multiplikation in die erste Matrix wandern. Dazu wird ein *Zeilenvektor* erstellt und mit diesem das Matrixprodukt mit der Matrix gebildet. Weil in diesem Fall die Spaltensumme gebildet werden soll, kommen die Werte für die Spalten aus der rechten Matrix. Deshalb müssen wir die Matrixmultiplikation wie folgt durchführen:
 
 $$
 v_e \times B
@@ -489,11 +489,11 @@ Im ersten Schritt werden für jeden Vektor separat die Positionen der eindeutige
 
 Diese Formel lässt sich auf beide Ausgangsvektoren anwenden. Dadurch ergeben zwei Matrizen mit gleich vielen Spalten, die nur die Werte `1` und `0` enthalten. 
 
-Damit die gemeinsamen Vorkommnisse gezählt werden, wird das Kreuzprodukt verwendet. Dabei wird ausgenutzt, dass das Kreuzprodukt die Produkte der Zeilen- und Spaltenwerte summiert. Weil beide Matrizen nur die Werte `0` und `1` enthalten, entspricht diese Operation dem *Zählen durch Summieren*. 
+Damit die gemeinsamen Vorkommnisse gezählt werden, wird die Matrixmultiplikation verwendet. Dabei wird ausgenutzt, dass die Matrixmultiplikation die Produkte der Zeilen- und Spaltenwerte summiert. Weil beide Matrizen nur die Werte `0` und `1` enthalten, entspricht diese Operation dem *Zählen durch Summieren*. 
 
 Diese Operation zählt nur das gemeinsame Auftreten, weil in beiden Matrizen sichergestellt ist, dass in jeder Spalte genau eine `1` vorkommt, werden nur die Werte an den gleichen Positionen in den Ausgangsvektoren gezählt.
 
-Damit dieser Trick funktioniert, muss eine der beiden Matrizen transponiert werden, bevor das Kreuzprodukt gebildet werden kann. Daraus ergibt sich die folgende Formel.
+Damit dieser Trick funktioniert, muss eine der beiden Matrizen transponiert werden, bevor die Matrixmultiplikation durchgeführt werden kann. Daraus ergibt sich die folgende Formel.
 
 ```
 = MMULT(
